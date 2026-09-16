@@ -3,7 +3,7 @@
   "scope_version": "1.0.0",
   "last_checked_at": "2026-09-16",
   "principle": "Acquire source evidence first, then review scope/identity, then download only candidate/included images where practical. Category counts are coverage metadata, never specimen counts.",
-  "current_stage": "zeno_503_tree_and_detail_metadata_discovery",
+  "current_stage": "zeno_503_preimage_scope_review_and_targeted_image_acquisition",
   "queue": [
     {
       "id": "zeno-503-tree-census",
@@ -310,5 +310,18 @@
     "Confirm whether all eastern/Tarim/Uiğur cash-relevant Zeno branches are descendants of #503; add additional Zeno roots only when the #503 tree proves they are outside it.",
     "Screen Ustrushana, Khwarazm and Northern Tokharistan for actual cash-tradition forms before creating families.",
     "Build archaeological find-context datasets for imported East Asian cash independently from type catalogues."
-  ]
+  ],
+  "zeno_503_snapshot": {
+    "observed_unique_source_ids": 3891,
+    "detail_html_records": 3891,
+    "visited_category_nodes": 393,
+    "category_fetch_failures": 0,
+    "detail_parse_failures_after_offline_reparse": 0,
+    "pagination_affected_categories": 24,
+    "known_direct_shortfall_all_affected_categories": 459,
+    "scope_relevant_gap_recovery_categories": 7,
+    "preimage_high_priority_targets": 811,
+    "preimage_visual_review_targets": 535,
+    "note": "#503 source census is usable for scope review but not declared complete because Zeno repeated page content affected 24 category pages. Scope-relevant gaps are queued for perpage=90 recovery before final coverage claims."
+  }
 }

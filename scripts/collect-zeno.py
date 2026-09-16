@@ -431,7 +431,10 @@ def gallery_snapshot(opener, category_id: str, refresh: bool = False):
 
 
 def parse_measurement(text: str, label: str):
-    match = re.search(re.escape(label) + r"\s*([\d.,]+)", text)
+    # Zeno often stores ranges or punctuation such as ``24.4...25.0`` or ``25.0.``.
+    # Preserve the original field text separately and normalize only the first
+    # parseable numeric value for the convenience scalar.
+    match = re.search(re.escape(label) + r"\s*(\d+(?:[.,]\d+)?)", text)
     return float(match.group(1).replace(",", ".")) if match else None
 
 

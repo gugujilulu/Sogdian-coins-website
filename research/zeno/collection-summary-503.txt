@@ -1,0 +1,16 @@
+Zeno #503 recursive collection summary
+======================================
+Started at: 2026-09-16T17:27:46+00:00
+Packaged at: 2026-09-16T20:17:59+00:00
+Collector exit status: 0
+Source-declared direct records: 7
+Source-declared subtree records: None
+Observed unique source IDs in subtree: 3891
+Visited category nodes: 393
+Successful detail HTML records: 3884
+Downloaded images represented in manifest: 0
+Fetch failures: 7
+Category fetch failures: 0
+Coverage status: subtree_count_unverified
+Pagination integrity: failed_repeated_page_content
+Repeated pagination pages: 48

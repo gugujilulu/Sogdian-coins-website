@@ -1,0 +1,270 @@
+{
+  "version": "1.0",
+  "generatedOn": "2026-09-16",
+  "sourceManifest": "research/zeno/manifest-503.json",
+  "paginationAffectedCategoryCount": 24,
+  "knownDirectShortfallAcrossAllAffectedCategories": 459,
+  "recoveryPriorityCategories": [
+    {
+      "categoryId": "2740",
+      "title": "Urk Wartramuka",
+      "observedDirectCount": 36,
+      "sourceDeclaredDirectCount": 37,
+      "knownDirectShortfall": 1,
+      "coverageStatus": "incomplete_direct_observed_links",
+      "repeatedPages": [
+        {
+          "categoryId": "2740",
+          "page": "4",
+          "duplicateOf": "2",
+          "recordIds": [
+            "53732",
+            "53733",
+            "81946",
+            "152383",
+            "167069",
+            "289812",
+            "82179",
+            "82180",
+            "13754",
+            "123062",
+            "186449",
+            "267263"
+          ]
+        }
+      ]
+    },
+    {
+      "categoryId": "24941",
+      "title": "Type 8: leopard right / tamgha, ruler Tarnavch",
+      "observedDirectCount": 36,
+      "sourceDeclaredDirectCount": 47,
+      "knownDirectShortfall": 11,
+      "coverageStatus": "incomplete_direct_observed_links",
+      "repeatedPages": [
+        {
+          "categoryId": "24941",
+          "page": "4",
+          "duplicateOf": "2",
+          "recordIds": [
+            "359860",
+            "359861",
+            "359862",
+            "359863",
+            "359864",
+            "374079",
+            "374080",
+            "387973",
+            "218173",
+            "195070",
+            "90512",
+            "255492"
+          ]
+        }
+      ]
+    },
+    {
+      "categoryId": "911",
+      "title": "Farankat (\"Benakan\") (□)",
+      "observedDirectCount": 37,
+      "sourceDeclaredDirectCount": 61,
+      "knownDirectShortfall": 24,
+      "coverageStatus": "incomplete_direct_observed_links",
+      "repeatedPages": [
+        {
+          "categoryId": "911",
+          "page": "4",
+          "duplicateOf": "2",
+          "recordIds": [
+            "371514",
+            "371515",
+            "387414",
+            "387415",
+            "388117",
+            "353233",
+            "353234",
+            "353235",
+            "353236",
+            "353238",
+            "377204",
+            "377205"
+          ]
+        },
+        {
+          "categoryId": "911",
+          "page": "5",
+          "duplicateOf": "3",
+          "recordIds": [
+            "377389",
+            "388449",
+            "388454",
+            "388460",
+            "388463",
+            "388471",
+            "388507",
+            "388560",
+            "17200",
+            "18905",
+            "368951",
+            "12965"
+          ]
+        }
+      ]
+    },
+    {
+      "categoryId": "914",
+      "title": "Kanka",
+      "observedDirectCount": 36,
+      "sourceDeclaredDirectCount": 46,
+      "knownDirectShortfall": 10,
+      "coverageStatus": "incomplete_direct_observed_links",
+      "repeatedPages": [
+        {
+          "categoryId": "914",
+          "page": "4",
+          "duplicateOf": "2",
+          "recordIds": [
+            "185381",
+            "185382",
+            "346101",
+            "3391",
+            "285854",
+            "197212",
+            "197213",
+            "287110",
+            "293951",
+            "308693",
+            "322933",
+            "332463"
+          ]
+        }
+      ]
+    },
+    {
+      "categoryId": "2144",
+      "title": "Unknown principality I, coins with double portrait",
+      "observedDirectCount": 36,
+      "sourceDeclaredDirectCount": 37,
+      "knownDirectShortfall": 1,
+      "coverageStatus": "incomplete_direct_observed_links",
+      "repeatedPages": [
+        {
+          "categoryId": "2144",
+          "page": "4",
+          "duplicateOf": "2",
+          "recordIds": [
+            "290947",
+            "292446",
+            "292821",
+            "292873",
+            "293867",
+            "310397",
+            "347477",
+            "182358",
+            "22675",
+            "22676",
+            "304297",
+            "313697"
+          ]
+        }
+      ]
+    },
+    {
+      "categoryId": "15758",
+      "title": "Anepigraphic imitations",
+      "observedDirectCount": 39,
+      "sourceDeclaredDirectCount": 63,
+      "knownDirectShortfall": 24,
+      "coverageStatus": "incomplete_direct_observed_links",
+      "repeatedPages": [
+        {
+          "categoryId": "15758",
+          "page": "4",
+          "duplicateOf": "2",
+          "recordIds": [
+            "326638",
+            "77498",
+            "243065",
+            "243066",
+            "243067",
+            "288739",
+            "294274",
+            "383151",
+            "383312",
+            "383313",
+            "383319",
+            "383695"
+          ]
+        },
+        {
+          "categoryId": "15758",
+          "page": "5",
+          "duplicateOf": "3",
+          "recordIds": [
+            "383150",
+            "383153",
+            "383157",
+            "383309",
+            "383310",
+            "383311",
+            "383314",
+            "383315",
+            "383321",
+            "383322",
+            "383323",
+            "383324"
+          ]
+        }
+      ]
+    },
+    {
+      "categoryId": "796",
+      "title": "AE cash, temp. Yelü Dashi (1124-1144), w. title malik ārām yīnāl qaraj",
+      "observedDirectCount": 36,
+      "sourceDeclaredDirectCount": 58,
+      "knownDirectShortfall": 22,
+      "coverageStatus": "incomplete_direct_observed_links",
+      "repeatedPages": [
+        {
+          "categoryId": "796",
+          "page": "4",
+          "duplicateOf": "2",
+          "recordIds": [
+            "22478",
+            "29392",
+            "41878",
+            "42094",
+            "46730",
+            "48456",
+            "77470",
+            "121151",
+            "121576",
+            "121669",
+            "146048",
+            "154808"
+          ]
+        },
+        {
+          "categoryId": "796",
+          "page": "5",
+          "duplicateOf": "3",
+          "recordIds": [
+            "156700",
+            "156701",
+            "156702",
+            "163322",
+            "182601",
+            "228228",
+            "236091",
+            "236371",
+            "239331",
+            "256454",
+            "281281",
+            "286133"
+          ]
+        }
+      ]
+    }
+  ],
+  "recoveryNote": "Use Zeno perpage=90 gallery mode for these scope-relevant categories before declaring #503 coverage complete. Lady Nana #3106 is omitted because its separate validated 14/14 manifest already closes that gap."
+}

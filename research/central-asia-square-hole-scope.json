@@ -556,7 +556,13 @@
     "zeno_795_source_records": 254,
     "zeno_795_scope_reviewed": 254,
     "zeno_795_atlas_linked": 239,
-    "note": "Coverage is presently deep in Semirechye/Türgesh and Lady Nana, shallow elsewhere; these are imported counts, not corpus totals."
+    "note": "Coverage remains deepest in Semirechye/Türgesh and Lady Nana. The #503 metadata census now supports Central Asia-wide pre-image review, but 24 gallery categories have repeated-page coverage gaps and no corpus-completeness claim is made.",
+    "zeno_503_observed_source_records": 3891,
+    "zeno_503_detail_records_parsed": 3891,
+    "zeno_503_category_nodes_visited": 393,
+    "zeno_503_pagination_status": "partial_with_repeated_page_gaps",
+    "zeno_503_preimage_high_priority_targets": 811,
+    "zeno_503_preimage_visual_review_targets": 535
   },
   "last_checked_at": "2026-09-16"
 }
