@@ -1,4 +1,4 @@
-# Sogdian Cash Atlas
+# Sogdian Coins Atlas
 
 An evolving visual research atlas of square-holed coinage, centred on Semirechye and extending into Sogdiana, Tokharistan, Afghanistan and Xinjiang. Inspired by conversations with members of the Vancouver coin club.
 
@@ -8,7 +8,7 @@ An evolving visual research atlas of square-holed coinage, centred on Semirechye
 - Timeline filters for overlapping attributed date ranges, with playback.
 - Specimen details, enlargement at available resolution, sources and research links.
 - Exploration vault for unknown regions and disputed chronology.
-- 12 photographic records: 7 mapped and 5 exploration entries.
+- 12 photographic records: 9 with regional anchors and 5 exploration entries (2 appear in both views). All academic type assignments remain candidates.
 
 This is a working research prototype, not the completed comprehensive census. Afghanistan is not yet represented by a securely attributed specimen. Xinjiang has one comparative Kucha record. Only two records currently have explicit Zeno cross-references; direct Zeno pages were inaccessible during collection. Most photographs are small catalogue images, not high-resolution photography. Record-level paper matching remains incomplete; foundational catalogue links are labelled accordingly.
 
@@ -45,3 +45,7 @@ Core bibliography: https://iicas.int/book/177 (2024, 496 pages); https://www.cha
 ## Validation
 
 Production build and local record/asset integrity checks. Browser interaction and WebMCP runtime validation were not run in this environment. A tool, where supported, exposes the same timeline state as the UI.
+
+## Relational foundation
+
+See `docs/research-architecture.md`, `db/schema.sql` and `scripts/import-research.py`. The 12 source observations can be imported into a local SQLite database with independent type, specimen, image, citation, geography and dating records. Run the importer with a new output path. This model is not yet connected to the UI or a hosted database.

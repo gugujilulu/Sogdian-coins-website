@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Sogdian Cash Atlas",
+  title: "Sogdian Coins Atlas",
   description: "Explore square-holed coinage across Semirechye and neighbouring regions through maps, time and research.",
   other: {
     "codex-preview": "development",

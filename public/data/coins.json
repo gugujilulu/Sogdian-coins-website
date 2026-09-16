@@ -94,8 +94,8 @@
     "start": null,
     "end": null,
     "dateLabel": "Late 9th–early 10th century (catalogue dating)",
-    "lat": null,
-    "lon": null,
+    "lat": 43,
+    "lon": 75,
     "image": "/coins/sr20.jpg",
     "description": "Sogdian legend; four depressed trident-like signs on reverse.",
     "source": "https://sogdcoins.narod.ru/english/semirechie/coins2.html",
@@ -107,7 +107,7 @@
     "question": "The legacy catalogue places this issue in the late ninth to early tenth century. Compare its legend and type numbering with later Arslanid chronologies before assigning it to the timeline.",
     "imageView": "obverse and reverse",
     "datePrecision": "source range; approximate century conversion",
-    "geographyEvidence": "unresolved"
+    "geographyEvidence": "Legacy regional attribution; chronology unresolved"
   },
   {
     "id": "sr21",
@@ -116,8 +116,8 @@
     "start": null,
     "end": null,
     "dateLabel": "Disputed; legacy catalogue: mid-10th century",
-    "lat": null,
-    "lon": null,
+    "lat": 43,
+    "lon": 75,
     "image": "/coins/sr21.jpg",
     "description": "Four Arabic words around the aperture; plain reverse. Historical attribution requires review.",
     "source": "https://sogdcoins.narod.ru/english/semirechie/coins2.html",
@@ -129,7 +129,7 @@
     "question": "How does the legacy proto-Qarakhanid attribution compare with later research on Qara Khitay cash?",
     "imageView": "obverse and reverse",
     "datePrecision": "source range; approximate century conversion",
-    "geographyEvidence": "unresolved"
+    "geographyEvidence": "Legacy regional attribution; chronology unresolved"
   },
   {
     "id": "un16",
