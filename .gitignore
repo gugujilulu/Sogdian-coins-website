@@ -44,3 +44,6 @@ next-env.d.ts
 /.codex/
 /outputs/
 /work/
+# Public research page caches; structured citations and manifests are tracked.
+/research/zeno/*.html
+*.tsbuildinfo

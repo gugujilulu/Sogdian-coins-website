@@ -177,3 +177,49 @@ CREATE TABLE type_external_record (
 CREATE INDEX idx_type_place_lookup ON type_place_claim(place_id,type_id);
 CREATE INDEX idx_specimen_type_lookup ON specimen_type_claim(type_id,specimen_id);
 CREATE INDEX idx_dating_range ON dating_claim(start_year,end_year) WHERE is_preferred=1;
+
+-- v0.2: explicit hierarchy, browsing anchors and evidence-backed areas.
+CREATE TABLE type_level (
+ type_id TEXT PRIMARY KEY REFERENCES coin_type(id),
+ level TEXT NOT NULL CHECK(level IN ('family','major_type','variant','source_reference_group')),
+ classification_scheme TEXT, note TEXT
+);
+CREATE TABLE display_anchor (
+ type_id TEXT PRIMARY KEY REFERENCES coin_type(id), place_id TEXT NOT NULL REFERENCES place(id),
+ role TEXT NOT NULL CHECK(role IN ('core_findspot','attributed_city','polity_centre','regional_orientation')),
+ citation_id TEXT REFERENCES citation(id), editorial_note TEXT NOT NULL
+);
+CREATE TABLE distribution_claim (
+ id TEXT PRIMARY KEY, type_id TEXT NOT NULL REFERENCES coin_type(id),
+ kind TEXT NOT NULL CHECK(kind IN ('documented_circulation','inferred_distribution','geographic_context')),
+ geometry_geojson TEXT NOT NULL, method TEXT NOT NULL,
+ citation_id TEXT NOT NULL REFERENCES citation(id), confidence TEXT NOT NULL,
+ start_year INTEGER, end_year INTEGER, note TEXT,
+ CHECK(start_year IS NULL OR end_year IS NULL OR start_year<=end_year)
+);
+CREATE TABLE find_dating (
+ id TEXT PRIMARY KEY, find_context_id TEXT NOT NULL REFERENCES find_context(id),
+ event TEXT NOT NULL CHECK(event IN ('deposition','archaeological_context','modern_discovery')),
+ start_year INTEGER, end_year INTEGER, citation_id TEXT NOT NULL REFERENCES citation(id),
+ CHECK(start_year IS NULL OR end_year IS NULL OR start_year<=end_year)
+);
+CREATE TABLE specimen_feature (
+ specimen_id TEXT NOT NULL REFERENCES specimen(id), label TEXT NOT NULL,
+ citation_id TEXT NOT NULL REFERENCES citation(id),
+ PRIMARY KEY(specimen_id,label,citation_id)
+);
+CREATE TABLE manufacture_link (
+ id TEXT PRIMARY KEY, specimen_a TEXT NOT NULL REFERENCES specimen(id), specimen_b TEXT NOT NULL REFERENCES specimen(id),
+ relation TEXT NOT NULL CHECK(relation IN ('same_die','same_mould','same_mother_model','possible_link')),
+ confidence TEXT NOT NULL, citation_id TEXT NOT NULL REFERENCES citation(id), note TEXT,
+ CHECK(specimen_a<>specimen_b)
+);
+CREATE TABLE coverage_snapshot (
+ id TEXT PRIMARY KEY, provider TEXT NOT NULL, category_url TEXT NOT NULL,
+ retrieved_on TEXT NOT NULL, expected_record_count INTEGER, scope_note TEXT NOT NULL
+);
+CREATE TABLE coverage_record (
+ snapshot_id TEXT NOT NULL REFERENCES coverage_snapshot(id), source_record_key TEXT NOT NULL,
+ specimen_id TEXT REFERENCES specimen(id), image_id TEXT REFERENCES image(id), status TEXT NOT NULL,
+ PRIMARY KEY(snapshot_id,source_record_key)
+);

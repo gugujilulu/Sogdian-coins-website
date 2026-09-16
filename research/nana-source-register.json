@@ -1,0 +1,263 @@
+{
+  "records": [
+    {
+      "id": "cng611-576",
+      "title": "Lady Nana · CNG E611, lot 576",
+      "major_type": "Lady Nana of Panch — square-hole bronze",
+      "image_url": "https://images4-cdn.auctionmobility.com/is3/auctionmobility-static4/IedP-4-N10R/4-LGIJRO/576_1.jpg",
+      "source_page": "https://auctions.cngcoins.com/lots/view/4-LGIJRO/local-issues-panjakent-lady-nana-7th-8th-century-19mm-167-g-3h-cash-type-near-vf",
+      "source_credit": "Classical Numismatic Group, Electronic Auction 611, lot 576",
+      "image_dimensions": {
+        "width": 3000,
+        "height": 1440
+      },
+      "weight_g": 1.67,
+      "diameter_mm": 19,
+      "date_as_source": "7th–8th century",
+      "catalogue_reference": "Shagalov Variant 2, 245",
+      "zeno_id": null,
+      "zeno_comparison_references": [
+        81165
+      ],
+      "obverse_legend": "pncy nnδβ’mpnh or pncy nnδβ’npnwh",
+      "reverse_legend": null,
+      "reverse_design": "Tamgha of Pendjikent around square hole",
+      "findspot": null,
+      "visual_verification": true,
+      "duplicate_of": null,
+      "legend_translation_as_source": "Panch Nana lady",
+      "provenance_as_source": "From the James A. Lock Collection",
+      "auction_date": "2026-06-17",
+      "variant_reference": "Shagalov Variant 2, 245",
+      "visual_notes": "Two source photographs show the same rough-edged specimen with identical obverse crack and deposits. Gray and white background versions are duplicates.",
+      "alternate_image": {
+        "image_url": "https://images4-cdn.auctionmobility.com/is3/auctionmobility-static4/vnno-4-N10R/4-LGIJRO/576_2.jpg"
+      }
+    },
+    {
+      "id": "bactrianumis-5898",
+      "title": "Lady Nana · Bactrianumis 5898",
+      "major_type": "Lady Nana of Panch — square-hole bronze",
+      "image_url": "https://bactrianumis.com/wp-content/uploads/2026/02/PSX_1194.jpg",
+      "source_page": "https://bactrianumis.com/product/central-asia-ae-unit-pendjikend-lady-nana/",
+      "source_credit": "Bactrianumis, product 5898",
+      "image_dimensions": {
+        "width": 1600,
+        "height": 757
+      },
+      "weight_g": 1.58,
+      "diameter_mm": null,
+      "date_as_source": "7th–8th century AD",
+      "catalogue_reference": null,
+      "zeno_id": 264408,
+      "zeno_comparison_references": [],
+      "obverse_legend": "pncy nnôß’mpnh",
+      "reverse_legend": null,
+      "reverse_design": "Tamgha of Pendjikent around square hole",
+      "findspot": null,
+      "visual_verification": true,
+      "duplicate_of": null,
+      "legend_translation_as_source": "Panch Nana – signora",
+      "visual_notes": "Original product photograph is distinct from the comparison screenshot shown as its second product image. Zeno264408 is explicitly cited as this coin. Source body dates 7th–8th century; SEO description says late 8th century, so body text retained.",
+      "image_resolution_note": "HTML advertises 2324×1100, but downloaded original URL actually serves 1600×757. Manifest records real pixel dimensions."
+    },
+    {
+      "id": "sarc28-145",
+      "title": "Lady Nana · SARC 28, lot 145",
+      "major_type": "Lady Nana of Panch — square-hole bronze",
+      "image_url": null,
+      "source_page": "https://www.sarc.auction/PENDJIKENT-Lady-Nana-ca-709-728-AE-cash-1-61g-F-VF_i27041464",
+      "source_credit": "Stephen Album Rare Coins, Auction 28, lot 145",
+      "image_dimensions": {
+        "width": 458,
+        "height": 226
+      },
+      "weight_g": 1.61,
+      "diameter_mm": null,
+      "date_as_source": "ca. 709–728",
+      "catalogue_reference": "Smirnova-846ff",
+      "zeno_id": null,
+      "zeno_comparison_references": [
+        81165
+      ],
+      "obverse_legend": "Sogdian text; no transcription in primary lot",
+      "reverse_legend": null,
+      "reverse_design": "Tamgha of Pendjikent around square hole",
+      "findspot": null,
+      "visual_verification": true,
+      "duplicate_of": null,
+      "auction_date": "2017-05-18",
+      "source_pdf": "https://www.stevealbum.com/pdfs/auc28sesAweb.pdf",
+      "pdf_page": 13,
+      "image_derivation": "Native embedded images extracted from PDF, joined without scaling; 227×216 and 223×226 originals.",
+      "duplicate_sources": [
+        {
+          "source_page": "https://en.numista.com/197126",
+          "image_urls": [
+            "https://en.numista.com/catalogue/photos/panch_principality/5eed01aee68301.74731454-original.jpg",
+            "https://en.numista.com/catalogue/photos/panch_principality/5eed01aef415d4.74777382-original.jpg"
+          ],
+          "notes": "Same specimen and photos; Numista provides diameter 18mm and inscription pncy nn dbnpnwh, but these are catalogue-level metadata.",
+          "diameter_mm": 18,
+          "obverse_legend": "pncy nn dbnpnwh"
+        }
+      ]
+    },
+    {
+      "id": "sarc28-146",
+      "title": "Lady Nana · SARC 28, lot 146",
+      "major_type": "Lady Nana of Panch — square-hole bronze",
+      "image_url": null,
+      "source_page": "https://www.sarc.auction/PENDJIKENT-Lady-Nana-709-722-AE-cash-1-40g-F_i27041465",
+      "source_credit": "Stephen Album Rare Coins, Auction 28, lot 146",
+      "image_dimensions": {
+        "width": 472,
+        "height": 233
+      },
+      "weight_g": 1.4,
+      "diameter_mm": null,
+      "date_as_source": "709–722",
+      "catalogue_reference": null,
+      "zeno_id": null,
+      "zeno_comparison_references": [
+        77712
+      ],
+      "obverse_legend": "Circular semi-italic Sogdian legend; no transcription in source",
+      "reverse_legend": null,
+      "reverse_design": "Tamgha of Pendjikent around square hole",
+      "findspot": null,
+      "visual_verification": true,
+      "duplicate_of": null,
+      "auction_date": "2017-05-18",
+      "provenance_as_source": "Ex Hans Mondorf Collection",
+      "source_pdf": "https://www.stevealbum.com/pdfs/auc28sesAweb.pdf",
+      "pdf_page": 13,
+      "image_derivation": "Native embedded images extracted from PDF and joined without scaling; 231×233 and 233×229 originals."
+    },
+    {
+      "id": "sarc22-55",
+      "title": "Lady Nana · SARC 22, lot 55",
+      "major_type": "Lady Nana of Panch — square-hole bronze",
+      "image_url": null,
+      "source_page": "https://www.numisbids.com/sale/1076/lot/55",
+      "source_credit": "Stephen Album Rare Coins, Auction 22, lot 55",
+      "image_dimensions": {
+        "width": 450,
+        "height": 206
+      },
+      "weight_g": 1.91,
+      "diameter_mm": null,
+      "date_as_source": "ca. 709–722",
+      "catalogue_reference": "Smirnova 834 ff",
+      "zeno_id": null,
+      "zeno_comparison_references": [
+        130578
+      ],
+      "obverse_legend": "Sogdian text; no transcription in source",
+      "reverse_legend": null,
+      "reverse_design": "Single tamgha around central hole",
+      "findspot": null,
+      "visual_verification": true,
+      "duplicate_of": null,
+      "auction_date": "2015-05-14",
+      "source_pdf": "https://www.stevealbum.com/pdfs/auc22web.pdf",
+      "pdf_page": 13,
+      "image_derivation": "Native embedded images extracted from PDF and joined without scaling; each original 221×206.",
+      "visual_notes": "The non-square-looking hole on reverse corresponds to a worn/corroded hole; exact matching catalogue image verified."
+    },
+    {
+      "id": "sarc52-1614",
+      "title": "Lady Nana · SARC 52, lot 1614",
+      "major_type": "Lady Nana of Panch — square-hole bronze",
+      "image_url": "https://bactrianumis.com/wp-content/uploads/2026/02/Screenshot_20260209_055343_Chrome.jpg",
+      "source_page": "https://www.numisbids.com/sale/9278/lot/1614",
+      "source_credit": "Stephen Album Rare Coins, Auction 52, lot 1614; catalogue screenshot hosted by Bactrianumis",
+      "image_dimensions": {
+        "width": 1390,
+        "height": 680
+      },
+      "weight_g": 1.88,
+      "diameter_mm": null,
+      "date_as_source": "ca. 709–728",
+      "catalogue_reference": "Smirnova-846ff",
+      "zeno_id": null,
+      "zeno_comparison_references": [
+        81165
+      ],
+      "obverse_legend": "Sogdian text; no transcription in source",
+      "reverse_legend": null,
+      "reverse_design": "Tamgha of Pendjikent around square hole",
+      "findspot": null,
+      "visual_verification": true,
+      "duplicate_of": null,
+      "auction_date": "2025-05-17",
+      "source_pdf": "https://www.stevealbum.net/pdfs/auc52day3.pdf",
+      "pdf_page": 4,
+      "image_derivation": "Coin-photo area cropped from 1432×2004 dealer-hosted screenshot; original screenshot retained as bactria-reference.jpg. No rescaling.",
+      "visual_notes": "Distinct from Bactrianumis product coin: asymmetric hole projections and very different obverse/reverse deposits. Do not label this photo Zeno264408."
+    },
+    {
+      "id": "sogdcoins-es28",
+      "title": "Lady Nana · Sogdcoins ES 28",
+      "major_type": "Lady Nana of Panch — square-hole bronze",
+      "image_url": "https://sogdcoins.narod.ru/sogdiana/e_pic/es28.jpg",
+      "source_page": "https://sogdcoins.narod.ru/english/sogdiana/e_coins4.html",
+      "source_credit": "Sogdcoins online catalogue, Eastern Sogdiana ES 28",
+      "image_dimensions": {
+        "width": 300,
+        "height": 150
+      },
+      "weight_g": null,
+      "diameter_mm": null,
+      "date_as_source": "Late 7th–early 8th centuries AD",
+      "catalogue_reference": "Smirnova 769",
+      "zeno_id": null,
+      "zeno_comparison_references": [],
+      "obverse_legend": null,
+      "reverse_legend": "Sogdian legend; translation only provided",
+      "reverse_design": null,
+      "findspot": null,
+      "visual_verification": true,
+      "duplicate_of": null,
+      "obverse_design": "Tamgha frames square hole",
+      "legend_translation_as_source": "Mistress Nana, queen of Panch",
+      "side_assignment_note": "Catalogue assigns tamgha to obverse and legend to reverse; its displayed photo has legend left. Do not infer sides solely from image layout.",
+      "visual_notes": "300×150 source photo. Distinct within this set; low-resolution image limits precise duplicate checking against future imports."
+    }
+  ],
+  "distinct_specimens": 7,
+  "notes": [
+    "Catalogue comparison Zeno IDs are not specimen IDs. Only Bactrianumis explicitly identifies its coin as Zeno264408.",
+    "SARC28/145 and Numista197126 are duplicates. CNG611/576 offers two photographs of one coin. Bactrianumis product main photo and comparison screenshot show different specimens.",
+    "No findspots inferred. Sale location is not archaeological provenance.",
+    "SARC online auction25 lots99/100 and online auction27 lots97/98 were found but images not downloaded; these are separate candidates, excluded from count."
+  ],
+  "candidates_without_images": [
+    {
+      "source": "https://www.sarc.auction/PENDJIKENT-Lady-Nana-ca-709-722-AE-cash-1-48g-VF_i51848661",
+      "weight_g": 1.48,
+      "catalogue": "Smirnova-769 ff",
+      "zeno_compare": 30750
+    },
+    {
+      "source": "https://www.sarc.auction/PENDJIKENT-Lady-Nana-ca-709-722-AE-cash-1-94g-nice-Fine_i51848662",
+      "weight_g": 1.94,
+      "catalogue": "Smirnova-846ff",
+      "zeno_compare": 81165
+    },
+    {
+      "source": "https://www.numisbids.com/sale/7907/lot/97",
+      "weight_g": 1.38,
+      "catalogue": "Smirnova-769 ff",
+      "zeno_compare": 30750,
+      "legend": "pncy nndb'mpnh"
+    },
+    {
+      "source": "https://www.numisbids.com/sale/7907/lot/98",
+      "weight_g": 1.38,
+      "catalogue": "Smirnova-834 ff",
+      "zeno_compare": 130578,
+      "legend": "pncy nndbnpnwh"
+    }
+  ]
+}

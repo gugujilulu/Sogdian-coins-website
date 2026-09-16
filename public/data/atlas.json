@@ -1,0 +1,2078 @@
+{
+  "families": [
+    {
+      "id": "lady-nana",
+      "title": "Lady Nana of Panch",
+      "zh": "潘治的娜娜夫人 · 方孔铜钱",
+      "region": "Panch / Samarkand Sogd",
+      "start": 600,
+      "end": 799,
+      "dateLabel": "7th–8th century; often attributed c.709–722 / 728",
+      "description": "Square-holed cast bronze with a Sogdian legend and the Panch tamgha. Sources differ in date, face order and the interpretation of Nana. The gallery preserves catalogue groupings and individual specimens.",
+      "anchor": {
+        "placeId": "panjakent",
+        "role": "Attributed city · 归属城市展示锚点",
+        "note": "以古代潘治中心片治肯特展示该类型。此坐标不代表下列每一枚标本的出土地。"
+      },
+      "image": "/coins/nana/cng611-576.jpg",
+      "status": "catalogue_linked",
+      "question": "“Lady Nana”作为人物、头衔或女神的解释仍需结合铭文及研究；不自动套用 Zeno 的 Divashtich 归属。年代采用来源的宽区间，709–722 是常见归属之一。",
+      "legend": "pncy nnδβ’mpnh / pncy nnδβ’npnwh",
+      "legendNote": "CNG 611/576 原文所列不同读法，意译为“潘治的娜娜夫人”。正反面命名因目录而异。",
+      "publications": [
+        {
+          "title": "CNG 611/576 · Shagalov Variant 2, 245",
+          "url": "https://auctions.cngcoins.com/lots/view/4-LGIJRO/local-issues-panjakent-lady-nana-7th-8th-century-19mm-167-g-3h-cash-type-near-vf",
+          "role": "Specimen description and legend reading"
+        },
+        {
+          "title": "Smirnova · General Catalogue of Sogdian Coins: Bronze (1981)",
+          "url": "https://sogdcoins.narod.ru/english/sogdiana/e_coins4.html",
+          "role": "Legacy online entry cites Smirnova 769; original volume not fully digitised here"
+        },
+        {
+          "title": "Panjikant · Boris Marshak",
+          "url": "https://www.iranicaonline.org/articles/panjikant/",
+          "role": "Historical / archaeological background; discusses Nana interpretation"
+        },
+        {
+          "title": "IICAS · Catalogue (2024)",
+          "url": "https://iicas.int/book/177",
+          "role": "Modern academic framework; detailed crosswalk pending"
+        }
+      ]
+    },
+    {
+      "id": "sr3",
+      "title": "Vahshutava: yuan reverse",
+      "zh": "目录候选类型",
+      "region": "Semirechye",
+      "start": 700,
+      "end": 799,
+      "dateLabel": "8th century",
+      "description": "Square-hole bronze; Türgesh tamgha, runic sign and Chinese yuan character.",
+      "anchor": {
+        "placeId": "suyab",
+        "role": "City display anchor · 城市展示锚点",
+        "note": "依据地区归属选取的浏览锚点；具体铸地与本类型出土地尚待核定。"
+      },
+      "image": "/coins/sr3.jpg",
+      "status": "mapped",
+      "question": null,
+      "publications": [
+        {
+          "title": "Kamyshev 21 · source catalogue",
+          "url": "https://sogdcoins.narod.ru/english/semirechie/coins.html",
+          "role": "Specimen description / legacy classification"
+        },
+        {
+          "title": "IICAS 2024 Catalogue",
+          "url": "https://iicas.int/book/177",
+          "role": "Background; exact type correspondence not yet verified"
+        }
+      ]
+    },
+    {
+      "id": "sr6",
+      "title": "Türgesh kagan: tamgha reverse",
+      "zh": "目录候选类型",
+      "region": "Semirechye",
+      "start": 700,
+      "end": 850,
+      "dateLabel": "First half of 8th–mid-9th century",
+      "description": "Sogdian royal legend; a large stylized Türgesh tamgha on reverse.",
+      "anchor": {
+        "placeId": "suyab",
+        "role": "City display anchor · 城市展示锚点",
+        "note": "依据地区归属选取的浏览锚点；具体铸地与本类型出土地尚待核定。"
+      },
+      "image": "/coins/sr6.jpg",
+      "status": "mapped",
+      "question": null,
+      "publications": [
+        {
+          "title": "Kamyshev 24 · source catalogue",
+          "url": "https://sogdcoins.narod.ru/english/semirechie/coins.html",
+          "role": "Specimen description / legacy classification"
+        },
+        {
+          "title": "IICAS 2024 Catalogue",
+          "url": "https://iicas.int/book/177",
+          "role": "Background; exact type correspondence not yet verified"
+        }
+      ]
+    },
+    {
+      "id": "sr9",
+      "title": "Inal-Tegin",
+      "zh": "目录候选类型",
+      "region": "Semirechye",
+      "start": 740,
+      "end": 760,
+      "dateLabel": "Mid-8th century",
+      "description": "Royal Sogdian legend with tamgha, runic sign and prn on reverse.",
+      "anchor": {
+        "placeId": "suyab",
+        "role": "City display anchor · 城市展示锚点",
+        "note": "依据地区归属选取的浏览锚点；具体铸地与本类型出土地尚待核定。"
+      },
+      "image": "/coins/sr9.jpg",
+      "status": "mapped",
+      "question": null,
+      "publications": [
+        {
+          "title": "Kamyshev 33 · source catalogue",
+          "url": "https://sogdcoins.narod.ru/english/semirechie/coins.html",
+          "role": "Specimen description / legacy classification"
+        },
+        {
+          "title": "IICAS 2024 Catalogue",
+          "url": "https://iicas.int/book/177",
+          "role": "Background; exact type correspondence not yet verified"
+        }
+      ]
+    },
+    {
+      "id": "sr14",
+      "title": "Master of Tukhuses",
+      "zh": "目录候选类型",
+      "region": "Semirechye",
+      "start": 750,
+      "end": 799,
+      "dateLabel": "Second half of 8th century",
+      "description": "Legends on both sides link the Tukhus ruler and Türgesh kagan.",
+      "anchor": {
+        "placeId": "suyab",
+        "role": "City display anchor · 城市展示锚点",
+        "note": "依据地区归属选取的浏览锚点；具体铸地与本类型出土地尚待核定。"
+      },
+      "image": "/coins/sr14.jpg",
+      "status": "mapped",
+      "question": null,
+      "publications": [
+        {
+          "title": "Kamyshev 39 · source catalogue",
+          "url": "https://sogdcoins.narod.ru/english/semirechie/coins2.html",
+          "role": "Specimen description / legacy classification"
+        },
+        {
+          "title": "IICAS 2024 Catalogue",
+          "url": "https://iicas.int/book/177",
+          "role": "Background; exact type correspondence not yet verified"
+        }
+      ]
+    },
+    {
+      "id": "sr20",
+      "title": "Arslan Bilge-kagan",
+      "zh": "目录候选类型",
+      "region": "Semirechye",
+      "start": null,
+      "end": null,
+      "dateLabel": "Late 9th–early 10th century (catalogue dating)",
+      "description": "Sogdian legend; four depressed trident-like signs on reverse.",
+      "anchor": {
+        "placeId": "suyab",
+        "role": "City display anchor · 城市展示锚点",
+        "note": "依据地区归属选取的浏览锚点；具体铸地与本类型出土地尚待核定。"
+      },
+      "image": "/coins/sr20.jpg",
+      "status": "exploration",
+      "question": "The legacy catalogue places this issue in the late ninth to early tenth century. Compare its legend and type numbering with later Arslanid chronologies before assigning it to the timeline.",
+      "publications": [
+        {
+          "title": "Kamyshev 47 · source catalogue",
+          "url": "https://sogdcoins.narod.ru/english/semirechie/coins2.html",
+          "role": "Specimen description / legacy classification"
+        },
+        {
+          "title": "IICAS 2024 Catalogue",
+          "url": "https://iicas.int/book/177",
+          "role": "Background; exact type correspondence not yet verified"
+        }
+      ]
+    },
+    {
+      "id": "sr21",
+      "title": "So-called proto-Qarakhanid cash",
+      "zh": "目录候选类型",
+      "region": "Semirechye",
+      "start": null,
+      "end": null,
+      "dateLabel": "Disputed; legacy catalogue: mid-10th century",
+      "description": "Four Arabic words around the aperture; plain reverse. Historical attribution requires review.",
+      "anchor": {
+        "placeId": "suyab",
+        "role": "City display anchor · 城市展示锚点",
+        "note": "依据地区归属选取的浏览锚点；具体铸地与本类型出土地尚待核定。"
+      },
+      "image": "/coins/sr21.jpg",
+      "status": "exploration",
+      "question": "How does the legacy proto-Qarakhanid attribution compare with later research on Qara Khitay cash?",
+      "publications": [
+        {
+          "title": "Kamyshev 49 · source catalogue",
+          "url": "https://sogdcoins.narod.ru/english/semirechie/coins2.html",
+          "role": "Specimen description / legacy classification"
+        },
+        {
+          "title": "Related numismatic study",
+          "url": "https://teikyo-bunkazai.com/application/files/old_file/2020/12/22_04-belyaev.pdf",
+          "role": "Background; exact type correspondence not yet verified"
+        }
+      ]
+    },
+    {
+      "id": "un16",
+      "title": "Unattributed Sogdian-legend cash",
+      "zh": "目录候选类型",
+      "region": "Eastern Sogdiana or northern Tokharistan?",
+      "start": null,
+      "end": null,
+      "dateLabel": "Undated in source",
+      "description": "Sogdian legend around square hole; plain reverse. Regional attribution is tentative.",
+      "anchor": null,
+      "image": "/coins/un16.jpg",
+      "status": "exploration",
+      "question": "Which inscription readings can distinguish an eastern Sogdian origin from northern Tokharistan?",
+      "publications": [
+        {
+          "title": "Source specimen UN16 · source catalogue",
+          "url": "https://sogdcoins.narod.ru/english/unknown/unk3.html",
+          "role": "Specimen description / legacy classification"
+        },
+        {
+          "title": "IICAS 2024 Catalogue",
+          "url": "https://iicas.int/book/177",
+          "role": "Background; exact type correspondence not yet verified"
+        }
+      ]
+    },
+    {
+      "id": "un22",
+      "title": "Unattributed tamgha and legend cash",
+      "zh": "目录候选类型",
+      "region": "Northern Tokharistan?",
+      "start": null,
+      "end": null,
+      "dateLabel": "Undated in source",
+      "description": "Sogdian legend on obverse; reverse has tamgha left and inscription right. Unpublished in this catalogue.",
+      "anchor": null,
+      "image": "/coins/un22.jpg",
+      "status": "exploration",
+      "question": "Does the tamgha and legend support the proposed northern Tokharistan attribution? Compare the cited Zeno specimen with the 2024 catalogue.",
+      "publications": [
+        {
+          "title": "Source specimen UN22 · source catalogue",
+          "url": "https://sogdcoins.narod.ru/english/unknown/unk3.html",
+          "role": "Specimen description / legacy classification"
+        },
+        {
+          "title": "IICAS 2024 Catalogue",
+          "url": "https://iicas.int/book/177",
+          "role": "Background; exact type correspondence not yet verified"
+        }
+      ]
+    },
+    {
+      "id": "un24",
+      "title": "Unattributed paired-tamgha cash",
+      "zh": "目录候选类型",
+      "region": "Unassigned Central Asian region",
+      "start": null,
+      "end": null,
+      "dateLabel": "Undated in source",
+      "description": "Matching tamghas flank the hole; reverse inscription repeats one word three times. Unpublished in this catalogue.",
+      "anchor": null,
+      "image": "/coins/un24.jpg",
+      "status": "exploration",
+      "question": "Can the repeated word and paired tamghas identify an issuer or region?",
+      "publications": [
+        {
+          "title": "Source specimen UN24 · source catalogue",
+          "url": "https://sogdcoins.narod.ru/english/unknown/unk3.html",
+          "role": "Specimen description / legacy classification"
+        },
+        {
+          "title": "IICAS 2024 Catalogue",
+          "url": "https://iicas.int/book/177",
+          "role": "Background; exact type correspondence not yet verified"
+        }
+      ]
+    },
+    {
+      "id": "es19",
+      "title": "Gurek (Urak)",
+      "zh": "目录候选类型",
+      "region": "Eastern Sogdiana",
+      "start": 710,
+      "end": 738,
+      "dateLabel": "710(?)–738 CE",
+      "description": "Paired tamghas and Sogdian royal inscription around a square hole.",
+      "anchor": {
+        "placeId": "samarkand",
+        "role": "City display anchor · 城市展示锚点",
+        "note": "依据地区归属选取的浏览锚点；具体铸地与本类型出土地尚待核定。"
+      },
+      "image": "/coins/es19.jpg",
+      "status": "mapped",
+      "question": null,
+      "publications": [
+        {
+          "title": "Smirnova 359 · source catalogue",
+          "url": "https://sogdcoins.narod.ru/english/sogdiana/e_coins3.html",
+          "role": "Specimen description / legacy classification"
+        },
+        {
+          "title": "IICAS 2024 Catalogue",
+          "url": "https://iicas.int/book/177",
+          "role": "Background; exact type correspondence not yet verified"
+        }
+      ]
+    },
+    {
+      "id": "es18a",
+      "title": "Tarhun: two-line inscription",
+      "zh": "目录候选类型",
+      "region": "Eastern Sogdiana",
+      "start": 700,
+      "end": 710,
+      "dateLabel": "700(?)–710 CE",
+      "description": "Paired tamghas; reverse inscription in two concentric lines.",
+      "anchor": {
+        "placeId": "samarkand",
+        "role": "City display anchor · 城市展示锚点",
+        "note": "依据地区归属选取的浏览锚点；具体铸地与本类型出土地尚待核定。"
+      },
+      "image": "/coins/es18a.jpg",
+      "status": "mapped",
+      "question": null,
+      "publications": [
+        {
+          "title": "Source specimen ES18A · source catalogue",
+          "url": "https://sogdcoins.narod.ru/english/sogdiana/e_coins3.html",
+          "role": "Specimen description / legacy classification"
+        },
+        {
+          "title": "IICAS 2024 Catalogue",
+          "url": "https://iicas.int/book/177",
+          "role": "Background; exact type correspondence not yet verified"
+        }
+      ]
+    },
+    {
+      "id": "dali",
+      "title": "Dali yuanbao",
+      "zh": "目录候选类型",
+      "region": "Qiuci / Kucha, Xinjiang",
+      "start": 769,
+      "end": 769,
+      "dateLabel": "769 CE (museum record)",
+      "description": "Cast copper-alloy coin from Kucha with four Chinese characters around its square hole.",
+      "anchor": {
+        "placeId": "kucha",
+        "role": "City display anchor · 城市展示锚点",
+        "note": "依据地区归属选取的浏览锚点；具体铸地与本类型出土地尚待核定。"
+      },
+      "image": "/coins/dali.jpg",
+      "status": "mapped",
+      "question": null,
+      "publications": [
+        {
+          "title": "1902,0608.166 · source catalogue",
+          "url": "https://artsandculture.google.com/asset/dali-yuanbao-coin/VgF0gWE8yf7C9w?hl=en",
+          "role": "Specimen description / legacy classification"
+        },
+        {
+          "title": "IICAS 2024 Catalogue",
+          "url": "https://iicas.int/book/177",
+          "role": "Background; exact type correspondence not yet verified"
+        }
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "id": "sr3-catalogue",
+      "familyId": "sr3",
+      "title": "Kamyshev 21",
+      "reference": "Kamyshev 21",
+      "status": "source_group",
+      "facets": [],
+      "description": "来源目录分组；与其他目录的等价关系待核。"
+    },
+    {
+      "id": "sr6-catalogue",
+      "familyId": "sr6",
+      "title": "Kamyshev 24",
+      "reference": "Kamyshev 24",
+      "status": "source_group",
+      "facets": [],
+      "description": "来源目录分组；与其他目录的等价关系待核。"
+    },
+    {
+      "id": "sr9-catalogue",
+      "familyId": "sr9",
+      "title": "Kamyshev 33",
+      "reference": "Kamyshev 33",
+      "status": "source_group",
+      "facets": [],
+      "description": "来源目录分组；与其他目录的等价关系待核。"
+    },
+    {
+      "id": "sr14-catalogue",
+      "familyId": "sr14",
+      "title": "Kamyshev 39",
+      "reference": "Kamyshev 39",
+      "status": "source_group",
+      "facets": [],
+      "description": "来源目录分组；与其他目录的等价关系待核。"
+    },
+    {
+      "id": "sr20-catalogue",
+      "familyId": "sr20",
+      "title": "Kamyshev 47",
+      "reference": "Kamyshev 47",
+      "status": "source_group",
+      "facets": [],
+      "description": "来源目录分组；与其他目录的等价关系待核。"
+    },
+    {
+      "id": "sr21-catalogue",
+      "familyId": "sr21",
+      "title": "Kamyshev 49",
+      "reference": "Kamyshev 49",
+      "status": "source_group",
+      "facets": [],
+      "description": "来源目录分组；与其他目录的等价关系待核。"
+    },
+    {
+      "id": "un16-catalogue",
+      "familyId": "un16",
+      "title": "Source specimen UN16",
+      "reference": "Source specimen UN16",
+      "status": "source_group",
+      "facets": [],
+      "description": "来源目录分组；与其他目录的等价关系待核。"
+    },
+    {
+      "id": "un22-catalogue",
+      "familyId": "un22",
+      "title": "Source specimen UN22",
+      "reference": "Source specimen UN22",
+      "status": "source_group",
+      "facets": [],
+      "description": "来源目录分组；与其他目录的等价关系待核。"
+    },
+    {
+      "id": "un24-catalogue",
+      "familyId": "un24",
+      "title": "Source specimen UN24",
+      "reference": "Source specimen UN24",
+      "status": "source_group",
+      "facets": [],
+      "description": "来源目录分组；与其他目录的等价关系待核。"
+    },
+    {
+      "id": "es19-catalogue",
+      "familyId": "es19",
+      "title": "Smirnova 359",
+      "reference": "Smirnova 359",
+      "status": "source_group",
+      "facets": [],
+      "description": "来源目录分组；与其他目录的等价关系待核。"
+    },
+    {
+      "id": "es18a-catalogue",
+      "familyId": "es18a",
+      "title": "Source specimen ES18A",
+      "reference": "Source specimen ES18A",
+      "status": "source_group",
+      "facets": [],
+      "description": "来源目录分组；与其他目录的等价关系待核。"
+    },
+    {
+      "id": "dali-catalogue",
+      "familyId": "dali",
+      "title": "1902,0608.166",
+      "reference": "1902,0608.166",
+      "status": "source_group",
+      "facets": [],
+      "description": "来源目录分组；与其他目录的等价关系待核。"
+    },
+    {
+      "id": "nana-sm769",
+      "familyId": "lady-nana",
+      "title": "Smirnova 769 / 769 ff.",
+      "reference": "Smirnova 769 / 769 ff.",
+      "status": "source_group",
+      "facets": [],
+      "description": "Source reference group; not yet split by legend layout."
+    },
+    {
+      "id": "nana-sm834",
+      "familyId": "lady-nana",
+      "title": "Smirnova 834 / 834 ff.",
+      "reference": "Smirnova 834 / 834 ff.",
+      "status": "source_group",
+      "facets": [],
+      "description": "Catalogue reference group. “ff.” denotes following entries, not one proven variant."
+    },
+    {
+      "id": "nana-sm846",
+      "familyId": "lady-nana",
+      "title": "Smirnova 846 ff.",
+      "reference": "Smirnova 846 ff.",
+      "status": "source_group",
+      "facets": [],
+      "description": "Source catalogue reference group; may overlap broader groups in other sources."
+    },
+    {
+      "id": "nana-sm890",
+      "familyId": "lady-nana",
+      "title": "Smirnova 890",
+      "reference": "Smirnova 890",
+      "status": "source_group",
+      "facets": [],
+      "description": "Exact number reported by Zeno54031."
+    },
+    {
+      "id": "nana-sm894",
+      "familyId": "lady-nana",
+      "title": "Smirnova 894",
+      "reference": "Smirnova 894",
+      "status": "source_group",
+      "facets": [],
+      "description": "Exact number reported by Zeno54032."
+    },
+    {
+      "id": "nana-sh245",
+      "familyId": "lady-nana",
+      "title": "Shagalov Variant 2 · 245",
+      "reference": "Shagalov Variant 2 · 245",
+      "status": "source_group",
+      "facets": [],
+      "description": "Variant explicitly cited by CNG. No automatic equivalence with Smirnova numbering."
+    }
+  ],
+  "specimens": [
+    {
+      "id": "sr3",
+      "familyId": "sr3",
+      "variantId": "sr3-catalogue",
+      "title": "Vahshutava: yuan reverse",
+      "weightG": 3.8,
+      "diameterMm": 23,
+      "images": [
+        {
+          "id": "sr3-photo",
+          "path": "/coins/sr3.jpg",
+          "sourceUrl": "https://sogdcoins.narod.ru/semirechie/pic/sr3.jpg",
+          "width": 300,
+          "height": 150,
+          "credit": "Coins of Central Asia, ©2002–2010 VLD & OK",
+          "view": "obverse and reverse"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Original catalogue",
+          "url": "https://sogdcoins.narod.ru/english/semirechie/coins.html",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Square-hole bronze; Türgesh tamgha, runic sign and Chinese yuan character.",
+      "catalogue": "Kamyshev 21",
+      "facets": [],
+      "duplicateStatus": "not_exhaustively_checked"
+    },
+    {
+      "id": "sr6",
+      "familyId": "sr6",
+      "variantId": "sr6-catalogue",
+      "title": "Türgesh kagan: tamgha reverse",
+      "weightG": 5.7,
+      "diameterMm": 25,
+      "images": [
+        {
+          "id": "sr6-photo",
+          "path": "/coins/sr6.jpg",
+          "sourceUrl": "https://sogdcoins.narod.ru/semirechie/pic/sr6.jpg",
+          "width": 300,
+          "height": 150,
+          "credit": "Coins of Central Asia, ©2002–2010 VLD & OK",
+          "view": "obverse and reverse"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Original catalogue",
+          "url": "https://sogdcoins.narod.ru/english/semirechie/coins.html",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Sogdian royal legend; a large stylized Türgesh tamgha on reverse.",
+      "catalogue": "Kamyshev 24",
+      "facets": [],
+      "duplicateStatus": "not_exhaustively_checked"
+    },
+    {
+      "id": "sr9",
+      "familyId": "sr9",
+      "variantId": "sr9-catalogue",
+      "title": "Inal-Tegin",
+      "weightG": 4.1,
+      "diameterMm": 23,
+      "images": [
+        {
+          "id": "sr9-photo",
+          "path": "/coins/sr9.jpg",
+          "sourceUrl": "https://sogdcoins.narod.ru/semirechie/pic/sr9.jpg",
+          "width": 300,
+          "height": 150,
+          "credit": "Coins of Central Asia, ©2002–2010 VLD & OK",
+          "view": "obverse and reverse"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Original catalogue",
+          "url": "https://sogdcoins.narod.ru/english/semirechie/coins.html",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Royal Sogdian legend with tamgha, runic sign and prn on reverse.",
+      "catalogue": "Kamyshev 33",
+      "facets": [],
+      "duplicateStatus": "not_exhaustively_checked"
+    },
+    {
+      "id": "sr14",
+      "familyId": "sr14",
+      "variantId": "sr14-catalogue",
+      "title": "Master of Tukhuses",
+      "weightG": 1.4,
+      "diameterMm": 20,
+      "images": [
+        {
+          "id": "sr14-photo",
+          "path": "/coins/sr14.jpg",
+          "sourceUrl": "https://sogdcoins.narod.ru/semirechie/pic/sr14.jpg",
+          "width": 300,
+          "height": 150,
+          "credit": "Coins of Central Asia, ©2002–2010 VLD & OK",
+          "view": "obverse and reverse"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Original catalogue",
+          "url": "https://sogdcoins.narod.ru/english/semirechie/coins2.html",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Legends on both sides link the Tukhus ruler and Türgesh kagan.",
+      "catalogue": "Kamyshev 39",
+      "facets": [],
+      "duplicateStatus": "not_exhaustively_checked"
+    },
+    {
+      "id": "sr20",
+      "familyId": "sr20",
+      "variantId": "sr20-catalogue",
+      "title": "Arslan Bilge-kagan",
+      "weightG": 1.9,
+      "diameterMm": 21.5,
+      "images": [
+        {
+          "id": "sr20-photo",
+          "path": "/coins/sr20.jpg",
+          "sourceUrl": "https://sogdcoins.narod.ru/semirechie/pic/sr20.jpg",
+          "width": 300,
+          "height": 150,
+          "credit": "Coins of Central Asia, ©2002–2010 VLD & OK",
+          "view": "obverse and reverse"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Original catalogue",
+          "url": "https://sogdcoins.narod.ru/english/semirechie/coins2.html",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Sogdian legend; four depressed trident-like signs on reverse.",
+      "catalogue": "Kamyshev 47",
+      "facets": [],
+      "duplicateStatus": "not_exhaustively_checked"
+    },
+    {
+      "id": "sr21",
+      "familyId": "sr21",
+      "variantId": "sr21-catalogue",
+      "title": "So-called proto-Qarakhanid cash",
+      "weightG": 4.8,
+      "diameterMm": 23.5,
+      "images": [
+        {
+          "id": "sr21-photo",
+          "path": "/coins/sr21.jpg",
+          "sourceUrl": "https://sogdcoins.narod.ru/semirechie/pic/sr21.jpg",
+          "width": 300,
+          "height": 150,
+          "credit": "Coins of Central Asia, ©2002–2010 VLD & OK",
+          "view": "obverse and reverse"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Original catalogue",
+          "url": "https://sogdcoins.narod.ru/english/semirechie/coins2.html",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Four Arabic words around the aperture; plain reverse. Historical attribution requires review.",
+      "catalogue": "Kamyshev 49",
+      "facets": [],
+      "duplicateStatus": "not_exhaustively_checked"
+    },
+    {
+      "id": "un16",
+      "familyId": "un16",
+      "variantId": "un16-catalogue",
+      "title": "Unattributed Sogdian-legend cash",
+      "weightG": null,
+      "diameterMm": null,
+      "images": [
+        {
+          "id": "un16-photo",
+          "path": "/coins/un16.jpg",
+          "sourceUrl": "https://sogdcoins.narod.ru/unknown/pic/un16.jpg",
+          "width": 300,
+          "height": 150,
+          "credit": "Coins of Central Asia, ©2002–2010 VLD & OK",
+          "view": "obverse and reverse"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Original catalogue",
+          "url": "https://sogdcoins.narod.ru/english/unknown/unk3.html",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Sogdian legend around square hole; plain reverse. Regional attribution is tentative.",
+      "catalogue": "Source specimen UN16",
+      "facets": [],
+      "duplicateStatus": "not_exhaustively_checked"
+    },
+    {
+      "id": "un22",
+      "familyId": "un22",
+      "variantId": "un22-catalogue",
+      "title": "Unattributed tamgha and legend cash",
+      "weightG": null,
+      "diameterMm": null,
+      "images": [
+        {
+          "id": "un22-photo",
+          "path": "/coins/un22.jpg",
+          "sourceUrl": "https://sogdcoins.narod.ru/unknown/pic/un22.jpg",
+          "width": 300,
+          "height": 150,
+          "credit": "Coins of Central Asia, ©2002–2010 VLD & OK",
+          "view": "obverse and reverse"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Original catalogue",
+          "url": "https://sogdcoins.narod.ru/english/unknown/unk3.html",
+          "relation": "same_specimen"
+        },
+        {
+          "label": "Zeno 57521",
+          "url": "https://www.zeno.ru/showphoto.php?photo=57521",
+          "relation": "comparison"
+        }
+      ],
+      "description": "Sogdian legend on obverse; reverse has tamgha left and inscription right. Unpublished in this catalogue.",
+      "catalogue": "Source specimen UN22",
+      "facets": [],
+      "duplicateStatus": "not_exhaustively_checked"
+    },
+    {
+      "id": "un24",
+      "familyId": "un24",
+      "variantId": "un24-catalogue",
+      "title": "Unattributed paired-tamgha cash",
+      "weightG": null,
+      "diameterMm": null,
+      "images": [
+        {
+          "id": "un24-photo",
+          "path": "/coins/un24.jpg",
+          "sourceUrl": "https://sogdcoins.narod.ru/unknown/pic/un24.jpg",
+          "width": 300,
+          "height": 150,
+          "credit": "Coins of Central Asia, ©2002–2010 VLD & OK",
+          "view": "obverse and reverse"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Original catalogue",
+          "url": "https://sogdcoins.narod.ru/english/unknown/unk3.html",
+          "relation": "same_specimen"
+        },
+        {
+          "label": "Zeno 63495",
+          "url": "https://www.zeno.ru/showphoto.php?photo=63495",
+          "relation": "comparison"
+        }
+      ],
+      "description": "Matching tamghas flank the hole; reverse inscription repeats one word three times. Unpublished in this catalogue.",
+      "catalogue": "Source specimen UN24",
+      "facets": [],
+      "duplicateStatus": "not_exhaustively_checked"
+    },
+    {
+      "id": "es19",
+      "familyId": "es19",
+      "variantId": "es19-catalogue",
+      "title": "Gurek (Urak)",
+      "weightG": 3.3,
+      "diameterMm": 23,
+      "images": [
+        {
+          "id": "es19-photo",
+          "path": "/coins/es19.jpg",
+          "sourceUrl": "https://sogdcoins.narod.ru/sogdiana/e_pic/es19.jpg",
+          "width": 300,
+          "height": 150,
+          "credit": "Coins of Central Asia, ©2002–2010 VLD & OK",
+          "view": "obverse and reverse"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Original catalogue",
+          "url": "https://sogdcoins.narod.ru/english/sogdiana/e_coins3.html",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Paired tamghas and Sogdian royal inscription around a square hole.",
+      "catalogue": "Smirnova 359",
+      "facets": [],
+      "duplicateStatus": "not_exhaustively_checked"
+    },
+    {
+      "id": "es18a",
+      "familyId": "es18a",
+      "variantId": "es18a-catalogue",
+      "title": "Tarhun: two-line inscription",
+      "weightG": null,
+      "diameterMm": null,
+      "images": [
+        {
+          "id": "es18a-photo",
+          "path": "/coins/es18a.jpg",
+          "sourceUrl": "https://sogdcoins.narod.ru/sogdiana/e_pic/es18a.jpg",
+          "width": 300,
+          "height": 150,
+          "credit": "Coins of Central Asia, ©2002–2010 VLD & OK",
+          "view": "obverse and reverse"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Original catalogue",
+          "url": "https://sogdcoins.narod.ru/english/sogdiana/e_coins3.html",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Paired tamghas; reverse inscription in two concentric lines.",
+      "catalogue": "Source specimen ES18A",
+      "facets": [],
+      "duplicateStatus": "not_exhaustively_checked"
+    },
+    {
+      "id": "dali",
+      "familyId": "dali",
+      "variantId": "dali-catalogue",
+      "title": "Dali yuanbao",
+      "weightG": 3.27,
+      "diameterMm": 23.5,
+      "images": [
+        {
+          "id": "dali-photo",
+          "path": "/coins/dali.jpg",
+          "sourceUrl": "https://lh3.googleusercontent.com/ci/AL18g_S3QcRSF1w1doP4AI8xti3rcb7fR0zX6YcRa0odeYoCqDNoqpFx1uyuADavGnw52zOuBevgWA",
+          "width": 512,
+          "height": 497,
+          "credit": "Photo: © Trustees of the British Museum",
+          "view": "single face"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Original catalogue",
+          "url": "https://artsandculture.google.com/asset/dali-yuanbao-coin/VgF0gWE8yf7C9w?hl=en",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Cast copper-alloy coin from Kucha with four Chinese characters around its square hole.",
+      "catalogue": "1902,0608.166",
+      "facets": [],
+      "duplicateStatus": "not_exhaustively_checked"
+    },
+    {
+      "id": "zeno-388312",
+      "familyId": "lady-nana",
+      "variantId": null,
+      "title": "Zeno 388312",
+      "weightG": 1.39,
+      "diameterMm": 19.0,
+      "images": [
+        {
+          "id": "z388312",
+          "path": "/coins/zeno/388312.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/3106/zeno_388312.jpg",
+          "width": 2561,
+          "height": 1280,
+          "credit": "Zeno.ru · Z-388312",
+          "view": "source photograph"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 388312",
+          "url": "https://www.zeno.ru/showphoto.php?photo=388312",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Primary Zeno record; description and classification preserved in the source.",
+      "catalogue": "",
+      "facets": [
+        "Panch tamgha · 潘治徽记"
+      ],
+      "duplicateStatus": "not_exhaustively_checked"
+    },
+    {
+      "id": "zeno-334987",
+      "familyId": "lady-nana",
+      "variantId": null,
+      "title": "Zeno 334987",
+      "weightG": 2.7,
+      "diameterMm": null,
+      "images": [
+        {
+          "id": "z334987",
+          "path": "/coins/zeno/334987.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/3106/zeno_334987.jpg",
+          "width": 1875,
+          "height": 1004,
+          "credit": "Zeno.ru · Z-334987",
+          "view": "source photograph"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 334987",
+          "url": "https://www.zeno.ru/showphoto.php?photo=334987",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Primary Zeno record; description and classification preserved in the source.",
+      "catalogue": "",
+      "facets": [
+        "Panch tamgha · 潘治徽记"
+      ],
+      "duplicateStatus": "not_exhaustively_checked"
+    },
+    {
+      "id": "zeno-264408",
+      "familyId": "lady-nana",
+      "variantId": null,
+      "title": "Zeno 264408",
+      "weightG": 1.58,
+      "diameterMm": 18.5,
+      "images": [
+        {
+          "id": "z264408",
+          "path": "/coins/zeno/264408.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/3106/zeno_264408.jpg",
+          "width": 2324,
+          "height": 1100,
+          "credit": "Zeno.ru · Z-264408",
+          "view": "source photograph"
+        },
+        {
+          "id": "bactrianumis-5898-photo",
+          "path": "/coins/nana/bactrianumis-5898.jpg",
+          "sourceUrl": "https://bactrianumis.com/wp-content/uploads/2026/02/PSX_1194.jpg",
+          "width": 1600,
+          "height": 757,
+          "credit": "Bactrianumis, product 5898",
+          "view": "both as arranged in source"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 264408",
+          "url": "https://www.zeno.ru/showphoto.php?photo=264408",
+          "relation": "same_specimen"
+        },
+        {
+          "label": "Bactrianumis, product 5898",
+          "url": "https://bactrianumis.com/product/central-asia-ae-unit-pendjikend-lady-nana/",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Primary Zeno record; description and classification preserved in the source.",
+      "catalogue": "",
+      "facets": [
+        "Panch tamgha · 潘治徽记"
+      ],
+      "duplicateStatus": "same_specimen_explicitly_identified"
+    },
+    {
+      "id": "zeno-264184",
+      "familyId": "lady-nana",
+      "variantId": null,
+      "title": "Zeno 264184",
+      "weightG": 2.97,
+      "diameterMm": 21.0,
+      "images": [
+        {
+          "id": "z264184",
+          "path": "/coins/zeno/264184.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/3106/346356457457.jpg",
+          "width": 2404,
+          "height": 1264,
+          "credit": "Zeno.ru · Z-264184",
+          "view": "source photograph"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 264184",
+          "url": "https://www.zeno.ru/showphoto.php?photo=264184",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Source reports “Unearthed in N. Afghanistan”. This is an unverified regional find report with no specific site, coordinates or archaeological context. No findspot marker is inferred.",
+      "catalogue": "",
+      "facets": [
+        "Panch tamgha · 潘治徽记"
+      ],
+      "duplicateStatus": "not_exhaustively_checked"
+    },
+    {
+      "id": "zeno-227845",
+      "familyId": "lady-nana",
+      "variantId": null,
+      "title": "Zeno 227845",
+      "weightG": 1.45,
+      "diameterMm": 18.0,
+      "images": [
+        {
+          "id": "z227845",
+          "path": "/coins/zeno/227845.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/3106/abdi.jpg",
+          "width": 973,
+          "height": 480,
+          "credit": "Zeno.ru · Z-227845",
+          "view": "source photograph"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 227845",
+          "url": "https://www.zeno.ru/showphoto.php?photo=227845",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Primary Zeno record; description and classification preserved in the source.",
+      "catalogue": "",
+      "facets": [
+        "Panch tamgha · 潘治徽记"
+      ],
+      "duplicateStatus": "not_exhaustively_checked"
+    },
+    {
+      "id": "zeno-182898",
+      "familyId": "lady-nana",
+      "variantId": "nana-sm769",
+      "title": "Zeno 182898",
+      "weightG": 1.1,
+      "diameterMm": 17.0,
+      "images": [
+        {
+          "id": "z182898",
+          "path": "/coins/zeno/182898.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/3106/20172.jpg",
+          "width": 2436,
+          "height": 1256,
+          "credit": "Zeno.ru · Z-182898",
+          "view": "source photograph"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 182898",
+          "url": "https://www.zeno.ru/showphoto.php?photo=182898",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Smirnova #769.",
+      "catalogue": "Smirnova 769 (source title: Type II)",
+      "facets": [
+        "Panch tamgha · 潘治徽记"
+      ],
+      "duplicateStatus": "not_exhaustively_checked"
+    },
+    {
+      "id": "zeno-130578",
+      "familyId": "lady-nana",
+      "variantId": null,
+      "title": "Zeno 130578",
+      "weightG": null,
+      "diameterMm": null,
+      "images": [
+        {
+          "id": "z130578",
+          "path": "/coins/zeno/130578.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/3106/sipsogd.jpg",
+          "width": 512,
+          "height": 255,
+          "credit": "Zeno.ru · Z-130578",
+          "view": "source photograph"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 130578",
+          "url": "https://www.zeno.ru/showphoto.php?photo=130578",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Penjikent, Nana, lady of Panch. Smir type 3: # 834-996",
+      "catalogue": "Smirnova type 3, 834–996 (broad group)",
+      "facets": [
+        "Panch tamgha · 潘治徽记"
+      ],
+      "duplicateStatus": "not_exhaustively_checked"
+    },
+    {
+      "id": "zeno-81165",
+      "familyId": "lady-nana",
+      "variantId": null,
+      "title": "Zeno 81165",
+      "weightG": 1.58,
+      "diameterMm": 19.0,
+      "images": [
+        {
+          "id": "z81165",
+          "path": "/coins/zeno/81165.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/3106/Bl_O8U_Wk_KGrHqQH-DwEtsGKydGoBLb_htltB_12.jpg",
+          "width": 1283,
+          "height": 653,
+          "credit": "Zeno.ru · Z-81165",
+          "view": "source photograph"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 81165",
+          "url": "https://www.zeno.ru/showphoto.php?photo=81165",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Domain Panch / Penjikent, lady Nana. Obv. Tamgha frames square hole. Rev.- The sogdian legend reads: \"pncy nn δβnpnwh\" (Nana, lady of Panch ( or Nana, city goddess of Penjikent?)) Mint: Penjikent Date: 8th cent. AD Metal: AE, cast.",
+      "catalogue": "",
+      "facets": [
+        "Panch tamgha · 潘治徽记"
+      ],
+      "duplicateStatus": "not_exhaustively_checked"
+    },
+    {
+      "id": "zeno-77712",
+      "familyId": "lady-nana",
+      "variantId": "nana-sm769",
+      "title": "Zeno 77712",
+      "weightG": 1.6,
+      "diameterMm": null,
+      "images": [
+        {
+          "id": "z77712",
+          "path": "/coins/zeno/77712.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/3106/86526.jpg",
+          "width": 763,
+          "height": 398,
+          "credit": "Zeno.ru · Z-77712",
+          "view": "source photograph"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 77712",
+          "url": "https://www.zeno.ru/showphoto.php?photo=77712",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Ex Stephen Album rare coins: Auction 7: Lot 97 SOGDIANA: Queen Nana, 709-722, AE cash (1.60g), Panchekanth. Smirnova-769. Circular semi-italic Sogdian legend / Tamgha of Panchekanth type around square hole.",
+      "catalogue": "Smirnova 769",
+      "facets": [
+        "Panch tamgha · 潘治徽记",
+        "Semi-italic legend · 半草书铭文"
+      ],
+      "duplicateStatus": "not_exhaustively_checked"
+    },
+    {
+      "id": "zeno-57887",
+      "familyId": "lady-nana",
+      "variantId": null,
+      "title": "Zeno 57887",
+      "weightG": 2.64,
+      "diameterMm": 18.2,
+      "images": [
+        {
+          "id": "z57887",
+          "path": "/coins/zeno/57887.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/3106/SOG-Panch-Nana-01ab.jpg",
+          "width": 923,
+          "height": 448,
+          "credit": "Zeno.ru · Z-57887",
+          "view": "source photograph"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 57887",
+          "url": "https://www.zeno.ru/showphoto.php?photo=57887",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "rather similar to Smirnova 834-36",
+      "catalogue": "Smirnova 834–836 comparison",
+      "facets": [
+        "Panch tamgha · 潘治徽记"
+      ],
+      "duplicateStatus": "not_exhaustively_checked"
+    },
+    {
+      "id": "zeno-54032",
+      "familyId": "lady-nana",
+      "variantId": "nana-sm894",
+      "title": "Zeno 54032",
+      "weightG": 1.35,
+      "diameterMm": 17.8,
+      "images": [
+        {
+          "id": "z54032",
+          "path": "/coins/zeno/54032.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/3106/is-1356_Pendjikent_Lady_Nana_Smirnova_844.jpg",
+          "width": 1080,
+          "height": 537,
+          "credit": "Zeno.ru · Z-54032",
+          "view": "source photograph"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 54032",
+          "url": "https://www.zeno.ru/showphoto.php?photo=54032",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Smirnova 894",
+      "catalogue": "Smirnova 894",
+      "facets": [
+        "Panch tamgha · 潘治徽记"
+      ],
+      "duplicateStatus": "not_exhaustively_checked"
+    },
+    {
+      "id": "zeno-54031",
+      "familyId": "lady-nana",
+      "variantId": "nana-sm890",
+      "title": "Zeno 54031",
+      "weightG": 2.2,
+      "diameterMm": 17.2,
+      "images": [
+        {
+          "id": "z54031",
+          "path": "/coins/zeno/54031.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/3106/is-1355_Pendjikent_Lady_Nana_Smirnova_844.jpg",
+          "width": 1054,
+          "height": 603,
+          "credit": "Zeno.ru · Z-54031",
+          "view": "source photograph"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 54031",
+          "url": "https://www.zeno.ru/showphoto.php?photo=54031",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Smirnova 890",
+      "catalogue": "Smirnova 890",
+      "facets": [
+        "Panch tamgha · 潘治徽记"
+      ],
+      "duplicateStatus": "not_exhaustively_checked"
+    },
+    {
+      "id": "zeno-29609",
+      "familyId": "lady-nana",
+      "variantId": "nana-sm834",
+      "title": "Zeno 29609",
+      "weightG": 1.9,
+      "diameterMm": 17.9,
+      "images": [
+        {
+          "id": "z29609",
+          "path": "/coins/zeno/29609.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/3106/Nana.jpg",
+          "width": 1368,
+          "height": 728,
+          "credit": "Zeno.ru · Z-29609",
+          "view": "source photograph"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 29609",
+          "url": "https://www.zeno.ru/showphoto.php?photo=29609",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Smirnova #834. Seems to be first Nana's coin in the database...",
+      "catalogue": "Smirnova 834",
+      "facets": [
+        "Panch tamgha · 潘治徽记"
+      ],
+      "duplicateStatus": "not_exhaustively_checked"
+    },
+    {
+      "id": "zeno-30750",
+      "familyId": "lady-nana",
+      "variantId": null,
+      "title": "Zeno 30750",
+      "weightG": 1.1,
+      "diameterMm": 16.8,
+      "images": [
+        {
+          "id": "z30750",
+          "path": "/coins/zeno/30750.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/3106/Nana2.jpg",
+          "width": 1316,
+          "height": 688,
+          "credit": "Zeno.ru · Z-30750",
+          "view": "source photograph"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 30750",
+          "url": "https://www.zeno.ru/showphoto.php?photo=30750",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Different legend in compare with my #29609. On obverse: Pncy nnδβ’mpnh The difference in sense is incomprehensible. Smirnova #769.",
+      "catalogue": "",
+      "facets": [
+        "Panch tamgha · 潘治徽记"
+      ],
+      "duplicateStatus": "not_exhaustively_checked"
+    },
+    {
+      "id": "cng611-576",
+      "familyId": "lady-nana",
+      "variantId": "nana-sh245",
+      "title": "CNG E611, lot 576",
+      "weightG": 1.67,
+      "diameterMm": 19,
+      "images": [
+        {
+          "id": "cng611-576-photo",
+          "path": "/coins/nana/cng611-576.jpg",
+          "sourceUrl": "https://images4-cdn.auctionmobility.com/is3/auctionmobility-static4/IedP-4-N10R/4-LGIJRO/576_1.jpg",
+          "width": 3000,
+          "height": 1440,
+          "credit": "Classical Numismatic Group, Electronic Auction 611, lot 576",
+          "view": "both as arranged in source"
+        },
+        {
+          "id": "cng611-576-alternate",
+          "path": "/coins/nana/cng611-576-alternate.jpg",
+          "sourceUrl": "https://images4-cdn.auctionmobility.com/is3/auctionmobility-static4/vnno-4-N10R/4-LGIJRO/576_2.jpg",
+          "width": 2303,
+          "height": 1058,
+          "credit": "Classical Numismatic Group, Electronic Auction 611, lot 576",
+          "view": "both as arranged in source"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Classical Numismatic Group, Electronic Auction 611, lot 576",
+          "url": "https://auctions.cngcoins.com/lots/view/4-LGIJRO/local-issues-panjakent-lady-nana-7th-8th-century-19mm-167-g-3h-cash-type-near-vf",
+          "relation": "same_specimen"
+        },
+        {
+          "label": "Zeno 81165",
+          "url": "https://www.zeno.ru/showphoto.php?photo=81165",
+          "relation": "comparison"
+        }
+      ],
+      "description": "Two source photographs show the same rough-edged specimen with identical obverse crack and deposits. Gray and white background versions are duplicates.",
+      "catalogue": "Shagalov Variant 2, 245",
+      "facets": [
+        "Panch tamgha · 潘治徽记"
+      ],
+      "duplicateStatus": "not_exhaustively_checked"
+    },
+    {
+      "id": "sarc28-145",
+      "familyId": "lady-nana",
+      "variantId": "nana-sm846",
+      "title": "SARC 28, lot 145",
+      "weightG": 1.61,
+      "diameterMm": null,
+      "images": [
+        {
+          "id": "sarc28-145-photo",
+          "path": "/coins/nana/sarc28-145.jpg",
+          "sourceUrl": "https://www.stevealbum.com/pdfs/auc28sesAweb.pdf",
+          "width": 458,
+          "height": 226,
+          "credit": "Stephen Album Rare Coins, Auction 28, lot 145",
+          "view": "both as arranged in source"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Stephen Album Rare Coins, Auction 28, lot 145",
+          "url": "https://www.sarc.auction/PENDJIKENT-Lady-Nana-ca-709-728-AE-cash-1-61g-F-VF_i27041464",
+          "relation": "same_specimen"
+        },
+        {
+          "label": "Zeno 81165",
+          "url": "https://www.zeno.ru/showphoto.php?photo=81165",
+          "relation": "comparison"
+        },
+        {
+          "label": "Numista 197126",
+          "url": "https://en.numista.com/197126",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Tamgha of Pendjikent around square hole",
+      "catalogue": "Smirnova-846ff",
+      "facets": [
+        "Panch tamgha · 潘治徽记"
+      ],
+      "duplicateStatus": "not_exhaustively_checked"
+    },
+    {
+      "id": "sarc28-146",
+      "familyId": "lady-nana",
+      "variantId": null,
+      "title": "SARC 28, lot 146",
+      "weightG": 1.4,
+      "diameterMm": null,
+      "images": [
+        {
+          "id": "sarc28-146-photo",
+          "path": "/coins/nana/sarc28-146.jpg",
+          "sourceUrl": "https://www.stevealbum.com/pdfs/auc28sesAweb.pdf",
+          "width": 472,
+          "height": 233,
+          "credit": "Stephen Album Rare Coins, Auction 28, lot 146",
+          "view": "both as arranged in source"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Stephen Album Rare Coins, Auction 28, lot 146",
+          "url": "https://www.sarc.auction/PENDJIKENT-Lady-Nana-709-722-AE-cash-1-40g-F_i27041465",
+          "relation": "same_specimen"
+        },
+        {
+          "label": "Zeno 77712",
+          "url": "https://www.zeno.ru/showphoto.php?photo=77712",
+          "relation": "comparison"
+        }
+      ],
+      "description": "Tamgha of Pendjikent around square hole",
+      "catalogue": "",
+      "facets": [
+        "Panch tamgha · 潘治徽记",
+        "Semi-italic legend · 半草书铭文"
+      ],
+      "duplicateStatus": "not_exhaustively_checked"
+    },
+    {
+      "id": "sarc22-55",
+      "familyId": "lady-nana",
+      "variantId": "nana-sm834",
+      "title": "SARC 22, lot 55",
+      "weightG": 1.91,
+      "diameterMm": null,
+      "images": [
+        {
+          "id": "sarc22-55-photo",
+          "path": "/coins/nana/sarc22-55.jpg",
+          "sourceUrl": "https://www.stevealbum.com/pdfs/auc22web.pdf",
+          "width": 450,
+          "height": 206,
+          "credit": "Stephen Album Rare Coins, Auction 22, lot 55",
+          "view": "both as arranged in source"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Stephen Album Rare Coins, Auction 22, lot 55",
+          "url": "https://www.numisbids.com/sale/1076/lot/55",
+          "relation": "same_specimen"
+        },
+        {
+          "label": "Zeno 130578",
+          "url": "https://www.zeno.ru/showphoto.php?photo=130578",
+          "relation": "comparison"
+        }
+      ],
+      "description": "The non-square-looking hole on reverse corresponds to a worn/corroded hole; exact matching catalogue image verified.",
+      "catalogue": "Smirnova 834 ff",
+      "facets": [
+        "Panch tamgha · 潘治徽记"
+      ],
+      "duplicateStatus": "not_exhaustively_checked"
+    },
+    {
+      "id": "sarc52-1614",
+      "familyId": "lady-nana",
+      "variantId": "nana-sm846",
+      "title": "SARC 52, lot 1614",
+      "weightG": 1.88,
+      "diameterMm": null,
+      "images": [
+        {
+          "id": "sarc52-1614-photo",
+          "path": "/coins/nana/sarc52-1614.jpg",
+          "sourceUrl": "https://bactrianumis.com/wp-content/uploads/2026/02/Screenshot_20260209_055343_Chrome.jpg",
+          "width": 1390,
+          "height": 680,
+          "credit": "Stephen Album Rare Coins, Auction 52, lot 1614; catalogue screenshot hosted by Bactrianumis",
+          "view": "both as arranged in source"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Stephen Album Rare Coins, Auction 52, lot 1614",
+          "url": "https://www.numisbids.com/sale/9278/lot/1614",
+          "relation": "same_specimen"
+        },
+        {
+          "label": "Zeno 81165",
+          "url": "https://www.zeno.ru/showphoto.php?photo=81165",
+          "relation": "comparison"
+        }
+      ],
+      "description": "Distinct from Bactrianumis product coin: asymmetric hole projections and very different obverse/reverse deposits. Do not label this photo Zeno264408.",
+      "catalogue": "Smirnova-846ff",
+      "facets": [
+        "Panch tamgha · 潘治徽记"
+      ],
+      "duplicateStatus": "not_exhaustively_checked"
+    },
+    {
+      "id": "sogdcoins-es28",
+      "familyId": "lady-nana",
+      "variantId": "nana-sm769",
+      "title": "Sogdcoins ES 28",
+      "weightG": null,
+      "diameterMm": null,
+      "images": [
+        {
+          "id": "sogdcoins-es28-photo",
+          "path": "/coins/nana/sogdcoins-es28.jpg",
+          "sourceUrl": "https://sogdcoins.narod.ru/sogdiana/e_pic/es28.jpg",
+          "width": 300,
+          "height": 150,
+          "credit": "Sogdcoins online catalogue, Eastern Sogdiana ES 28",
+          "view": "both as arranged in source"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Sogdcoins online catalogue, Eastern Sogdiana ES 28",
+          "url": "https://sogdcoins.narod.ru/english/sogdiana/e_coins4.html",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "300×150 source photo. Distinct within this set; low-resolution image limits precise duplicate checking against future imports.",
+      "catalogue": "Smirnova 769",
+      "facets": [
+        "Panch tamgha · 潘治徽记"
+      ],
+      "duplicateStatus": "not_exhaustively_checked"
+    }
+  ],
+  "places": [
+    {
+      "id": "panjakent",
+      "name": "Panjakent / Panch",
+      "zh": "片治肯特／潘治",
+      "coordinates": [
+        67.619444,
+        39.486944
+      ],
+      "kind": "site",
+      "precision": "UNESCO approximate site centre",
+      "source": "https://whc.unesco.org/en/tentativelists/5790/",
+      "note": "Ancient Penjikent. UNESCO coordinates: 39°29′13″N, 67°37′10″E. Historical context; not a type-specific findspot.",
+      "minZoom": 4
+    },
+    {
+      "id": "samarkand",
+      "name": "Samarkand / Afrasiab",
+      "zh": "撒马尔罕／阿弗拉西阿卜",
+      "coordinates": [
+        66.9877,
+        39.6713
+      ],
+      "kind": "site",
+      "precision": "Approximate archaeological-site anchor",
+      "source": "https://whc.unesco.org/en/list/603/",
+      "note": "Ancient Samarkand. Coordinates are an editorial site anchor, not a mint or excavated coin context.",
+      "minZoom": 4
+    },
+    {
+      "id": "suyab",
+      "name": "Suyab / Ak-Beshim",
+      "zh": "碎叶／阿克别希姆",
+      "coordinates": [
+        75.2,
+        42.805
+      ],
+      "kind": "site",
+      "precision": "Approximate site anchor",
+      "source": "https://whc.unesco.org/en/list/1442/",
+      "note": "Ak-Beshim archaeological site, identified with Suyab. City anchor for exploration of Semirechye; no individual mint attribution asserted.",
+      "minZoom": 4
+    },
+    {
+      "id": "navekat",
+      "name": "Navekat / Krasnaya Rechka",
+      "zh": "新城／红河古城",
+      "coordinates": [
+        74.951,
+        42.854
+      ],
+      "kind": "site",
+      "precision": "Approximate site anchor",
+      "source": "https://whc.unesco.org/en/list/1442/",
+      "note": "Krasnaya Rechka archaeological site, associated with Navekat. Cultural context; coin-specific find context remains to be entered.",
+      "minZoom": 6
+    },
+    {
+      "id": "balasagun",
+      "name": "Balasagun / Burana",
+      "zh": "八剌沙衮／布拉纳",
+      "coordinates": [
+        75.25,
+        42.746
+      ],
+      "kind": "site",
+      "precision": "Approximate site anchor",
+      "source": "https://whc.unesco.org/en/list/1442/",
+      "note": "Burana archaeological site. Later medieval context; not assumed to be an issuing city in every timeline year.",
+      "minZoom": 6
+    },
+    {
+      "id": "taraz",
+      "name": "Taraz",
+      "zh": "怛逻斯",
+      "coordinates": [
+        71.366,
+        42.899
+      ],
+      "kind": "city",
+      "precision": "Approximate historic city centre",
+      "source": "https://en.unesco.org/silkroad/content/taraz",
+      "note": "Historic city in the Talas valley. Orientation point; no type-specific findspot asserted.",
+      "minZoom": 4
+    },
+    {
+      "id": "bukhara",
+      "name": "Bukhara",
+      "zh": "布哈拉",
+      "coordinates": [
+        64.414,
+        39.774
+      ],
+      "kind": "city",
+      "precision": "Approximate historic city centre",
+      "source": "https://whc.unesco.org/en/list/602/",
+      "note": "Historic Bukhara. Orientation point, separate from an issuing or findspot claim.",
+      "minZoom": 4
+    },
+    {
+      "id": "paikend",
+      "name": "Paikend",
+      "zh": "佩肯特",
+      "coordinates": [
+        64.01,
+        39.58
+      ],
+      "kind": "site",
+      "precision": "Approximate site anchor",
+      "source": "https://whc.unesco.org/en/list/1675/",
+      "note": "Paikend archaeological site in the Bukhara oasis. Exact site geometry and coin assemblages await entry.",
+      "minZoom": 6
+    },
+    {
+      "id": "bunjikat",
+      "name": "Bunjikat",
+      "zh": "本治肯特",
+      "coordinates": [
+        69.007375,
+        39.916242
+      ],
+      "kind": "site",
+      "precision": "UNESCO approximate site centre",
+      "source": "https://whc.unesco.org/en/tentativelists/5790/",
+      "note": "Ancient Bunjikat, Shahristan. Coordinates transcribed from the UNESCO tentative-list entry.",
+      "minZoom": 5
+    },
+    {
+      "id": "chach",
+      "name": "Chach / Tashkent",
+      "zh": "赭时／石国",
+      "coordinates": [
+        69.24,
+        41.32
+      ],
+      "kind": "city",
+      "precision": "Modern-city orientation anchor",
+      "source": "https://www.iranicaonline.org/articles/cac/",
+      "note": "Chach regional orientation. This modern-city anchor does not locate a particular ancient mint.",
+      "minZoom": 4
+    },
+    {
+      "id": "balkh",
+      "name": "Balkh",
+      "zh": "缚喝／巴尔赫",
+      "coordinates": [
+        66.897,
+        36.759
+      ],
+      "kind": "city",
+      "precision": "Approximate historic city centre",
+      "source": "https://whc.unesco.org/en/tentativelists/1928/",
+      "note": "Ancient Balkh. Orientation for northern Afghanistan; a regional find report is not assigned to this city.",
+      "minZoom": 4
+    },
+    {
+      "id": "kucha",
+      "name": "Kucha / Qiuci",
+      "zh": "龟兹／库车",
+      "coordinates": [
+        82.96,
+        41.72
+      ],
+      "kind": "city",
+      "precision": "Modern-city orientation anchor",
+      "source": "https://artsandculture.google.com/asset/dali-yuanbao-coin/VgF0gWE8yf7C9w?hl=en",
+      "note": "Kucha attribution in British Museum coin record. Coordinates mark the modern city for orientation, not a documented mint or findspot.",
+      "minZoom": 4
+    },
+    {
+      "id": "kashgar",
+      "name": "Kashgar",
+      "zh": "疏勒／喀什",
+      "coordinates": [
+        75.99,
+        39.47
+      ],
+      "kind": "city",
+      "precision": "Modern-city orientation anchor",
+      "source": "https://en.unesco.org/silkroad/content/kashgar",
+      "note": "Silk Road city for orientation. Historical settlement extent is not reconstructed.",
+      "minZoom": 4
+    },
+    {
+      "id": "khotan",
+      "name": "Khotan",
+      "zh": "于阗／和田",
+      "coordinates": [
+        79.92,
+        37.11
+      ],
+      "kind": "city",
+      "precision": "Modern-city orientation anchor",
+      "source": "https://www.iranicaonline.org/articles/khotan-i-pre-islamic-history/",
+      "note": "Khotan oasis orientation point. The exact ancient settlement and mint are separate research questions.",
+      "minZoom": 4
+    }
+  ],
+  "evidence": [],
+  "areas": [],
+  "scopeCensus": [
+    {
+      "parent": "503",
+      "categoryId": "801",
+      "title": "Khwarizm",
+      "url": "https://www.zeno.ru/showgallery.php?cat=801",
+      "sourcePhotoCount": 644,
+      "scopeChecked": false,
+      "importedImages": 0,
+      "date": "2026-09-16",
+      "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
+    },
+    {
+      "parent": "503",
+      "categoryId": "800",
+      "title": "Soghd",
+      "url": "https://www.zeno.ru/showgallery.php?cat=800",
+      "sourcePhotoCount": 1769,
+      "scopeChecked": false,
+      "importedImages": 0,
+      "date": "2026-09-16",
+      "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
+    },
+    {
+      "parent": "503",
+      "categoryId": "870",
+      "title": "Chach",
+      "url": "https://www.zeno.ru/showgallery.php?cat=870",
+      "sourcePhotoCount": 667,
+      "scopeChecked": false,
+      "importedImages": 0,
+      "date": "2026-09-16",
+      "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
+    },
+    {
+      "parent": "503",
+      "categoryId": "803",
+      "title": "Ferghana",
+      "url": "https://www.zeno.ru/showgallery.php?cat=803",
+      "sourcePhotoCount": 27,
+      "scopeChecked": false,
+      "importedImages": 0,
+      "date": "2026-09-16",
+      "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
+    },
+    {
+      "parent": "503",
+      "categoryId": "804",
+      "title": "Otrar",
+      "url": "https://www.zeno.ru/showgallery.php?cat=804",
+      "sourcePhotoCount": 31,
+      "scopeChecked": false,
+      "importedImages": 0,
+      "date": "2026-09-16",
+      "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
+    },
+    {
+      "parent": "503",
+      "categoryId": "2141",
+      "title": "Semirech'e",
+      "url": "https://www.zeno.ru/showgallery.php?cat=2141",
+      "sourcePhotoCount": 569,
+      "scopeChecked": false,
+      "importedImages": 0,
+      "date": "2026-09-16",
+      "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
+    },
+    {
+      "parent": "503",
+      "categoryId": "22493",
+      "title": "Sayram",
+      "url": "https://www.zeno.ru/showgallery.php?cat=22493",
+      "sourcePhotoCount": 31,
+      "scopeChecked": false,
+      "importedImages": 0,
+      "date": "2026-09-16",
+      "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
+    },
+    {
+      "parent": "503",
+      "categoryId": "2142",
+      "title": "Northern Tokharistan & Badakhshan",
+      "url": "https://www.zeno.ru/showgallery.php?cat=2142",
+      "sourcePhotoCount": 329,
+      "scopeChecked": false,
+      "importedImages": 0,
+      "date": "2026-09-16",
+      "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
+    },
+    {
+      "parent": "503",
+      "categoryId": "13698",
+      "title": "Mongolia/ Ordos Culture, including pseudo-money",
+      "url": "https://www.zeno.ru/showgallery.php?cat=13698",
+      "sourcePhotoCount": 20,
+      "scopeChecked": false,
+      "importedImages": 0,
+      "date": "2026-09-16",
+      "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
+    },
+    {
+      "parent": "503",
+      "categoryId": "14605",
+      "title": "Imitations of Chinese cash",
+      "url": "https://www.zeno.ru/showgallery.php?cat=14605",
+      "sourcePhotoCount": 12,
+      "scopeChecked": false,
+      "importedImages": 0,
+      "date": "2026-09-16",
+      "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
+    },
+    {
+      "parent": "503",
+      "categoryId": "14538",
+      "title": "Types under investigation",
+      "url": "https://www.zeno.ru/showgallery.php?cat=14538",
+      "sourcePhotoCount": 13,
+      "scopeChecked": false,
+      "importedImages": 0,
+      "date": "2026-09-16",
+      "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
+    },
+    {
+      "parent": "503",
+      "categoryId": "8585",
+      "title": "Modern fantasies, forgeries and doubtful coins",
+      "url": "https://www.zeno.ru/showgallery.php?cat=8585",
+      "sourcePhotoCount": 33,
+      "scopeChecked": false,
+      "importedImages": 0,
+      "date": "2026-09-16",
+      "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
+    },
+    {
+      "parent": "2141",
+      "categoryId": "795",
+      "title": "Turgesh, Runic tamgha",
+      "url": "https://www.zeno.ru/showgallery.php?cat=795",
+      "sourcePhotoCount": 254,
+      "scopeChecked": false,
+      "importedImages": 0,
+      "date": "2026-09-16",
+      "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
+    },
+    {
+      "parent": "2141",
+      "categoryId": "14859",
+      "title": "+  Qarluq Qaghan Köbäk(?), Runic {ä}r(?) and m(?)",
+      "url": "https://www.zeno.ru/showgallery.php?cat=14859",
+      "sourcePhotoCount": 12,
+      "scopeChecked": false,
+      "importedImages": 0,
+      "date": "2026-09-16",
+      "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
+    },
+    {
+      "parent": "2141",
+      "categoryId": "14905",
+      "title": "+  Inal Tegin(?), Runic {ä}r(?) and m(?), Soghdian prn(?)",
+      "url": "https://www.zeno.ru/showgallery.php?cat=14905",
+      "sourcePhotoCount": 10,
+      "scopeChecked": false,
+      "importedImages": 0,
+      "date": "2026-09-16",
+      "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
+    },
+    {
+      "parent": "2141",
+      "categoryId": "20257",
+      "title": "or  Yarug-kadin(?)",
+      "url": "https://www.zeno.ru/showgallery.php?cat=20257",
+      "sourcePhotoCount": 3,
+      "scopeChecked": false,
+      "importedImages": 0,
+      "date": "2026-09-16",
+      "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
+    },
+    {
+      "parent": "2141",
+      "categoryId": "799",
+      "title": ",  or  Ex. \"Tukhus\"",
+      "url": "https://www.zeno.ru/showgallery.php?cat=799",
+      "sourcePhotoCount": 62,
+      "scopeChecked": false,
+      "importedImages": 0,
+      "date": "2026-09-16",
+      "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
+    },
+    {
+      "parent": "2141",
+      "categoryId": "11583",
+      "title": "General Ir Chor Irti (?)",
+      "url": "https://www.zeno.ru/showgallery.php?cat=11583",
+      "sourcePhotoCount": 3,
+      "scopeChecked": false,
+      "importedImages": 0,
+      "date": "2026-09-16",
+      "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
+    },
+    {
+      "parent": "2141",
+      "categoryId": "14890",
+      "title": "or  Yaghlaqar clan of Türks",
+      "url": "https://www.zeno.ru/showgallery.php?cat=14890",
+      "sourcePhotoCount": 11,
+      "scopeChecked": false,
+      "importedImages": 0,
+      "date": "2026-09-16",
+      "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
+    },
+    {
+      "parent": "2141",
+      "categoryId": "11003",
+      "title": "Imitations of Chinese cash",
+      "url": "https://www.zeno.ru/showgallery.php?cat=11003",
+      "sourcePhotoCount": 172,
+      "scopeChecked": false,
+      "importedImages": 0,
+      "date": "2026-09-16",
+      "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
+    },
+    {
+      "parent": "2141",
+      "categoryId": "796",
+      "title": "AE cash, temp. Yelü Dashi (1124-1144), w. title malik ārām yīnāl qaraj",
+      "url": "https://www.zeno.ru/showgallery.php?cat=796",
+      "sourcePhotoCount": 0,
+      "scopeChecked": false,
+      "importedImages": 0,
+      "date": "2026-09-16",
+      "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
+    },
+    {
+      "parent": "2141",
+      "categoryId": "1251",
+      "title": "Other",
+      "url": "https://www.zeno.ru/showgallery.php?cat=1251",
+      "sourcePhotoCount": 31,
+      "scopeChecked": false,
+      "importedImages": 0,
+      "date": "2026-09-16",
+      "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
+    }
+  ],
+  "coverage": {
+    "categoryUrl": "https://www.zeno.ru/showgallery.php?cat=3106",
+    "zenoRecordCount": 14,
+    "importedZenoRecords": 14,
+    "images": 34,
+    "scope": "Lady Nana category 3106 only; corpus-wide comparison pending",
+    "date": "2026-09-16",
+    "status": "snapshot"
+  }
+}
