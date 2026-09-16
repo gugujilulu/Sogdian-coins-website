@@ -1,0 +1,124 @@
+{
+  "version": "1.0.0",
+  "last_checked_at": "2026-09-16",
+  "principle": "Store source assertions separately from canonical values. Reliability is claim-dependent, not a single source score.",
+  "source_kinds": [
+    "academic_catalogue",
+    "peer_reviewed_article",
+    "monograph",
+    "scholarly_reference",
+    "archaeological_report",
+    "museum_database",
+    "auction_catalogue",
+    "specialist_database",
+    "community_database",
+    "dealer_record",
+    "private_collection_record",
+    "web_reference"
+  ],
+  "verification_statuses": [
+    "directly_read",
+    "directly_checked",
+    "partly_read",
+    "metadata_only",
+    "reported_by_source",
+    "unverified"
+  ],
+  "claim_fields": [
+    "type_identity",
+    "attribution",
+    "date",
+    "legend_reading",
+    "mint_or_place_of_issue",
+    "findspot",
+    "hoard_context",
+    "material",
+    "weight",
+    "diameter",
+    "specimen_identity",
+    "image_identity",
+    "provenance_chain",
+    "rights_or_license"
+  ],
+  "source_fit_guidance": {
+    "academic_catalogue_or_peer_reviewed": [
+      "type_identity",
+      "attribution",
+      "date",
+      "legend_reading",
+      "bibliographic_crosswalk"
+    ],
+    "archaeological_report": [
+      "findspot",
+      "stratigraphy",
+      "hoard_context",
+      "associated_material",
+      "circulation_evidence"
+    ],
+    "museum_database": [
+      "inventory_identity",
+      "measurements",
+      "collection_provenance",
+      "specimen_image"
+    ],
+    "auction_catalogue": [
+      "specimen_image",
+      "measurements",
+      "sale_provenance",
+      "external_record_identity"
+    ],
+    "specialist_database": [
+      "indexing",
+      "catalogue_crosswalk",
+      "discovery_of_candidates"
+    ],
+    "community_database": [
+      "candidate_discovery",
+      "specimen_image",
+      "reported_measurements",
+      "cross_reference"
+    ],
+    "dealer_or_private": [
+      "specimen_discovery",
+      "image",
+      "reported_measurements",
+      "reported_provenance"
+    ]
+  },
+  "required_assertion_fields": [
+    "assertion_id",
+    "entity_id",
+    "claim_field",
+    "value_original",
+    "value_normalized",
+    "source_id",
+    "source_locator",
+    "verification_status",
+    "claim_confidence",
+    "extraction_method",
+    "review_status",
+    "retrieved_at"
+  ],
+  "evidence_lineage_fields": [
+    "derived_from_source_id",
+    "cites_source_id",
+    "independence_group",
+    "lineage_note"
+  ],
+  "independence_rule": "Repeated claims that ultimately derive from the same publication/catalogue belong to one evidentiary lineage and must not be counted as independent corroboration.",
+  "image_rule": "Credit/uploader, rights status, rights source URL, source image URL and local file/hash are distinct fields. A source terms page is not an open license.",
+  "canonicalization_rule": "Canonical values may remain unresolved. Competing attributions and compatible differences in granularity are preserved rather than flattened.",
+  "confidence_values": [
+    "certain",
+    "probable",
+    "possible",
+    "disputed",
+    "unassessed"
+  ],
+  "extraction_methods": [
+    "manual",
+    "machine_parsed",
+    "imported",
+    "ai_assisted_review"
+  ]
+}

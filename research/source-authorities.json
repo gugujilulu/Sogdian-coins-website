@@ -1,0 +1,131 @@
+{
+  "version": "1.0.0",
+  "last_checked_at": "2026-09-16",
+  "sources": [
+    {
+      "id": "iicas-2024",
+      "kind": "academic_catalogue",
+      "title": "A Catalogue of Sogdian Coin Legends and Countermarks of Central Asia",
+      "authors": [
+        "Alisher Begmatov",
+        "Gaybulla Boboyorov",
+        "Bobur Goyibov",
+        "Alexey Kulish",
+        "Pavel Lurje",
+        "Aleksandr Naymark"
+      ],
+      "year": 2024,
+      "url": "https://iicas.int/book/177",
+      "verification_status": "directly_checked_metadata_and_scope",
+      "independence_group": "iicas-2024"
+    },
+    {
+      "id": "iranica-turko-sogdian",
+      "kind": "scholarly_reference",
+      "title": "Turko-Sogdian Coinage",
+      "authors": [
+        "Larissa Baratova"
+      ],
+      "url": "https://www.iranicaonline.org/articles/turko-sogdian-coinage/",
+      "verification_status": "directly_read",
+      "independence_group": "baratova-iranica"
+    },
+    {
+      "id": "sogdcoins",
+      "kind": "specialist_database",
+      "title": "Coins of Central Asia",
+      "url": "https://sogdcoins.narod.ru/english/index.html",
+      "verification_status": "directly_checked",
+      "independence_group": "sogdcoins",
+      "lineage_note": "Frequently cites Smirnova, Kamyshev, Zeimal and other print sources; those upstream publications must be recorded separately when used as evidence."
+    },
+    {
+      "id": "zeno",
+      "kind": "community_database",
+      "title": "Zeno.Ru Oriental Coins Database",
+      "url": "https://www.zeno.ru/",
+      "verification_status": "directly_checked_for_cached_records",
+      "independence_group": "zeno"
+    },
+    {
+      "id": "numista",
+      "kind": "community_database",
+      "title": "Numista",
+      "url": "https://en.numista.com/",
+      "verification_status": "directly_checked_selected_records",
+      "independence_group": "numista",
+      "lineage_note": "Catalogue statements may derive from listed literature or Zeno; upstream literature must be preserved."
+    },
+    {
+      "id": "klimes-2004",
+      "kind": "peer_reviewed_article",
+      "title": "Xinjiang Cast Cash in the Collection of the Náprstek Museum, Prague",
+      "authors": [
+        "Ondřej Klimeš"
+      ],
+      "year": 2004,
+      "url": "https://publikace.nm.cz/periodicals/annals-of-the-naprstek-museum/25-1/xinjiang-cast-cash-in-the-collection-of-the-naprstek-museum-prague",
+      "verification_status": "directly_checked_metadata",
+      "independence_group": "klimes-2004"
+    },
+    {
+      "id": "belyaev-nastich-sidorovich-2023",
+      "kind": "peer_reviewed_article",
+      "title": "Apropos of so-called proto-Qarakhanid coins",
+      "authors": [
+        "Vladimir A. Belyaev",
+        "Vladimir N. Nastich",
+        "Sergey V. Sidorovich"
+      ],
+      "year": 2023,
+      "url": "https://it.numista.com/L153622",
+      "verification_status": "metadata_and_abstract_checked",
+      "independence_group": "bns-2023"
+    },
+    {
+      "id": "belyaev-sidorovich-2024-western-liao",
+      "kind": "peer_reviewed_article",
+      "title": "A Survey of Recent Advance in the Study of Western Liao Numismatics",
+      "authors": [
+        "Vladimir A. Belyaev",
+        "Sergey V. Sidorovich"
+      ],
+      "year": 2024,
+      "url": "https://independent.academia.edu/VladimirBelyaev/Numismatics%3A%20W.Liao%20Dynasty",
+      "verification_status": "abstract_checked",
+      "independence_group": "bs-2024-western-liao"
+    },
+    {
+      "id": "british-museum",
+      "kind": "museum_database",
+      "title": "British Museum collection records",
+      "url": "https://www.britishmuseum.org/collection",
+      "verification_status": "directly_checked_selected_record",
+      "independence_group": "british-museum"
+    },
+    {
+      "id": "cng",
+      "kind": "auction_catalogue",
+      "title": "Classical Numismatic Group",
+      "url": "https://www.cngcoins.com/",
+      "verification_status": "directly_checked_selected_records",
+      "independence_group": "cng"
+    },
+    {
+      "id": "stephen-album",
+      "kind": "auction_catalogue",
+      "title": "Stephen Album Rare Coins",
+      "url": "https://www.sarc.auction/",
+      "verification_status": "directly_checked_selected_records",
+      "independence_group": "stephen-album"
+    },
+    {
+      "id": "bactrianumis",
+      "kind": "specialist_database",
+      "title": "Bactrianumis",
+      "url": "https://www.bactrianumis.com/",
+      "verification_status": "directly_checked_selected_record",
+      "independence_group": "bactrianumis"
+    }
+  ]
+}

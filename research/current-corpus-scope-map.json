@@ -1,0 +1,210 @@
+{
+  "version": "1.0.0",
+  "base_commit": "c89bf6ef5ae68be872c62954cd706c7db20dce25",
+  "last_checked_at": "2026-09-16",
+  "summary": {
+    "families": 15,
+    "specimen_records": 270,
+    "images": 273,
+    "source_groups": 37
+  },
+  "family_scope_map": [
+    {
+      "family_id": "alp-tagh",
+      "title": "Alp Tagh",
+      "specimen_records": 1,
+      "zone": "core_central_asia",
+      "political_entity": "turgesh_circle",
+      "region": "Semirechye",
+      "inclusion_status": "included",
+      "coin_role": "local_issue",
+      "mapping_status": "scope_mapped",
+      "note": "Existing family retained; this mapping does not resolve catalogue-level or competing-attribution disputes."
+    },
+    {
+      "family_id": "arslan-kul-irkin",
+      "title": "Arslan Kul Irkin",
+      "specimen_records": 20,
+      "zone": "core_central_asia",
+      "political_entity": "turgesh_circle",
+      "region": "Semirechye",
+      "inclusion_status": "included",
+      "coin_role": "local_issue",
+      "mapping_status": "scope_mapped",
+      "note": "Existing family retained; this mapping does not resolve catalogue-level or competing-attribution disputes."
+    },
+    {
+      "family_id": "dali",
+      "title": "Dali yuanbao",
+      "specimen_records": 1,
+      "zone": "eastern_tianshan_tarim",
+      "political_entity": "kucha",
+      "region": "Qiuci / Kucha",
+      "inclusion_status": "included",
+      "coin_role": "local_issue",
+      "mapping_status": "scope_mapped",
+      "note": "Existing family retained; this mapping does not resolve catalogue-level or competing-attribution disputes."
+    },
+    {
+      "family_id": "es18a",
+      "title": "Tarhun: two-line inscription",
+      "specimen_records": 1,
+      "zone": "core_central_asia",
+      "political_entity": "sogdian_local",
+      "region": "Eastern Sogdiana / Samarkand",
+      "inclusion_status": "included",
+      "coin_role": "local_issue",
+      "mapping_status": "scope_mapped",
+      "note": "Existing family retained; this mapping does not resolve catalogue-level or competing-attribution disputes."
+    },
+    {
+      "family_id": "es19",
+      "title": "Gurek (Urak)",
+      "specimen_records": 1,
+      "zone": "core_central_asia",
+      "political_entity": "sogdian_local",
+      "region": "Eastern Sogdiana / Samarkand",
+      "inclusion_status": "included",
+      "coin_role": "local_issue",
+      "mapping_status": "scope_mapped",
+      "note": "Existing family retained; this mapping does not resolve catalogue-level or competing-attribution disputes."
+    },
+    {
+      "family_id": "lady-nana",
+      "title": "Lady Nana of Panch",
+      "specimen_records": 20,
+      "zone": "core_central_asia",
+      "political_entity": "sogdian_local",
+      "region": "Panch / Panjikent",
+      "inclusion_status": "included",
+      "coin_role": "local_issue",
+      "mapping_status": "scope_mapped",
+      "note": "Existing family retained; this mapping does not resolve catalogue-level or competing-attribution disputes."
+    },
+    {
+      "family_id": "sr14",
+      "title": "Master of Tukhuses",
+      "specimen_records": 1,
+      "zone": "core_central_asia",
+      "political_entity": "turgesh_circle",
+      "region": "Semirechye",
+      "inclusion_status": "included",
+      "coin_role": "local_issue",
+      "mapping_status": "scope_mapped",
+      "note": "Existing family retained; this mapping does not resolve catalogue-level or competing-attribution disputes."
+    },
+    {
+      "family_id": "sr20",
+      "title": "Arslan Bilge-kagan",
+      "specimen_records": 18,
+      "zone": "core_central_asia",
+      "political_entity": "turgesh_circle",
+      "region": "Semirechye",
+      "inclusion_status": "included",
+      "coin_role": "local_issue",
+      "mapping_status": "scope_mapped",
+      "note": "Existing family retained; this mapping does not resolve catalogue-level or competing-attribution disputes."
+    },
+    {
+      "family_id": "sr21",
+      "title": "So-called proto-Qarakhanid cash",
+      "specimen_records": 1,
+      "zone": "core_central_asia",
+      "political_entity": "unresolved_competing_attribution",
+      "region": "Semirechye",
+      "inclusion_status": "included",
+      "coin_role": "uncertain",
+      "mapping_status": "provisional_scope_map",
+      "note": "Legacy proto-Qarakhanid family. Preserve competing Qarakhanid, Karluk-transitional, Western Liao/Yelü Dashi and uncertain Central Asian attributions; no single issuer is canonical here."
+    },
+    {
+      "family_id": "sr3",
+      "title": "Vahshutava series",
+      "specimen_records": 23,
+      "zone": "core_central_asia",
+      "political_entity": "turgesh_circle",
+      "region": "Semirechye",
+      "inclusion_status": "included",
+      "coin_role": "local_issue",
+      "mapping_status": "scope_mapped",
+      "note": "Existing family retained; this mapping does not resolve catalogue-level or competing-attribution disputes."
+    },
+    {
+      "family_id": "sr6",
+      "title": "Türgesh kagan: tamgha reverse",
+      "specimen_records": 165,
+      "zone": "core_central_asia",
+      "political_entity": "turgesh_circle",
+      "region": "Semirechye",
+      "inclusion_status": "included",
+      "coin_role": "local_issue",
+      "mapping_status": "scope_mapped",
+      "note": "Existing family retained; this mapping does not resolve catalogue-level or competing-attribution disputes."
+    },
+    {
+      "family_id": "sr9",
+      "title": "Arslan Irkin / legacy Inal-Tegin",
+      "specimen_records": 15,
+      "zone": "core_central_asia",
+      "political_entity": "turgesh_circle",
+      "region": "Semirechye",
+      "inclusion_status": "included",
+      "coin_role": "uncertain",
+      "mapping_status": "provisional_scope_map",
+      "note": "Existing family retained; this mapping does not resolve catalogue-level or competing-attribution disputes."
+    },
+    {
+      "family_id": "un16",
+      "title": "Unattributed Sogdian-legend cash",
+      "specimen_records": 1,
+      "zone": "southern_and_southeastern",
+      "political_entity": "northern_tokharistan",
+      "region": "Eastern Sogdiana / Northern Tokharistan?",
+      "inclusion_status": "candidate",
+      "coin_role": "uncertain",
+      "mapping_status": "provisional_scope_map",
+      "note": "Existing family retained; this mapping does not resolve catalogue-level or competing-attribution disputes."
+    },
+    {
+      "family_id": "un22",
+      "title": "Unattributed tamgha and legend cash",
+      "specimen_records": 1,
+      "zone": "southern_and_southeastern",
+      "political_entity": "northern_tokharistan",
+      "region": "Northern Tokharistan?",
+      "inclusion_status": "candidate",
+      "coin_role": "uncertain",
+      "mapping_status": "provisional_scope_map",
+      "note": "Existing family retained; this mapping does not resolve catalogue-level or competing-attribution disputes."
+    },
+    {
+      "family_id": "un24",
+      "title": "Unattributed paired-tamgha cash",
+      "specimen_records": 1,
+      "zone": "core_central_asia",
+      "political_entity": "unattributed",
+      "region": "Central Asia, unassigned",
+      "inclusion_status": "candidate",
+      "coin_role": "uncertain",
+      "mapping_status": "provisional_scope_map",
+      "note": "Existing family retained; this mapping does not resolve catalogue-level or competing-attribution disputes."
+    }
+  ],
+  "zeno_795_held_records": {
+    "sourceRecords": 254,
+    "scopeReviewed": 254,
+    "atlasImportedSourceRecords": 239,
+    "newSpecimenRecordsExpected": 238,
+    "mergedIntoExistingSpecimens": 1,
+    "statusCounts": {
+      "atlas_imported": 239,
+      "context_only": 1,
+      "excluded_non_coin": 4,
+      "pending_aperture_scope": 1,
+      "pending_family_mapping": 1,
+      "pending_multi_specimen_split": 5,
+      "related_non_square_aperture": 3
+    }
+  },
+  "mapping_note": "This file maps current imported families into Scope v1 without changing the display export. It is not a claim that every record has final scholarly attribution."
+}

@@ -1,0 +1,562 @@
+{
+  "scope_version": "1.0.0",
+  "title": "Central Asian Square-Hole Coinage Atlas",
+  "definition": "Coinages participating in the Chinese-style square-hole cash tradition within Central Asia and related eastern inland regions, including physically perforated square-hole cash and unpierced or pseudo-aperture issues whose design/manufacture clearly derives from that tradition.",
+  "temporal_scope": {
+    "main_start_ce": 221,
+    "main_end_ce": 1643,
+    "pre_221_rule": "Records clearly belonging to Han, Eastern Han, or earlier phases remain related/excluded unless their issue or regional circulation falls materially within the main period.",
+    "post_1643_rule": "Qing, Dzungar and later/modern Xinjiang issues remain related/excluded unless a disputed date overlaps the main period.",
+    "boundary_disputes": "Retain original date text, normalized start/end, confidence, source, and separate issue/circulation/find/hoard dates."
+  },
+  "inclusion_model": {
+    "tradition": "Chinese-style square-hole cash tradition",
+    "included_perforation_status": [
+      "pierced",
+      "unpierced",
+      "pseudo_aperture",
+      "uncertain_when_tradition_is_clear"
+    ],
+    "coin_roles": [
+      "local_issue",
+      "local_imitation",
+      "imported_coin",
+      "uncertain"
+    ],
+    "inclusion_statuses": [
+      "included",
+      "candidate",
+      "related",
+      "excluded",
+      "unresolved"
+    ],
+    "notes": [
+      "A physical through-hole is not required when an unpierced/pseudo-aperture coin clearly belongs to the same cash-form tradition.",
+      "Post-cast drilled, suspension, decorative or unrelated holes do not qualify by themselves."
+    ]
+  },
+  "geographic_scope": [
+    {
+      "zone": "core_central_asia",
+      "places": [
+        "Sogdiana",
+        "Samarkand",
+        "Bukhara",
+        "Panjikent / Panch",
+        "Paykand",
+        "Samitan",
+        "Fansar",
+        "Pargar",
+        "Kesh",
+        "Nakhshab",
+        "Semirechye",
+        "Suyab / Ak-Beshim",
+        "Taraz",
+        "Chach / Tashkent",
+        "Ferghana",
+        "Ustrushana",
+        "Otrar",
+        "Sayram / Isfijab",
+        "Khwarazm"
+      ]
+    },
+    {
+      "zone": "southern_and_southeastern",
+      "places": [
+        "Northern Tokharistan",
+        "Bactria",
+        "Badakhshan",
+        "Vakhsh Valley",
+        "Kafirnigan Valley",
+        "Chaghaniyan",
+        "Balkh",
+        "Kobadian",
+        "Zabulistan / Arachosia where cash-tradition evidence exists"
+      ]
+    },
+    {
+      "zone": "eastern_tianshan_tarim",
+      "places": [
+        "Qiuci / Kucha",
+        "Kashgar",
+        "Khotan",
+        "Turfan",
+        "Beiting",
+        "Gaochang / Qocho",
+        "Beshbalik",
+        "Western Uyghur / Xizhou Huihu",
+        "Tarim Basin localities with explicit Central Asian cash-tradition evidence"
+      ]
+    },
+    {
+      "zone": "extended_contact_zone",
+      "places": [
+        "Mongolia",
+        "Ordos",
+        "Hexi Corridor / Gansu",
+        "Dunhuang",
+        "Yuan / Mongol-controlled regions"
+      ],
+      "rule": "Included in extended-zone statistics only with evidence of Central Asian production, find context, circulation, or explicit type relationship."
+    }
+  ],
+  "political_entities": [
+    {
+      "id": "sogdian_local",
+      "label": "Sogdian local polities",
+      "separate_issuers_required": true
+    },
+    {
+      "id": "western_turkic",
+      "label": "Western Turkic / Turko-Sogdian",
+      "separate_issuers_required": true
+    },
+    {
+      "id": "turgesh_circle",
+      "label": "Türgesh and related Semirechye circle",
+      "separate_issuers_required": true
+    },
+    {
+      "id": "qarluq",
+      "label": "Karluk / Qarluq candidate system",
+      "separate_from": [
+        "turgesh_circle",
+        "qarakhanid"
+      ]
+    },
+    {
+      "id": "eastern_uyghur",
+      "label": "Eastern Uyghur Khaganate",
+      "separate_from": [
+        "western_uyghur_qocho"
+      ]
+    },
+    {
+      "id": "western_uyghur_qocho",
+      "label": "Western Uyghur / Qocho / Xizhou Huihu",
+      "separate_from": [
+        "eastern_uyghur"
+      ]
+    },
+    {
+      "id": "qarakhanid",
+      "label": "Qarakhanid / Kara-Khanid",
+      "square_hole_only": true
+    },
+    {
+      "id": "western_liao",
+      "label": "Qara Khitai / Western Liao",
+      "separate_from": [
+        "qarakhanid"
+      ]
+    },
+    {
+      "id": "kucha",
+      "label": "Qiuci / Kucha local cash"
+    },
+    {
+      "id": "northern_tokharistan",
+      "label": "Northern Tokharistan / Bactrian-related local cash"
+    },
+    {
+      "id": "east_asian_imports",
+      "label": "Non-local East Asian imports and local imitations",
+      "regional_evidence_required": true
+    }
+  ],
+  "coinage_families": [
+    "Samarkand Ikhshid square-hole series",
+    "Panch / Panjikent local cash",
+    "Eastern Sogd local cash",
+    "Western Sogd / Bukhara / Paykand cash",
+    "Southern Sogd / Kesh candidates",
+    "Chach Turkic/Sogdian square-hole cash",
+    "Ferghana khagan/tutuk square-hole cash",
+    "Otrar/Sayram local cash candidates",
+    "Semirechye Türgesh/Tukhus/Vahshutava/Alp Tagh/Arslanid/Inal-Tegin/Yarug-kadin/Yaghlaqar/degraded series",
+    "Qarluq Köbäk and related candidates",
+    "Eastern Uyghur Boquq and related cash",
+    "Western Uyghur / Qocho / Beshbalik cash",
+    "Qarakhanid/proto-Qarakhanid square-hole candidates",
+    "Western Liao Xuxing/Tianxi/Zhouyuan/Malik Aram and disputed candidates",
+    "Kucha local anepigraphic and bilingual Wu Zhu-derived cash",
+    "Tokharistan/Bactria cash-like square-hole candidates",
+    "Regional Chinese/East Asian imports and local imitations",
+    "Unattributed Central Asian cash-tradition issues"
+  ],
+  "source_categories": {
+    "zeno_root": {
+      "category_id": "503",
+      "url": "https://www.zeno.ru/showgallery.php?cat=503",
+      "required_traversal": "recursive"
+    },
+    "forced_branches": [
+      "2141",
+      "795"
+    ],
+    "known_categories": [
+      {
+        "parent": "503",
+        "categoryId": "801",
+        "title": "Khwarizm",
+        "url": "https://www.zeno.ru/showgallery.php?cat=801",
+        "sourcePhotoCount": 644,
+        "scopeChecked": false,
+        "importedImages": 0,
+        "date": "2026-09-16",
+        "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
+      },
+      {
+        "parent": "503",
+        "categoryId": "800",
+        "title": "Soghd",
+        "url": "https://www.zeno.ru/showgallery.php?cat=800",
+        "sourcePhotoCount": 1769,
+        "scopeChecked": false,
+        "importedImages": 0,
+        "date": "2026-09-16",
+        "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
+      },
+      {
+        "parent": "503",
+        "categoryId": "870",
+        "title": "Chach",
+        "url": "https://www.zeno.ru/showgallery.php?cat=870",
+        "sourcePhotoCount": 667,
+        "scopeChecked": false,
+        "importedImages": 0,
+        "date": "2026-09-16",
+        "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
+      },
+      {
+        "parent": "503",
+        "categoryId": "803",
+        "title": "Ferghana",
+        "url": "https://www.zeno.ru/showgallery.php?cat=803",
+        "sourcePhotoCount": 27,
+        "scopeChecked": false,
+        "importedImages": 0,
+        "date": "2026-09-16",
+        "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
+      },
+      {
+        "parent": "503",
+        "categoryId": "804",
+        "title": "Otrar",
+        "url": "https://www.zeno.ru/showgallery.php?cat=804",
+        "sourcePhotoCount": 31,
+        "scopeChecked": false,
+        "importedImages": 0,
+        "date": "2026-09-16",
+        "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
+      },
+      {
+        "parent": "503",
+        "categoryId": "2141",
+        "title": "Semirech'e",
+        "url": "https://www.zeno.ru/showgallery.php?cat=2141",
+        "sourcePhotoCount": 569,
+        "scopeChecked": false,
+        "importedImages": 0,
+        "date": "2026-09-16",
+        "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
+      },
+      {
+        "parent": "503",
+        "categoryId": "22493",
+        "title": "Sayram",
+        "url": "https://www.zeno.ru/showgallery.php?cat=22493",
+        "sourcePhotoCount": 31,
+        "scopeChecked": false,
+        "importedImages": 0,
+        "date": "2026-09-16",
+        "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
+      },
+      {
+        "parent": "503",
+        "categoryId": "2142",
+        "title": "Northern Tokharistan & Badakhshan",
+        "url": "https://www.zeno.ru/showgallery.php?cat=2142",
+        "sourcePhotoCount": 329,
+        "scopeChecked": false,
+        "importedImages": 0,
+        "date": "2026-09-16",
+        "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
+      },
+      {
+        "parent": "503",
+        "categoryId": "13698",
+        "title": "Mongolia/ Ordos Culture, including pseudo-money",
+        "url": "https://www.zeno.ru/showgallery.php?cat=13698",
+        "sourcePhotoCount": 20,
+        "scopeChecked": false,
+        "importedImages": 0,
+        "date": "2026-09-16",
+        "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
+      },
+      {
+        "parent": "503",
+        "categoryId": "14605",
+        "title": "Imitations of Chinese cash",
+        "url": "https://www.zeno.ru/showgallery.php?cat=14605",
+        "sourcePhotoCount": 12,
+        "scopeChecked": false,
+        "importedImages": 0,
+        "date": "2026-09-16",
+        "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
+      },
+      {
+        "parent": "503",
+        "categoryId": "14538",
+        "title": "Types under investigation",
+        "url": "https://www.zeno.ru/showgallery.php?cat=14538",
+        "sourcePhotoCount": 13,
+        "scopeChecked": false,
+        "importedImages": 0,
+        "date": "2026-09-16",
+        "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
+      },
+      {
+        "parent": "503",
+        "categoryId": "8585",
+        "title": "Modern fantasies, forgeries and doubtful coins",
+        "url": "https://www.zeno.ru/showgallery.php?cat=8585",
+        "sourcePhotoCount": 33,
+        "scopeChecked": false,
+        "importedImages": 0,
+        "date": "2026-09-16",
+        "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
+      },
+      {
+        "parent": "2141",
+        "categoryId": "795",
+        "title": "Turgesh, Runic tamgha",
+        "url": "https://www.zeno.ru/showgallery.php?cat=795",
+        "sourcePhotoCount": 254,
+        "scopeChecked": true,
+        "importedImages": 239,
+        "date": "2026-09-16",
+        "note": "Recursive #795 subtree fully acquired: 254/254 observed source records, 254 detail pages and 254 images. All records scope-reviewed. 239 source records are linked to Atlas; one (Zeno 20696) merges into existing sr9. Held records: 4 non-coins, 1 hoard/context record, 1 closed-aperture scope question, 3 circular-aperture related records, 5 multi-specimen source images awaiting split, and 1 Kai Yuan-style imitation awaiting family crosswalk."
+      },
+      {
+        "parent": "2141",
+        "categoryId": "14859",
+        "title": "+  Qarluq Qaghan Köbäk(?), Runic {ä}r(?) and m(?)",
+        "url": "https://www.zeno.ru/showgallery.php?cat=14859",
+        "sourcePhotoCount": 12,
+        "scopeChecked": false,
+        "importedImages": 0,
+        "date": "2026-09-16",
+        "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
+      },
+      {
+        "parent": "2141",
+        "categoryId": "14905",
+        "title": "+  Inal Tegin(?), Runic {ä}r(?) and m(?), Soghdian prn(?)",
+        "url": "https://www.zeno.ru/showgallery.php?cat=14905",
+        "sourcePhotoCount": 10,
+        "scopeChecked": false,
+        "importedImages": 0,
+        "date": "2026-09-16",
+        "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
+      },
+      {
+        "parent": "2141",
+        "categoryId": "20257",
+        "title": "or  Yarug-kadin(?)",
+        "url": "https://www.zeno.ru/showgallery.php?cat=20257",
+        "sourcePhotoCount": 3,
+        "scopeChecked": false,
+        "importedImages": 0,
+        "date": "2026-09-16",
+        "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
+      },
+      {
+        "parent": "2141",
+        "categoryId": "799",
+        "title": ",  or  Ex. \"Tukhus\"",
+        "url": "https://www.zeno.ru/showgallery.php?cat=799",
+        "sourcePhotoCount": 62,
+        "scopeChecked": false,
+        "importedImages": 0,
+        "date": "2026-09-16",
+        "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
+      },
+      {
+        "parent": "2141",
+        "categoryId": "11583",
+        "title": "General Ir Chor Irti (?)",
+        "url": "https://www.zeno.ru/showgallery.php?cat=11583",
+        "sourcePhotoCount": 3,
+        "scopeChecked": false,
+        "importedImages": 0,
+        "date": "2026-09-16",
+        "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
+      },
+      {
+        "parent": "2141",
+        "categoryId": "14890",
+        "title": "or  Yaghlaqar clan of Türks",
+        "url": "https://www.zeno.ru/showgallery.php?cat=14890",
+        "sourcePhotoCount": 11,
+        "scopeChecked": false,
+        "importedImages": 0,
+        "date": "2026-09-16",
+        "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
+      },
+      {
+        "parent": "2141",
+        "categoryId": "11003",
+        "title": "Imitations of Chinese cash",
+        "url": "https://www.zeno.ru/showgallery.php?cat=11003",
+        "sourcePhotoCount": 172,
+        "scopeChecked": false,
+        "importedImages": 0,
+        "date": "2026-09-16",
+        "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
+      },
+      {
+        "parent": "2141",
+        "categoryId": "796",
+        "title": "AE cash, temp. Yelü Dashi (1124-1144), w. title malik ārām yīnāl qaraj",
+        "url": "https://www.zeno.ru/showgallery.php?cat=796",
+        "sourcePhotoCount": 0,
+        "scopeChecked": false,
+        "importedImages": 0,
+        "date": "2026-09-16",
+        "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
+      },
+      {
+        "parent": "2141",
+        "categoryId": "1251",
+        "title": "Other",
+        "url": "https://www.zeno.ru/showgallery.php?cat=1251",
+        "sourcePhotoCount": 31,
+        "scopeChecked": false,
+        "importedImages": 0,
+        "date": "2026-09-16",
+        "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
+      }
+    ]
+  },
+  "exclusion_rules": [
+    {
+      "rule": "round_or_non_square_aperture",
+      "main_corpus": false,
+      "related_allowed": true
+    },
+    {
+      "rule": "post_cast_drilled_or_suspension_hole",
+      "main_corpus": false,
+      "related_allowed": true
+    },
+    {
+      "rule": "non_coin_object",
+      "examples": [
+        "seal",
+        "bulla",
+        "weight",
+        "amulet",
+        "pendant",
+        "mask",
+        "money tree",
+        "medal",
+        "fantasy coin"
+      ],
+      "main_corpus": false
+    },
+    {
+      "rule": "ordinary_non_cash_islamic_coinage",
+      "examples": [
+        "round Qarakhanid dirham/fals/dinar",
+        "Chagatai",
+        "Ghaznavid",
+        "Ilkhanid"
+      ],
+      "main_corpus": false
+    },
+    {
+      "rule": "auction_location_is_not_findspot",
+      "main_corpus": null
+    },
+    {
+      "rule": "display_anchor_is_not_mint_or_distribution",
+      "main_corpus": null
+    }
+  ],
+  "candidate_record_required_fields": [
+    "family_id",
+    "provisional_title",
+    "issuer",
+    "political_entity",
+    "region",
+    "mint_region",
+    "findspot_region",
+    "date_start",
+    "date_end",
+    "date_display",
+    "date_confidence",
+    "shape",
+    "hole_shape",
+    "perforation_status",
+    "material",
+    "technique",
+    "script",
+    "legend_raw",
+    "attribution_status",
+    "competing_attributions",
+    "coin_role",
+    "inclusion_status",
+    "source_ids",
+    "bibliography_ids",
+    "notes"
+  ],
+  "entity_model": [
+    "CoinType",
+    "Variant",
+    "Specimen",
+    "Image",
+    "ExternalRecord",
+    "Publication",
+    "Place",
+    "FindContext",
+    "Hoard",
+    "DatingClaim",
+    "DistributionClaim",
+    "InclusionReview"
+  ],
+  "hierarchy": "Major family → catalogue grouping → variant → feature set → specimen → image",
+  "review_queue": [
+    {
+      "id": "scope-boundary-795-327084",
+      "record": "Zeno 327084",
+      "reason": "closed-hole / aperture status needs tradition-level review"
+    },
+    {
+      "id": "crosswalk-795-126089",
+      "record": "Zeno 126089",
+      "reason": "Arslanid Kaiyuan-style imitation held for Chinese-imitation crosswalk"
+    },
+    {
+      "id": "split-multi-795",
+      "records": [
+        "89783",
+        "131295",
+        "307661",
+        "308343",
+        "371668"
+      ],
+      "reason": "multi-coin source images require specimen-level splitting"
+    }
+  ],
+  "coverage_status": {
+    "current_atlas_families": 15,
+    "current_atlas_specimens": 270,
+    "current_atlas_images": 273,
+    "zeno_795_source_records": 254,
+    "zeno_795_scope_reviewed": 254,
+    "zeno_795_atlas_linked": 239,
+    "note": "Coverage is presently deep in Semirechye/Türgesh and Lady Nana, shallow elsewhere; these are imported counts, not corpus totals."
+  },
+  "last_checked_at": "2026-09-16"
+}

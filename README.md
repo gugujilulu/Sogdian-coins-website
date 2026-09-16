@@ -1,6 +1,15 @@
-# Sogdian Coins Atlas
+# Central Asian Square-Hole Coinage Atlas
 
-An interactive spatial–temporal research atlas of Sogdian-related square-holed coinage. Semirechye is the core scope, connected to Sogdiana, Tokharistan and Xinjiang.
+An interactive spatial–temporal research atlas of the Chinese-style square-hole cash tradition across Central Asia and related eastern inland regions, with a main working period of 221–1643 CE. The repository retains the historical `sogdian-cash-atlas` project slug for continuity.
+
+
+## Scope v1 and research provenance
+
+The project scope is now formalized in `research/central-asia-square-hole-scope.json`. Main-corpus inclusion follows the **Chinese-style square-hole cash tradition**, not a mechanical through-hole test: pierced square-hole cash, intentionally unpierced issues and pseudo-aperture issues such as Gurek imitations can all qualify when the cash-form derivation is clear. Post-cast drilled/suspension holes do not qualify by themselves. Core, southern/southeastern, eastern/Tarim and extended contact zones are recorded separately.
+
+Source handling is formalized in `research/source-provenance-policy.json` and `research/source-authorities.json`. Evidence reliability is claim-dependent rather than represented by one global source score. Academic catalogues, archaeological reports, museum records, auctions, specialist/community databases and collection/dealer records retain separate strengths, verification states and evidence lineages. Repetition of one upstream catalogue claim across several websites is not counted as independent corroboration.
+
+`research/current-corpus-scope-map.json` maps all 15 current families / 270 specimen records into Scope v1 without changing their existing display IDs. `research/candidate-type-inventory.json` is the working cross-regional candidate inventory; it is intentionally broader than the current Atlas export and preserves unsettled attributions rather than promoting them to canonical facts.
 
 ## Current edition
 
