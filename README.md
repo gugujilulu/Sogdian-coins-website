@@ -27,8 +27,8 @@ Circulation polygons and hoard points have supported model/layers but no verifie
 - `scripts/build-atlas.py`: source-register → display export.
 - `scripts/export-atlas-db.py OUTPUT`: reproducible SQLite research database.
 - `scripts/validate-atlas.py`: coverage and evidence/identity invariants; Lady Nana coverage stays independently scoped as new Zeno categories are added.
-- `scripts/collect-zeno.py --category ID --download`: public, cached source retrieval with source-count and pagination-integrity tracking; observed-link totals alone are not completeness claims.
-- `python -m unittest tests/test_collect_zeno.py -v`: offline regression checks against the cached Lady Nana gallery, including repeated-pagination detection.
+- `scripts/collect-zeno.py --category ID [--details | --download]`: recursive public-source retrieval. Default mode snapshots the category tree/gallery HTML; `--details` also caches/parses record pages without images; `--download` adds original-image acquisition. Successful caches are resumable and observed-link totals alone are not completeness claims.
+- `python -m unittest tests/test_collect_zeno.py -v`: offline regression checks against cached Lady Nana and #795 source pages, including repeated-pagination failure detection and recursive subtree accounting.
 
 Python data scripts require Pillow. Website uses TypeScript, React/Vinext, MapLibre GL and the existing Shadcn primitives. Use the configured Sites build helper; pnpm lockfile is committed.
 
@@ -43,3 +43,9 @@ Current Semirechye acquisition status: category #795 (Turgesh / Runic tamgha) is
 Of those 254 records, 239 are linked into the Atlas. The 15 held/excluded records are: four non-coin objects, one hoard/context image, one closed-aperture scope case, three related non-square-aperture records, five multi-specimen source images awaiting specimen-level splitting, and one Kai Yuan-style Arslanid imitation awaiting the later Chinese-imitation crosswalk. Source-category groupings remain source groupings rather than automatically becoming academic variants. Existing families were reused where evidence supported it (`sr3`, `sr6`, `sr9`, `sr20`), with two new editorial families added for Alp Tagh and Arslan Kul Irkin.
 
 Physical identity remains conservative. Zeno #20696 is merged into existing specimen `sr9` because it is the same physical coin and the same Coins of Central Asia source photograph at another resolution. Similar-looking records are otherwise kept separate unless the source or image evidence establishes identity; for example Zeno #1766 and #1767 share an obverse photograph but have different reverse photographs and are explicitly not merged.
+
+## Acquisition queue after Scope v1
+
+`research/acquisition-queue.json` is the current source-work queue. The next Zeno step is deliberately metadata-first: recursively census root category **#503**, preserve every raw category page and direct/descendant membership, then cache detail HTML with `--details` before downloading the full image corpus. This prevents thousands of non-square-hole Central Asian images from being downloaded before scope review while preserving the raw evidence needed to identify overlooked cash-tradition records. `research/zeno/root-503-plan.json` defines the required fields, forced checks for #2141 and #795, resume behavior and completion rules.
+
+The source backbone now explicitly registers Smirnova 1981, Kamyshev 2002, Zeimal 1994, the 2012–2024 Western Liao studies, Babayarov's Isfijab/Sayram lead and the 2026 Taraz archaeological coin publication. Candidate inventory v0.2 adds source-backed Paykand, Isfijab/Sayram and Keder cash candidates while keeping Ustrushana, Khwarazm and Northern Tokharistan in screening status where checked sources have not yet established Chinese-style cash forms.

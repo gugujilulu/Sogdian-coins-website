@@ -1,0 +1,59 @@
+{
+  "version": "1.0.0",
+  "root_category_id": "503",
+  "root_url": "https://www.zeno.ru/showgallery.php?cat=503",
+  "forced_branch_checks": [
+    "2141",
+    "795"
+  ],
+  "collector": "scripts/collect-zeno.py",
+  "default_run_mode": "details_no_images",
+  "reason_for_metadata_first": "The #503 tree contains large numbers of Central Asian coins unrelated to the Chinese-style square-hole cash tradition. Raw gallery/detail HTML is needed for complete scope review; original images can then be acquired selectively.",
+  "required_category_fields": [
+    "categoryId",
+    "parentCategoryId",
+    "title",
+    "url",
+    "rawGalleryHtml",
+    "directSourceReportedCount",
+    "directRecordIds",
+    "declaredSubtreeCountFromParent",
+    "pagination",
+    "coverageStatus"
+  ],
+  "required_record_fields": [
+    "id",
+    "url",
+    "rawHtml",
+    "breadcrumb",
+    "leafCategoryId",
+    "title",
+    "uploader",
+    "weightText",
+    "sizeText",
+    "dateText",
+    "mintText",
+    "metalText",
+    "photoNote",
+    "originalImageUrl",
+    "rights",
+    "squareHoleStatus",
+    "scopeReview"
+  ],
+  "identity_rules": [
+    "Zeno record ID is an ExternalRecord ID, not a specimen ID.",
+    "A record appearing in multiple category snapshots does not create an additional specimen.",
+    "Parent and child category counts are never summed as independent records."
+  ],
+  "resume_rules": [
+    "Cached successful gallery/detail HTML is reused by default.",
+    "--refresh is explicit and a failed refresh preserves the prior successful file.",
+    "HTML and images are written to temporary files before replacement.",
+    "Fetch failures remain in manifests and do not stop unrelated records/categories where continuation is possible."
+  ],
+  "completion_rules": [
+    "#503 tree census is complete only when all reachable direct subcategories are visited or explicit categoryFetchFailures account for gaps.",
+    "#2141 and #795 must be present in the #503 tree or be separately audited.",
+    "#795 remains independently complete at 254 observed source records and is preserved as a forced coverage snapshot."
+  ]
+}

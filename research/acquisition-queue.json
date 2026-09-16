@@ -1,0 +1,314 @@
+{
+  "version": "1.0.0",
+  "scope_version": "1.0.0",
+  "last_checked_at": "2026-09-16",
+  "principle": "Acquire source evidence first, then review scope/identity, then download only candidate/included images where practical. Category counts are coverage metadata, never specimen counts.",
+  "current_stage": "zeno_503_tree_and_detail_metadata_discovery",
+  "queue": [
+    {
+      "id": "zeno-503-tree-census",
+      "priority": 1,
+      "source_id": "zeno",
+      "status": "ready_for_mac",
+      "target": {
+        "category_id": "503",
+        "mode": "recursive_gallery_tree"
+      },
+      "purpose": "Enumerate the full Zeno Central Asia category tree, save every category/gallery HTML, direct membership, parent-child links, pagination integrity and observed unique record IDs.",
+      "outputs": [
+        "research/zeno/category-*.html",
+        "research/zeno/manifest-503.json"
+      ],
+      "forced_audits": [
+        "2141",
+        "795"
+      ],
+      "stop_conditions": [
+        "explicit fetch failure is recorded and crawl continues where possible",
+        "repeated pagination is preserved as a coverage gap rather than counted as completion"
+      ]
+    },
+    {
+      "id": "zeno-503-detail-metadata",
+      "priority": 2,
+      "source_id": "zeno",
+      "status": "ready_after_or_with_tree_census",
+      "target": {
+        "category_id": "503",
+        "mode": "recursive_details_no_images"
+      },
+      "purpose": "Cache all observed Zeno detail HTML and parse breadcrumb, leaf category, title, uploader, original image URL, weight, size, date, mint, metal and photo details without downloading the entire Central Asia image corpus.",
+      "reason": "Scope is much broader than square-hole coinage; metadata-first review avoids downloading thousands of irrelevant non-cash images while preserving raw evidence.",
+      "outputs": [
+        "research/zeno/<record_id>.html",
+        "manifest-503 records[]"
+      ],
+      "resume": "Existing successful HTML is reused; refresh is opt-in only."
+    },
+    {
+      "id": "zeno-503-square-hole-image-pass",
+      "priority": 3,
+      "source_id": "zeno",
+      "status": "blocked_on_scope_review_of_metadata",
+      "target": {
+        "mode": "selected_record_image_download"
+      },
+      "purpose": "Download original images only for included/candidate/needed-review records after metadata and category review.",
+      "outputs": [
+        "public/coins/zeno/<record_id>.jpg",
+        "image SHA256 and rights/source fields"
+      ],
+      "note": "Existing #795 images remain preserved and are not re-downloaded."
+    },
+    {
+      "id": "academic-type-backbone-iicas-smirnova",
+      "priority": 1,
+      "source_id": "iicas-2024",
+      "status": "in_progress",
+      "target": {
+        "regions": [
+          "Sogdiana",
+          "Bukhara",
+          "Southern Sogd",
+          "Ferghana",
+          "Ustrushana",
+          "Chach",
+          "Otrar",
+          "Semirechye",
+          "Khorezm",
+          "Tokharistan-Bactria"
+        ]
+      },
+      "purpose": "Create family/catalogue/legend/tamgha assertions with page-level provenance; crosswalk Smirnova and other catalogues rather than treating web repetitions as independent evidence.",
+      "related_sources": [
+        "smirnova-1981",
+        "zeimal-1994",
+        "iranica-turko-sogdian"
+      ]
+    },
+    {
+      "id": "semirechye-catalogue-crosswalk",
+      "priority": 1,
+      "source_id": "kamyshev-2002",
+      "status": "in_progress",
+      "target": {
+        "regions": [
+          "Semirechye"
+        ]
+      },
+      "purpose": "Crosswalk existing sr3/sr6/sr9/sr20 and #795 groups to Kamyshev reference groupings without assuming catalogue group = canonical variant."
+    },
+    {
+      "id": "western-liao-literature",
+      "priority": 2,
+      "source_id": "belyaev-sidorovich-2024-western-liao",
+      "status": "source_registered_full_text_pending",
+      "target": {
+        "families": [
+          "Xuxing Yuanbao",
+          "Tianxi Yuanbao",
+          "local Zhouyuan Tongbao",
+          "legacy proto-Qarakhanid / Yelu Dashi",
+          "Malik Aram Yinal Qaraj"
+        ]
+      },
+      "purpose": "Replace secondary catalogue attribution with publication-level claims and competing-attribution history.",
+      "related_sources": [
+        "belyaev-nastich-sidorovich-2012",
+        "belyaev-sidorovich-2022-tianxi",
+        "belyaev-nastich-sidorovich-2023",
+        "belyaev-sidorovich-2024-zhouyuan"
+      ]
+    },
+    {
+      "id": "taraz-imported-cash-context",
+      "priority": 2,
+      "source_id": "smailov-popescu-kazmadiyarova-2026-taraz",
+      "status": "source_registered_full_text_pending",
+      "target": {
+        "region": "Taraz",
+        "coin_role": "imported_coin"
+      },
+      "purpose": "Extract Chinese coin find contexts by dynasty/context while excluding pre-221 and post-1643 issues from main-period counts."
+    },
+    {
+      "id": "eastern-tianshan-tarim-literature",
+      "priority": 2,
+      "source_id": "klimes-2004",
+      "status": "source_registered_extraction_pending",
+      "target": {
+        "regions": [
+          "Kucha",
+          "Kashgar",
+          "Khotan",
+          "Turfan",
+          "Beiting",
+          "Qocho",
+          "Beshbalik"
+        ]
+      },
+      "purpose": "Separate Kucha local cash, Uyghur/Qocho issues, imports and related/excluded round-hole traditions."
+    }
+  ],
+  "known_zeno_category_baselines": [
+    {
+      "category_id": "801",
+      "parent_category_id": "503",
+      "title": "Khwarizm",
+      "historical_source_photo_count": 644,
+      "scope_checked": false
+    },
+    {
+      "category_id": "800",
+      "parent_category_id": "503",
+      "title": "Soghd",
+      "historical_source_photo_count": 1769,
+      "scope_checked": false
+    },
+    {
+      "category_id": "870",
+      "parent_category_id": "503",
+      "title": "Chach",
+      "historical_source_photo_count": 667,
+      "scope_checked": false
+    },
+    {
+      "category_id": "803",
+      "parent_category_id": "503",
+      "title": "Ferghana",
+      "historical_source_photo_count": 27,
+      "scope_checked": false
+    },
+    {
+      "category_id": "804",
+      "parent_category_id": "503",
+      "title": "Otrar",
+      "historical_source_photo_count": 31,
+      "scope_checked": false
+    },
+    {
+      "category_id": "2141",
+      "parent_category_id": "503",
+      "title": "Semirech'e",
+      "historical_source_photo_count": 569,
+      "scope_checked": false
+    },
+    {
+      "category_id": "22493",
+      "parent_category_id": "503",
+      "title": "Sayram",
+      "historical_source_photo_count": 31,
+      "scope_checked": false
+    },
+    {
+      "category_id": "2142",
+      "parent_category_id": "503",
+      "title": "Northern Tokharistan & Badakhshan",
+      "historical_source_photo_count": 329,
+      "scope_checked": false
+    },
+    {
+      "category_id": "13698",
+      "parent_category_id": "503",
+      "title": "Mongolia/ Ordos Culture, including pseudo-money",
+      "historical_source_photo_count": 20,
+      "scope_checked": false
+    },
+    {
+      "category_id": "14605",
+      "parent_category_id": "503",
+      "title": "Imitations of Chinese cash",
+      "historical_source_photo_count": 12,
+      "scope_checked": false
+    },
+    {
+      "category_id": "14538",
+      "parent_category_id": "503",
+      "title": "Types under investigation",
+      "historical_source_photo_count": 13,
+      "scope_checked": false
+    },
+    {
+      "category_id": "8585",
+      "parent_category_id": "503",
+      "title": "Modern fantasies, forgeries and doubtful coins",
+      "historical_source_photo_count": 33,
+      "scope_checked": false
+    },
+    {
+      "category_id": "795",
+      "parent_category_id": "2141",
+      "title": "Turgesh, Runic tamgha",
+      "historical_source_photo_count": 254,
+      "scope_checked": true
+    },
+    {
+      "category_id": "14859",
+      "parent_category_id": "2141",
+      "title": "+  Qarluq Qaghan Köbäk(?), Runic {ä}r(?) and m(?)",
+      "historical_source_photo_count": 12,
+      "scope_checked": false
+    },
+    {
+      "category_id": "14905",
+      "parent_category_id": "2141",
+      "title": "+  Inal Tegin(?), Runic {ä}r(?) and m(?), Soghdian prn(?)",
+      "historical_source_photo_count": 10,
+      "scope_checked": false
+    },
+    {
+      "category_id": "20257",
+      "parent_category_id": "2141",
+      "title": "or  Yarug-kadin(?)",
+      "historical_source_photo_count": 3,
+      "scope_checked": false
+    },
+    {
+      "category_id": "799",
+      "parent_category_id": "2141",
+      "title": ",  or  Ex. \"Tukhus\"",
+      "historical_source_photo_count": 62,
+      "scope_checked": false
+    },
+    {
+      "category_id": "11583",
+      "parent_category_id": "2141",
+      "title": "General Ir Chor Irti (?)",
+      "historical_source_photo_count": 3,
+      "scope_checked": false
+    },
+    {
+      "category_id": "14890",
+      "parent_category_id": "2141",
+      "title": "or  Yaghlaqar clan of Türks",
+      "historical_source_photo_count": 11,
+      "scope_checked": false
+    },
+    {
+      "category_id": "11003",
+      "parent_category_id": "2141",
+      "title": "Imitations of Chinese cash",
+      "historical_source_photo_count": 172,
+      "scope_checked": false
+    },
+    {
+      "category_id": "796",
+      "parent_category_id": "2141",
+      "title": "AE cash, temp. Yelü Dashi (1124-1144), w. title malik ārām yīnāl qaraj",
+      "historical_source_photo_count": 0,
+      "scope_checked": false
+    },
+    {
+      "category_id": "1251",
+      "parent_category_id": "2141",
+      "title": "Other",
+      "historical_source_photo_count": 31,
+      "scope_checked": false
+    }
+  ],
+  "coverage_gaps": [
+    "Confirm whether all eastern/Tarim/Uiğur cash-relevant Zeno branches are descendants of #503; add additional Zeno roots only when the #503 tree proves they are outside it.",
+    "Screen Ustrushana, Khwarazm and Northern Tokharistan for actual cash-tradition forms before creating families.",
+    "Build archaeological find-context datasets for imported East Asian cash independently from type catalogues."
+  ]
+}

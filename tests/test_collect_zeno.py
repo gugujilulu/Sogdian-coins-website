@@ -8,13 +8,24 @@ collect=importlib.util.module_from_spec(spec)
 spec.loader.exec_module(collect)
 
 class ZenoCollectorCacheTests(unittest.TestCase):
-    def test_lady_nana_cached_gallery_detects_repeated_pagination(self):
+    def test_lady_nana_cached_gallery_flags_repeated_pagination_gap(self):
         snapshot=collect.gallery_snapshot(collect.make_opener(),'3106',refresh=False)
-        self.assertEqual(len(snapshot['recordIds']),14)
+        self.assertEqual(len(snapshot['recordIds']),12)
         self.assertEqual(snapshot['sourceReportedCount'],14)
-        self.assertEqual(snapshot['coverageStatus'],'observed_count_matches_source_count')
-        self.assertEqual(snapshot['pagination']['integrity'],'repeated_page_content_but_count_matches_source')
+        self.assertEqual(snapshot['coverageStatus'],'incomplete_subtree_observed_links')
+        self.assertEqual(snapshot['pagination']['integrity'],'failed_repeated_page_content')
         self.assertTrue(snapshot['pagination']['repeatedPages'])
+
+    def test_turgesh_cached_subtree_is_complete_and_recursive(self):
+        snapshot=collect.gallery_snapshot(collect.make_opener(),'795',refresh=False)
+        self.assertEqual(len(snapshot['recordIds']),254)
+        self.assertEqual(len(snapshot['categoryTree']),27)
+        self.assertEqual(snapshot['sourceReportedDirectCount'],5)
+        self.assertEqual(snapshot['sourceReportedSubtreeCount'],254)
+        self.assertEqual(snapshot['coverageStatus'],'observed_count_matches_subtree_source_count')
+        self.assertEqual(snapshot['pagination']['integrity'],'no_repeat_detected')
+        direct_children={row['categoryId'] for row in snapshot['categoryTree'][0]['children']}
+        self.assertEqual(direct_children,{'14906','20165','18902','797'})
 
     def test_lady_nana_breadcrumb_ends_at_requested_leaf(self):
         html=(ROOT/'research/zeno/388312.html').read_text(errors='replace')

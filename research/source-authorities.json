@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "last_checked_at": "2026-09-16",
   "sources": [
     {
@@ -126,6 +126,108 @@
       "url": "https://www.bactrianumis.com/",
       "verification_status": "directly_checked_selected_record",
       "independence_group": "bactrianumis"
+    },
+    {
+      "id": "smirnova-1981",
+      "kind": "academic_catalogue",
+      "title": "Svodnyi katalog sogdiiskikh monet: bronza (Catalogue of Sogdian Coins: Bronze)",
+      "authors": [
+        "Olga Ivanovna Smirnova"
+      ],
+      "year": 1981,
+      "url": "https://books.google.com/books/about/Svodny%C4%AD_katalog_sogdi%C4%ADskikh_monet.html?id=rDZmAAAAMAAJ",
+      "verification_status": "bibliographic_metadata_checked",
+      "independence_group": "smirnova-1981"
+    },
+    {
+      "id": "kamyshev-2002",
+      "kind": "academic_catalogue",
+      "title": "Rannesrednevekovyi monetnyi kompleks Semirechya (Early Medieval Monetary Complex of Semirechye)",
+      "authors": [
+        "Alexander M. Kamyshev"
+      ],
+      "year": 2002,
+      "url": "https://en.numista.com/L100468",
+      "verification_status": "bibliographic_metadata_checked",
+      "independence_group": "kamyshev-2002"
+    },
+    {
+      "id": "zeimal-1994",
+      "kind": "peer_reviewed_article",
+      "title": "The Circulation of Coins in Central Asia during the Early Medieval Period (Fifth-Eighth Centuries A.D.)",
+      "authors": [
+        "Evgenii V. Zeimal"
+      ],
+      "year": 1994,
+      "url": "https://www.jstor.org/stable/24048777",
+      "verification_status": "bibliographic_metadata_and_secondary_catalogue_links_checked",
+      "independence_group": "zeimal-1994"
+    },
+    {
+      "id": "belyaev-nastich-sidorovich-2012",
+      "kind": "peer_reviewed_article",
+      "title": "The Coinage of Qara Khitay: A New Evidence (on the reign title of the Western Liao Emperor Yelü Yilie)",
+      "authors": [
+        "Vladimir A. Belyaev",
+        "Vladimir N. Nastich",
+        "Sergey V. Sidorovich"
+      ],
+      "year": 2012,
+      "url": "https://ivran.academia.edu/VladimirNastich",
+      "verification_status": "abstract_checked",
+      "independence_group": "bns-2012-western-liao"
+    },
+    {
+      "id": "belyaev-sidorovich-2022-tianxi",
+      "kind": "peer_reviewed_article",
+      "title": "Identification of Tianxi yuanbao — a Newly Discovered Coin of Western Liao",
+      "authors": [
+        "Vladimir A. Belyaev",
+        "Sergey V. Sidorovich"
+      ],
+      "year": 2022,
+      "url": "https://independent.academia.edu/VladimirBelyaev/Numismatics%3A%20W.Liao%20Dynasty",
+      "verification_status": "metadata_and_abstract_checked",
+      "independence_group": "bs-2022-tianxi"
+    },
+    {
+      "id": "belyaev-sidorovich-2024-zhouyuan",
+      "kind": "peer_reviewed_article",
+      "title": "On coins with the legend Zhouyuan Tongbao from finds in Kyrgyzstan",
+      "authors": [
+        "Vladimir A. Belyaev",
+        "Sergey V. Sidorovich"
+      ],
+      "year": 2024,
+      "url": "https://independent.academia.edu/VladimirBelyaev",
+      "verification_status": "metadata_and_abstract_checked",
+      "independence_group": "bs-2024-zhouyuan"
+    },
+    {
+      "id": "babayarov-2022-isfijab",
+      "kind": "scholarly_article",
+      "title": "New coins of Isfijab (Sayram)",
+      "authors": [
+        "G. Babayarov"
+      ],
+      "year": 2022,
+      "url": "https://en.numista.com/473185",
+      "verification_status": "secondary_metadata_checked_full_text_pending",
+      "independence_group": "babayarov-2022-isfijab"
+    },
+    {
+      "id": "smailov-popescu-kazmadiyarova-2026-taraz",
+      "kind": "peer_reviewed_archaeological_article",
+      "title": "Byzantine imitative, Bukharkhudat and Chinese coins found during recent archaeological excavations in Taraz (South Kazakhstan)",
+      "authors": [
+        "Zhuman Smailov",
+        "Adrian Popescu",
+        "Inkar Kazmadiyarova"
+      ],
+      "year": 2026,
+      "url": "https://www.repository.cam.ac.uk/items/5198e794-b0da-45d6-ad02-6af0385f05ff",
+      "verification_status": "repository_metadata_and_abstract_checked",
+      "independence_group": "taraz-excavations-2014-2017"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.2.0",
   "scope_version": "1.0.0",
   "status": "working_candidate_inventory",
   "last_checked_at": "2026-09-16",
@@ -23,7 +23,13 @@
     "numista-western-liao": "https://en.numista.com/catalogue/western_liao_dynasty-1.html",
     "bns2023": "https://it.numista.com/L153622",
     "british-museum": "https://www.britishmuseum.org/collection",
-    "babayarov-chach": "https://sogdcoins.narod.ru/publications/babayarov.html"
+    "babayarov-chach": "https://sogdcoins.narod.ru/publications/babayarov.html",
+    "numista-paykand": "https://en.numista.com/197532",
+    "numista-isfijab": "https://en.numista.com/197640",
+    "numista-keder": "https://en.numista.com/catalogue/isfijab_section-1.html",
+    "zeimal-1994": "https://www.jstor.org/stable/24048777",
+    "taraz-archaeology-2026": "https://www.repository.cam.ac.uk/items/5198e794-b0da-45d6-ad02-6af0385f05ff",
+    "western-liao-2024": "https://independent.academia.edu/SergeySidorovich/Numismatics%3A%20W.Liao%20Dynasty"
   },
   "candidates": [
     {
@@ -1276,16 +1282,117 @@
       "bibliography_ids": [],
       "notes": "Babayarov article explicitly classifies a square-hole group with Turkic titles; extract individual types before canonical family splitting.",
       "current_atlas_family_id": null
+    },
+    {
+      "family_id": "cand-paykand-square-hole",
+      "provisional_title": "Paykand local cash with square hole",
+      "issuer": "City of Paykand local authority",
+      "political_entity": "sogdian_local",
+      "region": "Western Sogd / Paykand",
+      "mint_region": "Paykand",
+      "findspot_region": "Paykand archaeological context reported in literature",
+      "date_start": 640,
+      "date_end": 709,
+      "date_display": "640–709 secondary catalogue attribution; archaeological/literature dating to be checked",
+      "date_confidence": "secondary_catalogue_pending_primary_check",
+      "shape": "round_cash_form",
+      "hole_shape": "square",
+      "perforation_status": "pierced_or_source_described_square_hole",
+      "material": "bronze_or_copper_alloy",
+      "technique": "cast",
+      "script": "Sogdian + Chinese",
+      "legend_raw": "pny + 十 on checked secondary catalogue record",
+      "attribution_status": "candidate_literature_linked",
+      "competing_attributions": [],
+      "coin_role": "local_issue",
+      "inclusion_status": "candidate",
+      "source_ids": [
+        "numista-paykand",
+        "zeimal-1994"
+      ],
+      "bibliography_ids": [
+        "zeimal-1994"
+      ],
+      "notes": "Numista explicitly cites Zeimal 1994 no. 15; primary article extraction still required before canonical dating/legend acceptance.",
+      "current_atlas_family_id": null
+    },
+    {
+      "family_id": "cand-isfijab-tutuk-cash",
+      "provisional_title": "Isfijab/Sayram Tutuk-Khagan square-hole cash",
+      "issuer": "Turkic/Tutuk authority of Isfijab/Sayram",
+      "political_entity": "western_turkic",
+      "region": "Sayram / Isfijab",
+      "mint_region": "Isfijab/Sayram attribution disputed historically",
+      "findspot_region": "mass-find evidence cited by secondary catalogue; primary publication pending",
+      "date_start": 601,
+      "date_end": 801,
+      "date_display": "601–801 secondary catalogue range",
+      "date_confidence": "secondary_catalogue_pending_primary_check",
+      "shape": "round_cash_form",
+      "hole_shape": "square",
+      "perforation_status": "pierced_or_source_described_square_hole",
+      "material": "bronze",
+      "technique": "cast",
+      "script": "Sogdian",
+      "legend_raw": "'lpw x'g'n twtwg",
+      "attribution_status": "candidate_disputed_localization",
+      "competing_attributions": [
+        "Otrar",
+        "Ferghana",
+        "Isfijab/Sayram"
+      ],
+      "coin_role": "local_issue",
+      "inclusion_status": "candidate",
+      "source_ids": [
+        "numista-isfijab",
+        "babayarov-2022-isfijab"
+      ],
+      "bibliography_ids": [
+        "smirnova-1981",
+        "babayarov-2022-isfijab"
+      ],
+      "notes": "Secondary catalogue links the type to Smirnova 1445 and notes prior Otrar/Ferghana attributions; current Isfijab interpretation must remain a claim until Babayarov 2022 is read directly.",
+      "current_atlas_family_id": null
+    },
+    {
+      "family_id": "cand-keder-arrow-cane-cash",
+      "provisional_title": "Keder arrow-cane tamgha square-hole cash",
+      "issuer": "Town of Keder local authority",
+      "political_entity": "western_turkic",
+      "region": "Sayram / Isfijab / Keder",
+      "mint_region": "Keder candidate",
+      "findspot_region": null,
+      "date_start": 716,
+      "date_end": 801,
+      "date_display": "716–801 secondary catalogue range",
+      "date_confidence": "secondary_catalogue_only",
+      "shape": "round_cash_form",
+      "hole_shape": "square",
+      "perforation_status": "pierced_or_source_described_square_hole",
+      "material": "bronze",
+      "technique": "cast",
+      "script": "Sogdian_or_symbolic_unverified",
+      "legend_raw": null,
+      "attribution_status": "candidate",
+      "competing_attributions": [],
+      "coin_role": "local_issue",
+      "inclusion_status": "candidate",
+      "source_ids": [
+        "numista-keder"
+      ],
+      "bibliography_ids": [],
+      "notes": "Seeded from Isfijab/Keder catalogue section; dedicated source extraction required.",
+      "current_atlas_family_id": null
     }
   ],
   "coverage_gaps": [
-    "Paykand requires dedicated page/catalogue extraction; Fansar and Pargar now have seeded candidate rows from checked specialist-database pages.",
-    "Ustrushana/Otrar/Sayram square-hole candidates require dedicated extraction",
-    "Khwarazm appears in IICAS/Zeno scope but square-hole eligibility needs screening",
-    "Northern Tokharistan/Bactria exact square-hole types require IICAS and archaeological extraction",
-    "Kashgar/Khotan/Turfan/Beiting require regional literature screening",
-    "Qarakhanid square-hole candidates beyond legacy Kamyshev 49 require dedicated literature/source collection",
-    "Western Liao dedicated 2012–2024 papers should replace secondary catalogue metadata where available",
-    "Chinese/East Asian imported cash requires find-context datasets rather than type-catalogue copying"
+    "Ustrushana: checked specialist-database pages currently show portrait/tamgha bronzes rather than confirmed Chinese-style cash; keep region in screening queue instead of inventing a square-hole family.",
+    "Otrar/Sayram: Sayram/Isfijab and Keder square-hole candidates are now seeded; Otrar attribution still needs dedicated primary-literature extraction because some types have competing Otrar/Sayram/Ferghana assignments.",
+    "Khwarazm: checked specialist pages show local portrait/tamgha series; square-hole eligibility remains unconfirmed and requires Zeno/IICAS screening.",
+    "Northern Tokharistan/Bactria: checked specialist pages are dominated by Sasanian-derived and countermarked issues; exact Chinese-style cash candidates still require IICAS/archaeological extraction.",
+    "Kashgar/Khotan/Turfan/Beiting require regional literature screening; Khotan Sino-Kharoshthi horse coins remain related/excluded unless a distinct cash-tradition issue is evidenced.",
+    "Qarakhanid square-hole candidates beyond legacy Kamyshev 49 require dedicated literature/source collection and competing-attribution handling.",
+    "Western Liao: 2012 Xuxing, 2022 Tianxi, 2023 proto-Qarakhanid reassessment, 2024 Zhouyuan and 2024 survey are now registered; full-text claim extraction is still pending.",
+    "Chinese/East Asian imported cash: Taraz 2014–2017 excavation material is now registered as a find-context source; broader regional archaeological datasets remain to be collected."
   ]
 }
