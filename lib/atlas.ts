@@ -1,5 +1,5 @@
 export type Place={id:string;name:string;zh:string;coordinates:[number,number];kind:'city'|'site'|'region';precision:string;source:string;note:string;minZoom:number};
-export type ImageRecord={id:string;path:string;sourceUrl:string;width:number;height:number;credit:string;view:string};
+export type ImageRecord={id:string;path:string;sourceUrl:string;width:number;height:number;credit:string;rightsStatus:'open_license'|'permission'|'public_domain'|'unverified';rightsSourceUrl:string|null;view:string};
 export type Specimen={id:string;familyId:string;variantId:string|null;title:string;weightG:number|null;diameterMm:number|null;images:ImageRecord[];sources:{label:string;url:string;relation:string}[];description:string;catalogue:string;facets:string[];duplicateStatus:string};
 export type Variant={id:string;familyId:string;title:string;reference:string;status:string;facets:string[];description:string};
 export type Family={id:string;title:string;zh:string;region:string;start:number|null;end:number|null;dateLabel:string;description:string;anchor:{placeId:string;role:string;note:string}|null;image:string;status:string;question:string|null;publications:{title:string;url:string;role:string}[];legend?:string;legendNote?:string};

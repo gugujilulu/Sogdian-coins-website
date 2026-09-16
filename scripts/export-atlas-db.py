@@ -34,7 +34,7 @@ for s in d['specimens']:
  add('specimen',id=s['id'],title=s['title'],material_text='Copper alloy / AE, source wording',weight_g=s['weightG'],diameter_mm=s['diameterMm'],citation_id=ci,observed_on='2026-09-16')
  add('specimen_type_claim',id='type-'+s['id'],specimen_id=s['id'],type_id=s['variantId'] or s['familyId'],citation_id=ci,confidence='possible',is_preferred=1,note='Source reference group; cross-catalogue equivalence is not asserted.')
  for im in s['images']:
-  add('image',id=im['id'],specimen_id=s['id'],view='both' if im['view']!='single face' else 'unknown',local_path=im['path'],source_url=im['sourceUrl'],credit=im['credit'],rights_status='unverified',width_px=im['width'],height_px=im['height'],citation_id=ci)
+  add('image',id=im['id'],specimen_id=s['id'],view='both' if im['view']!='single face' else 'unknown',local_path=im['path'],source_url=im['sourceUrl'],credit=im['credit'],license_uri=None,rights_source_url=im.get('rightsSourceUrl'),rights_status=im.get('rightsStatus','unverified'),width_px=im['width'],height_px=im['height'],citation_id=ci)
  for src in s['sources']:
   url=src['url'];eid='ext-'+key(url)
   if not db.execute('SELECT 1 FROM external_record WHERE id=?',(eid,)).fetchone():add('external_record',id=eid,provider='Zeno' if 'zeno.ru' in url else 'external',record_key=url,url=url,record_kind='specimen',verification_status='directly_checked' if src['relation']=='same_specimen' else 'reported_by_source',checked_on='2026-09-16',citation_id=cite(url,src['label']))

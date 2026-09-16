@@ -71,7 +71,8 @@ CREATE TABLE image (
  id TEXT PRIMARY KEY, specimen_id TEXT NOT NULL REFERENCES specimen(id),
  view TEXT NOT NULL CHECK(view IN ('obverse','reverse','both','detail','unknown')),
  local_path TEXT, source_url TEXT NOT NULL, credit TEXT NOT NULL,
- license_uri TEXT, rights_status TEXT NOT NULL CHECK(rights_status IN ('open_license','permission','public_domain','unverified')),
+ license_uri TEXT, rights_source_url TEXT,
+ rights_status TEXT NOT NULL CHECK(rights_status IN ('open_license','permission','public_domain','unverified')),
  width_px INTEGER, height_px INTEGER, iiif_manifest TEXT, citation_id TEXT NOT NULL REFERENCES citation(id)
 );
 CREATE TABLE type_place_claim (

@@ -59,3 +59,23 @@ The Lady Nana coverage field `images` was corrected to its actual scoped value o
 Offline regression checks pass for the cached Lady Nana category, including detection that Zeno category 3106's `page=2` response duplicates the first-page photo-ID set while the observed 14 records still match the source-reported category total.
 
 Current execution environments cannot resolve `www.zeno.ru` (`Temporary failure in name resolution`). No #795 data is therefore claimed as collected. Category 795 remains at its saved source baseline of 254 photo records with `scopeChecked=false` and `importedImages=0` until a network-capable retrieval succeeds. The collector changes are intentionally independent of the website UI and do not alter the existing Lady Nana source files or images.
+
+## Bounded environment check and continuation after `ac08d9b`
+
+The continuation workspace explicitly declares `NETWORK=caas_packages_only` and no HTTP/HTTPS proxy. A single current resolver check returned `gaierror(-3, 'Temporary failure in name resolution')` for both `www.zeno.ru` and `registry.npmjs.org`. The platform web reader could display an older crawled/text rendering of the already-known Zeno Semirechye parent URL, but that path does not expose raw response bytes and therefore is not accepted as a source-capture mechanism. A permitted file-download attempt did not produce a raw Zeno HTML file. No DNS settings were changed and no repeated network retry loop was used.
+
+Accordingly, category #795 has **no newly claimed source records or images in this revision**. There is still no `manifest-795.json` or cached `category-795*.html`. The executable collection command for a network-capable environment remains:
+
+```bash
+python scripts/collect-zeno.py --category 795 --download
+```
+
+The collector now preserves a previous successful detail record and image if a later refresh fails, while recording the current failure separately in `fetchFailures`. Image refreshes use a temporary file and replace the previous image only after the replacement validates as an image. This permits partial and interrupted #795 acquisition without destroying previous success.
+
+Image provenance is now carried consistently through the display and relational exports. The raw Zeno manifest remains the authoritative store for the full uploader object, raw labelled fields, breadcrumb/category membership, rights note and source terms URL. The Atlas image record carries the uploader name as `credit`, normalized `rightsStatus='unverified'`, and `rightsSourceUrl`; it does not treat the source-terms URL as a verified license. SQLite stores the same separation in `image.credit`, `image.rights_status`, `image.rights_source_url`, with `license_uri` left null unless a verified license is later established.
+
+The Lady Nana display coverage remains 14/14 imported Zeno records and **22 images across all Lady Nana sources**. Whole-site image count remains **34** and is independently derived from specimens. SQLite validation now derives the same 22 Lady Nana images through the type hierarchy while separately validating 34 total image rows and the 14 Zeno coverage records.
+
+The existing Semirechye records `sr3` (Kamyshev 21; Vahshutava / yuan reverse) and `sr6` (Kamyshev 24; Türgesh kagan / tamgha reverse) are explicit crosswalk candidates for category #795. Future #795 ingestion must test Zeno records against these existing families before creating new family rows; no equivalence or same-specimen identity is asserted in advance.
+
+No formal Git remote is recorded in `.git/config`, README or the implementation notes. `.openai/hosting.json` retains the existing Site project binding `appgprj_6aaa004e58c481918488e7ebec45333a`; no new Site is created and no deployment is attempted in this blocked environment.

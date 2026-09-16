@@ -27,6 +27,7 @@ assert nana_zeno==expected_nana
 assert a['coverage']['zenoRecordCount']==14
 assert a['coverage']['importedZenoRecords']==14
 assert a['coverage']['images']==22  # Nana only; whole-site image totals are computed separately.
+assert all((r.get('uploader') or {}).get('name') for r in z['records'])
 
 # Saved Zeno manifests are independent coverage scopes. Partial Semirechye crawls are
 # valid research states, while their counts must never be labelled complete by accident.
@@ -62,6 +63,17 @@ for s in a['specimens']:
   assert image.size==(im['width'],im['height'])
   assert '/avatars/' not in im['sourceUrl']
   assert p.stat().st_size>1000
+  assert im['rightsStatus'] in {'open_license','permission','public_domain','unverified'}
+  assert 'credit' in im and im['credit']
+
+# Zeno uploader attribution flows into the display image record, while the full
+# member/profile object and raw source-rights marker remain preserved in manifest.
+for r in z['records']:
+ s=next(s for s in a['specimens'] if s['id']=='zeno-'+str(r['id']))
+ im=next(im for im in s['images'] if im['path']==r['image']['path'])
+ assert im['credit']==r['uploader']['name']
+ assert im['rightsStatus']=='unverified'
+ assert im['rightsSourceUrl']==r['rights']['sourceTermsUrl']
 
 # Explicitly identified repeated specimen is merged; comparison records remain independent.
 assert 'bactrianumis-5898' not in ids
@@ -84,10 +96,28 @@ with tempfile.TemporaryDirectory() as tmp:
  db=sqlite3.connect(p)
  db.execute('PRAGMA foreign_keys=ON')
  assert db.execute('SELECT count(*) FROM specimen').fetchone()[0]==len(a['specimens'])
+ assert db.execute('SELECT count(*) FROM image').fetchone()[0]==sum(len(s['images']) for s in a['specimens'])==34
  assert not db.execute('PRAGMA foreign_key_check').fetchall()
  # Nana coverage remains independently verifiable even after other categories are added.
  nana_snapshot=db.execute("SELECT id FROM coverage_snapshot WHERE category_url LIKE '%cat=3106'").fetchone()[0]
  assert db.execute("SELECT count(*) FROM coverage_record WHERE snapshot_id=? AND status='image_imported'",(nana_snapshot,)).fetchone()[0]==14
+ # The display coverage's 22-image Lady Nana scope is independently derivable
+ # from the relational type hierarchy; it is not conflated with 14 Zeno records.
+ nana_images=db.execute("""
+ WITH RECURSIVE nana_types(id) AS (
+   SELECT 'lady-nana'
+   UNION ALL
+   SELECT c.id FROM coin_type c JOIN nana_types p ON c.parent_type_id=p.id
+ )
+ SELECT count(DISTINCT i.id)
+ FROM specimen_type_claim stc
+ JOIN nana_types nt ON nt.id=stc.type_id
+ JOIN image i ON i.specimen_id=stc.specimen_id
+ """).fetchone()[0]
+ assert nana_images==a['coverage']['images']==22
+ z388=db.execute("SELECT credit,rights_status,license_uri,rights_source_url FROM image WHERE id='z388312'").fetchone()
+ assert z388==('Numis_Dmitriy','unverified',None,'https://www.zeno.ru/rules.php')
+ assert db.execute('SELECT count(*) FROM coverage_snapshot').fetchone()[0]==len(manifest_paths)
  # A comparison link must not create a same-specimen equivalence.
  assert db.execute("SELECT relation FROM specimen_external_record s JOIN external_record e ON e.id=s.external_record_id WHERE specimen_id='cng611-576' AND e.url LIKE '%photo=81165'").fetchone()[0]=='comparison'
  # Reject physically invalid measurements and invalid relation/types.

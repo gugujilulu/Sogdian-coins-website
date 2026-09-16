@@ -27,6 +27,10 @@ CACHE = ROOT / "research/zeno"
 CACHE.mkdir(exist_ok=True)
 
 
+def utc_now() -> str:
+    return datetime.now(timezone.utc).isoformat(timespec="seconds")
+
+
 def clean(value: str) -> str:
     return re.sub(r"\s+", " ", unescape(re.sub(r"<[^>]+>", " ", value))).strip()
 
@@ -260,6 +264,7 @@ def collect_record(opener, category_id: str, record_id: str, download: bool, ref
     big = re.findall(r"openBigWindow\('([^']+)", html)
     candidates = unique([x for x in big if "/data/" in x] + [x.replace("/medium/", "/") for x in images] + images)
     image = None
+    image_errors = []
     if download:
         from PIL import Image
 
@@ -267,10 +272,15 @@ def collect_record(opener, category_id: str, record_id: str, download: bool, ref
         out.mkdir(parents=True, exist_ok=True)
         target = out / f"{record_id}.jpg"
         for image_url in candidates:
+            temp = target.with_suffix(target.suffix + ".part")
             try:
                 if not target.exists() or refresh:
                     with opener.open(unescape(image_url), timeout=30) as response:
-                        target.write_bytes(response.read())
+                        payload = response.read()
+                    temp.write_bytes(payload)
+                    with Image.open(temp) as probe:
+                        probe.verify()
+                    temp.replace(target)
                 with Image.open(target) as probe:
                     probe.verify()
                 with Image.open(target) as probe:
@@ -283,8 +293,9 @@ def collect_record(opener, category_id: str, record_id: str, download: bool, ref
                     "sha256": hashlib.sha256(target.read_bytes()).hexdigest(),
                 }
                 break
-            except Exception:
-                target.unlink(missing_ok=True)
+            except Exception as exc:
+                temp.unlink(missing_ok=True)
+                image_errors.append({"url": unescape(image_url), "error": str(exc)})
     text = re.sub(r"\s+", " ", clean(html))
     fields = source_fields(html)
     note = photo_note(html)
@@ -319,6 +330,7 @@ def collect_record(opener, category_id: str, record_id: str, download: bool, ref
             "note": "Uploader attribution is preserved from the source page; downstream reuse rights are not inferred.",
         },
         "image": image,
+        "imageFetchErrors": image_errors,
         "breadcrumb": crumbs,
         "leafCategoryId": leaf,
         "inRequestedCategory": leaf == str(category_id) if leaf else None,
@@ -338,7 +350,9 @@ def main():
     snapshot = gallery_snapshot(opener, args.category, refresh=args.refresh)
     manifest_path = CACHE / f"manifest-{args.category}.json"
     existing = json.loads(manifest_path.read_text()) if manifest_path.exists() else {}
-    retrieved_on = existing.get("retrievedOn") or datetime.now(timezone.utc).date().isoformat()
+    retrieved_on = datetime.now(timezone.utc).date().isoformat() if args.refresh or not existing else existing.get("retrievedOn") or datetime.now(timezone.utc).date().isoformat()
+    existing_records = {str(r.get("id")): r for r in existing.get("records", []) if r.get("id")}
+    records_by_id = {record_id: existing_records[record_id] for record_id in snapshot["recordIds"] if record_id in existing_records}
     manifest = {
         "categoryId": str(args.category),
         "url": snapshot["url"],
@@ -351,20 +365,56 @@ def main():
         "coverageStatus": snapshot["coverageStatus"],
         "pagination": snapshot["pagination"],
         "rawGalleryHtml": snapshot["firstRawHtml"],
-        "records": [] if args.download else existing.get("records", []),
+        "lastRunAt": utc_now(),
+        "records": [records_by_id[record_id] for record_id in snapshot["recordIds"] if record_id in records_by_id],
+        "fetchFailures": existing.get("fetchFailures", []) if not args.download else [],
     }
     print(f"CATEGORY {args.category}: observed {manifest['recordCount']} links; source={manifest['sourceReportedCount']}; baseline={manifest['scopeBaselineCount']}", flush=True)
     print("PAGINATION", manifest["pagination"]["integrity"], flush=True)
 
     if args.download:
         for record_id in snapshot["recordIds"]:
+            previous = records_by_id.get(record_id)
             try:
                 record = collect_record(opener, args.category, record_id, download=True, refresh=args.refresh)
-                manifest["records"].append(record)
+                if record.get("image") is None and previous and previous.get("image"):
+                    record["image"] = previous["image"]
+                    record["imageRefreshStatus"] = "failed_preserved_previous"
+                    manifest["fetchFailures"].append({
+                        "id": record_id,
+                        "url": record["url"],
+                        "phase": "image",
+                        "attemptedAt": utc_now(),
+                        "error": "; ".join(x.get("error", "") for x in record.get("imageFetchErrors", [])) or "No downloadable image candidate succeeded",
+                        "preservedPrevious": True,
+                    })
+                elif record.get("image") is None:
+                    manifest["fetchFailures"].append({
+                        "id": record_id,
+                        "url": record["url"],
+                        "phase": "image",
+                        "attemptedAt": utc_now(),
+                        "error": "; ".join(x.get("error", "") for x in record.get("imageFetchErrors", [])) or "No downloadable image candidate succeeded",
+                        "preservedPrevious": False,
+                    })
+                records_by_id[record_id] = record
                 print(record_id, record["title"], record["image"] and [record["image"]["width"], record["image"]["height"]], flush=True)
             except Exception as exc:
-                manifest["records"].append({"id": record_id, "url": f"https://www.zeno.ru/showphoto.php?photo={record_id}", "error": str(exc)})
+                failure = {
+                    "id": record_id,
+                    "url": f"https://www.zeno.ru/showphoto.php?photo={record_id}",
+                    "phase": "detail",
+                    "attemptedAt": utc_now(),
+                    "error": str(exc),
+                    "preservedPrevious": bool(previous and not previous.get("error")),
+                }
+                manifest["fetchFailures"].append(failure)
+                if previous and not previous.get("error"):
+                    records_by_id[record_id] = previous
+                else:
+                    records_by_id[record_id] = {"id": record_id, "url": failure["url"], "error": str(exc)}
                 print(record_id, str(exc), flush=True)
+            manifest["records"] = [records_by_id[x] for x in snapshot["recordIds"] if x in records_by_id]
             manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2))
     manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2))
     print("MANIFEST", manifest_path, flush=True)

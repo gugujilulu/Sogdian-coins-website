@@ -571,6 +571,8 @@
           "width": 300,
           "height": 150,
           "credit": "Coins of Central Asia, ©2002–2010 VLD & OK",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": null,
           "view": "obverse and reverse"
         }
       ],
@@ -601,6 +603,8 @@
           "width": 300,
           "height": 150,
           "credit": "Coins of Central Asia, ©2002–2010 VLD & OK",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": null,
           "view": "obverse and reverse"
         }
       ],
@@ -631,6 +635,8 @@
           "width": 300,
           "height": 150,
           "credit": "Coins of Central Asia, ©2002–2010 VLD & OK",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": null,
           "view": "obverse and reverse"
         }
       ],
@@ -661,6 +667,8 @@
           "width": 300,
           "height": 150,
           "credit": "Coins of Central Asia, ©2002–2010 VLD & OK",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": null,
           "view": "obverse and reverse"
         }
       ],
@@ -691,6 +699,8 @@
           "width": 300,
           "height": 150,
           "credit": "Coins of Central Asia, ©2002–2010 VLD & OK",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": null,
           "view": "obverse and reverse"
         }
       ],
@@ -721,6 +731,8 @@
           "width": 300,
           "height": 150,
           "credit": "Coins of Central Asia, ©2002–2010 VLD & OK",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": null,
           "view": "obverse and reverse"
         }
       ],
@@ -751,6 +763,8 @@
           "width": 300,
           "height": 150,
           "credit": "Coins of Central Asia, ©2002–2010 VLD & OK",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": null,
           "view": "obverse and reverse"
         }
       ],
@@ -781,6 +795,8 @@
           "width": 300,
           "height": 150,
           "credit": "Coins of Central Asia, ©2002–2010 VLD & OK",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": null,
           "view": "obverse and reverse"
         }
       ],
@@ -816,6 +832,8 @@
           "width": 300,
           "height": 150,
           "credit": "Coins of Central Asia, ©2002–2010 VLD & OK",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": null,
           "view": "obverse and reverse"
         }
       ],
@@ -851,6 +869,8 @@
           "width": 300,
           "height": 150,
           "credit": "Coins of Central Asia, ©2002–2010 VLD & OK",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": null,
           "view": "obverse and reverse"
         }
       ],
@@ -881,6 +901,8 @@
           "width": 300,
           "height": 150,
           "credit": "Coins of Central Asia, ©2002–2010 VLD & OK",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": null,
           "view": "obverse and reverse"
         }
       ],
@@ -911,6 +933,8 @@
           "width": 512,
           "height": 497,
           "credit": "Photo: © Trustees of the British Museum",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": null,
           "view": "single face"
         }
       ],
@@ -940,7 +964,9 @@
           "sourceUrl": "https://www.zeno.ru/data/3106/zeno_388312.jpg",
           "width": 2561,
           "height": 1280,
-          "credit": "Zeno.ru · Z-388312",
+          "credit": "Numis_Dmitriy",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
           "view": "source photograph"
         }
       ],
@@ -972,7 +998,9 @@
           "sourceUrl": "https://www.zeno.ru/data/3106/zeno_334987.jpg",
           "width": 1875,
           "height": 1004,
-          "credit": "Zeno.ru · Z-334987",
+          "credit": "jumanji",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
           "view": "source photograph"
         }
       ],
@@ -1004,7 +1032,9 @@
           "sourceUrl": "https://www.zeno.ru/data/3106/zeno_264408.jpg",
           "width": 2324,
           "height": 1100,
-          "credit": "Zeno.ru · Z-264408",
+          "credit": "vaxtankava",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
           "view": "source photograph"
         },
         {
@@ -1014,6 +1044,8 @@
           "width": 1600,
           "height": 757,
           "credit": "Bactrianumis, product 5898",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": null,
           "view": "both as arranged in source"
         }
       ],
@@ -1050,7 +1082,9 @@
           "sourceUrl": "https://www.zeno.ru/data/3106/346356457457.jpg",
           "width": 2404,
           "height": 1264,
-          "credit": "Zeno.ru · Z-264184",
+          "credit": "vaxtankava",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
           "view": "source photograph"
         }
       ],
@@ -1082,7 +1116,9 @@
           "sourceUrl": "https://www.zeno.ru/data/3106/abdi.jpg",
           "width": 973,
           "height": 480,
-          "credit": "Zeno.ru · Z-227845",
+          "credit": "jumanji",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
           "view": "source photograph"
         }
       ],
@@ -1114,7 +1150,9 @@
           "sourceUrl": "https://www.zeno.ru/data/3106/20172.jpg",
           "width": 2436,
           "height": 1256,
-          "credit": "Zeno.ru · Z-182898",
+          "credit": "venedw",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
           "view": "source photograph"
         }
       ],
@@ -1146,7 +1184,9 @@
           "sourceUrl": "https://www.zeno.ru/data/3106/sipsogd.jpg",
           "width": 512,
           "height": 255,
-          "credit": "Zeno.ru · Z-130578",
+          "credit": "charm",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
           "view": "source photograph"
         }
       ],
@@ -1178,7 +1218,9 @@
           "sourceUrl": "https://www.zeno.ru/data/3106/Bl_O8U_Wk_KGrHqQH-DwEtsGKydGoBLb_htltB_12.jpg",
           "width": 1283,
           "height": 653,
-          "credit": "Zeno.ru · Z-81165",
+          "credit": "hfrans",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
           "view": "source photograph"
         }
       ],
@@ -1210,7 +1252,9 @@
           "sourceUrl": "https://www.zeno.ru/data/3106/86526.jpg",
           "width": 763,
           "height": 398,
-          "credit": "Zeno.ru · Z-77712",
+          "credit": "hfrans",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
           "view": "source photograph"
         }
       ],
@@ -1243,7 +1287,9 @@
           "sourceUrl": "https://www.zeno.ru/data/3106/SOG-Panch-Nana-01ab.jpg",
           "width": 923,
           "height": 448,
-          "credit": "Zeno.ru · Z-57887",
+          "credit": "shanlung",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
           "view": "source photograph"
         }
       ],
@@ -1275,7 +1321,9 @@
           "sourceUrl": "https://www.zeno.ru/data/3106/is-1356_Pendjikent_Lady_Nana_Smirnova_844.jpg",
           "width": 1080,
           "height": 537,
-          "credit": "Zeno.ru · Z-54032",
+          "credit": "CyberNumis",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
           "view": "source photograph"
         }
       ],
@@ -1307,7 +1355,9 @@
           "sourceUrl": "https://www.zeno.ru/data/3106/is-1355_Pendjikent_Lady_Nana_Smirnova_844.jpg",
           "width": 1054,
           "height": 603,
-          "credit": "Zeno.ru · Z-54031",
+          "credit": "CyberNumis",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
           "view": "source photograph"
         }
       ],
@@ -1339,7 +1389,9 @@
           "sourceUrl": "https://www.zeno.ru/data/3106/Nana.jpg",
           "width": 1368,
           "height": 728,
-          "credit": "Zeno.ru · Z-29609",
+          "credit": "gazali",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
           "view": "source photograph"
         }
       ],
@@ -1371,7 +1423,9 @@
           "sourceUrl": "https://www.zeno.ru/data/3106/Nana2.jpg",
           "width": 1316,
           "height": 688,
-          "credit": "Zeno.ru · Z-30750",
+          "credit": "gazali",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
           "view": "source photograph"
         }
       ],
@@ -1404,6 +1458,8 @@
           "width": 3000,
           "height": 1440,
           "credit": "Classical Numismatic Group, Electronic Auction 611, lot 576",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": null,
           "view": "both as arranged in source"
         },
         {
@@ -1413,6 +1469,8 @@
           "width": 2303,
           "height": 1058,
           "credit": "Classical Numismatic Group, Electronic Auction 611, lot 576",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": null,
           "view": "both as arranged in source"
         }
       ],
@@ -1450,6 +1508,8 @@
           "width": 458,
           "height": 226,
           "credit": "Stephen Album Rare Coins, Auction 28, lot 145",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": null,
           "view": "both as arranged in source"
         }
       ],
@@ -1492,6 +1552,8 @@
           "width": 472,
           "height": 233,
           "credit": "Stephen Album Rare Coins, Auction 28, lot 146",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": null,
           "view": "both as arranged in source"
         }
       ],
@@ -1530,6 +1592,8 @@
           "width": 450,
           "height": 206,
           "credit": "Stephen Album Rare Coins, Auction 22, lot 55",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": null,
           "view": "both as arranged in source"
         }
       ],
@@ -1567,6 +1631,8 @@
           "width": 1390,
           "height": 680,
           "credit": "Stephen Album Rare Coins, Auction 52, lot 1614; catalogue screenshot hosted by Bactrianumis",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": null,
           "view": "both as arranged in source"
         }
       ],
@@ -1604,6 +1670,8 @@
           "width": 300,
           "height": 150,
           "credit": "Sogdcoins online catalogue, Eastern Sogdiana ES 28",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": null,
           "view": "both as arranged in source"
         }
       ],
