@@ -41,9 +41,11 @@ for r in non['records']:
   ai=Image.open(alt);s['images'].append({**pic,'id':r['id']+'-alternate','path':'/coins/nana/'+alt.name,'width':ai.width,'height':ai.height,'sourceUrl':r['alternate_image']['image_url']})
  a['specimens'].append(s)
 a['scopeCensus']=read('research/coverage-scopes.json')
-a['coverage']={'categoryUrl':z['url'],'zenoRecordCount':14,'importedZenoRecords':len([s for s in a['specimens'] if s['id'].startswith('zeno-')]),'images':sum(len(s['images']) for s in a['specimens']),'scope':'Lady Nana category 3106 only; corpus-wide comparison pending','date':'2026-09-16','status':'snapshot'}
+nana_specimens=[s for s in a['specimens'] if s['familyId']=='lady-nana']
+nana_zeno=[s for s in nana_specimens if s['id'].startswith('zeno-')]
+a['coverage']={'categoryUrl':z['url'],'zenoRecordCount':len(z['records']),'importedZenoRecords':len(nana_zeno),'images':sum(len(s['images']) for s in nana_specimens),'scope':'Lady Nana category 3106 only; corpus-wide comparison pending','date':z.get('retrievedOn','2026-09-16'),'status':'snapshot'}
 # Broad find report is retained without inventing an exact findspot or circulation polygon.
 for s in a['specimens']:
  if s['id']=='zeno-264184':s['description']='Source reports “Unearthed in N. Afghanistan”. This is an unverified regional find report with no specific site, coordinates or archaeological context. No findspot marker is inferred.'
 (root/'public/data/atlas.json').write_text(json.dumps(a,ensure_ascii=False,indent=2))
-print('Exported',len(a['families']),'families',len(a['variants']),'reference groups',len(a['specimens']),'specimen records',a['coverage']['images'],'images')
+print('Exported',len(a['families']),'families',len(a['variants']),'reference groups',len(a['specimens']),'specimen records',sum(len(s['images']) for s in a['specimens']),'images; Nana',a['coverage']['importedZenoRecords'],'Zeno records /',a['coverage']['images'],'images')

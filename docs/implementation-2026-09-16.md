@@ -39,3 +39,23 @@ TypeScript and production build; actual photograph dimensions and visual contact
 4. Build with the configured Sites helper.
 
 The exported JSON drives the site; SQLite is a reproducible relational research export, not a hosted write database. SQL includes citations, classification claims, spatial uncertainty, distribution evidence, separate discovery/deposition dates and coverage tracking.
+
+## Continuation after cross-window source handoff
+
+The source archive was restored in a clean workspace from Git HEAD `318c4622eb7fc5c5fb0d349aff0e490a5a14ebf8` (`Build terrain atlas and source-traceable Lady Nana corpus`). The archive contained `.git`, 25 research files, 14 `public/coins/zeno` images and 8 `public/coins/nana` images; the restored working tree was clean before continuation work.
+
+The Zeno collector has now been hardened before the Semirechye expansion:
+
+- category source counts, scope-baseline counts and observed link counts are recorded separately;
+- pagination pages are fingerprinted by their photo-ID sets, and a repeated first page is explicitly marked as a pagination-integrity failure rather than counted as new coverage;
+- legacy cached pagination filenames remain readable, so the Lady Nana snapshot can be audited offline;
+- detail records retain their raw HTML path, breadcrumb, leaf Zeno category, requested-category membership, measurements and an explicit-text-only square-hole scope flag;
+- cached Lady Nana detail pages were re-parsed offline: all 14 now retain uploader attribution, raw labelled source fields, upload/date/mint/metal text when present, free-text photo notes, image hashes and a source-terms rights marker; image bytes, dimensions and hashes are unchanged;
+- running the collector without `--download` preserves existing detailed manifest records instead of erasing them;
+- saved Zeno manifests are exported as independent relational coverage snapshots, so later Semirechye batches cannot inflate the Lady Nana 14/14 statistic.
+
+The Lady Nana coverage field `images` was corrected to its actual scoped value of **22**. The whole display export remains **34** images. Validation now asserts both figures independently and scopes Zeno-ID equality to the Lady Nana family, allowing new Zeno categories to be added safely.
+
+Offline regression checks pass for the cached Lady Nana category, including detection that Zeno category 3106's `page=2` response duplicates the first-page photo-ID set while the observed 14 records still match the source-reported category total.
+
+Current execution environments cannot resolve `www.zeno.ru` (`Temporary failure in name resolution`). No #795 data is therefore claimed as collected. Category 795 remains at its saved source baseline of 254 photo records with `scopeChecked=false` and `importedImages=0` until a network-capable retrieval succeeds. The collector changes are intentionally independent of the website UI and do not alter the existing Lady Nana source files or images.

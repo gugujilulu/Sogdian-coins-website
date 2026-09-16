@@ -17,9 +17,12 @@ Circulation polygons and hoard points have supported model/layers but no verifie
 - `db/schema.sql`: relational model, hierarchy, attributions, specimen identity, geography, manufacture links and evidence.
 - `scripts/build-atlas.py`: source-register → display export.
 - `scripts/export-atlas-db.py OUTPUT`: reproducible SQLite research database.
-- `scripts/validate-atlas.py`: coverage and evidence/identity invariants.
-- `scripts/collect-zeno.py --category ID --download`: public, cached source retrieval; observed-link totals alone are not completeness claims.
+- `scripts/validate-atlas.py`: coverage and evidence/identity invariants; Lady Nana coverage stays independently scoped as new Zeno categories are added.
+- `scripts/collect-zeno.py --category ID --download`: public, cached source retrieval with source-count and pagination-integrity tracking; observed-link totals alone are not completeness claims.
+- `python -m unittest tests/test_collect_zeno.py -v`: offline regression checks against the cached Lady Nana gallery, including repeated-pagination detection.
 
 Python data scripts require Pillow. Website uses TypeScript, React/Vinext, MapLibre GL and the existing Shadcn primitives. Use the configured Sites build helper; pnpm lockfile is committed.
 
 Photographs retain their credits and original source links. Map data credits remain visible. Source-specific dates, uncertain mint assignments, disputed attributions and unresolved specimen identities must remain distinguishable.
+
+Current Semirechye acquisition status: category #795 (Turgesh / Runic tamgha) is the next priority, but no #795 import is claimed until Zeno can be reached and pagination coverage is verified against the 254-photo source baseline. A partial crawl is a valid saved research state and must remain labelled partial.

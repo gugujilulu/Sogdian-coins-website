@@ -40,9 +40,28 @@ for s in d['specimens']:
   if not db.execute('SELECT 1 FROM external_record WHERE id=?',(eid,)).fetchone():add('external_record',id=eid,provider='Zeno' if 'zeno.ru' in url else 'external',record_key=url,url=url,record_kind='specimen',verification_status='directly_checked' if src['relation']=='same_specimen' else 'reported_by_source',checked_on='2026-09-16',citation_id=cite(url,src['label']))
   add('specimen_external_record',specimen_id=s['id'],external_record_id=eid,relation=src['relation'])
  for feature in s['facets']:add('specimen_feature',specimen_id=s['id'],label=feature,citation_id=ci)
-add('coverage_snapshot',id='zeno3106-20260916',provider='Zeno',category_url=d['coverage']['categoryUrl'],retrieved_on=d['coverage']['date'],expected_record_count=d['coverage']['zenoRecordCount'],scope_note=d['coverage']['scope'])
-manifest=json.loads((root/'research/zeno/manifest-3106.json').read_text())
-for r in manifest['records']:
- s=next((s for s in d['specimens'] if s['id']=='zeno-'+r['id']),None)
- add('coverage_record',snapshot_id='zeno3106-20260916',source_record_key=r['id'],specimen_id=s['id'] if s else None,image_id=s['images'][0]['id'] if s else None,status='image_imported' if s else 'pending')
-assert not db.execute('PRAGMA foreign_key_check').fetchall();db.commit();print('Relational export:',out,';',len(d['specimens']),'specimen records')
+# Every saved Zeno manifest becomes an independently scoped coverage snapshot.
+# This keeps Lady Nana 14/14 separate from later Semirechye batches and permits
+# partial crawls to be represented without claiming category completeness.
+scope_baselines={str(row['categoryId']):row for row in d.get('scopeCensus',[])}
+def linked_specimen(record_id):
+ direct=next((s for s in d['specimens'] if s['id']=='zeno-'+record_id),None)
+ if direct:return direct
+ target='showphoto.php?photo='+record_id
+ return next((s for s in d['specimens'] if any(target in src['url'] and src.get('relation')=='same_specimen' for src in s['sources'])),None)
+for manifest_path in sorted((root/'research/zeno').glob('manifest-*.json')):
+ manifest=json.loads(manifest_path.read_text());cat=str(manifest.get('categoryId') or manifest_path.stem.split('-',1)[-1]);date=manifest.get('retrievedOn') or 'unknown'
+ snapshot_id='zeno'+cat+'-'+date.replace('-','')
+ baseline=scope_baselines.get(cat,{}).get('sourcePhotoCount')
+ expected=manifest.get('sourceReportedCount')
+ if expected is None:expected=baseline
+ if cat=='3106' and expected is None:expected=d['coverage']['zenoRecordCount']
+ scope_note=(manifest.get('countSemantics') or 'Observed source records; completeness not asserted.')+' Coverage status: '+manifest.get('coverageStatus','legacy_manifest')+'.'
+ add('coverage_snapshot',id=snapshot_id,provider='Zeno',category_url=manifest.get('url') or ('https://www.zeno.ru/showgallery.php?cat='+cat),retrieved_on=date,expected_record_count=expected,scope_note=scope_note)
+ record_ids=manifest.get('recordIds') or [str(r['id']) for r in manifest.get('records',[]) if r.get('id')]
+ for record_id in record_ids:
+  record_id=str(record_id);spec=linked_specimen(record_id);image=None
+  if spec:image=next((im for im in spec['images'] if im['path']==f'/coins/zeno/{record_id}.jpg'),None)
+  status='image_imported' if image else 'specimen_linked_no_image' if spec else 'pending'
+  add('coverage_record',snapshot_id=snapshot_id,source_record_key=record_id,specimen_id=spec['id'] if spec else None,image_id=image['id'] if image else None,status=status)
+assert not db.execute('PRAGMA foreign_key_check').fetchall();db.commit();print('Relational export:',out,';',len(d['specimens']),'specimen records;',len(list((root/'research/zeno').glob('manifest-*.json'))),'Zeno coverage snapshot(s)')

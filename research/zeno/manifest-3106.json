@@ -2,6 +2,8 @@
   "categoryId": "3106",
   "url": "https://www.zeno.ru/showgallery.php?cat=3106",
   "retrievedOn": "2026-09-16",
+  "sourceReportedCount": 14,
+  "scopeBaselineCount": null,
   "recordIds": [
     "388312",
     "334987",
@@ -19,217 +21,1114 @@
     "30750"
   ],
   "recordCount": 14,
-  "countSemantics": "Observed unique photo links, including recent and descendant links; not a completeness claim.",
+  "countSemantics": "Observed unique photo links only; source count and pagination integrity are tracked separately and completeness is never inferred from links alone.",
+  "coverageStatus": "observed_count_matches_source_count",
+  "pagination": {
+    "linksObserved": 1,
+    "pagesFetched": [
+      {
+        "page": "2",
+        "url": "https://www.zeno.ru/showgallery.php?cat=3106&page=2",
+        "rawHtml": "research/zeno/category-3106-page0.html",
+        "recordCount": 14,
+        "recordIds": [
+          "388312",
+          "334987",
+          "264408",
+          "264184",
+          "227845",
+          "182898",
+          "130578",
+          "81165",
+          "77712",
+          "57887",
+          "54032",
+          "54031",
+          "29609",
+          "30750"
+        ],
+        "duplicateOf": "first",
+        "sha256": "e0cfa324f474561c0fcbfbe2c45b47a1d54a685800ffcad390753ffc7d39094e"
+      }
+    ],
+    "repeatedPages": [
+      {
+        "page": "2",
+        "duplicateOf": "first",
+        "recordIds": [
+          "388312",
+          "334987",
+          "264408",
+          "264184",
+          "227845",
+          "182898",
+          "130578",
+          "81165",
+          "77712",
+          "57887",
+          "54032",
+          "54031",
+          "29609",
+          "30750"
+        ]
+      }
+    ],
+    "integrity": "repeated_page_content_but_count_matches_source",
+    "note": "Repeated photo-ID sets are treated as pagination failure, not evidence of additional coverage."
+  },
+  "rawGalleryHtml": "research/zeno/category-3106.html",
   "records": [
     {
       "id": "388312",
       "url": "https://www.zeno.ru/showphoto.php?photo=388312",
+      "rawHtml": "research/zeno/388312.html",
       "title": "#388312 - Principality of Panch (Penjikent), Divashtich, with the title “Lady Nana”, AE unit, AD 709–722.",
-      "description": "",
+      "description": "#388312 - Principality of Panch (Penjikent), Divashtich, with the title “Lady Nana”, AE unit, AD 709–722.",
+      "photoNote": null,
+      "sourceFields": {
+        "Upload Date": "10-September-2026",
+        "Views": "29",
+        "Keywords": "Principality of Panch Penjikent Divashtich with title “Lady Nana” AE unit AD 709–722",
+        "Weight, g": "1.39",
+        "Size, mm": "19",
+        "Date": "AD 709–722.",
+        "Metal": "AE"
+      },
+      "uploadDateText": "10-September-2026",
+      "dateText": "AD 709–722.",
+      "mintText": null,
+      "metalText": "AE",
+      "weightText": "1.39",
+      "sizeText": "19",
       "weightG": 1.39,
       "diameterMm": 19.0,
+      "uploader": {
+        "name": "Numis_Dmitriy",
+        "memberId": "2788",
+        "profileUrl": "https://www.zeno.ru/member.php?uid=2788"
+      },
+      "rights": {
+        "status": "source_terms_apply_unverified",
+        "sourceTermsUrl": "https://www.zeno.ru/rules.php",
+        "note": "Uploader attribution is preserved from the source page; downstream reuse rights are not inferred."
+      },
       "image": {
         "url": "https://www.zeno.ru/data/3106/zeno_388312.jpg",
         "path": "/coins/zeno/388312.jpg",
         "width": 2561,
         "height": 1280,
-        "sha256": "5fb290c5a36c66196dd626ace8281efc9aadb35f3c20fcfc9da599125115318d"
-      }
+        "sha256": "5fb290c5a36c66196dd626ace8281efc9aadb35f3c20fcfc9da599125115318d",
+        "credit": "Numis_Dmitriy",
+        "rightsStatus": "source_terms_apply_unverified",
+        "sourceTermsUrl": "https://www.zeno.ru/rules.php"
+      },
+      "breadcrumb": [
+        {
+          "categoryId": "781",
+          "title": "PRE-ISLAMIC ASIA, NEAR EAST & NORTH AFRICA"
+        },
+        {
+          "categoryId": "503",
+          "title": "Central Asia"
+        },
+        {
+          "categoryId": "800",
+          "title": "Soghd"
+        },
+        {
+          "categoryId": "868",
+          "title": "Samarkand Soghd"
+        },
+        {
+          "categoryId": "2146",
+          "title": "Pendjikent"
+        },
+        {
+          "categoryId": "3106",
+          "title": "Divashtich, with title 'Lady Nana', AD 709-722"
+        }
+      ],
+      "leafCategoryId": "3106",
+      "inRequestedCategory": true,
+      "squareHoleStatus": "unknown",
+      "scopeReview": "pending"
     },
     {
       "id": "334987",
       "url": "https://www.zeno.ru/showphoto.php?photo=334987",
+      "rawHtml": "research/zeno/334987.html",
       "title": "#334987 - Pendjikent AE, Nana, lady of Panch",
-      "description": "",
+      "description": "#334987 - Pendjikent AE, Nana, lady of Panch",
+      "photoNote": null,
+      "sourceFields": {
+        "Upload Date": "3-June-2024",
+        "Views": "155",
+        "Keywords": "Pendjikent AE Nana lady of Panch",
+        "Weight, g": "2.7",
+        "Size, mm": "1.8",
+        "Mint": "Pendjikent",
+        "Metal": "AE"
+      },
+      "uploadDateText": "3-June-2024",
+      "dateText": null,
+      "mintText": "Pendjikent",
+      "metalText": "AE",
+      "weightText": "2.7",
+      "sizeText": "1.8",
       "weightG": 2.7,
       "diameterMm": 1.8,
+      "uploader": {
+        "name": "jumanji",
+        "memberId": "1788",
+        "profileUrl": "https://www.zeno.ru/member.php?uid=1788"
+      },
+      "rights": {
+        "status": "source_terms_apply_unverified",
+        "sourceTermsUrl": "https://www.zeno.ru/rules.php",
+        "note": "Uploader attribution is preserved from the source page; downstream reuse rights are not inferred."
+      },
       "image": {
         "url": "https://www.zeno.ru/data/3106/zeno_334987.jpg",
         "path": "/coins/zeno/334987.jpg",
         "width": 1875,
         "height": 1004,
-        "sha256": "7a64e4750cefc0a989b0b767e4391c6900b1fbd17b70307619008700fedec5f7"
-      }
+        "sha256": "7a64e4750cefc0a989b0b767e4391c6900b1fbd17b70307619008700fedec5f7",
+        "credit": "jumanji",
+        "rightsStatus": "source_terms_apply_unverified",
+        "sourceTermsUrl": "https://www.zeno.ru/rules.php"
+      },
+      "breadcrumb": [
+        {
+          "categoryId": "781",
+          "title": "PRE-ISLAMIC ASIA, NEAR EAST & NORTH AFRICA"
+        },
+        {
+          "categoryId": "503",
+          "title": "Central Asia"
+        },
+        {
+          "categoryId": "800",
+          "title": "Soghd"
+        },
+        {
+          "categoryId": "868",
+          "title": "Samarkand Soghd"
+        },
+        {
+          "categoryId": "2146",
+          "title": "Pendjikent"
+        },
+        {
+          "categoryId": "3106",
+          "title": "Divashtich, with title 'Lady Nana', AD 709-722"
+        }
+      ],
+      "leafCategoryId": "3106",
+      "inRequestedCategory": true,
+      "squareHoleStatus": "unknown",
+      "scopeReview": "pending"
     },
     {
       "id": "264408",
       "url": "https://www.zeno.ru/showphoto.php?photo=264408",
+      "rawHtml": "research/zeno/264408.html",
       "title": "#264408 - Pendjikend, AE unit, Lady Nana",
-      "description": "",
+      "description": "#264408 - Pendjikend, AE unit, Lady Nana",
+      "photoNote": null,
+      "sourceFields": {
+        "Upload Date": "17-December-2020",
+        "Views": "131",
+        "Keywords": "Pendjikend AE unit Lady Nana",
+        "Weight, g": "1.58",
+        "Size, mm": "18.5 - 19",
+        "Metal": "AE"
+      },
+      "uploadDateText": "17-December-2020",
+      "dateText": null,
+      "mintText": null,
+      "metalText": "AE",
+      "weightText": "1.58",
+      "sizeText": "18.5 - 19",
       "weightG": 1.58,
       "diameterMm": 18.5,
+      "uploader": {
+        "name": "vaxtankava",
+        "memberId": "2186",
+        "profileUrl": "https://www.zeno.ru/member.php?uid=2186"
+      },
+      "rights": {
+        "status": "source_terms_apply_unverified",
+        "sourceTermsUrl": "https://www.zeno.ru/rules.php",
+        "note": "Uploader attribution is preserved from the source page; downstream reuse rights are not inferred."
+      },
       "image": {
         "url": "https://www.zeno.ru/data/3106/zeno_264408.jpg",
         "path": "/coins/zeno/264408.jpg",
         "width": 2324,
         "height": 1100,
-        "sha256": "17f537884d20bcdb81bdc4c792f2d5ab0fa487fd1400fa3814c4f3dbdd5e49e1"
-      }
+        "sha256": "17f537884d20bcdb81bdc4c792f2d5ab0fa487fd1400fa3814c4f3dbdd5e49e1",
+        "credit": "vaxtankava",
+        "rightsStatus": "source_terms_apply_unverified",
+        "sourceTermsUrl": "https://www.zeno.ru/rules.php"
+      },
+      "breadcrumb": [
+        {
+          "categoryId": "781",
+          "title": "PRE-ISLAMIC ASIA, NEAR EAST & NORTH AFRICA"
+        },
+        {
+          "categoryId": "503",
+          "title": "Central Asia"
+        },
+        {
+          "categoryId": "800",
+          "title": "Soghd"
+        },
+        {
+          "categoryId": "868",
+          "title": "Samarkand Soghd"
+        },
+        {
+          "categoryId": "2146",
+          "title": "Pendjikent"
+        },
+        {
+          "categoryId": "3106",
+          "title": "Divashtich, with title 'Lady Nana', AD 709-722"
+        }
+      ],
+      "leafCategoryId": "3106",
+      "inRequestedCategory": true,
+      "squareHoleStatus": "unknown",
+      "scopeReview": "pending"
     },
     {
       "id": "264184",
       "url": "https://www.zeno.ru/showphoto.php?photo=264184",
+      "rawHtml": "research/zeno/264184.html",
       "title": "#264184 - Pendjikend, AE unit, Lady Nana",
       "description": "Unearthed in N. Afghanistan",
+      "photoNote": "Unearthed in N. Afghanistan",
+      "sourceFields": {
+        "Upload Date": "12-December-2020",
+        "Views": "100",
+        "Keywords": "Pendjikend AE unit Lady Nana",
+        "Weight, g": "2.97",
+        "Size, mm": "21 - 22.5",
+        "Denomination": "cash",
+        "Metal": "AE"
+      },
+      "uploadDateText": "12-December-2020",
+      "dateText": null,
+      "mintText": null,
+      "metalText": "AE",
+      "weightText": "2.97",
+      "sizeText": "21 - 22.5",
       "weightG": 2.97,
       "diameterMm": 21.0,
+      "uploader": {
+        "name": "vaxtankava",
+        "memberId": "2186",
+        "profileUrl": "https://www.zeno.ru/member.php?uid=2186"
+      },
+      "rights": {
+        "status": "source_terms_apply_unverified",
+        "sourceTermsUrl": "https://www.zeno.ru/rules.php",
+        "note": "Uploader attribution is preserved from the source page; downstream reuse rights are not inferred."
+      },
       "image": {
         "url": "https://www.zeno.ru/data/3106/346356457457.jpg",
         "path": "/coins/zeno/264184.jpg",
         "width": 2404,
         "height": 1264,
-        "sha256": "bff7d2fe7c16d23c3f30d4ad73b7b2c3f373be908f662af6b8510829fa71937f"
-      }
+        "sha256": "bff7d2fe7c16d23c3f30d4ad73b7b2c3f373be908f662af6b8510829fa71937f",
+        "credit": "vaxtankava",
+        "rightsStatus": "source_terms_apply_unverified",
+        "sourceTermsUrl": "https://www.zeno.ru/rules.php"
+      },
+      "breadcrumb": [
+        {
+          "categoryId": "781",
+          "title": "PRE-ISLAMIC ASIA, NEAR EAST & NORTH AFRICA"
+        },
+        {
+          "categoryId": "503",
+          "title": "Central Asia"
+        },
+        {
+          "categoryId": "800",
+          "title": "Soghd"
+        },
+        {
+          "categoryId": "868",
+          "title": "Samarkand Soghd"
+        },
+        {
+          "categoryId": "2146",
+          "title": "Pendjikent"
+        },
+        {
+          "categoryId": "3106",
+          "title": "Divashtich, with title 'Lady Nana', AD 709-722"
+        }
+      ],
+      "leafCategoryId": "3106",
+      "inRequestedCategory": true,
+      "squareHoleStatus": "unknown",
+      "scopeReview": "pending"
     },
     {
       "id": "227845",
       "url": "https://www.zeno.ru/showphoto.php?photo=227845",
+      "rawHtml": "research/zeno/227845.html",
       "title": "#227845 - Samarqand Soghd, domain Panch, lady Nana",
-      "description": "",
+      "description": "#227845 - Samarqand Soghd, domain Panch, lady Nana",
+      "photoNote": null,
+      "sourceFields": {
+        "Upload Date": "23-July-2019",
+        "Views": "156",
+        "Keywords": "Samarqand Soghd domain Panch lady Nana",
+        "Weight, g": "1.45",
+        "Size, mm": "18",
+        "Metal": "AE"
+      },
+      "uploadDateText": "23-July-2019",
+      "dateText": null,
+      "mintText": null,
+      "metalText": "AE",
+      "weightText": "1.45",
+      "sizeText": "18",
       "weightG": 1.45,
       "diameterMm": 18.0,
+      "uploader": {
+        "name": "jumanji",
+        "memberId": "1788",
+        "profileUrl": "https://www.zeno.ru/member.php?uid=1788"
+      },
+      "rights": {
+        "status": "source_terms_apply_unverified",
+        "sourceTermsUrl": "https://www.zeno.ru/rules.php",
+        "note": "Uploader attribution is preserved from the source page; downstream reuse rights are not inferred."
+      },
       "image": {
         "url": "https://www.zeno.ru/data/3106/abdi.jpg",
         "path": "/coins/zeno/227845.jpg",
         "width": 973,
         "height": 480,
-        "sha256": "9a83a9f990e767f78894fa26a4b40287f37c22927840dfb98d2adf0f31441282"
-      }
+        "sha256": "9a83a9f990e767f78894fa26a4b40287f37c22927840dfb98d2adf0f31441282",
+        "credit": "jumanji",
+        "rightsStatus": "source_terms_apply_unverified",
+        "sourceTermsUrl": "https://www.zeno.ru/rules.php"
+      },
+      "breadcrumb": [
+        {
+          "categoryId": "781",
+          "title": "PRE-ISLAMIC ASIA, NEAR EAST & NORTH AFRICA"
+        },
+        {
+          "categoryId": "503",
+          "title": "Central Asia"
+        },
+        {
+          "categoryId": "800",
+          "title": "Soghd"
+        },
+        {
+          "categoryId": "868",
+          "title": "Samarkand Soghd"
+        },
+        {
+          "categoryId": "2146",
+          "title": "Pendjikent"
+        },
+        {
+          "categoryId": "3106",
+          "title": "Divashtich, with title 'Lady Nana', AD 709-722"
+        }
+      ],
+      "leafCategoryId": "3106",
+      "inRequestedCategory": true,
+      "squareHoleStatus": "unknown",
+      "scopeReview": "pending"
     },
     {
       "id": "182898",
       "url": "https://www.zeno.ru/showphoto.php?photo=182898",
+      "rawHtml": "research/zeno/182898.html",
       "title": "#182898 - Samarqand Soghd, domain Panch, lady Nana. Type II",
       "description": "Smirnova #769.",
+      "photoNote": "Smirnova #769.",
+      "sourceFields": {
+        "Upload Date": "8-April-2017",
+        "Views": "310",
+        "Keywords": "Samarqand Soghd domain Panch lady Nana Type II",
+        "Weight, g": "1.1",
+        "Size, mm": "17",
+        "Metal": "ае"
+      },
+      "uploadDateText": "8-April-2017",
+      "dateText": null,
+      "mintText": null,
+      "metalText": "ае",
+      "weightText": "1.1",
+      "sizeText": "17",
       "weightG": 1.1,
       "diameterMm": 17.0,
+      "uploader": {
+        "name": "venedw",
+        "memberId": "1542",
+        "profileUrl": "https://www.zeno.ru/member.php?uid=1542"
+      },
+      "rights": {
+        "status": "source_terms_apply_unverified",
+        "sourceTermsUrl": "https://www.zeno.ru/rules.php",
+        "note": "Uploader attribution is preserved from the source page; downstream reuse rights are not inferred."
+      },
       "image": {
         "url": "https://www.zeno.ru/data/3106/20172.jpg",
         "path": "/coins/zeno/182898.jpg",
         "width": 2436,
         "height": 1256,
-        "sha256": "83f798ecd17d63d9a4c51e72a6be49413266578d9497480576a2e923527597db"
-      }
+        "sha256": "83f798ecd17d63d9a4c51e72a6be49413266578d9497480576a2e923527597db",
+        "credit": "venedw",
+        "rightsStatus": "source_terms_apply_unverified",
+        "sourceTermsUrl": "https://www.zeno.ru/rules.php"
+      },
+      "breadcrumb": [
+        {
+          "categoryId": "781",
+          "title": "PRE-ISLAMIC ASIA, NEAR EAST & NORTH AFRICA"
+        },
+        {
+          "categoryId": "503",
+          "title": "Central Asia"
+        },
+        {
+          "categoryId": "800",
+          "title": "Soghd"
+        },
+        {
+          "categoryId": "868",
+          "title": "Samarkand Soghd"
+        },
+        {
+          "categoryId": "2146",
+          "title": "Pendjikent"
+        },
+        {
+          "categoryId": "3106",
+          "title": "Divashtich, with title 'Lady Nana', AD 709-722"
+        }
+      ],
+      "leafCategoryId": "3106",
+      "inRequestedCategory": true,
+      "squareHoleStatus": "unknown",
+      "scopeReview": "pending"
     },
     {
       "id": "130578",
       "url": "https://www.zeno.ru/showphoto.php?photo=130578",
+      "rawHtml": "research/zeno/130578.html",
       "title": "#130578 - Penjikent, AE cash, Nana, lady of Panch.",
       "description": "Penjikent, Nana, lady of Panch. Smir type 3: # 834-996",
+      "photoNote": "Penjikent, Nana, lady of Panch. Smir type 3: # 834-996",
+      "sourceFields": {
+        "Upload Date": "26-October-2013",
+        "Views": "418",
+        "Keywords": "Penjikent Nana Panch",
+        "Weight, g": "?",
+        "Metal": "AE"
+      },
+      "uploadDateText": "26-October-2013",
+      "dateText": null,
+      "mintText": null,
+      "metalText": "AE",
+      "weightText": "?",
+      "sizeText": null,
       "weightG": null,
       "diameterMm": null,
+      "uploader": {
+        "name": "charm",
+        "memberId": "2",
+        "profileUrl": "https://www.zeno.ru/member.php?uid=2"
+      },
+      "rights": {
+        "status": "source_terms_apply_unverified",
+        "sourceTermsUrl": "https://www.zeno.ru/rules.php",
+        "note": "Uploader attribution is preserved from the source page; downstream reuse rights are not inferred."
+      },
       "image": {
         "url": "https://www.zeno.ru/data/3106/sipsogd.jpg",
         "path": "/coins/zeno/130578.jpg",
         "width": 512,
         "height": 255,
-        "sha256": "ea6375f2f31bc43fdd126ee4ddbbdfdb7dda716ee1d9894c653795c26dae2c64"
-      }
+        "sha256": "ea6375f2f31bc43fdd126ee4ddbbdfdb7dda716ee1d9894c653795c26dae2c64",
+        "credit": "charm",
+        "rightsStatus": "source_terms_apply_unverified",
+        "sourceTermsUrl": "https://www.zeno.ru/rules.php"
+      },
+      "breadcrumb": [
+        {
+          "categoryId": "781",
+          "title": "PRE-ISLAMIC ASIA, NEAR EAST & NORTH AFRICA"
+        },
+        {
+          "categoryId": "503",
+          "title": "Central Asia"
+        },
+        {
+          "categoryId": "800",
+          "title": "Soghd"
+        },
+        {
+          "categoryId": "868",
+          "title": "Samarkand Soghd"
+        },
+        {
+          "categoryId": "2146",
+          "title": "Pendjikent"
+        },
+        {
+          "categoryId": "3106",
+          "title": "Divashtich, with title 'Lady Nana', AD 709-722"
+        }
+      ],
+      "leafCategoryId": "3106",
+      "inRequestedCategory": true,
+      "squareHoleStatus": "unknown",
+      "scopeReview": "pending"
     },
     {
       "id": "81165",
       "url": "https://www.zeno.ru/showphoto.php?photo=81165",
+      "rawHtml": "research/zeno/81165.html",
       "title": "#81165 - Panch, AE, lady Nana.",
       "description": "Domain Panch / Penjikent, lady Nana. Obv. Tamgha frames square hole. Rev.- The sogdian legend reads: \"pncy nn δβnpnwh\" (Nana, lady of Panch ( or Nana, city goddess of Penjikent?)) Mint: Penjikent Date: 8th cent. AD Metal: AE, cast.",
+      "photoNote": "Domain Panch / Penjikent, lady Nana. Obv. Tamgha frames square hole. Rev.- The sogdian legend reads: \"pncy nn δβnpnwh\" (Nana, lady of Panch ( or Nana, city goddess of Penjikent?)) Mint: Penjikent Date: 8th cent. AD Metal: AE, cast.",
+      "sourceFields": {
+        "Upload Date": "9-February-2010",
+        "Views": "256",
+        "Keywords": "Penjikent Nana",
+        "Weight, g": "1,58",
+        "Size, mm": "19",
+        "Mint": "Penjikent",
+        "Date": "ND",
+        "Denomination": "?",
+        "Metal": "AE"
+      },
+      "uploadDateText": "9-February-2010",
+      "dateText": "ND",
+      "mintText": "Penjikent",
+      "metalText": "AE",
+      "weightText": "1,58",
+      "sizeText": "19",
       "weightG": 1.58,
       "diameterMm": 19.0,
+      "uploader": {
+        "name": "hfrans",
+        "memberId": "2055",
+        "profileUrl": "https://www.zeno.ru/member.php?uid=2055"
+      },
+      "rights": {
+        "status": "source_terms_apply_unverified",
+        "sourceTermsUrl": "https://www.zeno.ru/rules.php",
+        "note": "Uploader attribution is preserved from the source page; downstream reuse rights are not inferred."
+      },
       "image": {
         "url": "https://www.zeno.ru/data/3106/Bl_O8U_Wk_KGrHqQH-DwEtsGKydGoBLb_htltB_12.jpg",
         "path": "/coins/zeno/81165.jpg",
         "width": 1283,
         "height": 653,
-        "sha256": "b31ad472ef69e3e2a63067e0160b6b7cfa2457f6c16186f35082306008a029de"
-      }
+        "sha256": "b31ad472ef69e3e2a63067e0160b6b7cfa2457f6c16186f35082306008a029de",
+        "credit": "hfrans",
+        "rightsStatus": "source_terms_apply_unverified",
+        "sourceTermsUrl": "https://www.zeno.ru/rules.php"
+      },
+      "breadcrumb": [
+        {
+          "categoryId": "781",
+          "title": "PRE-ISLAMIC ASIA, NEAR EAST & NORTH AFRICA"
+        },
+        {
+          "categoryId": "503",
+          "title": "Central Asia"
+        },
+        {
+          "categoryId": "800",
+          "title": "Soghd"
+        },
+        {
+          "categoryId": "868",
+          "title": "Samarkand Soghd"
+        },
+        {
+          "categoryId": "2146",
+          "title": "Pendjikent"
+        },
+        {
+          "categoryId": "3106",
+          "title": "Divashtich, with title 'Lady Nana', AD 709-722"
+        }
+      ],
+      "leafCategoryId": "3106",
+      "inRequestedCategory": true,
+      "squareHoleStatus": "explicit_text_yes",
+      "scopeReview": "pending"
     },
     {
       "id": "77712",
       "url": "https://www.zeno.ru/showphoto.php?photo=77712",
+      "rawHtml": "research/zeno/77712.html",
       "title": "#77712 - Pendjikend, AE, queen Nana.",
       "description": "Ex Stephen Album rare coins: Auction 7: Lot 97 SOGDIANA: Queen Nana, 709-722, AE cash (1.60g), Panchekanth. Smirnova-769. Circular semi-italic Sogdian legend / Tamgha of Panchekanth type around square hole.",
+      "photoNote": "Ex Stephen Album rare coins: Auction 7: Lot 97 SOGDIANA: Queen Nana, 709-722, AE cash (1.60g), Panchekanth. Smirnova-769. Circular semi-italic Sogdian legend / Tamgha of Panchekanth type around square hole.",
+      "sourceFields": {
+        "Upload Date": "26-November-2009",
+        "Views": "159",
+        "Keywords": "Pendjikend Nana",
+        "Weight, g": "1,60 g",
+        "Mint": "Pendjikend",
+        "Date": "ND",
+        "Denomination": "?",
+        "Metal": "AE"
+      },
+      "uploadDateText": "26-November-2009",
+      "dateText": "ND",
+      "mintText": "Pendjikend",
+      "metalText": "AE",
+      "weightText": "1,60 g",
+      "sizeText": null,
       "weightG": 1.6,
       "diameterMm": null,
+      "uploader": {
+        "name": "hfrans",
+        "memberId": "2055",
+        "profileUrl": "https://www.zeno.ru/member.php?uid=2055"
+      },
+      "rights": {
+        "status": "source_terms_apply_unverified",
+        "sourceTermsUrl": "https://www.zeno.ru/rules.php",
+        "note": "Uploader attribution is preserved from the source page; downstream reuse rights are not inferred."
+      },
       "image": {
         "url": "https://www.zeno.ru/data/3106/86526.jpg",
         "path": "/coins/zeno/77712.jpg",
         "width": 763,
         "height": 398,
-        "sha256": "addd08d73276f2cd8edee376a613a9e28650badca7ec15e0f955780dc8bc98ba"
-      }
+        "sha256": "addd08d73276f2cd8edee376a613a9e28650badca7ec15e0f955780dc8bc98ba",
+        "credit": "hfrans",
+        "rightsStatus": "source_terms_apply_unverified",
+        "sourceTermsUrl": "https://www.zeno.ru/rules.php"
+      },
+      "breadcrumb": [
+        {
+          "categoryId": "781",
+          "title": "PRE-ISLAMIC ASIA, NEAR EAST & NORTH AFRICA"
+        },
+        {
+          "categoryId": "503",
+          "title": "Central Asia"
+        },
+        {
+          "categoryId": "800",
+          "title": "Soghd"
+        },
+        {
+          "categoryId": "868",
+          "title": "Samarkand Soghd"
+        },
+        {
+          "categoryId": "2146",
+          "title": "Pendjikent"
+        },
+        {
+          "categoryId": "3106",
+          "title": "Divashtich, with title 'Lady Nana', AD 709-722"
+        }
+      ],
+      "leafCategoryId": "3106",
+      "inRequestedCategory": true,
+      "squareHoleStatus": "explicit_text_yes",
+      "scopeReview": "pending"
     },
     {
       "id": "57887",
       "url": "https://www.zeno.ru/showphoto.php?photo=57887",
+      "rawHtml": "research/zeno/57887.html",
       "title": "#57887 - Samarqand Soghd, domain Panch, lady Nana.",
       "description": "rather similar to Smirnova 834-36",
+      "photoNote": "rather similar to Smirnova 834-36",
+      "sourceFields": {
+        "Upload Date": "1-May-2008",
+        "Views": "355",
+        "Keywords": "Samarqand Soghd domain Panch lady Nana",
+        "Weight, g": "2.64",
+        "Size, mm": "18.2;th. 1.7",
+        "Mint": "Penjikent",
+        "Metal": "AE"
+      },
+      "uploadDateText": "1-May-2008",
+      "dateText": null,
+      "mintText": "Penjikent",
+      "metalText": "AE",
+      "weightText": "2.64",
+      "sizeText": "18.2;th. 1.7",
       "weightG": 2.64,
       "diameterMm": 18.2,
+      "uploader": {
+        "name": "shanlung",
+        "memberId": "109",
+        "profileUrl": "https://www.zeno.ru/member.php?uid=109"
+      },
+      "rights": {
+        "status": "source_terms_apply_unverified",
+        "sourceTermsUrl": "https://www.zeno.ru/rules.php",
+        "note": "Uploader attribution is preserved from the source page; downstream reuse rights are not inferred."
+      },
       "image": {
         "url": "https://www.zeno.ru/data/3106/SOG-Panch-Nana-01ab.jpg",
         "path": "/coins/zeno/57887.jpg",
         "width": 923,
         "height": 448,
-        "sha256": "7a8a63f888d105bfa22c7e86514f9d8ab31c4cf1c146dd32f23527e2cb14e5cb"
-      }
+        "sha256": "7a8a63f888d105bfa22c7e86514f9d8ab31c4cf1c146dd32f23527e2cb14e5cb",
+        "credit": "shanlung",
+        "rightsStatus": "source_terms_apply_unverified",
+        "sourceTermsUrl": "https://www.zeno.ru/rules.php"
+      },
+      "breadcrumb": [
+        {
+          "categoryId": "781",
+          "title": "PRE-ISLAMIC ASIA, NEAR EAST & NORTH AFRICA"
+        },
+        {
+          "categoryId": "503",
+          "title": "Central Asia"
+        },
+        {
+          "categoryId": "800",
+          "title": "Soghd"
+        },
+        {
+          "categoryId": "868",
+          "title": "Samarkand Soghd"
+        },
+        {
+          "categoryId": "2146",
+          "title": "Pendjikent"
+        },
+        {
+          "categoryId": "3106",
+          "title": "Divashtich, with title 'Lady Nana', AD 709-722"
+        }
+      ],
+      "leafCategoryId": "3106",
+      "inRequestedCategory": true,
+      "squareHoleStatus": "unknown",
+      "scopeReview": "pending"
     },
     {
       "id": "54032",
       "url": "https://www.zeno.ru/showphoto.php?photo=54032",
+      "rawHtml": "research/zeno/54032.html",
       "title": "#54032 - Samarqand Soghd, domain Panch, lady Nana",
       "description": "Smirnova 894",
+      "photoNote": "Smirnova 894",
+      "sourceFields": {
+        "Upload Date": "2-February-2008",
+        "Views": "155",
+        "Keywords": "Nana Panch",
+        "Weight, g": "1.35",
+        "Size, mm": "17.8",
+        "Mint": "Penjikent",
+        "Date": "8th cent. AD",
+        "Metal": "AE"
+      },
+      "uploadDateText": "2-February-2008",
+      "dateText": "8th cent. AD",
+      "mintText": "Penjikent",
+      "metalText": "AE",
+      "weightText": "1.35",
+      "sizeText": "17.8",
       "weightG": 1.35,
       "diameterMm": 17.8,
+      "uploader": {
+        "name": "CyberNumis",
+        "memberId": "19",
+        "profileUrl": "https://www.zeno.ru/member.php?uid=19"
+      },
+      "rights": {
+        "status": "source_terms_apply_unverified",
+        "sourceTermsUrl": "https://www.zeno.ru/rules.php",
+        "note": "Uploader attribution is preserved from the source page; downstream reuse rights are not inferred."
+      },
       "image": {
         "url": "https://www.zeno.ru/data/3106/is-1356_Pendjikent_Lady_Nana_Smirnova_844.jpg",
         "path": "/coins/zeno/54032.jpg",
         "width": 1080,
         "height": 537,
-        "sha256": "d5279a206418fbb551fdb81793362619e3fe4918ff4db5c0b9cce89321367133"
-      }
+        "sha256": "d5279a206418fbb551fdb81793362619e3fe4918ff4db5c0b9cce89321367133",
+        "credit": "CyberNumis",
+        "rightsStatus": "source_terms_apply_unverified",
+        "sourceTermsUrl": "https://www.zeno.ru/rules.php"
+      },
+      "breadcrumb": [
+        {
+          "categoryId": "781",
+          "title": "PRE-ISLAMIC ASIA, NEAR EAST & NORTH AFRICA"
+        },
+        {
+          "categoryId": "503",
+          "title": "Central Asia"
+        },
+        {
+          "categoryId": "800",
+          "title": "Soghd"
+        },
+        {
+          "categoryId": "868",
+          "title": "Samarkand Soghd"
+        },
+        {
+          "categoryId": "2146",
+          "title": "Pendjikent"
+        },
+        {
+          "categoryId": "3106",
+          "title": "Divashtich, with title 'Lady Nana', AD 709-722"
+        }
+      ],
+      "leafCategoryId": "3106",
+      "inRequestedCategory": true,
+      "squareHoleStatus": "unknown",
+      "scopeReview": "pending"
     },
     {
       "id": "54031",
       "url": "https://www.zeno.ru/showphoto.php?photo=54031",
+      "rawHtml": "research/zeno/54031.html",
       "title": "#54031 - Samarqand Soghd, domain Panch, lady Nana.",
       "description": "Smirnova 890",
+      "photoNote": "Smirnova 890",
+      "sourceFields": {
+        "Upload Date": "2-February-2008",
+        "Views": "161",
+        "Keywords": "Nana Pendjikent Panch",
+        "Weight, g": "2.20",
+        "Size, mm": "17.2",
+        "Mint": "Pendjikent",
+        "Date": "8th cent. AD",
+        "Metal": "AE"
+      },
+      "uploadDateText": "2-February-2008",
+      "dateText": "8th cent. AD",
+      "mintText": "Pendjikent",
+      "metalText": "AE",
+      "weightText": "2.20",
+      "sizeText": "17.2",
       "weightG": 2.2,
       "diameterMm": 17.2,
+      "uploader": {
+        "name": "CyberNumis",
+        "memberId": "19",
+        "profileUrl": "https://www.zeno.ru/member.php?uid=19"
+      },
+      "rights": {
+        "status": "source_terms_apply_unverified",
+        "sourceTermsUrl": "https://www.zeno.ru/rules.php",
+        "note": "Uploader attribution is preserved from the source page; downstream reuse rights are not inferred."
+      },
       "image": {
         "url": "https://www.zeno.ru/data/3106/is-1355_Pendjikent_Lady_Nana_Smirnova_844.jpg",
         "path": "/coins/zeno/54031.jpg",
         "width": 1054,
         "height": 603,
-        "sha256": "f80233c35c3560d5619f76ca19c030c3723e69394de05b7591b8feeda0386fb1"
-      }
+        "sha256": "f80233c35c3560d5619f76ca19c030c3723e69394de05b7591b8feeda0386fb1",
+        "credit": "CyberNumis",
+        "rightsStatus": "source_terms_apply_unverified",
+        "sourceTermsUrl": "https://www.zeno.ru/rules.php"
+      },
+      "breadcrumb": [
+        {
+          "categoryId": "781",
+          "title": "PRE-ISLAMIC ASIA, NEAR EAST & NORTH AFRICA"
+        },
+        {
+          "categoryId": "503",
+          "title": "Central Asia"
+        },
+        {
+          "categoryId": "800",
+          "title": "Soghd"
+        },
+        {
+          "categoryId": "868",
+          "title": "Samarkand Soghd"
+        },
+        {
+          "categoryId": "2146",
+          "title": "Pendjikent"
+        },
+        {
+          "categoryId": "3106",
+          "title": "Divashtich, with title 'Lady Nana', AD 709-722"
+        }
+      ],
+      "leafCategoryId": "3106",
+      "inRequestedCategory": true,
+      "squareHoleStatus": "unknown",
+      "scopeReview": "pending"
     },
     {
       "id": "29609",
       "url": "https://www.zeno.ru/showphoto.php?photo=29609",
+      "rawHtml": "research/zeno/29609.html",
       "title": "#29609 - Samarqand Soghd, domain Panch, lady Nana.",
       "description": "Smirnova #834. Seems to be first Nana's coin in the database...",
+      "photoNote": "Smirnova #834. Seems to be first Nana's coin in the database...",
+      "sourceFields": {
+        "Upload Date": "3-April-2006",
+        "Views": "411",
+        "Keywords": "Samarqand Soghd domain Panch lady Nana",
+        "Weight, g": "1.9",
+        "Size, mm": "17.9",
+        "Mint": "Penjikent",
+        "Date": "8th cent. AD",
+        "Metal": "AE"
+      },
+      "uploadDateText": "3-April-2006",
+      "dateText": "8th cent. AD",
+      "mintText": "Penjikent",
+      "metalText": "AE",
+      "weightText": "1.9",
+      "sizeText": "17.9",
       "weightG": 1.9,
       "diameterMm": 17.9,
+      "uploader": {
+        "name": "gazali",
+        "memberId": "792",
+        "profileUrl": "https://www.zeno.ru/member.php?uid=792"
+      },
+      "rights": {
+        "status": "source_terms_apply_unverified",
+        "sourceTermsUrl": "https://www.zeno.ru/rules.php",
+        "note": "Uploader attribution is preserved from the source page; downstream reuse rights are not inferred."
+      },
       "image": {
         "url": "https://www.zeno.ru/data/3106/Nana.jpg",
         "path": "/coins/zeno/29609.jpg",
         "width": 1368,
         "height": 728,
-        "sha256": "c16c1093b1e53ab16156e3da3043ba9719f0072996f536a229c304fb081df1c7"
-      }
+        "sha256": "c16c1093b1e53ab16156e3da3043ba9719f0072996f536a229c304fb081df1c7",
+        "credit": "gazali",
+        "rightsStatus": "source_terms_apply_unverified",
+        "sourceTermsUrl": "https://www.zeno.ru/rules.php"
+      },
+      "breadcrumb": [
+        {
+          "categoryId": "781",
+          "title": "PRE-ISLAMIC ASIA, NEAR EAST & NORTH AFRICA"
+        },
+        {
+          "categoryId": "503",
+          "title": "Central Asia"
+        },
+        {
+          "categoryId": "800",
+          "title": "Soghd"
+        },
+        {
+          "categoryId": "868",
+          "title": "Samarkand Soghd"
+        },
+        {
+          "categoryId": "2146",
+          "title": "Pendjikent"
+        },
+        {
+          "categoryId": "3106",
+          "title": "Divashtich, with title 'Lady Nana', AD 709-722"
+        }
+      ],
+      "leafCategoryId": "3106",
+      "inRequestedCategory": true,
+      "squareHoleStatus": "unknown",
+      "scopeReview": "pending"
     },
     {
       "id": "30750",
       "url": "https://www.zeno.ru/showphoto.php?photo=30750",
+      "rawHtml": "research/zeno/30750.html",
       "title": "#30750 - Samarqand Soghd, domain Panch, lady Nana.",
       "description": "Different legend in compare with my #29609. On obverse: Pncy nnδβ’mpnh The difference in sense is incomprehensible. Smirnova #769.",
+      "photoNote": "Different legend in compare with my #29609. On obverse: Pncy nnδβ’mpnh The difference in sense is incomprehensible. Smirnova #769.",
+      "sourceFields": {
+        "Upload Date": "9-May-2006",
+        "Views": "409",
+        "Keywords": "Samarqand Soghd domain Panch lady Nana",
+        "Weight, g": "1.1",
+        "Size, mm": "16.8",
+        "Mint": "Penjikent",
+        "Date": "8th cent. AD",
+        "Metal": "AE"
+      },
+      "uploadDateText": "9-May-2006",
+      "dateText": "8th cent. AD",
+      "mintText": "Penjikent",
+      "metalText": "AE",
+      "weightText": "1.1",
+      "sizeText": "16.8",
       "weightG": 1.1,
       "diameterMm": 16.8,
+      "uploader": {
+        "name": "gazali",
+        "memberId": "792",
+        "profileUrl": "https://www.zeno.ru/member.php?uid=792"
+      },
+      "rights": {
+        "status": "source_terms_apply_unverified",
+        "sourceTermsUrl": "https://www.zeno.ru/rules.php",
+        "note": "Uploader attribution is preserved from the source page; downstream reuse rights are not inferred."
+      },
       "image": {
         "url": "https://www.zeno.ru/data/3106/Nana2.jpg",
         "path": "/coins/zeno/30750.jpg",
         "width": 1316,
         "height": 688,
-        "sha256": "b19e35f1458d596e63ad5b7df020157a7a0ead19bad66d872487037818dfb9e7"
-      }
+        "sha256": "b19e35f1458d596e63ad5b7df020157a7a0ead19bad66d872487037818dfb9e7",
+        "credit": "gazali",
+        "rightsStatus": "source_terms_apply_unverified",
+        "sourceTermsUrl": "https://www.zeno.ru/rules.php"
+      },
+      "breadcrumb": [
+        {
+          "categoryId": "781",
+          "title": "PRE-ISLAMIC ASIA, NEAR EAST & NORTH AFRICA"
+        },
+        {
+          "categoryId": "503",
+          "title": "Central Asia"
+        },
+        {
+          "categoryId": "800",
+          "title": "Soghd"
+        },
+        {
+          "categoryId": "868",
+          "title": "Samarkand Soghd"
+        },
+        {
+          "categoryId": "2146",
+          "title": "Pendjikent"
+        },
+        {
+          "categoryId": "3106",
+          "title": "Divashtich, with title 'Lady Nana', AD 709-722"
+        }
+      ],
+      "leafCategoryId": "3106",
+      "inRequestedCategory": true,
+      "squareHoleStatus": "unknown",
+      "scopeReview": "pending"
     }
   ]
 }

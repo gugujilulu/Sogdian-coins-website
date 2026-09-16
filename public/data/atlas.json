@@ -951,7 +951,7 @@
           "relation": "same_specimen"
         }
       ],
-      "description": "Primary Zeno record; description and classification preserved in the source.",
+      "description": "#388312 - Principality of Panch (Penjikent), Divashtich, with the title “Lady Nana”, AE unit, AD 709–722.",
       "catalogue": "",
       "facets": [
         "Panch tamgha · 潘治徽记"
@@ -983,7 +983,7 @@
           "relation": "same_specimen"
         }
       ],
-      "description": "Primary Zeno record; description and classification preserved in the source.",
+      "description": "#334987 - Pendjikent AE, Nana, lady of Panch",
       "catalogue": "",
       "facets": [
         "Panch tamgha · 潘治徽记"
@@ -1029,7 +1029,7 @@
           "relation": "same_specimen"
         }
       ],
-      "description": "Primary Zeno record; description and classification preserved in the source.",
+      "description": "#264408 - Pendjikend, AE unit, Lady Nana",
       "catalogue": "",
       "facets": [
         "Panch tamgha · 潘治徽记"
@@ -1093,7 +1093,7 @@
           "relation": "same_specimen"
         }
       ],
-      "description": "Primary Zeno record; description and classification preserved in the source.",
+      "description": "#227845 - Samarqand Soghd, domain Panch, lady Nana",
       "catalogue": "",
       "facets": [
         "Panch tamgha · 潘治徽记"
@@ -2070,7 +2070,7 @@
     "categoryUrl": "https://www.zeno.ru/showgallery.php?cat=3106",
     "zenoRecordCount": 14,
     "importedZenoRecords": 14,
-    "images": 34,
+    "images": 22,
     "scope": "Lady Nana category 3106 only; corpus-wide comparison pending",
     "date": "2026-09-16",
     "status": "snapshot"
