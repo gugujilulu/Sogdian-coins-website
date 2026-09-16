@@ -11,6 +11,8 @@ from PIL import Image
 root=Path(__file__).resolve().parents[1]
 a=json.loads((root/'public/data/atlas.json').read_text())
 z=json.loads((root/'research/zeno/manifest-3106.json').read_text())
+z795=json.loads((root/'research/zeno/manifest-795.json').read_text())
+r795=json.loads((root/'research/zeno/review-795.json').read_text())
 families={f['id'] for f in a['families']}
 variants={v['id']:v for v in a['variants']}
 places={p['id'] for p in a['places']}
@@ -28,6 +30,32 @@ assert a['coverage']['zenoRecordCount']==14
 assert a['coverage']['importedZenoRecords']==14
 assert a['coverage']['images']==22  # Nana only; whole-site image totals are computed separately.
 assert all((r.get('uploader') or {}).get('name') for r in z['records'])
+
+# Recursive Zeno #795 acquisition is complete as a source snapshot; Atlas import is
+# a reviewed subset and must not be conflated with the 254 source records.
+assert z795['categoryId']=='795'
+assert z795['sourceReportedSubtreeCount']==254
+assert z795['recordCount']==254
+assert len(z795['records'])==254
+assert not z795.get('fetchFailures') and not z795.get('categoryFetchFailures')
+assert z795.get('pagination',{}).get('integrity')=='no_repeat_detected'
+assert r795['summary']['scopeReviewed']==254
+assert r795['summary']['atlasImportedSourceRecords']==239
+assert r795['summary']['newSpecimenRecordsExpected']==238
+assert r795['summary']['mergedIntoExistingSpecimens']==1
+review_ids={str(x['id']) for x in r795['records']}
+assert review_ids=={str(x['id']) for x in z795['records']}
+imported_795={str(x['id']) for x in r795['records'] if x['atlasImport']}
+assert len(imported_795)==239
+assert '20696' in imported_795
+assert 'zeno-20696' not in ids  # same physical specimen as legacy sr9
+sr9=next(s for s in a['specimens'] if s['id']=='sr9')
+assert any(src['url'].endswith('photo=20696') and src['relation']=='same_specimen' for src in sr9['sources'])
+assert any(im['path']=='/coins/zeno/20696.jpg' for im in sr9['images'])
+held_795={str(x['id']) for x in r795['records'] if not x['atlasImport']}
+assert len(held_795)==15
+assert not any(('zeno-'+rid) in ids for rid in held_795)
+assert 'zeno-1766' in ids and 'zeno-1767' in ids  # shared obverse photo is not identity evidence
 
 # Saved Zeno manifests are independent coverage scopes. Partial Semirechye crawls are
 # valid research states, while their counts must never be labelled complete by accident.
@@ -96,7 +124,7 @@ with tempfile.TemporaryDirectory() as tmp:
  db=sqlite3.connect(p)
  db.execute('PRAGMA foreign_keys=ON')
  assert db.execute('SELECT count(*) FROM specimen').fetchone()[0]==len(a['specimens'])
- assert db.execute('SELECT count(*) FROM image').fetchone()[0]==sum(len(s['images']) for s in a['specimens'])==34
+ assert db.execute('SELECT count(*) FROM image').fetchone()[0]==sum(len(s['images']) for s in a['specimens'])==273
  assert not db.execute('PRAGMA foreign_key_check').fetchall()
  # Nana coverage remains independently verifiable even after other categories are added.
  nana_snapshot=db.execute("SELECT id FROM coverage_snapshot WHERE category_url LIKE '%cat=3106'").fetchone()[0]
@@ -118,6 +146,11 @@ with tempfile.TemporaryDirectory() as tmp:
  z388=db.execute("SELECT credit,rights_status,license_uri,rights_source_url FROM image WHERE id='z388312'").fetchone()
  assert z388==('Numis_Dmitriy','unverified',None,'https://www.zeno.ru/rules.php')
  assert db.execute('SELECT count(*) FROM coverage_snapshot').fetchone()[0]==len(manifest_paths)
+ # #795 coverage keeps source acquisition (254) separate from reviewed Atlas import (239).
+ s795=db.execute("SELECT id FROM coverage_snapshot WHERE category_url LIKE '%cat=795'").fetchone()[0]
+ assert db.execute("SELECT count(*) FROM coverage_record WHERE snapshot_id=?",(s795,)).fetchone()[0]==254
+ assert db.execute("SELECT count(*) FROM coverage_record WHERE snapshot_id=? AND status='image_imported'",(s795,)).fetchone()[0]==239
+ assert db.execute("SELECT count(*) FROM coverage_record WHERE snapshot_id=? AND status='pending'",(s795,)).fetchone()[0]==15
  # A comparison link must not create a same-specimen equivalence.
  assert db.execute("SELECT relation FROM specimen_external_record s JOIN external_record e ON e.id=s.external_record_id WHERE specimen_id='cng611-576' AND e.url LIKE '%photo=81165'").fetchone()[0]=='comparison'
  # Reject physically invalid measurements and invalid relation/types.
@@ -133,4 +166,4 @@ with tempfile.TemporaryDirectory() as tmp:
  assert db.execute("SELECT count(*) FROM image WHERE specimen_id='cng611-576'").fetchone()[0]==2
 
 whole_images=sum(len(s['images']) for s in a['specimens'])
-print(f'PASS: Nana 14/14 Zeno coverage and 22 images remain scoped; {len(manifest_paths)} Zeno manifest(s) checked; {len(a["specimens"])} specimen records / {whole_images} whole-site images; duplicate, hierarchy, date/measurement, FK and geography invariants hold.')
+print(f'PASS: Nana 14/14 + 22 images remain scoped; Zeno #795 254/254 acquired, 254 reviewed, 239 Atlas-linked with 1 merge into sr9; {len(manifest_paths)} Zeno manifest(s); {len(a["specimens"])} specimen records / {whole_images} whole-site images; identity, hierarchy, coverage, FK and geography invariants hold.')

@@ -6,7 +6,7 @@ An interactive spatial–temporal research atlas of Sogdian-related square-holed
 
 A real draggable MapLibre terrain map; historical city/site anchors; family → catalogue grouping → specimen galleries; date and region filtering; original-resolution images; source and bibliography links; exploration vault; explicit source-coverage accounting.
 
-The Lady Nana collection includes all 14 Zeno category 3106 records in the 2026-09-16 snapshot plus other-source records: 20 specimen records and 22 images after confirmed repeat-source merges. The whole export currently has 32 specimen records and 34 images. Neither count is a complete corpus census. Semirechye's 569 source photo records have a saved category baseline, with import and scope review outstanding.
+The Lady Nana collection remains independently scoped at all 14 Zeno category 3106 records plus other-source records: 20 specimen records and 22 images after confirmed repeat-source merges. Zeno category #795 (Turgesh / Runic tamgha) has now been recursively captured at 254/254 source records across 27 category nodes, with 254 detail pages and 254 source images retained. All 254 records received a first-pass scope review; 239 source records are linked into the Atlas, producing 238 net new specimen rows because Zeno #20696 is the same physical specimen/source photograph as the existing `sr9` Coins of Central Asia record. The whole export now has 15 editorial families, 37 source reference groups, 270 specimen records and 273 images. These are import totals, not a census of unique physical coins or all Sogdian major types.
 
 Circulation polygons and hoard points have supported model/layers but no verified type-specific data yet. Do not claim the distribution map is complete. Detailed results and limitations: `docs/implementation-2026-09-16.md`.
 
@@ -29,12 +29,8 @@ For Zeno records, the raw manifest retains the full uploader object (name, membe
 
 Collector refreshes are resumable. A failed detail/image refresh preserves the last successful record and image and records the current attempt in `fetchFailures`. Category source count, observed unique IDs, detailed records, downloaded images, scope-review status and Atlas import count remain separate measures.
 
-Current Semirechye acquisition status: category #795 (Turgesh / Runic tamgha) is the next priority, but no #795 import is claimed until Zeno can be reached and pagination coverage is verified against the 254-photo source baseline. A partial crawl is a valid saved research state and must remain labelled partial.
+Current Semirechye acquisition status: category #795 (Turgesh / Runic tamgha) is complete at the source-capture level for the saved 2026-09-16 snapshot. The root has 5 direct records; its four direct branches declare 169, 23, 1 and 56 records, while recursive traversal resolves 254 unique records across 27 nodes with no repeated pagination pages or fetch failures. `research/zeno/manifest-795.json` preserves the acquisition evidence and `research/zeno/review-795.json` preserves the first-pass scope/crosswalk decisions.
 
-When a network-capable execution environment is available, the next acquisition command is:
+Of those 254 records, 239 are linked into the Atlas. The 15 held/excluded records are: four non-coin objects, one hoard/context image, one closed-aperture scope case, three related non-square-aperture records, five multi-specimen source images awaiting specimen-level splitting, and one Kai Yuan-style Arslanid imitation awaiting the later Chinese-imitation crosswalk. Source-category groupings remain source groupings rather than automatically becoming academic variants. Existing families were reused where evidence supported it (`sr3`, `sr6`, `sr9`, `sr20`), with two new editorial families added for Alp Tagh and Arslan Kul Irkin.
 
-```bash
-python scripts/collect-zeno.py --category 795 --download
-```
-
-Before creating any new #795 family, cross-check the existing Semirechye legacy candidates `sr3` (Kamyshev 21, Vahshutava / yuan reverse) and `sr6` (Kamyshev 24, Türgesh kagan / tamgha reverse). A Zeno category membership or photograph alone is not evidence that either record is a distinct academic major type or the same physical specimen.
+Physical identity remains conservative. Zeno #20696 is merged into existing specimen `sr9` because it is the same physical coin and the same Coins of Central Asia source photograph at another resolution. Similar-looking records are otherwise kept separate unless the source or image evidence establishes identity; for example Zeno #1766 and #1767 share an obverse photograph but have different reverse photographs and are explicitly not merged.

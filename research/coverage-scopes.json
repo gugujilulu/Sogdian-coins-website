@@ -137,10 +137,10 @@
     "title": "Turgesh, Runic tamgha",
     "url": "https://www.zeno.ru/showgallery.php?cat=795",
     "sourcePhotoCount": 254,
-    "scopeChecked": false,
-    "importedImages": 0,
+    "scopeChecked": true,
+    "importedImages": 239,
     "date": "2026-09-16",
-    "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
+    "note": "Recursive #795 subtree fully acquired: 254/254 observed source records, 254 detail pages and 254 images. All records scope-reviewed. 239 source records are linked to Atlas; one (Zeno 20696) merges into existing sr9. Held records: 4 non-coins, 1 hoard/context record, 1 closed-aperture scope question, 3 circular-aperture related records, 5 multi-specimen source images awaiting split, and 1 Kai Yuan-style imitation awaiting family crosswalk."
   },
   {
     "parent": "2141",

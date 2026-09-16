@@ -1,0 +1,24 @@
+Zeno #795 recursive collection summary
+======================================
+Base commit: 339578b64dd1d1b51ee056c594f6fd29fb6c0fac
+Started at: 2026-09-16T06:56:04+00:00
+Packaged at: 2026-09-16T07:13:33+00:00
+Collector exit status: 0
+Source-declared direct #795 records: 5
+Source-declared #795 subtree records: 254
+Historical scope baseline: 254
+Observed direct #795 unique IDs: 5
+Observed #795 subtree unique IDs: 254
+Visited category nodes: 27
+Cached detail records verified inside #795 subtree by breadcrumb: 254
+Cached detail records directly in #795 by breadcrumb: 5
+Successful detail records retained/downloaded: 254
+Records with image retained/downloaded: 254
+Square-hole scope review completed: 0
+Atlas imported records: 0 (collector does not modify Atlas data).
+Fetch failures recorded: 0
+Category fetch failures: 0
+Coverage status: observed_count_matches_subtree_source_count
+Pagination integrity: no_repeat_detected
+Repeated pagination pages: 0
+Count gap: none detected by available subtree/baseline count; this alone does not prove scholarly completeness.

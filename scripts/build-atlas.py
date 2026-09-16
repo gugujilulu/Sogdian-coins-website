@@ -40,6 +40,50 @@ for r in non['records']:
  if alt.exists():
   ai=Image.open(alt);s['images'].append({**pic,'id':r['id']+'-alternate','path':'/coins/nana/'+alt.name,'width':ai.width,'height':ai.height,'sourceUrl':r['alternate_image']['image_url']})
  a['specimens'].append(s)
+
+# Reviewed Zeno #795 (Turgesh / Runic tamgha) expansion. Raw source records stay
+# in the manifest; only records explicitly approved in review-795.json enter Atlas.
+review795=read('research/zeno/review-795.json');z795=read('research/zeno/manifest-795.json')
+review_by_id={str(r['id']):r for r in review795['records']};z795_by_id={str(r['id']):r for r in z795['records']}
+# Reuse stable family IDs rather than creating duplicate families for source branches.
+for f in a['families']:
+ if f['id']=='sr3':
+  f['title']='Vahshutava series';f['zh']='瓦赫什图瓦系列 · 元／prn'
+  f['description']='Vahshutava square-hole bronze series. The legacy Kamyshev 21 / Yuan type remains one source group; Zeno #795 also preserves a prn subgroup under the same ruler-level family.'
+  f['question']='Kamyshev 21 / Yuan and the Zeno prn subgroup are retained as separate source groups; cross-catalogue equivalence is not assumed.'
+ if f['id']=='sr6':
+  f['description']='Sogdian Türgesh-qaghan legend with Türgesh tamgha. Zeno #795 source groups preserve standard, degraded, one-sided and additional-sign subseries; the legacy Kamyshev 24 record is one catalogue group, not a label for every imported specimen.'
+  f['question']='Imported #795 source groups are not automatically academic variants; catalogue-number crosswalks remain source-specific.'
+ if f['id']=='sr9':
+  f['title']='Arslan Irkin / legacy Inal-Tegin';f['zh']='阿尔斯兰·伊尔金／旧称 Inal-Tegin'
+  f['question']='Legacy sr9 follows Kamyshev 33 / “Inal-Tegin”. Zeno files the same catalogue complex as Arslan Irkin (ex. “Inal Tegin”); the attribution conflict is preserved rather than silently resolved.'
+ if f['id']=='sr20':
+  f['question']='Zeno #795 separates normal and inverted/retrograde legend source groups and cites Kamyshev 46–48 across records. The legacy chronology remains contested and source-specific.'
+new_families=[
+ {'id':'alp-tagh','title':'Alp Tagh','zh':'Alp Tagh · 七河方孔钱','region':'Semirechye','start':None,'end':None,'dateLabel':'Undated in imported Zeno source; Türgesh/Semirechye source classification','description':'Source branch names Alp Tagh and gives the Sogdian ruler legend; the imported record carries a Türgesh tamgha, runic sign and Chinese 元. Broader chronology remains pending.','anchor':{'placeId':'suyab','role':'Regional orientation · 区域浏览锚点','note':'以七河核心区作浏览锚点；不表示本类型铸地或出土地。'},'image':'/coins/zeno/209687.jpg','status':'source_linked','question':'Only the reviewed Zeno #795 source branch is linked so far; independent catalogue crosswalk and chronology remain pending.','publications':[{'title':'Zeno #795 · Alp Tagh source branch','url':'https://www.zeno.ru/showgallery.php?cat=18902','role':'Source classification / specimen branch'},{'title':'IICAS 2024 Catalogue','url':'https://iicas.int/book/177','role':'Modern academic framework; exact crosswalk pending'}]},
+ {'id':'arslan-kul-irkin','title':'Arslan Kul Irkin','zh':'Arslan Kul Irkin · 七河方孔钱','region':'Semirechye','start':700,'end':799,'dateLabel':'8th century; some imported source records specify early / first half of the 8th century','description':'Arslan Kul Irkin square-hole bronze series. Zeno #795 records include Kamyshev 45 examples and preserve normal source-level variation without treating the category as one proven die/variant.','anchor':{'placeId':'suyab','role':'Regional orientation · 区域浏览锚点','note':'以七河核心区作浏览锚点；不表示本类型铸地或出土地。'},'image':'/coins/zeno/121668.jpg','status':'source_linked','question':'Date wording and Kamyshev numbering are retained from individual sources; broader cross-catalogue adjudication remains pending.','publications':[{'title':'Zeno #795 · Arslan Kul Irkin source branch','url':'https://www.zeno.ru/showgallery.php?cat=14863','role':'Source classification / specimen branch'},{'title':'IICAS 2024 Catalogue','url':'https://iicas.int/book/177','role':'Modern academic framework; exact crosswalk pending'}]},
+]
+for f in new_families:
+ if not any(x['id']==f['id'] for x in a['families']):a['families'].append(f)
+for g in review795['sourceGroups']:
+ if not any(v['id']==g['id'] for v in a['variants']):
+  a['variants'].append({'id':g['id'],'familyId':g['familyId'],'title':g['title'],'reference':'Zeno category '+g['categoryId'],'status':'source_group','facets':[],'description':g['description']})
+def zeno795_image(r):
+ im=r['image'];return {'id':'z'+str(r['id']),'path':im['path'],'sourceUrl':im['url'],'width':im['width'],'height':im['height'],'credit':im.get('credit') or ((r.get('uploader') or {}).get('name')) or 'Zeno.ru uploader unknown','rightsStatus':'unverified','rightsSourceUrl':im.get('sourceTermsUrl') or (r.get('rights') or {}).get('sourceTermsUrl'),'view':'source photograph'}
+for decision in review795['records']:
+ if not decision.get('atlasImport'):continue
+ id=str(decision['id']);r=z795_by_id[id];source={'label':'Zeno '+id,'url':r['url'],'relation':'same_specimen'};pic=zeno795_image(r)
+ merged_id=decision.get('mergeIntoSpecimen')
+ if merged_id:
+  target=next(s for s in a['specimens'] if s['id']==merged_id)
+  target['sources'].append(source);target['images'].append(pic);target['duplicateStatus']='same_specimen_explicitly_identified'
+  target['facets'].append('Zeno source group '+decision['leafCategoryId']+' · '+decision['leafCategoryTitle'])
+  continue
+ title=r['title'];prefix='#'+id+' - '
+ if title.startswith(prefix):title=title[len(prefix):]
+ facets=['Zeno source group '+decision['leafCategoryId']+' · '+decision['leafCategoryTitle']]
+ a['specimens'].append({'id':'zeno-'+id,'familyId':decision['familyId'],'variantId':decision['sourceGroupId'],'title':title,'weightG':r.get('weightG'),'diameterMm':r.get('diameterMm'),'images':[pic],'sources':[source],'description':r.get('description') or r.get('photoNote') or 'Primary Zeno record; description and source grouping preserved.','catalogue':'Zeno category '+decision['leafCategoryId']+' · '+decision['leafCategoryTitle'],'facets':facets,'duplicateStatus':'source_record_not_proven_unique'})
+
 a['scopeCensus']=read('research/coverage-scopes.json')
 nana_specimens=[s for s in a['specimens'] if s['familyId']=='lady-nana']
 nana_zeno=[s for s in nana_specimens if s['id'].startswith('zeno-')]
