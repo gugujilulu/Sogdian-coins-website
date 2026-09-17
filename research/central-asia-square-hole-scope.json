@@ -1,13 +1,18 @@
 {
-  "scope_version": "1.0.0",
+  "scope_version": "1.1.0",
   "title": "Central Asian Square-Hole Coinage Atlas",
   "definition": "Coinages participating in the Chinese-style square-hole cash tradition within Central Asia and related eastern inland regions, including physically perforated square-hole cash and unpierced or pseudo-aperture issues whose design/manufacture clearly derives from that tradition.",
   "temporal_scope": {
-    "main_start_ce": 221,
-    "main_end_ce": 1643,
-    "pre_221_rule": "Records clearly belonging to Han, Eastern Han, or earlier phases remain related/excluded unless their issue or regional circulation falls materially within the main period.",
-    "post_1643_rule": "Qing, Dzungar and later/modern Xinjiang issues remain related/excluded unless a disputed date overlaps the main period.",
-    "boundary_disputes": "Retain original date text, normalized start/end, confidence, source, and separate issue/circulation/find/hoard dates."
+    "status": "provisional_boundaries",
+    "historical_focus": "Post-Han through pre-Qing Central Asian square-hole cash traditions, with boundary and disputed records retained for review.",
+    "previous_working_bounds": {
+      "start_ce": 221,
+      "end_ce": 1643,
+      "status": "legacy_working_interpretation_not_confirmed_as_exact_cutoff"
+    },
+    "early_material_rule": "Clearly early Han/Eastern Han or earlier material is normally related/reference material; borderline issue dates, later circulation, local imitation, or uncertain dating remain retained rather than bulk-hidden.",
+    "late_material_rule": "Clearly Qing-era and modern material is normally related/reference material; disputed dates, local survivals, imitations, and boundary cases remain retained rather than bulk-hidden.",
+    "boundary_disputes": "Retain original date text, normalized start/end when supported, confidence, source, and separate issue/circulation/find/hoard dates. No current main-corpus record is bulk-hidden solely by the legacy 221–1643 working bounds."
   },
   "inclusion_model": {
     "tradition": "Chinese-style square-hole cash tradition",

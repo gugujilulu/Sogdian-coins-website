@@ -149,3 +149,18 @@ The stage reuses existing editorial families for Zeno #14905 (10 Inal-Tegin sour
 After stage 2 the display export is **44 editorial families, 98 source reference groups, 934 specimen records and 937 images**. The #503 relational coverage snapshot contains 3,984 source records, of which 915 currently have an Atlas image link, 9 are linked to an existing specimen without a new image status, and 3,060 remain pending. This coverage state must not be read as 924 unique physical coins.
 
 The deployable `public/coins/zeno` directory receives only reviewed/imported stage-2 images. The remaining 762 downloaded images stay in `research/zeno/pending-images-503/`; eleven visually reviewed related/held images are kept in `research/zeno/reviewed-related-images-503/`. One previously targeted record still lacks a valid repaired image.
+
+## Phase-one product checkpoint after Zeno #503 review
+
+The #503 target-image review is now closed at the downloaded-target level. The main display corpus is **56 families / 120 source-catalogue groups / 1,010 specimen records / 1,013 images**. These are collection records, not a rarity census or an assertion of 1,010 proven unique physical coins.
+
+Source preservation was strengthened before the phase-one UI rebuild:
+
+- every Zeno specimen exported to the product now carries its Zeno source-record ID and preserved breadcrumb category path where present;
+- **701 reviewed related / held / excluded Zeno records** are exported as a separate research-material index rather than silently disappearing from the product;
+- this related index does not change the 1,010 main-corpus record count and does not delete cached HTML, images, manifests or review decisions;
+- large-scale visual specimen deduplication is explicitly out of scope. Multiple source records and photographs are retained; same-specimen relations are additive only when evidence establishes them.
+
+The phase-one UI has been restructured around full-viewport Atlas / Catalogue / Research views. The Atlas uses clustered point markers and a selection drawer; Catalogue provides both an Atlas hierarchy and a source-oriented browser; Research exposes coverage and current evidence limitations. Current structured filters include region, display anchor, family, source, issue date and existing inscription/tamgha/feature tags. Political-entity polygons remain evidence-gated and are not fabricated.
+
+The environment restored from the handoff archive does not include `node_modules`, so production UI build/browser QA remains pending a runtime with the committed package set available. Python build/validation and relational export remain reproducible locally.

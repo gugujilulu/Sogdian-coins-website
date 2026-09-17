@@ -8,13 +8,27 @@ d=json.loads((root/'public/data/atlas.json').read_text());db=sqlite3.connect(out
 def add(table,**row):
  db.execute('INSERT INTO '+table+' ('+','.join(row)+') VALUES ('+','.join('?' for _ in row)+')',tuple(row.values()))
 def key(url):return hashlib.sha256(url.encode()).hexdigest()[:16]
+def provider_name(url,label=''):
+ if 'zeno.ru' in url:return 'Zeno'
+ if 'cngcoins.com' in url:return 'CNG'
+ if 'numista.com' in url:return 'Numista'
+ if 'sogdcoins.' in url:return 'Coins of Central Asia'
+ if 'bactrianumis' in url:return 'Bactrianumis'
+ if 'sixbid' in url.lower():return 'Sixbid'
+ if 'numisbids' in url.lower():return 'NumisBids'
+ if 'biddr' in url.lower():return 'Biddr'
+ if 'album' in (url+' '+label).lower() or 'sarc' in label.lower():return 'Stephen Album'
+ try:
+  from urllib.parse import urlparse
+  return (urlparse(url).hostname or 'external').removeprefix('www.')
+ except Exception:return 'external'
 seen=set()
 def cite(url,title=None):
  id=key(url)
  if id not in seen:
   add('publication',id=id,title=title or url,publication_kind='web_record',url=url,accessed_on='2026-09-16',verification_status='partly_read');add('citation',id='c-'+id,publication_id=id);seen.add(id)
  return 'c-'+id
-add('corpus',id='square-hole',title='Central Asian Square-Hole Coinage Atlas',scope_note='221–1643 CE Chinese-style square-hole cash tradition in Central Asia and related eastern inland zones; includes pierced, intentionally unpierced and pseudo-aperture derivatives when the tradition is source-supported. Current import is incomplete.')
+add('corpus',id='square-hole',title='Central Asian Square-Hole Coinage Atlas',scope_note='Chinese-style square-hole cash tradition in Central Asia and related eastern inland zones, broadly post-Han through pre-Qing. Exact temporal cutoffs remain provisional; disputed and boundary records are retained. Includes pierced, intentionally unpierced and pseudo-aperture derivatives when source-supported. Current import is incomplete.')
 for p in d['places']:
  add('place',id=p['id'],historical_name=p['name'],modern_name=p['zh'],kind=p['kind'])
  add('place_geometry',id='geo-'+p['id'],place_id=p['id'],geometry_geojson=json.dumps({'type':'Point','coordinates':p['coordinates']}),label_lat=p['coordinates'][1],label_lon=p['coordinates'][0],precision='approximate_site',confidence='unassessed',citation_id=cite(p['source']),note=p['precision']+'; '+p['note'])
@@ -36,14 +50,26 @@ for s in d['specimens']:
  for im in s['images']:
   add('image',id=im['id'],specimen_id=s['id'],view='both' if im['view']!='single face' else 'unknown',local_path=im['path'],source_url=im['sourceUrl'],credit=im['credit'],license_uri=None,rights_source_url=im.get('rightsSourceUrl'),rights_status=im.get('rightsStatus','unverified'),width_px=im['width'],height_px=im['height'],citation_id=ci)
  for src in s['sources']:
-  url=src['url'];eid='ext-'+key(url)
-  if not db.execute('SELECT 1 FROM external_record WHERE id=?',(eid,)).fetchone():add('external_record',id=eid,provider='Zeno' if 'zeno.ru' in url else 'external',record_key=url,url=url,record_kind='specimen',verification_status='directly_checked' if src['relation']=='same_specimen' else 'reported_by_source',checked_on='2026-09-16',citation_id=cite(url,src['label']))
+  url=src['url'];eid='ext-'+key(url);provider=provider_name(url,src.get('label',''))
+  record_key=(s.get('sourceRecordId') or url) if provider=='Zeno' and src['relation']=='same_specimen' else url
+  if not db.execute('SELECT 1 FROM external_record WHERE id=?',(eid,)).fetchone():add('external_record',id=eid,provider=provider,record_key=record_key,url=url,record_kind='specimen',verification_status='directly_checked' if src['relation']=='same_specimen' else 'reported_by_source',checked_on='2026-09-16',citation_id=cite(url,src['label']))
+  if provider=='Zeno' and src['relation']=='same_specimen' and s.get('sourcePath') and not db.execute('SELECT 1 FROM external_record_classification WHERE external_record_id=? AND scheme=?',(eid,'Zeno breadcrumb')).fetchone():
+   path=s['sourcePath'];add('external_record_classification',external_record_id=eid,scheme='Zeno breadcrumb',path_json=json.dumps(path,ensure_ascii=False),leaf_key=str(path[-1].get('categoryId') or '') if path else None,leaf_label=path[-1].get('title') if path else None,citation_id=cite(url,src['label']))
   add('specimen_external_record',specimen_id=s['id'],external_record_id=eid,relation=src['relation'])
  for feature in s['facets']:add('specimen_feature',specimen_id=s['id'],label=feature,citation_id=ci)
  if s.get('findContextClaim'):
   fc=s['findContextClaim'];fid='find-'+s['id']
   add('find_context',id=fid,kind='reported_find',place_id=None,description=fc.get('rawText') or fc.get('note') or 'Source-reported find context',citation_id=ci,confidence='unassessed')
   add('specimen_find_claim',specimen_id=s['id'],find_context_id=fid,citation_id=ci,note=(fc.get('place') or '')+'; '+(fc.get('note') or ''))
+# Related / held / excluded source records remain first-class external records
+# even though they do not contribute to the main specimen count.
+for r in d.get('relatedRecords',[]):
+ url=r['sourceUrl'];eid='ext-'+key(url);ci=cite(url,r.get('sourceRecordId') or r.get('title'))
+ if not db.execute('SELECT 1 FROM external_record WHERE id=?',(eid,)).fetchone():
+  add('external_record',id=eid,provider=r.get('sourceName') or 'external',record_key=r.get('sourceRecordId') or url,url=url,record_kind='specimen',verification_status='directly_checked',checked_on='2026-09-16',citation_id=ci)
+ if r.get('sourcePath') and not db.execute('SELECT 1 FROM external_record_classification WHERE external_record_id=? AND scheme=?',(eid,'Zeno breadcrumb')).fetchone():
+  path=r['sourcePath'];add('external_record_classification',external_record_id=eid,scheme='Zeno breadcrumb',path_json=json.dumps(path,ensure_ascii=False),leaf_key=str(r.get('leafCategoryId') or path[-1].get('categoryId') or ''),leaf_label=r.get('leafCategoryTitle') or path[-1].get('title'),citation_id=ci)
+
 # Every saved Zeno manifest becomes an independently scoped coverage snapshot.
 # This keeps Lady Nana 14/14 separate from later Semirechye batches and permits
 # partial crawls to be represented without claiming category completeness.

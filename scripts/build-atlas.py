@@ -286,6 +286,72 @@ for decision in review5036['records']:
  a['specimens'].append({'id':sid,'familyId':decision['familyId'],'variantId':decision['sourceGroupId'],'title':title,'weightG':r.get('weightG'),'diameterMm':r.get('diameterMm'),'images':[pic],'sources':[{'label':'Zeno '+id,'url':r['url'],'relation':'same_specimen'}],'description':r.get('photoNote') or r.get('description') or 'Primary Zeno source record; source taxonomy preserved.','catalogue':'Zeno category '+decision['leafCategoryId']+' · '+decision['leafCategoryTitle'],'facets':['#503 stage-6 final downloaded-image review'],'duplicateStatus':decision.get('duplicateStatus','source_record_not_proven_unique')})
  existing_specimen_ids.add(sid)
 
+# Product-facing political/local-system labels are an editorial navigation layer.
+# They never replace source attributions and may explicitly retain dispute/unresolved status.
+display_taxonomy=read('research/display-taxonomy.json')
+for f in a['families']:
+ f['polity']=display_taxonomy.get('families',{}).get(f['id'])
+
+# Preserve source-side classification paths in the public research export.
+# This is additive metadata: it never replaces Atlas classifications or deletes
+# source records. Zeno breadcrumbs remain the authoritative source taxonomy.
+zeno_paths={}
+for manifest in [z, z795, z503]:
+ for r in manifest.get('records',[]):
+  rid=str(r.get('id'))
+  if not rid: continue
+  crumbs=r.get('breadcrumb') or []
+  if crumbs:
+   zeno_paths[rid]=[{'categoryId':str(c.get('categoryId')),'title':c.get('title') or ''} for c in crumbs]
+for r in z503_recovered.get('recoveredRecords',[]):
+ rid=str(r.get('id'))
+ crumbs=r.get('breadcrumb') or []
+ if rid and crumbs:
+  zeno_paths[rid]=[{'categoryId':str(c.get('categoryId')),'title':c.get('title') or ''} for c in crumbs]
+for s in a['specimens']:
+ if s['id'].startswith('zeno-'):
+  rid=s['id'][5:]
+  s['sourceRecordId']='Zeno '+rid
+  s['sourcePath']=zeno_paths.get(rid,[])
+ else:
+  s['sourceRecordId']=s['id']
+  s['sourcePath']=[]
+
+# Keep reviewed related / held / excluded source records visible to the product
+# without promoting them into the main square-hole specimen count. This layer is
+# additive and source-preserving; it does not delete cached HTML or images.
+a['relatedRecords']=[]
+_seen_related=set()
+def add_related(rid,status,reason,manifest_map,leaf_id=None,leaf_title=None):
+ rid=str(rid)
+ if rid in _seen_related:return
+ _seen_related.add(rid)
+ src=manifest_map.get(rid,{})
+ crumbs=src.get('breadcrumb') or []
+ a['relatedRecords'].append({
+  'id':'zeno-'+rid,
+  'sourceName':'Zeno',
+  'sourceRecordId':'Zeno '+rid,
+  'sourceUrl':src.get('url') or ('https://www.zeno.ru/showphoto.php?photo='+rid),
+  'title':src.get('title') or ('Zeno '+rid),
+  'reviewStatus':status,
+  'reason':reason or 'Retained as related / held source material.',
+  'leafCategoryId':str(leaf_id or src.get('leafCategoryId') or ''),
+  'leafCategoryTitle':leaf_title or next((c.get('title') for c in reversed(crumbs) if c.get('title')),''),
+  'sourcePath':[{'categoryId':str(c.get('categoryId')),'title':c.get('title') or ''} for c in crumbs],
+  'originalImageUrl':src.get('originalImageUrl'),
+ })
+for review in [review503,review5032,review5033,review5034,review5035,review5036]:
+ for rr in review.get('relatedRecords',[]):
+  add_related(rr.get('id'),rr.get('status') or 'related',rr.get('reason'),z503_by_id,rr.get('leafCategoryId'),rr.get('leafCategoryTitle'))
+ # Some stages represent held records in records[] with atlasImport=false.
+ for rr in review.get('records',[]):
+  if not rr.get('atlasImport'):
+   add_related(rr.get('id'),rr.get('inclusionStatus') or rr.get('scopeStatus') or 'held',rr.get('reason') or rr.get('note'),z503_by_id,rr.get('leafCategoryId'),rr.get('leafCategoryTitle'))
+for rr in review795.get('records',[]):
+ if not rr.get('atlasImport'):
+  add_related(rr.get('id'),rr.get('scopeStatus') or 'held',rr.get('note'),z795_by_id,rr.get('leafCategoryId'),rr.get('leafCategoryTitle'))
+
 a['scopeCensus']=read('research/coverage-scopes.json')
 nana_specimens=[s for s in a['specimens'] if s['familyId']=='lady-nana']
 nana_zeno=[s for s in nana_specimens if s['id'].startswith('zeno-')]

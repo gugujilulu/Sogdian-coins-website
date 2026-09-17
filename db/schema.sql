@@ -164,6 +164,12 @@ CREATE TABLE external_record (
  checked_on TEXT, citation_id TEXT REFERENCES citation(id),
  UNIQUE(provider,record_key)
 );
+CREATE TABLE external_record_classification (
+ external_record_id TEXT NOT NULL REFERENCES external_record(id),
+ scheme TEXT NOT NULL, path_json TEXT NOT NULL, leaf_key TEXT, leaf_label TEXT,
+ citation_id TEXT REFERENCES citation(id),
+ PRIMARY KEY(external_record_id,scheme)
+);
 CREATE TABLE specimen_external_record (
  specimen_id TEXT NOT NULL REFERENCES specimen(id), external_record_id TEXT NOT NULL REFERENCES external_record(id),
  relation TEXT NOT NULL CHECK(relation IN ('same_specimen','comparison','unreviewed')),

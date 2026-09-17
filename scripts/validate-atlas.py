@@ -159,6 +159,14 @@ for manifest_path in manifest_paths:
  if pagination.get('integrity')=='failed_repeated_page_content':
   assert pagination.get('repeatedPages'),f'pagination failure without repeated-page evidence in {manifest_path.name}'
 
+# Product provenance invariants: source identity/classification is additive and
+# related/held material remains visible without inflating the main specimen count.
+assert len(a.get('relatedRecords',[]))==701
+assert all(r.get('sourceRecordId') and r.get('sourceUrl') and r.get('reviewStatus') for r in a['relatedRecords'])
+assert len({r['id'] for r in a['relatedRecords']})==len(a['relatedRecords'])
+assert all(s.get('sourceRecordId') for s in a['specimens'])
+assert all(isinstance(s.get('sourcePath',[]),list) for s in a['specimens'])
+
 for s in a['specimens']:
  assert s['familyId'] in families
  if s['variantId']:
@@ -226,6 +234,8 @@ with tempfile.TemporaryDirectory() as tmp:
  z388=db.execute("SELECT credit,rights_status,license_uri,rights_source_url FROM image WHERE id='z388312'").fetchone()
  assert z388==('Numis_Dmitriy','unverified',None,'https://www.zeno.ru/rules.php')
  assert db.execute('SELECT count(*) FROM coverage_snapshot').fetchone()[0]==len(manifest_paths)
+ assert db.execute("SELECT count(*) FROM external_record WHERE provider='Zeno'").fetchone()[0]>=len(a.get('relatedRecords',[]))
+ assert db.execute('SELECT count(*) FROM external_record_classification').fetchone()[0]>=len(a.get('relatedRecords',[]))
  # #795 coverage keeps source acquisition (254) separate from reviewed Atlas import (239).
  s795=db.execute("SELECT id FROM coverage_snapshot WHERE category_url LIKE '%cat=795'").fetchone()[0]
  assert db.execute("SELECT count(*) FROM coverage_record WHERE snapshot_id=?",(s795,)).fetchone()[0]==254
@@ -251,4 +261,4 @@ with tempfile.TemporaryDirectory() as tmp:
  assert db.execute("SELECT count(*) FROM image WHERE specimen_id='cng611-576'").fetchone()[0]==2
 
 whole_images=sum(len(s['images']) for s in a['specimens'])
-print(f'PASS: Nana 14/14 + 22 images remain scoped; Zeno #795 254/254 acquired and 239 Atlas-linked; Zeno #503 has 3,984 observed/recovered source records with 584 stage-1 + 80 stage-2 imports; {len(manifest_paths)} Zeno manifest(s); {len(a["specimens"])} specimen records / {whole_images} whole-site images; identity, hierarchy, coverage, image-rights, FK and geography invariants hold.')
+print(f'PASS: {len(a["families"])} families / {len(a["variants"])} source groups / {len(a["specimens"])} main records / {whole_images} images; {len(a.get("relatedRecords",[]))} related-held-excluded source records remain separately traceable; Nana and #795 coverage invariants, source paths, image rights, FK and geography checks hold.')

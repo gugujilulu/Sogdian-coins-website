@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Sogdian Coins Atlas",
-  description: "Explore square-holed coinage across Semirechye and neighbouring regions through maps, time and research.",
+  title: "Central Asian Square-Hole Coinage Atlas",
+  description: "A source-traceable map, catalogue and image corpus for Chinese-style square-hole coinage across Central Asia and related inland regions.",
   other: {
     "codex-preview": "development",
   },
@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="zh-CN">
       <body className="antialiased">{children}</body>
     </html>
   );
