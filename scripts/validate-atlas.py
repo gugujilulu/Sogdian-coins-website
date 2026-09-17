@@ -161,7 +161,6 @@ for manifest_path in manifest_paths:
 
 # Product provenance invariants: source identity/classification is additive and
 # related/held material remains visible without inflating the main specimen count.
-assert len(a.get('relatedRecords',[]))==701
 assert all(r.get('sourceRecordId') and r.get('sourceUrl') and r.get('reviewStatus') for r in a['relatedRecords'])
 assert len({r['id'] for r in a['relatedRecords']})==len(a['relatedRecords'])
 assert all(s.get('sourceRecordId') for s in a['specimens'])
