@@ -166,6 +166,15 @@ assert all(r.get('sourceRecordId') and r.get('sourceUrl') and r.get('reviewStatu
 assert len({r['id'] for r in a['relatedRecords']})==len(a['relatedRecords'])
 assert all(s.get('sourceRecordId') for s in a['specimens'])
 assert all(isinstance(s.get('sourcePath',[]),list) for s in a['specimens'])
+# Preserve the concrete source-record and image-source set already acquired. New
+# sources may be added freely; removals require an explicit baseline update.
+floor=json.loads((root/'research/source-preservation-floor.json').read_text())
+current_record_ids={s['sourceRecordId'] for s in a['specimens'] if s.get('sourceRecordId')}|{r['sourceRecordId'] for r in a['relatedRecords'] if r.get('sourceRecordId')}
+current_source_urls={x['url'] for s in a['specimens'] for x in s.get('sources',[]) if x.get('url')}|{r['sourceUrl'] for r in a['relatedRecords'] if r.get('sourceUrl')}
+current_image_urls={im['sourceUrl'] for s in a['specimens'] for im in s.get('images',[]) if im.get('sourceUrl')}
+assert set(floor['sourceRecordIds']).issubset(current_record_ids),'Previously captured source record ID disappeared'
+assert set(floor['sourceUrls']).issubset(current_source_urls),'Previously captured source URL disappeared'
+assert set(floor['imageSourceUrls']).issubset(current_image_urls),'Previously captured image source URL disappeared'
 
 for s in a['specimens']:
  assert s['familyId'] in families
