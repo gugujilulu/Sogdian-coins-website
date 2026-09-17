@@ -1,0 +1,1070 @@
+{
+  "version": "1.0",
+  "reviewedOn": "2026-09-16",
+  "stage": "503-stage6-clear-final-downloaded-image-queue",
+  "sourceManifest": "research/zeno/manifest-503.json + recovered-records-503.json",
+  "methodNote": "Stage 6 resolves the entire remaining downloaded-image queue. Only visually clear square/squarish cash forms or deliberately included cash-derived pseudo-aperture forms enter the main corpus. Circular-hole, openwork/special-aperture, solid regional and non-coin/pseudo-money records remain source-preserved as related evidence.",
+  "counts": {
+    "sourceRecordsReviewed": 98,
+    "atlasImportRecords": 25,
+    "relatedOutsideMainCorpus": 73,
+    "newFamilies": 4,
+    "sourceGroups": 8,
+    "pendingImagesRemaining": 0
+  },
+  "families": [
+    {
+      "id": "uncertain-central-asian-square-hole",
+      "title": "Uncertain Central Asian square-hole cash",
+      "zh": "中亚未定归属方孔钱",
+      "region": "Central Asia · attribution unresolved",
+      "start": 500,
+      "end": 999,
+      "dateLabel": "Broad pre-Islamic / early Islamic context; exact dates unresolved",
+      "anchorPlaceId": null,
+      "status": "source_linked_candidate",
+      "description": "A bounded group of visually clear square-hole cash-like AE records filed by Zeno under “Types under investigation” and an unknown principality. Their region/issuer labels vary across individual source records, so the editorial family remains deliberately unattributed.",
+      "question": "Resolve issuer, region and cross-catalogue identities specimen by specimen."
+    },
+    {
+      "id": "nwr-pry-square-hole",
+      "title": "“Nwr-pry” square-hole cash",
+      "zh": "“Nwr-pry” 方孔钱",
+      "region": "Central Asia / attribution under investigation",
+      "start": 600,
+      "end": 899,
+      "dateLabel": "Chronology pending source crosswalk",
+      "anchorPlaceId": null,
+      "status": "source_linked_candidate",
+      "description": "Three Zeno AE cash records grouped under the reading “Nwr-pry”, all with clear square central apertures. The reading and polity attribution remain source claims.",
+      "question": "Confirm legend reading, issuer and regional attribution in specialist literature."
+    },
+    {
+      "id": "semirechye-unattributed-cash",
+      "title": "Unattributed Semirechye square-hole cash",
+      "zh": "七河未定归属方孔钱",
+      "region": "Semirechye",
+      "start": 600,
+      "end": 999,
+      "dateLabel": "Broad Semirechye context; exact chronology varies by record",
+      "anchorPlaceId": "suyab",
+      "status": "source_linked_candidate",
+      "description": "Square-hole/cash-like AE records filed directly under the Semirechye root rather than a stable ruler branch. Individual source titles include unknown qaghan, Türgesh, two-tamgha and unpublished forms; the family is intentionally provisional.",
+      "question": "Split into stable ruler/tamgha families only after direct catalogue crosswalk."
+    },
+    {
+      "id": "ferghana-chach-anepigraphic-cash",
+      "title": "Ferghana/Chach anepigraphic square-hole cash",
+      "zh": "费尔干纳／石国未署名方孔钱",
+      "region": "Ferghana / Chach attribution disputed",
+      "start": 600,
+      "end": 899,
+      "dateLabel": "Chronology and regional attribution pending",
+      "anchorPlaceId": null,
+      "status": "source_linked_candidate",
+      "description": "Two uninscribed AE records in a Zeno “Ferghana?” cash group are described in individual titles as Chach-area issues and show clear square/squarish central apertures. Competing regional labels are preserved.",
+      "question": "Do not resolve Ferghana versus Chach until specialist catalogues or find-context evidence are cross-checked."
+    }
+  ],
+  "familiesReused": [
+    {
+      "id": "semirechye-chinese-imitation",
+      "role": "existing_family_reused"
+    },
+    {
+      "id": "samarkand-chinese-type",
+      "role": "existing_family_reused"
+    },
+    {
+      "id": "un16",
+      "role": "existing_family_reused"
+    }
+  ],
+  "sourceGroups": [
+    {
+      "id": "zeno503-cat-15758-stage6",
+      "familyId": "semirechye-chinese-imitation",
+      "categoryId": "15758",
+      "title": "Anepigraphic imitations · square-hole subset",
+      "status": "source_group",
+      "description": "Record-level subset retained after stage-6 visual review; source taxonomy and competing regional labels are preserved."
+    },
+    {
+      "id": "zeno503-cat-14538-stage6",
+      "familyId": "uncertain-central-asian-square-hole",
+      "categoryId": "14538",
+      "title": "Types under investigation · square-hole subset",
+      "status": "source_group",
+      "description": "Record-level subset retained after stage-6 visual review; source taxonomy and competing regional labels are preserved."
+    },
+    {
+      "id": "zeno503-cat-9434-stage6",
+      "familyId": "uncertain-central-asian-square-hole",
+      "categoryId": "9434",
+      "title": "Unknown principality · square-hole subset",
+      "status": "source_group",
+      "description": "Record-level subset retained after stage-6 visual review; source taxonomy and competing regional labels are preserved."
+    },
+    {
+      "id": "zeno503-cat-14834-stage6",
+      "familyId": "nwr-pry-square-hole",
+      "categoryId": "14834",
+      "title": "“Nwr-pry”",
+      "status": "source_group",
+      "description": "Record-level subset retained after stage-6 visual review; source taxonomy and competing regional labels are preserved."
+    },
+    {
+      "id": "zeno503-cat-2141-stage6",
+      "familyId": "semirechye-unattributed-cash",
+      "categoryId": "2141",
+      "title": "Semirechye root · unattributed square-hole subset",
+      "status": "source_group",
+      "description": "Record-level subset retained after stage-6 visual review; source taxonomy and competing regional labels are preserved."
+    },
+    {
+      "id": "zeno503-cat-800-chinese-stage6",
+      "familyId": "samarkand-chinese-type",
+      "categoryId": "800",
+      "title": "Soghd root · Chinese-type subset",
+      "status": "source_group",
+      "description": "Record-level subset retained after stage-6 visual review; source taxonomy and competing regional labels are preserved."
+    },
+    {
+      "id": "zeno503-cat-800-sogdian-stage6",
+      "familyId": "un16",
+      "categoryId": "800",
+      "title": "Soghd root · unattributed Sogdian cash subset",
+      "status": "source_group",
+      "description": "Record-level subset retained after stage-6 visual review; source taxonomy and competing regional labels are preserved."
+    },
+    {
+      "id": "zeno503-cat-23463-stage6",
+      "familyId": "ferghana-chach-anepigraphic-cash",
+      "categoryId": "23463",
+      "title": "Unepigraphic cash, Ferghana? · square-hole subset",
+      "status": "source_group",
+      "description": "Record-level subset retained after stage-6 visual review; source taxonomy and competing regional labels are preserved."
+    }
+  ],
+  "records": [
+    {
+      "id": "106998",
+      "leafCategoryId": "9434",
+      "leafCategoryTitle": "Unknown principality",
+      "familyId": "uncertain-central-asian-square-hole",
+      "sourceGroupId": "zeno503-cat-9434-stage6",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage6_final_pending_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/106998.jpg",
+        "width": 1743,
+        "height": 915,
+        "sha256": "8cffcb00e321ac871725b5733d02e9d17ba2cc91e515b945e3c42cd8c6cf2503"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "135144",
+      "leafCategoryId": "2141",
+      "leafCategoryTitle": "Semirech'e",
+      "familyId": "semirechye-unattributed-cash",
+      "sourceGroupId": "zeno503-cat-2141-stage6",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage6_final_pending_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/135144.jpg",
+        "width": 1693,
+        "height": 991,
+        "sha256": "815f1e6d433c2928da5e82883dc1005e81d60662466de62c7f7743e94aad5174"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "135145",
+      "leafCategoryId": "14834",
+      "leafCategoryTitle": "\"Nwr-pry\"",
+      "familyId": "nwr-pry-square-hole",
+      "sourceGroupId": "zeno503-cat-14834-stage6",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage6_final_pending_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/135145.jpg",
+        "width": 2560,
+        "height": 1309,
+        "sha256": "1e486d20c6059da80de1628cf681177103bb591b22b47b7c6e0a1424b84c5563"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "135903",
+      "leafCategoryId": "14834",
+      "leafCategoryTitle": "\"Nwr-pry\"",
+      "familyId": "nwr-pry-square-hole",
+      "sourceGroupId": "zeno503-cat-14834-stage6",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage6_final_pending_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/135903.jpg",
+        "width": 1363,
+        "height": 678,
+        "sha256": "ef8eb8feb2acb965718d0bd2a662d1b100cc48864db89437fb101a16b1d40065"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "20136",
+      "leafCategoryId": "800",
+      "leafCategoryTitle": "Soghd",
+      "familyId": "samarkand-chinese-type",
+      "sourceGroupId": "zeno503-cat-800-chinese-stage6",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage6_final_pending_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/20136.jpg",
+        "width": 648,
+        "height": 318,
+        "sha256": "a06bc9154f0e814fc371cba389919582fa8f8a41411213b436b282570164c4d1"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "219321",
+      "leafCategoryId": "9434",
+      "leafCategoryTitle": "Unknown principality",
+      "familyId": "uncertain-central-asian-square-hole",
+      "sourceGroupId": "zeno503-cat-9434-stage6",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage6_final_pending_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/219321.jpg",
+        "width": 828,
+        "height": 417,
+        "sha256": "8239a62fb6667ec1c620fef3296a8bfa4f5788accb053bf52ae98f32cdfe76f2"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "243513",
+      "leafCategoryId": "800",
+      "leafCategoryTitle": "Soghd",
+      "familyId": "samarkand-chinese-type",
+      "sourceGroupId": "zeno503-cat-800-chinese-stage6",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage6_final_pending_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/243513.jpg",
+        "width": 1568,
+        "height": 788,
+        "sha256": "c516282683c670e919efe5b385ec1dc79d23dce80804dda500d46a26a55f37c2"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "261700",
+      "leafCategoryId": "2141",
+      "leafCategoryTitle": "Semirech'e",
+      "familyId": "semirechye-unattributed-cash",
+      "sourceGroupId": "zeno503-cat-2141-stage6",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage6_final_pending_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/261700.jpg",
+        "width": 904,
+        "height": 457,
+        "sha256": "2343e4423414c6eac7db928a96c49336807cf7f6c08a46950abde38dd9ba3689"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "268480",
+      "leafCategoryId": "2141",
+      "leafCategoryTitle": "Semirech'e",
+      "familyId": "semirechye-unattributed-cash",
+      "sourceGroupId": "zeno503-cat-2141-stage6",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage6_final_pending_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/268480.jpg",
+        "width": 850,
+        "height": 449,
+        "sha256": "3015ee3024e0a427ff95a9126b6d6216c66c033574c63194575b390fc60034ab"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "273092",
+      "leafCategoryId": "2141",
+      "leafCategoryTitle": "Semirech'e",
+      "familyId": "semirechye-unattributed-cash",
+      "sourceGroupId": "zeno503-cat-2141-stage6",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage6_final_pending_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/273092.jpg",
+        "width": 858,
+        "height": 475,
+        "sha256": "179341279e1b1ba60cb5b8c38e717f280b6fa630385584140a951fa6a5610fc5"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "277397",
+      "leafCategoryId": "2141",
+      "leafCategoryTitle": "Semirech'e",
+      "familyId": "semirechye-unattributed-cash",
+      "sourceGroupId": "zeno503-cat-2141-stage6",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage6_final_pending_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/277397.jpg",
+        "width": 1250,
+        "height": 640,
+        "sha256": "41c39063d3cf1b16635b233c874be83094bea77efa7eacc5fc7d7310fbd8728a"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "277427",
+      "leafCategoryId": "2141",
+      "leafCategoryTitle": "Semirech'e",
+      "familyId": "semirechye-unattributed-cash",
+      "sourceGroupId": "zeno503-cat-2141-stage6",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage6_final_pending_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/277427.jpg",
+        "width": 928,
+        "height": 462,
+        "sha256": "364c1942cb4ea0be0f2b1f4c1ec9c47990a15bd97032cf58596433886ec6e0b1"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "285140",
+      "leafCategoryId": "23463",
+      "leafCategoryTitle": "Unepigraphic cash, Ferghana?",
+      "familyId": "ferghana-chach-anepigraphic-cash",
+      "sourceGroupId": "zeno503-cat-23463-stage6",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage6_final_pending_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/285140.jpg",
+        "width": 540,
+        "height": 267,
+        "sha256": "e59c610bfde94d79c86285a6186d3a6ecf6b7c8b497162bd354470cd0a979d69"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "291431",
+      "leafCategoryId": "23463",
+      "leafCategoryTitle": "Unepigraphic cash, Ferghana?",
+      "familyId": "ferghana-chach-anepigraphic-cash",
+      "sourceGroupId": "zeno503-cat-23463-stage6",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage6_final_pending_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/291431.jpg",
+        "width": 1493,
+        "height": 782,
+        "sha256": "c921d759bd1e94c9799f7278b1acc368612990e1211f40b6ea0291c0342acc21"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "292706",
+      "leafCategoryId": "2141",
+      "leafCategoryTitle": "Semirech'e",
+      "familyId": "semirechye-unattributed-cash",
+      "sourceGroupId": "zeno503-cat-2141-stage6",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage6_final_pending_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/292706.jpg",
+        "width": 896,
+        "height": 462,
+        "sha256": "36e65609e3ac0670fdff87d20f4d78bb84f6990d3dbe01fd6525c7e51cdef1a1"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "294274",
+      "leafCategoryId": "15758",
+      "leafCategoryTitle": "Anepigraphic imitations",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15758-stage6",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage6_final_pending_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/294274.jpg",
+        "width": 581,
+        "height": 328,
+        "sha256": "d015dc81d6dfb52e87368acfaffb53498f9673c2d64492c38871238f0b8499e2"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "312691",
+      "leafCategoryId": "2141",
+      "leafCategoryTitle": "Semirech'e",
+      "familyId": "semirechye-unattributed-cash",
+      "sourceGroupId": "zeno503-cat-2141-stage6",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage6_final_pending_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/312691.jpg",
+        "width": 1389,
+        "height": 729,
+        "sha256": "645dca39184a8269a1c54f0399adb4733e7dfebedda3433bab1cfa8a44469d4e"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "313381",
+      "leafCategoryId": "15758",
+      "leafCategoryTitle": "Anepigraphic imitations",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15758-stage6",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage6_final_pending_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/313381.jpg",
+        "width": 893,
+        "height": 468,
+        "sha256": "525d015369a4e34731e217fd848cc79878e569c1a5ff9579794f9986377047c8"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "321951",
+      "leafCategoryId": "2141",
+      "leafCategoryTitle": "Semirech'e",
+      "familyId": "semirechye-unattributed-cash",
+      "sourceGroupId": "zeno503-cat-2141-stage6",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage6_final_pending_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/321951.jpg",
+        "width": 3672,
+        "height": 1661,
+        "sha256": "ca8d8e3dfb159ec4c59cf96ce6f280e6eb55236eb3249beb225d4236bb1f9f0a"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "35765",
+      "leafCategoryId": "9434",
+      "leafCategoryTitle": "Unknown principality",
+      "familyId": "uncertain-central-asian-square-hole",
+      "sourceGroupId": "zeno503-cat-9434-stage6",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage6_final_pending_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/35765.jpg",
+        "width": 750,
+        "height": 371,
+        "sha256": "19ef32b46b6ab37d1c34139d6bc63a750dbd970922e7ed6946ab28b524c28e54"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "375690",
+      "leafCategoryId": "14834",
+      "leafCategoryTitle": "\"Nwr-pry\"",
+      "familyId": "nwr-pry-square-hole",
+      "sourceGroupId": "zeno503-cat-14834-stage6",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage6_final_pending_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/375690.jpg",
+        "width": 988,
+        "height": 500,
+        "sha256": "9e089c60514a48a4408e59e2024d7b6288519866d21cf21a7e9b0a2f21c56a01"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "377679",
+      "leafCategoryId": "15758",
+      "leafCategoryTitle": "Anepigraphic imitations",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15758-stage6",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage6_final_pending_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/377679.jpg",
+        "width": 1814,
+        "height": 561,
+        "sha256": "84a464e2fe1ac06e1b49596dfc50f58b182e90b0a331a797570f488f44d5b3c5"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "46408",
+      "leafCategoryId": "9434",
+      "leafCategoryTitle": "Unknown principality",
+      "familyId": "uncertain-central-asian-square-hole",
+      "sourceGroupId": "zeno503-cat-9434-stage6",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage6_final_pending_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/46408.jpg",
+        "width": 1396,
+        "height": 740,
+        "sha256": "f39f58c59ba192cc41e73ac352a762ab1f0bebd703812b57fb10ef277b747714"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "86241",
+      "leafCategoryId": "800",
+      "leafCategoryTitle": "Soghd",
+      "familyId": "un16",
+      "sourceGroupId": "zeno503-cat-800-sogdian-stage6",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage6_final_pending_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/86241.jpg",
+        "width": 948,
+        "height": 496,
+        "sha256": "b8a5404e857d3cbb297183f2c4c97f273cbc94d3397155fa4d46f4e0273e622f"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "90684",
+      "leafCategoryId": "14538",
+      "leafCategoryTitle": "Types under investigation",
+      "familyId": "uncertain-central-asian-square-hole",
+      "sourceGroupId": "zeno503-cat-14538-stage6",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage6_final_pending_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/90684.jpg",
+        "width": 874,
+        "height": 438,
+        "sha256": "540cc509be1b42740747206f197ace5cbc74387e4b8bf57731488fe1669fc604"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    }
+  ],
+  "relatedRecords": [
+    {
+      "id": "103072",
+      "leafCategoryId": "14538",
+      "title": "#103072 - Pre-Islamic Asia AE coin",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "112607",
+      "leafCategoryId": "14538",
+      "title": "#112607 - Hepthalite ? Sogd ?",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "128831",
+      "leafCategoryId": "15758",
+      "title": "#128831 - Local imitation of Kai Yuan Tong Bao",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "128840",
+      "leafCategoryId": "15758",
+      "title": "#128840 - Semirech’e, AE unit",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "170393",
+      "leafCategoryId": "15758",
+      "title": "#170393 - Semireche, AE charm.",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "209686",
+      "leafCategoryId": "15518",
+      "title": "#209686 - Kai-yuan tong-bao 開元通寳 / Arabic legend, Badakhshan",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "211504",
+      "leafCategoryId": "15758",
+      "title": "#211504 - Semireche AE imitation?",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "211939",
+      "leafCategoryId": "15758",
+      "title": "#211939 - Semirechie, AE Local imitation",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "211941",
+      "leafCategoryId": "15758",
+      "title": "#211941 - Semirechie, AE Local imitation.",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "215473",
+      "leafCategoryId": "15758",
+      "title": "#215473 - Semirechie, AE Local imitation.",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "218270",
+      "leafCategoryId": "15758",
+      "title": "#218270 - Semirechie, AE Local imitation.",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "243065",
+      "leafCategoryId": "15758",
+      "title": "#243065 - Semirech'e, Anepigraphic AE Local imitation",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "243066",
+      "leafCategoryId": "15758",
+      "title": "#243066 - Semirech'e, Anepigraphic AE Local imitation",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "243067",
+      "leafCategoryId": "15758",
+      "title": "#243067 - Semirech'e, Anepigraphic AE Local imitation",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "247741",
+      "leafCategoryId": "14538",
+      "title": "#247741 - Chach, Unknown Tamgha Type",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "261701",
+      "leafCategoryId": "15758",
+      "title": "#261701 - Semirech'e AE local imitation.",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "267132",
+      "leafCategoryId": "15758",
+      "title": "#267132 - Central Asia Semirech'e",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "267133",
+      "leafCategoryId": "15758",
+      "title": "#267133 - Central Asia Semirech'e",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "267134",
+      "leafCategoryId": "15758",
+      "title": "#267134 - Central Asia Semirech'e",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "267135",
+      "leafCategoryId": "15758",
+      "title": "#267135 - Central Asia Semirech'e",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "267136",
+      "leafCategoryId": "15758",
+      "title": "#267136 - Central Asia Semirech'e",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "267138",
+      "leafCategoryId": "15758",
+      "title": "#267138 - Central Asia Semirech'e",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "277703",
+      "leafCategoryId": "15758",
+      "title": "#277703 - Semirech'e, cluster of Anepigraphic AE local imitations",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "280021",
+      "leafCategoryId": "2141",
+      "title": "#280021 - AE cash, Arabic ? legend, Semirech'ye",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "288739",
+      "leafCategoryId": "15758",
+      "title": "#288739 - Semirech'e, Anepigraphic AE Local imitation",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "288740",
+      "leafCategoryId": "14538",
+      "title": "#288740 - Uncertain Semirech'e or Central Asia cash",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "30959",
+      "leafCategoryId": "14538",
+      "title": "#30959 - East Sogdiana.Unknown Ikhshid.7-8 cent.AD. Bronze",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "313382",
+      "leafCategoryId": "15758",
+      "title": "#313382 - Central Asia, Anepigraphic AE Local imitation",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "326638",
+      "leafCategoryId": "15758",
+      "title": "#326638 - Semirech'e Anepigraphic imitation, preserved original casting state",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "329021",
+      "leafCategoryId": "15758",
+      "title": "#329021 - Semirech'e Anepigraphic cash, Carved edge, Charm?",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "332013",
+      "leafCategoryId": "22488",
+      "title": "#332013 - AE face/tamga “sipah” (“leader of the army”)",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "335691",
+      "leafCategoryId": "15518",
+      "title": "#335691 - Kai-yuan tong-bao 開元通寳 / Arabic legend, Badakhshan",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "355062",
+      "leafCategoryId": "23463",
+      "title": "#355062 - Chach area, uninscribed AE:s,",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "355063",
+      "leafCategoryId": "23463",
+      "title": "#355063 - Chach area, uninscribed AE:s,",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "355064",
+      "leafCategoryId": "23463",
+      "title": "#355064 - Chach area, uninscribed AE:s,",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "368297",
+      "leafCategoryId": "15518",
+      "title": "#368297 - Badakhshan cast AE fals, kai yuan tong bao / Arabic legend.",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "378168",
+      "leafCategoryId": "2141",
+      "title": "#378168 - Karahanid.com - Александр Камышев",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "383146",
+      "leafCategoryId": "15758",
+      "title": "#383146 - Semirech'e, Aniepigraphic Imitation, AE Cash, 11 Dots",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "383147",
+      "leafCategoryId": "15758",
+      "title": "#383147 - Semirech'e, Anepigraphic Imitation, AE Cash, 4 Panels",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "383148",
+      "leafCategoryId": "15758",
+      "title": "#383148 - Semirech'e, Anepigraphic Imitation, AE Cash, 8 Dots",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "383149",
+      "leafCategoryId": "15758",
+      "title": "#383149 - Semirech'e, Anepigraphic Imitation, AE Cash, 8 Dots",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "383150",
+      "leafCategoryId": "15758",
+      "title": "#383150 - Semirech'e, Anepigraphic Imitation, AE Cash, 13 Dots",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "383151",
+      "leafCategoryId": "15758",
+      "title": "#383151 - Semirech'e, Anepigraphic Imitation, AE Cash, 11 Dots",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "383152",
+      "leafCategoryId": "15758",
+      "title": "#383152 - Semirech'e, Anepigraphic Imitation, AE Cash, Blank",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "383153",
+      "leafCategoryId": "15758",
+      "title": "#383153 - Semirech'e, Anepigraphic Imitation, AE Cash, 13 Dots",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "383154",
+      "leafCategoryId": "15758",
+      "title": "#383154 - Semirech'e, Anepigraphic Imitation, AE Cash, 5 Arms",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "383155",
+      "leafCategoryId": "15758",
+      "title": "#383155 - Semirech'e, Anepigraphic Imitation, AE Cash, 8 Dots",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "383157",
+      "leafCategoryId": "15758",
+      "title": "#383157 - Semirech'e, Anepigraphic Imitation, AE Cash, 4 Arms",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "383158",
+      "leafCategoryId": "15758",
+      "title": "#383158 - Semirech'e, Anepigraphic Imitation, AE Cash, 4 Panels",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "383309",
+      "leafCategoryId": "15758",
+      "title": "#383309 - Semirech'e, Anepigraphic Imitation, AE Cash, 4 Arms",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "383310",
+      "leafCategoryId": "15758",
+      "title": "#383310 - Semirech'e, Anepigraphic Imitation, AE Cash, 4 Arms",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "383311",
+      "leafCategoryId": "15758",
+      "title": "#383311 - Semirech'e, Anepigraphic Imitation, AE Cash, 4 Arms",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "383312",
+      "leafCategoryId": "15758",
+      "title": "#383312 - Semirech'e, Anepigraphic Imitation, AE Cash, 11 Dots",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "383313",
+      "leafCategoryId": "15758",
+      "title": "#383313 - Semirech'e, Anepigraphic Imitation, AE Cash, 11 Dots",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "383314",
+      "leafCategoryId": "15758",
+      "title": "#383314 - Semirech'e, Anepigraphic Imitation, AE Cash, 4 Arms",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "383315",
+      "leafCategoryId": "15758",
+      "title": "#383315 - Semirech'e, Anepigraphic Imitation, AE Cash, 4 Arms",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "383316",
+      "leafCategoryId": "15758",
+      "title": "#383316 - Semirech'e, Anepigraphic Imitation, AE Cash, 8 Dots",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "383317",
+      "leafCategoryId": "15758",
+      "title": "#383317 - Semirech'e, Anepigraphic Imitation, AE Cash, 8 Panels",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "383318",
+      "leafCategoryId": "15758",
+      "title": "#383318 - Semirech'e, Anepigraphic Imitation, AE Cash, 5 Arms",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "383319",
+      "leafCategoryId": "15758",
+      "title": "#383319 - Semirech'e, Anepigraphic Imitation, AE Cash, 11 Dots",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "383320",
+      "leafCategoryId": "15758",
+      "title": "#383320 - Semirech'e, Anepigraphic Imitation, AE Cash, 8 Dots",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "383321",
+      "leafCategoryId": "15758",
+      "title": "#383321 - Semirech'e, Anepigraphic Imitation, AE Cash, 4 Arms",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "383322",
+      "leafCategoryId": "15758",
+      "title": "#383322 - Semirech'e, Anepigraphic Imitation, AE Cash, 4 Arms",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "383323",
+      "leafCategoryId": "15758",
+      "title": "#383323 - Semirech'e, Anepigraphic Imitation, AE Cash, 4 Arms",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "383324",
+      "leafCategoryId": "15758",
+      "title": "#383324 - Semirech'e, Anepigraphic Imitation, AE Cash, 4 Arms",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "383695",
+      "leafCategoryId": "15758",
+      "title": "#383695 - Semirech'e, Anepigraphic Imitation, AE Cash, 11 Dots, Holed",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "383696",
+      "leafCategoryId": "15758",
+      "title": "#383696 - Semirech'e, Anepigraphic Imitation, AE Cash, 8 Holes",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "383697",
+      "leafCategoryId": "15758",
+      "title": "#383697 - Semirech'e, Anepigraphic Imitation, AE Cash, 4 Panels",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "383698",
+      "leafCategoryId": "15758",
+      "title": "#383698 - Semirech'e, Anepigraphic Imitation, AE Cash, 4 Arms",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "40239",
+      "leafCategoryId": "15758",
+      "title": "#40239 - Semirechie, AE unit",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "47785",
+      "leafCategoryId": "15758",
+      "title": "#47785 - Semirech'e, local imitation of Kai Yuan Tong Bao.",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "77498",
+      "leafCategoryId": "15758",
+      "title": "#77498 - Semirech'e local imitation of Kai Yuan Tong Bao.",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    },
+    {
+      "id": "9781",
+      "leafCategoryId": "15758",
+      "title": "#9781 - Central Asia, bronze spindle whorls or local imitation (Semirechie) coins",
+      "reason": "stage-6 record-level visual review: circular/non-square aperture, openwork/special-aperture imitation, solid regional coinage, non-coin/pseudo-money reference image, or otherwise outside the main square-hole corpus"
+    }
+  ],
+  "relatedCategorySummary": [
+    {
+      "categoryId": "14538",
+      "title": "Types under investigation",
+      "reviewedRecords": 5,
+      "mainCorpusImports": 0,
+      "classification": "related_or_excluded_from_main_square_hole_corpus",
+      "reviewBasis": "record-level downloaded-image review"
+    },
+    {
+      "categoryId": "15758",
+      "title": "Anepigraphic imitations",
+      "reviewedRecords": 59,
+      "mainCorpusImports": 0,
+      "classification": "related_or_excluded_from_main_square_hole_corpus",
+      "reviewBasis": "record-level downloaded-image review"
+    },
+    {
+      "categoryId": "15518",
+      "title": "Badakhshān بدخشان",
+      "reviewedRecords": 3,
+      "mainCorpusImports": 0,
+      "classification": "related_or_excluded_from_main_square_hole_corpus",
+      "reviewBasis": "record-level downloaded-image review"
+    },
+    {
+      "categoryId": "2141",
+      "title": "Semirech'e",
+      "reviewedRecords": 2,
+      "mainCorpusImports": 0,
+      "classification": "related_or_excluded_from_main_square_hole_corpus",
+      "reviewBasis": "record-level downloaded-image review"
+    },
+    {
+      "categoryId": "22488",
+      "title": "or Karaspan",
+      "reviewedRecords": 1,
+      "mainCorpusImports": 0,
+      "classification": "related_or_excluded_from_main_square_hole_corpus",
+      "reviewBasis": "record-level downloaded-image review"
+    },
+    {
+      "categoryId": "23463",
+      "title": "Unepigraphic cash, Ferghana?",
+      "reviewedRecords": 3,
+      "mainCorpusImports": 0,
+      "classification": "related_or_excluded_from_main_square_hole_corpus",
+      "reviewBasis": "record-level downloaded-image review"
+    }
+  ],
+  "deferredRules": [
+    "No downloaded #503 target image remains pending after this stage. Future changes require new source evidence or re-adjudication, not completion of this image queue.",
+    "Special/openwork apertures remain related unless a scholarly source establishes them as circulating coin issues within the project cash tradition."
+  ]
+}

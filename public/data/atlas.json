@@ -1471,6 +1471,94 @@
           "role": "Source taxonomy / specimen discovery; canonical attribution pending"
         }
       ]
+    },
+    {
+      "id": "uncertain-central-asian-square-hole",
+      "title": "Uncertain Central Asian square-hole cash",
+      "zh": "中亚未定归属方孔钱",
+      "region": "Central Asia · attribution unresolved",
+      "start": 500,
+      "end": 999,
+      "dateLabel": "Broad pre-Islamic / early Islamic context; exact dates unresolved",
+      "description": "A bounded group of visually clear square-hole cash-like AE records filed by Zeno under “Types under investigation” and an unknown principality. Their region/issuer labels vary across individual source records, so the editorial family remains deliberately unattributed.",
+      "anchor": null,
+      "image": "/coins/zeno/106998.jpg",
+      "status": "source_linked_candidate",
+      "question": "Resolve issuer, region and cross-catalogue identities specimen by specimen.",
+      "publications": [
+        {
+          "title": "Zeno #503 source taxonomy · stage-6 visual review",
+          "url": "https://www.zeno.ru/showgallery.php?cat=503",
+          "role": "Source taxonomy / specimen discovery; canonical attribution pending"
+        }
+      ]
+    },
+    {
+      "id": "nwr-pry-square-hole",
+      "title": "“Nwr-pry” square-hole cash",
+      "zh": "“Nwr-pry” 方孔钱",
+      "region": "Central Asia / attribution under investigation",
+      "start": 600,
+      "end": 899,
+      "dateLabel": "Chronology pending source crosswalk",
+      "description": "Three Zeno AE cash records grouped under the reading “Nwr-pry”, all with clear square central apertures. The reading and polity attribution remain source claims.",
+      "anchor": null,
+      "image": "/coins/zeno/135145.jpg",
+      "status": "source_linked_candidate",
+      "question": "Confirm legend reading, issuer and regional attribution in specialist literature.",
+      "publications": [
+        {
+          "title": "Zeno #503 source taxonomy · stage-6 visual review",
+          "url": "https://www.zeno.ru/showgallery.php?cat=503",
+          "role": "Source taxonomy / specimen discovery; canonical attribution pending"
+        }
+      ]
+    },
+    {
+      "id": "semirechye-unattributed-cash",
+      "title": "Unattributed Semirechye square-hole cash",
+      "zh": "七河未定归属方孔钱",
+      "region": "Semirechye",
+      "start": 600,
+      "end": 999,
+      "dateLabel": "Broad Semirechye context; exact chronology varies by record",
+      "description": "Square-hole/cash-like AE records filed directly under the Semirechye root rather than a stable ruler branch. Individual source titles include unknown qaghan, Türgesh, two-tamgha and unpublished forms; the family is intentionally provisional.",
+      "anchor": {
+        "placeId": "suyab",
+        "role": "Regional/city orientation · 区域／城市浏览锚点",
+        "note": "用于地图浏览；不自动表示铸币地、出土地或流通范围。"
+      },
+      "image": "/coins/zeno/135144.jpg",
+      "status": "source_linked_candidate",
+      "question": "Split into stable ruler/tamgha families only after direct catalogue crosswalk.",
+      "publications": [
+        {
+          "title": "Zeno #503 source taxonomy · stage-6 visual review",
+          "url": "https://www.zeno.ru/showgallery.php?cat=503",
+          "role": "Source taxonomy / specimen discovery; canonical attribution pending"
+        }
+      ]
+    },
+    {
+      "id": "ferghana-chach-anepigraphic-cash",
+      "title": "Ferghana/Chach anepigraphic square-hole cash",
+      "zh": "费尔干纳／石国未署名方孔钱",
+      "region": "Ferghana / Chach attribution disputed",
+      "start": 600,
+      "end": 899,
+      "dateLabel": "Chronology and regional attribution pending",
+      "description": "Two uninscribed AE records in a Zeno “Ferghana?” cash group are described in individual titles as Chach-area issues and show clear square/squarish central apertures. Competing regional labels are preserved.",
+      "anchor": null,
+      "image": "/coins/zeno/285140.jpg",
+      "status": "source_linked_candidate",
+      "question": "Do not resolve Ferghana versus Chach until specialist catalogues or find-context evidence are cross-checked.",
+      "publications": [
+        {
+          "title": "Zeno #503 source taxonomy · stage-6 visual review",
+          "url": "https://www.zeno.ru/showgallery.php?cat=503",
+          "role": "Source taxonomy / specimen discovery; canonical attribution pending"
+        }
+      ]
     }
   ],
   "variants": [
@@ -2481,6 +2569,78 @@
       "status": "source_group",
       "facets": [],
       "description": "Zeno source category/subset retained after stage-5 image review; source grouping is not treated as a resolved academic variant."
+    },
+    {
+      "id": "zeno503-cat-15758-stage6",
+      "familyId": "semirechye-chinese-imitation",
+      "title": "Anepigraphic imitations · square-hole subset",
+      "reference": "Zeno category 15758 / stage-6 reviewed subset",
+      "status": "source_group",
+      "facets": [],
+      "description": "Record-level subset retained after stage-6 visual review; source taxonomy and competing regional labels are preserved."
+    },
+    {
+      "id": "zeno503-cat-14538-stage6",
+      "familyId": "uncertain-central-asian-square-hole",
+      "title": "Types under investigation · square-hole subset",
+      "reference": "Zeno category 14538 / stage-6 reviewed subset",
+      "status": "source_group",
+      "facets": [],
+      "description": "Record-level subset retained after stage-6 visual review; source taxonomy and competing regional labels are preserved."
+    },
+    {
+      "id": "zeno503-cat-9434-stage6",
+      "familyId": "uncertain-central-asian-square-hole",
+      "title": "Unknown principality · square-hole subset",
+      "reference": "Zeno category 9434 / stage-6 reviewed subset",
+      "status": "source_group",
+      "facets": [],
+      "description": "Record-level subset retained after stage-6 visual review; source taxonomy and competing regional labels are preserved."
+    },
+    {
+      "id": "zeno503-cat-14834-stage6",
+      "familyId": "nwr-pry-square-hole",
+      "title": "“Nwr-pry”",
+      "reference": "Zeno category 14834 / stage-6 reviewed subset",
+      "status": "source_group",
+      "facets": [],
+      "description": "Record-level subset retained after stage-6 visual review; source taxonomy and competing regional labels are preserved."
+    },
+    {
+      "id": "zeno503-cat-2141-stage6",
+      "familyId": "semirechye-unattributed-cash",
+      "title": "Semirechye root · unattributed square-hole subset",
+      "reference": "Zeno category 2141 / stage-6 reviewed subset",
+      "status": "source_group",
+      "facets": [],
+      "description": "Record-level subset retained after stage-6 visual review; source taxonomy and competing regional labels are preserved."
+    },
+    {
+      "id": "zeno503-cat-800-chinese-stage6",
+      "familyId": "samarkand-chinese-type",
+      "title": "Soghd root · Chinese-type subset",
+      "reference": "Zeno category 800 / stage-6 reviewed subset",
+      "status": "source_group",
+      "facets": [],
+      "description": "Record-level subset retained after stage-6 visual review; source taxonomy and competing regional labels are preserved."
+    },
+    {
+      "id": "zeno503-cat-800-sogdian-stage6",
+      "familyId": "un16",
+      "title": "Soghd root · unattributed Sogdian cash subset",
+      "reference": "Zeno category 800 / stage-6 reviewed subset",
+      "status": "source_group",
+      "facets": [],
+      "description": "Record-level subset retained after stage-6 visual review; source taxonomy and competing regional labels are preserved."
+    },
+    {
+      "id": "zeno503-cat-23463-stage6",
+      "familyId": "ferghana-chach-anepigraphic-cash",
+      "title": "Unepigraphic cash, Ferghana? · square-hole subset",
+      "reference": "Zeno category 23463 / stage-6 reviewed subset",
+      "status": "source_group",
+      "facets": [],
+      "description": "Record-level subset retained after stage-6 visual review; source taxonomy and competing regional labels are preserved."
     }
   ],
   "specimens": [
@@ -37421,6 +37581,881 @@
       "catalogue": "Zeno category 14835 · Unknown ruler, Samarkand?",
       "facets": [
         "#503 stage-5 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-106998",
+      "familyId": "uncertain-central-asian-square-hole",
+      "variantId": "zeno503-cat-9434-stage6",
+      "title": "Soghdian ? cash-like coin",
+      "weightG": 0.84,
+      "diameterMm": 14.21,
+      "images": [
+        {
+          "id": "z106998",
+          "path": "/coins/zeno/106998.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/9434/106998.jpg",
+          "width": 1743,
+          "height": 915,
+          "credit": "hfrans",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "8cffcb00e321ac871725b5733d02e9d17ba2cc91e515b945e3c42cd8c6cf2503"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 106998",
+          "url": "https://www.zeno.ru/showphoto.php?photo=106998",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "eBay #180791586208 UNKNOWN SOGHDIAN CASH-LIKE COIN. VERY RARE.",
+      "catalogue": "Zeno category 9434 · Unknown principality",
+      "facets": [
+        "#503 stage-6 final downloaded-image review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-135144",
+      "familyId": "semirechye-unattributed-cash",
+      "variantId": "zeno503-cat-2141-stage6",
+      "title": "Turgesh AE cash, unknown ruler",
+      "weightG": 0.76,
+      "diameterMm": 12.3,
+      "images": [
+        {
+          "id": "z135144",
+          "path": "/coins/zeno/135144.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/2141/edelweiss1967-12_3mm-0_76g.jpg",
+          "width": 1693,
+          "height": 991,
+          "credit": "charm",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "815f1e6d433c2928da5e82883dc1005e81d60662466de62c7f7743e94aad5174"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 135144",
+          "url": "https://www.zeno.ru/showphoto.php?photo=135144",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Image property: edelweiss1967 Unearthed in Aq-Beshim ancient site, Kyrgyzstan",
+      "catalogue": "Zeno category 2141 · Semirech'e",
+      "facets": [
+        "#503 stage-6 final downloaded-image review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-135145",
+      "familyId": "nwr-pry-square-hole",
+      "variantId": "zeno503-cat-14834-stage6",
+      "title": "AE cash, \"Nwr-pry\"",
+      "weightG": 3.77,
+      "diameterMm": 23.0,
+      "images": [
+        {
+          "id": "z135145",
+          "path": "/coins/zeno/135145.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/14834/edelweiss1967-23mm-3_77g.jpg",
+          "width": 2560,
+          "height": 1309,
+          "credit": "charm",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "1e486d20c6059da80de1628cf681177103bb591b22b47b7c6e0a1424b84c5563"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 135145",
+          "url": "https://www.zeno.ru/showphoto.php?photo=135145",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Image property: edelweiss1967 Unearthed in Kara-Balta ancient site, Kyrgyzstan",
+      "catalogue": "Zeno category 14834 · \"Nwr-pry\"",
+      "facets": [
+        "#503 stage-6 final downloaded-image review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-135903",
+      "familyId": "nwr-pry-square-hole",
+      "variantId": "zeno503-cat-14834-stage6",
+      "title": "AE cash, \"Nwr-pry\"",
+      "weightG": 3.88,
+      "diameterMm": 23.0,
+      "images": [
+        {
+          "id": "z135903",
+          "path": "/coins/zeno/135903.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/14834/unknown_side_2.JPG",
+          "width": 1363,
+          "height": 678,
+          "credit": "charm",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "ef8eb8feb2acb965718d0bd2a662d1b100cc48864db89437fb101a16b1d40065"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 135903",
+          "url": "https://www.zeno.ru/showphoto.php?photo=135903",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Unearthed at South Ural, Chelyabinsk vicinity, Troitski district, forest along the river Ui. Accompanying finds - from arrow heads to modern coins from circulation.",
+      "catalogue": "Zeno category 14834 · \"Nwr-pry\"",
+      "facets": [
+        "#503 stage-6 final downloaded-image review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-20136",
+      "familyId": "samarkand-chinese-type",
+      "variantId": "zeno503-cat-800-chinese-stage6",
+      "title": "Kai Yuan Tung Bao, with sogdian? legend",
+      "weightG": 3.2,
+      "diameterMm": 24.0,
+      "images": [
+        {
+          "id": "z20136",
+          "path": "/coins/zeno/20136.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/800/sogdKaiYuan.jpg",
+          "width": 648,
+          "height": 318,
+          "credit": "CyberNumis",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "a06bc9154f0e814fc371cba389919582fa8f8a41411213b436b282570164c4d1"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 20136",
+          "url": "https://www.zeno.ru/showphoto.php?photo=20136",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "#20136 - Kai Yuan Tung Bao, with sogdian? legend",
+      "catalogue": "Zeno category 800 · Soghd",
+      "facets": [
+        "#503 stage-6 final downloaded-image review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-219321",
+      "familyId": "uncertain-central-asian-square-hole",
+      "variantId": "zeno503-cat-9434-stage6",
+      "title": "Small AE from Chach oasis.",
+      "weightG": null,
+      "diameterMm": null,
+      "images": [
+        {
+          "id": "z219321",
+          "path": "/coins/zeno/219321.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/9434/s-l1600O3IZV5Y2.jpg",
+          "width": 828,
+          "height": 417,
+          "credit": "hfrans",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "8239a62fb6667ec1c620fef3296a8bfa4f5788accb053bf52ae98f32cdfe76f2"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 219321",
+          "url": "https://www.zeno.ru/showphoto.php?photo=219321",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "eBay # 202592724827 Small, Unpublished Soghdian Cash from Chach oasis RRR! Sold: $ 224,50",
+      "catalogue": "Zeno category 9434 · Unknown principality",
+      "facets": [
+        "#503 stage-6 final downloaded-image review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-243513",
+      "familyId": "samarkand-chinese-type",
+      "variantId": "zeno503-cat-800-chinese-stage6",
+      "title": "Kai Yuan Tong Bao.",
+      "weightG": 4.79,
+      "diameterMm": 24.14,
+      "images": [
+        {
+          "id": "z243513",
+          "path": "/coins/zeno/243513.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/800/Kai_Yuan_TB_Sogd.jpg",
+          "width": 1568,
+          "height": 788,
+          "credit": "MamAYI",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "c516282683c670e919efe5b385ec1dc79d23dce80804dda500d46a26a55f37c2"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 243513",
+          "url": "https://www.zeno.ru/showphoto.php?photo=243513",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "The coin was found in Northern Kyrgyzstan. It is quite difficult to read the reverse, but it is not empty, and it seems to me that the style of the obverse (except for the direct left hook of the yuan) and the parameters of this coin is similar to # 105791 . Please specify the attribution if possible.",
+      "catalogue": "Zeno category 800 · Soghd",
+      "facets": [
+        "#503 stage-6 final downloaded-image review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-261700",
+      "familyId": "semirechye-unattributed-cash",
+      "variantId": "zeno503-cat-2141-stage6",
+      "title": "Semirechie, AE cash, Unknown Kaqan.",
+      "weightG": null,
+      "diameterMm": null,
+      "images": [
+        {
+          "id": "z261700",
+          "path": "/coins/zeno/261700.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/2141/s-l1600WVHQQ999.jpg",
+          "width": 904,
+          "height": 457,
+          "credit": "hfrans",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "2343e4423414c6eac7db928a96c49336807cf7f6c08a46950abde38dd9ba3689"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 261700",
+          "url": "https://www.zeno.ru/showphoto.php?photo=261700",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "eBay # 133550037199 Semirechie, Unknown Kaqan, AE cash, Unpublished Unsold",
+      "catalogue": "Zeno category 2141 · Semirech'e",
+      "facets": [
+        "#503 stage-6 final downloaded-image review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-268480",
+      "familyId": "semirechye-unattributed-cash",
+      "variantId": "zeno503-cat-2141-stage6",
+      "title": "Please help ID",
+      "weightG": 0.83,
+      "diameterMm": 14.51,
+      "images": [
+        {
+          "id": "z268480",
+          "path": "/coins/zeno/268480.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/2141/41281.jpg",
+          "width": 850,
+          "height": 449,
+          "credit": "Alexey N",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "3015ee3024e0a427ff95a9126b6d6216c66c033574c63194575b390fc60034ab"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 268480",
+          "url": "https://www.zeno.ru/showphoto.php?photo=268480",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Please help ID",
+      "catalogue": "Zeno category 2141 · Semirech'e",
+      "facets": [
+        "#503 stage-6 final downloaded-image review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-273092",
+      "familyId": "semirechye-unattributed-cash",
+      "variantId": "zeno503-cat-2141-stage6",
+      "title": "AE Turgesh coin",
+      "weightG": 1.04,
+      "diameterMm": 15.0,
+      "images": [
+        {
+          "id": "z273092",
+          "path": "/coins/zeno/273092.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/2141/201114.jpg",
+          "width": 858,
+          "height": 475,
+          "credit": "Alexey N",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "179341279e1b1ba60cb5b8c38e717f280b6fa630385584140a951fa6a5610fc5"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 273092",
+          "url": "https://www.zeno.ru/showphoto.php?photo=273092",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "#273092 - AE Turgesh coin",
+      "catalogue": "Zeno category 2141 · Semirech'e",
+      "facets": [
+        "#503 stage-6 final downloaded-image review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-277397",
+      "familyId": "semirechye-unattributed-cash",
+      "variantId": "zeno503-cat-2141-stage6",
+      "title": "AE cash, Semirech'e, two tamghas",
+      "weightG": 2.16,
+      "diameterMm": 21.0,
+      "images": [
+        {
+          "id": "z277397",
+          "path": "/coins/zeno/277397.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/2141/Kashka-Suu_2_16_g_-_21_mm.jpg",
+          "width": 1250,
+          "height": 640,
+          "credit": "charm",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "41c39063d3cf1b16635b233c874be83094bea77efa7eacc5fc7d7310fbd8728a"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 277397",
+          "url": "https://www.zeno.ru/showphoto.php?photo=277397",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Unearthed in Kashka-Suu valley, Kyrgyzstan Image property: A.M. Kamyshev",
+      "catalogue": "Zeno category 2141 · Semirech'e",
+      "facets": [
+        "#503 stage-6 final downloaded-image review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-277427",
+      "familyId": "semirechye-unattributed-cash",
+      "variantId": "zeno503-cat-2141-stage6",
+      "title": "Coin of Semirech'e?",
+      "weightG": 2.03,
+      "diameterMm": 20.0,
+      "images": [
+        {
+          "id": "z277427",
+          "path": "/coins/zeno/277427.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/2141/10393.jpg",
+          "width": 928,
+          "height": 462,
+          "credit": "Fudzi",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "364c1942cb4ea0be0f2b1f4c1ec9c47990a15bd97032cf58596433886ec6e0b1"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 277427",
+          "url": "https://www.zeno.ru/showphoto.php?photo=277427",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Photos courtesy of fisher11. I will inform you about the parameters of the coin additionally",
+      "catalogue": "Zeno category 2141 · Semirech'e",
+      "facets": [
+        "#503 stage-6 final downloaded-image review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-285140",
+      "familyId": "ferghana-chach-anepigraphic-cash",
+      "variantId": "zeno503-cat-23463-stage6",
+      "title": "Chach area, uninscribed AE:s, unknown ruler.",
+      "weightG": 0.9,
+      "diameterMm": 12.0,
+      "images": [
+        {
+          "id": "z285140",
+          "path": "/coins/zeno/285140.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/23463/7538.jpg",
+          "width": 540,
+          "height": 267,
+          "credit": "pilot",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "e59c610bfde94d79c86285a6186d3a6ecf6b7c8b497162bd354470cd0a979d69"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 285140",
+          "url": "https://www.zeno.ru/showphoto.php?photo=285140",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "#285140 - Chach area, uninscribed AE:s, unknown ruler.",
+      "catalogue": "Zeno category 23463 · Unepigraphic cash, Ferghana?",
+      "facets": [
+        "#503 stage-6 final downloaded-image review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-291431",
+      "familyId": "ferghana-chach-anepigraphic-cash",
+      "variantId": "zeno503-cat-23463-stage6",
+      "title": "Chach area, uninscribed AE:s, unknown ruler.",
+      "weightG": 0.82,
+      "diameterMm": 13.0,
+      "images": [
+        {
+          "id": "z291431",
+          "path": "/coins/zeno/291431.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/23463/cha9.JPG",
+          "width": 1493,
+          "height": 782,
+          "credit": "Oleg",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "c921d759bd1e94c9799f7278b1acc368612990e1211f40b6ea0291c0342acc21"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 291431",
+          "url": "https://www.zeno.ru/showphoto.php?photo=291431",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Chach area, uninscribed AE:s, unknown ruler.",
+      "catalogue": "Zeno category 23463 · Unepigraphic cash, Ferghana?",
+      "facets": [
+        "#503 stage-6 final downloaded-image review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-292706",
+      "familyId": "semirechye-unattributed-cash",
+      "variantId": "zeno503-cat-2141-stage6",
+      "title": "Semirechie, AE, Unknown Kaqan.",
+      "weightG": null,
+      "diameterMm": null,
+      "images": [
+        {
+          "id": "z292706",
+          "path": "/coins/zeno/292706.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/2141/1097355362_o.jpg",
+          "width": 896,
+          "height": 462,
+          "credit": "hfrans",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "36e65609e3ac0670fdff87d20f4d78bb84f6990d3dbe01fd6525c7e51cdef1a1"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 292706",
+          "url": "https://www.zeno.ru/showphoto.php?photo=292706",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "eBay # 133969062554 Semirechie, Unknown Kaqan, RR type! Winning bid: US $249.99",
+      "catalogue": "Zeno category 2141 · Semirech'e",
+      "facets": [
+        "#503 stage-6 final downloaded-image review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-294274",
+      "familyId": "semirechye-chinese-imitation",
+      "variantId": "zeno503-cat-15758-stage6",
+      "title": "Semirech'e, Anepigraphic AE Local imitation",
+      "weightG": 1.02,
+      "diameterMm": 9.5,
+      "images": [
+        {
+          "id": "z294274",
+          "path": "/coins/zeno/294274.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/15758/anep1.jpg",
+          "width": 581,
+          "height": 328,
+          "credit": "SeptimusT",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "d015dc81d6dfb52e87368acfaffb53498f9673c2d64492c38871238f0b8499e2"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 294274",
+          "url": "https://www.zeno.ru/showphoto.php?photo=294274",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Compare to #243066, #243065, and #277703, etc. Clear casting sprue on one side, other shows signs of clipping in cross section, indicating method of manufacture.",
+      "catalogue": "Zeno category 15758 · Anepigraphic imitations",
+      "facets": [
+        "#503 stage-6 final downloaded-image review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-312691",
+      "familyId": "semirechye-unattributed-cash",
+      "variantId": "zeno503-cat-2141-stage6",
+      "title": "Semirech'e AE cash-like coin, Turgesh Khaganate.",
+      "weightG": 1.5,
+      "diameterMm": 17.09,
+      "images": [
+        {
+          "id": "z312691",
+          "path": "/coins/zeno/312691.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/2141/zeno_312691.jpg",
+          "width": 1389,
+          "height": 729,
+          "credit": "hfrans",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "645dca39184a8269a1c54f0399adb4733e7dfebedda3433bab1cfa8a44469d4e"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 312691",
+          "url": "https://www.zeno.ru/showphoto.php?photo=312691",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "eBay # 256050204124 Semirech'e AE cash-like coin, Turgesh Khaganate.- RRR Sogdian legend reads 'Twrkus γ´γ´n pny' Weight: 1.5 gr. Diameter: 17.09 mm. Metal: AR Winning bid: US $399.99",
+      "catalogue": "Zeno category 2141 · Semirech'e",
+      "facets": [
+        "#503 stage-6 final downloaded-image review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-313381",
+      "familyId": "semirechye-chinese-imitation",
+      "variantId": "zeno503-cat-15758-stage6",
+      "title": "Semirech'e? Anepigraphic AE Local imitation",
+      "weightG": 1.81,
+      "diameterMm": 14.0,
+      "images": [
+        {
+          "id": "z313381",
+          "path": "/coins/zeno/313381.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/15758/zeno_313381.jpg",
+          "width": 893,
+          "height": 468,
+          "credit": "Alexey N",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "525d015369a4e34731e217fd848cc79878e569c1a5ff9579794f9986377047c8"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 313381",
+          "url": "https://www.zeno.ru/showphoto.php?photo=313381",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Semirech'e, Anepigraphic AE Local imitation the exact region of the find is unknown",
+      "catalogue": "Zeno category 15758 · Anepigraphic imitations",
+      "facets": [
+        "#503 stage-6 final downloaded-image review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-321951",
+      "familyId": "semirechye-unattributed-cash",
+      "variantId": "zeno503-cat-2141-stage6",
+      "title": "Semirech'e, AE cash, rev. 4 tamghas. Unpublished.",
+      "weightG": 2.77,
+      "diameterMm": 22.4,
+      "images": [
+        {
+          "id": "z321951",
+          "path": "/coins/zeno/321951.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/2141/zeno_321951.jpg",
+          "width": 3672,
+          "height": 1661,
+          "credit": "YansuLu2005",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "ca8d8e3dfb159ec4c59cf96ce6f280e6eb55236eb3249beb225d4236bb1f9f0a"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 321951",
+          "url": "https://www.zeno.ru/showphoto.php?photo=321951",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Personal collection item, so far an unique specimen. The excavation point of the coin is unknown as it was mixed with a hoard of dirhams from many time periods when being sold. This was the only early Medieval Semirech'e styled coinage in the mix. In my personal belief there are two main possibilities for the tamgha: one is that it is closely related to the wine-glass tamgha settlers in the 9th century, before the area's coinage was fully controlled by the Kara Khanids. Reason for this belief is that the wine-glass tamgha, when bottom part removed, becomes the current tamgha. Research by Babayarov 2019 presented at the Inner Mongolia University conference show that details are added to Turkic tamghas as local rulers seek to delineate their own rulership from that of the central khaganate or from other rulers. The similarity of this tamgha to ram horns from the Afrasiab murals is astonishing, possibly suggesting a Turkic connection. Krasnaya Rechka and Suyab are two locations that seem possible for the original casting of this coin, for the first has unearthed the wine glass tamgha coins and the latter has been the capital for the Western Turks, the Turgesh, and the Karluks, three main coin casters of Semirech'e known to cast in this style. A second possibility is that this coin's tamghas evolved from the Chinese character \"元\", which could be a result of Sino-Turko iconographic fusion. There is evidence that the character \"元\" has appeared on Turgesh coins from the Black Turgesh faction casted by ruler W'xswt'wy (recent research by numismatist Wu Zhonghua in his book \"Turgesh Coinage\" suggest that Turgesh coins were factionalized between Black and Yellow tribes, and that the Black tribe uses the runic tamgha while the Yellow uses the \"X\" tamgha). It is plausible that the character became a tamgha, though this in my personal belief is the less possible explanation. Given the effaced nature of the coin's obverse it is unclear who the issuers were. The late 9th century Arslanids have casted coinage with a reverse that has four tamghas, presented in Kamyshev 2002, and the tamghas also have possible ram horn elements. The connection is unclear, but the weight and design of both types of coinage is extremely similar.",
+      "catalogue": "Zeno category 2141 · Semirech'e",
+      "facets": [
+        "#503 stage-6 final downloaded-image review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-35765",
+      "familyId": "uncertain-central-asian-square-hole",
+      "variantId": "zeno503-cat-9434-stage6",
+      "title": "Unknown Sogdian cash",
+      "weightG": null,
+      "diameterMm": 15.0,
+      "images": [
+        {
+          "id": "z35765",
+          "path": "/coins/zeno/35765.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/9434/1149.jpg",
+          "width": 750,
+          "height": 371,
+          "credit": "vld68",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "19ef32b46b6ab37d1c34139d6bc63a750dbd970922e7ed6946ab28b524c28e54"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 35765",
+          "url": "https://www.zeno.ru/showphoto.php?photo=35765",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "#35765 - Unknown Sogdian cash",
+      "catalogue": "Zeno category 9434 · Unknown principality",
+      "facets": [
+        "#503 stage-6 final downloaded-image review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-375690",
+      "familyId": "nwr-pry-square-hole",
+      "variantId": "zeno503-cat-14834-stage6",
+      "title": "AE cash, \"Nwr-pry\"",
+      "weightG": 5.3,
+      "diameterMm": 23.6,
+      "images": [
+        {
+          "id": "z375690",
+          "path": "/coins/zeno/375690.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/14834/zeno_375690.jpg",
+          "width": 988,
+          "height": 500,
+          "credit": "HEJUNFENG",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "9e089c60514a48a4408e59e2024d7b6288519866d21cf21a7e9b0a2f21c56a01"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 375690",
+          "url": "https://www.zeno.ru/showphoto.php?photo=375690",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "未知的钱币",
+      "catalogue": "Zeno category 14834 · \"Nwr-pry\"",
+      "facets": [
+        "#503 stage-6 final downloaded-image review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-377679",
+      "familyId": "semirechye-chinese-imitation",
+      "variantId": "zeno503-cat-15758-stage6",
+      "title": "Aniepigraphic Turgesh cash (8th c. AD) with imprint of Samanid dirham (279-289 AH), found in Chach",
+      "weightG": 1.2,
+      "diameterMm": null,
+      "images": [
+        {
+          "id": "z377679",
+          "path": "/coins/zeno/377679.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/15758/zeno_377679.jpg",
+          "width": 1814,
+          "height": 561,
+          "credit": "SAMDOT",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "84a464e2fe1ac06e1b49596dfc50f58b182e90b0a331a797570f488f44d5b3c5"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 377679",
+          "url": "https://www.zeno.ru/showphoto.php?photo=377679",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Shinji Hirano, \"A Semerich'e Hoard Allegedly from Chach\" in Zeno Festschrift 20th Anniversary, 2024. https://zeno.ru/data3/Festschrift/Shinji%20Hirano%20-%20A%20Semirech'e%20coin%20hoard%20allegedly%20from%20Chach.pdf \" One coin bears the imprinted in patina part of the reverse die of a silver Samanid dirham, probably due the contact with the coin in the earth, although the Samanid dirham itself was not presented in this hoard (Fig. 2, No. 70). Visible mirror part of the dirham’s field legend allows to attribute coin to Isma’il b. Ahmad (279‒295 AH). In the legend is also cited caliph al-Mutadid, which allows to narrow period of coin issue to 279‒289 AH / 892‒903 AD (see for example dirham Z‒287961). \"",
+      "catalogue": "Zeno category 15758 · Anepigraphic imitations",
+      "facets": [
+        "#503 stage-6 final downloaded-image review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-46408",
+      "familyId": "uncertain-central-asian-square-hole",
+      "variantId": "zeno503-cat-9434-stage6",
+      "title": "Unknown Ferghana cash coin.",
+      "weightG": 0.7,
+      "diameterMm": 14.0,
+      "images": [
+        {
+          "id": "z46408",
+          "path": "/coins/zeno/46408.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/9434/unknownFerghana.jpg",
+          "width": 1396,
+          "height": 740,
+          "credit": "gazali",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "f39f58c59ba192cc41e73ac352a762ab1f0bebd703812b57fb10ef277b747714"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 46408",
+          "url": "https://www.zeno.ru/showphoto.php?photo=46408",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Unresearched??? Another specimen is Zeno #35765. I read alwian's comment, but do not possess Helen Wang's book, so do know almost nothing about this issue. Any comments, please!",
+      "catalogue": "Zeno category 9434 · Unknown principality",
+      "facets": [
+        "#503 stage-6 final downloaded-image review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-86241",
+      "familyId": "un16",
+      "variantId": "zeno503-cat-800-sogdian-stage6",
+      "title": "Unpublished soghd cash-like coin (Panch?)",
+      "weightG": 1.04,
+      "diameterMm": 17.4,
+      "images": [
+        {
+          "id": "z86241",
+          "path": "/coins/zeno/86241.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/800/1042z.jpg",
+          "width": 948,
+          "height": 496,
+          "credit": "kabarna",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "b8a5404e857d3cbb297183f2c4c97f273cbc94d3397155fa4d46f4e0273e622f"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 86241",
+          "url": "https://www.zeno.ru/showphoto.php?photo=86241",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "#86241 - Unpublished soghd cash-like coin (Panch?)",
+      "catalogue": "Zeno category 800 · Soghd",
+      "facets": [
+        "#503 stage-6 final downloaded-image review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-90684",
+      "familyId": "uncertain-central-asian-square-hole",
+      "variantId": "zeno503-cat-14538-stage6",
+      "title": "AE coin",
+      "weightG": null,
+      "diameterMm": null,
+      "images": [
+        {
+          "id": "z90684",
+          "path": "/coins/zeno/90684.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/14538/5094259.jpg",
+          "width": 874,
+          "height": 438,
+          "credit": "charm",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "540cc509be1b42740747206f197ace5cbc74387e4b8bf57731488fe1669fc604"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 90684",
+          "url": "https://www.zeno.ru/showphoto.php?photo=90684",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Image origin: http://rasmircoins.ucoz.ru/forum",
+      "catalogue": "Zeno category 14538 · Types under investigation",
+      "facets": [
+        "#503 stage-6 final downloaded-image review"
       ],
       "duplicateStatus": "source_record_not_proven_unique"
     }

@@ -562,13 +562,13 @@
     }
   ],
   "coverage_status": {
-    "current_atlas_families": 45,
-    "current_atlas_specimens": 935,
-    "current_atlas_images": 938,
+    "current_atlas_families": 56,
+    "current_atlas_specimens": 1010,
+    "current_atlas_images": 1013,
     "zeno_795_source_records": 254,
     "zeno_795_scope_reviewed": 254,
     "zeno_795_atlas_linked": 239,
-    "note": "Coverage is Central-Asia-wide at metadata level (3,984 observed/recovered source records). #503 stages 1–3 have progressively imported source-supported square-hole-tradition records and removed visually reviewed non-square regional coinage from the unresolved queue. Counts remain source/import totals, not a census of unique physical coins.",
+    "note": "Coverage is Central-Asia-wide at metadata level (3,984 observed/recovered source records). The targeted #503 image queue is now fully reviewed: 1,437 valid downloaded target images have been assigned to main-corpus import or related/excluded evidence. Counts are source/import records, not a census of unique physical coins.",
     "zeno_503_observed_source_records": 3984,
     "zeno_503_detail_records_parsed": 3984,
     "zeno_503_category_nodes_visited": 393,
@@ -584,11 +584,20 @@
     "zeno_503_stage2_source_records_reviewed": 91,
     "zeno_503_stage2_atlas_imported": 80,
     "zeno_503_stage2_related_or_held": 11,
-    "zeno_503_remaining_downloaded_images_pending_review": 424,
+    "zeno_503_remaining_downloaded_images_pending_review": 0,
     "zeno_503_remaining_target_without_valid_image": 1,
     "zeno_503_stage3_source_records_reviewed": 338,
     "zeno_503_stage3_atlas_imported": 1,
-    "zeno_503_stage3_related_outside_main_corpus": 337
+    "zeno_503_stage3_related_outside_main_corpus": 337,
+    "zeno_503_stage4_source_records_reviewed": 239,
+    "zeno_503_stage4_atlas_imported": 34,
+    "zeno_503_stage4_related_outside_main_corpus": 205,
+    "zeno_503_stage5_source_records_reviewed": 87,
+    "zeno_503_stage5_atlas_imported": 16,
+    "zeno_503_stage5_related_outside_main_corpus": 71,
+    "zeno_503_stage6_source_records_reviewed": 98,
+    "zeno_503_stage6_atlas_imported": 25,
+    "zeno_503_stage6_related_outside_main_corpus": 73
   },
   "last_checked_at": "2026-09-16"
 }

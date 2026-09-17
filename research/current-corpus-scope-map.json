@@ -1,12 +1,12 @@
 {
   "version": "1.3.0",
-  "base_commit": "91de65720c09d9b427d6eb27e2970158f74abf2c",
+  "base_commit": "87c3a44",
   "last_checked_at": "2026-09-16",
   "summary": {
-    "families": 45,
-    "specimen_records": 935,
-    "images": 938,
-    "source_groups": 99
+    "families": 56,
+    "specimen_records": 1010,
+    "images": 1013,
+    "source_groups": 120
   },
   "family_scope_map": [
     {
@@ -594,5 +594,27 @@
     "remaining_downloaded_images_pending_record_level_review": 424,
     "remaining_target_without_valid_image": 1,
     "review_file": "research/zeno/review-503-stage3.json"
+  },
+  "zeno_503_stage4": {
+    "reviewed_source_records": 239,
+    "atlas_import_records": 34,
+    "related_outside_main_corpus": 205,
+    "remaining_downloaded_images_pending_record_level_review": 185,
+    "review_file": "research/zeno/review-503-stage4.json"
+  },
+  "zeno_503_stage5": {
+    "reviewed_source_records": 87,
+    "atlas_import_records": 16,
+    "related_outside_main_corpus": 71,
+    "remaining_downloaded_images_pending_record_level_review": 98,
+    "review_file": "research/zeno/review-503-stage5.json"
+  },
+  "zeno_503_stage6": {
+    "reviewed_source_records": 98,
+    "atlas_import_records": 25,
+    "related_outside_main_corpus": 73,
+    "remaining_downloaded_images_pending_record_level_review": 0,
+    "remaining_target_without_valid_image": 1,
+    "review_file": "research/zeno/review-503-stage6.json"
   }
 }

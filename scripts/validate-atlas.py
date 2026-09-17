@@ -18,6 +18,7 @@ r503=json.loads((root/'research/zeno/review-503-stage1.json').read_text())
 r5032=json.loads((root/'research/zeno/review-503-stage2.json').read_text())
 r5034=json.loads((root/'research/zeno/review-503-stage4.json').read_text())
 r5035=json.loads((root/'research/zeno/review-503-stage5.json').read_text())
+r5036=json.loads((root/'research/zeno/review-503-stage6.json').read_text())
 recovered503=json.loads((root/'research/zeno/recovered-records-503.json').read_text())
 families={f['id'] for f in a['families']}
 variants={v['id']:v for v in a['variants']}
@@ -123,6 +124,17 @@ assert r5035['counts']['pendingImagesRemaining']==98
 assert all(('zeno-'+str(x['id'])) in ids for x in r5035['records'])
 assert not any(('zeno-'+str(x['id'])) in ids for x in r5035['relatedRecords'])
 assert {f['id'] for f in a['families']} >= {'fansar-pargar-square-hole','samarkand-unlisted-square-hole','termez-cash-like','badakhshan-kaiyuan-arabic'}
+
+
+# Stage-6 resolves the entire remaining downloaded-image queue.
+assert r5036['counts']['sourceRecordsReviewed']==98
+assert r5036['counts']['atlasImportRecords']==25
+assert r5036['counts']['relatedOutsideMainCorpus']==73
+assert r5036['counts']['newFamilies']==4
+assert r5036['counts']['pendingImagesRemaining']==0
+assert all(('zeno-'+str(x['id'])) in ids for x in r5036['records'])
+assert not any(('zeno-'+str(x['id'])) in ids for x in r5036['relatedRecords'])
+assert {f['id'] for f in a['families']} >= {'uncertain-central-asian-square-hole','nwr-pry-square-hole','semirechye-unattributed-cash','ferghana-chach-anepigraphic-cash'}
 
 # Saved Zeno manifests are independent coverage scopes. Partial Semirechye crawls are
 # valid research states, while their counts must never be labelled complete by accident.

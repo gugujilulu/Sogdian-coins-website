@@ -3,7 +3,7 @@
   "scope_version": "1.0.0",
   "last_checked_at": "2026-09-16",
   "principle": "Acquire source evidence first, then review scope/identity, then download only candidate/included images where practical. Category counts are coverage metadata, never specimen counts.",
-  "current_stage": "zeno_503_stage3_false_positive_pruning_and_remaining_mixed_review",
+  "current_stage": "zeno_503_downloaded_target_image_review_complete",
   "queue": [
     {
       "id": "zeno-503-tree-census",
@@ -322,7 +322,7 @@
     "scope_relevant_gap_recovery_categories": 7,
     "preimage_high_priority_targets": 811,
     "preimage_visual_review_targets": 535,
-    "note": "#503 working corpus remains 3,984 observed/recovered metadata records. Stage-1 imported 584, stage-2 imported 80, and stage-3 pruned 337 visually reviewed non-square regional coin records while importing Zeno #1070 as an explicit Kanka Kaiyuan find-context record. 424 downloaded images plus one image-missing target remain unresolved.",
+    "note": "#503 working corpus remains 3,984 observed/recovered metadata records. All 1,437 valid downloaded target images have now been assigned through staged review to Atlas import or related/excluded evidence; the downloaded-image review queue is complete. One target still lacks a valid specimen image and remains unresolved.",
     "target_images_downloaded": 1439,
     "valid_target_images_after_repair": 1437,
     "stage1_source_records_selected": 586,
@@ -332,10 +332,19 @@
     "stage2_source_records_reviewed": 91,
     "stage2_atlas_import_records": 80,
     "stage2_related_or_held_records": 11,
-    "remaining_downloaded_images_pending_record_level_review": 424,
+    "remaining_downloaded_images_pending_record_level_review": 0,
     "remaining_target_without_valid_image": 1,
     "stage3_source_records_reviewed": 338,
     "stage3_atlas_import_records": 1,
-    "stage3_related_outside_main_corpus": 337
+    "stage3_related_outside_main_corpus": 337,
+    "stage4_source_records_reviewed": 239,
+    "stage4_atlas_import_records": 34,
+    "stage4_related_outside_main_corpus": 205,
+    "stage5_source_records_reviewed": 87,
+    "stage5_atlas_import_records": 16,
+    "stage5_related_outside_main_corpus": 71,
+    "stage6_source_records_reviewed": 98,
+    "stage6_atlas_import_records": 25,
+    "stage6_related_outside_main_corpus": 73
   }
 }
