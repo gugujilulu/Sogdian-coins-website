@@ -308,16 +308,16 @@ for r in z503_recovered.get('recoveredRecords',[]):
  crumbs=r.get('breadcrumb') or []
  if rid and crumbs:
   zeno_paths[rid]=[{'categoryId':str(c.get('categoryId')),'title':c.get('title') or ''} for c in crumbs]
-def source_name_from_url(url):
- u=(url or '').lower()
- if 'zeno.ru' in u:return 'Zeno'
- if 'cngcoins.com' in u:return 'CNG'
+def source_name_from_url(url,label=''):
+ u=(url or '').lower(); text=(label or '').lower()
+ if 'zeno.ru' in u or text.startswith('zeno '):return 'Zeno'
+ if 'cngcoins.com' in u or 'auctionmobility.com' in u or 'classical numismatic group' in text:return 'CNG'
+ if 'stevealbum.com' in u or 'sarc.auction' in u or 'stephen album' in text or text.startswith('sarc'):return 'Stephen Album Rare Coins'
  if 'numisbids.com' in u:return 'NumisBids'
  if 'numista.com' in u:return 'Numista'
  if 'sogdcoins.' in u:return 'Coins of Central Asia'
  if 'bactrianumis' in u:return 'Bactrianumis'
  if 'britishmuseum.org' in u:return 'British Museum'
- if 'stevealbum.com' in u or 'stephenalbum' in u:return 'Stephen Album Rare Coins'
  return 'Other / legacy source'
 
 for s in a['specimens']:
@@ -330,15 +330,20 @@ for s in a['specimens']:
   s['sourceRecordId']=s['id']
   s['sourcePath']=[]
   primary=next((x for x in s.get('sources',[]) if x.get('relation')=='same_specimen'),(s.get('sources') or [{}])[0])
-  s['sourceName']=source_name_from_url(primary.get('url'))
+  s['sourceName']=source_name_from_url(primary.get('url'),primary.get('label'))
  primary=next((x for x in s.get('sources',[]) if x.get('relation')=='same_specimen'),(s.get('sources') or [{}])[0])
  s['sourceRecordUrl']=primary.get('url')
  # Image provenance stays explicit even when a specimen has several source records.
  # No image or external record is removed when two sources later prove related.
  for im in s.get('images',[]):
-  im['sourceName']=source_name_from_url(im.get('sourceUrl'))
-  im['sourceRecordId']=s['sourceRecordId']
-  im['sourceRecordUrl']=s['sourceRecordUrl']
+  im['sourceName']=source_name_from_url(im.get('sourceUrl'),im.get('credit'))
+  match=next((x for x in s.get('sources',[]) if source_name_from_url(x.get('url'),x.get('label'))==im['sourceName']),None)
+  if match:
+   im['sourceRecordId']=match.get('label') or s['sourceRecordId']
+   im['sourceRecordUrl']=match.get('url')
+  else:
+   im['sourceRecordId']=im['sourceName']+' image source'
+   im['sourceRecordUrl']=im.get('sourceUrl')
 
 # Keep reviewed related / held / excluded source records visible to the product
 # without promoting them into the main square-hole specimen count. This layer is
