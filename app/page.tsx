@@ -18,6 +18,12 @@ function sourceName(s:{label:string;url:string}){
  try{return new URL(s.url).hostname.replace(/^www\./,'')||s.label}catch{return s.label||'Other source'}
 }
 function visibleFacet(x:string){return !x.startsWith('#503')&&!x.startsWith('Zeno source group')&&!/record-level visual review/i.test(x)}
+function facetKind(x:string):'inscription'|'tamgha'|'feature'{
+ const v=x.toLowerCase();
+ if(/tamgha|徽记|tamga/.test(v))return 'tamgha';
+ if(/legend|铭文|inscription|script|转写|translit/.test(v))return 'inscription';
+ return 'feature';
+}
 function sourcePathLabel(s:Specimen){
  const p=s.sourcePath||[];
  if(p.length)return p.map(x=>x.title).join(' › ');
@@ -27,7 +33,7 @@ function sourcePathLabel(s:Specimen){
 export default function Home(){
  const [data,setData]=useState<Atlas|null>(null),[loadError,setLoadError]=useState(false);
  const [view,setView]=useState<View>('atlas'),[selectedId,setSelectedId]=useState<string|null>(null),[focus,setFocus]=useState(0);
- const [query,setQuery]=useState(''),[region,setRegion]=useState('all'),[polity,setPolity]=useState('all'),[city,setCity]=useState('all'),[familyFilter,setFamilyFilter]=useState('all'),[sourceFilter,setSourceFilter]=useState('all'),[featureFilter,setFeatureFilter]=useState('all'),[statusFilter,setStatusFilter]=useState('all');
+ const [query,setQuery]=useState(''),[region,setRegion]=useState('all'),[polity,setPolity]=useState('all'),[city,setCity]=useState('all'),[familyFilter,setFamilyFilter]=useState('all'),[sourceFilter,setSourceFilter]=useState('all'),[inscriptionFilter,setInscriptionFilter]=useState('all'),[tamghaFilter,setTamghaFilter]=useState('all'),[featureFilter,setFeatureFilter]=useState('all'),[statusFilter,setStatusFilter]=useState('all');
  const [year,setYear]=useState(750),[allPeriods,setAllPeriods]=useState(true),[filtersOpen,setFiltersOpen]=useState(false);
  const [variant,setVariant]=useState('all'),[facet,setFacet]=useState('all');
  const [lightbox,setLightbox]=useState<Specimen|null>(null),[imageIndex,setImageIndex]=useState(0),[compareIds,setCompareIds]=useState<string[]>([]);
@@ -39,7 +45,9 @@ export default function Home(){
  const specimensByFamily=useMemo(()=>{const m=new Map<string,Specimen[]>();for(const s of data?.specimens||[]){const a=m.get(s.familyId)||[];a.push(s);m.set(s.familyId,a)}return m},[data]);
  const variantsByFamily=useMemo(()=>{const m=new Map<string,Variant[]>();for(const v of data?.variants||[]){const a=m.get(v.familyId)||[];a.push(v);m.set(v.familyId,a)}return m},[data]);
  const sources=useMemo<string[]>(()=>Array.from(new Set((data?.specimens||[]).map(s=>s.sourceName||sourceName(s.sources[0])))).sort(),[data]);
- const features=useMemo<string[]>(()=>Array.from(new Set((data?.specimens||[]).flatMap(s=>s.facets.filter(visibleFacet)))).sort(),[data]);
+ const inscriptions=useMemo<string[]>(()=>Array.from(new Set([...(data?.families||[]).map(f=>f.legend).filter((x):x is string=>Boolean(x)),...(data?.specimens||[]).flatMap(s=>s.facets.filter(x=>visibleFacet(x)&&facetKind(x)==='inscription'))])).sort(),[data]);
+ const tamghas=useMemo<string[]>(()=>Array.from(new Set((data?.specimens||[]).flatMap(s=>s.facets.filter(x=>visibleFacet(x)&&facetKind(x)==='tamgha')))).sort(),[data]);
+ const features=useMemo<string[]>(()=>Array.from(new Set((data?.specimens||[]).flatMap(s=>s.facets.filter(x=>visibleFacet(x)&&facetKind(x)==='feature')))).sort(),[data]);
  const regions=useMemo<string[]>(()=>Array.from(new Set((data?.families||[]).map(f=>f.region))).sort(),[data]);
  const polities=useMemo<string[]>(()=>Array.from(new Set((data?.families||[]).map(f=>f.polity).filter((x):x is string=>Boolean(x)))).sort(),[data]);
  const researchStatuses=useMemo<string[]>(()=>Array.from(new Set((data?.families||[]).map(f=>f.status))).sort(),[data]);
@@ -48,11 +56,13 @@ export default function Home(){
   return data.families.filter(f=>{
    const ss=specimensByFamily.get(f.id)||[];const placeId=f.anchor?.placeId||null;
    const sourceOk=sourceFilter==='all'||ss.some(s=>(s.sourceName||sourceName(s.sources[0]))===sourceFilter);
+   const inscriptionOk=inscriptionFilter==='all'||f.legend===inscriptionFilter||ss.some(s=>s.facets.includes(inscriptionFilter));
+   const tamghaOk=tamghaFilter==='all'||ss.some(s=>s.facets.includes(tamghaFilter));
    const featureOk=featureFilter==='all'||ss.some(s=>s.facets.includes(featureFilter));
    const vv=variantsByFamily.get(f.id)||[];const qOk=!q||[f.title,f.zh,f.region,f.dateLabel,f.description,f.legend||'',...vv.flatMap(v=>[v.title,v.reference,v.description,...v.facets]),...ss.flatMap(s=>[s.title,s.catalogue,s.description,s.sourceRecordId||'',sourcePathLabel(s),...s.sources.map(x=>x.label),...s.facets])].join(' ').toLowerCase().includes(q);
-   return (region==='all'||f.region===region)&&(polity==='all'||f.polity===polity)&&(city==='all'||placeId===city)&&(familyFilter==='all'||f.id===familyFilter)&&(statusFilter==='all'||f.status===statusFilter)&&overlaps(f.start,f.end,allPeriods?null:year)&&sourceOk&&featureOk&&qOk;
+   return (region==='all'||f.region===region)&&(polity==='all'||f.polity===polity)&&(city==='all'||placeId===city)&&(familyFilter==='all'||f.id===familyFilter)&&(statusFilter==='all'||f.status===statusFilter)&&overlaps(f.start,f.end,allPeriods?null:year)&&sourceOk&&inscriptionOk&&tamghaOk&&featureOk&&qOk;
   })
- },[data,query,region,polity,city,familyFilter,sourceFilter,featureFilter,statusFilter,year,allPeriods,specimensByFamily,variantsByFamily]);
+ },[data,query,region,polity,city,familyFilter,sourceFilter,inscriptionFilter,tamghaFilter,featureFilter,statusFilter,year,allPeriods,specimensByFamily,variantsByFamily]);
  const selected=data?.families.find(f=>f.id===selectedId)||null;
  const selectedSpecimens=selected?specimensByFamily.get(selected.id)||[]:[];
  const selectedVariants=selected?data?.variants.filter(v=>v.familyId===selected.id)||[]:[];
@@ -70,7 +80,7 @@ export default function Home(){
  function chooseFamily(id:string){setSelectedId(id);setVariant('all');setFacet('all');setFocus(x=>x+1);if(view==='catalogue')setCatalogueFamily(id)}
  function openSpecimen(s:Specimen){setLightbox(s);setImageIndex(0)}
  function toggleCompare(id:string){setCompareIds(xs=>xs.includes(id)?xs.filter(x=>x!==id):xs.length>=3?[xs[1],xs[2],id]:[...xs,id])}
- function clearFilters(){setQuery('');setRegion('all');setPolity('all');setCity('all');setFamilyFilter('all');setSourceFilter('all');setFeatureFilter('all');setStatusFilter('all');setAllPeriods(true)}
+ function clearFilters(){setQuery('');setRegion('all');setPolity('all');setCity('all');setFamilyFilter('all');setSourceFilter('all');setInscriptionFilter('all');setTamghaFilter('all');setFeatureFilter('all');setStatusFilter('all');setAllPeriods(true)}
  const imageCount=data?.specimens.reduce((n,s)=>n+s.images.length,0)||0;
  if(!data)return <main className="boot-state"><div><Database size={30}/><p>{loadError?'Catalogue could not load. Please reload.':'Loading Central Asian Square-Hole Coinage Atlas…'}</p></div></main>;
 
@@ -79,8 +89,8 @@ export default function Home(){
 
   {view==='atlas'&&<section className="atlas-screen">
    <TerrainMap data={data} families={filteredFamilies} selected={selected} onSelect={chooseFamily} year={allPeriods?null:year} focus={focus}/>
-   <div className="atlas-search-panel"><div className="atlas-search"><Search size={16}/><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="搜索类型、铭文、编号、来源…"/><button aria-label="Filters" className={filtersOpen?'active':''} onClick={()=>setFiltersOpen(x=>!x)}><SlidersHorizontal size={16}/></button>{(query||region!=='all'||polity!=='all'||city!=='all'||familyFilter!=='all'||sourceFilter!=='all'||featureFilter!=='all'||statusFilter!=='all'||!allPeriods)&&<button aria-label="Clear filters" onClick={clearFilters}><X size={15}/></button>}</div>
-    {filtersOpen&&<div className="filter-grid"><label>历史地区<select value={region} onChange={e=>setRegion(e.target.value)}><option value="all">全部地区</option>{regions.map(r=><option key={r} value={r}>{r}</option>)}</select></label><label>政权 / 地方体系<select value={polity} onChange={e=>setPolity(e.target.value)}><option value="all">全部政权与体系</option>{polities.map(p=><option key={p} value={p}>{p}</option>)}</select></label><label>城市 / 展示锚点<select value={city} onChange={e=>setCity(e.target.value)}><option value="all">全部位置</option>{data.places.map(p=><option key={p.id} value={p.id}>{p.name} · {p.zh}</option>)}</select></label><label>类型家族<select value={familyFilter} onChange={e=>setFamilyFilter(e.target.value)}><option value="all">全部家族</option>{data.families.map(f=><option key={f.id} value={f.id}>{f.title}</option>)}</select></label><label>来源<select value={sourceFilter} onChange={e=>setSourceFilter(e.target.value)}><option value="all">全部来源</option>{sources.map(s=><option key={s}>{s}</option>)}</select></label><label>研究状态<select value={statusFilter} onChange={e=>setStatusFilter(e.target.value)}><option value="all">全部状态</option>{researchStatuses.map(s=><option key={s}>{s}</option>)}</select></label>{features.length>0&&<label className="filter-wide">铭文 / Tamgha / 特征<select value={featureFilter} onChange={e=>setFeatureFilter(e.target.value)}><option value="all">全部已标注特征</option>{features.map(f=><option key={f}>{f}</option>)}</select></label>}</div>}
+   <div className="atlas-search-panel"><div className="atlas-search"><Search size={16}/><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="搜索类型、铭文、编号、来源…"/><button aria-label="Filters" className={filtersOpen?'active':''} onClick={()=>setFiltersOpen(x=>!x)}><SlidersHorizontal size={16}/></button>{(query||region!=='all'||polity!=='all'||city!=='all'||familyFilter!=='all'||sourceFilter!=='all'||inscriptionFilter!=='all'||tamghaFilter!=='all'||featureFilter!=='all'||statusFilter!=='all'||!allPeriods)&&<button aria-label="Clear filters" onClick={clearFilters}><X size={15}/></button>}</div>
+    {filtersOpen&&<div className="filter-grid"><label>历史地区<select value={region} onChange={e=>setRegion(e.target.value)}><option value="all">全部地区</option>{regions.map(r=><option key={r} value={r}>{r}</option>)}</select></label><label>政权 / 地方体系<select value={polity} onChange={e=>setPolity(e.target.value)}><option value="all">全部政权与体系</option>{polities.map(p=><option key={p} value={p}>{p}</option>)}</select></label><label>城市 / 展示锚点<select value={city} onChange={e=>setCity(e.target.value)}><option value="all">全部位置</option>{data.places.map(p=><option key={p.id} value={p.id}>{p.name} · {p.zh}</option>)}</select></label><label>类型家族<select value={familyFilter} onChange={e=>setFamilyFilter(e.target.value)}><option value="all">全部家族</option>{data.families.map(f=><option key={f.id} value={f.id}>{f.title}</option>)}</select></label><label>来源<select value={sourceFilter} onChange={e=>setSourceFilter(e.target.value)}><option value="all">全部来源</option>{sources.map(s=><option key={s}>{s}</option>)}</select></label><label>研究状态<select value={statusFilter} onChange={e=>setStatusFilter(e.target.value)}><option value="all">全部状态</option>{researchStatuses.map(s=><option key={s}>{s}</option>)}</select></label>{inscriptions.length>0&&<label>铭文 / Legend<select value={inscriptionFilter} onChange={e=>setInscriptionFilter(e.target.value)}><option value="all">全部已标注铭文</option>{inscriptions.map(f=><option key={f}>{f}</option>)}</select></label>}{tamghas.length>0&&<label>Tamgha / 徽记<select value={tamghaFilter} onChange={e=>setTamghaFilter(e.target.value)}><option value="all">全部已标注徽记</option>{tamghas.map(f=><option key={f}>{f}</option>)}</select></label>}{features.length>0&&<label className="filter-wide">其他特征<select value={featureFilter} onChange={e=>setFeatureFilter(e.target.value)}><option value="all">全部其他特征</option>{features.map(f=><option key={f}>{f}</option>)}</select></label>}</div>}
     <div className="filter-result-line"><strong>{filteredFamilies.length}</strong> families · <strong>{filteredFamilies.reduce((n,f)=>n+(specimensByFamily.get(f.id)?.length||0),0)}</strong> records{filteredFamilies.some(f=>!f.anchor)&&<span> · {filteredFamilies.filter(f=>!f.anchor).length} families 暂无地图坐标</span>}</div>
     {(query||familyFilter!=='all')&&<div className="quick-results">{filteredFamilies.slice(0,5).map(f=><button key={f.id} onClick={()=>chooseFamily(f.id)}><img src={f.image} alt=""/><span><strong>{f.title}</strong><small>{f.region} · {specimensByFamily.get(f.id)?.length||0} records</small></span><ChevronRight size={14}/></button>)}{quickSpecimens.map(s=><button key={'record-'+s.id} onClick={()=>openSpecimen(s)}><img src={s.images[0]?.path} alt=""/><span><strong>{s.sourceRecordId||s.id}</strong><small>{s.title} · {s.sourceName||sourceName(s.sources[0])}</small></span><Maximize2 size={13}/></button>)}{relatedMatches.length>0&&<button onClick={()=>{setCatalogueQuery(query);setCatalogueMode('source');setCatalogueSource('__related__');setView('catalogue')}}><span className="related-search-icon">R</span><span><strong>相关 / held / excluded</strong><small>{relatedMatches.length} 条来源记录匹配当前搜索</small></span><ChevronRight size={14}/></button>}</div>}
    </div>
