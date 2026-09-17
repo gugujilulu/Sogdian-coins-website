@@ -1,5 +1,5 @@
 {
-  "version": "0.2.0",
+  "version": "0.3.0",
   "scope_version": "1.0.0",
   "status": "working_candidate_inventory",
   "last_checked_at": "2026-09-16",
@@ -54,13 +54,13 @@
       "attribution_status": "candidate",
       "competing_attributions": [],
       "coin_role": "local_imitation",
-      "inclusion_status": "candidate",
+      "inclusion_status": "included_stage1_source_linked",
       "source_ids": [
         "sogd-e2"
       ],
       "bibliography_ids": [],
       "notes": "Chinese-cash prototype explicitly described; verify against Smirnova/IICAS.",
-      "current_atlas_family_id": null
+      "current_atlas_family_id": "samarkand-chinese-type"
     },
     {
       "family_id": "cand-samarkand-shishpir",
@@ -84,13 +84,13 @@
       "attribution_status": "candidate",
       "competing_attributions": [],
       "coin_role": "local_issue",
-      "inclusion_status": "candidate",
+      "inclusion_status": "included_stage1_source_linked",
       "source_ids": [
         "sogd-e2"
       ],
       "bibliography_ids": [],
       "notes": "",
-      "current_atlas_family_id": null
+      "current_atlas_family_id": "samarkand-shishpir"
     },
     {
       "family_id": "cand-samarkand-vuzurg",
@@ -114,13 +114,13 @@
       "attribution_status": "candidate",
       "competing_attributions": [],
       "coin_role": "local_issue",
-      "inclusion_status": "candidate",
+      "inclusion_status": "included_stage1_source_linked",
       "source_ids": [
         "sogd-e2"
       ],
       "bibliography_ids": [],
       "notes": "",
-      "current_atlas_family_id": null
+      "current_atlas_family_id": "samarkand-wuzurg"
     },
     {
       "family_id": "cand-samarkand-varhuman",
@@ -144,13 +144,13 @@
       "attribution_status": "candidate",
       "competing_attributions": [],
       "coin_role": "local_issue",
-      "inclusion_status": "candidate",
+      "inclusion_status": "included_stage1_source_linked",
       "source_ids": [
         "sogd-e2"
       ],
       "bibliography_ids": [],
       "notes": "",
-      "current_atlas_family_id": null
+      "current_atlas_family_id": "samarkand-warkhuman"
     },
     {
       "family_id": "cand-samarkand-mastan-navyan",
@@ -204,13 +204,13 @@
       "attribution_status": "candidate",
       "competing_attributions": [],
       "coin_role": "local_issue",
-      "inclusion_status": "candidate",
+      "inclusion_status": "included_stage1_source_linked",
       "source_ids": [
         "sogd-e3"
       ],
       "bibliography_ids": [],
       "notes": "",
-      "current_atlas_family_id": null
+      "current_atlas_family_id": "samarkand-tukaspadak"
     },
     {
       "family_id": "current-tarhun",
@@ -324,13 +324,13 @@
       "attribution_status": "candidate",
       "competing_attributions": [],
       "coin_role": "local_issue",
-      "inclusion_status": "candidate",
+      "inclusion_status": "included_stage1_source_linked",
       "source_ids": [
         "sogd-e4"
       ],
       "bibliography_ids": [],
       "notes": "",
-      "current_atlas_family_id": null
+      "current_atlas_family_id": "samarkand-turgar"
     },
     {
       "family_id": "cand-samarkand-urk-vartamuk",
@@ -354,13 +354,13 @@
       "attribution_status": "candidate",
       "competing_attributions": [],
       "coin_role": "local_issue",
-      "inclusion_status": "candidate",
+      "inclusion_status": "included_stage1_source_linked",
       "source_ids": [
         "sogd-e4"
       ],
       "bibliography_ids": [],
       "notes": "",
-      "current_atlas_family_id": null
+      "current_atlas_family_id": "samarkand-urk-wartramuka"
     },
     {
       "family_id": "current-lady-nana",
@@ -474,13 +474,13 @@
       "attribution_status": "candidate",
       "competing_attributions": [],
       "coin_role": "local_imitation",
-      "inclusion_status": "candidate",
+      "inclusion_status": "included_stage1_source_linked",
       "source_ids": [
         "sogd-w5"
       ],
       "bibliography_ids": [],
       "notes": "",
-      "current_atlas_family_id": null
+      "current_atlas_family_id": "bukhara-kaiyuan-tamgha"
     },
     {
       "family_id": "cand-bukhara-yuan-sogdian",
@@ -596,14 +596,14 @@
       "attribution_status": "candidate",
       "competing_attributions": [],
       "coin_role": "local_issue",
-      "inclusion_status": "candidate",
+      "inclusion_status": "included_stage1_source_linked",
       "source_ids": [
         "ferghana",
         "iranica"
       ],
       "bibliography_ids": [],
       "notes": "",
-      "current_atlas_family_id": null
+      "current_atlas_family_id": "ferghana-anon-khagan"
     },
     {
       "family_id": "cand-ferghana-tutuk",
@@ -783,13 +783,13 @@
         "retain source attribution pending academic crosswalk"
       ],
       "coin_role": "local_issue",
-      "inclusion_status": "candidate",
+      "inclusion_status": "included_stage1_source_linked",
       "source_ids": [
         "numista-qarluq"
       ],
       "bibliography_ids": [],
       "notes": "",
-      "current_atlas_family_id": null
+      "current_atlas_family_id": "qarluq-kobek"
     },
     {
       "family_id": "cand-eastern-uyghur-boquq",
@@ -1061,13 +1061,13 @@
       "attribution_status": "candidate_modern_reattribution",
       "competing_attributions": [],
       "coin_role": "local_issue",
-      "inclusion_status": "candidate",
+      "inclusion_status": "included_stage1_source_linked",
       "source_ids": [
         "bns2023"
       ],
       "bibliography_ids": [],
       "notes": "Candidate inventory placeholder; add the dedicated 2023 Zhouyuan paper before canonical attribution.",
-      "current_atlas_family_id": null
+      "current_atlas_family_id": "western-liao-zhouyuan"
     },
     {
       "family_id": "cand-western-liao-kangguo",
@@ -1124,14 +1124,14 @@
       "attribution_status": "exploration_queue",
       "competing_attributions": [],
       "coin_role": "local_issue",
-      "inclusion_status": "candidate",
+      "inclusion_status": "included_stage1_source_linked",
       "source_ids": [
         "iicas",
         "iranica"
       ],
       "bibliography_ids": [],
       "notes": "IICAS scope confirms Tokharistan–Bactria coverage; exact square-hole type inventory still requires catalogue extraction. Round drachm/countermark material remains related/excluded.",
-      "current_atlas_family_id": null
+      "current_atlas_family_id": "tokharistan-square-hole"
     },
     {
       "family_id": "cand-regional-chinese-imports",
@@ -1245,13 +1245,13 @@
       "attribution_status": "candidate",
       "competing_attributions": [],
       "coin_role": "local_issue",
-      "inclusion_status": "candidate",
+      "inclusion_status": "included_stage1_source_linked",
       "source_ids": [
         "sogd-e4"
       ],
       "bibliography_ids": [],
       "notes": "Smirnova #735 cited by specialist database; verify against IICAS/Smirnova.",
-      "current_atlas_family_id": null
+      "current_atlas_family_id": "panch-amukian"
     },
     {
       "family_id": "cand-chach-khagan-title",
@@ -1275,13 +1275,13 @@
       "attribution_status": "candidate_group",
       "competing_attributions": [],
       "coin_role": "local_issue",
-      "inclusion_status": "candidate",
+      "inclusion_status": "included_stage1_source_linked",
       "source_ids": [
         "babayarov-chach"
       ],
       "bibliography_ids": [],
       "notes": "Babayarov article explicitly classifies a square-hole group with Turkic titles; extract individual types before canonical family splitting.",
-      "current_atlas_family_id": null
+      "current_atlas_family_id": "chach-khagan-square-hole"
     },
     {
       "family_id": "cand-paykand-square-hole",
@@ -1305,7 +1305,7 @@
       "attribution_status": "candidate_literature_linked",
       "competing_attributions": [],
       "coin_role": "local_issue",
-      "inclusion_status": "candidate",
+      "inclusion_status": "included_stage1_source_linked",
       "source_ids": [
         "numista-paykand",
         "zeimal-1994"
@@ -1314,7 +1314,7 @@
         "zeimal-1994"
       ],
       "notes": "Numista explicitly cites Zeimal 1994 no. 15; primary article extraction still required before canonical dating/legend acceptance.",
-      "current_atlas_family_id": null
+      "current_atlas_family_id": "paykand-square-hole"
     },
     {
       "family_id": "cand-isfijab-tutuk-cash",
@@ -1376,13 +1376,313 @@
       "attribution_status": "candidate",
       "competing_attributions": [],
       "coin_role": "local_issue",
-      "inclusion_status": "candidate",
+      "inclusion_status": "included_stage1_source_linked",
       "source_ids": [
         "numista-keder"
       ],
       "bibliography_ids": [],
       "notes": "Seeded from Isfijab/Keder catalogue section; dedicated source extraction required.",
-      "current_atlas_family_id": null
+      "current_atlas_family_id": "keder-cash"
+    },
+    {
+      "family_id": "cand-samarkand-mastich-unash",
+      "provisional_title": "Mastich-Unash square-hole cash",
+      "issuer": "Mastich-Unash",
+      "political_entity": "sogdian_local",
+      "region": "Eastern Sogdiana / Samarkand",
+      "mint_region": null,
+      "findspot_region": null,
+      "date_start": null,
+      "date_end": null,
+      "date_display": "Chronology pending",
+      "date_confidence": "source_taxonomy_pending_academic_crosswalk",
+      "shape": "round_cash_form",
+      "hole_shape": "square_or_square_frame",
+      "perforation_status": "pierced_unpierced_or_pseudo_aperture_as_source/visual_evidence_supports",
+      "material": "bronze_or_copper_alloy",
+      "technique": "cast",
+      "script": "Sogdian",
+      "legend_raw": null,
+      "attribution_status": "source_taxonomy_candidate",
+      "competing_attributions": [],
+      "coin_role": "local_issue",
+      "inclusion_status": "included_stage1_source_linked",
+      "source_ids": [
+        "zeno"
+      ],
+      "bibliography_ids": [],
+      "notes": "Kept distinct from Mastan-Navyan until a catalogue crosswalk proves equivalence.",
+      "current_atlas_family_id": "samarkand-mastich-unash"
+    },
+    {
+      "family_id": "cand-panch-chekin-chur-bilge",
+      "provisional_title": "Chekin Chur Bilgä of Panch",
+      "issuer": "Chekin Chur Bilgä",
+      "political_entity": "sogdian_local",
+      "region": "Panch / Panjikent",
+      "mint_region": null,
+      "findspot_region": null,
+      "date_start": 690,
+      "date_end": 709,
+      "date_display": "AD 690–709 in Zeno source taxonomy",
+      "date_confidence": "source_taxonomy_pending_academic_crosswalk",
+      "shape": "round_cash_form",
+      "hole_shape": "square_or_square_frame",
+      "perforation_status": "pierced_unpierced_or_pseudo_aperture_as_source/visual_evidence_supports",
+      "material": "bronze_or_copper_alloy",
+      "technique": "cast",
+      "script": "Sogdian",
+      "legend_raw": null,
+      "attribution_status": "source_taxonomy_candidate",
+      "competing_attributions": [],
+      "coin_role": "local_issue",
+      "inclusion_status": "included_stage1_source_linked",
+      "source_ids": [
+        "zeno"
+      ],
+      "bibliography_ids": [],
+      "notes": "Zeno labels the branch Chekin Chur Bilgä and notes ex. Bidkan/Bidian; legacy Bidkan equivalence is not assumed.",
+      "current_atlas_family_id": "panch-chekin-chur-bilge"
+    },
+    {
+      "family_id": "cand-panch-pycwtt",
+      "provisional_title": "Pycwtt of Panch square-hole cash",
+      "issuer": "Pycwtt",
+      "political_entity": "sogdian_local",
+      "region": "Panch / Panjikent",
+      "mint_region": null,
+      "findspot_region": null,
+      "date_start": 658,
+      "date_end": 691,
+      "date_display": "AD 658–691 in Zeno source taxonomy",
+      "date_confidence": "source_taxonomy_pending_academic_crosswalk",
+      "shape": "round_cash_form",
+      "hole_shape": "square_or_square_frame",
+      "perforation_status": "pierced_unpierced_or_pseudo_aperture_as_source/visual_evidence_supports",
+      "material": "bronze_or_copper_alloy",
+      "technique": "cast",
+      "script": "Sogdian",
+      "legend_raw": null,
+      "attribution_status": "source_taxonomy_candidate",
+      "competing_attributions": [],
+      "coin_role": "local_issue",
+      "inclusion_status": "included_stage1_source_linked",
+      "source_ids": [
+        "zeno"
+      ],
+      "bibliography_ids": [],
+      "notes": "",
+      "current_atlas_family_id": "panch-pycwtt"
+    },
+    {
+      "family_id": "cand-kabudan-cash",
+      "provisional_title": "Kabudan local square-hole cash",
+      "issuer": "Principality of Kabudan",
+      "political_entity": "sogdian_local",
+      "region": "Eastern Sogdiana / Kabudan",
+      "mint_region": null,
+      "findspot_region": null,
+      "date_start": null,
+      "date_end": null,
+      "date_display": "Chronology pending",
+      "date_confidence": "source_taxonomy_pending_academic_crosswalk",
+      "shape": "round_cash_form",
+      "hole_shape": "square_or_square_frame",
+      "perforation_status": "pierced_unpierced_or_pseudo_aperture_as_source/visual_evidence_supports",
+      "material": "bronze_or_copper_alloy",
+      "technique": "cast",
+      "script": "Sogdian",
+      "legend_raw": null,
+      "attribution_status": "source_taxonomy_candidate",
+      "competing_attributions": [],
+      "coin_role": "local_issue",
+      "inclusion_status": "included_stage1_source_linked",
+      "source_ids": [
+        "zeno"
+      ],
+      "bibliography_ids": [],
+      "notes": "Zeno taxonomy says ex. Samitan; kept distinct from Samitan pending academic crosswalk.",
+      "current_atlas_family_id": "kabudan-cash"
+    },
+    {
+      "family_id": "cand-barkat-ramchitak",
+      "provisional_title": "Ramchitak of Barkat square-hole cash",
+      "issuer": "Ramchitak",
+      "political_entity": "sogdian_local",
+      "region": "Eastern Sogdiana / Barkat",
+      "mint_region": null,
+      "findspot_region": null,
+      "date_start": 640,
+      "date_end": 700,
+      "date_display": "ca. 640–700 AD in Zeno source taxonomy",
+      "date_confidence": "source_taxonomy_pending_academic_crosswalk",
+      "shape": "round_cash_form",
+      "hole_shape": "square_or_square_frame",
+      "perforation_status": "pierced_unpierced_or_pseudo_aperture_as_source/visual_evidence_supports",
+      "material": "bronze_or_copper_alloy",
+      "technique": "cast",
+      "script": "Sogdian",
+      "legend_raw": null,
+      "attribution_status": "source_taxonomy_candidate",
+      "competing_attributions": [],
+      "coin_role": "local_issue",
+      "inclusion_status": "included_stage1_source_linked",
+      "source_ids": [
+        "zeno"
+      ],
+      "bibliography_ids": [],
+      "notes": "",
+      "current_atlas_family_id": "barkat-ramchitak"
+    },
+    {
+      "family_id": "cand-barkat-zatak",
+      "provisional_title": "Zatak / Natak of Barkat square-hole cash",
+      "issuer": "Zatak / Natak",
+      "political_entity": "sogdian_local",
+      "region": "Eastern Sogdiana / Barkat",
+      "mint_region": null,
+      "findspot_region": null,
+      "date_start": null,
+      "date_end": null,
+      "date_display": "Chronology pending",
+      "date_confidence": "source_taxonomy_pending_academic_crosswalk",
+      "shape": "round_cash_form",
+      "hole_shape": "square_or_square_frame",
+      "perforation_status": "pierced_unpierced_or_pseudo_aperture_as_source/visual_evidence_supports",
+      "material": "bronze_or_copper_alloy",
+      "technique": "cast",
+      "script": "Sogdian",
+      "legend_raw": null,
+      "attribution_status": "source_taxonomy_candidate",
+      "competing_attributions": [],
+      "coin_role": "local_issue",
+      "inclusion_status": "included_stage1_source_linked",
+      "source_ids": [
+        "zeno"
+      ],
+      "bibliography_ids": [],
+      "notes": "",
+      "current_atlas_family_id": "barkat-zatak"
+    },
+    {
+      "family_id": "cand-kesh-akhurpat",
+      "provisional_title": "Akhurpat of Kesh square-hole cash",
+      "issuer": "Akhurpat",
+      "political_entity": "sogdian_local",
+      "region": "Southern Sogd / Kesh",
+      "mint_region": null,
+      "findspot_region": null,
+      "date_start": 720,
+      "date_end": 737,
+      "date_display": "720s–737 CE in Zeno source taxonomy",
+      "date_confidence": "source_taxonomy_pending_academic_crosswalk",
+      "shape": "round_cash_form",
+      "hole_shape": "square_or_square_frame",
+      "perforation_status": "pierced_unpierced_or_pseudo_aperture_as_source/visual_evidence_supports",
+      "material": "bronze_or_copper_alloy",
+      "technique": "cast",
+      "script": "Sogdian",
+      "legend_raw": null,
+      "attribution_status": "source_taxonomy_candidate",
+      "competing_attributions": [],
+      "coin_role": "local_issue",
+      "inclusion_status": "included_stage1_source_linked",
+      "source_ids": [
+        "zeno"
+      ],
+      "bibliography_ids": [],
+      "notes": "",
+      "current_atlas_family_id": "kesh-akhurpat"
+    },
+    {
+      "family_id": "cand-chach-farankat",
+      "provisional_title": "Farankat / Benakan square-hole cash",
+      "issuer": "Farankat / Benakan local authority",
+      "political_entity": "western_turkic_sogdian",
+      "region": "Chach",
+      "mint_region": null,
+      "findspot_region": null,
+      "date_start": null,
+      "date_end": null,
+      "date_display": "Chronology pending",
+      "date_confidence": "source_taxonomy_pending_academic_crosswalk",
+      "shape": "round_cash_form",
+      "hole_shape": "square_or_square_frame",
+      "perforation_status": "pierced_unpierced_or_pseudo_aperture_as_source/visual_evidence_supports",
+      "material": "bronze_or_copper_alloy",
+      "technique": "cast",
+      "script": "Sogdian",
+      "legend_raw": null,
+      "attribution_status": "source_taxonomy_candidate",
+      "competing_attributions": [],
+      "coin_role": "local_issue",
+      "inclusion_status": "included_stage1_source_linked",
+      "source_ids": [
+        "zeno"
+      ],
+      "bibliography_ids": [],
+      "notes": "Zeno category explicitly marks the group with square-hole symbol; exact ruler-level subdivision remains source-grouped.",
+      "current_atlas_family_id": "chach-farankat"
+    },
+    {
+      "family_id": "cand-sayram-anonymous-tutuk",
+      "provisional_title": "Anonymous tutuk cash of Sayram",
+      "issuer": "Anonymous tutuk",
+      "political_entity": "western_turkic_sogdian",
+      "region": "Sayram / Isfijab",
+      "mint_region": null,
+      "findspot_region": null,
+      "date_start": null,
+      "date_end": null,
+      "date_display": "Chronology pending",
+      "date_confidence": "source_taxonomy_pending_academic_crosswalk",
+      "shape": "round_cash_form",
+      "hole_shape": "square_or_square_frame",
+      "perforation_status": "pierced_unpierced_or_pseudo_aperture_as_source/visual_evidence_supports",
+      "material": "bronze_or_copper_alloy",
+      "technique": "cast",
+      "script": "Sogdian/Turkic title",
+      "legend_raw": null,
+      "attribution_status": "source_taxonomy_candidate",
+      "competing_attributions": [],
+      "coin_role": "local_issue",
+      "inclusion_status": "included_stage1_source_linked",
+      "source_ids": [
+        "zeno"
+      ],
+      "bibliography_ids": [],
+      "notes": "Downloaded image audit confirms Chinese-style square-hole/square-frame tradition including unpierced/pseudo-aperture examples.",
+      "current_atlas_family_id": "sayram-anonymous-tutuk"
+    },
+    {
+      "family_id": "cand-yaghlaqar",
+      "provisional_title": "Yaghlaqar clan square-hole cash",
+      "issuer": "Yaghlaqar clan, ruler unresolved",
+      "political_entity": "turkic",
+      "region": "Semirechye",
+      "mint_region": null,
+      "findspot_region": null,
+      "date_start": null,
+      "date_end": null,
+      "date_display": "Chronology pending",
+      "date_confidence": "source_taxonomy_pending_academic_crosswalk",
+      "shape": "round_cash_form",
+      "hole_shape": "square_or_square_frame",
+      "perforation_status": "pierced_unpierced_or_pseudo_aperture_as_source/visual_evidence_supports",
+      "material": "bronze_or_copper_alloy",
+      "technique": "cast",
+      "script": "Sogdian/Turkic",
+      "legend_raw": null,
+      "attribution_status": "source_taxonomy_candidate",
+      "competing_attributions": [],
+      "coin_role": "local_issue",
+      "inclusion_status": "included_stage1_source_linked",
+      "source_ids": [
+        "zeno"
+      ],
+      "bibliography_ids": [],
+      "notes": "Source taxonomy attribution retained as candidate; chronology and political attribution require academic crosswalk.",
+      "current_atlas_family_id": "yaghlaqar"
     }
   ],
   "coverage_gaps": [

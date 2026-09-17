@@ -84,6 +84,59 @@ for decision in review795['records']:
  facets=['Zeno source group '+decision['leafCategoryId']+' · '+decision['leafCategoryTitle']]
  a['specimens'].append({'id':'zeno-'+id,'familyId':decision['familyId'],'variantId':decision['sourceGroupId'],'title':title,'weightG':r.get('weightG'),'diameterMm':r.get('diameterMm'),'images':[pic],'sources':[source],'description':r.get('description') or r.get('photoNote') or 'Primary Zeno record; description and source grouping preserved.','catalogue':'Zeno category '+decision['leafCategoryId']+' · '+decision['leafCategoryTitle'],'facets':facets,'duplicateStatus':'source_record_not_proven_unique'})
 
+
+# Conservative Central Asia #503 stage-1 expansion. This review imports only records
+# whose source taxonomy and/or downloaded-image audit clearly supports the project's
+# Chinese-style square-hole cash-tradition scope. Mixed visual groups remain pending.
+review503=read('research/zeno/review-503-stage1.json')
+z503=read('research/zeno/manifest-503.json')
+z503_recovered=read('research/zeno/recovered-records-503.json')
+repair503=read('research/zeno/image-repair-run-503.json')
+repair503_by_id={str(r['id']):r for r in repair503.get('successful',[]) if r.get('id')}
+z503_by_id={str(r['id']):r for r in z503['records']}
+z503_by_id.update({str(r['id']):r for r in z503_recovered.get('recoveredRecords',[])})
+# Broaden the old single-record Tukhus label without erasing its legacy catalogue identity.
+for f in a['families']:
+ if f['id']=='sr14':
+  f['title']='Ex. “Tukhus” complex / legacy Master of Tukhuses';f['zh']='“Tukhus” 系列／旧目录 Master of Tukhuses'
+  f['description']='Reviewed #503 records expand the legacy Kamyshev 39 specimen into the broader Zeno “Ex. Tukhus” source complex. Oghitmish/Bitmish and source Type 1–3 groupings remain source-level classifications pending academic crosswalk.'
+  f['question']='The historical identity and equivalence of “Tukhus”, Oghitmish/Bitmish and legacy catalogue groups remain under review; source labels are preserved rather than collapsed.'
+ if f['id']=='sr21':
+  f['title']='Malik Aram Yinal Qaraj / legacy proto-Qarakhanid cash';f['zh']='Malik Aram Yinal Qaraj／旧称 proto-Qarakhanid 方孔钱'
+  f['description']='Arabic/Kufic square-hole cash preserved as a disputed family. Zeno #796 attributes the series to the time of Yelü Dashi / Western Liao (1124–1144), while legacy proto-Qarakhanid, Karluk transitional and uncertain Central Asian attributions remain explicit competing claims.'
+  f['dateLabel']='Disputed: legacy 9th–10th c.; Western Liao/Yelü Dashi reattribution c.1124–1144'
+  f['question']='Do not collapse the competing attributions: legacy proto-Qarakhanid, Karluk transitional, Western Liao / Yelü Dashi, and uncertain Central Asian remain reviewable alternatives.'
+existing_family_ids={f['id'] for f in a['families']}
+family_decisions={f['id']:f for f in review503['families']}
+records_by_family={}
+for d in review503['records']:records_by_family.setdefault(d['familyId'],[]).append(d)
+for fd in review503['families']:
+ if fd['id'] in existing_family_ids:continue
+ ds=records_by_family.get(fd['id'],[])
+ image=ds[0]['image']['path'] if ds else None
+ sg=next((g for g in review503['sourceGroups'] if g['familyId']==fd['id']),None)
+ anchor={'placeId':fd['anchorPlaceId'],'role':'Regional/city orientation · 区域／城市浏览锚点','note':'用于地图浏览；不自动表示铸币地、出土地或流通范围。'} if fd.get('anchorPlaceId') else None
+ pubs=[]
+ if sg:pubs.append({'title':'Zeno category '+sg['categoryId']+' · '+sg['title'],'url':'https://www.zeno.ru/showgallery.php?cat='+sg['categoryId'],'role':'Source taxonomy / specimen records'})
+ pubs.append({'title':'Central Asian square-hole scope / academic crosswalk pending','url':'https://iicas.int/book/177','role':'Modern academic framework; exact family-level correspondence remains under review'})
+ a['families'].append({'id':fd['id'],'title':fd['title'],'zh':fd['zh'],'region':fd['region'],'start':fd.get('start'),'end':fd.get('end'),'dateLabel':fd.get('dateLabel') or 'Chronology pending','description':fd['description'],'anchor':anchor,'image':image,'status':fd['status'],'question':fd['question'],'publications':pubs})
+ existing_family_ids.add(fd['id'])
+for g in review503['sourceGroups']:
+ if not any(v['id']==g['id'] for v in a['variants']):
+  a['variants'].append({'id':g['id'],'familyId':g['familyId'],'title':g['title'],'reference':'Zeno category '+g['categoryId'],'status':'source_group','facets':[],'description':g['description']})
+existing_specimen_ids={s['id'] for s in a['specimens']}
+for decision in review503['records']:
+ if not decision.get('atlasImport'):continue
+ id=str(decision['id']);sid='zeno-'+id
+ if sid in existing_specimen_ids:continue
+ r=z503_by_id[id];im=decision['image'];u=r.get('uploader') or {};rights=r.get('rights') or {}
+ title=r.get('title') or ('Zeno '+id);prefix='#'+id+' - '
+ if title.startswith(prefix):title=title[len(prefix):]
+ pic={'id':'z'+id,'path':im['path'],'sourceUrl':(repair503_by_id.get(id) or {}).get('url') or r.get('originalImageUrl') or r.get('url'),'width':im['width'],'height':im['height'],'credit':u.get('name') or 'Zeno.ru uploader unknown','rightsStatus':('unverified' if (rights.get('status') or 'unverified') not in {'open_license','permission','public_domain','unverified'} else (rights.get('status') or 'unverified')),'rightsSourceUrl':rights.get('sourceTermsUrl'),'view':'source photograph','sha256':im.get('sha256')}
+ source={'label':'Zeno '+id,'url':r['url'],'relation':'same_specimen'}
+ a['specimens'].append({'id':sid,'familyId':decision['familyId'],'variantId':decision['sourceGroupId'],'title':title,'weightG':r.get('weightG'),'diameterMm':r.get('diameterMm'),'images':[pic],'sources':[source],'description':r.get('photoNote') or r.get('description') or 'Primary Zeno source record; source taxonomy preserved.','catalogue':'Zeno category '+decision['leafCategoryId']+' · '+decision['leafCategoryTitle'],'facets':['Zeno source group '+decision['leafCategoryId']+' · '+decision['leafCategoryTitle'],'#503 stage-1 scope reviewed'],'duplicateStatus':decision.get('duplicateStatus','source_record_not_proven_unique')})
+ existing_specimen_ids.add(sid)
+
 a['scopeCensus']=read('research/coverage-scopes.json')
 nana_specimens=[s for s in a['specimens'] if s['familyId']=='lady-nana']
 nana_zeno=[s for s in nana_specimens if s['id'].startswith('zeno-')]

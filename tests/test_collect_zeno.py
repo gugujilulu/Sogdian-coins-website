@@ -45,5 +45,13 @@ class ZenoCollectorCacheTests(unittest.TestCase):
         html=(ROOT/'research/zeno/264184.html').read_text(errors='replace')
         self.assertEqual(collect.photo_note(html),'Unearthed in N. Afghanistan')
 
+    def test_detail_image_candidate_ignores_breadcrumb_glyph(self):
+        # Zeno #219174 contains Tukhus glyphs in its breadcrumb before the coin image.
+        # Those decorative assets must never become specimen photographs.
+        rec=collect.collect_record(collect.make_opener(),'503','219174',download=False,refresh=False)
+        self.assertIsNotNone(rec['originalImageUrl'])
+        self.assertNotIn('/glyph/',rec['originalImageUrl'])
+        self.assertFalse(any('/glyph/' in u for u in rec['imageCandidates']))
+
 if __name__=='__main__':
     unittest.main()

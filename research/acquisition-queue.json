@@ -1,15 +1,15 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "scope_version": "1.0.0",
   "last_checked_at": "2026-09-16",
   "principle": "Acquire source evidence first, then review scope/identity, then download only candidate/included images where practical. Category counts are coverage metadata, never specimen counts.",
-  "current_stage": "zeno_503_preimage_scope_review_and_targeted_image_acquisition",
+  "current_stage": "zeno_503_stage1_import_complete_mixed_category_review_pending",
   "queue": [
     {
       "id": "zeno-503-tree-census",
       "priority": 1,
       "source_id": "zeno",
-      "status": "ready_for_mac",
+      "status": "snapshot_complete_with_non_target_pagination_gaps",
       "target": {
         "category_id": "503",
         "mode": "recursive_gallery_tree"
@@ -32,7 +32,7 @@
       "id": "zeno-503-detail-metadata",
       "priority": 2,
       "source_id": "zeno",
-      "status": "ready_after_or_with_tree_census",
+      "status": "complete_for_3984_observed_recovered_records",
       "target": {
         "category_id": "503",
         "mode": "recursive_details_no_images"
@@ -49,7 +49,7 @@
       "id": "zeno-503-square-hole-image-pass",
       "priority": 3,
       "source_id": "zeno",
-      "status": "blocked_on_scope_review_of_metadata",
+      "status": "target_images_acquired_stage1_review_partial",
       "target": {
         "mode": "selected_record_image_download"
       },
@@ -58,7 +58,7 @@
         "public/coins/zeno/<record_id>.jpg",
         "image SHA256 and rights/source fields"
       ],
-      "note": "Existing #795 images remain preserved and are not re-downloaded."
+      "note": "1,439 target images downloaded; 1,437 valid after glyph-asset repair. Stage-1 imported 584 records; 854 downloaded target images remain for mixed-category/record-level review. Existing #795 images remain preserved."
     },
     {
       "id": "academic-type-backbone-iicas-smirnova",
@@ -312,8 +312,8 @@
     "Build archaeological find-context datasets for imported East Asian cash independently from type catalogues."
   ],
   "zeno_503_snapshot": {
-    "observed_unique_source_ids": 3891,
-    "detail_html_records": 3891,
+    "observed_unique_source_ids": 3984,
+    "detail_html_records": 3984,
     "visited_category_nodes": 393,
     "category_fetch_failures": 0,
     "detail_parse_failures_after_offline_reparse": 0,
@@ -322,6 +322,12 @@
     "scope_relevant_gap_recovery_categories": 7,
     "preimage_high_priority_targets": 811,
     "preimage_visual_review_targets": 535,
-    "note": "#503 source census is usable for scope review but not declared complete because Zeno repeated page content affected 24 category pages. Scope-relevant gaps are queued for perpage=90 recovery before final coverage claims."
+    "note": "The original #503 crawl observed 3,891 IDs. A bounded perpage=90 recovery added 93 non-overlapping records in seven scope-relevant pagination-gap categories, giving 3,984 observed/recovered metadata records. Remaining repeated-page gaps outside the targeted recovery keep the root census non-complete. Stage-1 Atlas import is conservative and source-linked.",
+    "target_images_downloaded": 1439,
+    "valid_target_images_after_repair": 1437,
+    "stage1_source_records_selected": 586,
+    "stage1_atlas_import_records": 584,
+    "stage1_held_records": 2,
+    "stage1_unreviewed_target_images": 854
   }
 }

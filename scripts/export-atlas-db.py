@@ -14,7 +14,7 @@ def cite(url,title=None):
  if id not in seen:
   add('publication',id=id,title=title or url,publication_kind='web_record',url=url,accessed_on='2026-09-16',verification_status='partly_read');add('citation',id='c-'+id,publication_id=id);seen.add(id)
  return 'c-'+id
-add('corpus',id='square-hole',title='Sogdian-related square-holed coinage',scope_note='Semirechye core; related Sogdian, Tokharistan and Xinjiang series. Current import is incomplete.')
+add('corpus',id='square-hole',title='Central Asian Square-Hole Coinage Atlas',scope_note='221–1643 CE Chinese-style square-hole cash tradition in Central Asia and related eastern inland zones; includes pierced, intentionally unpierced and pseudo-aperture derivatives when the tradition is source-supported. Current import is incomplete.')
 for p in d['places']:
  add('place',id=p['id'],historical_name=p['name'],modern_name=p['zh'],kind=p['kind'])
  add('place_geometry',id='geo-'+p['id'],place_id=p['id'],geometry_geojson=json.dumps({'type':'Point','coordinates':p['coordinates']}),label_lat=p['coordinates'][1],label_lon=p['coordinates'][0],precision='approximate_site',confidence='unassessed',citation_id=cite(p['source']),note=p['precision']+'; '+p['note'])
@@ -58,7 +58,16 @@ for manifest_path in sorted((root/'research/zeno').glob('manifest-*.json')):
  if cat=='3106' and expected is None:expected=d['coverage']['zenoRecordCount']
  scope_note=(manifest.get('countSemantics') or 'Observed source records; completeness not asserted.')+' Coverage status: '+manifest.get('coverageStatus','legacy_manifest')+'.'
  add('coverage_snapshot',id=snapshot_id,provider='Zeno',category_url=manifest.get('url') or ('https://www.zeno.ru/showgallery.php?cat='+cat),retrieved_on=date,expected_record_count=expected,scope_note=scope_note)
- record_ids=manifest.get('recordIds') or [str(r['id']) for r in manifest.get('records',[]) if r.get('id')]
+ record_ids=[str(x) for x in (manifest.get('recordIds') or [str(r['id']) for r in manifest.get('records',[]) if r.get('id')])]
+ # #503 has a bounded recovery file for seven scope-relevant pagination gaps.
+ # Keep one coverage snapshot and union the recovered source IDs into it rather than
+ # inventing a second category snapshot or counting them as new specimens.
+ if cat=='503':
+  recovered_path=root/'research/zeno/recovered-records-503.json'
+  if recovered_path.exists():
+   recovered=json.loads(recovered_path.read_text())
+   record_ids=list(dict.fromkeys(record_ids+[str(r['id']) for r in recovered.get('recoveredRecords',[]) if r.get('id')]))
+   scope_note+=f' Scope-relevant perpage=90 recovery adds {len(recovered.get("recoveredRecords",[]))} non-overlapping source records; remaining non-target repeated-page gaps stay unresolved.'
  for record_id in record_ids:
   record_id=str(record_id);spec=linked_specimen(record_id);image=None
   if spec:image=next((im for im in spec['images'] if im['path']==f'/coins/zeno/{record_id}.jpg'),None)

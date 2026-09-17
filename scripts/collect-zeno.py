@@ -444,13 +444,16 @@ def collect_record(opener, category_id: str, record_id: str, download: bool, ref
     html = fetch(opener, url, raw_path, refresh=refresh)
     title_match = re.search(r"<title>(.*?)</title>", html, re.S | re.I)
     title = clean(title_match.group(1)) if title_match else f"Zeno {record_id}"
+    blocked_image_assets = ("/glyph/", "/avatars/", "/smilies/")
+    def usable_record_asset(x: str) -> bool:
+        return "/data/" in x and not any(part in x for part in blocked_image_assets)
     images = [
         x
         for x in re.findall(r'(?:src|href)=[\'\"]([^\'\"]+/data/[^\'\"]+)[\'\"]', html)
-        if "/avatars/" not in x
+        if usable_record_asset(x)
     ]
-    big = re.findall(r"openBigWindow\('([^']+)", html)
-    candidates = unique([x for x in big if "/data/" in x] + [x.replace("/medium/", "/") for x in images] + images)
+    big = [x for x in re.findall(r"openBigWindow\('([^']+)", html) if usable_record_asset(x)]
+    candidates = unique(big + [x.replace("/medium/", "/") for x in images] + images)
     image = None
     image_errors = []
     if download:

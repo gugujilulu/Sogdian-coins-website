@@ -47,3 +47,10 @@ next-env.d.ts
 # Public research page caches; structured citations and manifests are tracked.
 /research/zeno/*.html
 *.tsbuildinfo
+
+# Downloaded #503 target images awaiting record-level scope review; preserved in handoff bundles, not Git/deploy.
+/research/zeno/pending-images-503/
+
+# Python bytecode caches
+__pycache__/
+*.pyc

@@ -13,6 +13,9 @@ a=json.loads((root/'public/data/atlas.json').read_text())
 z=json.loads((root/'research/zeno/manifest-3106.json').read_text())
 z795=json.loads((root/'research/zeno/manifest-795.json').read_text())
 r795=json.loads((root/'research/zeno/review-795.json').read_text())
+z503=json.loads((root/'research/zeno/manifest-503.json').read_text())
+r503=json.loads((root/'research/zeno/review-503-stage1.json').read_text())
+recovered503=json.loads((root/'research/zeno/recovered-records-503.json').read_text())
 families={f['id'] for f in a['families']}
 variants={v['id']:v for v in a['variants']}
 places={p['id'] for p in a['places']}
@@ -57,6 +60,29 @@ assert len(held_795)==15
 assert not any(('zeno-'+rid) in ids for rid in held_795)
 assert 'zeno-1766' in ids and 'zeno-1767' in ids  # shared obverse photo is not identity evidence
 
+# Central Asia #503 stage-1 review is conservative: the metadata census is broader
+# than the Atlas import, recovered pagination records stay in the same source scope,
+# and two records with unresolved/failed target images remain held.
+assert z503['categoryId']=='503'
+assert len(z503['recordIds'])==3891
+assert len(z503['records'])==3891
+assert len(recovered503.get('recoveredRecords',[]))==93
+assert not ({str(x) for x in z503['recordIds']} & {str(r['id']) for r in recovered503['recoveredRecords']})
+assert len({str(x) for x in z503['recordIds']} | {str(r['id']) for r in recovered503['recoveredRecords']})==3984
+assert r503['counts']['stage1SourceRecordsSelected']==586
+assert r503['counts']['atlasImportRecords']==584
+assert r503['counts']['heldRecords']==2
+assert r503['counts']['sourceGroups']==45
+assert {'142559','302497'}=={str(x['id']) for x in r503['heldRecords']}
+assert all(('zeno-'+str(x['id'])) in ids for x in r503['records'] if x.get('atlasImport'))
+assert not any(('zeno-'+str(x['id'])) in ids for x in r503['heldRecords'])
+# #796 is imported into the existing disputed sr21 family without canonicalizing
+# the Western Liao attribution.
+assert sum(1 for x in r503['records'] if x['leafCategoryId']=='796' and x['familyId']=='sr21')==58
+sr21f=next(f for f in a['families'] if f['id']=='sr21')
+assert 'legacy proto-Qarakhanid' in sr21f['title']
+assert 'Western Liao' in sr21f['description']
+
 # Saved Zeno manifests are independent coverage scopes. Partial Semirechye crawls are
 # valid research states, while their counts must never be labelled complete by accident.
 coverage_rows={str(r['categoryId']):r for r in a.get('scopeCensus',[])}
@@ -90,6 +116,7 @@ for s in a['specimens']:
   image=Image.open(p)
   assert image.size==(im['width'],im['height'])
   assert '/avatars/' not in im['sourceUrl']
+  assert '/glyph/' not in im['sourceUrl']
   assert p.stat().st_size>1000
   assert im['rightsStatus'] in {'open_license','permission','public_domain','unverified'}
   assert 'credit' in im and im['credit']
@@ -124,7 +151,7 @@ with tempfile.TemporaryDirectory() as tmp:
  db=sqlite3.connect(p)
  db.execute('PRAGMA foreign_keys=ON')
  assert db.execute('SELECT count(*) FROM specimen').fetchone()[0]==len(a['specimens'])
- assert db.execute('SELECT count(*) FROM image').fetchone()[0]==sum(len(s['images']) for s in a['specimens'])==273
+ assert db.execute('SELECT count(*) FROM image').fetchone()[0]==sum(len(s['images']) for s in a['specimens'])
  assert not db.execute('PRAGMA foreign_key_check').fetchall()
  # Nana coverage remains independently verifiable even after other categories are added.
  nana_snapshot=db.execute("SELECT id FROM coverage_snapshot WHERE category_url LIKE '%cat=3106'").fetchone()[0]
@@ -151,6 +178,11 @@ with tempfile.TemporaryDirectory() as tmp:
  assert db.execute("SELECT count(*) FROM coverage_record WHERE snapshot_id=?",(s795,)).fetchone()[0]==254
  assert db.execute("SELECT count(*) FROM coverage_record WHERE snapshot_id=? AND status='image_imported'",(s795,)).fetchone()[0]==239
  assert db.execute("SELECT count(*) FROM coverage_record WHERE snapshot_id=? AND status='pending'",(s795,)).fetchone()[0]==15
+ # #503 snapshot includes the 3,891 root crawl plus 93 non-overlapping recovered IDs.
+ s503=db.execute("SELECT id FROM coverage_snapshot WHERE category_url LIKE '%cat=503'").fetchone()[0]
+ assert db.execute("SELECT count(*) FROM coverage_record WHERE snapshot_id=?",(s503,)).fetchone()[0]==3984
+ imported503=db.execute("SELECT count(*) FROM coverage_record WHERE snapshot_id=? AND status='image_imported'",(s503,)).fetchone()[0]
+ assert imported503>=584  # includes reviewed #503 stage-1 records plus earlier linked descendant records.
  # A comparison link must not create a same-specimen equivalence.
  assert db.execute("SELECT relation FROM specimen_external_record s JOIN external_record e ON e.id=s.external_record_id WHERE specimen_id='cng611-576' AND e.url LIKE '%photo=81165'").fetchone()[0]=='comparison'
  # Reject physically invalid measurements and invalid relation/types.
@@ -166,4 +198,4 @@ with tempfile.TemporaryDirectory() as tmp:
  assert db.execute("SELECT count(*) FROM image WHERE specimen_id='cng611-576'").fetchone()[0]==2
 
 whole_images=sum(len(s['images']) for s in a['specimens'])
-print(f'PASS: Nana 14/14 + 22 images remain scoped; Zeno #795 254/254 acquired, 254 reviewed, 239 Atlas-linked with 1 merge into sr9; {len(manifest_paths)} Zeno manifest(s); {len(a["specimens"])} specimen records / {whole_images} whole-site images; identity, hierarchy, coverage, FK and geography invariants hold.')
+print(f'PASS: Nana 14/14 + 22 images remain scoped; Zeno #795 254/254 acquired and 239 Atlas-linked; Zeno #503 has 3,984 observed/recovered source records with 584 conservative stage-1 imports; {len(manifest_paths)} Zeno manifest(s); {len(a["specimens"])} specimen records / {whole_images} whole-site images; identity, hierarchy, coverage, image-rights, FK and geography invariants hold.')
