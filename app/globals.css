@@ -19,3 +19,5 @@
 .catalogue-search{display:flex;align-items:center;gap:7px;padding:8px 9px;border-bottom:1px solid #304249;color:#83979b}.catalogue-search input{width:100%;border:0;background:#17272d;padding:7px 8px;font-size:9px}.catalogue-search input:focus{outline:0}
 .related-search-icon{width:54px;height:40px;display:grid!important;place-items:center;background:#25383d;border:1px solid #465a61;color:#d5b775;font:17px Georgia,serif;flex:none}
 .tree-subgroup{margin-left:8px;border-bottom:0!important;border-left:1px solid #273a40}.tree-subgroup>summary{padding:7px 7px 7px 10px!important;color:#9fb0b1!important}.tree-subgroup>button{padding-left:22px!important}
+
+.source-coverage-grid{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 26px}.source-coverage-grid>div{min-width:150px;border:1px solid #35474e;background:#132229;padding:10px 12px}.source-coverage-grid strong,.source-coverage-grid span{display:block}.source-coverage-grid strong{font:20px Georgia,serif;color:#d9bc7d}.source-coverage-grid span{font-size:9px;color:#93a4a7;margin-top:2px}
