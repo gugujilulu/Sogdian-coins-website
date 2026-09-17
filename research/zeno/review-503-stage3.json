@@ -1,0 +1,2194 @@
+{
+  "version": "1.0",
+  "reviewedOn": "2026-09-16",
+  "stage": "503-stage3-large-false-positive-pruning",
+  "sourceManifest": "research/zeno/manifest-503.json",
+  "methodNote": "Large visually coherent groups of Chach/Otrar/Ustrushana-type solid local coinage are removed from the unresolved image queue and retained as related regional records. Kanka is treated record-by-record because Zeno #1070 is an explicit Kaiyuan Tongbao find from the Kanka site and belongs in the imported-coin layer.",
+  "counts": {
+    "sourceRecordsReviewed": 338,
+    "atlasImportRecords": 1,
+    "relatedOutsideMainCorpus": 337,
+    "newFamilies": 1,
+    "sourceGroups": 1,
+    "remainingDownloadedImagesPending": 424,
+    "remainingTargetWithoutValidImage": 1
+  },
+  "families": [
+    {
+      "id": "regional-east-asian-imports",
+      "title": "East Asian cash in Central Asian contexts",
+      "zh": "中亚考古／流通环境中的东亚方孔钱",
+      "region": "Central Asia · context-specific finds",
+      "start": 221,
+      "end": 1643,
+      "dateLabel": "221–1643 project window; each imported coin retains its own issue/context dates",
+      "anchorPlaceId": "chach",
+      "candidateId": "cand-regional-chinese-imports",
+      "status": "source_linked_context_family",
+      "description": "Imported East Asian square-hole cash recorded from Central Asian archaeological, settlement, hoard or reliable circulation contexts. This family stores regional occurrences, not a duplicate catalogue of Chinese coinage.",
+      "question": "Issue place, find context and local circulation must remain separate. Individual records require archaeological/source validation; auction location never substitutes for findspot."
+    }
+  ],
+  "sourceGroups": [
+    {
+      "id": "zeno503-cat-914-kaiyuan-import",
+      "familyId": "regional-east-asian-imports",
+      "categoryId": "914",
+      "title": "Kanka · Kaiyuan Tongbao site-find record",
+      "status": "source_group",
+      "description": "Record-level subset of the Zeno Kanka category. Zeno #1070 explicitly reports a Kaiyuan Tongbao find from Kanka site in the Tashkent oasis; other Kanka category records reviewed here are non-square local coinage and remain related only."
+    }
+  ],
+  "records": [
+    {
+      "id": "1070",
+      "leafCategoryId": "914",
+      "leafCategoryTitle": "Kanka",
+      "familyId": "regional-east-asian-imports",
+      "sourceGroupId": "zeno503-cat-914-kaiyuan-import",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage3_imported_coin_find_context",
+      "coinRole": "imported_coin",
+      "evidenceBasis": "source_description_explicit_Kanka_site_find_plus_square_hole_image",
+      "image": {
+        "path": "/coins/zeno/1070.jpg",
+        "width": 2369,
+        "height": 1205,
+        "sha256": "f5f3eba24febe3d5d6d1c4ced79c271d5a48ad004e3a6f2cfa6bfa69005e56d2"
+      },
+      "duplicateStatus": "source_record_not_proven_unique",
+      "findContextClaim": {
+        "rawText": "From Kanka site, 2001 - ancient city in Tashkent oasis (Uzbekistan), which is the center of the Chach",
+        "status": "source_reported_unverified",
+        "place": "Kanka site / Tashkent oasis",
+        "note": "No precise coordinate or excavation context is inferred beyond the source wording."
+      }
+    }
+  ],
+  "relatedRecords": [
+    {
+      "id": "105744",
+      "leafCategoryId": "24935",
+      "title": "#105744 - Chach, Unknown Ruler",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "106965",
+      "leafCategoryId": "914",
+      "title": "#106965 - Kanka, AE unknown ruler.",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "107114",
+      "leafCategoryId": "24941",
+      "title": "#107114 - AE Chach (\"Tarnavch\") two reverses.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "1093",
+      "leafCategoryId": "24935",
+      "title": "#1093 - Sogdian Unknown Ruler",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "116358",
+      "leafCategoryId": "24941",
+      "title": "#116358 - Chach, cast AE, ruler Tarnavch.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "119943",
+      "leafCategoryId": "2145",
+      "title": "#119943 - Chach AE",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "121375",
+      "leafCategoryId": "22497",
+      "title": "#121375 - East Soghd, AE, Pair portrait.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "122195",
+      "leafCategoryId": "22497",
+      "title": "#122195 - East Sogd/Ferghana, AE, Par portrait.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "125623",
+      "leafCategoryId": "24937",
+      "title": "#125623 - Chach, AE Coin, uncnown ruler",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "125745",
+      "leafCategoryId": "914",
+      "title": "#125745 - Kanka, AE Coin, uncnown ruler",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "125748",
+      "leafCategoryId": "24944",
+      "title": "#125748 - Chach, AE Coin, uncnown ruler",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "127498",
+      "leafCategoryId": "804",
+      "title": "#127498 - Otrar, Turgesh's tamgha",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "128294",
+      "leafCategoryId": "22498",
+      "title": "#128294 - Zaamin, AE.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "12967",
+      "leafCategoryId": "914",
+      "title": "#12967 - Chach, Kanka",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "132649",
+      "leafCategoryId": "24944",
+      "title": "#132649 - Chach, AE, unknown ruler",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "137506",
+      "leafCategoryId": "2145",
+      "title": "#137506 - Chach, Unknown Ruler",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "137801",
+      "leafCategoryId": "24936",
+      "title": "#137801 - Chach AE coin",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "138169",
+      "leafCategoryId": "24936",
+      "title": "#138169 - Tudun Satachari, 7th - 8th",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "138230",
+      "leafCategoryId": "2145",
+      "title": "#138230 - Unknown ruler",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "138231",
+      "leafCategoryId": "24937",
+      "title": "#138231 - Unknown ruler",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "138232",
+      "leafCategoryId": "24941",
+      "title": "#138232 - King Tarnavch",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "138233",
+      "leafCategoryId": "804",
+      "title": "#138233 - City Otrar",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "140799",
+      "leafCategoryId": "2144",
+      "title": "#140799 - Chach, Unk. Principality I",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "140806",
+      "leafCategoryId": "2144",
+      "title": "#140806 - Chach: Anonymous (750-800AD) AE Double-Portrait Unit",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "141337",
+      "leafCategoryId": "2144",
+      "title": "#141337 - AE with double portrait, cross above tamgha.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "1435",
+      "leafCategoryId": "914",
+      "title": "#1435 - Sogdiana, Chach, Kanka, portrait type",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "1436",
+      "leafCategoryId": "914",
+      "title": "#1436 - Sogdiana, Chach, Kanka, portrait type",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "1437",
+      "leafCategoryId": "914",
+      "title": "#1437 - Sogdiana, Chach, Kanka, portrait type",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "1438",
+      "leafCategoryId": "914",
+      "title": "#1438 - Sogdiana, Chach, Kanka, portrait type",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "1439",
+      "leafCategoryId": "2144",
+      "title": "#1439 - Sogdiana, Chach, unknown principality, portrait type",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "146050",
+      "leafCategoryId": "15760",
+      "title": "#146050 - Imitations of Chinese cash, Kai Yuan Tong Bao, double reverse",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "146054",
+      "leafCategoryId": "15760",
+      "title": "#146054 - Imitations of Chinese cash, Kai Yuan Tong Bao, double reverse",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "146055",
+      "leafCategoryId": "15760",
+      "title": "#146055 - Imitations of Chinese cash, Kai Yuan Tong Bao, double reverse",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "150593",
+      "leafCategoryId": "24936",
+      "title": "#150593 - Chach AE, tudun Satachari?",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "15171",
+      "leafCategoryId": "2144",
+      "title": "#15171 - Chach, Principality of Chanak?, ca AD 600-750.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "152379",
+      "leafCategoryId": "24941",
+      "title": "#152379 - Chach, ruler Tarnavch",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "152530",
+      "leafCategoryId": "804",
+      "title": "#152530 - Otrar, AE coin, unknown ruler.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "155052",
+      "leafCategoryId": "804",
+      "title": "#155052 - Otrar, unknown Tamga",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "157750",
+      "leafCategoryId": "2145",
+      "title": "#157750 - Chach, small AE, portrait/tamgha.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "16169",
+      "leafCategoryId": "2144",
+      "title": "#16169 - Chach, Chanak?, 7th-8th cent.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "16170",
+      "leafCategoryId": "914",
+      "title": "#16170 - Chach, Kanka, 7th-8th cent.",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "162407",
+      "leafCategoryId": "22498",
+      "title": "#162407 - Zaamin, AE, unknown ruler.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "16328",
+      "leafCategoryId": "804",
+      "title": "#16328 - S1580, Otrar AE coin",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "165452",
+      "leafCategoryId": "24941",
+      "title": "#165452 - Chach AE, Tarnavch ruler",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "165637",
+      "leafCategoryId": "24937",
+      "title": "#165637 - Chach AE (\"Tundun?\")",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "167068",
+      "leafCategoryId": "22497",
+      "title": "#167068 - Eastern Soghd, AE, double portrait/turkic runas.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "16896",
+      "leafCategoryId": "24941",
+      "title": "#16896 - Chach, ruler Tarnavch",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "16897",
+      "leafCategoryId": "24937",
+      "title": "#16897 - Chach, unknown ruler",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "16898",
+      "leafCategoryId": "24936",
+      "title": "#16898 - Chach, tudun (ruler) Satachary",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "169349",
+      "leafCategoryId": "24944",
+      "title": "#169349 - Chach",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "16990",
+      "leafCategoryId": "24941",
+      "title": "#16990 - Chach, ruler Tarnavch",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "171658",
+      "leafCategoryId": "804",
+      "title": "#171658 - Otrar AE coin with Runic letters",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "172012",
+      "leafCategoryId": "22497",
+      "title": "#172012 - Ferghana, AE, pair portrait/turk runas.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "175492",
+      "leafCategoryId": "914",
+      "title": "#175492 - Kanka, AE unknown ruler with massive ear-rings.",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "17600",
+      "leafCategoryId": "914",
+      "title": "#17600 - Chach, domain Kanka, unidentified ruler",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "176586",
+      "leafCategoryId": "24935",
+      "title": "#176586 - Chach. Nirtanak",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "176974",
+      "leafCategoryId": "914",
+      "title": "#176974 - Kanka, AE, unknown ruler.",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "181449",
+      "leafCategoryId": "24935",
+      "title": "#181449 - Chach, \"Nirtnk\"",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "182095",
+      "leafCategoryId": "2145",
+      "title": "#182095 - Chach AE, unknown ruler.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "182358",
+      "leafCategoryId": "2144",
+      "title": "#182358 - Chach, Unknown principality I, coins with double portrait",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "183836",
+      "leafCategoryId": "22498",
+      "title": "#183836 - Zaamin, AE, unknown ruler.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "185378",
+      "leafCategoryId": "24937",
+      "title": "#185378 - Chach, AE, Unknown ruler 7-8Ct AD.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "185380",
+      "leafCategoryId": "2144",
+      "title": "#185380 - Chach, unknown domain, double portrait, tamgha with cross.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "185381",
+      "leafCategoryId": "914",
+      "title": "#185381 - Chach, Kanka, AE unknown ruler with ear-rings.",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "185382",
+      "leafCategoryId": "914",
+      "title": "#185382 - Chach, Kanka, AE unknown ruler with long hair.",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "185383",
+      "leafCategoryId": "22498",
+      "title": "#185383 - Zaamin, AE coin, Unknown ruler. Bust facing slightly to left.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "187996",
+      "leafCategoryId": "24937",
+      "title": "#187996 - Chach, AE, unknown ruler",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "189831",
+      "leafCategoryId": "804",
+      "title": "#189831 - Otrar, AE22, unknown ruler.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "190632",
+      "leafCategoryId": "22498",
+      "title": "#190632 - Zaamin, AE, unknown ruler.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "194325",
+      "leafCategoryId": "22497",
+      "title": "#194325 - Eastern Soghd, AE, pair / turk runic signs.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "194335",
+      "leafCategoryId": "22497",
+      "title": "#194335 - Eastern Soghd, AE, pair/turk runic signs.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "195069",
+      "leafCategoryId": "24935",
+      "title": "#195069 - Central Asia, Chach, Nirtanak, 7-8th cent.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "195070",
+      "leafCategoryId": "24941",
+      "title": "#195070 - Central Asia, Chach, Tarnavch, 7-8th cent.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "197212",
+      "leafCategoryId": "914",
+      "title": "#197212 - Chach. Kanka.",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "197213",
+      "leafCategoryId": "914",
+      "title": "#197213 - Chach. Kanka.",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "20212",
+      "leafCategoryId": "22498",
+      "title": "#20212 - Zaamin, AE coin, Unknown ruler.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "20482",
+      "leafCategoryId": "804",
+      "title": "#20482 - Otrar, AE coin, unknown ruler.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "204908",
+      "leafCategoryId": "24941",
+      "title": "#204908 - Central Asia, Chach, King Tarnauch, AE unit, 7-8th c. AD",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "20530",
+      "leafCategoryId": "24935",
+      "title": "#20530 - Chach, Unknown Ruler",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "20685",
+      "leafCategoryId": "914",
+      "title": "#20685 - Kanka, AE, unknown ruler.",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "20686",
+      "leafCategoryId": "914",
+      "title": "#20686 - Kanka, AE, unknown ruler.",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "209841",
+      "leafCategoryId": "22498",
+      "title": "#209841 - Zaamin, AE, unknown ruler.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "21110",
+      "leafCategoryId": "24944",
+      "title": "#21110 - Chach, Trident Tamgha, Unknown Ruler",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "21133",
+      "leafCategoryId": "24944",
+      "title": "#21133 - Chach, AE, unknown ruler.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "212783",
+      "leafCategoryId": "804",
+      "title": "#212783 - Otrar, AE coin, unknown ruler",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "215280",
+      "leafCategoryId": "15760",
+      "title": "#215280 - Semirech'e, AE imitation of KYTB.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "216531",
+      "leafCategoryId": "15760",
+      "title": "#216531 - Semirech'e imitation of KYTB.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "218172",
+      "leafCategoryId": "24944",
+      "title": "#218172 - Central Asia, Chach, AE unit, unknown ruler.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "218173",
+      "leafCategoryId": "24941",
+      "title": "#218173 - Central Asia, Chach, King Tarnauch, AE unit, ca. 7-8th cent. AD",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "220384",
+      "leafCategoryId": "22497",
+      "title": "#220384 - East Soghd AE , Ferghana, pare portrait.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "22675",
+      "leafCategoryId": "2144",
+      "title": "#22675 - Chach, unknown principality, double portrait type",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "22676",
+      "leafCategoryId": "2144",
+      "title": "#22676 - Chach, unknown principality, double portrait type",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "227830",
+      "leafCategoryId": "804",
+      "title": "#227830 - City of Otrar, bronze coin, lion/tamgha, Smirnova 1580, heavy sample",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "227831",
+      "leafCategoryId": "804",
+      "title": "#227831 - City of Otrar, bronze coin, lion/tamgha, Smirnova 1580, light sample",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "230741",
+      "leafCategoryId": "24936",
+      "title": "#230741 - Chach AE, Tudun Satachari.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "230989",
+      "leafCategoryId": "24935",
+      "title": "#230989 - Chach AE",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "230990",
+      "leafCategoryId": "2145",
+      "title": "#230990 - Chach AE",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "230992",
+      "leafCategoryId": "2144",
+      "title": "#230992 - AE Double-Portrait",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "239307",
+      "leafCategoryId": "24941",
+      "title": "#239307 - Central Asia, Chach, King Tarnauch, AE",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "243535",
+      "leafCategoryId": "24941",
+      "title": "#243535 - Chach. Coin with a beast (lion).",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "246907",
+      "leafCategoryId": "24936",
+      "title": "#246907 - Central Asia, Chach, AE unit, 7-8th cent.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "250757",
+      "leafCategoryId": "24941",
+      "title": "#250757 - Chach, cast AE, uniface, unknown ruler.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "25363",
+      "leafCategoryId": "22497",
+      "title": "#25363 - Eastern Sogdiana. Unknown ruler. 7-8 AD.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "255492",
+      "leafCategoryId": "24941",
+      "title": "#255492 - Chach",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "258600",
+      "leafCategoryId": "2145",
+      "title": "#258600 - Chach Unknown ruler 7-8 Ct AD Overstruck",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "267129",
+      "leafCategoryId": "15760",
+      "title": "#267129 - Kai Yuan Tong Bao / Kai Yuan Tong Bao",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "267130",
+      "leafCategoryId": "15760",
+      "title": "#267130 - Kai Yuan Tong Bao / Kai Yuan Tong Bao",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "274391",
+      "leafCategoryId": "914",
+      "title": "#274391 - Chach, AE, Unknown ruler.",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "275472",
+      "leafCategoryId": "804",
+      "title": "#275472 - City of Otrar. AE coin, lion/turgesh's tamgha",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "278082",
+      "leafCategoryId": "24936",
+      "title": "#278082 - Chach, Tudun Satachari 7-8 Ct AD, Sh&K #213 Error",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "281832",
+      "leafCategoryId": "24944",
+      "title": "#281832 - Chach, AE coin",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "283705",
+      "leafCategoryId": "804",
+      "title": "#283705 - City of Otrar. AE coin, lion/turgesh's tamgha",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "284407",
+      "leafCategoryId": "804",
+      "title": "#284407 - City of Otrar, unknown ruler",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "284408",
+      "leafCategoryId": "804",
+      "title": "#284408 - City of Otrar. AE coin , lion/turgesh's tamgha",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "285141",
+      "leafCategoryId": "804",
+      "title": "#285141 - City of Otrar. AE coin , lion/turgesh's tamgha",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "285142",
+      "leafCategoryId": "804",
+      "title": "#285142 - City of Otrar, unknown ruler",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "285854",
+      "leafCategoryId": "914",
+      "title": "#285854 - Chach. Unknown ruler.",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "285880",
+      "leafCategoryId": "24941",
+      "title": "#285880 - Chach, King Tarnauch, AE",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "286426",
+      "leafCategoryId": "24937",
+      "title": "#286426 - Chach AE coin",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "286527",
+      "leafCategoryId": "24941",
+      "title": "#286527 - Chach, King Tarnauch, AE",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "286530",
+      "leafCategoryId": "804",
+      "title": "#286530 - City of Otrar, unknown ruler",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "287058",
+      "leafCategoryId": "914",
+      "title": "#287058 - Chach, AE, Unknown ruler.",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "287110",
+      "leafCategoryId": "914",
+      "title": "#287110 - Chach. Kanka.",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "287232",
+      "leafCategoryId": "804",
+      "title": "#287232 - City of Otrar, unknown ruler",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "288949",
+      "leafCategoryId": "24944",
+      "title": "#288949 - Chach AE, lion",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "289117",
+      "leafCategoryId": "24935",
+      "title": "#289117 - Chach, ruler Nirtanak, 7-8th cent.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "289866",
+      "leafCategoryId": "2145",
+      "title": "#289866 - Chach AE, lion",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "290946",
+      "leafCategoryId": "24935",
+      "title": "#290946 - Chach, ruler Nirtanak, 7-8th cent.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "290947",
+      "leafCategoryId": "2144",
+      "title": "#290947 - Chach, Unknown principality , coins with double portrait",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "291004",
+      "leafCategoryId": "24935",
+      "title": "#291004 - Central Asia, Chach, Nirtanak, 7-8th",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "292446",
+      "leafCategoryId": "2144",
+      "title": "#292446 - Chach, Unknown principality , coins with double portrait",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "292750",
+      "leafCategoryId": "2144",
+      "title": "#292750 - Chach, unknown domain, double portrait, tamgha with cross",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "292772",
+      "leafCategoryId": "24936",
+      "title": "#292772 - Chach, AE, Tudun Satachari, portrait ¾ right",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "292821",
+      "leafCategoryId": "2144",
+      "title": "#292821 - Chach, Unknown principality , coins with double portrait",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "292873",
+      "leafCategoryId": "2144",
+      "title": "#292873 - Chach, Unknown principality , coins with double portrait",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "292915",
+      "leafCategoryId": "24936",
+      "title": "#292915 - Chach AE, Tudun Satachari.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "292919",
+      "leafCategoryId": "24941",
+      "title": "#292919 - Central Asia, Chach, King Tarnauch, AE unit, 7-8th c. AD",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "292930",
+      "leafCategoryId": "24936",
+      "title": "#292930 - Chach AE, Tudun Satachari.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "293020",
+      "leafCategoryId": "24935",
+      "title": "#293020 - Central Asia, Chach, Nirtanak",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "293108",
+      "leafCategoryId": "24936",
+      "title": "#293108 - Chach AE, Tudun Satachari.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "293312",
+      "leafCategoryId": "24944",
+      "title": "#293312 - Chach AE, lion.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "293518",
+      "leafCategoryId": "15760",
+      "title": "#293518 - Semirechie, AE cash, Kai Yuan imitation.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "293867",
+      "leafCategoryId": "2144",
+      "title": "#293867 - Chach, Unknown principality , coins with double portrait",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "293930",
+      "leafCategoryId": "24935",
+      "title": "#293930 - Central Asia, Chach, Nirtanak, 7-8th cent.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "293951",
+      "leafCategoryId": "914",
+      "title": "#293951 - Chach. Kanka.",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "294152",
+      "leafCategoryId": "24936",
+      "title": "#294152 - Chach AE, Tudun Satachari.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "295017",
+      "leafCategoryId": "24941",
+      "title": "#295017 - Central Asia, Chach, King Tarnauch, AE unit, 7-8th c. AD",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "299389",
+      "leafCategoryId": "24941",
+      "title": "#299389 - Chach, cast bronze unit, ruler Tarnavch, m/a",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "299398",
+      "leafCategoryId": "24941",
+      "title": "#299398 - Chach, cast bronze unit, ruler Tarnavch, m/a",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "299479",
+      "leafCategoryId": "24941",
+      "title": "#299479 - Chach, cast bronze unit, ruler Tarnavch, m/a",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "299540",
+      "leafCategoryId": "804",
+      "title": "#299540 - City of Otrar . AE coin, lion\\turgesh's tamgha",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "300013",
+      "leafCategoryId": "24941",
+      "title": "#300013 - Chach, cast bronze unit, ruler Tarnavch, m/a",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "300987",
+      "leafCategoryId": "804",
+      "title": "#300987 - City of Otrar . AE coin, lion\\turgesh's tamgha",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "301206",
+      "leafCategoryId": "804",
+      "title": "#301206 - City of Otrar, unknown ruler",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "302746",
+      "leafCategoryId": "24944",
+      "title": "#302746 - Chach, lion, unknown ruler",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "303198",
+      "leafCategoryId": "24935",
+      "title": "#303198 - Chach, ruler Nirtanak, 7-8th cent.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "303491",
+      "leafCategoryId": "24941",
+      "title": "#303491 - Chach, King Tarnauch, AE",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "306247",
+      "leafCategoryId": "24935",
+      "title": "#306247 - Chach, ruler Nirtanak, 7-8th cent.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "308693",
+      "leafCategoryId": "914",
+      "title": "#308693 - Chach. Kanka.",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "309556",
+      "leafCategoryId": "2145",
+      "title": "#309556 - Chach, Unknown ruler",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "309651",
+      "leafCategoryId": "15760",
+      "title": "#309651 - Semirechie, bronze cash, imitation of Kai Yuan Tong Bao, double, inverted rev.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "310388",
+      "leafCategoryId": "2145",
+      "title": "#310388 - Chach, Unknown ruler",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "310391",
+      "leafCategoryId": "24935",
+      "title": "#310391 - Central Asia, Chach, Nirtanak",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "310393",
+      "leafCategoryId": "24941",
+      "title": "#310393 - Chach, Unknown ruler",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "310397",
+      "leafCategoryId": "2144",
+      "title": "#310397 - Chach, Unknown principality , coins with double portrait",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "311979",
+      "leafCategoryId": "914",
+      "title": "#311979 - Chach, domain Kanka, unidentified ruler",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "312074",
+      "leafCategoryId": "24941",
+      "title": "#312074 - Chach AE coin",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "313697",
+      "leafCategoryId": "2144",
+      "title": "#313697 - Chach, unknown principality, double portrait type",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "313698",
+      "leafCategoryId": "24941",
+      "title": "#313698 - Central Asia, Chach, King Tarnauch, AE unit, 7-8th c. AD",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "314606",
+      "leafCategoryId": "2145",
+      "title": "#314606 - Chach AE, lion.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "315174",
+      "leafCategoryId": "24941",
+      "title": "#315174 - Central Asia, Chach, King Tarnauch, AE unit, 7-8th c. AD",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "316429",
+      "leafCategoryId": "22497",
+      "title": "#316429 - Turko-Sogdian coin of Soghd area",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "317329",
+      "leafCategoryId": "22497",
+      "title": "#317329 - AE, pair portrait/turk runas.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "317553",
+      "leafCategoryId": "24935",
+      "title": "#317553 - Central Asia, Chach, Nirtanak, 7th-8th century",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "321499",
+      "leafCategoryId": "24941",
+      "title": "#321499 - Chach, cast bronze unit, ruler Tarnavch",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "322197",
+      "leafCategoryId": "804",
+      "title": "#322197 - Coin with a paired portrait of the city of Otrar",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "322574",
+      "leafCategoryId": "15760",
+      "title": "#322574 - Semirechie, AE Local Kai Yuan Tong Bao KYTB imitation. Stolen",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "322575",
+      "leafCategoryId": "15760",
+      "title": "#322575 - Semirechie, AE Local Kai Yuan Tong Bao KYTB imitation. Stolen. Stolen",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "322933",
+      "leafCategoryId": "914",
+      "title": "#322933 - Chach. Kanka.",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "322934",
+      "leafCategoryId": "24944",
+      "title": "#322934 - Type 9: beast right / tamgha, ruler of Chach",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "322936",
+      "leafCategoryId": "2145",
+      "title": "#322936 - Central Asia, Chach",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "324700",
+      "leafCategoryId": "2145",
+      "title": "#324700 - Central Asia, Chach",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "324701",
+      "leafCategoryId": "2145",
+      "title": "#324701 - Central Asia, Chach",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "326523",
+      "leafCategoryId": "24937",
+      "title": "#326523 - Ruler Tudun, Rev. Striking Error",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "326587",
+      "leafCategoryId": "914",
+      "title": "#326587 - Unknown ruler of Lyre-tamgha dynasty, Chach, Overstruck (?)",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "326588",
+      "leafCategoryId": "24937",
+      "title": "#326588 - Chach, poorly preserved Ruler Tudun w/ tamgha partially struck on Rev.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "326825",
+      "leafCategoryId": "24941",
+      "title": "#326825 - Tarnavch, Obverse double-tailed leopard (Casting error)",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "327967",
+      "leafCategoryId": "804",
+      "title": "#327967 - Ancient Turkic coin, Otrar",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "328144",
+      "leafCategoryId": "804",
+      "title": "#328144 - Otrar, unknown Tamga, Lion",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "330223",
+      "leafCategoryId": "22497",
+      "title": "#330223 - Soghd, Fiknan? Circa 625-750 AD. Double portrait",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "330225",
+      "leafCategoryId": "804",
+      "title": "#330225 - Sogdiana, Otrar. Circa 700-800 AD",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "330564",
+      "leafCategoryId": "2144",
+      "title": "#330564 - Chach, Pair portrait w. additional tamgha, 7-8th Ct AD, 22mm, 2.35g (broken)",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "332418",
+      "leafCategoryId": "22497",
+      "title": "#332418 - Soghd, AE, pare portrait. 7-8th AD",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "332463",
+      "leafCategoryId": "914",
+      "title": "#332463 - Chach. Kanka.",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "333112",
+      "leafCategoryId": "24944",
+      "title": "#333112 - Chach, lion, unknown ruler?",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "333208",
+      "leafCategoryId": "22497",
+      "title": "#333208 - Soghd, AE, pare portrait. 7-8th AD",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "333211",
+      "leafCategoryId": "2144",
+      "title": "#333211 - Chach, unknown principality, double portrait type",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "333212",
+      "leafCategoryId": "2144",
+      "title": "#333212 - Chach, unknown principality, double portrait type",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "334986",
+      "leafCategoryId": "22498",
+      "title": "#334986 - Zaamin AE. Smir 1480? AE.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "335186",
+      "leafCategoryId": "2145",
+      "title": "#335186 - Chach AE. Type?",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "338026",
+      "leafCategoryId": "24936",
+      "title": "#338026 - Tudun Satachari, 7th - 8th",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "3388",
+      "leafCategoryId": "804",
+      "title": "#3388 - Chach: City of Otrar",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "3391",
+      "leafCategoryId": "914",
+      "title": "#3391 - Chach: Domain Kanka City",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "339459",
+      "leafCategoryId": "22498",
+      "title": "#339459 - Zaamin AE, unknown ruler.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "339710",
+      "leafCategoryId": "24936",
+      "title": "#339710 - Shagalov/Kuznetsov \"Catalogue of coins of Chach\"",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "339712",
+      "leafCategoryId": "24935",
+      "title": "#339712 - Shagalov/Kuznetsov \"Catalogue of coins of Chach...\" Group 6 Type 2",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "339713",
+      "leafCategoryId": "24944",
+      "title": "#339713 - Shagalov/Kuznetsov \"Catalogue of coins of Chach\" Group 6 Type 9",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "345213",
+      "leafCategoryId": "24935",
+      "title": "#345213 - Central Asia, Chach, Nirtanak, 7-8th",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "345214",
+      "leafCategoryId": "24941",
+      "title": "#345214 - Central Asia, Chach, King Tarnauch, AE unit, 7-8th c. AD",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "345215",
+      "leafCategoryId": "24944",
+      "title": "#345215 - Chach, lion, unknown ruler",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "345229",
+      "leafCategoryId": "914",
+      "title": "#345229 - Chach AE, group3 type 2.",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "346096",
+      "leafCategoryId": "914",
+      "title": "#346096 - Kanka, AE, unknown ruler.",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "346101",
+      "leafCategoryId": "914",
+      "title": "#346101 - Chach, Kanka, unknown ruler",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "346164",
+      "leafCategoryId": "24936",
+      "title": "#346164 - Chach, Tudun Satachari",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "346165",
+      "leafCategoryId": "24941",
+      "title": "#346165 - Chach, cast bronze unit, ruler Tarnavch",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "346289",
+      "leafCategoryId": "24936",
+      "title": "#346289 - Chach, Tudun Satachari",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "346547",
+      "leafCategoryId": "24936",
+      "title": "#346547 - AE, Tudun Satachari",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "346548",
+      "leafCategoryId": "914",
+      "title": "#346548 - Kanka, uncnown ruler",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "346603",
+      "leafCategoryId": "914",
+      "title": "#346603 - Chach. Kanka.",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "346604",
+      "leafCategoryId": "24935",
+      "title": "#346604 - Chach, ruler Nirtanak",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "346605",
+      "leafCategoryId": "24935",
+      "title": "#346605 - Chach, Nirtanak",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "346691",
+      "leafCategoryId": "24944",
+      "title": "#346691 - Chach, AE, Satawchar(Stwchar)",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "346694",
+      "leafCategoryId": "24935",
+      "title": "#346694 - Chach, Nirtanak",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "346695",
+      "leafCategoryId": "24936",
+      "title": "#346695 - AE, Tudun Satachari",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "346867",
+      "leafCategoryId": "22498",
+      "title": "#346867 - Zaamin AE, Farnbag, with Nestorian cross, and tamgha.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "347329",
+      "leafCategoryId": "914",
+      "title": "#347329 - Kanka, AE, unknown ruler.",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "347368",
+      "leafCategoryId": "2145",
+      "title": "#347368 - Chach, AE, Satawchar",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "347369",
+      "leafCategoryId": "24936",
+      "title": "#347369 - Chach, Tudun Satachari",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "347477",
+      "leafCategoryId": "2144",
+      "title": "#347477 - Chach, Unknown principality , coins with double portrait",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "347545",
+      "leafCategoryId": "24937",
+      "title": "#347545 - Tudun",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "348308",
+      "leafCategoryId": "2144",
+      "title": "#348308 - Group 5 type 1, Chach, Unknown principality , coins with double portrait.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "348309",
+      "leafCategoryId": "2145",
+      "title": "#348309 - Group 6 type 4, Chach, Tudun.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "350956",
+      "leafCategoryId": "24936",
+      "title": "#350956 - Chach, Tudun Satachari",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "351096",
+      "leafCategoryId": "2144",
+      "title": "#351096 - Chach, unknown principality, double portrait type",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "351097",
+      "leafCategoryId": "2144",
+      "title": "#351097 - Chach, unknown principality, double portrait type",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "351285",
+      "leafCategoryId": "24936",
+      "title": "#351285 - Chach, Tudun Satachari",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "351290",
+      "leafCategoryId": "2145",
+      "title": "#351290 - Chach",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "351292",
+      "leafCategoryId": "2145",
+      "title": "#351292 - Chach",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "352149",
+      "leafCategoryId": "24935",
+      "title": "#352149 - Central Asia, Chach, Nirtanak, 7-8th",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "352152",
+      "leafCategoryId": "24937",
+      "title": "#352152 - Unknown ruler",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "352153",
+      "leafCategoryId": "24944",
+      "title": "#352153 - Chach, lion, unknown ruler",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "35220",
+      "leafCategoryId": "2144",
+      "title": "#35220 - Chach AE coin",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "35222",
+      "leafCategoryId": "24935",
+      "title": "#35222 - Chach AE coin",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "353229",
+      "leafCategoryId": "2144",
+      "title": "#353229 - Chach, unknown principality, double portrait type",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "353232",
+      "leafCategoryId": "24937",
+      "title": "#353232 - Chach Type 4: portrait ¾ to right with special headdress / tamgha, ruler Tudun",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "353241",
+      "leafCategoryId": "24936",
+      "title": "#353241 - Chach, Tudun Satachari",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "353345",
+      "leafCategoryId": "24944",
+      "title": "#353345 - Türk ruler of Chach",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "353373",
+      "leafCategoryId": "2144",
+      "title": "#353373 - Chach, unknown principality, double portrait type",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "353375",
+      "leafCategoryId": "24941",
+      "title": "#353375 - Central Asia, Chach, King Tarnauch, AE unit, 7-8th c.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "353376",
+      "leafCategoryId": "24941",
+      "title": "#353376 - Central Asia, Chach, King Tarnauch, AE unit, 7-8th c.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "353377",
+      "leafCategoryId": "24941",
+      "title": "#353377 - Central Asia, Chach, King Tarnauch, AE unit, 7-8th c.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "353378",
+      "leafCategoryId": "24941",
+      "title": "#353378 - Central Asia, Chach, King Tarnauch, AE unit, 7-8th c.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "355197",
+      "leafCategoryId": "24944",
+      "title": "#355197 - Chach, lion, unknown ruler",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "355198",
+      "leafCategoryId": "24936",
+      "title": "#355198 - Chach, Tudun Satachari",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "355199",
+      "leafCategoryId": "24935",
+      "title": "#355199 - Central Asia, Chach, Nirtanak, 7-8th",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "357590",
+      "leafCategoryId": "914",
+      "title": "#357590 - Kanka, AE, unknown ruler.",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "357721",
+      "leafCategoryId": "22497",
+      "title": "#357721 - Soghd, Fiknan, Circa 625-750 AD. Double portrait",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "359860",
+      "leafCategoryId": "24941",
+      "title": "#359860 - Central Asia, Chach, King Tarnauch, AE unit, 7-8th c. AD",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "359861",
+      "leafCategoryId": "24941",
+      "title": "#359861 - Central Asia, Chach, King Tarnauch, AE unit, 7-8th c. AD",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "359862",
+      "leafCategoryId": "24941",
+      "title": "#359862 - Central Asia, Chach, King Tarnauch, AE unit, 7-8th c. AD",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "359863",
+      "leafCategoryId": "24941",
+      "title": "#359863 - Central Asia, Chach, King Tarnauch, AE unit, 7-8th c. AD",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "359864",
+      "leafCategoryId": "24941",
+      "title": "#359864 - Central Asia, Chach, King Tarnauch, AE unit, 7-8th c. AD",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "36109",
+      "leafCategoryId": "24944",
+      "title": "#36109 - Chach AE coin of a rare type.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "363981",
+      "leafCategoryId": "22497",
+      "title": "#363981 - Eastern Soghd, AE, double portrait/turkic runas.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "366035",
+      "leafCategoryId": "22497",
+      "title": "#366035 - Central Asia, Soghd, AE unit, Fiknan, double portrait/runas",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "36671",
+      "leafCategoryId": "914",
+      "title": "#36671 - Kanka, AE, unknown ruler with long hair.",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "36769",
+      "leafCategoryId": "15760",
+      "title": "#36769 - Kai Yuan Tong Bao, local imitation",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "374079",
+      "leafCategoryId": "24941",
+      "title": "#374079 - Central Asia, Chach, King Tarnauch, AE unit, 7-8th c. AD",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "374080",
+      "leafCategoryId": "24941",
+      "title": "#374080 - Central Asia, Chach, King Tarnauch, AE unit, 7-8th c. AD",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "381431",
+      "leafCategoryId": "15760",
+      "title": "#381431 - Semirech'e, Double Kaiyuan Tongbao, Imitation, 10.13g",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "381432",
+      "leafCategoryId": "15760",
+      "title": "#381432 - Semirech'e, Double Kaiyuan Tongbao, Imitation, 10.69g",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "381433",
+      "leafCategoryId": "15760",
+      "title": "#381433 - Semirech'e, Double Kaiyuan Tongbao, Imitation, 10.12g",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "381450",
+      "leafCategoryId": "15760",
+      "title": "#381450 - Semirech'e, Double Kaiyuan Tongbao, Imitation, 7.7g",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "381451",
+      "leafCategoryId": "15760",
+      "title": "#381451 - Semirech'e, Double Kaiyuan Tongbao, Imitation, 9g",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "382621",
+      "leafCategoryId": "22497",
+      "title": "#382621 - Soghd, Fiknan, Circa 625-750 AD. Double portrait",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "383156",
+      "leafCategoryId": "15760",
+      "title": "#383156 - Semirech'e, Double Reverse KYTB, AE, Imitation",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "383159",
+      "leafCategoryId": "15760",
+      "title": "#383159 - Semirech'e, Double Kaiyuan Tongbao, Imitation, 9.17g",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "383160",
+      "leafCategoryId": "15760",
+      "title": "#383160 - Semirech'e, Double Kaiyuan Tongbao, Imitation, 7.18g",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "387543",
+      "leafCategoryId": "22498",
+      "title": "#387543 - Samarqand/Zaamin AE, unknown ruler.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "387545",
+      "leafCategoryId": "22498",
+      "title": "#387545 - Samarqand/Zaamin AE, unknown ruler.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "387564",
+      "leafCategoryId": "22497",
+      "title": "#387564 - Soghd, AE unit, Fiknan, double portrait/runas",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "387571",
+      "leafCategoryId": "22498",
+      "title": "#387571 - Zaamin AE, unknown ruler.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "387572",
+      "leafCategoryId": "22498",
+      "title": "#387572 - Samarqand/Zaamin AE, unknown ruler.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "387580",
+      "leafCategoryId": "22498",
+      "title": "#387580 - Zaamin, AE, unknown ruler",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "387749",
+      "leafCategoryId": "2145",
+      "title": "#387749 - Central Asia, Chach",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "387808",
+      "leafCategoryId": "22498",
+      "title": "#387808 - Zaamin AE, unknown ruler",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "387973",
+      "leafCategoryId": "24941",
+      "title": "#387973 - Central Asia, Chach, King Tarnauch, AE unit, 7-8th c. AD",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "388110",
+      "leafCategoryId": "914",
+      "title": "#388110 - Chach. Kanka.",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "388122",
+      "leafCategoryId": "2144",
+      "title": "#388122 - Сhach, unknown principality, double portrait type",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "388344",
+      "leafCategoryId": "24944",
+      "title": "#388344 - Chach, lion, unknown ruler",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "388400",
+      "leafCategoryId": "914",
+      "title": "#388400 - Chach, Kanka domain, AE unit, unidentified ruler.",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "388412",
+      "leafCategoryId": "914",
+      "title": "#388412 - Kanka, AE, unknown ruler.",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "388420",
+      "leafCategoryId": "2144",
+      "title": "#388420 - Chach, unknown principality, double portrait type",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "388450",
+      "leafCategoryId": "914",
+      "title": "#388450 - Kanka, unknown ruler",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "388461",
+      "leafCategoryId": "914",
+      "title": "#388461 - Chach, Kanka domain, AE unit,",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "388464",
+      "leafCategoryId": "24936",
+      "title": "#388464 - Chach, Tudun Satachari",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "388465",
+      "leafCategoryId": "24936",
+      "title": "#388465 - Chach, Tudun Satachari",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "388468",
+      "leafCategoryId": "914",
+      "title": "#388468 - Chach, Kanka domain, AE unit, unidentified ruler.",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "388469",
+      "leafCategoryId": "914",
+      "title": "#388469 - Chach, Kanka domain, AE unit,",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "388497",
+      "leafCategoryId": "2144",
+      "title": "#388497 - Сhach, unknown principality, double portrait type",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "388512",
+      "leafCategoryId": "914",
+      "title": "#388512 - Chach, Kanka domain, AE unit,",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "388561",
+      "leafCategoryId": "24936",
+      "title": "#388561 - Chach, Tudun Satachari",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "388563",
+      "leafCategoryId": "22498",
+      "title": "#388563 - Samarqand/Zaamin AE, unknown ruler.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "388577",
+      "leafCategoryId": "24937",
+      "title": "#388577 - Chach, poorly preserved Ruler Tudun",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "388579",
+      "leafCategoryId": "24937",
+      "title": "#388579 - Chach, AE Coin, uncnown ruler",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "388598",
+      "leafCategoryId": "22498",
+      "title": "#388598 - Samarqand/Zaamin AE, unknown ruler.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "388600",
+      "leafCategoryId": "22498",
+      "title": "#388600 - Zaamin AE, unknown ruler.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "388602",
+      "leafCategoryId": "22498",
+      "title": "#388602 - Samarqand/Zaamin AE, unknown ruler.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "39561",
+      "leafCategoryId": "804",
+      "title": "#39561 - Otrar AE coin with Runic letters.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "39966",
+      "leafCategoryId": "2144",
+      "title": "#39966 - Chach, unknown domain, double portrait, tamgha with cross.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "39967",
+      "leafCategoryId": "2144",
+      "title": "#39967 - Chach, unknown domain, double portrait AE coin.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "40181",
+      "leafCategoryId": "24941",
+      "title": "#40181 - Unlisted biggest variety of Tarnavch coin.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "40240",
+      "leafCategoryId": "914",
+      "title": "#40240 - Kanka, Chach 7-8 c. unknown ruler",
+      "reason": "Kanka category record-level image review: non-square local coinage; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "47449",
+      "leafCategoryId": "24936",
+      "title": "#47449 - Chach Tudun Satachari. Portrait to the left",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "49951",
+      "leafCategoryId": "22497",
+      "title": "#49951 - Soghdian double portrait coin.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "55613",
+      "leafCategoryId": "24937",
+      "title": "#55613 - Chach, AE, unknown ruler.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "58221",
+      "leafCategoryId": "2144",
+      "title": "#58221 - AE with double portrait, cross above tamgha.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "61689",
+      "leafCategoryId": "22498",
+      "title": "#61689 - Zaamin, AE coin of unknown ruler.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "67072",
+      "leafCategoryId": "22498",
+      "title": "#67072 - Zaamin, AE, unknown ruler.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "72484",
+      "leafCategoryId": "24937",
+      "title": "#72484 - Chach",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "72485",
+      "leafCategoryId": "24935",
+      "title": "#72485 - Chach",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "75916",
+      "leafCategoryId": "24937",
+      "title": "#75916 - Chach, AE, unknown ruler",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "77704",
+      "leafCategoryId": "22497",
+      "title": "#77704 - SOGDIANA: Anonymous AE with double portrait.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "81155",
+      "leafCategoryId": "22498",
+      "title": "#81155 - Zaamin, AE portrait",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "81163",
+      "leafCategoryId": "24937",
+      "title": "#81163 - Chach, AE, Unknown ruler 7-8Ct AD.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "83735",
+      "leafCategoryId": "22498",
+      "title": "#83735 - Zaamin? AE coin",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "86941",
+      "leafCategoryId": "22498",
+      "title": "#86941 - Zaamin, AE, unknown ruler.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "86942",
+      "leafCategoryId": "22498",
+      "title": "#86942 - Zaamin, AE, unknown ruler.",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "87868",
+      "leafCategoryId": "24935",
+      "title": "#87868 - Chach, Nirtanak",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "8949",
+      "leafCategoryId": "804",
+      "title": "#8949 - City of Otrar, Smirnova 1580",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "90512",
+      "leafCategoryId": "24941",
+      "title": "#90512 - Chach",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "94905",
+      "leafCategoryId": "15760",
+      "title": "#94905 - Imitation of type \"Kaiyuan tongbao\".",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "9683",
+      "leafCategoryId": "804",
+      "title": "#9683 - Central Asia AE coin, (Otrar), Turgesh's tamgha",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "98312",
+      "leafCategoryId": "2144",
+      "title": "#98312 - Unknown principality I, coins with double portrait",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "98313",
+      "leafCategoryId": "24941",
+      "title": "#98313 - Chach, cast AE, ruler Tarnavch?",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "98561",
+      "leafCategoryId": "24941",
+      "title": "#98561 - Chach, cast AE, ruler Tarnavch",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    },
+    {
+      "id": "98564",
+      "leafCategoryId": "24935",
+      "title": "#98564 - Chach, Nirtanak",
+      "reason": "record-level image review: local solid/round coinage without square-hole cash-tradition morphology; retain as related regional coinage, outside main corpus"
+    }
+  ],
+  "relatedCategorySummary": [
+    {
+      "categoryId": "804",
+      "title": "Otrar",
+      "reviewedRecords": 30,
+      "mainCorpusImports": 0,
+      "classification": "related_non_square_regional_coinage",
+      "reviewBasis": "contact-sheet plus record-level visual review of downloaded target images"
+    },
+    {
+      "categoryId": "914",
+      "title": "Kanka",
+      "reviewedRecords": 45,
+      "mainCorpusImports": 0,
+      "classification": "related_non_square_regional_coinage",
+      "reviewBasis": "contact-sheet plus record-level visual review of downloaded target images"
+    },
+    {
+      "categoryId": "2144",
+      "title": "Unknown principality I, coins with double portrait",
+      "reviewedRecords": 36,
+      "mainCorpusImports": 0,
+      "classification": "related_non_square_regional_coinage",
+      "reviewBasis": "contact-sheet plus record-level visual review of downloaded target images"
+    },
+    {
+      "categoryId": "2145",
+      "title": "Chach",
+      "reviewedRecords": 20,
+      "mainCorpusImports": 0,
+      "classification": "related_non_square_regional_coinage",
+      "reviewBasis": "contact-sheet plus record-level visual review of downloaded target images"
+    },
+    {
+      "categoryId": "15760",
+      "title": "double reverse",
+      "reviewedRecords": 21,
+      "mainCorpusImports": 0,
+      "classification": "related_non_square_regional_coinage",
+      "reviewBasis": "contact-sheet plus record-level visual review of downloaded target images"
+    },
+    {
+      "categoryId": "22497",
+      "title": "Fiknan, tamgha // double portrait. 2 nd quarter of the 7 th to the middle of the 8 th C.",
+      "reviewedRecords": 20,
+      "mainCorpusImports": 0,
+      "classification": "related_non_square_regional_coinage",
+      "reviewBasis": "contact-sheet plus record-level visual review of downloaded target images"
+    },
+    {
+      "categoryId": "22498",
+      "title": "Zaamin, tamgha // Portrait ¾ left",
+      "reviewedRecords": 26,
+      "mainCorpusImports": 0,
+      "classification": "related_non_square_regional_coinage",
+      "reviewBasis": "contact-sheet plus record-level visual review of downloaded target images"
+    },
+    {
+      "categoryId": "24935",
+      "title": "Type 2: portrait ¾ to right / tamgha, ruler N/Zirtanak/Mokhedu",
+      "reviewedRecords": 27,
+      "mainCorpusImports": 0,
+      "classification": "related_non_square_regional_coinage",
+      "reviewBasis": "contact-sheet plus record-level visual review of downloaded target images"
+    },
+    {
+      "categoryId": "24936",
+      "title": "Type 3: portrait ¾ to right / tamgha, ruler Tudun Satachari",
+      "reviewedRecords": 27,
+      "mainCorpusImports": 0,
+      "classification": "related_non_square_regional_coinage",
+      "reviewBasis": "contact-sheet plus record-level visual review of downloaded target images"
+    },
+    {
+      "categoryId": "24937",
+      "title": "Type 4: portrait ¾ to right with special headdress / tamgha, ruler Tudun",
+      "reviewedRecords": 18,
+      "mainCorpusImports": 0,
+      "classification": "related_non_square_regional_coinage",
+      "reviewBasis": "contact-sheet plus record-level visual review of downloaded target images"
+    },
+    {
+      "categoryId": "24941",
+      "title": "Type 8: leopard right / tamgha, ruler Tarnavch",
+      "reviewedRecords": 47,
+      "mainCorpusImports": 0,
+      "classification": "related_non_square_regional_coinage",
+      "reviewBasis": "contact-sheet plus record-level visual review of downloaded target images"
+    },
+    {
+      "categoryId": "24944",
+      "title": "Type 9: beast right / tamgha, ruler of Chach",
+      "reviewedRecords": 20,
+      "mainCorpusImports": 0,
+      "classification": "related_non_square_regional_coinage",
+      "reviewBasis": "contact-sheet plus record-level visual review of downloaded target images"
+    }
+  ],
+  "deferredRules": [
+    "Related local Chach/Otrar/Ustrushana coinage remains source-preserved but outside main corpus unless a later record demonstrates Chinese-style square-hole-tradition morphology.",
+    "Kanka #1070 is an imported-coin occurrence claim; it does not imply local minting at Kanka or Chach."
+  ]
+}

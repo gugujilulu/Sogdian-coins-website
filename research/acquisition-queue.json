@@ -3,7 +3,7 @@
   "scope_version": "1.0.0",
   "last_checked_at": "2026-09-16",
   "principle": "Acquire source evidence first, then review scope/identity, then download only candidate/included images where practical. Category counts are coverage metadata, never specimen counts.",
-  "current_stage": "zeno_503_stage2_record_level_visual_review",
+  "current_stage": "zeno_503_stage3_false_positive_pruning_and_remaining_mixed_review",
   "queue": [
     {
       "id": "zeno-503-tree-census",
@@ -322,7 +322,7 @@
     "scope_relevant_gap_recovery_categories": 7,
     "preimage_high_priority_targets": 811,
     "preimage_visual_review_targets": 535,
-    "note": "The original #503 crawl observed 3,891 IDs; bounded recovery added 93 non-overlapping records for 3,984 observed/recovered metadata records. Stage-1 imported 584 source records; stage-2 record-level visual review imported 80 more and classified 11 circular/special-aperture records as related/held. 762 downloaded images plus one image-missing target remain unresolved; non-target repeated-page gaps keep the root census non-complete.",
+    "note": "#503 working corpus remains 3,984 observed/recovered metadata records. Stage-1 imported 584, stage-2 imported 80, and stage-3 pruned 337 visually reviewed non-square regional coin records while importing Zeno #1070 as an explicit Kanka Kaiyuan find-context record. 424 downloaded images plus one image-missing target remain unresolved.",
     "target_images_downloaded": 1439,
     "valid_target_images_after_repair": 1437,
     "stage1_source_records_selected": 586,
@@ -332,7 +332,10 @@
     "stage2_source_records_reviewed": 91,
     "stage2_atlas_import_records": 80,
     "stage2_related_or_held_records": 11,
-    "remaining_downloaded_images_pending_record_level_review": 762,
-    "remaining_target_without_valid_image": 1
+    "remaining_downloaded_images_pending_record_level_review": 424,
+    "remaining_target_without_valid_image": 1,
+    "stage3_source_records_reviewed": 338,
+    "stage3_atlas_import_records": 1,
+    "stage3_related_outside_main_corpus": 337
   }
 }

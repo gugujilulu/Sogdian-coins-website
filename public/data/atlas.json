@@ -1291,6 +1291,31 @@
           "role": "Modern academic framework; exact attribution remains under review"
         }
       ]
+    },
+    {
+      "id": "regional-east-asian-imports",
+      "title": "East Asian cash in Central Asian contexts",
+      "zh": "中亚考古／流通环境中的东亚方孔钱",
+      "region": "Central Asia · context-specific finds",
+      "start": 221,
+      "end": 1643,
+      "dateLabel": "221–1643 project window; each imported coin retains its own issue/context dates",
+      "description": "Imported East Asian square-hole cash recorded from Central Asian archaeological, settlement, hoard or reliable circulation contexts. This family stores regional occurrences, not a duplicate catalogue of Chinese coinage.",
+      "anchor": {
+        "placeId": "chach",
+        "role": "Regional orientation · 区域浏览锚点",
+        "note": "用于区域浏览；具体出土语境以 source claim 为准，不把展示锚点当成出土地或铸币地。"
+      },
+      "image": "/coins/zeno/1070.jpg",
+      "status": "source_linked_context_family",
+      "question": "Issue place, find context and local circulation must remain separate. Individual records require archaeological/source validation; auction location never substitutes for findspot.",
+      "publications": [
+        {
+          "title": "Zeno #1070 · Kanka Kaiyuan find report",
+          "url": "https://www.zeno.ru/showphoto.php?photo=1070",
+          "role": "Source-reported regional find context; archaeological verification pending"
+        }
+      ]
     }
   ],
   "variants": [
@@ -2175,6 +2200,15 @@
       "status": "source_group",
       "facets": [],
       "description": "Zeno source category retained as a source grouping after stage-2 record-level image review; it is not automatically an academic variant."
+    },
+    {
+      "id": "zeno503-cat-914-kaiyuan-import",
+      "familyId": "regional-east-asian-imports",
+      "title": "Kanka · Kaiyuan Tongbao site-find record",
+      "reference": "Zeno category 914 / record-level subset",
+      "status": "source_group",
+      "facets": [],
+      "description": "Record-level subset of the Zeno Kanka category. Zeno #1070 explicitly reports a Kaiyuan Tongbao find from Kanka site in the Tashkent oasis; other Kanka category records reviewed here are non-square local coinage and remain related only."
     }
   ],
   "specimens": [
@@ -35324,6 +35358,49 @@
         "#503 stage-2 record-level visual review"
       ],
       "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-1070",
+      "familyId": "regional-east-asian-imports",
+      "variantId": "zeno503-cat-914-kaiyuan-import",
+      "title": "Kai-yuan tong-bao, Central Asia finding",
+      "weightG": 3.44,
+      "diameterMm": 24.7,
+      "images": [
+        {
+          "id": "z1070",
+          "path": "/coins/zeno/1070.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/914/2kaiyuan-tashkent.jpg",
+          "width": 2369,
+          "height": 1205,
+          "credit": "charm",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "f5f3eba24febe3d5d6d1c4ced79c271d5a48ad004e3a6f2cfa6bfa69005e56d2"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 1070",
+          "url": "https://www.zeno.ru/showphoto.php?photo=1070",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "From Kanka site, 2001 - ancient city in Tashkent oasis (Uzbekistan), which is the center of the Chach",
+      "catalogue": "Zeno category 914 · Kanka",
+      "facets": [
+        "Imported coin · 区域输入钱",
+        "#503 stage-3 site-context review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique",
+      "coinRole": "imported_coin",
+      "findContextClaim": {
+        "rawText": "From Kanka site, 2001 - ancient city in Tashkent oasis (Uzbekistan), which is the center of the Chach",
+        "status": "source_reported_unverified",
+        "place": "Kanka site / Tashkent oasis",
+        "note": "No precise coordinate or excavation context is inferred beyond the source wording."
+      }
     }
   ],
   "places": [

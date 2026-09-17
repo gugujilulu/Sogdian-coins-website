@@ -1,12 +1,12 @@
 {
-  "version": "1.2.0",
+  "version": "1.3.0",
   "base_commit": "91de65720c09d9b427d6eb27e2970158f74abf2c",
   "last_checked_at": "2026-09-16",
   "summary": {
-    "families": 44,
-    "specimen_records": 934,
-    "images": 937,
-    "source_groups": 98
+    "families": 45,
+    "specimen_records": 935,
+    "images": 938,
+    "source_groups": 99
   },
   "family_scope_map": [
     {
@@ -536,6 +536,18 @@
       "coin_role": "uncertain",
       "mapping_status": "stage2_record_level_visual",
       "note": "Stage-2 #503 mapping based on source taxonomy plus individual image review; academic issuer/type crosswalk remains source-traceable."
+    },
+    {
+      "family_id": "regional-east-asian-imports",
+      "title": "East Asian cash in Central Asian contexts",
+      "specimen_records": 1,
+      "zone": "core_central_asia",
+      "political_entity": "external_east_asian_issue",
+      "region": "Central Asia · context-specific finds",
+      "inclusion_status": "included",
+      "coin_role": "imported_coin",
+      "mapping_status": "stage3_context_source_linked",
+      "note": "Regional occurrence family; Kanka #1070 is a source-reported find. It does not imply local minting or a Chach issue."
     }
   ],
   "zeno_795_held_records": {
@@ -574,5 +586,13 @@
     "remaining_downloaded_images_pending_record_level_review": 762,
     "remaining_target_without_valid_image": 1,
     "review_file": "research/zeno/review-503-stage2.json"
+  },
+  "zeno_503_stage3": {
+    "reviewed_source_records": 338,
+    "atlas_import_records": 1,
+    "related_outside_main_corpus": 337,
+    "remaining_downloaded_images_pending_record_level_review": 424,
+    "remaining_target_without_valid_image": 1,
+    "review_file": "research/zeno/review-503-stage3.json"
   }
 }

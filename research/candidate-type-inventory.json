@@ -1155,13 +1155,13 @@
       "attribution_status": "context_dependent",
       "competing_attributions": [],
       "coin_role": "imported_coin",
-      "inclusion_status": "candidate",
+      "inclusion_status": "included_stage3_context_record",
       "source_ids": [
         "iicas"
       ],
       "bibliography_ids": [],
-      "notes": "Do not import the global Chinese cash catalogue. Create records only for evidenced regional finds, hoards, circulation, or local imitation.",
-      "current_atlas_family_id": null
+      "notes": "Do not import the global Chinese cash catalogue. Create records only for evidenced regional finds, hoards, circulation, or local imitation. Zeno #1070 is now linked as a source-reported Kaiyuan Tongbao find from Kanka site; this remains an occurrence record, not evidence of local minting.",
+      "current_atlas_family_id": "regional-east-asian-imports"
     },
     {
       "family_id": "cand-fansar",

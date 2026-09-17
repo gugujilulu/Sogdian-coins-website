@@ -40,6 +40,10 @@ for s in d['specimens']:
   if not db.execute('SELECT 1 FROM external_record WHERE id=?',(eid,)).fetchone():add('external_record',id=eid,provider='Zeno' if 'zeno.ru' in url else 'external',record_key=url,url=url,record_kind='specimen',verification_status='directly_checked' if src['relation']=='same_specimen' else 'reported_by_source',checked_on='2026-09-16',citation_id=cite(url,src['label']))
   add('specimen_external_record',specimen_id=s['id'],external_record_id=eid,relation=src['relation'])
  for feature in s['facets']:add('specimen_feature',specimen_id=s['id'],label=feature,citation_id=ci)
+ if s.get('findContextClaim'):
+  fc=s['findContextClaim'];fid='find-'+s['id']
+  add('find_context',id=fid,kind='reported_find',place_id=None,description=fc.get('rawText') or fc.get('note') or 'Source-reported find context',citation_id=ci,confidence='unassessed')
+  add('specimen_find_claim',specimen_id=s['id'],find_context_id=fid,citation_id=ci,note=(fc.get('place') or '')+'; '+(fc.get('note') or ''))
 # Every saved Zeno manifest becomes an independently scoped coverage snapshot.
 # This keeps Lady Nana 14/14 separate from later Semirechye batches and permits
 # partial crawls to be represented without claiming category completeness.

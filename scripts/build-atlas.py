@@ -178,6 +178,34 @@ for decision in review5032['records']:
  a['specimens'].append({'id':sid,'familyId':decision['familyId'],'variantId':decision['sourceGroupId'],'title':title,'weightG':r.get('weightG'),'diameterMm':r.get('diameterMm'),'images':[pic],'sources':[source],'description':r.get('photoNote') or r.get('description') or 'Primary Zeno source record; source taxonomy preserved.','catalogue':'Zeno category '+decision['leafCategoryId']+' · '+decision['leafCategoryTitle'],'facets':['Zeno source group '+decision['leafCategoryId']+' · '+decision['leafCategoryTitle'],'#503 stage-2 record-level visual review'],'duplicateStatus':decision.get('duplicateStatus','source_record_not_proven_unique')})
  existing_specimen_ids.add(sid)
 
+
+# Central Asia #503 stage-3: prune large false-positive regional coin groups
+# from the unresolved image queue and import the explicit Kanka Kaiyuan site-find
+# as an imported-coin occurrence. Related solid local coinage remains outside main count.
+review5033=read('research/zeno/review-503-stage3.json')
+existing_family_ids={f['id'] for f in a['families']}
+for fd in review5033['families']:
+ if fd['id'] in existing_family_ids:continue
+ ds=[d for d in review5033['records'] if d['familyId']==fd['id']]
+ image=ds[0]['image']['path'] if ds else None
+ anchor={'placeId':fd['anchorPlaceId'],'role':'Regional orientation · 区域浏览锚点','note':'用于区域浏览；具体出土语境以 source claim 为准，不把展示锚点当成出土地或铸币地。'} if fd.get('anchorPlaceId') else None
+ a['families'].append({'id':fd['id'],'title':fd['title'],'zh':fd['zh'],'region':fd['region'],'start':fd.get('start'),'end':fd.get('end'),'dateLabel':fd['dateLabel'],'description':fd['description'],'anchor':anchor,'image':image,'status':fd['status'],'question':fd['question'],'publications':[{'title':'Zeno #1070 · Kanka Kaiyuan find report','url':'https://www.zeno.ru/showphoto.php?photo=1070','role':'Source-reported regional find context; archaeological verification pending'}]})
+ existing_family_ids.add(fd['id'])
+for g in review5033['sourceGroups']:
+ if not any(v['id']==g['id'] for v in a['variants']):
+  a['variants'].append({'id':g['id'],'familyId':g['familyId'],'title':g['title'],'reference':'Zeno category '+g['categoryId']+' / record-level subset','status':'source_group','facets':[],'description':g['description']})
+existing_specimen_ids={s['id'] for s in a['specimens']}
+for decision in review5033['records']:
+ id=str(decision['id']);sid='zeno-'+id
+ if sid in existing_specimen_ids:continue
+ r=z503_by_id[id];im=decision['image'];u=r.get('uploader') or {};rights=r.get('rights') or {}
+ title=r.get('title') or ('Zeno '+id);prefix='#'+id+' - '
+ if title.startswith(prefix):title=title[len(prefix):]
+ pic={'id':'z'+id,'path':im['path'],'sourceUrl':(repair503_by_id.get(id) or {}).get('url') or r.get('originalImageUrl') or r.get('url'),'width':im['width'],'height':im['height'],'credit':u.get('name') or 'Zeno.ru uploader unknown','rightsStatus':('unverified' if (rights.get('status') or 'unverified') not in {'open_license','permission','public_domain','unverified'} else (rights.get('status') or 'unverified')),'rightsSourceUrl':rights.get('sourceTermsUrl'),'view':'source photograph','sha256':im.get('sha256')}
+ source={'label':'Zeno '+id,'url':r['url'],'relation':'same_specimen'}
+ a['specimens'].append({'id':sid,'familyId':decision['familyId'],'variantId':decision['sourceGroupId'],'title':title,'weightG':r.get('weightG'),'diameterMm':r.get('diameterMm'),'images':[pic],'sources':[source],'description':r.get('photoNote') or r.get('description') or 'Source-reported Central Asian occurrence.','catalogue':'Zeno category '+decision['leafCategoryId']+' · '+decision['leafCategoryTitle'],'facets':['Imported coin · 区域输入钱','#503 stage-3 site-context review'],'duplicateStatus':decision.get('duplicateStatus','source_record_not_proven_unique'),'coinRole':decision.get('coinRole','imported_coin'),'findContextClaim':decision.get('findContextClaim')})
+ existing_specimen_ids.add(sid)
+
 a['scopeCensus']=read('research/coverage-scopes.json')
 nana_specimens=[s for s in a['specimens'] if s['familyId']=='lady-nana']
 nana_zeno=[s for s in nana_specimens if s['id'].startswith('zeno-')]

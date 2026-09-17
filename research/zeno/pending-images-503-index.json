@@ -2,7 +2,7 @@
   "version": "1.0",
   "generatedOn": "2026-09-16",
   "pendingImageDirectory": "research/zeno/pending-images-503",
-  "count": 762,
+  "count": 424,
   "invalidRemoved": [],
   "records": [
     {
@@ -13,38 +13,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "105744",
-      "file": "research/zeno/pending-images-503/105744.jpg",
-      "leafCategoryId": "24935",
-      "title": "#105744 - Chach, Unknown Ruler",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "106965",
-      "file": "research/zeno/pending-images-503/106965.jpg",
-      "leafCategoryId": "914",
-      "title": "#106965 - Kanka, AE unknown ruler.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "106998",
       "file": "research/zeno/pending-images-503/106998.jpg",
       "leafCategoryId": "9434",
       "title": "#106998 - Soghdian ? cash-like coin",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "1070",
-      "file": "research/zeno/pending-images-503/1070.jpg",
-      "leafCategoryId": "914",
-      "title": "#1070 - Kai-yuan tong-bao, Central Asia finding",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "107114",
-      "file": "research/zeno/pending-images-503/107114.jpg",
-      "leafCategoryId": "24941",
-      "title": "#107114 - AE Chach (\"Tarnavch\") two reverses.",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -76,13 +48,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "1093",
-      "file": "research/zeno/pending-images-503/1093.jpg",
-      "leafCategoryId": "24935",
-      "title": "#1093 - Sogdian Unknown Ruler",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "11005",
       "file": "research/zeno/pending-images-503/11005.jpg",
       "leafCategoryId": "13698",
@@ -111,34 +76,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "116358",
-      "file": "research/zeno/pending-images-503/116358.jpg",
-      "leafCategoryId": "24941",
-      "title": "#116358 - Chach, cast AE, ruler Tarnavch.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "119943",
-      "file": "research/zeno/pending-images-503/119943.jpg",
-      "leafCategoryId": "2145",
-      "title": "#119943 - Chach AE",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "121375",
-      "file": "research/zeno/pending-images-503/121375.jpg",
-      "leafCategoryId": "22497",
-      "title": "#121375 - East Soghd, AE, Pair portrait.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "122195",
-      "file": "research/zeno/pending-images-503/122195.jpg",
-      "leafCategoryId": "22497",
-      "title": "#122195 - East Sogd/Ferghana, AE, Par portrait.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "124644",
       "file": "research/zeno/pending-images-503/124644.jpg",
       "leafCategoryId": "15762",
@@ -160,31 +97,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "125623",
-      "file": "research/zeno/pending-images-503/125623.jpg",
-      "leafCategoryId": "24937",
-      "title": "#125623 - Chach, AE Coin, uncnown ruler",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "125745",
-      "file": "research/zeno/pending-images-503/125745.jpg",
-      "leafCategoryId": "914",
-      "title": "#125745 - Kanka, AE Coin, uncnown ruler",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "125746",
       "file": "research/zeno/pending-images-503/125746.jpg",
       "leafCategoryId": "24938",
       "title": "#125746 - Chach, AE Coin, uncnown ruler",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "125748",
-      "file": "research/zeno/pending-images-503/125748.jpg",
-      "leafCategoryId": "24944",
-      "title": "#125748 - Chach, AE Coin, uncnown ruler",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -209,20 +125,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "127498",
-      "file": "research/zeno/pending-images-503/127498.jpg",
-      "leafCategoryId": "804",
-      "title": "#127498 - Otrar, Turgesh's tamgha",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "128294",
-      "file": "research/zeno/pending-images-503/128294.jpg",
-      "leafCategoryId": "22498",
-      "title": "#128294 - Zaamin, AE.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "128831",
       "file": "research/zeno/pending-images-503/128831.jpg",
       "leafCategoryId": "15758",
@@ -244,13 +146,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "12967",
-      "file": "research/zeno/pending-images-503/12967.jpg",
-      "leafCategoryId": "914",
-      "title": "#12967 - Chach, Kanka",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "13",
       "file": "research/zeno/pending-images-503/13.jpg",
       "leafCategoryId": "2747",
@@ -269,13 +164,6 @@
       "file": "research/zeno/pending-images-503/132485.jpg",
       "leafCategoryId": "5320",
       "title": "#132485 - Chach, unknown domain, with camel and name Farnbag",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "132649",
-      "file": "research/zeno/pending-images-503/132649.jpg",
-      "leafCategoryId": "24944",
-      "title": "#132649 - Chach, AE, unknown ruler",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -314,13 +202,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "137506",
-      "file": "research/zeno/pending-images-503/137506.jpg",
-      "leafCategoryId": "2145",
-      "title": "#137506 - Chach, Unknown Ruler",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "137714",
       "file": "research/zeno/pending-images-503/137714.jpg",
       "leafCategoryId": "20268",
@@ -328,52 +209,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "137801",
-      "file": "research/zeno/pending-images-503/137801.jpg",
-      "leafCategoryId": "24936",
-      "title": "#137801 - Chach AE coin",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "138169",
-      "file": "research/zeno/pending-images-503/138169.jpg",
-      "leafCategoryId": "24936",
-      "title": "#138169 - Tudun Satachari, 7th - 8th",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "138188",
       "file": "research/zeno/pending-images-503/138188.jpg",
       "leafCategoryId": "24939",
       "title": "#138188 - unknown ruler",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "138230",
-      "file": "research/zeno/pending-images-503/138230.jpg",
-      "leafCategoryId": "2145",
-      "title": "#138230 - Unknown ruler",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "138231",
-      "file": "research/zeno/pending-images-503/138231.jpg",
-      "leafCategoryId": "24937",
-      "title": "#138231 - Unknown ruler",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "138232",
-      "file": "research/zeno/pending-images-503/138232.jpg",
-      "leafCategoryId": "24941",
-      "title": "#138232 - King Tarnavch",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "138233",
-      "file": "research/zeno/pending-images-503/138233.jpg",
-      "leafCategoryId": "804",
-      "title": "#138233 - City Otrar",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -391,87 +230,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "140799",
-      "file": "research/zeno/pending-images-503/140799.jpg",
-      "leafCategoryId": "2144",
-      "title": "#140799 - Chach, Unk. Principality I",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "140806",
-      "file": "research/zeno/pending-images-503/140806.jpg",
-      "leafCategoryId": "2144",
-      "title": "#140806 - Chach: Anonymous (750-800AD) AE Double-Portrait Unit",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "141337",
-      "file": "research/zeno/pending-images-503/141337.jpg",
-      "leafCategoryId": "2144",
-      "title": "#141337 - AE with double portrait, cross above tamgha.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "142114",
       "file": "research/zeno/pending-images-503/142114.jpg",
       "leafCategoryId": "922",
       "title": "#142114 - Chach, AE, unknown principality.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "1435",
-      "file": "research/zeno/pending-images-503/1435.jpg",
-      "leafCategoryId": "914",
-      "title": "#1435 - Sogdiana, Chach, Kanka, portrait type",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "1436",
-      "file": "research/zeno/pending-images-503/1436.jpg",
-      "leafCategoryId": "914",
-      "title": "#1436 - Sogdiana, Chach, Kanka, portrait type",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "1437",
-      "file": "research/zeno/pending-images-503/1437.jpg",
-      "leafCategoryId": "914",
-      "title": "#1437 - Sogdiana, Chach, Kanka, portrait type",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "1438",
-      "file": "research/zeno/pending-images-503/1438.jpg",
-      "leafCategoryId": "914",
-      "title": "#1438 - Sogdiana, Chach, Kanka, portrait type",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "1439",
-      "file": "research/zeno/pending-images-503/1439.jpg",
-      "leafCategoryId": "2144",
-      "title": "#1439 - Sogdiana, Chach, unknown principality, portrait type",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "146050",
-      "file": "research/zeno/pending-images-503/146050.jpg",
-      "leafCategoryId": "15760",
-      "title": "#146050 - Imitations of Chinese cash, Kai Yuan Tong Bao, double reverse",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "146054",
-      "file": "research/zeno/pending-images-503/146054.jpg",
-      "leafCategoryId": "15760",
-      "title": "#146054 - Imitations of Chinese cash, Kai Yuan Tong Bao, double reverse",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "146055",
-      "file": "research/zeno/pending-images-503/146055.jpg",
-      "leafCategoryId": "15760",
-      "title": "#146055 - Imitations of Chinese cash, Kai Yuan Tong Bao, double reverse",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -482,38 +244,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "150593",
-      "file": "research/zeno/pending-images-503/150593.jpg",
-      "leafCategoryId": "24936",
-      "title": "#150593 - Chach AE, tudun Satachari?",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "150602",
       "file": "research/zeno/pending-images-503/150602.jpg",
       "leafCategoryId": "24946",
       "title": "#150602 - Chach AE, unknown ruler.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "15171",
-      "file": "research/zeno/pending-images-503/15171.jpg",
-      "leafCategoryId": "2144",
-      "title": "#15171 - Chach, Principality of Chanak?, ca AD 600-750.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "152379",
-      "file": "research/zeno/pending-images-503/152379.jpg",
-      "leafCategoryId": "24941",
-      "title": "#152379 - Chach, ruler Tarnavch",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "152530",
-      "file": "research/zeno/pending-images-503/152530.jpg",
-      "leafCategoryId": "804",
-      "title": "#152530 - Otrar, AE coin, unknown ruler.",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -531,73 +265,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "155052",
-      "file": "research/zeno/pending-images-503/155052.jpg",
-      "leafCategoryId": "804",
-      "title": "#155052 - Otrar, unknown Tamga",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "15535",
       "file": "research/zeno/pending-images-503/15535.jpg",
       "leafCategoryId": "30985",
       "title": "#15535 - Sogdian AE coin, Ustrushana principality, ruler Satachary, 6-7 cc AD",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "157750",
-      "file": "research/zeno/pending-images-503/157750.jpg",
-      "leafCategoryId": "2145",
-      "title": "#157750 - Chach, small AE, portrait/tamgha.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "16169",
-      "file": "research/zeno/pending-images-503/16169.jpg",
-      "leafCategoryId": "2144",
-      "title": "#16169 - Chach, Chanak?, 7th-8th cent.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "16170",
-      "file": "research/zeno/pending-images-503/16170.jpg",
-      "leafCategoryId": "914",
-      "title": "#16170 - Chach, Kanka, 7th-8th cent.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "162407",
-      "file": "research/zeno/pending-images-503/162407.jpg",
-      "leafCategoryId": "22498",
-      "title": "#162407 - Zaamin, AE, unknown ruler.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "16328",
-      "file": "research/zeno/pending-images-503/16328.jpg",
-      "leafCategoryId": "804",
-      "title": "#16328 - S1580, Otrar AE coin",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "165452",
-      "file": "research/zeno/pending-images-503/165452.jpg",
-      "leafCategoryId": "24941",
-      "title": "#165452 - Chach AE, Tarnavch ruler",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "165637",
-      "file": "research/zeno/pending-images-503/165637.jpg",
-      "leafCategoryId": "24937",
-      "title": "#165637 - Chach AE (\"Tundun?\")",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "167068",
-      "file": "research/zeno/pending-images-503/167068.jpg",
-      "leafCategoryId": "22497",
-      "title": "#167068 - Eastern Soghd, AE, double portrait/turkic runas.",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -622,27 +293,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "16896",
-      "file": "research/zeno/pending-images-503/16896.jpg",
-      "leafCategoryId": "24941",
-      "title": "#16896 - Chach, ruler Tarnavch",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "16897",
-      "file": "research/zeno/pending-images-503/16897.jpg",
-      "leafCategoryId": "24937",
-      "title": "#16897 - Chach, unknown ruler",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "16898",
-      "file": "research/zeno/pending-images-503/16898.jpg",
-      "leafCategoryId": "24936",
-      "title": "#16898 - Chach, tudun (ruler) Satachary",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "16899",
       "file": "research/zeno/pending-images-503/16899.jpg",
       "leafCategoryId": "22239",
@@ -657,20 +307,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "169349",
-      "file": "research/zeno/pending-images-503/169349.jpg",
-      "leafCategoryId": "24944",
-      "title": "#169349 - Chach",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "16990",
-      "file": "research/zeno/pending-images-503/16990.jpg",
-      "leafCategoryId": "24941",
-      "title": "#16990 - Chach, ruler Tarnavch",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "170393",
       "file": "research/zeno/pending-images-503/170393.jpg",
       "leafCategoryId": "15758",
@@ -682,20 +318,6 @@
       "file": "research/zeno/pending-images-503/171654.jpg",
       "leafCategoryId": "20268",
       "title": "#171654 - Semirech'e. City Suyab. Suluk khagan",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "171658",
-      "file": "research/zeno/pending-images-503/171658.jpg",
-      "leafCategoryId": "804",
-      "title": "#171658 - Otrar AE coin with Runic letters",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "172012",
-      "file": "research/zeno/pending-images-503/172012.jpg",
-      "leafCategoryId": "22497",
-      "title": "#172012 - Ferghana, AE, pair portrait/turk runas.",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -741,20 +363,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "175492",
-      "file": "research/zeno/pending-images-503/175492.jpg",
-      "leafCategoryId": "914",
-      "title": "#175492 - Kanka, AE unknown ruler with massive ear-rings.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "17600",
-      "file": "research/zeno/pending-images-503/17600.jpg",
-      "leafCategoryId": "914",
-      "title": "#17600 - Chach, domain Kanka, unidentified ruler",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "176242",
       "file": "research/zeno/pending-images-503/176242.jpg",
       "leafCategoryId": "24934",
@@ -762,24 +370,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "176586",
-      "file": "research/zeno/pending-images-503/176586.jpg",
-      "leafCategoryId": "24935",
-      "title": "#176586 - Chach. Nirtanak",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "176973",
       "file": "research/zeno/pending-images-503/176973.jpg",
       "leafCategoryId": "24939",
       "title": "#176973 - Chach, AE, lion left with sogdian Parn above.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "176974",
-      "file": "research/zeno/pending-images-503/176974.jpg",
-      "leafCategoryId": "914",
-      "title": "#176974 - Kanka, AE, unknown ruler.",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -818,27 +412,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "181449",
-      "file": "research/zeno/pending-images-503/181449.jpg",
-      "leafCategoryId": "24935",
-      "title": "#181449 - Chach, \"Nirtnk\"",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "182095",
-      "file": "research/zeno/pending-images-503/182095.jpg",
-      "leafCategoryId": "2145",
-      "title": "#182095 - Chach AE, unknown ruler.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "182358",
-      "file": "research/zeno/pending-images-503/182358.jpg",
-      "leafCategoryId": "2144",
-      "title": "#182358 - Chach, Unknown principality I, coins with double portrait",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "182569",
       "file": "research/zeno/pending-images-503/182569.jpg",
       "leafCategoryId": "24949",
@@ -860,52 +433,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "183836",
-      "file": "research/zeno/pending-images-503/183836.jpg",
-      "leafCategoryId": "22498",
-      "title": "#183836 - Zaamin, AE, unknown ruler.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "185378",
-      "file": "research/zeno/pending-images-503/185378.jpg",
-      "leafCategoryId": "24937",
-      "title": "#185378 - Chach, AE, Unknown ruler 7-8Ct AD.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "185379",
       "file": "research/zeno/pending-images-503/185379.jpg",
       "leafCategoryId": "24942",
       "title": "#185379 - Chach, AE, unknown ruler.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "185380",
-      "file": "research/zeno/pending-images-503/185380.jpg",
-      "leafCategoryId": "2144",
-      "title": "#185380 - Chach, unknown domain, double portrait, tamgha with cross.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "185381",
-      "file": "research/zeno/pending-images-503/185381.jpg",
-      "leafCategoryId": "914",
-      "title": "#185381 - Chach, Kanka, AE unknown ruler with ear-rings.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "185382",
-      "file": "research/zeno/pending-images-503/185382.jpg",
-      "leafCategoryId": "914",
-      "title": "#185382 - Chach, Kanka, AE unknown ruler with long hair.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "185383",
-      "file": "research/zeno/pending-images-503/185383.jpg",
-      "leafCategoryId": "22498",
-      "title": "#185383 - Zaamin, AE coin, Unknown ruler. Bust facing slightly to left.",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -916,31 +447,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "187996",
-      "file": "research/zeno/pending-images-503/187996.jpg",
-      "leafCategoryId": "24937",
-      "title": "#187996 - Chach, AE, unknown ruler",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "189831",
-      "file": "research/zeno/pending-images-503/189831.jpg",
-      "leafCategoryId": "804",
-      "title": "#189831 - Otrar, AE22, unknown ruler.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "190238",
       "file": "research/zeno/pending-images-503/190238.jpg",
       "leafCategoryId": "15500",
       "title": "#190238 - Northern Tokharistan, Vakhsh valley coin.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "190632",
-      "file": "research/zeno/pending-images-503/190632.jpg",
-      "leafCategoryId": "22498",
-      "title": "#190632 - Zaamin, AE, unknown ruler.",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -965,52 +475,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "194325",
-      "file": "research/zeno/pending-images-503/194325.jpg",
-      "leafCategoryId": "22497",
-      "title": "#194325 - Eastern Soghd, AE, pair / turk runic signs.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "194335",
-      "file": "research/zeno/pending-images-503/194335.jpg",
-      "leafCategoryId": "22497",
-      "title": "#194335 - Eastern Soghd, AE, pair/turk runic signs.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "194337",
       "file": "research/zeno/pending-images-503/194337.jpg",
       "leafCategoryId": "2719",
       "title": "#194337 - South Soghd, AE, facing portrait/tamgha.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "195069",
-      "file": "research/zeno/pending-images-503/195069.jpg",
-      "leafCategoryId": "24935",
-      "title": "#195069 - Central Asia, Chach, Nirtanak, 7-8th cent.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "195070",
-      "file": "research/zeno/pending-images-503/195070.jpg",
-      "leafCategoryId": "24941",
-      "title": "#195070 - Central Asia, Chach, Tarnavch, 7-8th cent.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "197212",
-      "file": "research/zeno/pending-images-503/197212.jpg",
-      "leafCategoryId": "914",
-      "title": "#197212 - Chach. Kanka.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "197213",
-      "file": "research/zeno/pending-images-503/197213.jpg",
-      "leafCategoryId": "914",
-      "title": "#197213 - Chach. Kanka.",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -1046,13 +514,6 @@
       "file": "research/zeno/pending-images-503/20210.jpg",
       "leafCategoryId": "22239",
       "title": "#20210 - Ustrushana, AE coin, afshin Satachary.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "20212",
-      "file": "research/zeno/pending-images-503/20212.jpg",
-      "leafCategoryId": "22498",
-      "title": "#20212 - Zaamin, AE coin, Unknown ruler.",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -1098,45 +559,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "20482",
-      "file": "research/zeno/pending-images-503/20482.jpg",
-      "leafCategoryId": "804",
-      "title": "#20482 - Otrar, AE coin, unknown ruler.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "204908",
-      "file": "research/zeno/pending-images-503/204908.jpg",
-      "leafCategoryId": "24941",
-      "title": "#204908 - Central Asia, Chach, King Tarnauch, AE unit, 7-8th c. AD",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "20530",
-      "file": "research/zeno/pending-images-503/20530.jpg",
-      "leafCategoryId": "24935",
-      "title": "#20530 - Chach, Unknown Ruler",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "20679",
       "file": "research/zeno/pending-images-503/20679.jpg",
       "leafCategoryId": "24942",
       "title": "#20679 - Chach, AE, unknown ruler.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "20685",
-      "file": "research/zeno/pending-images-503/20685.jpg",
-      "leafCategoryId": "914",
-      "title": "#20685 - Kanka, AE, unknown ruler.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "20686",
-      "file": "research/zeno/pending-images-503/20686.jpg",
-      "leafCategoryId": "914",
-      "title": "#20686 - Kanka, AE, unknown ruler.",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -1154,31 +580,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "209841",
-      "file": "research/zeno/pending-images-503/209841.jpg",
-      "leafCategoryId": "22498",
-      "title": "#209841 - Zaamin, AE, unknown ruler.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "211016",
       "file": "research/zeno/pending-images-503/211016.jpg",
       "leafCategoryId": "15518",
       "title": "#211016 - Kai-yuan tong-bao 開元通寳 / Arabic legend, Badakhshan",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "21110",
-      "file": "research/zeno/pending-images-503/21110.jpg",
-      "leafCategoryId": "24944",
-      "title": "#21110 - Chach, Trident Tamgha, Unknown Ruler",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "21133",
-      "file": "research/zeno/pending-images-503/21133.jpg",
-      "leafCategoryId": "24944",
-      "title": "#21133 - Chach, AE, unknown ruler.",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -1252,13 +657,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "212783",
-      "file": "research/zeno/pending-images-503/212783.jpg",
-      "leafCategoryId": "804",
-      "title": "#212783 - Otrar, AE coin, unknown ruler",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "213820",
       "file": "research/zeno/pending-images-503/213820.jpg",
       "leafCategoryId": "13698",
@@ -1305,13 +703,6 @@
       "file": "research/zeno/pending-images-503/215278.jpg",
       "leafCategoryId": "922",
       "title": "#215278 - Chach, AE, Unknown ruler.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "215280",
-      "file": "research/zeno/pending-images-503/215280.jpg",
-      "leafCategoryId": "15760",
-      "title": "#215280 - Semirech'e, AE imitation of KYTB.",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -1364,27 +755,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "216531",
-      "file": "research/zeno/pending-images-503/216531.jpg",
-      "leafCategoryId": "15760",
-      "title": "#216531 - Semirech'e imitation of KYTB.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "218172",
-      "file": "research/zeno/pending-images-503/218172.jpg",
-      "leafCategoryId": "24944",
-      "title": "#218172 - Central Asia, Chach, AE unit, unknown ruler.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "218173",
-      "file": "research/zeno/pending-images-503/218173.jpg",
-      "leafCategoryId": "24941",
-      "title": "#218173 - Central Asia, Chach, King Tarnauch, AE unit, ca. 7-8th cent. AD",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "218270",
       "file": "research/zeno/pending-images-503/218270.jpg",
       "leafCategoryId": "15758",
@@ -1413,31 +783,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "220384",
-      "file": "research/zeno/pending-images-503/220384.jpg",
-      "leafCategoryId": "22497",
-      "title": "#220384 - East Soghd AE , Ferghana, pare portrait.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "226448",
       "file": "research/zeno/pending-images-503/226448.jpg",
       "leafCategoryId": "22243",
       "title": "#226448 - Ustrushana, AE, Chardmish",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "22675",
-      "file": "research/zeno/pending-images-503/22675.jpg",
-      "leafCategoryId": "2144",
-      "title": "#22675 - Chach, unknown principality, double portrait type",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "22676",
-      "file": "research/zeno/pending-images-503/22676.jpg",
-      "leafCategoryId": "2144",
-      "title": "#22676 - Chach, unknown principality, double portrait type",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -1455,52 +804,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "227830",
-      "file": "research/zeno/pending-images-503/227830.jpg",
-      "leafCategoryId": "804",
-      "title": "#227830 - City of Otrar, bronze coin, lion/tamgha, Smirnova 1580, heavy sample",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "227831",
-      "file": "research/zeno/pending-images-503/227831.jpg",
-      "leafCategoryId": "804",
-      "title": "#227831 - City of Otrar, bronze coin, lion/tamgha, Smirnova 1580, light sample",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "229408",
       "file": "research/zeno/pending-images-503/229408.jpg",
       "leafCategoryId": "13698",
       "title": "#229408 - Ordos bronze \"Leaf Money\"",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "230741",
-      "file": "research/zeno/pending-images-503/230741.jpg",
-      "leafCategoryId": "24936",
-      "title": "#230741 - Chach AE, Tudun Satachari.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "230989",
-      "file": "research/zeno/pending-images-503/230989.jpg",
-      "leafCategoryId": "24935",
-      "title": "#230989 - Chach AE",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "230990",
-      "file": "research/zeno/pending-images-503/230990.jpg",
-      "leafCategoryId": "2145",
-      "title": "#230990 - Chach AE",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "230992",
-      "file": "research/zeno/pending-images-503/230992.jpg",
-      "leafCategoryId": "2144",
-      "title": "#230992 - AE Double-Portrait",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -1532,13 +839,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "239307",
-      "file": "research/zeno/pending-images-503/239307.jpg",
-      "leafCategoryId": "24941",
-      "title": "#239307 - Central Asia, Chach, King Tarnauch, AE",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "243065",
       "file": "research/zeno/pending-images-503/243065.jpg",
       "leafCategoryId": "15758",
@@ -1567,13 +867,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "243535",
-      "file": "research/zeno/pending-images-503/243535.jpg",
-      "leafCategoryId": "24941",
-      "title": "#243535 - Chach. Coin with a beast (lion).",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "245252",
       "file": "research/zeno/pending-images-503/245252.jpg",
       "leafCategoryId": "20268",
@@ -1595,13 +888,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "246907",
-      "file": "research/zeno/pending-images-503/246907.jpg",
-      "leafCategoryId": "24936",
-      "title": "#246907 - Central Asia, Chach, AE unit, 7-8th cent.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "247741",
       "file": "research/zeno/pending-images-503/247741.jpg",
       "leafCategoryId": "14538",
@@ -1609,31 +895,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "250757",
-      "file": "research/zeno/pending-images-503/250757.jpg",
-      "leafCategoryId": "24941",
-      "title": "#250757 - Chach, cast AE, uniface, unknown ruler.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "253213",
       "file": "research/zeno/pending-images-503/253213.jpg",
       "leafCategoryId": "19911",
       "title": "#253213 - Paikend, \"Dancing man\" tamgha",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "25363",
-      "file": "research/zeno/pending-images-503/25363.jpg",
-      "leafCategoryId": "22497",
-      "title": "#25363 - Eastern Sogdiana. Unknown ruler. 7-8 AD.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "255492",
-      "file": "research/zeno/pending-images-503/255492.jpg",
-      "leafCategoryId": "24941",
-      "title": "#255492 - Chach",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -1655,13 +920,6 @@
       "file": "research/zeno/pending-images-503/258525.jpg",
       "leafCategoryId": "2719",
       "title": "#258525 - South Soghd, AE coin with Portrait and trident Tamgha.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "258600",
-      "file": "research/zeno/pending-images-503/258600.jpg",
-      "leafCategoryId": "2145",
-      "title": "#258600 - Chach Unknown ruler 7-8 Ct AD Overstruck",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -1711,20 +969,6 @@
       "file": "research/zeno/pending-images-503/264530.jpg",
       "leafCategoryId": "15521",
       "title": "#264530 - Northern Tokharistan, AE unit, crosses and tamghas",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "267129",
-      "file": "research/zeno/pending-images-503/267129.jpg",
-      "leafCategoryId": "15760",
-      "title": "#267129 - Kai Yuan Tong Bao / Kai Yuan Tong Bao",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "267130",
-      "file": "research/zeno/pending-images-503/267130.jpg",
-      "leafCategoryId": "15760",
-      "title": "#267130 - Kai Yuan Tong Bao / Kai Yuan Tong Bao",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -1812,24 +1056,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "274391",
-      "file": "research/zeno/pending-images-503/274391.jpg",
-      "leafCategoryId": "914",
-      "title": "#274391 - Chach, AE, Unknown ruler.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "274852",
       "file": "research/zeno/pending-images-503/274852.jpg",
       "leafCategoryId": "13671",
       "title": "#274852 - Central Asia AE cash, w. two Turkic runas",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "275472",
-      "file": "research/zeno/pending-images-503/275472.jpg",
-      "leafCategoryId": "804",
-      "title": "#275472 - City of Otrar. AE coin, lion/turgesh's tamgha",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -1875,13 +1105,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "278082",
-      "file": "research/zeno/pending-images-503/278082.jpg",
-      "leafCategoryId": "24936",
-      "title": "#278082 - Chach, Tudun Satachari 7-8 Ct AD, Sh&K #213 Error",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "280021",
       "file": "research/zeno/pending-images-503/280021.jpg",
       "leafCategoryId": "2141",
@@ -1914,13 +1137,6 @@
       "file": "research/zeno/pending-images-503/281716.jpg",
       "leafCategoryId": "15762",
       "title": "#281716 - Kai Yuan Tong Bao",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "281832",
-      "file": "research/zeno/pending-images-503/281832.jpg",
-      "leafCategoryId": "24944",
-      "title": "#281832 - Chach, AE coin",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -1959,31 +1175,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "283705",
-      "file": "research/zeno/pending-images-503/283705.jpg",
-      "leafCategoryId": "804",
-      "title": "#283705 - City of Otrar. AE coin, lion/turgesh's tamgha",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "284325",
       "file": "research/zeno/pending-images-503/284325.jpg",
       "leafCategoryId": "22908",
       "title": "#284325 - Kai Yuan Tong Bao or Zhou Yuan Tong Bao",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "284407",
-      "file": "research/zeno/pending-images-503/284407.jpg",
-      "leafCategoryId": "804",
-      "title": "#284407 - City of Otrar, unknown ruler",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "284408",
-      "file": "research/zeno/pending-images-503/284408.jpg",
-      "leafCategoryId": "804",
-      "title": "#284408 - City of Otrar. AE coin , lion/turgesh's tamgha",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -2008,34 +1203,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "285141",
-      "file": "research/zeno/pending-images-503/285141.jpg",
-      "leafCategoryId": "804",
-      "title": "#285141 - City of Otrar. AE coin , lion/turgesh's tamgha",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "285142",
-      "file": "research/zeno/pending-images-503/285142.jpg",
-      "leafCategoryId": "804",
-      "title": "#285142 - City of Otrar, unknown ruler",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "285854",
-      "file": "research/zeno/pending-images-503/285854.jpg",
-      "leafCategoryId": "914",
-      "title": "#285854 - Chach. Unknown ruler.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "285880",
-      "file": "research/zeno/pending-images-503/285880.jpg",
-      "leafCategoryId": "24941",
-      "title": "#285880 - Chach, King Tarnauch, AE",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "285951",
       "file": "research/zeno/pending-images-503/285951.jpg",
       "leafCategoryId": "25612",
@@ -2057,52 +1224,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "286426",
-      "file": "research/zeno/pending-images-503/286426.jpg",
-      "leafCategoryId": "24937",
-      "title": "#286426 - Chach AE coin",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "286527",
-      "file": "research/zeno/pending-images-503/286527.jpg",
-      "leafCategoryId": "24941",
-      "title": "#286527 - Chach, King Tarnauch, AE",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "286530",
-      "file": "research/zeno/pending-images-503/286530.jpg",
-      "leafCategoryId": "804",
-      "title": "#286530 - City of Otrar, unknown ruler",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "286754",
       "file": "research/zeno/pending-images-503/286754.jpg",
       "leafCategoryId": "5320",
       "title": "#286754 - Chach, unknown domain, with camel",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "287058",
-      "file": "research/zeno/pending-images-503/287058.jpg",
-      "leafCategoryId": "914",
-      "title": "#287058 - Chach, AE, Unknown ruler.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "287110",
-      "file": "research/zeno/pending-images-503/287110.jpg",
-      "leafCategoryId": "914",
-      "title": "#287110 - Chach. Kanka.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "287232",
-      "file": "research/zeno/pending-images-503/287232.jpg",
-      "leafCategoryId": "804",
-      "title": "#287232 - City of Otrar, unknown ruler",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -2127,20 +1252,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "288949",
-      "file": "research/zeno/pending-images-503/288949.jpg",
-      "leafCategoryId": "24944",
-      "title": "#288949 - Chach AE, lion",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "289117",
-      "file": "research/zeno/pending-images-503/289117.jpg",
-      "leafCategoryId": "24935",
-      "title": "#289117 - Chach, ruler Nirtanak, 7-8th cent.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "289141",
       "file": "research/zeno/pending-images-503/289141.jpg",
       "leafCategoryId": "13698",
@@ -2148,45 +1259,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "289866",
-      "file": "research/zeno/pending-images-503/289866.jpg",
-      "leafCategoryId": "2145",
-      "title": "#289866 - Chach AE, lion",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "290946",
-      "file": "research/zeno/pending-images-503/290946.jpg",
-      "leafCategoryId": "24935",
-      "title": "#290946 - Chach, ruler Nirtanak, 7-8th cent.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "290947",
-      "file": "research/zeno/pending-images-503/290947.jpg",
-      "leafCategoryId": "2144",
-      "title": "#290947 - Chach, Unknown principality , coins with double portrait",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "291004",
-      "file": "research/zeno/pending-images-503/291004.jpg",
-      "leafCategoryId": "24935",
-      "title": "#291004 - Central Asia, Chach, Nirtanak, 7-8th",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "291431",
       "file": "research/zeno/pending-images-503/291431.jpg",
       "leafCategoryId": "23463",
       "title": "#291431 - Chach area, uninscribed AE:s, unknown ruler.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "292446",
-      "file": "research/zeno/pending-images-503/292446.jpg",
-      "leafCategoryId": "2144",
-      "title": "#292446 - Chach, Unknown principality , coins with double portrait",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -2218,94 +1294,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "292750",
-      "file": "research/zeno/pending-images-503/292750.jpg",
-      "leafCategoryId": "2144",
-      "title": "#292750 - Chach, unknown domain, double portrait, tamgha with cross",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "292772",
-      "file": "research/zeno/pending-images-503/292772.jpg",
-      "leafCategoryId": "24936",
-      "title": "#292772 - Chach, AE, Tudun Satachari, portrait ¾ right",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "292821",
-      "file": "research/zeno/pending-images-503/292821.jpg",
-      "leafCategoryId": "2144",
-      "title": "#292821 - Chach, Unknown principality , coins with double portrait",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "292873",
-      "file": "research/zeno/pending-images-503/292873.jpg",
-      "leafCategoryId": "2144",
-      "title": "#292873 - Chach, Unknown principality , coins with double portrait",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "292915",
-      "file": "research/zeno/pending-images-503/292915.jpg",
-      "leafCategoryId": "24936",
-      "title": "#292915 - Chach AE, Tudun Satachari.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "292919",
-      "file": "research/zeno/pending-images-503/292919.jpg",
-      "leafCategoryId": "24941",
-      "title": "#292919 - Central Asia, Chach, King Tarnauch, AE unit, 7-8th c. AD",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "292930",
-      "file": "research/zeno/pending-images-503/292930.jpg",
-      "leafCategoryId": "24936",
-      "title": "#292930 - Chach AE, Tudun Satachari.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "293020",
-      "file": "research/zeno/pending-images-503/293020.jpg",
-      "leafCategoryId": "24935",
-      "title": "#293020 - Central Asia, Chach, Nirtanak",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "293108",
-      "file": "research/zeno/pending-images-503/293108.jpg",
-      "leafCategoryId": "24936",
-      "title": "#293108 - Chach AE, Tudun Satachari.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "293312",
-      "file": "research/zeno/pending-images-503/293312.jpg",
-      "leafCategoryId": "24944",
-      "title": "#293312 - Chach AE, lion.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "293313",
       "file": "research/zeno/pending-images-503/293313.jpg",
       "leafCategoryId": "24939",
       "title": "#293313 - Chach AE, lion.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "293518",
-      "file": "research/zeno/pending-images-503/293518.jpg",
-      "leafCategoryId": "15760",
-      "title": "#293518 - Semirechie, AE cash, Kai Yuan imitation.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "293867",
-      "file": "research/zeno/pending-images-503/293867.jpg",
-      "leafCategoryId": "2144",
-      "title": "#293867 - Chach, Unknown principality , coins with double portrait",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -2316,20 +1308,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "293930",
-      "file": "research/zeno/pending-images-503/293930.jpg",
-      "leafCategoryId": "24935",
-      "title": "#293930 - Central Asia, Chach, Nirtanak, 7-8th cent.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "293951",
-      "file": "research/zeno/pending-images-503/293951.jpg",
-      "leafCategoryId": "914",
-      "title": "#293951 - Chach. Kanka.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "29397",
       "file": "research/zeno/pending-images-503/29397.jpg",
       "leafCategoryId": "2747",
@@ -2337,24 +1315,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "294152",
-      "file": "research/zeno/pending-images-503/294152.jpg",
-      "leafCategoryId": "24936",
-      "title": "#294152 - Chach AE, Tudun Satachari.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "294274",
       "file": "research/zeno/pending-images-503/294274.jpg",
       "leafCategoryId": "15758",
       "title": "#294274 - Semirech'e, Anepigraphic AE Local imitation",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "295017",
-      "file": "research/zeno/pending-images-503/295017.jpg",
-      "leafCategoryId": "24941",
-      "title": "#295017 - Central Asia, Chach, King Tarnauch, AE unit, 7-8th c. AD",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -2407,41 +1371,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "299389",
-      "file": "research/zeno/pending-images-503/299389.jpg",
-      "leafCategoryId": "24941",
-      "title": "#299389 - Chach, cast bronze unit, ruler Tarnavch, m/a",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "299398",
-      "file": "research/zeno/pending-images-503/299398.jpg",
-      "leafCategoryId": "24941",
-      "title": "#299398 - Chach, cast bronze unit, ruler Tarnavch, m/a",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "299479",
-      "file": "research/zeno/pending-images-503/299479.jpg",
-      "leafCategoryId": "24941",
-      "title": "#299479 - Chach, cast bronze unit, ruler Tarnavch, m/a",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "299540",
-      "file": "research/zeno/pending-images-503/299540.jpg",
-      "leafCategoryId": "804",
-      "title": "#299540 - City of Otrar . AE coin, lion\\turgesh's tamgha",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "300013",
-      "file": "research/zeno/pending-images-503/300013.jpg",
-      "leafCategoryId": "24941",
-      "title": "#300013 - Chach, cast bronze unit, ruler Tarnavch, m/a",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "300270",
       "file": "research/zeno/pending-images-503/300270.jpg",
       "leafCategoryId": "15762",
@@ -2456,45 +1385,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "300987",
-      "file": "research/zeno/pending-images-503/300987.jpg",
-      "leafCategoryId": "804",
-      "title": "#300987 - City of Otrar . AE coin, lion\\turgesh's tamgha",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "301206",
-      "file": "research/zeno/pending-images-503/301206.jpg",
-      "leafCategoryId": "804",
-      "title": "#301206 - City of Otrar, unknown ruler",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "301776",
       "file": "research/zeno/pending-images-503/301776.jpg",
       "leafCategoryId": "15500",
       "title": "#301776 - Northern Tokharistan, Vakhsh valley coin",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "302746",
-      "file": "research/zeno/pending-images-503/302746.jpg",
-      "leafCategoryId": "24944",
-      "title": "#302746 - Chach, lion, unknown ruler",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "303198",
-      "file": "research/zeno/pending-images-503/303198.jpg",
-      "leafCategoryId": "24935",
-      "title": "#303198 - Chach, ruler Nirtanak, 7-8th cent.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "303491",
-      "file": "research/zeno/pending-images-503/303491.jpg",
-      "leafCategoryId": "24941",
-      "title": "#303491 - Chach, King Tarnauch, AE",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -2512,13 +1406,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "306247",
-      "file": "research/zeno/pending-images-503/306247.jpg",
-      "leafCategoryId": "24935",
-      "title": "#306247 - Chach, ruler Nirtanak, 7-8th cent.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "306498",
       "file": "research/zeno/pending-images-503/306498.jpg",
       "leafCategoryId": "24938",
@@ -2533,13 +1420,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "308693",
-      "file": "research/zeno/pending-images-503/308693.jpg",
-      "leafCategoryId": "914",
-      "title": "#308693 - Chach. Kanka.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "308694",
       "file": "research/zeno/pending-images-503/308694.jpg",
       "leafCategoryId": "24945",
@@ -2551,13 +1431,6 @@
       "file": "research/zeno/pending-images-503/309246.jpg",
       "leafCategoryId": "15762",
       "title": "#309246 - Semirechie, bronze cash, imitation of Kai Yuan Tong Bao",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "309556",
-      "file": "research/zeno/pending-images-503/309556.jpg",
-      "leafCategoryId": "2145",
-      "title": "#309556 - Chach, Unknown ruler",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -2579,13 +1452,6 @@
       "file": "research/zeno/pending-images-503/309623.jpg",
       "leafCategoryId": "5320",
       "title": "#309623 - Chach, unknown domain, with camel",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "309651",
-      "file": "research/zeno/pending-images-503/309651.jpg",
-      "leafCategoryId": "15760",
-      "title": "#309651 - Semirechie, bronze cash, imitation of Kai Yuan Tong Bao, double, inverted rev.",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -2617,20 +1483,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "310388",
-      "file": "research/zeno/pending-images-503/310388.jpg",
-      "leafCategoryId": "2145",
-      "title": "#310388 - Chach, Unknown ruler",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "310391",
-      "file": "research/zeno/pending-images-503/310391.jpg",
-      "leafCategoryId": "24935",
-      "title": "#310391 - Central Asia, Chach, Nirtanak",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "310392",
       "file": "research/zeno/pending-images-503/310392.jpg",
       "leafCategoryId": "24943",
@@ -2638,24 +1490,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "310393",
-      "file": "research/zeno/pending-images-503/310393.jpg",
-      "leafCategoryId": "24941",
-      "title": "#310393 - Chach, Unknown ruler",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "310396",
       "file": "research/zeno/pending-images-503/310396.jpg",
       "leafCategoryId": "922",
       "title": "#310396 - Chach, Unknown ruler.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "310397",
-      "file": "research/zeno/pending-images-503/310397.jpg",
-      "leafCategoryId": "2144",
-      "title": "#310397 - Chach, Unknown principality , coins with double portrait",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -2673,24 +1511,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "311979",
-      "file": "research/zeno/pending-images-503/311979.jpg",
-      "leafCategoryId": "914",
-      "title": "#311979 - Chach, domain Kanka, unidentified ruler",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "311980",
       "file": "research/zeno/pending-images-503/311980.jpg",
       "leafCategoryId": "24938",
       "title": "#311980 - Chach, AE, ruler \"Sochak\".",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "312074",
-      "file": "research/zeno/pending-images-503/312074.jpg",
-      "leafCategoryId": "24941",
-      "title": "#312074 - Chach AE coin",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -2736,38 +1560,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "313697",
-      "file": "research/zeno/pending-images-503/313697.jpg",
-      "leafCategoryId": "2144",
-      "title": "#313697 - Chach, unknown principality, double portrait type",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "313698",
-      "file": "research/zeno/pending-images-503/313698.jpg",
-      "leafCategoryId": "24941",
-      "title": "#313698 - Central Asia, Chach, King Tarnauch, AE unit, 7-8th c. AD",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "314393",
       "file": "research/zeno/pending-images-503/314393.jpg",
       "leafCategoryId": "20268",
       "title": "#314393 - Semirech'e. City Suyab. Suluk khagan.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "314606",
-      "file": "research/zeno/pending-images-503/314606.jpg",
-      "leafCategoryId": "2145",
-      "title": "#314606 - Chach AE, lion.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "315174",
-      "file": "research/zeno/pending-images-503/315174.jpg",
-      "leafCategoryId": "24941",
-      "title": "#315174 - Central Asia, Chach, King Tarnauch, AE unit, 7-8th c. AD",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -2778,31 +1574,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "316429",
-      "file": "research/zeno/pending-images-503/316429.jpg",
-      "leafCategoryId": "22497",
-      "title": "#316429 - Turko-Sogdian coin of Soghd area",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "31658",
       "file": "research/zeno/pending-images-503/31658.jpg",
       "leafCategoryId": "24934",
       "title": "#31658 - Chach, AE, ruler \"Khwnyrk\".",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "317329",
-      "file": "research/zeno/pending-images-503/317329.jpg",
-      "leafCategoryId": "22497",
-      "title": "#317329 - AE, pair portrait/turk runas.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "317553",
-      "file": "research/zeno/pending-images-503/317553.jpg",
-      "leafCategoryId": "24935",
-      "title": "#317553 - Central Asia, Chach, Nirtanak, 7th-8th century",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -2820,13 +1595,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "321499",
-      "file": "research/zeno/pending-images-503/321499.jpg",
-      "leafCategoryId": "24941",
-      "title": "#321499 - Chach, cast bronze unit, ruler Tarnavch",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "321951",
       "file": "research/zeno/pending-images-503/321951.jpg",
       "leafCategoryId": "2141",
@@ -2841,66 +1609,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "322197",
-      "file": "research/zeno/pending-images-503/322197.jpg",
-      "leafCategoryId": "804",
-      "title": "#322197 - Coin with a paired portrait of the city of Otrar",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "322574",
-      "file": "research/zeno/pending-images-503/322574.jpg",
-      "leafCategoryId": "15760",
-      "title": "#322574 - Semirechie, AE Local Kai Yuan Tong Bao KYTB imitation. Stolen",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "322575",
-      "file": "research/zeno/pending-images-503/322575.jpg",
-      "leafCategoryId": "15760",
-      "title": "#322575 - Semirechie, AE Local Kai Yuan Tong Bao KYTB imitation. Stolen. Stolen",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "322933",
-      "file": "research/zeno/pending-images-503/322933.jpg",
-      "leafCategoryId": "914",
-      "title": "#322933 - Chach. Kanka.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "322934",
-      "file": "research/zeno/pending-images-503/322934.jpg",
-      "leafCategoryId": "24944",
-      "title": "#322934 - Type 9: beast right / tamgha, ruler of Chach",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "322936",
-      "file": "research/zeno/pending-images-503/322936.jpg",
-      "leafCategoryId": "2145",
-      "title": "#322936 - Central Asia, Chach",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "324231",
       "file": "research/zeno/pending-images-503/324231.jpg",
       "leafCategoryId": "30984",
       "title": "#324231 - Ustrushana, ruler Satachary",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "324700",
-      "file": "research/zeno/pending-images-503/324700.jpg",
-      "leafCategoryId": "2145",
-      "title": "#324700 - Central Asia, Chach",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "324701",
-      "file": "research/zeno/pending-images-503/324701.jpg",
-      "leafCategoryId": "2145",
-      "title": "#324701 - Central Asia, Chach",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -2918,38 +1630,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "326523",
-      "file": "research/zeno/pending-images-503/326523.jpg",
-      "leafCategoryId": "24937",
-      "title": "#326523 - Ruler Tudun, Rev. Striking Error",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "326587",
-      "file": "research/zeno/pending-images-503/326587.jpg",
-      "leafCategoryId": "914",
-      "title": "#326587 - Unknown ruler of Lyre-tamgha dynasty, Chach, Overstruck (?)",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "326588",
-      "file": "research/zeno/pending-images-503/326588.jpg",
-      "leafCategoryId": "24937",
-      "title": "#326588 - Chach, poorly preserved Ruler Tudun w/ tamgha partially struck on Rev.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "326638",
       "file": "research/zeno/pending-images-503/326638.jpg",
       "leafCategoryId": "15758",
       "title": "#326638 - Semirech'e Anepigraphic imitation, preserved original casting state",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "326825",
-      "file": "research/zeno/pending-images-503/326825.jpg",
-      "leafCategoryId": "24941",
-      "title": "#326825 - Tarnavch, Obverse double-tailed leopard (Casting error)",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -2967,20 +1651,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "327967",
-      "file": "research/zeno/pending-images-503/327967.jpg",
-      "leafCategoryId": "804",
-      "title": "#327967 - Ancient Turkic coin, Otrar",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "328144",
-      "file": "research/zeno/pending-images-503/328144.jpg",
-      "leafCategoryId": "804",
-      "title": "#328144 - Otrar, unknown Tamga, Lion",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "329021",
       "file": "research/zeno/pending-images-503/329021.jpg",
       "leafCategoryId": "15758",
@@ -2988,38 +1658,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "330223",
-      "file": "research/zeno/pending-images-503/330223.jpg",
-      "leafCategoryId": "22497",
-      "title": "#330223 - Soghd, Fiknan? Circa 625-750 AD. Double portrait",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "330225",
-      "file": "research/zeno/pending-images-503/330225.jpg",
-      "leafCategoryId": "804",
-      "title": "#330225 - Sogdiana, Otrar. Circa 700-800 AD",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "330564",
-      "file": "research/zeno/pending-images-503/330564.jpg",
-      "leafCategoryId": "2144",
-      "title": "#330564 - Chach, Pair portrait w. additional tamgha, 7-8th Ct AD, 22mm, 2.35g (broken)",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "332013",
       "file": "research/zeno/pending-images-503/332013.jpg",
       "leafCategoryId": "22488",
       "title": "#332013 - AE face/tamga “sipah” (“leader of the army”)",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "332418",
-      "file": "research/zeno/pending-images-503/332418.jpg",
-      "leafCategoryId": "22497",
-      "title": "#332418 - Soghd, AE, pare portrait. 7-8th AD",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -3037,45 +1679,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "332463",
-      "file": "research/zeno/pending-images-503/332463.jpg",
-      "leafCategoryId": "914",
-      "title": "#332463 - Chach. Kanka.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "333006",
       "file": "research/zeno/pending-images-503/333006.jpg",
       "leafCategoryId": "15521",
       "title": "#333006 - North Tokharestan AE, Sogdian legend/crosses and tamghas.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "333112",
-      "file": "research/zeno/pending-images-503/333112.jpg",
-      "leafCategoryId": "24944",
-      "title": "#333112 - Chach, lion, unknown ruler?",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "333208",
-      "file": "research/zeno/pending-images-503/333208.jpg",
-      "leafCategoryId": "22497",
-      "title": "#333208 - Soghd, AE, pare portrait. 7-8th AD",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "333211",
-      "file": "research/zeno/pending-images-503/333211.jpg",
-      "leafCategoryId": "2144",
-      "title": "#333211 - Chach, unknown principality, double portrait type",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "333212",
-      "file": "research/zeno/pending-images-503/333212.jpg",
-      "leafCategoryId": "2144",
-      "title": "#333212 - Chach, unknown principality, double portrait type",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -3100,24 +1707,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "334986",
-      "file": "research/zeno/pending-images-503/334986.jpg",
-      "leafCategoryId": "22498",
-      "title": "#334986 - Zaamin AE. Smir 1480? AE.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "335181",
       "file": "research/zeno/pending-images-503/335181.jpg",
       "leafCategoryId": "2719",
       "title": "#335181 - South Soghd, AE coin with Portrait and trident Tamgha",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "335186",
-      "file": "research/zeno/pending-images-503/335186.jpg",
-      "leafCategoryId": "2145",
-      "title": "#335186 - Chach AE. Type?",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -3149,13 +1742,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "338026",
-      "file": "research/zeno/pending-images-503/338026.jpg",
-      "leafCategoryId": "24936",
-      "title": "#338026 - Tudun Satachari, 7th - 8th",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "3386",
       "file": "research/zeno/pending-images-503/3386.jpg",
       "leafCategoryId": "922",
@@ -3163,31 +1749,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "3388",
-      "file": "research/zeno/pending-images-503/3388.jpg",
-      "leafCategoryId": "804",
-      "title": "#3388 - Chach: City of Otrar",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "3391",
-      "file": "research/zeno/pending-images-503/3391.jpg",
-      "leafCategoryId": "914",
-      "title": "#3391 - Chach: Domain Kanka City",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "3394",
       "file": "research/zeno/pending-images-503/3394.jpg",
       "leafCategoryId": "5320",
       "title": "#3394 - Chach: with name Farnbag",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "339459",
-      "file": "research/zeno/pending-images-503/339459.jpg",
-      "leafCategoryId": "22498",
-      "title": "#339459 - Zaamin AE, unknown ruler.",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -3209,27 +1774,6 @@
       "file": "research/zeno/pending-images-503/339640.jpg",
       "leafCategoryId": "2705",
       "title": "#339640 - Bukhara AE, unknown ruler.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "339710",
-      "file": "research/zeno/pending-images-503/339710.jpg",
-      "leafCategoryId": "24936",
-      "title": "#339710 - Shagalov/Kuznetsov \"Catalogue of coins of Chach\"",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "339712",
-      "file": "research/zeno/pending-images-503/339712.jpg",
-      "leafCategoryId": "24935",
-      "title": "#339712 - Shagalov/Kuznetsov \"Catalogue of coins of Chach...\" Group 6 Type 2",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "339713",
-      "file": "research/zeno/pending-images-503/339713.jpg",
-      "leafCategoryId": "24944",
-      "title": "#339713 - Shagalov/Kuznetsov \"Catalogue of coins of Chach\" Group 6 Type 9",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -3268,62 +1812,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "345213",
-      "file": "research/zeno/pending-images-503/345213.jpg",
-      "leafCategoryId": "24935",
-      "title": "#345213 - Central Asia, Chach, Nirtanak, 7-8th",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "345214",
-      "file": "research/zeno/pending-images-503/345214.jpg",
-      "leafCategoryId": "24941",
-      "title": "#345214 - Central Asia, Chach, King Tarnauch, AE unit, 7-8th c. AD",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "345215",
-      "file": "research/zeno/pending-images-503/345215.jpg",
-      "leafCategoryId": "24944",
-      "title": "#345215 - Chach, lion, unknown ruler",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "345229",
-      "file": "research/zeno/pending-images-503/345229.jpg",
-      "leafCategoryId": "914",
-      "title": "#345229 - Chach AE, group3 type 2.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "346096",
-      "file": "research/zeno/pending-images-503/346096.jpg",
-      "leafCategoryId": "914",
-      "title": "#346096 - Kanka, AE, unknown ruler.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "346101",
-      "file": "research/zeno/pending-images-503/346101.jpg",
-      "leafCategoryId": "914",
-      "title": "#346101 - Chach, Kanka, unknown ruler",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "346164",
-      "file": "research/zeno/pending-images-503/346164.jpg",
-      "leafCategoryId": "24936",
-      "title": "#346164 - Chach, Tudun Satachari",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "346165",
-      "file": "research/zeno/pending-images-503/346165.jpg",
-      "leafCategoryId": "24941",
-      "title": "#346165 - Chach, cast bronze unit, ruler Tarnavch",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "34619",
       "file": "research/zeno/pending-images-503/34619.jpg",
       "leafCategoryId": "5321",
@@ -3335,13 +1823,6 @@
       "file": "research/zeno/pending-images-503/34621.jpg",
       "leafCategoryId": "24939",
       "title": "#34621 - Chach, AE, unknown ruler.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "346289",
-      "file": "research/zeno/pending-images-503/346289.jpg",
-      "leafCategoryId": "24936",
-      "title": "#346289 - Chach, Tudun Satachari",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -3373,73 +1854,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "346547",
-      "file": "research/zeno/pending-images-503/346547.jpg",
-      "leafCategoryId": "24936",
-      "title": "#346547 - AE, Tudun Satachari",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "346548",
-      "file": "research/zeno/pending-images-503/346548.jpg",
-      "leafCategoryId": "914",
-      "title": "#346548 - Kanka, uncnown ruler",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "346603",
-      "file": "research/zeno/pending-images-503/346603.jpg",
-      "leafCategoryId": "914",
-      "title": "#346603 - Chach. Kanka.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "346604",
-      "file": "research/zeno/pending-images-503/346604.jpg",
-      "leafCategoryId": "24935",
-      "title": "#346604 - Chach, ruler Nirtanak",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "346605",
-      "file": "research/zeno/pending-images-503/346605.jpg",
-      "leafCategoryId": "24935",
-      "title": "#346605 - Chach, Nirtanak",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "346691",
-      "file": "research/zeno/pending-images-503/346691.jpg",
-      "leafCategoryId": "24944",
-      "title": "#346691 - Chach, AE, Satawchar(Stwchar)",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "346694",
-      "file": "research/zeno/pending-images-503/346694.jpg",
-      "leafCategoryId": "24935",
-      "title": "#346694 - Chach, Nirtanak",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "346695",
-      "file": "research/zeno/pending-images-503/346695.jpg",
-      "leafCategoryId": "24936",
-      "title": "#346695 - AE, Tudun Satachari",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "346764",
       "file": "research/zeno/pending-images-503/346764.jpg",
       "leafCategoryId": "24938",
       "title": "#346764 - Chach, AE, Sochak (Satuk)",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "346867",
-      "file": "research/zeno/pending-images-503/346867.jpg",
-      "leafCategoryId": "22498",
-      "title": "#346867 - Zaamin AE, Farnbag, with Nestorian cross, and tamgha.",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -3450,59 +1868,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "347329",
-      "file": "research/zeno/pending-images-503/347329.jpg",
-      "leafCategoryId": "914",
-      "title": "#347329 - Kanka, AE, unknown ruler.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "347368",
-      "file": "research/zeno/pending-images-503/347368.jpg",
-      "leafCategoryId": "2145",
-      "title": "#347368 - Chach, AE, Satawchar",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "347369",
-      "file": "research/zeno/pending-images-503/347369.jpg",
-      "leafCategoryId": "24936",
-      "title": "#347369 - Chach, Tudun Satachari",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "347477",
-      "file": "research/zeno/pending-images-503/347477.jpg",
-      "leafCategoryId": "2144",
-      "title": "#347477 - Chach, Unknown principality , coins with double portrait",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "347492",
       "file": "research/zeno/pending-images-503/347492.jpg",
       "leafCategoryId": "8786",
       "title": "#347492 - Ustrushana AE coin, Afshin Rakhanch II.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "347545",
-      "file": "research/zeno/pending-images-503/347545.jpg",
-      "leafCategoryId": "24937",
-      "title": "#347545 - Tudun",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "348308",
-      "file": "research/zeno/pending-images-503/348308.jpg",
-      "leafCategoryId": "2144",
-      "title": "#348308 - Group 5 type 1, Chach, Unknown principality , coins with double portrait.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "348309",
-      "file": "research/zeno/pending-images-503/348309.jpg",
-      "leafCategoryId": "2145",
-      "title": "#348309 - Group 6 type 4, Chach, Tudun.",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -3520,52 +1889,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "350956",
-      "file": "research/zeno/pending-images-503/350956.jpg",
-      "leafCategoryId": "24936",
-      "title": "#350956 - Chach, Tudun Satachari",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "351096",
-      "file": "research/zeno/pending-images-503/351096.jpg",
-      "leafCategoryId": "2144",
-      "title": "#351096 - Chach, unknown principality, double portrait type",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "351097",
-      "file": "research/zeno/pending-images-503/351097.jpg",
-      "leafCategoryId": "2144",
-      "title": "#351097 - Chach, unknown principality, double portrait type",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "351285",
-      "file": "research/zeno/pending-images-503/351285.jpg",
-      "leafCategoryId": "24936",
-      "title": "#351285 - Chach, Tudun Satachari",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "351290",
-      "file": "research/zeno/pending-images-503/351290.jpg",
-      "leafCategoryId": "2145",
-      "title": "#351290 - Chach",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "351291",
       "file": "research/zeno/pending-images-503/351291.jpg",
       "leafCategoryId": "24945",
       "title": "#351291 - Chach: Ruler with winged crown",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "351292",
-      "file": "research/zeno/pending-images-503/351292.jpg",
-      "leafCategoryId": "2145",
-      "title": "#351292 - Chach",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -3576,38 +1903,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "352149",
-      "file": "research/zeno/pending-images-503/352149.jpg",
-      "leafCategoryId": "24935",
-      "title": "#352149 - Central Asia, Chach, Nirtanak, 7-8th",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "352152",
-      "file": "research/zeno/pending-images-503/352152.jpg",
-      "leafCategoryId": "24937",
-      "title": "#352152 - Unknown ruler",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "352153",
-      "file": "research/zeno/pending-images-503/352153.jpg",
-      "leafCategoryId": "24944",
-      "title": "#352153 - Chach, lion, unknown ruler",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "352155",
       "file": "research/zeno/pending-images-503/352155.jpg",
       "leafCategoryId": "24949",
       "title": "#352155 - Chach coin",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "35220",
-      "file": "research/zeno/pending-images-503/35220.jpg",
-      "leafCategoryId": "2144",
-      "title": "#35220 - Chach AE coin",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -3618,45 +1917,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "35222",
-      "file": "research/zeno/pending-images-503/35222.jpg",
-      "leafCategoryId": "24935",
-      "title": "#35222 - Chach AE coin",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "353229",
-      "file": "research/zeno/pending-images-503/353229.jpg",
-      "leafCategoryId": "2144",
-      "title": "#353229 - Chach, unknown principality, double portrait type",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "353231",
       "file": "research/zeno/pending-images-503/353231.jpg",
       "leafCategoryId": "25612",
       "title": "#353231 - Coins of Nujkath, an early Mediaeval principality in Sangzar Valley",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "353232",
-      "file": "research/zeno/pending-images-503/353232.jpg",
-      "leafCategoryId": "24937",
-      "title": "#353232 - Chach Type 4: portrait ¾ to right with special headdress / tamgha, ruler Tudun",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "353241",
-      "file": "research/zeno/pending-images-503/353241.jpg",
-      "leafCategoryId": "24936",
-      "title": "#353241 - Chach, Tudun Satachari",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "353345",
-      "file": "research/zeno/pending-images-503/353345.jpg",
-      "leafCategoryId": "24944",
-      "title": "#353345 - Türk ruler of Chach",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -3667,45 +1931,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "353373",
-      "file": "research/zeno/pending-images-503/353373.jpg",
-      "leafCategoryId": "2144",
-      "title": "#353373 - Chach, unknown principality, double portrait type",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "353374",
       "file": "research/zeno/pending-images-503/353374.jpg",
       "leafCategoryId": "24939",
       "title": "#353374 - Chach AE, lion/tamgha",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "353375",
-      "file": "research/zeno/pending-images-503/353375.jpg",
-      "leafCategoryId": "24941",
-      "title": "#353375 - Central Asia, Chach, King Tarnauch, AE unit, 7-8th c.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "353376",
-      "file": "research/zeno/pending-images-503/353376.jpg",
-      "leafCategoryId": "24941",
-      "title": "#353376 - Central Asia, Chach, King Tarnauch, AE unit, 7-8th c.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "353377",
-      "file": "research/zeno/pending-images-503/353377.jpg",
-      "leafCategoryId": "24941",
-      "title": "#353377 - Central Asia, Chach, King Tarnauch, AE unit, 7-8th c.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "353378",
-      "file": "research/zeno/pending-images-503/353378.jpg",
-      "leafCategoryId": "24941",
-      "title": "#353378 - Central Asia, Chach, King Tarnauch, AE unit, 7-8th c.",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -3744,27 +1973,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "355197",
-      "file": "research/zeno/pending-images-503/355197.jpg",
-      "leafCategoryId": "24944",
-      "title": "#355197 - Chach, lion, unknown ruler",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "355198",
-      "file": "research/zeno/pending-images-503/355198.jpg",
-      "leafCategoryId": "24936",
-      "title": "#355198 - Chach, Tudun Satachari",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "355199",
-      "file": "research/zeno/pending-images-503/355199.jpg",
-      "leafCategoryId": "24935",
-      "title": "#355199 - Central Asia, Chach, Nirtanak, 7-8th",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "355201",
       "file": "research/zeno/pending-images-503/355201.jpg",
       "leafCategoryId": "922",
@@ -3793,59 +2001,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "357590",
-      "file": "research/zeno/pending-images-503/357590.jpg",
-      "leafCategoryId": "914",
-      "title": "#357590 - Kanka, AE, unknown ruler.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "35765",
       "file": "research/zeno/pending-images-503/35765.jpg",
       "leafCategoryId": "9434",
       "title": "#35765 - Unknown Sogdian cash",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "357721",
-      "file": "research/zeno/pending-images-503/357721.jpg",
-      "leafCategoryId": "22497",
-      "title": "#357721 - Soghd, Fiknan, Circa 625-750 AD. Double portrait",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "359860",
-      "file": "research/zeno/pending-images-503/359860.jpg",
-      "leafCategoryId": "24941",
-      "title": "#359860 - Central Asia, Chach, King Tarnauch, AE unit, 7-8th c. AD",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "359861",
-      "file": "research/zeno/pending-images-503/359861.jpg",
-      "leafCategoryId": "24941",
-      "title": "#359861 - Central Asia, Chach, King Tarnauch, AE unit, 7-8th c. AD",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "359862",
-      "file": "research/zeno/pending-images-503/359862.jpg",
-      "leafCategoryId": "24941",
-      "title": "#359862 - Central Asia, Chach, King Tarnauch, AE unit, 7-8th c. AD",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "359863",
-      "file": "research/zeno/pending-images-503/359863.jpg",
-      "leafCategoryId": "24941",
-      "title": "#359863 - Central Asia, Chach, King Tarnauch, AE unit, 7-8th c. AD",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "359864",
-      "file": "research/zeno/pending-images-503/359864.jpg",
-      "leafCategoryId": "24941",
-      "title": "#359864 - Central Asia, Chach, King Tarnauch, AE unit, 7-8th c. AD",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -3856,24 +2015,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "36109",
-      "file": "research/zeno/pending-images-503/36109.jpg",
-      "leafCategoryId": "24944",
-      "title": "#36109 - Chach AE coin of a rare type.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "36111",
       "file": "research/zeno/pending-images-503/36111.jpg",
       "leafCategoryId": "24950",
       "title": "#36111 - Chach AE coin of a rare type.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "363981",
-      "file": "research/zeno/pending-images-503/363981.jpg",
-      "leafCategoryId": "22497",
-      "title": "#363981 - Eastern Soghd, AE, double portrait/turkic runas.",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -3884,13 +2029,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "366035",
-      "file": "research/zeno/pending-images-503/366035.jpg",
-      "leafCategoryId": "22497",
-      "title": "#366035 - Central Asia, Soghd, AE unit, Fiknan, double portrait/runas",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "36622",
       "file": "research/zeno/pending-images-503/36622.jpg",
       "leafCategoryId": "22239",
@@ -3898,24 +2036,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "36671",
-      "file": "research/zeno/pending-images-503/36671.jpg",
-      "leafCategoryId": "914",
-      "title": "#36671 - Kanka, AE, unknown ruler with long hair.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "367616",
       "file": "research/zeno/pending-images-503/367616.jpg",
       "leafCategoryId": "15500",
       "title": "#367616 - Northern Tokharistan, Vakhsh valley coin",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "36769",
-      "file": "research/zeno/pending-images-503/36769.jpg",
-      "leafCategoryId": "15760",
-      "title": "#36769 - Kai Yuan Tong Bao, local imitation",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -4017,20 +2141,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "374079",
-      "file": "research/zeno/pending-images-503/374079.jpg",
-      "leafCategoryId": "24941",
-      "title": "#374079 - Central Asia, Chach, King Tarnauch, AE unit, 7-8th c. AD",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "374080",
-      "file": "research/zeno/pending-images-503/374080.jpg",
-      "leafCategoryId": "24941",
-      "title": "#374080 - Central Asia, Chach, King Tarnauch, AE unit, 7-8th c. AD",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "375690",
       "file": "research/zeno/pending-images-503/375690.jpg",
       "leafCategoryId": "14834",
@@ -4122,52 +2232,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "381431",
-      "file": "research/zeno/pending-images-503/381431.jpg",
-      "leafCategoryId": "15760",
-      "title": "#381431 - Semirech'e, Double Kaiyuan Tongbao, Imitation, 10.13g",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "381432",
-      "file": "research/zeno/pending-images-503/381432.jpg",
-      "leafCategoryId": "15760",
-      "title": "#381432 - Semirech'e, Double Kaiyuan Tongbao, Imitation, 10.69g",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "381433",
-      "file": "research/zeno/pending-images-503/381433.jpg",
-      "leafCategoryId": "15760",
-      "title": "#381433 - Semirech'e, Double Kaiyuan Tongbao, Imitation, 10.12g",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "381434",
       "file": "research/zeno/pending-images-503/381434.jpg",
       "leafCategoryId": "15762",
       "title": "#381434 - Semirech'e, Heavy Kaiyuan Tongbao, Imitation, 7.91g",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "381450",
-      "file": "research/zeno/pending-images-503/381450.jpg",
-      "leafCategoryId": "15760",
-      "title": "#381450 - Semirech'e, Double Kaiyuan Tongbao, Imitation, 7.7g",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "381451",
-      "file": "research/zeno/pending-images-503/381451.jpg",
-      "leafCategoryId": "15760",
-      "title": "#381451 - Semirech'e, Double Kaiyuan Tongbao, Imitation, 9g",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "382621",
-      "file": "research/zeno/pending-images-503/382621.jpg",
-      "leafCategoryId": "22497",
-      "title": "#382621 - Soghd, Fiknan, Circa 625-750 AD. Double portrait",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -4241,13 +2309,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "383156",
-      "file": "research/zeno/pending-images-503/383156.jpg",
-      "leafCategoryId": "15760",
-      "title": "#383156 - Semirech'e, Double Reverse KYTB, AE, Imitation",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "383157",
       "file": "research/zeno/pending-images-503/383157.jpg",
       "leafCategoryId": "15758",
@@ -4259,20 +2320,6 @@
       "file": "research/zeno/pending-images-503/383158.jpg",
       "leafCategoryId": "15758",
       "title": "#383158 - Semirech'e, Anepigraphic Imitation, AE Cash, 4 Panels",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "383159",
-      "file": "research/zeno/pending-images-503/383159.jpg",
-      "leafCategoryId": "15760",
-      "title": "#383159 - Semirech'e, Double Kaiyuan Tongbao, Imitation, 9.17g",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "383160",
-      "file": "research/zeno/pending-images-503/383160.jpg",
-      "leafCategoryId": "15760",
-      "title": "#383160 - Semirech'e, Double Kaiyuan Tongbao, Imitation, 7.18g",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -4458,27 +2505,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "387543",
-      "file": "research/zeno/pending-images-503/387543.jpg",
-      "leafCategoryId": "22498",
-      "title": "#387543 - Samarqand/Zaamin AE, unknown ruler.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "387545",
-      "file": "research/zeno/pending-images-503/387545.jpg",
-      "leafCategoryId": "22498",
-      "title": "#387545 - Samarqand/Zaamin AE, unknown ruler.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "387564",
-      "file": "research/zeno/pending-images-503/387564.jpg",
-      "leafCategoryId": "22497",
-      "title": "#387564 - Soghd, AE unit, Fiknan, double portrait/runas",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "387569",
       "file": "research/zeno/pending-images-503/387569.jpg",
       "leafCategoryId": "24945",
@@ -4486,31 +2512,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "387571",
-      "file": "research/zeno/pending-images-503/387571.jpg",
-      "leafCategoryId": "22498",
-      "title": "#387571 - Zaamin AE, unknown ruler.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "387572",
-      "file": "research/zeno/pending-images-503/387572.jpg",
-      "leafCategoryId": "22498",
-      "title": "#387572 - Samarqand/Zaamin AE, unknown ruler.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "387573",
       "file": "research/zeno/pending-images-503/387573.jpg",
       "leafCategoryId": "22239",
       "title": "#387573 - Ustrushana, afshin Rakhanch",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "387580",
-      "file": "research/zeno/pending-images-503/387580.jpg",
-      "leafCategoryId": "22498",
-      "title": "#387580 - Zaamin, AE, unknown ruler",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -4525,20 +2530,6 @@
       "file": "research/zeno/pending-images-503/387720.jpg",
       "leafCategoryId": "5321",
       "title": "#387720 - Unknown principality in Chach area.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "387749",
-      "file": "research/zeno/pending-images-503/387749.jpg",
-      "leafCategoryId": "2145",
-      "title": "#387749 - Central Asia, Chach",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "387808",
-      "file": "research/zeno/pending-images-503/387808.jpg",
-      "leafCategoryId": "22498",
-      "title": "#387808 - Zaamin AE, unknown ruler",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -4570,27 +2561,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "387973",
-      "file": "research/zeno/pending-images-503/387973.jpg",
-      "leafCategoryId": "24941",
-      "title": "#387973 - Central Asia, Chach, King Tarnauch, AE unit, 7-8th c. AD",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "388110",
-      "file": "research/zeno/pending-images-503/388110.jpg",
-      "leafCategoryId": "914",
-      "title": "#388110 - Chach. Kanka.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "388122",
-      "file": "research/zeno/pending-images-503/388122.jpg",
-      "leafCategoryId": "2144",
-      "title": "#388122 - Сhach, unknown principality, double portrait type",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "388164",
       "file": "research/zeno/pending-images-503/388164.jpg",
       "leafCategoryId": "5320",
@@ -4612,80 +2582,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "388344",
-      "file": "research/zeno/pending-images-503/388344.jpg",
-      "leafCategoryId": "24944",
-      "title": "#388344 - Chach, lion, unknown ruler",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "388400",
-      "file": "research/zeno/pending-images-503/388400.jpg",
-      "leafCategoryId": "914",
-      "title": "#388400 - Chach, Kanka domain, AE unit, unidentified ruler.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "388412",
-      "file": "research/zeno/pending-images-503/388412.jpg",
-      "leafCategoryId": "914",
-      "title": "#388412 - Kanka, AE, unknown ruler.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "388420",
-      "file": "research/zeno/pending-images-503/388420.jpg",
-      "leafCategoryId": "2144",
-      "title": "#388420 - Chach, unknown principality, double portrait type",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "388450",
-      "file": "research/zeno/pending-images-503/388450.jpg",
-      "leafCategoryId": "914",
-      "title": "#388450 - Kanka, unknown ruler",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "388461",
-      "file": "research/zeno/pending-images-503/388461.jpg",
-      "leafCategoryId": "914",
-      "title": "#388461 - Chach, Kanka domain, AE unit,",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "388464",
-      "file": "research/zeno/pending-images-503/388464.jpg",
-      "leafCategoryId": "24936",
-      "title": "#388464 - Chach, Tudun Satachari",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "388465",
-      "file": "research/zeno/pending-images-503/388465.jpg",
-      "leafCategoryId": "24936",
-      "title": "#388465 - Chach, Tudun Satachari",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "388466",
       "file": "research/zeno/pending-images-503/388466.jpg",
       "leafCategoryId": "24946",
       "title": "#388466 - Chach AE, unknown ruler.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "388468",
-      "file": "research/zeno/pending-images-503/388468.jpg",
-      "leafCategoryId": "914",
-      "title": "#388468 - Chach, Kanka domain, AE unit, unidentified ruler.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "388469",
-      "file": "research/zeno/pending-images-503/388469.jpg",
-      "leafCategoryId": "914",
-      "title": "#388469 - Chach, Kanka domain, AE unit,",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -4696,20 +2596,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "388497",
-      "file": "research/zeno/pending-images-503/388497.jpg",
-      "leafCategoryId": "2144",
-      "title": "#388497 - Сhach, unknown principality, double portrait type",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "388512",
-      "file": "research/zeno/pending-images-503/388512.jpg",
-      "leafCategoryId": "914",
-      "title": "#388512 - Chach, Kanka domain, AE unit,",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "388559",
       "file": "research/zeno/pending-images-503/388559.jpg",
       "leafCategoryId": "24948",
@@ -4717,59 +2603,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "388561",
-      "file": "research/zeno/pending-images-503/388561.jpg",
-      "leafCategoryId": "24936",
-      "title": "#388561 - Chach, Tudun Satachari",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "388563",
-      "file": "research/zeno/pending-images-503/388563.jpg",
-      "leafCategoryId": "22498",
-      "title": "#388563 - Samarqand/Zaamin AE, unknown ruler.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "388577",
-      "file": "research/zeno/pending-images-503/388577.jpg",
-      "leafCategoryId": "24937",
-      "title": "#388577 - Chach, poorly preserved Ruler Tudun",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "388579",
-      "file": "research/zeno/pending-images-503/388579.jpg",
-      "leafCategoryId": "24937",
-      "title": "#388579 - Chach, AE Coin, uncnown ruler",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "388580",
       "file": "research/zeno/pending-images-503/388580.jpg",
       "leafCategoryId": "24949",
       "title": "#388580 - Chach, AE, Unknown ruler.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "388598",
-      "file": "research/zeno/pending-images-503/388598.jpg",
-      "leafCategoryId": "22498",
-      "title": "#388598 - Samarqand/Zaamin AE, unknown ruler.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "388600",
-      "file": "research/zeno/pending-images-503/388600.jpg",
-      "leafCategoryId": "22498",
-      "title": "#388600 - Zaamin AE, unknown ruler.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "388602",
-      "file": "research/zeno/pending-images-503/388602.jpg",
-      "leafCategoryId": "22498",
-      "title": "#388602 - Samarqand/Zaamin AE, unknown ruler.",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -4787,13 +2624,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "39561",
-      "file": "research/zeno/pending-images-503/39561.jpg",
-      "leafCategoryId": "804",
-      "title": "#39561 - Otrar AE coin with Runic letters.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "39570",
       "file": "research/zeno/pending-images-503/39570.jpg",
       "leafCategoryId": "24943",
@@ -4801,38 +2631,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "39966",
-      "file": "research/zeno/pending-images-503/39966.jpg",
-      "leafCategoryId": "2144",
-      "title": "#39966 - Chach, unknown domain, double portrait, tamgha with cross.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "39967",
-      "file": "research/zeno/pending-images-503/39967.jpg",
-      "leafCategoryId": "2144",
-      "title": "#39967 - Chach, unknown domain, double portrait AE coin.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "40181",
-      "file": "research/zeno/pending-images-503/40181.jpg",
-      "leafCategoryId": "24941",
-      "title": "#40181 - Unlisted biggest variety of Tarnavch coin.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "40239",
       "file": "research/zeno/pending-images-503/40239.jpg",
       "leafCategoryId": "15758",
       "title": "#40239 - Semirechie, AE unit",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "40240",
-      "file": "research/zeno/pending-images-503/40240.jpg",
-      "leafCategoryId": "914",
-      "title": "#40240 - Kanka, Chach 7-8 c. unknown ruler",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -4885,13 +2687,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "47449",
-      "file": "research/zeno/pending-images-503/47449.jpg",
-      "leafCategoryId": "24936",
-      "title": "#47449 - Chach Tudun Satachari. Portrait to the left",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "47785",
       "file": "research/zeno/pending-images-503/47785.jpg",
       "leafCategoryId": "15758",
@@ -4899,24 +2694,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "49951",
-      "file": "research/zeno/pending-images-503/49951.jpg",
-      "leafCategoryId": "22497",
-      "title": "#49951 - Soghdian double portrait coin.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "52829",
       "file": "research/zeno/pending-images-503/52829.jpg",
       "leafCategoryId": "13671",
       "title": "#52829 - Enigmatic Semirech'e cash-like coin with Runic letters only.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "55613",
-      "file": "research/zeno/pending-images-503/55613.jpg",
-      "leafCategoryId": "24937",
-      "title": "#55613 - Chach, AE, unknown ruler.",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -4931,13 +2712,6 @@
       "file": "research/zeno/pending-images-503/57521.jpg",
       "leafCategoryId": "15517",
       "title": "#57521 - New type of Tirmidh (?) cash-like AE coin.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "58221",
-      "file": "research/zeno/pending-images-503/58221.jpg",
-      "leafCategoryId": "2144",
-      "title": "#58221 - AE with double portrait, cross above tamgha.",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -4959,13 +2733,6 @@
       "file": "research/zeno/pending-images-503/60328.jpg",
       "leafCategoryId": "20648",
       "title": "#60328 - Paykend cash-like coin, with two crosses.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "61689",
-      "file": "research/zeno/pending-images-503/61689.jpg",
-      "leafCategoryId": "22498",
-      "title": "#61689 - Zaamin, AE coin of unknown ruler.",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -5025,13 +2792,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "67072",
-      "file": "research/zeno/pending-images-503/67072.jpg",
-      "leafCategoryId": "22498",
-      "title": "#67072 - Zaamin, AE, unknown ruler.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "6874",
       "file": "research/zeno/pending-images-503/6874.jpg",
       "leafCategoryId": "22239",
@@ -5060,31 +2820,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "72484",
-      "file": "research/zeno/pending-images-503/72484.jpg",
-      "leafCategoryId": "24937",
-      "title": "#72484 - Chach",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "72485",
-      "file": "research/zeno/pending-images-503/72485.jpg",
-      "leafCategoryId": "24935",
-      "title": "#72485 - Chach",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "72486",
       "file": "research/zeno/pending-images-503/72486.jpg",
       "leafCategoryId": "24939",
       "title": "#72486 - Chach - Lion left",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "75916",
-      "file": "research/zeno/pending-images-503/75916.jpg",
-      "leafCategoryId": "24937",
-      "title": "#75916 - Chach, AE, unknown ruler",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -5109,13 +2848,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "77704",
-      "file": "research/zeno/pending-images-503/77704.jpg",
-      "leafCategoryId": "22497",
-      "title": "#77704 - SOGDIANA: Anonymous AE with double portrait.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "77713",
       "file": "research/zeno/pending-images-503/77713.jpg",
       "leafCategoryId": "22243",
@@ -5127,20 +2859,6 @@
       "file": "research/zeno/pending-images-503/7866.jpg",
       "leafCategoryId": "13671",
       "title": "#7866 - Central Asia AE cash coin, two Turkic runas characters",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "81155",
-      "file": "research/zeno/pending-images-503/81155.jpg",
-      "leafCategoryId": "22498",
-      "title": "#81155 - Zaamin, AE portrait",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "81163",
-      "file": "research/zeno/pending-images-503/81163.jpg",
-      "leafCategoryId": "24937",
-      "title": "#81163 - Chach, AE, Unknown ruler 7-8Ct AD.",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -5172,13 +2890,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "83735",
-      "file": "research/zeno/pending-images-503/83735.jpg",
-      "leafCategoryId": "22498",
-      "title": "#83735 - Zaamin? AE coin",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "86240",
       "file": "research/zeno/pending-images-503/86240.jpg",
       "leafCategoryId": "2719",
@@ -5200,45 +2911,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "86941",
-      "file": "research/zeno/pending-images-503/86941.jpg",
-      "leafCategoryId": "22498",
-      "title": "#86941 - Zaamin, AE, unknown ruler.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "86942",
-      "file": "research/zeno/pending-images-503/86942.jpg",
-      "leafCategoryId": "22498",
-      "title": "#86942 - Zaamin, AE, unknown ruler.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "87731",
       "file": "research/zeno/pending-images-503/87731.jpg",
       "leafCategoryId": "22500",
       "title": "#87731 - AE cash",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "87868",
-      "file": "research/zeno/pending-images-503/87868.jpg",
-      "leafCategoryId": "24935",
-      "title": "#87868 - Chach, Nirtanak",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "8949",
-      "file": "research/zeno/pending-images-503/8949.jpg",
-      "leafCategoryId": "804",
-      "title": "#8949 - City of Otrar, Smirnova 1580",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "90512",
-      "file": "research/zeno/pending-images-503/90512.jpg",
-      "leafCategoryId": "24941",
-      "title": "#90512 - Chach",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -5253,20 +2929,6 @@
       "file": "research/zeno/pending-images-503/93871.jpg",
       "leafCategoryId": "5321",
       "title": "#93871 - Unknown principality in Chach area",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "94905",
-      "file": "research/zeno/pending-images-503/94905.jpg",
-      "leafCategoryId": "15760",
-      "title": "#94905 - Imitation of type \"Kaiyuan tongbao\".",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "9683",
-      "file": "research/zeno/pending-images-503/9683.jpg",
-      "leafCategoryId": "804",
-      "title": "#9683 - Central Asia AE coin, (Otrar), Turgesh's tamgha",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -5291,38 +2953,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "98312",
-      "file": "research/zeno/pending-images-503/98312.jpg",
-      "leafCategoryId": "2144",
-      "title": "#98312 - Unknown principality I, coins with double portrait",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "98313",
-      "file": "research/zeno/pending-images-503/98313.jpg",
-      "leafCategoryId": "24941",
-      "title": "#98313 - Chach, cast AE, ruler Tarnavch?",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "98561",
-      "file": "research/zeno/pending-images-503/98561.jpg",
-      "leafCategoryId": "24941",
-      "title": "#98561 - Chach, cast AE, ruler Tarnavch",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "98563",
       "file": "research/zeno/pending-images-503/98563.jpg",
       "leafCategoryId": "24934",
       "title": "#98563 - Chach, unknown ruler",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "98564",
-      "file": "research/zeno/pending-images-503/98564.jpg",
-      "leafCategoryId": "24935",
-      "title": "#98564 - Chach, Nirtanak",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -5342,5 +2976,8 @@
   ],
   "reviewedAndRemovedStage2": 91,
   "reviewedRelatedStage2": 11,
-  "importedStage2": 80
+  "importedStage2": 80,
+  "reviewedAndRemovedStage3": 338,
+  "reviewedRelatedStage3": 337,
+  "importedStage3": 1
 }
