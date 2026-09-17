@@ -1316,6 +1316,73 @@
           "role": "Source-reported regional find context; archaeological verification pending"
         }
       ]
+    },
+    {
+      "id": "semirechye-runic-sh-gamma",
+      "title": "Semirechye two-runic-sign square-hole cash",
+      "zh": "七河双突厥符号方孔钱",
+      "region": "Semirechye",
+      "start": 700,
+      "end": 899,
+      "dateLabel": "Broad 8th–9th century context; exact chronology pending",
+      "description": "Zeno category 13671 groups cash-like AE issues with two runic signs š and γ. Downloaded specimens show pierced square or squarish apertures and belong to the Chinese-style cash-tradition corpus; reading, issuer and chronology remain provisional.",
+      "anchor": {
+        "placeId": "suyab",
+        "role": "Regional/city orientation · 区域／城市浏览锚点",
+        "note": "用于地图浏览；不自动表示铸币地、出土地或流通范围。"
+      },
+      "image": "/coins/zeno/180778.jpg",
+      "status": "source_linked_candidate",
+      "question": "Issuer, exact reading and catalogue crosswalk require specialist literature review.",
+      "publications": [
+        {
+          "title": "Zeno category source taxonomy · stage-4 visual review",
+          "url": "https://www.zeno.ru/showgallery.php?cat=503",
+          "role": "Source taxonomy / specimen discovery; canonical attribution pending"
+        }
+      ]
+    },
+    {
+      "id": "vakhsh-cross-tamgha-cash",
+      "title": "Vakhsh cross-and-tamgha cash",
+      "zh": "瓦赫什十字与徽记方孔钱",
+      "region": "Northern Tokharistan / Vakhsh valley",
+      "start": 600,
+      "end": 899,
+      "dateLabel": "Source-taxonomy context; exact chronology pending",
+      "description": "Northern Tokharistan/Vakhsh AE cash-like issues carrying crosses, tamghas and Sogdian/Bactrian-style elements. Stage-4 visual review confirms square or pseudo-square central apertures/frames across this source group.",
+      "anchor": null,
+      "image": "/coins/zeno/108670.jpg",
+      "status": "source_linked_candidate",
+      "question": "Exact issuer, legend readings, chronology and relationship to neighboring Tokharistan cash traditions remain open.",
+      "publications": [
+        {
+          "title": "Zeno category source taxonomy · stage-4 visual review",
+          "url": "https://www.zeno.ru/showgallery.php?cat=503",
+          "role": "Source taxonomy / specimen discovery; canonical attribution pending"
+        }
+      ]
+    },
+    {
+      "id": "ferghana-two-tamgha-cash",
+      "title": "Ferghana two-tamgha square-hole cash",
+      "zh": "费尔干纳双徽记方孔钱",
+      "region": "Ferghana",
+      "start": 600,
+      "end": 899,
+      "dateLabel": "Source-taxonomy context; exact chronology pending",
+      "description": "Two Zeno source records under the Ferghana “Two tamghas” group show clear Chinese-style square-hole cash morphology. The political and chronological attribution remains provisional.",
+      "anchor": null,
+      "image": "/coins/zeno/277428.jpg",
+      "status": "source_linked_candidate",
+      "question": "Crosswalk the tamghas and legends against specialist Ferghana catalogues before canonical attribution.",
+      "publications": [
+        {
+          "title": "Zeno category source taxonomy · stage-4 visual review",
+          "url": "https://www.zeno.ru/showgallery.php?cat=503",
+          "role": "Source taxonomy / specimen discovery; canonical attribution pending"
+        }
+      ]
     }
   ],
   "variants": [
@@ -2209,6 +2276,69 @@
       "status": "source_group",
       "facets": [],
       "description": "Record-level subset of the Zeno Kanka category. Zeno #1070 explicitly reports a Kaiyuan Tongbao find from Kanka site in the Tashkent oasis; other Kanka category records reviewed here are non-square local coinage and remain related only."
+    },
+    {
+      "id": "zeno503-cat-13671-stage4",
+      "familyId": "semirechye-runic-sh-gamma",
+      "title": "Two Runic signs š and γ",
+      "reference": "Zeno category 13671 / stage-4 reviewed subset",
+      "status": "source_group",
+      "facets": [],
+      "description": "Zeno source category/subset retained after stage-4 record-level image review; it is not automatically an academic variant."
+    },
+    {
+      "id": "zeno503-cat-15521-stage4",
+      "familyId": "vakhsh-cross-tamgha-cash",
+      "title": "Crosses and tamghas",
+      "reference": "Zeno category 15521 / stage-4 reviewed subset",
+      "status": "source_group",
+      "facets": [],
+      "description": "Zeno source category/subset retained after stage-4 record-level image review; it is not automatically an academic variant."
+    },
+    {
+      "id": "zeno503-cat-15762-stage4",
+      "familyId": "semirechye-chinese-imitation",
+      "title": "plain reverse",
+      "reference": "Zeno category 15762 / stage-4 reviewed subset",
+      "status": "source_group",
+      "facets": [],
+      "description": "Zeno source category/subset retained after stage-4 record-level image review; it is not automatically an academic variant."
+    },
+    {
+      "id": "zeno503-cat-20647-stage4",
+      "familyId": "paykand-square-hole",
+      "title": "Rev. cross",
+      "reference": "Zeno category 20647 / stage-4 reviewed subset",
+      "status": "source_group",
+      "facets": [],
+      "description": "Zeno source category/subset retained after stage-4 record-level image review; it is not automatically an academic variant."
+    },
+    {
+      "id": "zeno503-cat-20648-stage4",
+      "familyId": "paykand-square-hole",
+      "title": "Rev. two crosses (or two cross-like figures)",
+      "reference": "Zeno category 20648 / stage-4 reviewed subset",
+      "status": "source_group",
+      "facets": [],
+      "description": "Zeno source category/subset retained after stage-4 record-level image review; it is not automatically an academic variant."
+    },
+    {
+      "id": "zeno503-cat-20649-stage4",
+      "familyId": "paykand-square-hole",
+      "title": "Rev. plain",
+      "reference": "Zeno category 20649 / stage-4 reviewed subset",
+      "status": "source_group",
+      "facets": [],
+      "description": "Zeno source category/subset retained after stage-4 record-level image review; it is not automatically an academic variant."
+    },
+    {
+      "id": "zeno503-cat-22500-stage4",
+      "familyId": "ferghana-two-tamgha-cash",
+      "title": "Two tamghas",
+      "reference": "Zeno category 22500 / stage-4 reviewed subset",
+      "status": "source_group",
+      "facets": [],
+      "description": "Zeno source category/subset retained after stage-4 record-level image review; it is not automatically an academic variant."
     }
   ],
   "specimens": [
@@ -35401,6 +35531,1196 @@
         "place": "Kanka site / Tashkent oasis",
         "note": "No precise coordinate or excavation context is inferred beyond the source wording."
       }
+    },
+    {
+      "id": "zeno-108670",
+      "familyId": "vakhsh-cross-tamgha-cash",
+      "variantId": "zeno503-cat-15521-stage4",
+      "title": "North Tokharestan, AE cash",
+      "weightG": 1.52,
+      "diameterMm": 18.0,
+      "images": [
+        {
+          "id": "z108670",
+          "path": "/coins/zeno/108670.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/15521/DSC03230.jpg",
+          "width": 841,
+          "height": 422,
+          "credit": "turgiskhanate",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "04b382eedb7696d01c37d9a3f5974dbad23dc266c45473ce846558a59d30f041"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 108670",
+          "url": "https://www.zeno.ru/showphoto.php?photo=108670",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Are there 2 crosses on the reverse?",
+      "catalogue": "Zeno category 15521 · Crosses and tamghas",
+      "facets": [
+        "#503 stage-4 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-13748",
+      "familyId": "paykand-square-hole",
+      "variantId": "zeno503-cat-20649-stage4",
+      "title": "Sogdiana, Bukhara (Paikend), AD 640-708.",
+      "weightG": 1.71,
+      "diameterMm": 16.5,
+      "images": [
+        {
+          "id": "z13748",
+          "path": "/coins/zeno/13748.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/20649/Paikend933.jpg",
+          "width": 1028,
+          "height": 482,
+          "credit": "hfrans",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "6b155509e14ba13bde7034b846f90ab873677bafc7ddb8db2aa8c4695c1452f5"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 13748",
+          "url": "https://www.zeno.ru/showphoto.php?photo=13748",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "SOGDIANA, WESTERN SOGD, Paikend, AE cash, 640-708, Ref.: Zeimal, 16. Extremely Rare. This image is published with the kind permission of Jean Elsen & ses Fils s.a.",
+      "catalogue": "Zeno category 20649 · Rev. plain",
+      "facets": [
+        "#503 stage-4 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-180778",
+      "familyId": "semirechye-runic-sh-gamma",
+      "variantId": "zeno503-cat-13671-stage4",
+      "title": "Central Asia AE cash, Kyrgyzstan",
+      "weightG": null,
+      "diameterMm": 24.0,
+      "images": [
+        {
+          "id": "z180778",
+          "path": "/coins/zeno/180778.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/13671/030317nn1-n.jpg",
+          "width": 2336,
+          "height": 1184,
+          "credit": "charm",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "fdcd259bd9add986fdb46151d8bc9d197167106bdbc461f80ed242f2b05018f6"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 180778",
+          "url": "https://www.zeno.ru/showphoto.php?photo=180778",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Unearthed in Kyrgyzstan.",
+      "catalogue": "Zeno category 13671 · Two Runic signs š and γ",
+      "facets": [
+        "#503 stage-4 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-197311",
+      "familyId": "vakhsh-cross-tamgha-cash",
+      "variantId": "zeno503-cat-15521-stage4",
+      "title": "North Tokharestan, AE, crosses and tamghas.",
+      "weightG": 1.62,
+      "diameterMm": 16.0,
+      "images": [
+        {
+          "id": "z197311",
+          "path": "/coins/zeno/197311.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/15521/4130242.jpg",
+          "width": 800,
+          "height": 393,
+          "credit": "hfrans",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "50c0145c9dfaf91b08d66752f433efa61aaec011456af0365f3587aad93c21c5"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 197311",
+          "url": "https://www.zeno.ru/showphoto.php?photo=197311",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Ex CNG , e-Auc 413: 31 Jan 2018; lot 242. Sold for $425. LOCAL ISSUES, Fergana. Tutuks. 7th-8th century. Æ (16mm, 1.62 g). Sogdian legend around central square hole / Possible tamghas flanking central square hole. Cf. Smirnova 1445 (for type); cf. Zeno 77707 (same). Near VF, earthen green patina. Rare. (Wrong description at the auction site, see # 108670 ) for Another coin of this type)",
+      "catalogue": "Zeno category 15521 · Crosses and tamghas",
+      "facets": [
+        "#503 stage-4 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-20199",
+      "familyId": "paykand-square-hole",
+      "variantId": "zeno503-cat-20648-stage4",
+      "title": "Bukhara, AE cash style coin, Unknown ruler.",
+      "weightG": 1.2,
+      "diameterMm": 18.0,
+      "images": [
+        {
+          "id": "z20199",
+          "path": "/coins/zeno/20199.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/20648/pai1WS34_.JPG",
+          "width": 1106,
+          "height": 550,
+          "credit": "hfrans",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "f1a313a4532624e01514cdda4075523c6cdbcfff430266bd123bae29b98fb29e"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 20199",
+          "url": "https://www.zeno.ru/showphoto.php?photo=20199",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Unknown ruler. Obv: To the right of the square hole is a Bukharan tamgha, to the left the chinese caracter \"yuan\", above and below are sogdian legends. Rev: A cross to the left and right of the hole. This coin is sometimes associated with the city of Paikend. This image is published with kind permission from “COINS OF CENTRAL ASIA”.",
+      "catalogue": "Zeno category 20648 · Rev. two crosses (or two cross-like figures)",
+      "facets": [
+        "#503 stage-4 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-212045",
+      "familyId": "vakhsh-cross-tamgha-cash",
+      "variantId": "zeno503-cat-15521-stage4",
+      "title": "Northern Tokharistan, AE unit, crosses and tamghas",
+      "weightG": null,
+      "diameterMm": 17.65,
+      "images": [
+        {
+          "id": "z212045",
+          "path": "/coins/zeno/212045.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/15521/Badakhshan_cast.jpg",
+          "width": 3193,
+          "height": 1626,
+          "credit": "vaxtankava",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "089da6b1af8262592862d9e5bf7f3bc8403e1a1f4c75e1984c01bb6c7b315294"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 212045",
+          "url": "https://www.zeno.ru/showphoto.php?photo=212045",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "#212045 - Northern Tokharistan, AE unit, crosses and tamghas",
+      "catalogue": "Zeno category 15521 · Crosses and tamghas",
+      "facets": [
+        "#503 stage-4 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-214379",
+      "familyId": "semirechye-runic-sh-gamma",
+      "variantId": "zeno503-cat-13671-stage4",
+      "title": "Central Asia AE cash, w. two Turkic runas, N. Afghanistan",
+      "weightG": 2.98,
+      "diameterMm": 24.44,
+      "images": [
+        {
+          "id": "z214379",
+          "path": "/coins/zeno/214379.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/13671/4526345745684678756779345.jpg",
+          "width": 2777,
+          "height": 1385,
+          "credit": "vaxtankava",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "7fcbbac8fad3fb059969b76ec5c7dd4e91e433e05d4aca0fec946471d85d2363"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 214379",
+          "url": "https://www.zeno.ru/showphoto.php?photo=214379",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Unearthed in N. Afghanistan",
+      "catalogue": "Zeno category 13671 · Two Runic signs š and γ",
+      "facets": [
+        "#503 stage-4 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-214936",
+      "familyId": "semirechye-runic-sh-gamma",
+      "variantId": "zeno503-cat-13671-stage4",
+      "title": "Central Asia AE cash, w. two Turkic runas",
+      "weightG": 2.83,
+      "diameterMm": 23.28,
+      "images": [
+        {
+          "id": "z214936",
+          "path": "/coins/zeno/214936.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/13671/4524246245645645.jpg",
+          "width": 3774,
+          "height": 1881,
+          "credit": "vaxtankava",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "b3549b4997ddb02afb5d3836ae72ea81c442f23dc2e9274f9892968ee87209f4"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 214936",
+          "url": "https://www.zeno.ru/showphoto.php?photo=214936",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "#214936 - Central Asia AE cash, w. two Turkic runas",
+      "catalogue": "Zeno category 13671 · Two Runic signs š and γ",
+      "facets": [
+        "#503 stage-4 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-215018",
+      "familyId": "vakhsh-cross-tamgha-cash",
+      "variantId": "zeno503-cat-15521-stage4",
+      "title": "Northern Tokharistan, AE unit, crosses and tamghas",
+      "weightG": 1.89,
+      "diameterMm": 17.3,
+      "images": [
+        {
+          "id": "z215018",
+          "path": "/coins/zeno/215018.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/15521/23624623461334623346.jpg",
+          "width": 3204,
+          "height": 1612,
+          "credit": "vaxtankava",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "769378e0eef47581f22955a65e5196cbdbca122a5a5d9851898c8f828dd1234c"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 215018",
+          "url": "https://www.zeno.ru/showphoto.php?photo=215018",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Video of this coin: youtube.com",
+      "catalogue": "Zeno category 15521 · Crosses and tamghas",
+      "facets": [
+        "#503 stage-4 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-215281",
+      "familyId": "semirechye-chinese-imitation",
+      "variantId": "zeno503-cat-15762-stage4",
+      "title": "Semirech'e, AE imitation of KYTB.",
+      "weightG": null,
+      "diameterMm": null,
+      "images": [
+        {
+          "id": "z215281",
+          "path": "/coins/zeno/215281.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/15762/s-l1600SRXCDW8R.jpg",
+          "width": 976,
+          "height": 500,
+          "credit": "hfrans",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "f9da9a34cd4b43775ce7d40c34805440d6a8ac35a08e164ad7dcb96ce98d4f4a"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 215281",
+          "url": "https://www.zeno.ru/showphoto.php?photo=215281",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "eBay # 254026758752 Semirech'e imitation of KYTB. Metal: AE Sold: $23,50",
+      "catalogue": "Zeno category 15762 · plain reverse",
+      "facets": [
+        "#503 stage-4 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-215809",
+      "familyId": "semirechye-chinese-imitation",
+      "variantId": "zeno503-cat-15762-stage4",
+      "title": "Kai-yuan tong-bao, Semirech'e local cast",
+      "weightG": 3.31,
+      "diameterMm": 24.25,
+      "images": [
+        {
+          "id": "z215809",
+          "path": "/coins/zeno/215809.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/15762/M0382_3_31_g_24_25_24_58mm.jpg",
+          "width": 2367,
+          "height": 1215,
+          "credit": "charm",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "6987cf35290bd9d464b523f7e90bbee5b3e92db380f295687ca21e43072da110"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 215809",
+          "url": "https://www.zeno.ru/showphoto.php?photo=215809",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Unearthed at Krasnaya Rechka ancient site, Kyrgyzstan.",
+      "catalogue": "Zeno category 15762 · plain reverse",
+      "facets": [
+        "#503 stage-4 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-215816",
+      "familyId": "semirechye-chinese-imitation",
+      "variantId": "zeno503-cat-15762-stage4",
+      "title": "Semirech'e AE imitation of KYTB.",
+      "weightG": 6.03,
+      "diameterMm": 24.06,
+      "images": [
+        {
+          "id": "z215816",
+          "path": "/coins/zeno/215816.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/15762/s-l1600ADYF3CDW.jpg",
+          "width": 1000,
+          "height": 559,
+          "credit": "hfrans",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "6d49ea6f42d17192b434e96899c117b38bd54283171545d028a7475279f5112a"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 215816",
+          "url": "https://www.zeno.ru/showphoto.php?photo=215816",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "eBay # 392203176804 Semirech'e imitation of KYTB. Weight: 6.03 g. Diameter: 24.06-24.34 mm. Metal: AE Sold: $ 21,50",
+      "catalogue": "Zeno category 15762 · plain reverse",
+      "facets": [
+        "#503 stage-4 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-219540",
+      "familyId": "semirechye-chinese-imitation",
+      "variantId": "zeno503-cat-15762-stage4",
+      "title": "Kai-yuan tong-bao, Semirech'e imitation, rev. shifted mold",
+      "weightG": 2.75,
+      "diameterMm": 23.26,
+      "images": [
+        {
+          "id": "z219540",
+          "path": "/coins/zeno/219540.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/15762/M0523_2_75g_23_26-23_28mm.jpg",
+          "width": 2258,
+          "height": 1167,
+          "credit": "charm",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "8c8c3b2a3ce0bda06dbb0d642989bfa3e682edd849b20a57d186b34b6fa93833"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 219540",
+          "url": "https://www.zeno.ru/showphoto.php?photo=219540",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "#219540 - Kai-yuan tong-bao, Semirech'e imitation, rev. shifted mold",
+      "catalogue": "Zeno category 15762 · plain reverse",
+      "facets": [
+        "#503 stage-4 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-257641",
+      "familyId": "vakhsh-cross-tamgha-cash",
+      "variantId": "zeno503-cat-15521-stage4",
+      "title": "North Tokharestan, AE cash",
+      "weightG": null,
+      "diameterMm": 17.0,
+      "images": [
+        {
+          "id": "z257641",
+          "path": "/coins/zeno/257641.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/15521/32419.jpg",
+          "width": 1054,
+          "height": 501,
+          "credit": "hfrans",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "17cb317aa9e6d719734a0315257b7ae0b4e7f3a062f901aa42da68a7759c605e"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 257641",
+          "url": "https://www.zeno.ru/showphoto.php?photo=257641",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "eBay # 254700564771 North Tokharestan, AE cash RRR!!! 17 mm Brykina 121:17-20",
+      "catalogue": "Zeno category 15521 · Crosses and tamghas",
+      "facets": [
+        "#503 stage-4 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-264530",
+      "familyId": "vakhsh-cross-tamgha-cash",
+      "variantId": "zeno503-cat-15521-stage4",
+      "title": "Northern Tokharistan, AE unit, crosses and tamghas",
+      "weightG": 1.51,
+      "diameterMm": 17.0,
+      "images": [
+        {
+          "id": "z264530",
+          "path": "/coins/zeno/264530.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/15521/IMG_4055.JPG",
+          "width": 2359,
+          "height": 1230,
+          "credit": "vaxtankava",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "4a11e9624c9e43c9e03ec5a27d6db5259dad1cf16d0c3e3d7fef6fb582a53e8c"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 264530",
+          "url": "https://www.zeno.ru/showphoto.php?photo=264530",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Video of this coin on youtu.be",
+      "catalogue": "Zeno category 15521 · Crosses and tamghas",
+      "facets": [
+        "#503 stage-4 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-274852",
+      "familyId": "semirechye-runic-sh-gamma",
+      "variantId": "zeno503-cat-13671-stage4",
+      "title": "Central Asia AE cash, w. two Turkic runas",
+      "weightG": 2.33,
+      "diameterMm": 23.0,
+      "images": [
+        {
+          "id": "z274852",
+          "path": "/coins/zeno/274852.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/13671/24524352452423.jpg",
+          "width": 2361,
+          "height": 1212,
+          "credit": "vaxtankava",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "0884467a52ff7cd5ab2609f9930aac72ac2b23c736bd9dd6b064613506fb2924"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 274852",
+          "url": "https://www.zeno.ru/showphoto.php?photo=274852",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "#274852 - Central Asia AE cash, w. two Turkic runas",
+      "catalogue": "Zeno category 13671 · Two Runic signs š and γ",
+      "facets": [
+        "#503 stage-4 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-277428",
+      "familyId": "ferghana-two-tamgha-cash",
+      "variantId": "zeno503-cat-22500-stage4",
+      "title": "AE cash",
+      "weightG": 20.0,
+      "diameterMm": 4.75,
+      "images": [
+        {
+          "id": "z277428",
+          "path": "/coins/zeno/277428.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/22500/8373.jpg",
+          "width": 906,
+          "height": 461,
+          "credit": "Fudzi",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "6bff80a822d504da3b8afb923e6586665d7fbe762155ad401caf0e62cbdbbf1c"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 277428",
+          "url": "https://www.zeno.ru/showphoto.php?photo=277428",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Photos courtesy of fisher11. I will inform you about the parameters of the coin additionally",
+      "catalogue": "Zeno category 22500 · Two tamghas",
+      "facets": [
+        "#503 stage-4 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-285952",
+      "familyId": "paykand-square-hole",
+      "variantId": "zeno503-cat-20647-stage4",
+      "title": "PAIKEND: AE cash, Anonymous with Chinese yuan.",
+      "weightG": 1.75,
+      "diameterMm": null,
+      "images": [
+        {
+          "id": "z285952",
+          "path": "/coins/zeno/285952.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/20647/102107.jpg",
+          "width": 2000,
+          "height": 1050,
+          "credit": "hfrans",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "27b1947e04c7a3d934ec8c07311ca9276e2aaf13a75a602d4f631af5d1829a59"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 285952",
+          "url": "https://www.zeno.ru/showphoto.php?photo=285952",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Ex Stephen Album Rare Coins Auction 42 20-23 Jan 2022, lot 102. Starting price: 140 USD PAIKEND: Anonymous, ca. 640-710, AE cash (1.75g), cf. Zeno-256207, Bukhara tamgha at top, Chinese yuan below, and Sogdian text to left & right // cross above & below central hole, clear inscriptions, lovely VF, RR. Price realized: 750 USD",
+      "catalogue": "Zeno category 20647 · Rev. cross",
+      "facets": [
+        "#503 stage-4 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-299288",
+      "familyId": "paykand-square-hole",
+      "variantId": "zeno503-cat-20648-stage4",
+      "title": "Paikend AE cash type, Anonymous.",
+      "weightG": 1.52,
+      "diameterMm": null,
+      "images": [
+        {
+          "id": "z299288",
+          "path": "/coins/zeno/299288.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/20648/118122.jpg",
+          "width": 1800,
+          "height": 867,
+          "credit": "hfrans",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "7ca26abdce4a6215515c4d4202d015946ce49cddb640f105ef26946b40f9842d"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 299288",
+          "url": "https://www.zeno.ru/showphoto.php?photo=299288",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Ex Stephen Album Rare Coins Auc 44, 15-18 Sep 2022, lot 118. Starting price: 140 USD PAIKEND: Anonymous, ca. 640-710, AE cash (1.52g), Zeno-20199, Bukhara tamgha at top, Chinese yuan below, and Sogdian text to left & right // cross above & below the center, without the square hole in the center, superb example, VF-EF, RR. Alexandr Naymark has read the Sogdian text as PRN / KND, \"city of glory\", and suggested that this was a local issue under a Christian ruler, in opposition to the kings of Bukhara (see Zeno-30858 for this explanation). Estimate: 180-220 USD Price realized: 800 USD",
+      "catalogue": "Zeno category 20648 · Rev. two crosses (or two cross-like figures)",
+      "facets": [
+        "#503 stage-4 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-304383",
+      "familyId": "semirechye-chinese-imitation",
+      "variantId": "zeno503-cat-15762-stage4",
+      "title": "Semirechie, AE Cash, imitation of Kai Yuan Tong Bao 開元通寶",
+      "weightG": 3.72,
+      "diameterMm": 23.43,
+      "images": [
+        {
+          "id": "z304383",
+          "path": "/coins/zeno/304383.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/15762/SOG-Semirechye_2.jpg",
+          "width": 1929,
+          "height": 960,
+          "credit": "Framundan",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "4f2d7392f44b8a7c8cdcb19b086d883c0bc1bfa7ac8e5417453459a5a03d38f4"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 304383",
+          "url": "https://www.zeno.ru/showphoto.php?photo=304383",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Semirechie, AE Cash, imitation of Kai Yuan Tong Bao 開元通寳, irregular inner hole.",
+      "catalogue": "Zeno category 15762 · plain reverse",
+      "facets": [
+        "#503 stage-4 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-309246",
+      "familyId": "semirechye-chinese-imitation",
+      "variantId": "zeno503-cat-15762-stage4",
+      "title": "Semirechie, bronze cash, imitation of Kai Yuan Tong Bao",
+      "weightG": 4.267,
+      "diameterMm": 25.0,
+      "images": [
+        {
+          "id": "z309246",
+          "path": "/coins/zeno/309246.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/15762/zeno_309246.jpg",
+          "width": 1530,
+          "height": 767,
+          "credit": "Gordian",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "257f2bbda951e8fa86cf5ca01fcd008cb38ce5488d0878b7a21fecefcb3f2dac"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 309246",
+          "url": "https://www.zeno.ru/showphoto.php?photo=309246",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Compare with Z# 379288 . The coin was unearthed in Kyrgyzstan.",
+      "catalogue": "Zeno category 15762 · plain reverse",
+      "facets": [
+        "#503 stage-4 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-313383",
+      "familyId": "semirechye-chinese-imitation",
+      "variantId": "zeno503-cat-15762-stage4",
+      "title": "Kai Yuan Tong Bao",
+      "weightG": 3.22,
+      "diameterMm": 22.0,
+      "images": [
+        {
+          "id": "z313383",
+          "path": "/coins/zeno/313383.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/15762/zeno_313383.jpg",
+          "width": 1153,
+          "height": 624,
+          "credit": "Alexey N",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "f44aca1b1e0435cdce20395e87501f22c65393362cf98e075be4984a969cf748"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 313383",
+          "url": "https://www.zeno.ru/showphoto.php?photo=313383",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Kai Yuan Tong Bao. This coin was found on the territory of Central Asia. Is it an imitation or not?",
+      "catalogue": "Zeno category 15762 · plain reverse",
+      "facets": [
+        "#503 stage-4 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-333006",
+      "familyId": "vakhsh-cross-tamgha-cash",
+      "variantId": "zeno503-cat-15521-stage4",
+      "title": "North Tokharestan AE, Sogdian legend/crosses and tamghas.",
+      "weightG": 1.86,
+      "diameterMm": null,
+      "images": [
+        {
+          "id": "z333006",
+          "path": "/coins/zeno/333006.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/15521/zeno_333006.jpg",
+          "width": 1800,
+          "height": 890,
+          "credit": "hfrans",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "52aa62900201131fac2bdfca1a5bbdb013d473dd5c5d7db620919a3c2a99ecf4"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 333006",
+          "url": "https://www.zeno.ru/showphoto.php?photo=333006",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Ex Stephen Album Rare Coins Online Auction 27 29 Apr 2024, lot 101. Starting price: 65 USD SOGDIANA: Unknown issuer, ca. 7th/8th century, AE cash (1.86g), Sogdian legend // 4 symbols (tamghas or imitations of Chinese characters), no central hole; type not found on Zeno or in Smirnova, so further research needed, F-VF, RR? Price realized: 1100 USD (Brykina 121: 14-16 Sogdian legend: ''wzwrk MLK' 'wr/γsk ' \")",
+      "catalogue": "Zeno category 15521 · Crosses and tamghas",
+      "facets": [
+        "#503 stage-4 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-36770",
+      "familyId": "semirechye-chinese-imitation",
+      "variantId": "zeno503-cat-15762-stage4",
+      "title": "Kai Yuan Tong Bao, local imitation",
+      "weightG": 2.4,
+      "diameterMm": 23.4,
+      "images": [
+        {
+          "id": "z36770",
+          "path": "/coins/zeno/36770.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/15762/KYTB2_7r.jpg",
+          "width": 1300,
+          "height": 650,
+          "credit": "briuchogriz",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "fa24bd995570226b8b55549592f3e95c50f51777f24b3ebc9282f43040c4d313"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 36770",
+          "url": "https://www.zeno.ru/showphoto.php?photo=36770",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Kai Yuan Tong Bao, local imitation VIII c. AD",
+      "catalogue": "Zeno category 15762 · plain reverse",
+      "facets": [
+        "#503 stage-4 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-379288",
+      "familyId": "semirechye-chinese-imitation",
+      "variantId": "zeno503-cat-15762-stage4",
+      "title": "Semirechie, bronze cash, imitation of Kai Yuan Tong Bao",
+      "weightG": null,
+      "diameterMm": 22.2,
+      "images": [
+        {
+          "id": "z379288",
+          "path": "/coins/zeno/379288.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/15762/zeno_379288.jpg",
+          "width": 1280,
+          "height": 633,
+          "credit": "Gordian",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "bfd995885ca5c19af086892be457af5929c8396a8f8a9ef4a64ab4ad33eb2901"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 379288",
+          "url": "https://www.zeno.ru/showphoto.php?photo=379288",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Compare with Z# 309246 .",
+      "catalogue": "Zeno category 15762 · plain reverse",
+      "facets": [
+        "#503 stage-4 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-379979",
+      "familyId": "vakhsh-cross-tamgha-cash",
+      "variantId": "zeno503-cat-15521-stage4",
+      "title": "North Tokharestan AE, Sogdian legend/crosses and tamghas",
+      "weightG": 1.18,
+      "diameterMm": 17.0,
+      "images": [
+        {
+          "id": "z379979",
+          "path": "/coins/zeno/379979.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/15521/zeno_379979.jpg",
+          "width": 1729,
+          "height": 840,
+          "credit": "SAMDOT",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "70136f832320a1981c7dfc54ba772a31ebf2656358b744a453d154d1c3dc02cb"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 379979",
+          "url": "https://www.zeno.ru/showphoto.php?photo=379979",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "At the British Museum: https://www.britishmuseum.org/collection/object/A_1880-3981-... Obv.: Undeciphered Sogdian legend Rev.: Worn Kaiyuan Tongbao (?) Diameter: 17 millimetres Weight: 1.18 grammes Referenced in: Errington 2017a / Charles Masson and the Buddhist Sites of Afghanistan: Explorations, Excavations, Collections 1832-1835 (p.222, p.224) Errington 2021 / Charles Masson: Collections from Begram and Kabul Bazaar, Afghanistan 1833-1838 (p.199, fig.59.12) Acquired from Charles Masson, Transferred from: India Museum, Acquisition date 1880",
+      "catalogue": "Zeno category 15521 · Crosses and tamghas",
+      "facets": [
+        "#503 stage-4 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-381434",
+      "familyId": "semirechye-chinese-imitation",
+      "variantId": "zeno503-cat-15762-stage4",
+      "title": "Semirech'e, Heavy Kaiyuan Tongbao, Imitation, 7.91g",
+      "weightG": 7.91,
+      "diameterMm": null,
+      "images": [
+        {
+          "id": "z381434",
+          "path": "/coins/zeno/381434.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/15762/zeno_381434.jpg",
+          "width": 2380,
+          "height": 1200,
+          "credit": "SAMDOT",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "bb0142bac86b5d5a2f4527f4429f6c3b4733b4f0534767b8973ce2df5a59bf2b"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 381434",
+          "url": "https://www.zeno.ru/showphoto.php?photo=381434",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Stephen Album Rare Coins - Auction 41 - Lot 1993 SEMIRECH'E: Kai Yuan Imitation, AE cash (7.91g), 8th century, Zeno-215816, kai yuan tong bao, plain reverse, a rather heavy example, Fine.",
+      "catalogue": "Zeno category 15762 · plain reverse",
+      "facets": [
+        "#503 stage-4 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-52829",
+      "familyId": "semirechye-runic-sh-gamma",
+      "variantId": "zeno503-cat-13671-stage4",
+      "title": "Enigmatic Semirech'e cash-like coin with Runic letters only.",
+      "weightG": 3.3,
+      "diameterMm": 24.3,
+      "images": [
+        {
+          "id": "z52829",
+          "path": "/coins/zeno/52829.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/13671/2Runicletters.jpg",
+          "width": 2381,
+          "height": 1234,
+          "credit": "gazali",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "2d0cf4bbad90e39117352e47493bec4ec03819ba02fc55441345e0ac405d9757"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 52829",
+          "url": "https://www.zeno.ru/showphoto.php?photo=52829",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Exceedingly rare coin (I would suppose, less then 10 specimens are known). Obv.: Runic \"Sh\". Rev.: Runic \"G\". (by A. Kamyshev, #52). Unearthed in Osh area, Kara Shilak village vicinity, Kyrgyzstan.",
+      "catalogue": "Zeno category 13671 · Two Runic signs š and γ",
+      "facets": [
+        "#503 stage-4 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-60328",
+      "familyId": "paykand-square-hole",
+      "variantId": "zeno503-cat-20648-stage4",
+      "title": "Paykend cash-like coin, with two crosses.",
+      "weightG": 1.3,
+      "diameterMm": 17.1,
+      "images": [
+        {
+          "id": "z60328",
+          "path": "/coins/zeno/60328.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/20648/doublecrossPaykend.jpg",
+          "width": 1752,
+          "height": 888,
+          "credit": "gazali",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "b0af2fa66bfc55bca0f2a2da3a08f86535bfe6267f4384d9d5ca0e3b62d1b744"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 60328",
+          "url": "https://www.zeno.ru/showphoto.php?photo=60328",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Obv: There is a Bukharan tamgha above the square hole, the Chinese character \"Yuan\" at bottom, and Soghdian legends at right and left. Rev: Crosses above and below the hole. May be, correct orientation is 90 degrees clockwise, as at #20199.",
+      "catalogue": "Zeno category 20648 · Rev. two crosses (or two cross-like figures)",
+      "facets": [
+        "#503 stage-4 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-63496",
+      "familyId": "paykand-square-hole",
+      "variantId": "zeno503-cat-20647-stage4",
+      "title": "Paykend cash-like coin, with ONE cross at rev.",
+      "weightG": 1.4,
+      "diameterMm": 17.8,
+      "images": [
+        {
+          "id": "z63496",
+          "path": "/coins/zeno/63496.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/20647/singlecrossPaykend.jpg",
+          "width": 1791,
+          "height": 963,
+          "credit": "gazali",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "b5f92a0e95cea8841831346a4fdd637f1ece40e96311a0be3838685ac42bdf17"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 63496",
+          "url": "https://www.zeno.ru/showphoto.php?photo=63496",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Unlisted?",
+      "catalogue": "Zeno category 20647 · Rev. cross",
+      "facets": [
+        "#503 stage-4 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-7034",
+      "familyId": "semirechye-runic-sh-gamma",
+      "variantId": "zeno503-cat-13671-stage4",
+      "title": "Central Asia AE cash coin, two Turkic runas characters",
+      "weightG": 2.5,
+      "diameterMm": 23.0,
+      "images": [
+        {
+          "id": "z7034",
+          "path": "/coins/zeno/7034.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/13671/2kamyshev52.jpg",
+          "width": 1137,
+          "height": 669,
+          "credit": "charm",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "f9168c9a3a9b7f8f1f6134805600fcd113414b2477c7817730cb9aaa4c6ae3ef"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 7034",
+          "url": "https://www.zeno.ru/showphoto.php?photo=7034",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Unearthed at Krasnaya Rechka ancient site, Kyrgyzstan. #52 in Kamyshev's book. Image property A.M.Kamyshev",
+      "catalogue": "Zeno category 13671 · Two Runic signs š and γ",
+      "facets": [
+        "#503 stage-4 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-7866",
+      "familyId": "semirechye-runic-sh-gamma",
+      "variantId": "zeno503-cat-13671-stage4",
+      "title": "Central Asia AE cash coin, two Turkic runas characters",
+      "weightG": 4.36,
+      "diameterMm": 24.5,
+      "images": [
+        {
+          "id": "z7866",
+          "path": "/coins/zeno/7866.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/13671/454runic.jpg",
+          "width": 946,
+          "height": 498,
+          "credit": "turgiskhanate",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "d81e9171e776143507ef3734b50e3ca56b69faef4ada213c2a7c9688d30551a8"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 7866",
+          "url": "https://www.zeno.ru/showphoto.php?photo=7866",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "One more specimen: http://www.zeno.ru/showphoto.php?photo=7034",
+      "catalogue": "Zeno category 13671 · Two Runic signs š and γ",
+      "facets": [
+        "#503 stage-4 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-8178",
+      "familyId": "paykand-square-hole",
+      "variantId": "zeno503-cat-20648-stage4",
+      "title": "Paykend, AE cash type.",
+      "weightG": null,
+      "diameterMm": null,
+      "images": [
+        {
+          "id": "z8178",
+          "path": "/coins/zeno/8178.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/20648/2604hindushahi3rev.jpg",
+          "width": 813,
+          "height": 427,
+          "credit": "hfrans",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "c731ef9f5837c5a77d77cd7ef3d4ceeab194011d83036c96bc625605499a0e79"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 8178",
+          "url": "https://www.zeno.ru/showphoto.php?photo=8178",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "eBay #200709728141. Bukharian Soghd City Paykend AE cash, with Yuan. (The coin was uploaded 2012-02-08)",
+      "catalogue": "Zeno category 20648 · Rev. two crosses (or two cross-like figures)",
+      "facets": [
+        "#503 stage-4 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-87731",
+      "familyId": "ferghana-two-tamgha-cash",
+      "variantId": "zeno503-cat-22500-stage4",
+      "title": "AE cash",
+      "weightG": 5.46,
+      "diameterMm": 20.0,
+      "images": [
+        {
+          "id": "z87731",
+          "path": "/coins/zeno/87731.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/22500/PICT00013.JPG",
+          "width": 1686,
+          "height": 854,
+          "credit": "Ismail",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "de17238a0d1f2a57e914d0cdd436c77bc8c0a104b7680b202195b89f6d0089a8"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 87731",
+          "url": "https://www.zeno.ru/showphoto.php?photo=87731",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Dear friends! What is it? This coin is found at excavation in area Sentazh, East Kazakhstan.",
+      "catalogue": "Zeno category 22500 · Two tamghas",
+      "facets": [
+        "#503 stage-4 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
     }
   ],
   "places": [

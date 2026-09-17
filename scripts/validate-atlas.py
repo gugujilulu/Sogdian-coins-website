@@ -16,6 +16,7 @@ r795=json.loads((root/'research/zeno/review-795.json').read_text())
 z503=json.loads((root/'research/zeno/manifest-503.json').read_text())
 r503=json.loads((root/'research/zeno/review-503-stage1.json').read_text())
 r5032=json.loads((root/'research/zeno/review-503-stage2.json').read_text())
+r5034=json.loads((root/'research/zeno/review-503-stage4.json').read_text())
 recovered503=json.loads((root/'research/zeno/recovered-records-503.json').read_text())
 families={f['id'] for f in a['families']}
 variants={v['id']:v for v in a['variants']}
@@ -98,6 +99,18 @@ assert sum(1 for x in r5032['records'] if x['leafCategoryId']=='14905' and x['fa
 assert sum(1 for x in r5032['records'] if x['leafCategoryId']=='15156' and x['familyId']=='ferghana-anon-khagan')==10
 assert {f['id'] for f in a['families']} >= {'yarug-kadin','general-ir-chor-irti','semirechye-chinese-imitation'}
 assert {str(x['id']) for x in r5032['heldRecords']}=={'375693','377305','306552','326586','146052','293374','115509','232909','284607','697','350958'}
+
+
+# Stage-4 resolves a large bounded block of the remaining downloaded-image queue.
+assert r5034['counts']['sourceRecordsReviewed']==239
+assert r5034['counts']['atlasImportRecords']==34
+assert r5034['counts']['relatedOutsideMainCorpus']==205
+assert r5034['counts']['newFamilies']==3
+assert r5034['counts']['pendingImagesRemaining']==185
+assert all(('zeno-'+str(x['id'])) in ids for x in r5034['records'] if x.get('atlasImport'))
+assert not any(('zeno-'+str(x['id'])) in ids for x in r5034['relatedRecords'])
+assert {f['id'] for f in a['families']} >= {'semirechye-runic-sh-gamma','vakhsh-cross-tamgha-cash','ferghana-two-tamgha-cash'}
+assert sum(1 for x in r5034['records'] if x['leafCategoryId'] in {'20647','20648','20649'} and x['familyId']=='paykand-square-hole')==7
 
 # Saved Zeno manifests are independent coverage scopes. Partial Semirechye crawls are
 # valid research states, while their counts must never be labelled complete by accident.

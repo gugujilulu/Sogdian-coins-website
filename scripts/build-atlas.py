@@ -206,6 +206,35 @@ for decision in review5033['records']:
  a['specimens'].append({'id':sid,'familyId':decision['familyId'],'variantId':decision['sourceGroupId'],'title':title,'weightG':r.get('weightG'),'diameterMm':r.get('diameterMm'),'images':[pic],'sources':[source],'description':r.get('photoNote') or r.get('description') or 'Source-reported Central Asian occurrence.','catalogue':'Zeno category '+decision['leafCategoryId']+' · '+decision['leafCategoryTitle'],'facets':['Imported coin · 区域输入钱','#503 stage-3 site-context review'],'duplicateStatus':decision.get('duplicateStatus','source_record_not_proven_unique'),'coinRole':decision.get('coinRole','imported_coin'),'findContextClaim':decision.get('findContextClaim')})
  existing_specimen_ids.add(sid)
 
+
+# Central Asia #503 stage-4: resolve a large bounded block of the remaining
+# downloaded-image queue. Clear square/pseudo-square cash enters the Atlas;
+# visually coherent non-square regional coinage remains related evidence.
+review5034=read('research/zeno/review-503-stage4.json')
+existing_family_ids={f['id'] for f in a['families']}
+for fd in review5034['families']:
+ if fd['id'] in existing_family_ids:continue
+ ds=[d for d in review5034['records'] if d['familyId']==fd['id']]
+ image=ds[0]['image']['path'] if ds else None
+ anchor={'placeId':fd['anchorPlaceId'],'role':'Regional/city orientation · 区域／城市浏览锚点','note':'用于地图浏览；不自动表示铸币地、出土地或流通范围。'} if fd.get('anchorPlaceId') else None
+ a['families'].append({'id':fd['id'],'title':fd['title'],'zh':fd['zh'],'region':fd['region'],'start':fd.get('start'),'end':fd.get('end'),'dateLabel':fd.get('dateLabel') or 'Chronology pending','description':fd['description'],'anchor':anchor,'image':image,'status':fd['status'],'question':fd['question'],'publications':[{'title':'Zeno category source taxonomy · stage-4 visual review','url':'https://www.zeno.ru/showgallery.php?cat=503','role':'Source taxonomy / specimen discovery; canonical attribution pending'}]})
+ existing_family_ids.add(fd['id'])
+for g in review5034['sourceGroups']:
+ if not any(v['id']==g['id'] for v in a['variants']):
+  a['variants'].append({'id':g['id'],'familyId':g['familyId'],'title':g['title'],'reference':'Zeno category '+g['categoryId']+' / stage-4 reviewed subset','status':'source_group','facets':[],'description':g['description']})
+existing_specimen_ids={s['id'] for s in a['specimens']}
+for decision in review5034['records']:
+ if not decision.get('atlasImport'):continue
+ id=str(decision['id']);sid='zeno-'+id
+ if sid in existing_specimen_ids:continue
+ r=z503_by_id[id];im=decision['image'];u=r.get('uploader') or {};rights=r.get('rights') or {}
+ title=r.get('title') or ('Zeno '+id);prefix='#'+id+' - '
+ if title.startswith(prefix):title=title[len(prefix):]
+ pic={'id':'z'+id,'path':im['path'],'sourceUrl':(repair503_by_id.get(id) or {}).get('url') or r.get('originalImageUrl') or r.get('url'),'width':im['width'],'height':im['height'],'credit':u.get('name') or 'Zeno.ru uploader unknown','rightsStatus':('unverified' if (rights.get('status') or 'unverified') not in {'open_license','permission','public_domain','unverified'} else (rights.get('status') or 'unverified')),'rightsSourceUrl':rights.get('sourceTermsUrl'),'view':'source photograph','sha256':im.get('sha256')}
+ source={'label':'Zeno '+id,'url':r['url'],'relation':'same_specimen'}
+ a['specimens'].append({'id':sid,'familyId':decision['familyId'],'variantId':decision['sourceGroupId'],'title':title,'weightG':r.get('weightG'),'diameterMm':r.get('diameterMm'),'images':[pic],'sources':[source],'description':r.get('photoNote') or r.get('description') or 'Primary Zeno source record; source taxonomy preserved.','catalogue':'Zeno category '+decision['leafCategoryId']+' · '+decision['leafCategoryTitle'],'facets':['#503 stage-4 record-level visual review'],'duplicateStatus':decision.get('duplicateStatus','source_record_not_proven_unique')})
+ existing_specimen_ids.add(sid)
+
 a['scopeCensus']=read('research/coverage-scopes.json')
 nana_specimens=[s for s in a['specimens'] if s['familyId']=='lady-nana']
 nana_zeno=[s for s in nana_specimens if s['id'].startswith('zeno-')]

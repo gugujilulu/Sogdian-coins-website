@@ -1,0 +1,2209 @@
+{
+  "version": "1.0",
+  "reviewedOn": "2026-09-16",
+  "stage": "503-stage4-bulk-resolution",
+  "sourceManifest": "research/zeno/manifest-503.json",
+  "methodNote": "Stage 4 resolves a large bounded block of the remaining downloaded-image queue. Clearly square/pseudo-square Chinese-style cash forms enter the main corpus; visually coherent solid regional coinage and circular/non-square forms are moved to related evidence. Mixed categories remain pending rather than being forced into a binary classification.",
+  "counts": {
+    "sourceRecordsReviewed": 239,
+    "atlasImportRecords": 34,
+    "relatedOutsideMainCorpus": 205,
+    "newFamilies": 3,
+    "sourceGroups": 7,
+    "pendingImagesRemaining": 185
+  },
+  "families": [
+    {
+      "id": "semirechye-runic-sh-gamma",
+      "title": "Semirechye two-runic-sign square-hole cash",
+      "zh": "七河双突厥符号方孔钱",
+      "region": "Semirechye",
+      "start": 700,
+      "end": 899,
+      "dateLabel": "Broad 8th–9th century context; exact chronology pending",
+      "anchorPlaceId": "suyab",
+      "candidateId": null,
+      "status": "source_linked_candidate",
+      "description": "Zeno category 13671 groups cash-like AE issues with two runic signs š and γ. Downloaded specimens show pierced square or squarish apertures and belong to the Chinese-style cash-tradition corpus; reading, issuer and chronology remain provisional.",
+      "question": "Issuer, exact reading and catalogue crosswalk require specialist literature review."
+    },
+    {
+      "id": "vakhsh-cross-tamgha-cash",
+      "title": "Vakhsh cross-and-tamgha cash",
+      "zh": "瓦赫什十字与徽记方孔钱",
+      "region": "Northern Tokharistan / Vakhsh valley",
+      "start": 600,
+      "end": 899,
+      "dateLabel": "Source-taxonomy context; exact chronology pending",
+      "anchorPlaceId": null,
+      "candidateId": null,
+      "status": "source_linked_candidate",
+      "description": "Northern Tokharistan/Vakhsh AE cash-like issues carrying crosses, tamghas and Sogdian/Bactrian-style elements. Stage-4 visual review confirms square or pseudo-square central apertures/frames across this source group.",
+      "question": "Exact issuer, legend readings, chronology and relationship to neighboring Tokharistan cash traditions remain open."
+    },
+    {
+      "id": "ferghana-two-tamgha-cash",
+      "title": "Ferghana two-tamgha square-hole cash",
+      "zh": "费尔干纳双徽记方孔钱",
+      "region": "Ferghana",
+      "start": 600,
+      "end": 899,
+      "dateLabel": "Source-taxonomy context; exact chronology pending",
+      "anchorPlaceId": null,
+      "candidateId": null,
+      "status": "source_linked_candidate",
+      "description": "Two Zeno source records under the Ferghana “Two tamghas” group show clear Chinese-style square-hole cash morphology. The political and chronological attribution remains provisional.",
+      "question": "Crosswalk the tamghas and legends against specialist Ferghana catalogues before canonical attribution."
+    }
+  ],
+  "familiesReused": [
+    {
+      "id": "paykand-square-hole",
+      "role": "existing_family_reused"
+    },
+    {
+      "id": "semirechye-chinese-imitation",
+      "role": "existing_family_reused"
+    }
+  ],
+  "sourceGroups": [
+    {
+      "id": "zeno503-cat-13671-stage4",
+      "familyId": "semirechye-runic-sh-gamma",
+      "categoryId": "13671",
+      "title": "Two Runic signs š and γ",
+      "status": "source_group",
+      "description": "Zeno source category/subset retained after stage-4 record-level image review; it is not automatically an academic variant."
+    },
+    {
+      "id": "zeno503-cat-15521-stage4",
+      "familyId": "vakhsh-cross-tamgha-cash",
+      "categoryId": "15521",
+      "title": "Crosses and tamghas",
+      "status": "source_group",
+      "description": "Zeno source category/subset retained after stage-4 record-level image review; it is not automatically an academic variant."
+    },
+    {
+      "id": "zeno503-cat-15762-stage4",
+      "familyId": "semirechye-chinese-imitation",
+      "categoryId": "15762",
+      "title": "plain reverse",
+      "status": "source_group",
+      "description": "Zeno source category/subset retained after stage-4 record-level image review; it is not automatically an academic variant."
+    },
+    {
+      "id": "zeno503-cat-20647-stage4",
+      "familyId": "paykand-square-hole",
+      "categoryId": "20647",
+      "title": "Rev. cross",
+      "status": "source_group",
+      "description": "Zeno source category/subset retained after stage-4 record-level image review; it is not automatically an academic variant."
+    },
+    {
+      "id": "zeno503-cat-20648-stage4",
+      "familyId": "paykand-square-hole",
+      "categoryId": "20648",
+      "title": "Rev. two crosses (or two cross-like figures)",
+      "status": "source_group",
+      "description": "Zeno source category/subset retained after stage-4 record-level image review; it is not automatically an academic variant."
+    },
+    {
+      "id": "zeno503-cat-20649-stage4",
+      "familyId": "paykand-square-hole",
+      "categoryId": "20649",
+      "title": "Rev. plain",
+      "status": "source_group",
+      "description": "Zeno source category/subset retained after stage-4 record-level image review; it is not automatically an academic variant."
+    },
+    {
+      "id": "zeno503-cat-22500-stage4",
+      "familyId": "ferghana-two-tamgha-cash",
+      "categoryId": "22500",
+      "title": "Two tamghas",
+      "status": "source_group",
+      "description": "Zeno source category/subset retained after stage-4 record-level image review; it is not automatically an academic variant."
+    }
+  ],
+  "records": [
+    {
+      "id": "108670",
+      "leafCategoryId": "15521",
+      "leafCategoryTitle": "Crosses and tamghas",
+      "familyId": "vakhsh-cross-tamgha-cash",
+      "sourceGroupId": "zeno503-cat-15521-stage4",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage4_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/108670.jpg",
+        "width": 841,
+        "height": 422,
+        "sha256": "04b382eedb7696d01c37d9a3f5974dbad23dc266c45473ce846558a59d30f041"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "13748",
+      "leafCategoryId": "20649",
+      "leafCategoryTitle": "Rev. plain",
+      "familyId": "paykand-square-hole",
+      "sourceGroupId": "zeno503-cat-20649-stage4",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage4_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/13748.jpg",
+        "width": 1028,
+        "height": 482,
+        "sha256": "6b155509e14ba13bde7034b846f90ab873677bafc7ddb8db2aa8c4695c1452f5"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "180778",
+      "leafCategoryId": "13671",
+      "leafCategoryTitle": "Two Runic signs š and γ",
+      "familyId": "semirechye-runic-sh-gamma",
+      "sourceGroupId": "zeno503-cat-13671-stage4",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage4_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/180778.jpg",
+        "width": 2336,
+        "height": 1184,
+        "sha256": "fdcd259bd9add986fdb46151d8bc9d197167106bdbc461f80ed242f2b05018f6"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "197311",
+      "leafCategoryId": "15521",
+      "leafCategoryTitle": "Crosses and tamghas",
+      "familyId": "vakhsh-cross-tamgha-cash",
+      "sourceGroupId": "zeno503-cat-15521-stage4",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage4_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/197311.jpg",
+        "width": 800,
+        "height": 393,
+        "sha256": "50c0145c9dfaf91b08d66752f433efa61aaec011456af0365f3587aad93c21c5"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "20199",
+      "leafCategoryId": "20648",
+      "leafCategoryTitle": "Rev. two crosses (or two cross-like figures)",
+      "familyId": "paykand-square-hole",
+      "sourceGroupId": "zeno503-cat-20648-stage4",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage4_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/20199.jpg",
+        "width": 1106,
+        "height": 550,
+        "sha256": "f1a313a4532624e01514cdda4075523c6cdbcfff430266bd123bae29b98fb29e"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "212045",
+      "leafCategoryId": "15521",
+      "leafCategoryTitle": "Crosses and tamghas",
+      "familyId": "vakhsh-cross-tamgha-cash",
+      "sourceGroupId": "zeno503-cat-15521-stage4",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage4_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/212045.jpg",
+        "width": 3193,
+        "height": 1626,
+        "sha256": "089da6b1af8262592862d9e5bf7f3bc8403e1a1f4c75e1984c01bb6c7b315294"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "214379",
+      "leafCategoryId": "13671",
+      "leafCategoryTitle": "Two Runic signs š and γ",
+      "familyId": "semirechye-runic-sh-gamma",
+      "sourceGroupId": "zeno503-cat-13671-stage4",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage4_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/214379.jpg",
+        "width": 2777,
+        "height": 1385,
+        "sha256": "7fcbbac8fad3fb059969b76ec5c7dd4e91e433e05d4aca0fec946471d85d2363"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "214936",
+      "leafCategoryId": "13671",
+      "leafCategoryTitle": "Two Runic signs š and γ",
+      "familyId": "semirechye-runic-sh-gamma",
+      "sourceGroupId": "zeno503-cat-13671-stage4",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage4_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/214936.jpg",
+        "width": 3774,
+        "height": 1881,
+        "sha256": "b3549b4997ddb02afb5d3836ae72ea81c442f23dc2e9274f9892968ee87209f4"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "215018",
+      "leafCategoryId": "15521",
+      "leafCategoryTitle": "Crosses and tamghas",
+      "familyId": "vakhsh-cross-tamgha-cash",
+      "sourceGroupId": "zeno503-cat-15521-stage4",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage4_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/215018.jpg",
+        "width": 3204,
+        "height": 1612,
+        "sha256": "769378e0eef47581f22955a65e5196cbdbca122a5a5d9851898c8f828dd1234c"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "215281",
+      "leafCategoryId": "15762",
+      "leafCategoryTitle": "plain reverse",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15762-stage4",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage4_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/215281.jpg",
+        "width": 976,
+        "height": 500,
+        "sha256": "f9da9a34cd4b43775ce7d40c34805440d6a8ac35a08e164ad7dcb96ce98d4f4a"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "215809",
+      "leafCategoryId": "15762",
+      "leafCategoryTitle": "plain reverse",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15762-stage4",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage4_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/215809.jpg",
+        "width": 2367,
+        "height": 1215,
+        "sha256": "6987cf35290bd9d464b523f7e90bbee5b3e92db380f295687ca21e43072da110"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "215816",
+      "leafCategoryId": "15762",
+      "leafCategoryTitle": "plain reverse",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15762-stage4",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage4_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/215816.jpg",
+        "width": 1000,
+        "height": 559,
+        "sha256": "6d49ea6f42d17192b434e96899c117b38bd54283171545d028a7475279f5112a"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "219540",
+      "leafCategoryId": "15762",
+      "leafCategoryTitle": "plain reverse",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15762-stage4",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage4_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/219540.jpg",
+        "width": 2258,
+        "height": 1167,
+        "sha256": "8c8c3b2a3ce0bda06dbb0d642989bfa3e682edd849b20a57d186b34b6fa93833"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "257641",
+      "leafCategoryId": "15521",
+      "leafCategoryTitle": "Crosses and tamghas",
+      "familyId": "vakhsh-cross-tamgha-cash",
+      "sourceGroupId": "zeno503-cat-15521-stage4",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage4_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/257641.jpg",
+        "width": 1054,
+        "height": 501,
+        "sha256": "17cb317aa9e6d719734a0315257b7ae0b4e7f3a062f901aa42da68a7759c605e"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "264530",
+      "leafCategoryId": "15521",
+      "leafCategoryTitle": "Crosses and tamghas",
+      "familyId": "vakhsh-cross-tamgha-cash",
+      "sourceGroupId": "zeno503-cat-15521-stage4",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage4_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/264530.jpg",
+        "width": 2359,
+        "height": 1230,
+        "sha256": "4a11e9624c9e43c9e03ec5a27d6db5259dad1cf16d0c3e3d7fef6fb582a53e8c"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "274852",
+      "leafCategoryId": "13671",
+      "leafCategoryTitle": "Two Runic signs š and γ",
+      "familyId": "semirechye-runic-sh-gamma",
+      "sourceGroupId": "zeno503-cat-13671-stage4",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage4_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/274852.jpg",
+        "width": 2361,
+        "height": 1212,
+        "sha256": "0884467a52ff7cd5ab2609f9930aac72ac2b23c736bd9dd6b064613506fb2924"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "277428",
+      "leafCategoryId": "22500",
+      "leafCategoryTitle": "Two tamghas",
+      "familyId": "ferghana-two-tamgha-cash",
+      "sourceGroupId": "zeno503-cat-22500-stage4",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage4_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/277428.jpg",
+        "width": 906,
+        "height": 461,
+        "sha256": "6bff80a822d504da3b8afb923e6586665d7fbe762155ad401caf0e62cbdbbf1c"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "285952",
+      "leafCategoryId": "20647",
+      "leafCategoryTitle": "Rev. cross",
+      "familyId": "paykand-square-hole",
+      "sourceGroupId": "zeno503-cat-20647-stage4",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage4_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/285952.jpg",
+        "width": 2000,
+        "height": 1050,
+        "sha256": "27b1947e04c7a3d934ec8c07311ca9276e2aaf13a75a602d4f631af5d1829a59"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "299288",
+      "leafCategoryId": "20648",
+      "leafCategoryTitle": "Rev. two crosses (or two cross-like figures)",
+      "familyId": "paykand-square-hole",
+      "sourceGroupId": "zeno503-cat-20648-stage4",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage4_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/299288.jpg",
+        "width": 1800,
+        "height": 867,
+        "sha256": "7ca26abdce4a6215515c4d4202d015946ce49cddb640f105ef26946b40f9842d"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "304383",
+      "leafCategoryId": "15762",
+      "leafCategoryTitle": "plain reverse",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15762-stage4",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage4_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/304383.jpg",
+        "width": 1929,
+        "height": 960,
+        "sha256": "4f2d7392f44b8a7c8cdcb19b086d883c0bc1bfa7ac8e5417453459a5a03d38f4"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "309246",
+      "leafCategoryId": "15762",
+      "leafCategoryTitle": "plain reverse",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15762-stage4",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage4_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/309246.jpg",
+        "width": 1530,
+        "height": 767,
+        "sha256": "257f2bbda951e8fa86cf5ca01fcd008cb38ce5488d0878b7a21fecefcb3f2dac"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "313383",
+      "leafCategoryId": "15762",
+      "leafCategoryTitle": "plain reverse",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15762-stage4",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage4_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/313383.jpg",
+        "width": 1153,
+        "height": 624,
+        "sha256": "f44aca1b1e0435cdce20395e87501f22c65393362cf98e075be4984a969cf748"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "333006",
+      "leafCategoryId": "15521",
+      "leafCategoryTitle": "Crosses and tamghas",
+      "familyId": "vakhsh-cross-tamgha-cash",
+      "sourceGroupId": "zeno503-cat-15521-stage4",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage4_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/333006.jpg",
+        "width": 1800,
+        "height": 890,
+        "sha256": "52aa62900201131fac2bdfca1a5bbdb013d473dd5c5d7db620919a3c2a99ecf4"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "36770",
+      "leafCategoryId": "15762",
+      "leafCategoryTitle": "plain reverse",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15762-stage4",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage4_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/36770.jpg",
+        "width": 1300,
+        "height": 650,
+        "sha256": "fa24bd995570226b8b55549592f3e95c50f51777f24b3ebc9282f43040c4d313"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "379288",
+      "leafCategoryId": "15762",
+      "leafCategoryTitle": "plain reverse",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15762-stage4",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage4_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/379288.jpg",
+        "width": 1280,
+        "height": 633,
+        "sha256": "bfd995885ca5c19af086892be457af5929c8396a8f8a9ef4a64ab4ad33eb2901"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "379979",
+      "leafCategoryId": "15521",
+      "leafCategoryTitle": "Crosses and tamghas",
+      "familyId": "vakhsh-cross-tamgha-cash",
+      "sourceGroupId": "zeno503-cat-15521-stage4",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage4_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/379979.jpg",
+        "width": 1729,
+        "height": 840,
+        "sha256": "70136f832320a1981c7dfc54ba772a31ebf2656358b744a453d154d1c3dc02cb"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "381434",
+      "leafCategoryId": "15762",
+      "leafCategoryTitle": "plain reverse",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15762-stage4",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage4_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/381434.jpg",
+        "width": 2380,
+        "height": 1200,
+        "sha256": "bb0142bac86b5d5a2f4527f4429f6c3b4733b4f0534767b8973ce2df5a59bf2b"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "52829",
+      "leafCategoryId": "13671",
+      "leafCategoryTitle": "Two Runic signs š and γ",
+      "familyId": "semirechye-runic-sh-gamma",
+      "sourceGroupId": "zeno503-cat-13671-stage4",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage4_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/52829.jpg",
+        "width": 2381,
+        "height": 1234,
+        "sha256": "2d0cf4bbad90e39117352e47493bec4ec03819ba02fc55441345e0ac405d9757"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "60328",
+      "leafCategoryId": "20648",
+      "leafCategoryTitle": "Rev. two crosses (or two cross-like figures)",
+      "familyId": "paykand-square-hole",
+      "sourceGroupId": "zeno503-cat-20648-stage4",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage4_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/60328.jpg",
+        "width": 1752,
+        "height": 888,
+        "sha256": "b0af2fa66bfc55bca0f2a2da3a08f86535bfe6267f4384d9d5ca0e3b62d1b744"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "63496",
+      "leafCategoryId": "20647",
+      "leafCategoryTitle": "Rev. cross",
+      "familyId": "paykand-square-hole",
+      "sourceGroupId": "zeno503-cat-20647-stage4",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage4_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/63496.jpg",
+        "width": 1791,
+        "height": 963,
+        "sha256": "b5f92a0e95cea8841831346a4fdd637f1ece40e96311a0be3838685ac42bdf17"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "7034",
+      "leafCategoryId": "13671",
+      "leafCategoryTitle": "Two Runic signs š and γ",
+      "familyId": "semirechye-runic-sh-gamma",
+      "sourceGroupId": "zeno503-cat-13671-stage4",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage4_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/7034.jpg",
+        "width": 1137,
+        "height": 669,
+        "sha256": "f9168c9a3a9b7f8f1f6134805600fcd113414b2477c7817730cb9aaa4c6ae3ef"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "7866",
+      "leafCategoryId": "13671",
+      "leafCategoryTitle": "Two Runic signs š and γ",
+      "familyId": "semirechye-runic-sh-gamma",
+      "sourceGroupId": "zeno503-cat-13671-stage4",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage4_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/7866.jpg",
+        "width": 946,
+        "height": 498,
+        "sha256": "d81e9171e776143507ef3734b50e3ca56b69faef4ada213c2a7c9688d30551a8"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "8178",
+      "leafCategoryId": "20648",
+      "leafCategoryTitle": "Rev. two crosses (or two cross-like figures)",
+      "familyId": "paykand-square-hole",
+      "sourceGroupId": "zeno503-cat-20648-stage4",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage4_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/8178.jpg",
+        "width": 813,
+        "height": 427,
+        "sha256": "c731ef9f5837c5a77d77cd7ef3d4ceeab194011d83036c96bc625605499a0e79"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "87731",
+      "leafCategoryId": "22500",
+      "leafCategoryTitle": "Two tamghas",
+      "familyId": "ferghana-two-tamgha-cash",
+      "sourceGroupId": "zeno503-cat-22500-stage4",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage4_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/87731.jpg",
+        "width": 1686,
+        "height": 854,
+        "sha256": "de17238a0d1f2a57e914d0cdd436c77bc8c0a104b7680b202195b89f6d0089a8"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    }
+  ],
+  "relatedRecords": [
+    {
+      "id": "10738",
+      "leafCategoryId": "20268",
+      "title": "#10738 - Central Asia AE pre-Islamic coin",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "1090",
+      "leafCategoryId": "24946",
+      "title": "#1090 - CHACH unknown ruler",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "116094",
+      "leafCategoryId": "24943",
+      "title": "#116094 - Chach, cast AE, onesided, unknown ruler.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "124746",
+      "leafCategoryId": "24943",
+      "title": "#124746 - Chach, cast AE, onesided, unknown ruler.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "125746",
+      "leafCategoryId": "24938",
+      "title": "#125746 - Chach, AE Coin, uncnown ruler",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "126151",
+      "leafCategoryId": "19911",
+      "title": "#126151 - Paykend city AE",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "126152",
+      "leafCategoryId": "19911",
+      "title": "#126152 - Paykend city AE",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "12935",
+      "leafCategoryId": "19911",
+      "title": "#12935 - Paikend in the Bukhara oasis, about AD 700.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "131517",
+      "leafCategoryId": "24949",
+      "title": "#131517 - Chach 3 line legend",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "132485",
+      "leafCategoryId": "5320",
+      "title": "#132485 - Chach, unknown domain, with camel and name Farnbag",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "137714",
+      "leafCategoryId": "20268",
+      "title": "#137714 - Semirech'e, City Suyab unknown ruler, tamgha",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "138188",
+      "leafCategoryId": "24939",
+      "title": "#138188 - unknown ruler",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "138305",
+      "leafCategoryId": "5320",
+      "title": "#138305 - Chach: with name Farnbag",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "142114",
+      "leafCategoryId": "922",
+      "title": "#142114 - Chach, AE, unknown principality.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "150602",
+      "leafCategoryId": "24946",
+      "title": "#150602 - Chach AE, unknown ruler.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "15535",
+      "leafCategoryId": "30985",
+      "title": "#15535 - Sogdian AE coin, Ustrushana principality, ruler Satachary, 6-7 cc AD",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "16899",
+      "leafCategoryId": "22239",
+      "title": "#16899 - Ustrushana, ruler Satachary",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "171654",
+      "leafCategoryId": "20268",
+      "title": "#171654 - Semirech'e. City Suyab. Suluk khagan",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "172516",
+      "leafCategoryId": "15500",
+      "title": "#172516 - Northern Tokharistan, Vakhsh valley coin.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "174448",
+      "leafCategoryId": "24938",
+      "title": "#174448 - Chach AE, ruler with pointed cap",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "17516",
+      "leafCategoryId": "24943",
+      "title": "#17516 - Chach, unknown ruler",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "175206",
+      "leafCategoryId": "20268",
+      "title": "#175206 - Semirech'e, City Suyab unknown ruler, tamgha.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "176242",
+      "leafCategoryId": "24934",
+      "title": "#176242 - AE, Chach, Ruler Khwanurk.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "176973",
+      "leafCategoryId": "24939",
+      "title": "#176973 - Chach, AE, lion left with sogdian Parn above.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "179201",
+      "leafCategoryId": "6090",
+      "title": "#179201 - Ustrushana, AE, Chirdmish.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "179202",
+      "leafCategoryId": "22490",
+      "title": "#179202 - Ustrushana? AE, horseman / tamgha.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "180917",
+      "leafCategoryId": "22239",
+      "title": "#180917 - Ustrushana, AE, Rokhanch.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "182569",
+      "leafCategoryId": "24949",
+      "title": "#182569 - Chach, small AE, Group 6, type 14, version 1-2, tudun ruler.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "183832",
+      "leafCategoryId": "22239",
+      "title": "#183832 - Ustrushana, AE, Rachanch.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "185379",
+      "leafCategoryId": "24942",
+      "title": "#185379 - Chach, AE, unknown ruler.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "190238",
+      "leafCategoryId": "15500",
+      "title": "#190238 - Northern Tokharistan, Vakhsh valley coin.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "191958",
+      "leafCategoryId": "22489",
+      "title": "#191958 - Soghd . Unpublished?",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "192356",
+      "leafCategoryId": "30985",
+      "title": "#192356 - Ustrushana, AE coin, afshin Satachary II",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "20206",
+      "leafCategoryId": "19911",
+      "title": "#20206 - Bukhara-City of Paikend, unknown AE.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "20210",
+      "leafCategoryId": "22239",
+      "title": "#20210 - Ustrushana, AE coin, afshin Satachary.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "20480",
+      "leafCategoryId": "30985",
+      "title": "#20480 - Ustrushana, AE coin, afshin Satachary II.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "20481",
+      "leafCategoryId": "22239",
+      "title": "#20481 - Ustrushana, AE coin, afshin Rakhanch.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "20679",
+      "leafCategoryId": "24942",
+      "title": "#20679 - Chach, AE, unknown ruler.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "211502",
+      "leafCategoryId": "22239",
+      "title": "#211502 - Ustrushana, AE Satachary.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "211559",
+      "leafCategoryId": "15500",
+      "title": "#211559 - Unknown AE Chinese Type with Tamgha. Attributed to Vakhsh valley in North Tokharestan.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "21181",
+      "leafCategoryId": "24938",
+      "title": "#21181 - Chach, AE, ruler \"Sochak\".",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "21182",
+      "leafCategoryId": "922",
+      "title": "#21182 - Chach, AE, unknown principality.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "215241",
+      "leafCategoryId": "19911",
+      "title": "#215241 - Paikend AE, portrait / \"dancing man\" tamgha.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "215246",
+      "leafCategoryId": "8786",
+      "title": "#215246 - Ustrushana AE, Afshin Rakhanch II, tamgha with Cross.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "215278",
+      "leafCategoryId": "922",
+      "title": "#215278 - Chach, AE, Unknown ruler.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "226448",
+      "leafCategoryId": "22243",
+      "title": "#226448 - Ustrushana, AE, Chardmish",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "22710",
+      "leafCategoryId": "5320",
+      "title": "#22710 - Chach, unknown domain, with camel and name Farnbag",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "22714",
+      "leafCategoryId": "24939",
+      "title": "#22714 - Chach, unknown ruler with beast",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "232115",
+      "leafCategoryId": "6090",
+      "title": "#232115 - Ustrushana, AE, Chardmish.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "238852",
+      "leafCategoryId": "2705",
+      "title": "#238852 - Bukhara AE cash, Facing portrait/tamgha.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "245252",
+      "leafCategoryId": "20268",
+      "title": "#245252 - Semirechie City Suyab unknown ruler tamgha",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "246078",
+      "leafCategoryId": "19911",
+      "title": "#246078 - Altered Paykend \"Dancing Mean\"",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "253213",
+      "leafCategoryId": "19911",
+      "title": "#253213 - Paikend, \"Dancing man\" tamgha",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "258519",
+      "leafCategoryId": "913",
+      "title": "#258519 - Chach AE, \"Wanwan\".",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "259423",
+      "leafCategoryId": "20268",
+      "title": "#259423 - Semirech'e, City Suyab unknown ruler, tamgha. Kyrgyzstan",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "259458",
+      "leafCategoryId": "20268",
+      "title": "#259458 - Semirech'e, City Suyab unknown ruler, tamgha. Kyrgyzstan",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "262383",
+      "leafCategoryId": "2705",
+      "title": "#262383 - Bukhara AE cash, Facing portrait/tamgha",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "273502",
+      "leafCategoryId": "20268",
+      "title": "#273502 - Suyab AE cash, Anonymous.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "273503",
+      "leafCategoryId": "14242",
+      "title": "#273503 - Kesh AE, king Akhurpat.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "275911",
+      "leafCategoryId": "24939",
+      "title": "#275911 - Chach AE, lion/tamgha.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "27691",
+      "leafCategoryId": "15500",
+      "title": "#27691 - Unknown. Probably Northern Tokharistan.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "281910",
+      "leafCategoryId": "20268",
+      "title": "#281910 - Semirechie City Suyab unknown ruler tamgha",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "281912",
+      "leafCategoryId": "22490",
+      "title": "#281912 - Shymkent region",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "283040",
+      "leafCategoryId": "22489",
+      "title": "#283040 - Shymkent region AE, face / tamgha",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "283043",
+      "leafCategoryId": "22489",
+      "title": "#283043 - AE, face / tamgha",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "283494",
+      "leafCategoryId": "6274",
+      "title": "#283494 - Ustrushana, AE, Unique",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "284325",
+      "leafCategoryId": "22908",
+      "title": "#284325 - Kai Yuan Tong Bao or Zhou Yuan Tong Bao",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "284837",
+      "leafCategoryId": "25612",
+      "title": "#284837 - Nujkat AE",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "285951",
+      "leafCategoryId": "25612",
+      "title": "#285951 - Nujkat AE",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "286364",
+      "leafCategoryId": "24950",
+      "title": "#286364 - Chach AE coin",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "286754",
+      "leafCategoryId": "5320",
+      "title": "#286754 - Chach, unknown domain, with camel",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "287778",
+      "leafCategoryId": "22489",
+      "title": "#287778 - Shymkent region AE, face / tamgha",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "292704",
+      "leafCategoryId": "922",
+      "title": "#292704 - Chach AE, unknown ruler.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "292717",
+      "leafCategoryId": "20268",
+      "title": "#292717 - Semirechia, AE portrait coin, Ruler Suluk, tamgha with hook.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "293313",
+      "leafCategoryId": "24939",
+      "title": "#293313 - Chach AE, lion.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "293868",
+      "leafCategoryId": "922",
+      "title": "#293868 - Chach AE, Group 7, type 1.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "296671",
+      "leafCategoryId": "19911",
+      "title": "#296671 - Bukhara Soghd, AE coin, Paykend, dancing man tamgha",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "296672",
+      "leafCategoryId": "922",
+      "title": "#296672 - Chach AE. anonymous.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "299287",
+      "leafCategoryId": "22604",
+      "title": "#299287 - CHACH: Kabarna AE, unknown ruler.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "299344",
+      "leafCategoryId": "22239",
+      "title": "#299344 - Ustrushana",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "299346",
+      "leafCategoryId": "30985",
+      "title": "#299346 - Ustrushana, AE coin, afshin Satachary II",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "300986",
+      "leafCategoryId": "20268",
+      "title": "#300986 - Semirechia, AE portrait coin, Ruler Suluk, tamgha with hook.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "301776",
+      "leafCategoryId": "15500",
+      "title": "#301776 - Northern Tokharistan, Vakhsh valley coin",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "304295",
+      "leafCategoryId": "24949",
+      "title": "#304295 - Chach 3 line legend",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "306498",
+      "leafCategoryId": "24938",
+      "title": "#306498 - Chach, Unknown ruler",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "306933",
+      "leafCategoryId": "922",
+      "title": "#306933 - Chach, AE, Unknown ruler.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "308694",
+      "leafCategoryId": "24945",
+      "title": "#308694 - Chach: Ruler with winged crown",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "309622",
+      "leafCategoryId": "24940",
+      "title": "#309622 - Chach, Unknown ruler",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "309623",
+      "leafCategoryId": "5320",
+      "title": "#309623 - Chach, unknown domain, with camel",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "309765",
+      "leafCategoryId": "922",
+      "title": "#309765 - Chach group 7, AE coin, portrait/tamgha with legend.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "309768",
+      "leafCategoryId": "24949",
+      "title": "#309768 - Chach, AE, Unknown ruler.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "309773",
+      "leafCategoryId": "24940",
+      "title": "#309773 - Chach, Unknown ruler",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "310387",
+      "leafCategoryId": "24949",
+      "title": "#310387 - Chach, Unknown ruler",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "310392",
+      "leafCategoryId": "24943",
+      "title": "#310392 - Chach, Unknown ruler",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "310396",
+      "leafCategoryId": "922",
+      "title": "#310396 - Chach, Unknown ruler.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "310448",
+      "leafCategoryId": "22239",
+      "title": "#310448 - Ustrushana, AE coin, afshin Satachary.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "311910",
+      "leafCategoryId": "24949",
+      "title": "#311910 - Chach AE coin of a rare type.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "311980",
+      "leafCategoryId": "24938",
+      "title": "#311980 - Chach, AE, ruler \"Sochak\".",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "312696",
+      "leafCategoryId": "8786",
+      "title": "#312696 - Ustrushana AE, Portrait coin, Rokhanch.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "312698",
+      "leafCategoryId": "25612",
+      "title": "#312698 - Nujkat AE, portrait 3/4 left.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "314393",
+      "leafCategoryId": "20268",
+      "title": "#314393 - Semirech'e. City Suyab. Suluk khagan.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "31591",
+      "leafCategoryId": "22239",
+      "title": "#31591 - Ustrushana, AE coin, afshin Rakhanch.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "31658",
+      "leafCategoryId": "24934",
+      "title": "#31658 - Chach, AE, ruler \"Khwnyrk\".",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "320202",
+      "leafCategoryId": "24945",
+      "title": "#320202 - Central Asia, Chach: Ruler with winged crown",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "320362",
+      "leafCategoryId": "8786",
+      "title": "#320362 - Ustrushana, AE coin, afshin Rakhanch.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "324231",
+      "leafCategoryId": "30984",
+      "title": "#324231 - Ustrushana, ruler Satachary",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "325348",
+      "leafCategoryId": "30985",
+      "title": "#325348 - Ustrushana AE, Satachary, elephant/tamgha.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "326280",
+      "leafCategoryId": "5320",
+      "title": "#326280 - Unknown issuer, Obverse Camel AE Cash with romb tamgha on rev.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "327289",
+      "leafCategoryId": "19911",
+      "title": "#327289 - Bukhara, Soghd, AE unit, Paykend, dancing man tamgha",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "327834",
+      "leafCategoryId": "30984",
+      "title": "#327834 - Ustrushana AE, Satachary II.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "332460",
+      "leafCategoryId": "922",
+      "title": "#332460 - Chach, Unknown ruler",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "332462",
+      "leafCategoryId": "922",
+      "title": "#332462 - Chach, Unknown ruler",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "334371",
+      "leafCategoryId": "24949",
+      "title": "#334371 - Chach. AE. Sogdian three line legend.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "334407",
+      "leafCategoryId": "24939",
+      "title": "#334407 - Chach AE, lion",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "334798",
+      "leafCategoryId": "5320",
+      "title": "#334798 - Chach, unknown domain, with camel",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "335270",
+      "leafCategoryId": "22490",
+      "title": "#335270 - Shymkent region, AE, horseman / tamgha, unknown ruler",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "335271",
+      "leafCategoryId": "30985",
+      "title": "#335271 - Ustrushana, AE, Satachary, elephant/tamgha",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "336261",
+      "leafCategoryId": "30984",
+      "title": "#336261 - Ustrushana, afshin Satachary II",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "3386",
+      "leafCategoryId": "922",
+      "title": "#3386 - Chach: Unusual tamgha",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "3394",
+      "leafCategoryId": "5320",
+      "title": "#3394 - Chach: with name Farnbag",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "339640",
+      "leafCategoryId": "2705",
+      "title": "#339640 - Bukhara AE, unknown ruler.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "339733",
+      "leafCategoryId": "24943",
+      "title": "#339733 - Chach, cast AE, onesided, unknown ruler",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "341498",
+      "leafCategoryId": "30984",
+      "title": "#341498 - Central Asia, Soghd, Ustrushana, AE unit, Satachary",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "342455",
+      "leafCategoryId": "6090",
+      "title": "#342455 - Ustrushana, AE, Ruler Chirdmish, portrait 3/4 left.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "342456",
+      "leafCategoryId": "22239",
+      "title": "#342456 - Ustrushana AE, Ruler Rokhanch.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "34621",
+      "leafCategoryId": "24939",
+      "title": "#34621 - Chach, AE, unknown ruler.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "346295",
+      "leafCategoryId": "922",
+      "title": "#346295 - Chach, Unknown ruler.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "346357",
+      "leafCategoryId": "24946",
+      "title": "#346357 - Chach, unknown ruler",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "346458",
+      "leafCategoryId": "24938",
+      "title": "#346458 - Chach, AE, ruler \"Sochak\".",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "346510",
+      "leafCategoryId": "24945",
+      "title": "#346510 - Chach AE, Nirtanak (Zirtanak)",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "346764",
+      "leafCategoryId": "24938",
+      "title": "#346764 - Chach, AE, Sochak (Satuk)",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "347089",
+      "leafCategoryId": "22239",
+      "title": "#347089 - Central Asia, Soghd, Ustrushana, AE unit, Satachary",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "347492",
+      "leafCategoryId": "8786",
+      "title": "#347492 - Ustrushana AE coin, Afshin Rakhanch II.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "348967",
+      "leafCategoryId": "19911",
+      "title": "#348967 - Paikend AE, dancing man tamgha.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "3507",
+      "leafCategoryId": "24945",
+      "title": "#3507 - Chach: Ruler with winged crown",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "351291",
+      "leafCategoryId": "24945",
+      "title": "#351291 - Chach: Ruler with winged crown",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "35202",
+      "leafCategoryId": "24949",
+      "title": "#35202 - Chach, AE with a three line legend, unknown ruler.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "352155",
+      "leafCategoryId": "24949",
+      "title": "#352155 - Chach coin",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "35221",
+      "leafCategoryId": "24934",
+      "title": "#35221 - Chach AE coin",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "353231",
+      "leafCategoryId": "25612",
+      "title": "#353231 - Coins of Nujkath, an early Mediaeval principality in Sangzar Valley",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "353372",
+      "leafCategoryId": "5320",
+      "title": "#353372 - Chach, unknown domain, with camel",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "353374",
+      "leafCategoryId": "24939",
+      "title": "#353374 - Chach AE, lion/tamgha",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "354294",
+      "leafCategoryId": "24945",
+      "title": "#354294 - Chach: Ruler with winged crown",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "354299",
+      "leafCategoryId": "24946",
+      "title": "#354299 - Chach AE, unknown ruler.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "355201",
+      "leafCategoryId": "922",
+      "title": "#355201 - Chach, Unknown ruler.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "356702",
+      "leafCategoryId": "24945",
+      "title": "#356702 - Chach: Ruler with winged crown",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "357589",
+      "leafCategoryId": "24940",
+      "title": "#357589 - Chach, Unknown ruler",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "36108",
+      "leafCategoryId": "24949",
+      "title": "#36108 - Chach AE coin of a rare type.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "36111",
+      "leafCategoryId": "24950",
+      "title": "#36111 - Chach AE coin of a rare type.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "364369",
+      "leafCategoryId": "5320",
+      "title": "#364369 - Central Asia AE unit, with name Farnbag",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "36622",
+      "leafCategoryId": "22239",
+      "title": "#36622 - Sogdian AE coin, Ustrushana principality, ruler Satachary, 6-7 cc AD",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "367616",
+      "leafCategoryId": "15500",
+      "title": "#367616 - Northern Tokharistan, Vakhsh valley coin",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "370226",
+      "leafCategoryId": "20268",
+      "title": "#370226 - Suyab AE cash, Anonymous",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "370998",
+      "leafCategoryId": "25612",
+      "title": "#370998 - Nujkat. (Circa 6th-7th Centuries) AE Unit.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "372527",
+      "leafCategoryId": "24939",
+      "title": "#372527 - Chach AE, lion/tamgha",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "373092",
+      "leafCategoryId": "22239",
+      "title": "#373092 - Ustrushana AE coin",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "376338",
+      "leafCategoryId": "22239",
+      "title": "#376338 - Ustrushana AE, Chirdmish.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "376339",
+      "leafCategoryId": "30983",
+      "title": "#376339 - Ustrushana AE, MR’Y r’γnč - lord Rahanch.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "376340",
+      "leafCategoryId": "8786",
+      "title": "#376340 - Ustrushana AE, Rakhanch II, with cross.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "377206",
+      "leafCategoryId": "24946",
+      "title": "#377206 - Chach AE, unknown ruler.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "378547",
+      "leafCategoryId": "19911",
+      "title": "#378547 - Central Asia, Bukhara-City of Paykend, anonymous (Circa 709-750 AD) AE Cash.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "387536",
+      "leafCategoryId": "30983",
+      "title": "#387536 - Ustrushana, AE, Rokhanch.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "387537",
+      "leafCategoryId": "22239",
+      "title": "#387537 - Ustrushana AE Chirdmish",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "387541",
+      "leafCategoryId": "6090",
+      "title": "#387541 - Ustrushana, AE, Chardmish.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "387569",
+      "leafCategoryId": "24945",
+      "title": "#387569 - Chach, Nirtanak, 7-8th cent.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "387573",
+      "leafCategoryId": "22239",
+      "title": "#387573 - Ustrushana, afshin Rakhanch",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "387604",
+      "leafCategoryId": "24934",
+      "title": "#387604 - Chach, AE, double portrait type, group 5, type 1",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "387812",
+      "leafCategoryId": "8786",
+      "title": "#387812 - Ustrushana AE, Portrait coin, Rokhanch.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "387813",
+      "leafCategoryId": "30985",
+      "title": "#387813 - Ustrushana principality, ruler Satachary",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "387824",
+      "leafCategoryId": "5320",
+      "title": "#387824 - Chach group 8, camel/square.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "387826",
+      "leafCategoryId": "24939",
+      "title": "#387826 - Chach AE, lion/tamgha.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "388164",
+      "leafCategoryId": "5320",
+      "title": "#388164 - Chach group 8, camel/square.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "388205",
+      "leafCategoryId": "24943",
+      "title": "#388205 - Chach, cast AE, onesided, unknown ruler.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "388207",
+      "leafCategoryId": "24942",
+      "title": "#388207 - Chach unknown ruler",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "388466",
+      "leafCategoryId": "24946",
+      "title": "#388466 - Chach AE, unknown ruler.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "388473",
+      "leafCategoryId": "24939",
+      "title": "#388473 - Chach AE, lion/tamgha",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "388559",
+      "leafCategoryId": "24948",
+      "title": "#388559 - Chach, Nirtanak, 7-8th cent.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "388580",
+      "leafCategoryId": "24949",
+      "title": "#388580 - Chach, AE, Unknown ruler.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "388617",
+      "leafCategoryId": "26986",
+      "title": "#388617 - Jizzakh Zaamin Zomin AE bronze facing portrait tamgha unidentified ruler",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "388688",
+      "leafCategoryId": "24939",
+      "title": "#388688 - Chach AE, lion/tamgha.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "39570",
+      "leafCategoryId": "24943",
+      "title": "#39570 - Chach unknown ruler",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "43201",
+      "leafCategoryId": "22239",
+      "title": "#43201 - Ustrushana, Rakhanch.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "43895",
+      "leafCategoryId": "30985",
+      "title": "#43895 - Ustrushana, AE coin, afshin Satachary II",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "56073",
+      "leafCategoryId": "8786",
+      "title": "#56073 - Ustrushana, AE, afshin Rakhanch II.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "58536",
+      "leafCategoryId": "24945",
+      "title": "#58536 - Chach",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "59621",
+      "leafCategoryId": "24949",
+      "title": "#59621 - Chach 3 line legend",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "6305",
+      "leafCategoryId": "20268",
+      "title": "#6305 - Central Asia AE pre-Islamic coin",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "6306",
+      "leafCategoryId": "20268",
+      "title": "#6306 - Central Asia AE pre-Islamic coin",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "6307",
+      "leafCategoryId": "20268",
+      "title": "#6307 - Central Asia AE pre-Islamic coin",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "6308",
+      "leafCategoryId": "20268",
+      "title": "#6308 - Central Asia AE pre-Islamic coin",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "6309",
+      "leafCategoryId": "24949",
+      "title": "#6309 - Central Asia AE pre-Islamic coin, Chach",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "63105",
+      "leafCategoryId": "22239",
+      "title": "#63105 - Ustrushana unlisted AE coin, Satachary.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "6874",
+      "leafCategoryId": "22239",
+      "title": "#6874 - Sogdian AE coin, Satachari, 6-7th Cent., Ustrushana",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "72486",
+      "leafCategoryId": "24939",
+      "title": "#72486 - Chach - Lion left",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "75917",
+      "leafCategoryId": "24940",
+      "title": "#75917 - Chach, AE, Sochak, 7th-8th century AD",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "76686",
+      "leafCategoryId": "30984",
+      "title": "#76686 - Ustrushana, ruler Satachary",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "77713",
+      "leafCategoryId": "22243",
+      "title": "#77713 - Ustrushana, AE,",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "81168",
+      "leafCategoryId": "30985",
+      "title": "#81168 - Ustrushana principality, ruler Satachary",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "82182",
+      "leafCategoryId": "20268",
+      "title": "#82182 - Semirech'e City Suyab unknown ruler. Tamgha hook type.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "86940",
+      "leafCategoryId": "22490",
+      "title": "#86940 - Ustrushana, AE, unknown ruler.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "98308",
+      "leafCategoryId": "24939",
+      "title": "#98308 - Chach, AE, ruler Sochak?",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "98309",
+      "leafCategoryId": "24945",
+      "title": "#98309 - Chach, AE, Ruler with winged crown.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "98563",
+      "leafCategoryId": "24934",
+      "title": "#98563 - Chach, unknown ruler",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "9857",
+      "leafCategoryId": "19911",
+      "title": "#9857 - Paykend, facing portrait / \"dancing man\" tamgha.",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    },
+    {
+      "id": "98728",
+      "leafCategoryId": "24945",
+      "title": "#98728 - Help identification Central Asia coin",
+      "reason": "record-level image review: solid local coinage, circular-hole form, later-drilled form, or non-square cash-tradition morphology; retained as related regional evidence outside the main corpus"
+    }
+  ],
+  "relatedCategorySummary": [
+    {
+      "categoryId": "20268",
+      "title": "tamgha with additional hooks",
+      "reviewedRecords": 18,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_square_hole_main_corpus",
+      "reviewBasis": "category taxonomy plus downloaded-image review"
+    },
+    {
+      "categoryId": "24946",
+      "title": "Type 11: portrait ¾ to right / tamgha",
+      "reviewedRecords": 6,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_square_hole_main_corpus",
+      "reviewBasis": "category taxonomy plus downloaded-image review"
+    },
+    {
+      "categoryId": "24943",
+      "title": "Type 8, ver 4: beast right / blank, anepigraphic",
+      "reviewedRecords": 7,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_square_hole_main_corpus",
+      "reviewBasis": "category taxonomy plus downloaded-image review"
+    },
+    {
+      "categoryId": "24938",
+      "title": "Type 5: portrait ¾ to left / tamgha, ruler Sochak/Satuk",
+      "reviewedRecords": 7,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_square_hole_main_corpus",
+      "reviewBasis": "category taxonomy plus downloaded-image review"
+    },
+    {
+      "categoryId": "19911",
+      "title": "Obv. crowned human portrait en face",
+      "reviewedRecords": 12,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_square_hole_main_corpus",
+      "reviewBasis": "category taxonomy plus downloaded-image review"
+    },
+    {
+      "categoryId": "24949",
+      "title": "Type 14: Sogdian three line legend / tamgha, ruler Tudun",
+      "reviewedRecords": 13,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_square_hole_main_corpus",
+      "reviewBasis": "category taxonomy plus downloaded-image review"
+    },
+    {
+      "categoryId": "5320",
+      "title": "Unknown principality III",
+      "reviewedRecords": 12,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_square_hole_main_corpus",
+      "reviewBasis": "category taxonomy plus downloaded-image review"
+    },
+    {
+      "categoryId": "24939",
+      "title": "Type 6: beast (lion) left / tamgha, ruler Sochak/Stachak",
+      "reviewedRecords": 14,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_square_hole_main_corpus",
+      "reviewBasis": "category taxonomy plus downloaded-image review"
+    },
+    {
+      "categoryId": "922",
+      "title": "Unknown principality II",
+      "reviewedRecords": 14,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_square_hole_main_corpus",
+      "reviewBasis": "category taxonomy plus downloaded-image review"
+    },
+    {
+      "categoryId": "30985",
+      "title": "Elephant",
+      "reviewedRecords": 9,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_square_hole_main_corpus",
+      "reviewBasis": "category taxonomy plus downloaded-image review"
+    },
+    {
+      "categoryId": "22239",
+      "title": "Portrait ¾ left, afshin Rahanch/Satachary/Chirdmish",
+      "reviewedRecords": 19,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_square_hole_main_corpus",
+      "reviewBasis": "category taxonomy plus downloaded-image review"
+    },
+    {
+      "categoryId": "15500",
+      "title": "Chinese types with tamgha / blank",
+      "reviewedRecords": 6,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_square_hole_main_corpus",
+      "reviewBasis": "category taxonomy plus downloaded-image review"
+    },
+    {
+      "categoryId": "24934",
+      "title": "Type 1: portrait ¾ to right / tamgha, ruler Khusbek/Khwanurk",
+      "reviewedRecords": 5,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_square_hole_main_corpus",
+      "reviewBasis": "category taxonomy plus downloaded-image review"
+    },
+    {
+      "categoryId": "6090",
+      "title": "Portrait ¾ left or right, afshin Chirdmish",
+      "reviewedRecords": 4,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_square_hole_main_corpus",
+      "reviewBasis": "category taxonomy plus downloaded-image review"
+    },
+    {
+      "categoryId": "22490",
+      "title": "Horseman / tamgha",
+      "reviewedRecords": 4,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_square_hole_main_corpus",
+      "reviewBasis": "category taxonomy plus downloaded-image review"
+    },
+    {
+      "categoryId": "24942",
+      "title": "Type 8, ver 3: beast (leopard) right / tamgha, anepigraphic",
+      "reviewedRecords": 3,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_square_hole_main_corpus",
+      "reviewBasis": "category taxonomy plus downloaded-image review"
+    },
+    {
+      "categoryId": "22489",
+      "title": "Facing portrait / tamgha",
+      "reviewedRecords": 4,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_square_hole_main_corpus",
+      "reviewBasis": "category taxonomy plus downloaded-image review"
+    },
+    {
+      "categoryId": "8786",
+      "title": "Portrait ¾ left, afshin Rahanch II",
+      "reviewedRecords": 7,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_square_hole_main_corpus",
+      "reviewBasis": "category taxonomy plus downloaded-image review"
+    },
+    {
+      "categoryId": "22243",
+      "title": "Portrait ¾ right, afshin Chirdmish/Chardmish",
+      "reviewedRecords": 2,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_square_hole_main_corpus",
+      "reviewBasis": "category taxonomy plus downloaded-image review"
+    },
+    {
+      "categoryId": "2705",
+      "title": "AE struck by the last Bukhar Khudats",
+      "reviewedRecords": 3,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_square_hole_main_corpus",
+      "reviewBasis": "category taxonomy plus downloaded-image review"
+    },
+    {
+      "categoryId": "913",
+      "title": "Early Chach/KangChu",
+      "reviewedRecords": 1,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_square_hole_main_corpus",
+      "reviewBasis": "category taxonomy plus downloaded-image review"
+    },
+    {
+      "categoryId": "14242",
+      "title": "Type 1. With triskelion in the round central field",
+      "reviewedRecords": 1,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_square_hole_main_corpus",
+      "reviewBasis": "category taxonomy plus downloaded-image review"
+    },
+    {
+      "categoryId": "6274",
+      "title": "Portrait without crown",
+      "reviewedRecords": 1,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_square_hole_main_corpus",
+      "reviewBasis": "category taxonomy plus downloaded-image review"
+    },
+    {
+      "categoryId": "22908",
+      "title": "周元通寶 zhou-yuan tong-bao",
+      "reviewedRecords": 1,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_square_hole_main_corpus",
+      "reviewBasis": "category taxonomy plus downloaded-image review"
+    },
+    {
+      "categoryId": "25612",
+      "title": "Nujkat, tamgha // Portrait ¾ left",
+      "reviewedRecords": 5,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_square_hole_main_corpus",
+      "reviewBasis": "category taxonomy plus downloaded-image review"
+    },
+    {
+      "categoryId": "24950",
+      "title": "Type 15: tamgha / blank, anepigraphic and small",
+      "reviewedRecords": 2,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_square_hole_main_corpus",
+      "reviewBasis": "category taxonomy plus downloaded-image review"
+    },
+    {
+      "categoryId": "22604",
+      "title": "Type 7a. Horseman right / or",
+      "reviewedRecords": 1,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_square_hole_main_corpus",
+      "reviewBasis": "category taxonomy plus downloaded-image review"
+    },
+    {
+      "categoryId": "24945",
+      "title": "Type 10: portrait ¾ to right with winged crown / tamgha, ruler N/Zirtanak",
+      "reviewedRecords": 11,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_square_hole_main_corpus",
+      "reviewBasis": "category taxonomy plus downloaded-image review"
+    },
+    {
+      "categoryId": "24940",
+      "title": "Type 7: beast (lion) left / tamgha, ruler Sochak/Stachak",
+      "reviewedRecords": 4,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_square_hole_main_corpus",
+      "reviewBasis": "category taxonomy plus downloaded-image review"
+    },
+    {
+      "categoryId": "30984",
+      "title": "Portrait",
+      "reviewedRecords": 5,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_square_hole_main_corpus",
+      "reviewBasis": "category taxonomy plus downloaded-image review"
+    },
+    {
+      "categoryId": "30983",
+      "title": "Portrait ¾ left, lord Rahanch",
+      "reviewedRecords": 2,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_square_hole_main_corpus",
+      "reviewBasis": "category taxonomy plus downloaded-image review"
+    },
+    {
+      "categoryId": "24948",
+      "title": "Type 13: portrait facing or ¾ to right / tamgha, small",
+      "reviewedRecords": 1,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_square_hole_main_corpus",
+      "reviewBasis": "category taxonomy plus downloaded-image review"
+    },
+    {
+      "categoryId": "26986",
+      "title": "Principalities in the spurs of the Turkestan range, north of Samarkand",
+      "reviewedRecords": 1,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_square_hole_main_corpus",
+      "reviewBasis": "category taxonomy plus downloaded-image review"
+    }
+  ],
+  "deferredRules": [
+    "Mixed categories, especially anepigraphic imitation groups, remain pending for specimen-level aperture review.",
+    "Round-hole and later-drilled forms remain related evidence even when their source taxonomy mentions Chinese types or cash."
+  ]
+}
