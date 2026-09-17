@@ -1,0 +1,930 @@
+{
+  "version": "1.0",
+  "reviewedOn": "2026-09-16",
+  "stage": "503-stage5-remaining-clear-groups",
+  "sourceManifest": "research/zeno/manifest-503.json",
+  "methodNote": "Stage 5 advances the remaining image queue by importing clear Eastern Sogdian, Samarkand, Termez and Badakhshan square-hole/cash-derived records while pruning coherent non-square, solid, circular-hole and pseudo-money blocks. Mixed or unresolved groups remain pending.",
+  "counts": {
+    "sourceRecordsReviewed": 87,
+    "atlasImportRecords": 16,
+    "relatedOutsideMainCorpus": 71,
+    "newFamilies": 4,
+    "sourceGroups": 6,
+    "pendingImagesRemaining": 98
+  },
+  "families": [
+    {
+      "id": "fansar-pargar-square-hole",
+      "title": "Fansar and Pargar square-hole cash",
+      "zh": "凡萨尔／帕尔加尔方孔钱",
+      "region": "Eastern Sogdiana",
+      "start": 600,
+      "end": 799,
+      "dateLabel": "Source-taxonomy context; exact chronology pending",
+      "anchorPlaceId": null,
+      "status": "source_linked_candidate",
+      "description": "Eastern Sogdian AE cash from the Fansar/Pargar source group. Stage-5 images show clear square central apertures across the reviewed records.",
+      "question": "Separate Fansar and Pargar issuers/variants after direct catalogue and legend crosswalk."
+    },
+    {
+      "id": "samarkand-unlisted-square-hole",
+      "title": "Unlisted Samarkand/Sogdian square-hole cash",
+      "zh": "撒马尔罕／粟特未列名方孔钱",
+      "region": "Samarkand Sogd / uncertain",
+      "start": 600,
+      "end": 799,
+      "dateLabel": "Source-taxonomy context; exact chronology pending",
+      "anchorPlaceId": "samarkand",
+      "status": "source_linked_candidate",
+      "description": "Unlisted or uncertain Sogdian cash-like AE records, filed by Zeno under an unknown Samarkand ruler group, with clear square central apertures.",
+      "question": "Issuer and relation to named Samarkand rulers remain unresolved."
+    },
+    {
+      "id": "termez-cash-like",
+      "title": "Termez/Tirmidh cash-like square-hole AE",
+      "zh": "铁尔梅兹／忒尔密兹方孔式铜钱",
+      "region": "Northern Tokharistan / Termez",
+      "start": 600,
+      "end": 899,
+      "dateLabel": "Chronology pending",
+      "anchorPlaceId": null,
+      "status": "source_linked_candidate",
+      "description": "A source-recorded Tirmidh/Termez cash-like AE issue with a pierced square/squarish central aperture.",
+      "question": "Exact mint, issuer and date require specialist Tokharistan crosswalk."
+    },
+    {
+      "id": "badakhshan-kaiyuan-arabic",
+      "title": "Badakhshan Kaiyuan–Arabic hybrid cash",
+      "zh": "巴达赫尚开元—阿拉伯文混合方孔钱",
+      "region": "Badakhshan / Northern Tokharistan",
+      "start": 700,
+      "end": 999,
+      "dateLabel": "Source taxonomy and specimen legends; exact chronology pending",
+      "anchorPlaceId": null,
+      "status": "source_linked_candidate",
+      "description": "Badakhshan cast AE issues combining Kaiyuan Tongbao-derived Chinese cash morphology with Arabic legends. Only visually clear square/squarish-aperture specimens are imported at this stage.",
+      "question": "Date, authority and relationship to round-aperture members of the same source group remain under review."
+    }
+  ],
+  "familiesReused": [
+    {
+      "id": "es19",
+      "role": "existing_family_reused",
+      "note": "Gurak/Turgar-type source records retained under the existing Gurek/Urak editorial family without resolving exact issuer identity."
+    }
+  ],
+  "sourceGroups": [
+    {
+      "id": "zeno503-cat-14835-stage5",
+      "familyId": "samarkand-unlisted-square-hole",
+      "categoryId": "14835",
+      "title": "Unknown ruler, Samarkand?",
+      "status": "source_group",
+      "description": "Zeno source category/subset retained after stage-5 image review; source grouping is not treated as a resolved academic variant."
+    },
+    {
+      "id": "zeno503-cat-15517-stage5",
+      "familyId": "termez-cash-like",
+      "categoryId": "15517",
+      "title": "Termez (Tirmidh)",
+      "status": "source_group",
+      "description": "Zeno source category/subset retained after stage-5 image review; source grouping is not treated as a resolved academic variant."
+    },
+    {
+      "id": "zeno503-cat-15518-stage5",
+      "familyId": "badakhshan-kaiyuan-arabic",
+      "categoryId": "15518",
+      "title": "Badakhshān بدخشان",
+      "status": "source_group",
+      "description": "Zeno source category/subset retained after stage-5 image review; source grouping is not treated as a resolved academic variant."
+    },
+    {
+      "id": "zeno503-cat-2747-stage5",
+      "familyId": "fansar-pargar-square-hole",
+      "categoryId": "2747",
+      "title": "Unknown principality, rulers in Fansara and Pargara",
+      "status": "source_group",
+      "description": "Zeno source category/subset retained after stage-5 image review; source grouping is not treated as a resolved academic variant."
+    },
+    {
+      "id": "zeno503-cat-30842-stage5",
+      "familyId": "es19",
+      "categoryId": "30842",
+      "title": "cast",
+      "status": "source_group",
+      "description": "Zeno source category/subset retained after stage-5 image review; source grouping is not treated as a resolved academic variant."
+    },
+    {
+      "id": "zeno503-cat-6746-stage5",
+      "familyId": "es19",
+      "categoryId": "6746",
+      "title": "Coins with tamgha of Gurak/Turgar type",
+      "status": "source_group",
+      "description": "Zeno source category/subset retained after stage-5 image review; source grouping is not treated as a resolved academic variant."
+    }
+  ],
+  "records": [
+    {
+      "id": "126148",
+      "leafCategoryId": "2747",
+      "leafCategoryTitle": "Unknown principality, rulers in Fansara and Pargara",
+      "familyId": "fansar-pargar-square-hole",
+      "sourceGroupId": "zeno503-cat-2747-stage5",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage5_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/126148.jpg",
+        "width": 2296,
+        "height": 1148,
+        "sha256": "f998f22c22143a283b719e07f3aa868fbe96108a534e99338dfc4a22abe443af"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "13",
+      "leafCategoryId": "2747",
+      "leafCategoryTitle": "Unknown principality, rulers in Fansara and Pargara",
+      "familyId": "fansar-pargar-square-hole",
+      "sourceGroupId": "zeno503-cat-2747-stage5",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage5_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/13.jpg",
+        "width": 769,
+        "height": 375,
+        "sha256": "88b5a93ceafda29cc6390d4255e9b26a2f3230dc07ced0a60c7028397ba4279c"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "1330",
+      "leafCategoryId": "14835",
+      "leafCategoryTitle": "Unknown ruler, Samarkand?",
+      "familyId": "samarkand-unlisted-square-hole",
+      "sourceGroupId": "zeno503-cat-14835-stage5",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage5_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/1330.jpg",
+        "width": 550,
+        "height": 282,
+        "sha256": "72cf44d9f2e7af54c35ec5045feb6f5a2be28a843fd0c0698a964d531bc1ac3c"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "167596",
+      "leafCategoryId": "14835",
+      "leafCategoryTitle": "Unknown ruler, Samarkand?",
+      "familyId": "samarkand-unlisted-square-hole",
+      "sourceGroupId": "zeno503-cat-14835-stage5",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage5_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/167596.jpg",
+        "width": 1267,
+        "height": 651,
+        "sha256": "23ec871eb1d3665cfff8f1eddb953d13bf123f6e165f68fa8558cec29e3f2427"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "169199",
+      "leafCategoryId": "14835",
+      "leafCategoryTitle": "Unknown ruler, Samarkand?",
+      "familyId": "samarkand-unlisted-square-hole",
+      "sourceGroupId": "zeno503-cat-14835-stage5",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage5_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/169199.jpg",
+        "width": 1442,
+        "height": 722,
+        "sha256": "5620bc737154777063313bc584bd25ae3f6c9ff19fbadc24da75f93d379ab100"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "172370",
+      "leafCategoryId": "14835",
+      "leafCategoryTitle": "Unknown ruler, Samarkand?",
+      "familyId": "samarkand-unlisted-square-hole",
+      "sourceGroupId": "zeno503-cat-14835-stage5",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage5_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/172370.jpg",
+        "width": 1701,
+        "height": 860,
+        "sha256": "60796a8500da6b17dff3f03c33ae7a2d3cf34603b1866fb08310beee81b6f4bb"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "211016",
+      "leafCategoryId": "15518",
+      "leafCategoryTitle": "Badakhshān بدخشان",
+      "familyId": "badakhshan-kaiyuan-arabic",
+      "sourceGroupId": "zeno503-cat-15518-stage5",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage5_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/211016.jpg",
+        "width": 2983,
+        "height": 1573,
+        "sha256": "a09da8c6501e0a88e4cbcfe4a2002cb80d42fd5650f9cde75db003c8b1e28f02"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "233595",
+      "leafCategoryId": "15518",
+      "leafCategoryTitle": "Badakhshān بدخشان",
+      "familyId": "badakhshan-kaiyuan-arabic",
+      "sourceGroupId": "zeno503-cat-15518-stage5",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage5_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/233595.jpg",
+        "width": 1940,
+        "height": 994,
+        "sha256": "887d4859b0b065d95206037d55b29967a5568387459f4babf7040f25a629b6cc"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "29397",
+      "leafCategoryId": "2747",
+      "leafCategoryTitle": "Unknown principality, rulers in Fansara and Pargara",
+      "familyId": "fansar-pargar-square-hole",
+      "sourceGroupId": "zeno503-cat-2747-stage5",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage5_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/29397.jpg",
+        "width": 741,
+        "height": 377,
+        "sha256": "fb5e302340d00c205765db6bb4fbe7d68f776e99679084b00b1bb96caf940caa"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "339566",
+      "leafCategoryId": "15518",
+      "leafCategoryTitle": "Badakhshān بدخشان",
+      "familyId": "badakhshan-kaiyuan-arabic",
+      "sourceGroupId": "zeno503-cat-15518-stage5",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage5_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/339566.jpg",
+        "width": 2000,
+        "height": 991,
+        "sha256": "554c885828cec0c4dcd8d09780201b1f887f28c7d42997c145983b880d0410d2"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "368888",
+      "leafCategoryId": "30842",
+      "leafCategoryTitle": "cast",
+      "familyId": "es19",
+      "sourceGroupId": "zeno503-cat-30842-stage5",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage5_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/368888.jpg",
+        "width": 2272,
+        "height": 1096,
+        "sha256": "c0cfc58f49f27f6826f023ab35b48fa9af93f7c5ddb6361a53e98bf640bc8e70"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "45400",
+      "leafCategoryId": "2747",
+      "leafCategoryTitle": "Unknown principality, rulers in Fansara and Pargara",
+      "familyId": "fansar-pargar-square-hole",
+      "sourceGroupId": "zeno503-cat-2747-stage5",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage5_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/45400.jpg",
+        "width": 655,
+        "height": 340,
+        "sha256": "f6d338d5a13aa308d1f685428a761bdf77f656973f770102b3763315e366ff16"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "57521",
+      "leafCategoryId": "15517",
+      "leafCategoryTitle": "Termez (Tirmidh)",
+      "familyId": "termez-cash-like",
+      "sourceGroupId": "zeno503-cat-15517-stage5",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage5_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/57521.jpg",
+        "width": 1776,
+        "height": 920,
+        "sha256": "ab5fdb4344c1a7b982fc6faa996bfaee7c834542f8973de1cf9ab25e2b512965"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "63495",
+      "leafCategoryId": "6746",
+      "leafCategoryTitle": "Coins with tamgha of Gurak/Turgar type",
+      "familyId": "es19",
+      "sourceGroupId": "zeno503-cat-6746-stage5",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage5_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/63495.jpg",
+        "width": 1965,
+        "height": 978,
+        "sha256": "228c6937660e6dafcbee98b71613c251c9de84d14c385b32e8cf6d596c0e39cf"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "69377",
+      "leafCategoryId": "2747",
+      "leafCategoryTitle": "Unknown principality, rulers in Fansara and Pargara",
+      "familyId": "fansar-pargar-square-hole",
+      "sourceGroupId": "zeno503-cat-2747-stage5",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage5_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/69377.jpg",
+        "width": 2181,
+        "height": 1119,
+        "sha256": "c1814de040733eebf676b6849045c4bbeab8e06e5eeca3f3667294aab440446f"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "70233",
+      "leafCategoryId": "14835",
+      "leafCategoryTitle": "Unknown ruler, Samarkand?",
+      "familyId": "samarkand-unlisted-square-hole",
+      "sourceGroupId": "zeno503-cat-14835-stage5",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage5_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/70233.jpg",
+        "width": 2223,
+        "height": 1146,
+        "sha256": "b2d9c580878d26617568ddbbec5eefc944505d2c0a8c8b1f660f590650a05a65"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    }
+  ],
+  "relatedRecords": [
+    {
+      "id": "108020",
+      "leafCategoryId": "5321",
+      "title": "#108020 - Unknown principality AE",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "11005",
+      "leafCategoryId": "13698",
+      "title": "#11005 - Mongolia, pseudo-money",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "115616",
+      "leafCategoryId": "15762",
+      "title": "#115616 - Imitation of Tang Dynasty Kai Yuan Tong Bao coin",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "124644",
+      "leafCategoryId": "15762",
+      "title": "#124644 - Local Imitation of Tang Dynasty Kai Yuan Tong Bao coin",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "124645",
+      "leafCategoryId": "15762",
+      "title": "#124645 - Local Imitation of Tang Dynasty Kai Yuan Tong Bao coin",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "138304",
+      "leafCategoryId": "5321",
+      "title": "#138304 - Unknown principality AE, Chach gr 9.",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "150557",
+      "leafCategoryId": "2719",
+      "title": "#150557 - Soghd, unknown ruler.",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "154646",
+      "leafCategoryId": "2719",
+      "title": "#154646 - Soghd, AE, unknown ruler / tamgha.",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "154647",
+      "leafCategoryId": "2719",
+      "title": "#154647 - Soghd, AE, unknown ruler / tamgha.",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "168140",
+      "leafCategoryId": "14215",
+      "title": "#168140 - Kesh AE, unidentified ruler.",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "168141",
+      "leafCategoryId": "14215",
+      "title": "#168141 - Kesh AE, unidentified ruler.",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "172286",
+      "leafCategoryId": "2719",
+      "title": "#172286 - South Soghd, AE, unknown tamgha.",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "179070",
+      "leafCategoryId": "13698",
+      "title": "#179070 - Mongolia, pseudo-money",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "183833",
+      "leafCategoryId": "2719",
+      "title": "#183833 - South Soghd, AE, Unknown ruler 6-7 Ct AD.",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "186897",
+      "leafCategoryId": "22501",
+      "title": "#186897 - AE, East Soghd/Ferghana?",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "193025",
+      "leafCategoryId": "15762",
+      "title": "#193025 - Local Imitation of Tang Dynasty Kai Yuan Tong Bao coin",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "194337",
+      "leafCategoryId": "2719",
+      "title": "#194337 - South Soghd, AE, facing portrait/tamgha.",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "203128",
+      "leafCategoryId": "13698",
+      "title": "#203128 - XIONGNU (Great Huns) AE Double Ring object, 209 BC - 216 AD",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "203148",
+      "leafCategoryId": "13698",
+      "title": "#203148 - XIONGNU (Great Huns) AE Double Ring object, 209 BC - 216 AD",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "203149",
+      "leafCategoryId": "13698",
+      "title": "#203149 - XIONGNU (Great Huns) AE Plaque/Applique, 209 BC - 216 AD",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "203305",
+      "leafCategoryId": "13698",
+      "title": "#203305 - XIONGNU (Great Huns) AE Multiple Rings object, 209 BC - 216 AD",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "20688",
+      "leafCategoryId": "5321",
+      "title": "#20688 - Unknown principality in Chach area.",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "211938",
+      "leafCategoryId": "15762",
+      "title": "#211938 - Semirechie, AE Local imitation.",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "211940",
+      "leafCategoryId": "15762",
+      "title": "#211940 - Semirechie, AE Cash, imitation? KYTB.",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "213820",
+      "leafCategoryId": "13698",
+      "title": "#213820 - Ordos Culture large bronze feline harness fitting",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "215282",
+      "leafCategoryId": "15762",
+      "title": "#215282 - Semirech'e, AE imitation of KYTB.",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "215477",
+      "leafCategoryId": "13698",
+      "title": "#215477 - AE, Xia Jia Dian culture.",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "215808",
+      "leafCategoryId": "15762",
+      "title": "#215808 - Kai-yuan tong-bao, rev. Crescent above, Semirech'e local cast",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "219918",
+      "leafCategoryId": "2719",
+      "title": "#219918 - South Sogd AE, portrait/tamgha.",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "229408",
+      "leafCategoryId": "13698",
+      "title": "#229408 - Ordos bronze \"Leaf Money\"",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "238854",
+      "leafCategoryId": "15519",
+      "title": "#238854 - North Tokharestan AE, portrait right/tamgha.",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "245379",
+      "leafCategoryId": "2719",
+      "title": "#245379 - South Soghd, AE with Portrait and trident Tamgha.",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "258525",
+      "leafCategoryId": "2719",
+      "title": "#258525 - South Soghd, AE coin with Portrait and trident Tamgha.",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "259414",
+      "leafCategoryId": "20267",
+      "title": "#259414 - Kyrgyzstan. Issyk-Kul region. Suluk khagan. (no hook type)",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "268037",
+      "leafCategoryId": "2719",
+      "title": "#268037 - Central Asia, Soghd, AE unit, unknown ruler / tamgha",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "271973",
+      "leafCategoryId": "13698",
+      "title": "#271973 - Ordos, AE decoration.",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "281712",
+      "leafCategoryId": "15762",
+      "title": "#281712 - Kai Yuan Tong Bao",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "281714",
+      "leafCategoryId": "15762",
+      "title": "#281714 - Kai Yuan Tong Bao",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "281715",
+      "leafCategoryId": "15762",
+      "title": "#281715 - Kai Yuan Tong Bao",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "281716",
+      "leafCategoryId": "15762",
+      "title": "#281716 - Kai Yuan Tong Bao",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "284495",
+      "leafCategoryId": "2719",
+      "title": "#284495 - South Soghd, AE, Unknown Ruler with trident tamgha.",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "289141",
+      "leafCategoryId": "13698",
+      "title": "#289141 - Inscription of Hüis Tolgoi from Mongolia, Stone, Earliest mongolian inscription written brahmi script. AD579-AD603/604",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "292694",
+      "leafCategoryId": "15762",
+      "title": "#292694 - Semirechie, AE Cash, imitation of Kai Yuan Tong Bao 開元通寶",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "299289",
+      "leafCategoryId": "15517",
+      "title": "#299289 - Termez AE, Unknown ruler.",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "300270",
+      "leafCategoryId": "15762",
+      "title": "#300270 - Kai Yuan",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "321957",
+      "leafCategoryId": "15762",
+      "title": "#321957 - 開元通寳 kai-yuan tong-bao",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "335181",
+      "leafCategoryId": "2719",
+      "title": "#335181 - South Soghd, AE coin with Portrait and trident Tamgha",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "339462",
+      "leafCategoryId": "14219",
+      "title": "#339462 - South Soghd AE, Wine-glass tamgha.",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "345212",
+      "leafCategoryId": "5321",
+      "title": "#345212 - Unknown principality in Chach area.",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "34619",
+      "leafCategoryId": "5321",
+      "title": "#34619 - Unknown principality, AE, Chach area.",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "357036",
+      "leafCategoryId": "15762",
+      "title": "#357036 - Semirech'e, Imitation Kai Yuan Tong Bao, 七河開元通寶",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "371863",
+      "leafCategoryId": "5321",
+      "title": "#371863 - Unknown principality in Chach area.",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "373562",
+      "leafCategoryId": "13698",
+      "title": "#373562 - XIONGNU (Great Huns) fraction of AE Double Ring object, 209 BC - 216 AD",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "373563",
+      "leafCategoryId": "13698",
+      "title": "#373563 - XIONGNU (Great Huns) fraction of AE Double Ring object, 209 BC - 216 AD",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "373564",
+      "leafCategoryId": "13698",
+      "title": "#373564 - XIONGNU (Great Huns) left side fraction of AE Double Ring object, 209 BC - 216 AD",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "373565",
+      "leafCategoryId": "13698",
+      "title": "#373565 - XIONGNU (Great Huns) left side fraction of AE Double Ring object, 209 BC - 216 AD",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "373566",
+      "leafCategoryId": "13698",
+      "title": "#373566 - XIONGNU (Great Huns) AE Double Ring object, 209 BC - 216 AD",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "373649",
+      "leafCategoryId": "13698",
+      "title": "#373649 - Ancient Mongolia? Brass Garmet Fitting, Mushroom decorations?",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "376334",
+      "leafCategoryId": "14218",
+      "title": "#376334 - Principality of Kesh, AR obol, anonymous with Λ or V.",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "377740",
+      "leafCategoryId": "13698",
+      "title": "#377740 - Xiongnu, AE ring money fraction, 3rd c. BC-3rd c. AD",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "377741",
+      "leafCategoryId": "13698",
+      "title": "#377741 - Xiongnu, AE ring money fraction, 3rd c. BC-3rd c. AD",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "383161",
+      "leafCategoryId": "15762",
+      "title": "#383161 - Semirech'e, Kaiyuan Tongbao, Local Imitation, AE Cash",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "383162",
+      "leafCategoryId": "15762",
+      "title": "#383162 - Semirech'e, Kaiyuan Tongbao, Local Imitation, AE Cash",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "386639",
+      "leafCategoryId": "2701",
+      "title": "#386639 - Central Asia, Soghd Asbar (Circa 5th-6th Century AD) AE Cash.",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "387720",
+      "leafCategoryId": "5321",
+      "title": "#387720 - Unknown principality in Chach area.",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "43171",
+      "leafCategoryId": "2719",
+      "title": "#43171 - South Sogd, AE, unknown tamgha.",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "4658",
+      "leafCategoryId": "15762",
+      "title": "#4658 - Central Asia, bronze local imitation of the Chinese Kai-yuan tong-bao",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "4659",
+      "leafCategoryId": "15762",
+      "title": "#4659 - Central Asia, bronze local imitation of the Chinese Kai-yuan tong-bao",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "82181",
+      "leafCategoryId": "20267",
+      "title": "#82181 - Semirech'e, City Suyab unknown ruler, tamgha (no hook type).",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "86240",
+      "leafCategoryId": "2719",
+      "title": "#86240 - Soghd coin with unknown tamgha",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    },
+    {
+      "id": "93871",
+      "leafCategoryId": "5321",
+      "title": "#93871 - Unknown principality in Chach area",
+      "reason": "stage-5 visual review: solid local coinage, circular/non-square aperture, pseudo-money/object form, or otherwise outside the project main square-hole tradition; source retained as related evidence"
+    }
+  ],
+  "relatedCategorySummary": [
+    {
+      "categoryId": "5321",
+      "title": "Unknown principality IV",
+      "reviewedRecords": 8,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_main_square_hole_corpus",
+      "reviewBasis": "downloaded-image visual review plus source taxonomy"
+    },
+    {
+      "categoryId": "13698",
+      "title": "Mongolia/ Ordos Culture, including pseudo-money",
+      "reviewedRecords": 19,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_main_square_hole_corpus",
+      "reviewBasis": "downloaded-image visual review plus source taxonomy"
+    },
+    {
+      "categoryId": "15762",
+      "title": "plain reverse",
+      "reviewedRecords": 20,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_main_square_hole_corpus",
+      "reviewBasis": "downloaded-image visual review plus source taxonomy"
+    },
+    {
+      "categoryId": "2719",
+      "title": "Abghar, coins with Trident-Anchor Tamgha",
+      "reviewedRecords": 14,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_main_square_hole_corpus",
+      "reviewBasis": "downloaded-image visual review plus source taxonomy"
+    },
+    {
+      "categoryId": "14215",
+      "title": "Unidentified ruler, early 740s",
+      "reviewedRecords": 2,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_main_square_hole_corpus",
+      "reviewBasis": "downloaded-image visual review plus source taxonomy"
+    },
+    {
+      "categoryId": "22501",
+      "title": "Soghdian legend",
+      "reviewedRecords": 1,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_main_square_hole_corpus",
+      "reviewBasis": "downloaded-image visual review plus source taxonomy"
+    },
+    {
+      "categoryId": "15519",
+      "title": ", Portrait right / tamgha",
+      "reviewedRecords": 1,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_main_square_hole_corpus",
+      "reviewBasis": "downloaded-image visual review plus source taxonomy"
+    },
+    {
+      "categoryId": "20267",
+      "title": "tamgha without additional hooks",
+      "reviewedRecords": 2,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_main_square_hole_corpus",
+      "reviewBasis": "downloaded-image visual review plus source taxonomy"
+    },
+    {
+      "categoryId": "15517",
+      "title": "Termez (Tirmidh)",
+      "reviewedRecords": 1,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_main_square_hole_corpus",
+      "reviewBasis": "downloaded-image visual review plus source taxonomy"
+    },
+    {
+      "categoryId": "14219",
+      "title": "Coins with Wine Glass Tamgha",
+      "reviewedRecords": 1,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_main_square_hole_corpus",
+      "reviewBasis": "downloaded-image visual review plus source taxonomy"
+    },
+    {
+      "categoryId": "14218",
+      "title": "Coin with profile portrait right and distorted Greek inscription",
+      "reviewedRecords": 1,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_main_square_hole_corpus",
+      "reviewBasis": "downloaded-image visual review plus source taxonomy"
+    },
+    {
+      "categoryId": "2701",
+      "title": "\"Asbar\"",
+      "reviewedRecords": 1,
+      "mainCorpusImports": 0,
+      "classification": "related_outside_main_square_hole_corpus",
+      "reviewBasis": "downloaded-image visual review plus source taxonomy"
+    }
+  ],
+  "deferredRules": [
+    "Anepigraphic openwork/round-hole imitation groups remain pending at specimen level.",
+    "Ambiguous hybrid holes are held until morphology and source attribution can be reconciled."
+  ]
+}

@@ -1383,6 +1383,94 @@
           "role": "Source taxonomy / specimen discovery; canonical attribution pending"
         }
       ]
+    },
+    {
+      "id": "fansar-pargar-square-hole",
+      "title": "Fansar and Pargar square-hole cash",
+      "zh": "凡萨尔／帕尔加尔方孔钱",
+      "region": "Eastern Sogdiana",
+      "start": 600,
+      "end": 799,
+      "dateLabel": "Source-taxonomy context; exact chronology pending",
+      "description": "Eastern Sogdian AE cash from the Fansar/Pargar source group. Stage-5 images show clear square central apertures across the reviewed records.",
+      "anchor": null,
+      "image": "/coins/zeno/126148.jpg",
+      "status": "source_linked_candidate",
+      "question": "Separate Fansar and Pargar issuers/variants after direct catalogue and legend crosswalk.",
+      "publications": [
+        {
+          "title": "Zeno #503 source taxonomy · stage-5 visual review",
+          "url": "https://www.zeno.ru/showgallery.php?cat=503",
+          "role": "Source taxonomy / specimen discovery; canonical attribution pending"
+        }
+      ]
+    },
+    {
+      "id": "samarkand-unlisted-square-hole",
+      "title": "Unlisted Samarkand/Sogdian square-hole cash",
+      "zh": "撒马尔罕／粟特未列名方孔钱",
+      "region": "Samarkand Sogd / uncertain",
+      "start": 600,
+      "end": 799,
+      "dateLabel": "Source-taxonomy context; exact chronology pending",
+      "description": "Unlisted or uncertain Sogdian cash-like AE records, filed by Zeno under an unknown Samarkand ruler group, with clear square central apertures.",
+      "anchor": {
+        "placeId": "samarkand",
+        "role": "Regional/city orientation · 区域／城市浏览锚点",
+        "note": "用于地图浏览；不自动表示铸币地、出土地或流通范围。"
+      },
+      "image": "/coins/zeno/1330.jpg",
+      "status": "source_linked_candidate",
+      "question": "Issuer and relation to named Samarkand rulers remain unresolved.",
+      "publications": [
+        {
+          "title": "Zeno #503 source taxonomy · stage-5 visual review",
+          "url": "https://www.zeno.ru/showgallery.php?cat=503",
+          "role": "Source taxonomy / specimen discovery; canonical attribution pending"
+        }
+      ]
+    },
+    {
+      "id": "termez-cash-like",
+      "title": "Termez/Tirmidh cash-like square-hole AE",
+      "zh": "铁尔梅兹／忒尔密兹方孔式铜钱",
+      "region": "Northern Tokharistan / Termez",
+      "start": 600,
+      "end": 899,
+      "dateLabel": "Chronology pending",
+      "description": "A source-recorded Tirmidh/Termez cash-like AE issue with a pierced square/squarish central aperture.",
+      "anchor": null,
+      "image": "/coins/zeno/57521.jpg",
+      "status": "source_linked_candidate",
+      "question": "Exact mint, issuer and date require specialist Tokharistan crosswalk.",
+      "publications": [
+        {
+          "title": "Zeno #503 source taxonomy · stage-5 visual review",
+          "url": "https://www.zeno.ru/showgallery.php?cat=503",
+          "role": "Source taxonomy / specimen discovery; canonical attribution pending"
+        }
+      ]
+    },
+    {
+      "id": "badakhshan-kaiyuan-arabic",
+      "title": "Badakhshan Kaiyuan–Arabic hybrid cash",
+      "zh": "巴达赫尚开元—阿拉伯文混合方孔钱",
+      "region": "Badakhshan / Northern Tokharistan",
+      "start": 700,
+      "end": 999,
+      "dateLabel": "Source taxonomy and specimen legends; exact chronology pending",
+      "description": "Badakhshan cast AE issues combining Kaiyuan Tongbao-derived Chinese cash morphology with Arabic legends. Only visually clear square/squarish-aperture specimens are imported at this stage.",
+      "anchor": null,
+      "image": "/coins/zeno/211016.jpg",
+      "status": "source_linked_candidate",
+      "question": "Date, authority and relationship to round-aperture members of the same source group remain under review.",
+      "publications": [
+        {
+          "title": "Zeno #503 source taxonomy · stage-5 visual review",
+          "url": "https://www.zeno.ru/showgallery.php?cat=503",
+          "role": "Source taxonomy / specimen discovery; canonical attribution pending"
+        }
+      ]
     }
   ],
   "variants": [
@@ -2339,6 +2427,60 @@
       "status": "source_group",
       "facets": [],
       "description": "Zeno source category/subset retained after stage-4 record-level image review; it is not automatically an academic variant."
+    },
+    {
+      "id": "zeno503-cat-14835-stage5",
+      "familyId": "samarkand-unlisted-square-hole",
+      "title": "Unknown ruler, Samarkand?",
+      "reference": "Zeno category 14835 / stage-5 reviewed subset",
+      "status": "source_group",
+      "facets": [],
+      "description": "Zeno source category/subset retained after stage-5 image review; source grouping is not treated as a resolved academic variant."
+    },
+    {
+      "id": "zeno503-cat-15517-stage5",
+      "familyId": "termez-cash-like",
+      "title": "Termez (Tirmidh)",
+      "reference": "Zeno category 15517 / stage-5 reviewed subset",
+      "status": "source_group",
+      "facets": [],
+      "description": "Zeno source category/subset retained after stage-5 image review; source grouping is not treated as a resolved academic variant."
+    },
+    {
+      "id": "zeno503-cat-15518-stage5",
+      "familyId": "badakhshan-kaiyuan-arabic",
+      "title": "Badakhshān بدخشان",
+      "reference": "Zeno category 15518 / stage-5 reviewed subset",
+      "status": "source_group",
+      "facets": [],
+      "description": "Zeno source category/subset retained after stage-5 image review; source grouping is not treated as a resolved academic variant."
+    },
+    {
+      "id": "zeno503-cat-2747-stage5",
+      "familyId": "fansar-pargar-square-hole",
+      "title": "Unknown principality, rulers in Fansara and Pargara",
+      "reference": "Zeno category 2747 / stage-5 reviewed subset",
+      "status": "source_group",
+      "facets": [],
+      "description": "Zeno source category/subset retained after stage-5 image review; source grouping is not treated as a resolved academic variant."
+    },
+    {
+      "id": "zeno503-cat-30842-stage5",
+      "familyId": "es19",
+      "title": "cast",
+      "reference": "Zeno category 30842 / stage-5 reviewed subset",
+      "status": "source_group",
+      "facets": [],
+      "description": "Zeno source category/subset retained after stage-5 image review; source grouping is not treated as a resolved academic variant."
+    },
+    {
+      "id": "zeno503-cat-6746-stage5",
+      "familyId": "es19",
+      "title": "Coins with tamgha of Gurak/Turgar type",
+      "reference": "Zeno category 6746 / stage-5 reviewed subset",
+      "status": "source_group",
+      "facets": [],
+      "description": "Zeno source category/subset retained after stage-5 image review; source grouping is not treated as a resolved academic variant."
     }
   ],
   "specimens": [
@@ -36719,6 +36861,566 @@
       "catalogue": "Zeno category 22500 · Two tamghas",
       "facets": [
         "#503 stage-4 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-126148",
+      "familyId": "fansar-pargar-square-hole",
+      "variantId": "zeno503-cat-2747-stage5",
+      "title": "Eastern Soghd, domain Pargar, unknown ruler",
+      "weightG": 4.5,
+      "diameterMm": 23.6,
+      "images": [
+        {
+          "id": "z126148",
+          "path": "/coins/zeno/126148.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/2747/zeno_126148.jpg",
+          "width": 2296,
+          "height": 1148,
+          "credit": "charm",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "f998f22c22143a283b719e07f3aa868fbe96108a534e99338dfc4a22abe443af"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 126148",
+          "url": "https://www.zeno.ru/showphoto.php?photo=126148",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Shifted mold",
+      "catalogue": "Zeno category 2747 · Unknown principality, rulers in Fansara and Pargara",
+      "facets": [
+        "#503 stage-5 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-13",
+      "familyId": "fansar-pargar-square-hole",
+      "variantId": "zeno503-cat-2747-stage5",
+      "title": "Eastern Sogdiana, domain Pargar, AE, unknown ruler.",
+      "weightG": 2.55,
+      "diameterMm": 23.9,
+      "images": [
+        {
+          "id": "z13",
+          "path": "/coins/zeno/13.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/2747/19AE_Eastern_Sogdiana_Pagar_EX_RRR.jpg",
+          "width": 769,
+          "height": 375,
+          "credit": "CyberNumis",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "88b5a93ceafda29cc6390d4255e9b26a2f3230dc07ced0a60c7028397ba4279c"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 13",
+          "url": "https://www.zeno.ru/showphoto.php?photo=13",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "unknown ruler. Obverse: Tamgha to the right of the Square hole, crescent and orb with Sogdian legend around. Reverse: Sogdian legend around square hole. Smirnova 734 Exceedingly rare The weight of the coin is 2.55 grams and the dimension is 23.9 mm.",
+      "catalogue": "Zeno category 2747 · Unknown principality, rulers in Fansara and Pargara",
+      "facets": [
+        "#503 stage-5 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-1330",
+      "familyId": "samarkand-unlisted-square-hole",
+      "variantId": "zeno503-cat-14835-stage5",
+      "title": "Sogdiana",
+      "weightG": 2.38,
+      "diameterMm": 22.0,
+      "images": [
+        {
+          "id": "z1330",
+          "path": "/coins/zeno/1330.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/14835/113nw7.JPG",
+          "width": 550,
+          "height": 282,
+          "credit": "newworld",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "72cf44d9f2e7af54c35ec5045feb6f5a2be28a843fd0c0698a964d531bc1ac3c"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 1330",
+          "url": "https://www.zeno.ru/showphoto.php?photo=1330",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "#1330 - Sogdiana",
+      "catalogue": "Zeno category 14835 · Unknown ruler, Samarkand?",
+      "facets": [
+        "#503 stage-5 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-167596",
+      "familyId": "samarkand-unlisted-square-hole",
+      "variantId": "zeno503-cat-14835-stage5",
+      "title": "Unlisted Soghdian cash-like coin",
+      "weightG": null,
+      "diameterMm": 21.0,
+      "images": [
+        {
+          "id": "z167596",
+          "path": "/coins/zeno/167596.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/14835/img745.jpg",
+          "width": 1267,
+          "height": 651,
+          "credit": "venedw",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "23ec871eb1d3665cfff8f1eddb953d13bf123f6e165f68fa8558cec29e3f2427"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 167596",
+          "url": "https://www.zeno.ru/showphoto.php?photo=167596",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "found in the Samarkand region",
+      "catalogue": "Zeno category 14835 · Unknown ruler, Samarkand?",
+      "facets": [
+        "#503 stage-5 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-169199",
+      "familyId": "samarkand-unlisted-square-hole",
+      "variantId": "zeno503-cat-14835-stage5",
+      "title": "Soghd, AE, unknown ruler.",
+      "weightG": null,
+      "diameterMm": null,
+      "images": [
+        {
+          "id": "z169199",
+          "path": "/coins/zeno/169199.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/14835/sogdb.jpg",
+          "width": 1442,
+          "height": 722,
+          "credit": "hfrans",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "5620bc737154777063313bc584bd25ae3f6c9ff19fbadc24da75f93d379ab100"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 169199",
+          "url": "https://www.zeno.ru/showphoto.php?photo=169199",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "eBay # 222124138090",
+      "catalogue": "Zeno category 14835 · Unknown ruler, Samarkand?",
+      "facets": [
+        "#503 stage-5 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-172370",
+      "familyId": "samarkand-unlisted-square-hole",
+      "variantId": "zeno503-cat-14835-stage5",
+      "title": "Soghd, AE, unknown ruler.",
+      "weightG": null,
+      "diameterMm": 22.0,
+      "images": [
+        {
+          "id": "z172370",
+          "path": "/coins/zeno/172370.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/14835/img5351.jpg",
+          "width": 1701,
+          "height": 860,
+          "credit": "venedw",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "60796a8500da6b17dff3f03c33ae7a2d3cf34603b1866fb08310beee81b6f4bb"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 172370",
+          "url": "https://www.zeno.ru/showphoto.php?photo=172370",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Soghd, AE, unknown ruler. as #169199",
+      "catalogue": "Zeno category 14835 · Unknown ruler, Samarkand?",
+      "facets": [
+        "#503 stage-5 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-211016",
+      "familyId": "badakhshan-kaiyuan-arabic",
+      "variantId": "zeno503-cat-15518-stage5",
+      "title": "Kai-yuan tong-bao 開元通寳 / Arabic legend, Badakhshan",
+      "weightG": 4.8,
+      "diameterMm": 20.39,
+      "images": [
+        {
+          "id": "z211016",
+          "path": "/coins/zeno/211016.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/15518/id_afg_12.jpg",
+          "width": 2983,
+          "height": 1573,
+          "credit": "vaxtankava",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "a09da8c6501e0a88e4cbcfe4a2002cb80d42fd5650f9cde75db003c8b1e28f02"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 211016",
+          "url": "https://www.zeno.ru/showphoto.php?photo=211016",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "#211016 - Kai-yuan tong-bao 開元通寳 / Arabic legend, Badakhshan",
+      "catalogue": "Zeno category 15518 · Badakhshān بدخشان",
+      "facets": [
+        "#503 stage-5 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-233595",
+      "familyId": "badakhshan-kaiyuan-arabic",
+      "variantId": "zeno503-cat-15518-stage5",
+      "title": "Kai-yuan tong-bao 開元通寳 / Arabic legend, Badakhshan",
+      "weightG": 2.84,
+      "diameterMm": 19.78,
+      "images": [
+        {
+          "id": "z233595",
+          "path": "/coins/zeno/233595.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/15518/imgonline-com-ua-2to1-RQJrIsQT4Bl.jpg",
+          "width": 1940,
+          "height": 994,
+          "credit": "diletant",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "887d4859b0b065d95206037d55b29967a5568387459f4babf7040f25a629b6cc"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 233595",
+          "url": "https://www.zeno.ru/showphoto.php?photo=233595",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "#233595 - Kai-yuan tong-bao 開元通寳 / Arabic legend, Badakhshan",
+      "catalogue": "Zeno category 15518 · Badakhshān بدخشان",
+      "facets": [
+        "#503 stage-5 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-29397",
+      "familyId": "fansar-pargar-square-hole",
+      "variantId": "zeno503-cat-2747-stage5",
+      "title": "Eastern Sogdiana, domain Pargar, AE, unknown ruler",
+      "weightG": 4.6,
+      "diameterMm": 24.0,
+      "images": [
+        {
+          "id": "z29397",
+          "path": "/coins/zeno/29397.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/2747/pagar.jpg",
+          "width": 741,
+          "height": 377,
+          "credit": "turgiskhanate",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "fb5e302340d00c205765db6bb4fbe7d68f776e99679084b00b1bb96caf940caa"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 29397",
+          "url": "https://www.zeno.ru/showphoto.php?photo=29397",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Unearthed in Beiting ancient site (Present Jimusar county), North of Xinjiang",
+      "catalogue": "Zeno category 2747 · Unknown principality, rulers in Fansara and Pargara",
+      "facets": [
+        "#503 stage-5 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-339566",
+      "familyId": "badakhshan-kaiyuan-arabic",
+      "variantId": "zeno503-cat-15518-stage5",
+      "title": "Badakhshan AE cast fals, Cash style, kai yuan tong bao (Chinese) // muhammad rasul Allah darb badakhshan.",
+      "weightG": 3.44,
+      "diameterMm": null,
+      "images": [
+        {
+          "id": "z339566",
+          "path": "/coins/zeno/339566.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/15518/zeno_339566.jpg",
+          "width": 2000,
+          "height": 991,
+          "credit": "hfrans",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "554c885828cec0c4dcd8d09780201b1f887f28c7d42997c145983b880d0410d2"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 339566",
+          "url": "https://www.zeno.ru/showphoto.php?photo=339566",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Ex Stephen Album Rare Coins Auction 52 15-18 May 2025, lot 116. Starting price: 600 USD UMAYYAD: cast AE cash (3.44g), Badakhshan, ND, A-196S, Zeno-209686, Tübingen XIVc-234, Tang dynasty style cash coin with squarish central hole: kai yuan tong bao (Chinese) // muhammad rasul Allah darb badakhshan (Arabic); the last example sold in our Auction 49, lot 126, VF, RRRR. Badakhshan is located not far from Xinjiang in China and was the only Umayyad mint to issue Chinese style copper coins. Price realized: 3500 USD",
+      "catalogue": "Zeno category 15518 · Badakhshān بدخشان",
+      "facets": [
+        "#503 stage-5 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-368888",
+      "familyId": "es19",
+      "variantId": "zeno503-cat-30842-stage5",
+      "title": "Central Asia, Soghd, AE cash, imitation of Gurak",
+      "weightG": 1.86,
+      "diameterMm": null,
+      "images": [
+        {
+          "id": "z368888",
+          "path": "/coins/zeno/368888.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/30842/zeno_368888.jpg",
+          "width": 2272,
+          "height": 1096,
+          "credit": "vaxtankava",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "c0cfc58f49f27f6826f023ab35b48fa9af93f7c5ddb6361a53e98bf640bc8e70"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 368888",
+          "url": "https://www.zeno.ru/showphoto.php?photo=368888",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "#368888 - Central Asia, Soghd, AE cash, imitation of Gurak",
+      "catalogue": "Zeno category 30842 · cast",
+      "facets": [
+        "#503 stage-5 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-45400",
+      "familyId": "fansar-pargar-square-hole",
+      "variantId": "zeno503-cat-2747-stage5",
+      "title": "Eastern Sogdiana AE unit, domain Pargar.",
+      "weightG": 3.07,
+      "diameterMm": null,
+      "images": [
+        {
+          "id": "z45400",
+          "path": "/coins/zeno/45400.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/2747/506.jpg",
+          "width": 655,
+          "height": 340,
+          "credit": "venedw",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "f6d338d5a13aa308d1f685428a761bdf77f656973f770102b3763315e366ff16"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 45400",
+          "url": "https://www.zeno.ru/showphoto.php?photo=45400",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "This is a Central Asian - Eastern Sogdiana AE unit issued in the name of the ruler in Pansar. Obverse: Tamgha to the right of the Square hole, crescent and orb with Sogdian legend around. Reverse: Sogdian legend around square hole. Smirnova 734 Extremely rare",
+      "catalogue": "Zeno category 2747 · Unknown principality, rulers in Fansara and Pargara",
+      "facets": [
+        "#503 stage-5 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-57521",
+      "familyId": "termez-cash-like",
+      "variantId": "zeno503-cat-15517-stage5",
+      "title": "New type of Tirmidh (?) cash-like AE coin.",
+      "weightG": 1.6,
+      "diameterMm": 17.7,
+      "images": [
+        {
+          "id": "z57521",
+          "path": "/coins/zeno/57521.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/15517/anchortamgha.jpg",
+          "width": 1776,
+          "height": 920,
+          "credit": "gazali",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "ab5fdb4344c1a7b982fc6faa996bfaee7c834542f8973de1cf9ab25e2b512965"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 57521",
+          "url": "https://www.zeno.ru/showphoto.php?photo=57521",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Unpublished, unresearched and probably unique. Anchor-like tamgha and Soghdian prn (the Glory) on reverse. Reading of obverse legend would be very interseting. Image courtesy ganfeng.",
+      "catalogue": "Zeno category 15517 · Termez (Tirmidh)",
+      "facets": [
+        "#503 stage-5 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-63495",
+      "familyId": "es19",
+      "variantId": "zeno503-cat-6746-stage5",
+      "title": "Unlisted new type of Soghdian cash-like coin.",
+      "weightG": 3.0,
+      "diameterMm": 19.5,
+      "images": [
+        {
+          "id": "z63495",
+          "path": "/coins/zeno/63495.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/6746/4tamghas.jpg",
+          "width": 1965,
+          "height": 978,
+          "credit": "gazali",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "228c6937660e6dafcbee98b71613c251c9de84d14c385b32e8cf6d596c0e39cf"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 63495",
+          "url": "https://www.zeno.ru/showphoto.php?photo=63495",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "4 tamghas on obv., resembling the second tamgha on Gurak coins, and three times repeated Soghdian word on rev. Can anybody propose what is this word?",
+      "catalogue": "Zeno category 6746 · Coins with tamgha of Gurak/Turgar type",
+      "facets": [
+        "#503 stage-5 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-69377",
+      "familyId": "fansar-pargar-square-hole",
+      "variantId": "zeno503-cat-2747-stage5",
+      "title": "Eastern Soghd, domain Fansar, AE, ruler Amukyan.",
+      "weightG": 3.8,
+      "diameterMm": 22.5,
+      "images": [
+        {
+          "id": "z69377",
+          "path": "/coins/zeno/69377.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/2747/Fansar.jpg",
+          "width": 2181,
+          "height": 1119,
+          "credit": "gazali",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "c1814de040733eebf676b6849045c4bbeab8e06e5eeca3f3667294aab440446f"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 69377",
+          "url": "https://www.zeno.ru/showphoto.php?photo=69377",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "Obv.: Soghdian legend pn/’s’r γwβw c(?)m’wky’n - (Ch) Amukyan, ruler of Fansar. Rev.: Soghdian word prn - Farn (Glory) at left and Samarqand Y-shaped tamgha at right. Smirnove #733. The coin is exceedingly rare, this specimen, as I can judge, is the second known one after published by Smirnova.",
+      "catalogue": "Zeno category 2747 · Unknown principality, rulers in Fansara and Pargara",
+      "facets": [
+        "#503 stage-5 record-level visual review"
+      ],
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "zeno-70233",
+      "familyId": "samarkand-unlisted-square-hole",
+      "variantId": "zeno503-cat-14835-stage5",
+      "title": "Unlisted Soghdian cash-like coin.",
+      "weightG": 2.4,
+      "diameterMm": 22.5,
+      "images": [
+        {
+          "id": "z70233",
+          "path": "/coins/zeno/70233.jpg",
+          "sourceUrl": "https://www.zeno.ru/data/14835/unlistedSoghdsqhole2.jpg",
+          "width": 2223,
+          "height": 1146,
+          "credit": "gazali",
+          "rightsStatus": "unverified",
+          "rightsSourceUrl": "https://www.zeno.ru/rules.php",
+          "view": "source photograph",
+          "sha256": "b2d9c580878d26617568ddbbec5eefc944505d2c0a8c8b1f660f590650a05a65"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Zeno 70233",
+          "url": "https://www.zeno.ru/showphoto.php?photo=70233",
+          "relation": "same_specimen"
+        }
+      ],
+      "description": "All specimens of this type which I know presented only in this database, nowhere more. Legend is undeciphered yet, circulation area probably in Samarqand Soghdiana. Cf. ##1330, 63538.",
+      "catalogue": "Zeno category 14835 · Unknown ruler, Samarkand?",
+      "facets": [
+        "#503 stage-5 record-level visual review"
       ],
       "duplicateStatus": "source_record_not_proven_unique"
     }
