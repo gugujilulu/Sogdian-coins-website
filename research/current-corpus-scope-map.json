@@ -1,12 +1,12 @@
 {
-  "version": "1.1.0",
-  "base_commit": "d0f8d37a506bb89fed517020bc67ec3c50964345",
+  "version": "1.2.0",
+  "base_commit": "91de65720c09d9b427d6eb27e2970158f74abf2c",
   "last_checked_at": "2026-09-16",
   "summary": {
-    "families": 41,
-    "specimen_records": 854,
-    "images": 857,
-    "source_groups": 82
+    "families": 44,
+    "specimen_records": 934,
+    "images": 937,
+    "source_groups": 98
   },
   "family_scope_map": [
     {
@@ -48,7 +48,7 @@
     {
       "family_id": "sr9",
       "title": "Arslan Irkin / legacy Inal-Tegin",
-      "specimen_records": 15,
+      "specimen_records": 25,
       "zone": "core_central_asia",
       "political_entity": "turgesh_circle",
       "region": "Semirechye",
@@ -444,7 +444,7 @@
     {
       "family_id": "ferghana-anon-khagan",
       "title": "Ferghana anonymous khaqan cash",
-      "specimen_records": 2,
+      "specimen_records": 12,
       "zone": "core_central_asia",
       "political_entity": "western_turkic",
       "region": "Ferghana",
@@ -500,6 +500,42 @@
       "coin_role": "local_issue",
       "mapping_status": "stage1_source_mapped",
       "note": "Stage-1 #503 mapping preserves source taxonomy and candidate-family provenance; it is not a final cross-catalogue or issuer resolution."
+    },
+    {
+      "family_id": "yarug-kadin",
+      "title": "Yarug-kadin(?) square-hole cash",
+      "specimen_records": 3,
+      "zone": "core_central_asia",
+      "political_entity": "turgesh_circle",
+      "region": "Semirechye",
+      "inclusion_status": "included",
+      "coin_role": "local_issue",
+      "mapping_status": "stage2_record_level_visual",
+      "note": "Stage-2 #503 mapping based on source taxonomy plus individual image review; academic issuer/type crosswalk remains source-traceable."
+    },
+    {
+      "family_id": "general-ir-chor-irti",
+      "title": "General Ir Chor Irti(?) cash",
+      "specimen_records": 3,
+      "zone": "core_central_asia",
+      "political_entity": "turkic",
+      "region": "Semirechye / Sogdian-Turkic milieu",
+      "inclusion_status": "included",
+      "coin_role": "uncertain",
+      "mapping_status": "stage2_record_level_visual",
+      "note": "Stage-2 #503 mapping based on source taxonomy plus individual image review; academic issuer/type crosswalk remains source-traceable."
+    },
+    {
+      "family_id": "semirechye-chinese-imitation",
+      "title": "Semirechye Chinese-cash imitations",
+      "specimen_records": 54,
+      "zone": "core_central_asia",
+      "political_entity": "multiple_or_uncertain",
+      "region": "Semirechye",
+      "inclusion_status": "included",
+      "coin_role": "uncertain",
+      "mapping_status": "stage2_record_level_visual",
+      "note": "Stage-2 #503 mapping based on source taxonomy plus individual image review; academic issuer/type crosswalk remains source-traceable."
     }
   ],
   "zeno_795_held_records": {
@@ -528,5 +564,15 @@
     "unreviewed_target_images_after_stage1": 854,
     "review_file": "research/zeno/review-503-stage1.json"
   },
-  "mapping_note": "Maps the current imported Atlas into Scope v1. Stage-1 #503 families are source-linked editorial groupings; unresolved cross-catalogue and issuer attributions remain reviewable."
+  "mapping_note": "Maps the current imported Atlas into Scope v1. #503 stage-1 and stage-2 families remain source-linked editorial groupings; unresolved cross-catalogue and issuer attributions remain reviewable.",
+  "zeno_503_stage2": {
+    "reviewed_source_records": 91,
+    "atlas_import_records": 80,
+    "held_related_records": 11,
+    "new_families": 3,
+    "source_groups": 16,
+    "remaining_downloaded_images_pending_record_level_review": 762,
+    "remaining_target_without_valid_image": 1,
+    "review_file": "research/zeno/review-503-stage2.json"
+  }
 }

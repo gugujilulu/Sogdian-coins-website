@@ -15,6 +15,7 @@ z795=json.loads((root/'research/zeno/manifest-795.json').read_text())
 r795=json.loads((root/'research/zeno/review-795.json').read_text())
 z503=json.loads((root/'research/zeno/manifest-503.json').read_text())
 r503=json.loads((root/'research/zeno/review-503-stage1.json').read_text())
+r5032=json.loads((root/'research/zeno/review-503-stage2.json').read_text())
 recovered503=json.loads((root/'research/zeno/recovered-records-503.json').read_text())
 families={f['id'] for f in a['families']}
 variants={v['id']:v for v in a['variants']}
@@ -82,6 +83,21 @@ assert sum(1 for x in r503['records'] if x['leafCategoryId']=='796' and x['famil
 sr21f=next(f for f in a['families'] if f['id']=='sr21')
 assert 'legacy proto-Qarakhanid' in sr21f['title']
 assert 'Western Liao' in sr21f['description']
+
+# Stage-2 resolves a bounded set of previously downloaded target images at
+# record level. Only visually/source-confirmed Chinese-style square-hole forms
+# enter the main corpus; circular/special apertures remain related/held.
+assert r5032['counts']['sourceRecordsReviewed']==91
+assert r5032['counts']['atlasImportRecords']==80
+assert r5032['counts']['heldRelatedRecords']==11
+assert r5032['counts']['newFamilies']==3
+assert r5032['counts']['sourceGroups']==16
+assert all(('zeno-'+str(x['id'])) in ids for x in r5032['records'] if x.get('atlasImport'))
+assert not any(('zeno-'+str(x['id'])) in ids for x in r5032['heldRecords'])
+assert sum(1 for x in r5032['records'] if x['leafCategoryId']=='14905' and x['familyId']=='sr9')==10
+assert sum(1 for x in r5032['records'] if x['leafCategoryId']=='15156' and x['familyId']=='ferghana-anon-khagan')==10
+assert {f['id'] for f in a['families']} >= {'yarug-kadin','general-ir-chor-irti','semirechye-chinese-imitation'}
+assert {str(x['id']) for x in r5032['heldRecords']}=={'375693','377305','306552','326586','146052','293374','115509','232909','284607','697','350958'}
 
 # Saved Zeno manifests are independent coverage scopes. Partial Semirechye crawls are
 # valid research states, while their counts must never be labelled complete by accident.
@@ -182,7 +198,7 @@ with tempfile.TemporaryDirectory() as tmp:
  s503=db.execute("SELECT id FROM coverage_snapshot WHERE category_url LIKE '%cat=503'").fetchone()[0]
  assert db.execute("SELECT count(*) FROM coverage_record WHERE snapshot_id=?",(s503,)).fetchone()[0]==3984
  imported503=db.execute("SELECT count(*) FROM coverage_record WHERE snapshot_id=? AND status='image_imported'",(s503,)).fetchone()[0]
- assert imported503>=584  # includes reviewed #503 stage-1 records plus earlier linked descendant records.
+ assert imported503>=664  # 584 stage-1 + 80 stage-2, plus earlier linked descendant records.
  # A comparison link must not create a same-specimen equivalence.
  assert db.execute("SELECT relation FROM specimen_external_record s JOIN external_record e ON e.id=s.external_record_id WHERE specimen_id='cng611-576' AND e.url LIKE '%photo=81165'").fetchone()[0]=='comparison'
  # Reject physically invalid measurements and invalid relation/types.
@@ -198,4 +214,4 @@ with tempfile.TemporaryDirectory() as tmp:
  assert db.execute("SELECT count(*) FROM image WHERE specimen_id='cng611-576'").fetchone()[0]==2
 
 whole_images=sum(len(s['images']) for s in a['specimens'])
-print(f'PASS: Nana 14/14 + 22 images remain scoped; Zeno #795 254/254 acquired and 239 Atlas-linked; Zeno #503 has 3,984 observed/recovered source records with 584 conservative stage-1 imports; {len(manifest_paths)} Zeno manifest(s); {len(a["specimens"])} specimen records / {whole_images} whole-site images; identity, hierarchy, coverage, image-rights, FK and geography invariants hold.')
+print(f'PASS: Nana 14/14 + 22 images remain scoped; Zeno #795 254/254 acquired and 239 Atlas-linked; Zeno #503 has 3,984 observed/recovered source records with 584 stage-1 + 80 stage-2 imports; {len(manifest_paths)} Zeno manifest(s); {len(a["specimens"])} specimen records / {whole_images} whole-site images; identity, hierarchy, coverage, image-rights, FK and geography invariants hold.')

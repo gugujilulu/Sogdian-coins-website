@@ -2,7 +2,7 @@
   "version": "1.0",
   "generatedOn": "2026-09-16",
   "pendingImageDirectory": "research/zeno/pending-images-503",
-  "count": 853,
+  "count": 762,
   "invalidRemoved": [],
   "records": [
     {
@@ -10,13 +10,6 @@
       "file": "research/zeno/pending-images-503/103072.jpg",
       "leafCategoryId": "14538",
       "title": "#103072 - Pre-Islamic Asia AE coin",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "104452",
-      "file": "research/zeno/pending-images-503/104452.jpg",
-      "leafCategoryId": "29134",
-      "title": "#104452 - Imitation of cash coin",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -104,13 +97,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "115509",
-      "file": "research/zeno/pending-images-503/115509.jpg",
-      "leafCategoryId": "15757",
-      "title": "#115509 - Imitation of Tang Dynasty Da-li Yuan Bao coin",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "115616",
       "file": "research/zeno/pending-images-503/115616.jpg",
       "leafCategoryId": "15762",
@@ -146,45 +132,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "122117",
-      "file": "research/zeno/pending-images-503/122117.jpg",
-      "leafCategoryId": "14905",
-      "title": "#122117 - Qarluq Qaghanate [Taraz?], AE, Inal Tegin, large size.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "122192",
-      "file": "research/zeno/pending-images-503/122192.jpg",
-      "leafCategoryId": "14905",
-      "title": "#122192 - Semerech'e AE coin. King Inal-Tegin.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "122195",
       "file": "research/zeno/pending-images-503/122195.jpg",
       "leafCategoryId": "22497",
       "title": "#122195 - East Sogd/Ferghana, AE, Par portrait.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "123063",
-      "file": "research/zeno/pending-images-503/123063.jpg",
-      "leafCategoryId": "14905",
-      "title": "#123063 - Semirech'e Turgesh Khanate King Inal-tegin Mid. 8th cent.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "123296",
-      "file": "research/zeno/pending-images-503/123296.jpg",
-      "leafCategoryId": "22907",
-      "title": "#123296 - Da-ding tong-bao",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "123656",
-      "file": "research/zeno/pending-images-503/123656.jpg",
-      "leafCategoryId": "15756",
-      "title": "#123656 - Qian-yuan zhong-bao",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -265,13 +216,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "127887",
-      "file": "research/zeno/pending-images-503/127887.jpg",
-      "leafCategoryId": "15156",
-      "title": "#127887 - Anonymous kaghan of Ferghana, AE cash.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "128294",
       "file": "research/zeno/pending-images-503/128294.jpg",
       "leafCategoryId": "22498",
@@ -314,27 +258,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "130129",
-      "file": "research/zeno/pending-images-503/130129.jpg",
-      "leafCategoryId": "14905",
-      "title": "#130129 - Semerech'e, AE coin. King Inal-Tegin.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "130783",
-      "file": "research/zeno/pending-images-503/130783.jpg",
-      "leafCategoryId": "11583",
-      "title": "#130783 - Soghd, AE cash, General Ir Chor Irti (?)",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "131224",
-      "file": "research/zeno/pending-images-503/131224.jpg",
-      "leafCategoryId": "31007",
-      "title": "#131224 - Central Asia cash coin",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "131517",
       "file": "research/zeno/pending-images-503/131517.jpg",
       "leafCategoryId": "24949",
@@ -360,13 +283,6 @@
       "file": "research/zeno/pending-images-503/1330.jpg",
       "leafCategoryId": "14835",
       "title": "#1330 - Sogdiana",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "134419",
-      "file": "research/zeno/pending-images-503/134419.jpg",
-      "leafCategoryId": "15757",
-      "title": "#134419 - Da Li Yuan Bao from Kyrgyzstan, m/a",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -545,13 +461,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "146052",
-      "file": "research/zeno/pending-images-503/146052.jpg",
-      "leafCategoryId": "15756",
-      "title": "#146052 - Imitations of Chinese cash, Qian Yuan Zhong Bao",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "146054",
       "file": "research/zeno/pending-images-503/146054.jpg",
       "leafCategoryId": "15760",
@@ -636,31 +545,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "156733",
-      "file": "research/zeno/pending-images-503/156733.jpg",
-      "leafCategoryId": "15756",
-      "title": "#156733 - Qian Yuan zhong bao, small size",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "156734",
-      "file": "research/zeno/pending-images-503/156734.jpg",
-      "leafCategoryId": "15756",
-      "title": "#156734 - Qian Yuan zhong bao, small size",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "157750",
       "file": "research/zeno/pending-images-503/157750.jpg",
       "leafCategoryId": "2145",
       "title": "#157750 - Chach, small AE, portrait/tamgha.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "15829",
-      "file": "research/zeno/pending-images-503/15829.jpg",
-      "leafCategoryId": "15156",
-      "title": "#15829 - Anonymous Khakans 7-8 centuries AD",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -675,20 +563,6 @@
       "file": "research/zeno/pending-images-503/16170.jpg",
       "leafCategoryId": "914",
       "title": "#16170 - Chach, Kanka, 7th-8th cent.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "162023",
-      "file": "research/zeno/pending-images-503/162023.jpg",
-      "leafCategoryId": "15763",
-      "title": "#162023 - Kai-yuan Tong-bao, strange calligraphic variety, unlisted",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "162024",
-      "file": "research/zeno/pending-images-503/162024.jpg",
-      "leafCategoryId": "15763",
-      "title": "#162024 - Kai-yuan Tong-bao, strange calligraphic variety, unlisted",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -972,13 +846,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "182845",
-      "file": "research/zeno/pending-images-503/182845.jpg",
-      "leafCategoryId": "15756",
-      "title": "#182845 - Imitation of Chinese cash Qian Yuan Zhong Bao",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "183832",
       "file": "research/zeno/pending-images-503/183832.jpg",
       "leafCategoryId": "22239",
@@ -997,13 +864,6 @@
       "file": "research/zeno/pending-images-503/183836.jpg",
       "leafCategoryId": "22498",
       "title": "#183836 - Zaamin, AE, unknown ruler.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "184840",
-      "file": "research/zeno/pending-images-503/184840.jpg",
-      "leafCategoryId": "15761",
-      "title": "#184840 - Kai-yuan tong-bao, rev. 昌 chang, local production",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -1224,20 +1084,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "203363",
-      "file": "research/zeno/pending-images-503/203363.jpg",
-      "leafCategoryId": "20257",
-      "title": "#203363 - AE cash, Semirech'e, Yarug-kadin(?)",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "204236",
-      "file": "research/zeno/pending-images-503/204236.jpg",
-      "leafCategoryId": "15156",
-      "title": "#204236 - Anonymous Khakan of Ferghana, VII-VIII cen.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "20480",
       "file": "research/zeno/pending-images-503/20480.jpg",
       "leafCategoryId": "30985",
@@ -1427,24 +1273,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "214532",
-      "file": "research/zeno/pending-images-503/214532.jpg",
-      "leafCategoryId": "15756",
-      "title": "#214532 - Qian Yuan zhong bao, small size AE",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "214936",
       "file": "research/zeno/pending-images-503/214936.jpg",
       "leafCategoryId": "13671",
       "title": "#214936 - Central Asia AE cash, w. two Turkic runas",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "214937",
-      "file": "research/zeno/pending-images-503/214937.jpg",
-      "leafCategoryId": "15759",
-      "title": "#214937 - Xi Ning Yuan Bao, local imitation",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -1497,13 +1329,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "215472",
-      "file": "research/zeno/pending-images-503/215472.jpg",
-      "leafCategoryId": "15756",
-      "title": "#215472 - Imitation of Chinese cash Qian Yuan Zhong Bao.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "215473",
       "file": "research/zeno/pending-images-503/215473.jpg",
       "leafCategoryId": "15758",
@@ -1539,45 +1364,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "216064",
-      "file": "research/zeno/pending-images-503/216064.jpg",
-      "leafCategoryId": "14905",
-      "title": "#216064 - SEMIRECH'E: AE cash, Inal-Tegin.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "216531",
       "file": "research/zeno/pending-images-503/216531.jpg",
       "leafCategoryId": "15760",
       "title": "#216531 - Semirech'e imitation of KYTB.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "217214",
-      "file": "research/zeno/pending-images-503/217214.jpg",
-      "leafCategoryId": "15757",
-      "title": "#217214 - Da-li yuan-bao, local cast",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "217215",
-      "file": "research/zeno/pending-images-503/217215.jpg",
-      "leafCategoryId": "15757",
-      "title": "#217215 - Da-li yuan-bao, local cast",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "217216",
-      "file": "research/zeno/pending-images-503/217216.jpg",
-      "leafCategoryId": "15757",
-      "title": "#217216 - Da-li yuan-bao, local cast",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "217386",
-      "file": "research/zeno/pending-images-503/217386.jpg",
-      "leafCategoryId": "15756",
-      "title": "#217386 - Semirech'e, Imitation of Chinese cash Qian Yuan Zhong Bao.",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -1599,13 +1389,6 @@
       "file": "research/zeno/pending-images-503/218270.jpg",
       "leafCategoryId": "15758",
       "title": "#218270 - Semirechie, AE Local imitation.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "218271",
-      "file": "research/zeno/pending-images-503/218271.jpg",
-      "leafCategoryId": "15756",
-      "title": "#218271 - Semirech'e Imitation of Chinese cash Qian Yuan Zhong Bao.",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -1634,34 +1417,6 @@
       "file": "research/zeno/pending-images-503/220384.jpg",
       "leafCategoryId": "22497",
       "title": "#220384 - East Soghd AE , Ferghana, pare portrait.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "220903",
-      "file": "research/zeno/pending-images-503/220903.jpg",
-      "leafCategoryId": "14905",
-      "title": "#220903 - Semirechie, Inal-tegin, AE cash, Kam. #34",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "223061",
-      "file": "research/zeno/pending-images-503/223061.jpg",
-      "leafCategoryId": "15757",
-      "title": "#223061 - Da Li Yuan Bao from Kyrgyzstan",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "224991",
-      "file": "research/zeno/pending-images-503/224991.jpg",
-      "leafCategoryId": "15757",
-      "title": "#224991 - Semirech'e imitation 大曆元寶 da-li yuan-bao.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "226081",
-      "file": "research/zeno/pending-images-503/226081.jpg",
-      "leafCategoryId": "15757",
-      "title": "#226081 - Da Li Yuan Bao from Kyrgyzstan, m/a",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -1714,13 +1469,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "228724",
-      "file": "research/zeno/pending-images-503/228724.jpg",
-      "leafCategoryId": "15757",
-      "title": "#228724 - Da-li yuan-bao, local cast",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "229408",
       "file": "research/zeno/pending-images-503/229408.jpg",
       "leafCategoryId": "13698",
@@ -1760,20 +1508,6 @@
       "file": "research/zeno/pending-images-503/232115.jpg",
       "leafCategoryId": "6090",
       "title": "#232115 - Ustrushana, AE, Chardmish.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "232134",
-      "file": "research/zeno/pending-images-503/232134.jpg",
-      "leafCategoryId": "15757",
-      "title": "#232134 - Da Li Yuan Bao from Kyrgyzstan",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "232909",
-      "file": "research/zeno/pending-images-503/232909.jpg",
-      "leafCategoryId": "15757",
-      "title": "#232909 - Da-li yuan-bao, local cast, forgery for circulation(?)",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -2050,13 +1784,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "269231",
-      "file": "research/zeno/pending-images-503/269231.jpg",
-      "leafCategoryId": "11583",
-      "title": "#269231 - Soghd, AE cash, General Ir Chor Irti (?)",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "271973",
       "file": "research/zeno/pending-images-503/271973.jpg",
       "leafCategoryId": "13698",
@@ -2103,13 +1830,6 @@
       "file": "research/zeno/pending-images-503/275472.jpg",
       "leafCategoryId": "804",
       "title": "#275472 - City of Otrar. AE coin, lion/turgesh's tamgha",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "275661",
-      "file": "research/zeno/pending-images-503/275661.jpg",
-      "leafCategoryId": "20257",
-      "title": "#275661 - AE cash, Semirech'e, Yarug-kadin(?)",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -2169,13 +1889,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "280297",
-      "file": "research/zeno/pending-images-503/280297.jpg",
-      "leafCategoryId": "15156",
-      "title": "#280297 - FERGHANA: AE cash, Anonymous Khagans.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "281712",
       "file": "research/zeno/pending-images-503/281712.jpg",
       "leafCategoryId": "15762",
@@ -2222,27 +1935,6 @@
       "file": "research/zeno/pending-images-503/281912.jpg",
       "leafCategoryId": "22490",
       "title": "#281912 - Shymkent region",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "281992",
-      "file": "research/zeno/pending-images-503/281992.jpg",
-      "leafCategoryId": "15757",
-      "title": "#281992 - Da Li Yuan Bao",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "282023",
-      "file": "research/zeno/pending-images-503/282023.jpg",
-      "leafCategoryId": "15757",
-      "title": "#282023 - Da Li Yuan Bao",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "282869",
-      "file": "research/zeno/pending-images-503/282869.jpg",
-      "leafCategoryId": "15757",
-      "title": "#282869 - Da Li Yuan Bao",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -2299,13 +1991,6 @@
       "file": "research/zeno/pending-images-503/284495.jpg",
       "leafCategoryId": "2719",
       "title": "#284495 - South Soghd, AE, Unknown Ruler with trident tamgha.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "284607",
-      "file": "research/zeno/pending-images-503/284607.jpg",
-      "leafCategoryId": "15757",
-      "title": "#284607 - Semirech`e, Imitation of Tang Dyn. Da Li Yuan Bao",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -2442,13 +2127,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "288855",
-      "file": "research/zeno/pending-images-503/288855.jpg",
-      "leafCategoryId": "22907",
-      "title": "#288855 - Da-ding tong-bao",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "288949",
       "file": "research/zeno/pending-images-503/288949.jpg",
       "leafCategoryId": "24944",
@@ -2477,20 +2155,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "290004",
-      "file": "research/zeno/pending-images-503/290004.jpg",
-      "leafCategoryId": "22907",
-      "title": "#290004 - China Da Ding tong bao",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "290503",
-      "file": "research/zeno/pending-images-503/290503.jpg",
-      "leafCategoryId": "22907",
-      "title": "#290503 - Da-ding tong-bao",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "290946",
       "file": "research/zeno/pending-images-503/290946.jpg",
       "leafCategoryId": "24935",
@@ -2509,20 +2173,6 @@
       "file": "research/zeno/pending-images-503/291004.jpg",
       "leafCategoryId": "24935",
       "title": "#291004 - Central Asia, Chach, Nirtanak, 7-8th",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "291031",
-      "file": "research/zeno/pending-images-503/291031.jpg",
-      "leafCategoryId": "22907",
-      "title": "#291031 - Da Ding Tong Bao, imitation",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "291032",
-      "file": "research/zeno/pending-images-503/291032.jpg",
-      "leafCategoryId": "22907",
-      "title": "#291032 - Da Ding Tong Bao, imitation",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -2645,13 +2295,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "293374",
-      "file": "research/zeno/pending-images-503/293374.jpg",
-      "leafCategoryId": "15756",
-      "title": "#293374 - Imitations of Chinese cash, Qian Yuan Zhong Bao, full size",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "293518",
       "file": "research/zeno/pending-images-503/293518.jpg",
       "leafCategoryId": "15760",
@@ -2729,13 +2372,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "298110",
-      "file": "research/zeno/pending-images-503/298110.jpg",
-      "leafCategoryId": "15763",
-      "title": "#298110 - Kai-yuan tong-bao, local imitation",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "299287",
       "file": "research/zeno/pending-images-503/299287.jpg",
       "leafCategoryId": "22604",
@@ -2761,13 +2397,6 @@
       "file": "research/zeno/pending-images-503/299344.jpg",
       "leafCategoryId": "22239",
       "title": "#299344 - Ustrushana",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "299345",
-      "file": "research/zeno/pending-images-503/299345.jpg",
-      "leafCategoryId": "15156",
-      "title": "#299345 - Anonymous Khakan of Ferghana, VII-VIII cen.",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -2869,13 +2498,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "303751",
-      "file": "research/zeno/pending-images-503/303751.jpg",
-      "leafCategoryId": "14905",
-      "title": "#303751 - Semirech'e AE cash-like coin. King Inal-Tegin.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "304295",
       "file": "research/zeno/pending-images-503/304295.jpg",
       "leafCategoryId": "24949",
@@ -2901,13 +2523,6 @@
       "file": "research/zeno/pending-images-503/306498.jpg",
       "leafCategoryId": "24938",
       "title": "#306498 - Chach, Unknown ruler",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "306552",
-      "file": "research/zeno/pending-images-503/306552.jpg",
-      "leafCategoryId": "15755",
-      "title": "#306552 - Semirech'e bronze coin or charm?",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -3219,13 +2834,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "321956",
-      "file": "research/zeno/pending-images-503/321956.jpg",
-      "leafCategoryId": "15761",
-      "title": "#321956 - 開元通寳 kai-yuan tong-bao, local recast",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "321957",
       "file": "research/zeno/pending-images-503/321957.jpg",
       "leafCategoryId": "15762",
@@ -3233,24 +2841,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "321966",
-      "file": "research/zeno/pending-images-503/321966.jpg",
-      "leafCategoryId": "15755",
-      "title": "#321966 - 開元通寳 kai-yuan tong-bao",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "322197",
       "file": "research/zeno/pending-images-503/322197.jpg",
       "leafCategoryId": "804",
       "title": "#322197 - Coin with a paired portrait of the city of Otrar",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "322572",
-      "file": "research/zeno/pending-images-503/322572.jpg",
-      "leafCategoryId": "20257",
-      "title": "#322572 - AE cash, Semirech'e, Yarug-kadin",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -3296,13 +2890,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "324248",
-      "file": "research/zeno/pending-images-503/324248.jpg",
-      "leafCategoryId": "14905",
-      "title": "#324248 - Semirechie, Inal-Tegin AE cash, Kam. #34",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "324700",
       "file": "research/zeno/pending-images-503/324700.jpg",
       "leafCategoryId": "2145",
@@ -3338,13 +2925,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "326586",
-      "file": "research/zeno/pending-images-503/326586.jpg",
-      "leafCategoryId": "15755",
-      "title": "#326586 - Semirech'e imitation of Kaiyuan with interesting hole",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "326587",
       "file": "research/zeno/pending-images-503/326587.jpg",
       "leafCategoryId": "914",
@@ -3366,24 +2946,10 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "326685",
-      "file": "research/zeno/pending-images-503/326685.jpg",
-      "leafCategoryId": "15755",
-      "title": "#326685 - Semirech'e Kaiyuan Tongbao, Rev. Top Crescent",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "326825",
       "file": "research/zeno/pending-images-503/326825.jpg",
       "leafCategoryId": "24941",
       "title": "#326825 - Tarnavch, Obverse double-tailed leopard (Casting error)",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "327207",
-      "file": "research/zeno/pending-images-503/327207.jpg",
-      "leafCategoryId": "14605",
-      "title": "#327207 - local recasting of the Jin zheng-long yuan-bao",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -3398,13 +2964,6 @@
       "file": "research/zeno/pending-images-503/327834.jpg",
       "leafCategoryId": "30984",
       "title": "#327834 - Ustrushana AE, Satachary II.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "327844",
-      "file": "research/zeno/pending-images-503/327844.jpg",
-      "leafCategoryId": "14905",
-      "title": "#327844 - Semirechie, Inal-tegin, AE cash",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -3429,13 +2988,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "329094",
-      "file": "research/zeno/pending-images-503/329094.jpg",
-      "leafCategoryId": "15755",
-      "title": "#329094 - 開元通寳 kai-yuan tong-bao",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "330223",
       "file": "research/zeno/pending-images-503/330223.jpg",
       "leafCategoryId": "22497",
@@ -3454,13 +3006,6 @@
       "file": "research/zeno/pending-images-503/330564.jpg",
       "leafCategoryId": "2144",
       "title": "#330564 - Chach, Pair portrait w. additional tamgha, 7-8th Ct AD, 22mm, 2.35g (broken)",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "331732",
-      "file": "research/zeno/pending-images-503/331732.jpg",
-      "leafCategoryId": "15156",
-      "title": "#331732 - Ferghana, AE cash, anonymous.",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -3590,20 +3135,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "335451",
-      "file": "research/zeno/pending-images-503/335451.jpg",
-      "leafCategoryId": "15756",
-      "title": "#335451 - Imitation of Chinese cash, Qian Yuan Zhong Bao, small size",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "335452",
-      "file": "research/zeno/pending-images-503/335452.jpg",
-      "leafCategoryId": "15756",
-      "title": "#335452 - Imitation of Chinese cash, Qian Yuan Zhong Bao, small size",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "335691",
       "file": "research/zeno/pending-images-503/335691.jpg",
       "leafCategoryId": "15518",
@@ -3615,13 +3146,6 @@
       "file": "research/zeno/pending-images-503/336261.jpg",
       "leafCategoryId": "30984",
       "title": "#336261 - Ustrushana, afshin Satachary II",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "336587",
-      "file": "research/zeno/pending-images-503/336587.jpg",
-      "leafCategoryId": "11003",
-      "title": "#336587 - AE cash, Semirech'e",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -3657,13 +3181,6 @@
       "file": "research/zeno/pending-images-503/3394.jpg",
       "leafCategoryId": "5320",
       "title": "#3394 - Chach: with name Farnbag",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "339458",
-      "file": "research/zeno/pending-images-503/339458.jpg",
-      "leafCategoryId": "15156",
-      "title": "#339458 - Ferghana AE, Anonymous Khagans.",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -3723,13 +3240,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "3403",
-      "file": "research/zeno/pending-images-503/3403.jpg",
-      "leafCategoryId": "15757",
-      "title": "#3403 - Da-li yuan-bao",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "341498",
       "file": "research/zeno/pending-images-503/341498.jpg",
       "leafCategoryId": "30984",
@@ -3748,27 +3258,6 @@
       "file": "research/zeno/pending-images-503/342456.jpg",
       "leafCategoryId": "22239",
       "title": "#342456 - Ustrushana AE, Ruler Rokhanch.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "343690",
-      "file": "research/zeno/pending-images-503/343690.jpg",
-      "leafCategoryId": "15757",
-      "title": "#343690 - Da Li Yuan Bao",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "343717",
-      "file": "research/zeno/pending-images-503/343717.jpg",
-      "leafCategoryId": "15757",
-      "title": "#343717 - Da Li Yuan Bao",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "344843",
-      "file": "research/zeno/pending-images-503/344843.jpg",
-      "leafCategoryId": "15761",
-      "title": "#344843 - Soghdian imitation of KYTB Kai Yuan Tong Bao with unknown tamgha at the reverse",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -3804,13 +3293,6 @@
       "file": "research/zeno/pending-images-503/345229.jpg",
       "leafCategoryId": "914",
       "title": "#345229 - Chach AE, group3 type 2.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "345933",
-      "file": "research/zeno/pending-images-503/345933.jpg",
-      "leafCategoryId": "31008",
-      "title": "#345933 - Semirech'e imitation??? Zheng Long yuan bao, Unusual reverse.",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -4003,13 +3485,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "347494",
-      "file": "research/zeno/pending-images-503/347494.jpg",
-      "leafCategoryId": "15156",
-      "title": "#347494 - Soghd AE coin, Anonymous Khakan of Ferghana.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "347545",
       "file": "research/zeno/pending-images-503/347545.jpg",
       "leafCategoryId": "24937",
@@ -4049,20 +3524,6 @@
       "file": "research/zeno/pending-images-503/350956.jpg",
       "leafCategoryId": "24936",
       "title": "#350956 - Chach, Tudun Satachari",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "350958",
-      "file": "research/zeno/pending-images-503/350958.jpg",
-      "leafCategoryId": "31008",
-      "title": "#350958 - Zheng Long Yuan Bao, local imitation",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "350959",
-      "file": "research/zeno/pending-images-503/350959.jpg",
-      "leafCategoryId": "15756",
-      "title": "#350959 - Qian Yuan zhong bao",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -4325,13 +3786,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "357427",
-      "file": "research/zeno/pending-images-503/357427.jpg",
-      "leafCategoryId": "31007",
-      "title": "#357427 - Unknown cash coin. Kyrgyzstan",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "357589",
       "file": "research/zeno/pending-images-503/357589.jpg",
       "leafCategoryId": "24940",
@@ -4395,13 +3849,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "360236",
-      "file": "research/zeno/pending-images-503/360236.jpg",
-      "leafCategoryId": "31007",
-      "title": "#360236 - Unknown cash coin. Uzbekistan",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "36108",
       "file": "research/zeno/pending-images-503/36108.jpg",
       "leafCategoryId": "24949",
@@ -4455,13 +3902,6 @@
       "file": "research/zeno/pending-images-503/36671.jpg",
       "leafCategoryId": "914",
       "title": "#36671 - Kanka, AE, unknown ruler with long hair.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "367609",
-      "file": "research/zeno/pending-images-503/367609.jpg",
-      "leafCategoryId": "29134",
-      "title": "#367609 - Imitation of cash coin",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -4598,13 +4038,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "375693",
-      "file": "research/zeno/pending-images-503/375693.jpg",
-      "leafCategoryId": "11003",
-      "title": "#375693 - Unknown cash coin or charm, Kyrgyzstan",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "376334",
       "file": "research/zeno/pending-images-503/376334.jpg",
       "leafCategoryId": "14218",
@@ -4637,13 +4070,6 @@
       "file": "research/zeno/pending-images-503/377206.jpg",
       "leafCategoryId": "24946",
       "title": "#377206 - Chach AE, unknown ruler.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "377305",
-      "file": "research/zeno/pending-images-503/377305.jpg",
-      "leafCategoryId": "11003",
-      "title": "#377305 - Kyrgyzstan AE cash",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -5011,13 +4437,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "387406",
-      "file": "research/zeno/pending-images-503/387406.jpg",
-      "leafCategoryId": "31007",
-      "title": "#387406 - Imitation of Chinese cash, Kyrgyzstan",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "387536",
       "file": "research/zeno/pending-images-503/387536.jpg",
       "leafCategoryId": "30983",
@@ -5382,13 +4801,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "39965",
-      "file": "research/zeno/pending-images-503/39965.jpg",
-      "leafCategoryId": "15156",
-      "title": "#39965 - Unlisted type of Ferghana cash-like AE coin.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "39966",
       "file": "research/zeno/pending-images-503/39966.jpg",
       "leafCategoryId": "2144",
@@ -5515,13 +4927,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "56521",
-      "file": "research/zeno/pending-images-503/56521.jpg",
-      "leafCategoryId": "11583",
-      "title": "#56521 - Soghd, AE cash, General Ir Chor Irti (?)",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "57521",
       "file": "research/zeno/pending-images-503/57521.jpg",
       "leafCategoryId": "15517",
@@ -5547,13 +4952,6 @@
       "file": "research/zeno/pending-images-503/59621.jpg",
       "leafCategoryId": "24949",
       "title": "#59621 - Chach 3 line legend",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "60326",
-      "file": "research/zeno/pending-images-503/60326.jpg",
-      "leafCategoryId": "31007",
-      "title": "#60326 - Unknown Xinjiang or Central Asian cash coin.",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -5634,13 +5032,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "68317",
-      "file": "research/zeno/pending-images-503/68317.jpg",
-      "leafCategoryId": "15156",
-      "title": "#68317 - Anonymous Khakan of Ferghana.",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "6874",
       "file": "research/zeno/pending-images-503/6874.jpg",
       "leafCategoryId": "22239",
@@ -5655,20 +5046,6 @@
       "status": "downloaded_target_pending_record_level_review"
     },
     {
-      "id": "696",
-      "file": "research/zeno/pending-images-503/696.jpg",
-      "leafCategoryId": "15757",
-      "title": "#696 - China, Tang, Da-li yuan-bao",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "697",
-      "file": "research/zeno/pending-images-503/697.jpg",
-      "leafCategoryId": "15757",
-      "title": "#697 - China, Tang, Da-li yuan-bao, rosette hole",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
       "id": "70233",
       "file": "research/zeno/pending-images-503/70233.jpg",
       "leafCategoryId": "14835",
@@ -5680,13 +5057,6 @@
       "file": "research/zeno/pending-images-503/7034.jpg",
       "leafCategoryId": "13671",
       "title": "#7034 - Central Asia AE cash coin, two Turkic runas characters",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "71530",
-      "file": "research/zeno/pending-images-503/71530.jpg",
-      "leafCategoryId": "14905",
-      "title": "#71530 - Inal Tegin.Turgesh cash type coin: Kamyshev #34",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -5708,13 +5078,6 @@
       "file": "research/zeno/pending-images-503/72486.jpg",
       "leafCategoryId": "24939",
       "title": "#72486 - Chach - Lion left",
-      "status": "downloaded_target_pending_record_level_review"
-    },
-    {
-      "id": "74336",
-      "file": "research/zeno/pending-images-503/74336.jpg",
-      "leafCategoryId": "29134",
-      "title": "#74336 - Imitation of cash coin",
       "status": "downloaded_target_pending_record_level_review"
     },
     {
@@ -5976,5 +5339,8 @@
       "title": "#98728 - Help identification Central Asia coin",
       "status": "downloaded_target_pending_record_level_review"
     }
-  ]
+  ],
+  "reviewedAndRemovedStage2": 91,
+  "reviewedRelatedStage2": 11,
+  "importedStage2": 80
 }

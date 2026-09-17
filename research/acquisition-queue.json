@@ -3,7 +3,7 @@
   "scope_version": "1.0.0",
   "last_checked_at": "2026-09-16",
   "principle": "Acquire source evidence first, then review scope/identity, then download only candidate/included images where practical. Category counts are coverage metadata, never specimen counts.",
-  "current_stage": "zeno_503_stage1_import_complete_mixed_category_review_pending",
+  "current_stage": "zeno_503_stage2_record_level_visual_review",
   "queue": [
     {
       "id": "zeno-503-tree-census",
@@ -254,14 +254,14 @@
       "parent_category_id": "2141",
       "title": "+  Inal Tegin(?), Runic {ä}r(?) and m(?), Soghdian prn(?)",
       "historical_source_photo_count": 10,
-      "scope_checked": false
+      "scope_checked": true
     },
     {
       "category_id": "20257",
       "parent_category_id": "2141",
       "title": "or  Yarug-kadin(?)",
       "historical_source_photo_count": 3,
-      "scope_checked": false
+      "scope_checked": true
     },
     {
       "category_id": "799",
@@ -275,7 +275,7 @@
       "parent_category_id": "2141",
       "title": "General Ir Chor Irti (?)",
       "historical_source_photo_count": 3,
-      "scope_checked": false
+      "scope_checked": true
     },
     {
       "category_id": "14890",
@@ -289,14 +289,14 @@
       "parent_category_id": "2141",
       "title": "Imitations of Chinese cash",
       "historical_source_photo_count": 172,
-      "scope_checked": false
+      "scope_checked": "partial_record_level"
     },
     {
       "category_id": "796",
       "parent_category_id": "2141",
       "title": "AE cash, temp. Yelü Dashi (1124-1144), w. title malik ārām yīnāl qaraj",
       "historical_source_photo_count": 0,
-      "scope_checked": false
+      "scope_checked": true
     },
     {
       "category_id": "1251",
@@ -322,12 +322,17 @@
     "scope_relevant_gap_recovery_categories": 7,
     "preimage_high_priority_targets": 811,
     "preimage_visual_review_targets": 535,
-    "note": "The original #503 crawl observed 3,891 IDs. A bounded perpage=90 recovery added 93 non-overlapping records in seven scope-relevant pagination-gap categories, giving 3,984 observed/recovered metadata records. Remaining repeated-page gaps outside the targeted recovery keep the root census non-complete. Stage-1 Atlas import is conservative and source-linked.",
+    "note": "The original #503 crawl observed 3,891 IDs; bounded recovery added 93 non-overlapping records for 3,984 observed/recovered metadata records. Stage-1 imported 584 source records; stage-2 record-level visual review imported 80 more and classified 11 circular/special-aperture records as related/held. 762 downloaded images plus one image-missing target remain unresolved; non-target repeated-page gaps keep the root census non-complete.",
     "target_images_downloaded": 1439,
     "valid_target_images_after_repair": 1437,
     "stage1_source_records_selected": 586,
     "stage1_atlas_import_records": 584,
     "stage1_held_records": 2,
-    "stage1_unreviewed_target_images": 854
+    "stage1_unreviewed_target_images": 854,
+    "stage2_source_records_reviewed": 91,
+    "stage2_atlas_import_records": 80,
+    "stage2_related_or_held_records": 11,
+    "remaining_downloaded_images_pending_record_level_review": 762,
+    "remaining_target_without_valid_image": 1
   }
 }

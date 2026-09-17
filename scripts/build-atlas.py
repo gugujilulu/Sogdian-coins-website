@@ -137,6 +137,47 @@ for decision in review503['records']:
  a['specimens'].append({'id':sid,'familyId':decision['familyId'],'variantId':decision['sourceGroupId'],'title':title,'weightG':r.get('weightG'),'diameterMm':r.get('diameterMm'),'images':[pic],'sources':[source],'description':r.get('photoNote') or r.get('description') or 'Primary Zeno source record; source taxonomy preserved.','catalogue':'Zeno category '+decision['leafCategoryId']+' · '+decision['leafCategoryTitle'],'facets':['Zeno source group '+decision['leafCategoryId']+' · '+decision['leafCategoryTitle'],'#503 stage-1 scope reviewed'],'duplicateStatus':decision.get('duplicateStatus','source_record_not_proven_unique')})
  existing_specimen_ids.add(sid)
 
+
+# Central Asia #503 stage-2 record-level visual review. This pass adds only
+# records whose individual image and source taxonomy both support the project's
+# Chinese-style square-hole cash-tradition scope. Circular/special apertures
+# reviewed in the same source groups remain related/held, outside the main count.
+review5032=read('research/zeno/review-503-stage2.json')
+for f in a['families']:
+ if f['id']=='sr9':
+  f['description']=(f.get('description') or '')+' Zeno category 14905 adds ten source records explicitly filed as Inal Tegin; this source crosswalk does not resolve the Arslan Irkin / Inal-Tegin attribution conflict.'
+ if f['id']=='ferghana-anon-khagan':
+  f['description']=(f.get('description') or '')+' Zeno category 15156 adds ten visually confirmed square-hole source records under the anonymous khaqan source taxonomy.'
+existing_family_ids={f['id'] for f in a['families']}
+records2_by_family={}
+for d in review5032['records']:records2_by_family.setdefault(d['familyId'],[]).append(d)
+for fd in review5032['families']:
+ if fd['id'] in existing_family_ids:continue
+ ds=records2_by_family.get(fd['id'],[])
+ image=ds[0]['image']['path'] if ds else None
+ sg=next((g for g in review5032['sourceGroups'] if g['familyId']==fd['id']),None)
+ anchor={'placeId':fd['anchorPlaceId'],'role':'Regional/city orientation · 区域／城市浏览锚点','note':'用于地图浏览；不自动表示铸币地、出土地或流通范围。'} if fd.get('anchorPlaceId') else None
+ pubs=[]
+ if sg:pubs.append({'title':'Zeno category '+sg['categoryId']+' · '+sg['title'],'url':'https://www.zeno.ru/showgallery.php?cat='+sg['categoryId'],'role':'Source taxonomy / reviewed specimen records'})
+ pubs.append({'title':'Central Asian square-hole scope / academic crosswalk pending','url':'https://iicas.int/book/177','role':'Modern academic framework; exact attribution remains under review'})
+ a['families'].append({'id':fd['id'],'title':fd['title'],'zh':fd['zh'],'region':fd['region'],'start':fd.get('start'),'end':fd.get('end'),'dateLabel':fd.get('dateLabel') or 'Chronology pending','description':fd['description'],'anchor':anchor,'image':image,'status':fd['status'],'question':fd['question'],'publications':pubs})
+ existing_family_ids.add(fd['id'])
+for g in review5032['sourceGroups']:
+ if not any(v['id']==g['id'] for v in a['variants']):
+  a['variants'].append({'id':g['id'],'familyId':g['familyId'],'title':g['title'],'reference':'Zeno category '+g['categoryId'],'status':'source_group','facets':[],'description':g['description']})
+existing_specimen_ids={s['id'] for s in a['specimens']}
+for decision in review5032['records']:
+ if not decision.get('atlasImport'):continue
+ id=str(decision['id']);sid='zeno-'+id
+ if sid in existing_specimen_ids:continue
+ r=z503_by_id[id];im=decision['image'];u=r.get('uploader') or {};rights=r.get('rights') or {}
+ title=r.get('title') or ('Zeno '+id);prefix='#'+id+' - '
+ if title.startswith(prefix):title=title[len(prefix):]
+ pic={'id':'z'+id,'path':im['path'],'sourceUrl':(repair503_by_id.get(id) or {}).get('url') or r.get('originalImageUrl') or r.get('url'),'width':im['width'],'height':im['height'],'credit':u.get('name') or 'Zeno.ru uploader unknown','rightsStatus':('unverified' if (rights.get('status') or 'unverified') not in {'open_license','permission','public_domain','unverified'} else (rights.get('status') or 'unverified')),'rightsSourceUrl':rights.get('sourceTermsUrl'),'view':'source photograph','sha256':im.get('sha256')}
+ source={'label':'Zeno '+id,'url':r['url'],'relation':'same_specimen'}
+ a['specimens'].append({'id':sid,'familyId':decision['familyId'],'variantId':decision['sourceGroupId'],'title':title,'weightG':r.get('weightG'),'diameterMm':r.get('diameterMm'),'images':[pic],'sources':[source],'description':r.get('photoNote') or r.get('description') or 'Primary Zeno source record; source taxonomy preserved.','catalogue':'Zeno category '+decision['leafCategoryId']+' · '+decision['leafCategoryTitle'],'facets':['Zeno source group '+decision['leafCategoryId']+' · '+decision['leafCategoryTitle'],'#503 stage-2 record-level visual review'],'duplicateStatus':decision.get('duplicateStatus','source_record_not_proven_unique')})
+ existing_specimen_ids.add(sid)
+
 a['scopeCensus']=read('research/coverage-scopes.json')
 nana_specimens=[s for s in a['specimens'] if s['familyId']=='lady-nana']
 nana_zeno=[s for s in nana_specimens if s['id'].startswith('zeno-')]

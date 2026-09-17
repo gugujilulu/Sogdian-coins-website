@@ -1,0 +1,1647 @@
+{
+  "version": "1.0",
+  "reviewedOn": "2026-09-16",
+  "stage": "503-stage2-record-level-visual",
+  "sourceManifest": "research/zeno/manifest-503.json",
+  "methodNote": "Second conservative #503 import. Only leaf categories or individual records whose source taxonomy and downloaded image both support the Chinese-style square-hole cash tradition are imported. Clearly circular holes and special rosette apertures are retained as related/held records rather than counted in the main corpus. Pseudo-aperture/unpierced square-frame issues remain includable under Scope v1.",
+  "counts": {
+    "sourceRecordsReviewed": 91,
+    "atlasImportRecords": 80,
+    "heldRelatedRecords": 11,
+    "newFamilies": 3,
+    "reusedFamilies": 2,
+    "sourceGroups": 16
+  },
+  "families": [
+    {
+      "id": "yarug-kadin",
+      "title": "Yarug-kadin(?) square-hole cash",
+      "zh": "Yarug-kadin(?) 方孔钱",
+      "region": "Semirechye",
+      "start": 700,
+      "end": 899,
+      "dateLabel": "Source attribution pending; broadly 8th–9th century context",
+      "anchorPlaceId": "suyab",
+      "candidateId": "cand-yarug-kadin",
+      "status": "source_linked_candidate",
+      "description": "Three Zeno source records assigned to Yarug-kadin(?) show the Chinese-style square-hole cash morphology. The personal/title reading remains source attribution, not a canonical resolution.",
+      "question": "Preserve the question mark in the source attribution until catalogue and legend evidence are cross-checked."
+    },
+    {
+      "id": "general-ir-chor-irti",
+      "title": "General Ir Chor Irti(?) cash",
+      "zh": "Ir Chor Irti(?) 将军方孔钱",
+      "region": "Semirechye / Sogdian-Turkic milieu",
+      "start": 700,
+      "end": 899,
+      "dateLabel": "Chronology pending academic crosswalk",
+      "anchorPlaceId": "suyab",
+      "candidateId": "cand-general-ir-chor-irti",
+      "status": "source_linked_candidate",
+      "description": "Zeno source records classified as General Ir Chor Irti(?) include pierced and pseudo-aperture Chinese-style cash forms. Both belong to the project scope; the reading and historical attribution remain provisional.",
+      "question": "The ruler/title reading and exact political attribution require catalogue-level review."
+    },
+    {
+      "id": "semirechye-chinese-imitation",
+      "title": "Semirechye Chinese-cash imitations",
+      "zh": "七河地区中国式方孔钱仿铸系列",
+      "region": "Semirechye",
+      "start": 600,
+      "end": 1199,
+      "dateLabel": "7th–12th century source groups; individual records retain their own source dates",
+      "anchorPlaceId": "suyab",
+      "candidateId": "cand-semirechye-chinese-imitation",
+      "status": "source_linked_candidate",
+      "description": "Regional Chinese-style cash imitations and local recasts preserved as a broad editorial family. Kaiyuan, Qianyuan, Dali, Huichang, Xining, Dading, Zhenglong and undeciphered source groups remain separate catalogue/source groups; they are not assumed to share one issuer or mint.",
+      "question": "Each Chinese prototype/source group requires separate attribution, chronology and local-vs-imported adjudication; this family is a browsing umbrella, not one issuing authority."
+    }
+  ],
+  "familiesReused": [
+    {
+      "id": "sr9",
+      "role": "existing_family_reused",
+      "note": "Zeno category 14905 Inal Tegin records crosswalk to the existing sr9 Arslan Irkin / legacy Inal-Tegin family; no duplicate family created."
+    },
+    {
+      "id": "ferghana-anon-khagan",
+      "role": "existing_family_reused",
+      "note": "Zeno category 15156 records crosswalk to the existing Ferghana anonymous khaqan family."
+    }
+  ],
+  "sourceGroups": [
+    {
+      "id": "zeno503-cat-11003",
+      "familyId": "semirechye-chinese-imitation",
+      "categoryId": "11003",
+      "title": "Imitations of Chinese cash",
+      "status": "source_group",
+      "description": "Zeno source category retained as a source grouping after stage-2 record-level image review; it is not automatically an academic variant."
+    },
+    {
+      "id": "zeno503-cat-11583",
+      "familyId": "general-ir-chor-irti",
+      "categoryId": "11583",
+      "title": "General Ir Chor Irti (?)",
+      "status": "source_group",
+      "description": "Zeno source category retained as a source grouping after stage-2 record-level image review; it is not automatically an academic variant."
+    },
+    {
+      "id": "zeno503-cat-14605",
+      "familyId": "semirechye-chinese-imitation",
+      "categoryId": "14605",
+      "title": "Imitations of Chinese cash",
+      "status": "source_group",
+      "description": "Zeno source category retained as a source grouping after stage-2 record-level image review; it is not automatically an academic variant."
+    },
+    {
+      "id": "zeno503-cat-14905",
+      "familyId": "sr9",
+      "categoryId": "14905",
+      "title": "+ Inal Tegin(?), Runic {ä}r(?) and m(?), Soghdian prn (?)",
+      "status": "source_group",
+      "description": "Zeno source category retained as a source grouping after stage-2 record-level image review; it is not automatically an academic variant."
+    },
+    {
+      "id": "zeno503-cat-15156",
+      "familyId": "ferghana-anon-khagan",
+      "categoryId": "15156",
+      "title": "Anonymous khaqan , type I",
+      "status": "source_group",
+      "description": "Zeno source category retained as a source grouping after stage-2 record-level image review; it is not automatically an academic variant."
+    },
+    {
+      "id": "zeno503-cat-15755",
+      "familyId": "semirechye-chinese-imitation",
+      "categoryId": "15755",
+      "title": "開元通寳 kai-yuan tong-bao",
+      "status": "source_group",
+      "description": "Zeno source category retained as a source grouping after stage-2 record-level image review; it is not automatically an academic variant."
+    },
+    {
+      "id": "zeno503-cat-15756",
+      "familyId": "semirechye-chinese-imitation",
+      "categoryId": "15756",
+      "title": "乾元重寳 qian-yuan zhong-bao",
+      "status": "source_group",
+      "description": "Zeno source category retained as a source grouping after stage-2 record-level image review; it is not automatically an academic variant."
+    },
+    {
+      "id": "zeno503-cat-15757",
+      "familyId": "semirechye-chinese-imitation",
+      "categoryId": "15757",
+      "title": "大曆元寳 da-li yuan-bao",
+      "status": "source_group",
+      "description": "Zeno source category retained as a source grouping after stage-2 record-level image review; it is not automatically an academic variant."
+    },
+    {
+      "id": "zeno503-cat-15759",
+      "familyId": "semirechye-chinese-imitation",
+      "categoryId": "15759",
+      "title": "熙寧元寳 xi-ning yuan-bao",
+      "status": "source_group",
+      "description": "Zeno source category retained as a source grouping after stage-2 record-level image review; it is not automatically an academic variant."
+    },
+    {
+      "id": "zeno503-cat-15761",
+      "familyId": "semirechye-chinese-imitation",
+      "categoryId": "15761",
+      "title": "會昌 hui-chang period",
+      "status": "source_group",
+      "description": "Zeno source category retained as a source grouping after stage-2 record-level image review; it is not automatically an academic variant."
+    },
+    {
+      "id": "zeno503-cat-15763",
+      "familyId": "semirechye-chinese-imitation",
+      "categoryId": "15763",
+      "title": "開元通寳 kai-yuan tong-bao or 周元通寳 zhou-yuan tong-bao",
+      "status": "source_group",
+      "description": "Zeno source category retained as a source grouping after stage-2 record-level image review; it is not automatically an academic variant."
+    },
+    {
+      "id": "zeno503-cat-20257",
+      "familyId": "yarug-kadin",
+      "categoryId": "20257",
+      "title": "or Yarug-kadin(?)",
+      "status": "source_group",
+      "description": "Zeno source category retained as a source grouping after stage-2 record-level image review; it is not automatically an academic variant."
+    },
+    {
+      "id": "zeno503-cat-22907",
+      "familyId": "semirechye-chinese-imitation",
+      "categoryId": "22907",
+      "title": "大定通寶 da-ding tong-bao",
+      "status": "source_group",
+      "description": "Zeno source category retained as a source grouping after stage-2 record-level image review; it is not automatically an academic variant."
+    },
+    {
+      "id": "zeno503-cat-29134",
+      "familyId": "semirechye-chinese-imitation",
+      "categoryId": "29134",
+      "title": "Undeciphered, Type 1, ...元寶 ... yuan bao",
+      "status": "source_group",
+      "description": "Zeno source category retained as a source grouping after stage-2 record-level image review; it is not automatically an academic variant."
+    },
+    {
+      "id": "zeno503-cat-31007",
+      "familyId": "semirechye-chinese-imitation",
+      "categoryId": "31007",
+      "title": "Undeciphered, Type 2, ...曆元 ... li yuan",
+      "status": "source_group",
+      "description": "Zeno source category retained as a source grouping after stage-2 record-level image review; it is not automatically an academic variant."
+    },
+    {
+      "id": "zeno503-cat-31008",
+      "familyId": "semirechye-chinese-imitation",
+      "categoryId": "31008",
+      "title": "正隆元宝 zheng long yuan bao",
+      "status": "source_group",
+      "description": "Zeno source category retained as a source grouping after stage-2 record-level image review; it is not automatically an academic variant."
+    }
+  ],
+  "records": [
+    {
+      "id": "104452",
+      "leafCategoryId": "29134",
+      "leafCategoryTitle": "Undeciphered, Type 1, ...元寶 ... yuan bao",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-29134",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/104452.jpg",
+        "width": 1068,
+        "height": 538,
+        "sha256": "ef339c7f3269417b2bebd423092361ddd831dbfee94d6a16a8c591ab3c640c1a"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "122117",
+      "leafCategoryId": "14905",
+      "leafCategoryTitle": "+ Inal Tegin(?), Runic {ä}r(?) and m(?), Soghdian prn (?)",
+      "familyId": "sr9",
+      "sourceGroupId": "zeno503-cat-14905",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/122117.jpg",
+        "width": 607,
+        "height": 310,
+        "sha256": "ccf2674633f62cb1fbdee5744439b9b8faef8e40b794c2be9170ae9293789c22"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "122192",
+      "leafCategoryId": "14905",
+      "leafCategoryTitle": "+ Inal Tegin(?), Runic {ä}r(?) and m(?), Soghdian prn (?)",
+      "familyId": "sr9",
+      "sourceGroupId": "zeno503-cat-14905",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/122192.jpg",
+        "width": 1510,
+        "height": 758,
+        "sha256": "ad302668b56e72ca6d9e8742da11e79e4ce7bb21d2fd04197a958656459028da"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "123063",
+      "leafCategoryId": "14905",
+      "leafCategoryTitle": "+ Inal Tegin(?), Runic {ä}r(?) and m(?), Soghdian prn (?)",
+      "familyId": "sr9",
+      "sourceGroupId": "zeno503-cat-14905",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/123063.jpg",
+        "width": 773,
+        "height": 407,
+        "sha256": "cbcb46cde0cf3469dcf5c6ef2a28c8c3416949645498bf5af0fe6f2c88f39c6b"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "123296",
+      "leafCategoryId": "22907",
+      "leafCategoryTitle": "大定通寶 da-ding tong-bao",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-22907",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/123296.jpg",
+        "width": 1161,
+        "height": 601,
+        "sha256": "6c7f8abf0bb53830f4d151b417113a534d39e2aad185ac5356e71805b8235a75"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "127887",
+      "leafCategoryId": "15156",
+      "leafCategoryTitle": "Anonymous khaqan , type I",
+      "familyId": "ferghana-anon-khagan",
+      "sourceGroupId": "zeno503-cat-15156",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/127887.jpg",
+        "width": 2361,
+        "height": 1181,
+        "sha256": "8046b30ab90a2218e8d33f676284b9c69058698f7a1be524d538279854991a0c"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "130129",
+      "leafCategoryId": "14905",
+      "leafCategoryTitle": "+ Inal Tegin(?), Runic {ä}r(?) and m(?), Soghdian prn (?)",
+      "familyId": "sr9",
+      "sourceGroupId": "zeno503-cat-14905",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/130129.jpg",
+        "width": 1535,
+        "height": 754,
+        "sha256": "a8d7789fa1a3c3b0e89b1a96fd18e82f260573f4b58b8126401b5f4f8e014777"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "130783",
+      "leafCategoryId": "11583",
+      "leafCategoryTitle": "General Ir Chor Irti (?)",
+      "familyId": "general-ir-chor-irti",
+      "sourceGroupId": "zeno503-cat-11583",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/130783.jpg",
+        "width": 534,
+        "height": 270,
+        "sha256": "a43574a2eb2b1cd96f82dd8ccff8735b42d4e1208aaf8da217aa6a4007327d57"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "131224",
+      "leafCategoryId": "31007",
+      "leafCategoryTitle": "Undeciphered, Type 2, ...曆元 ... li yuan",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-31007",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/131224.jpg",
+        "width": 2196,
+        "height": 1103,
+        "sha256": "becb7ed19480fd56f7cb0866449c3326078fbc98341eadc4f3c796791beeba19"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "15829",
+      "leafCategoryId": "15156",
+      "leafCategoryTitle": "Anonymous khaqan , type I",
+      "familyId": "ferghana-anon-khagan",
+      "sourceGroupId": "zeno503-cat-15156",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/15829.jpg",
+        "width": 968,
+        "height": 477,
+        "sha256": "ab022dcdb75f947cf177180b83d942ffb17592a4d0d847452766022f0cf44710"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "162023",
+      "leafCategoryId": "15763",
+      "leafCategoryTitle": "開元通寳 kai-yuan tong-bao or 周元通寳 zhou-yuan tong-bao",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15763",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/162023.jpg",
+        "width": 1532,
+        "height": 788,
+        "sha256": "0c3fe978fe074537d28b5cc1021be6b2cabf514da5ddbfcff84a962cd7eb2a4c"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "162024",
+      "leafCategoryId": "15763",
+      "leafCategoryTitle": "開元通寳 kai-yuan tong-bao or 周元通寳 zhou-yuan tong-bao",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15763",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/162024.jpg",
+        "width": 1884,
+        "height": 956,
+        "sha256": "b7060193cea3a60d2ade75d9295275a2a06685407a1852e96855aff4dd7d7381"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "184840",
+      "leafCategoryId": "15761",
+      "leafCategoryTitle": "會昌 hui-chang period",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15761",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/184840.jpg",
+        "width": 2956,
+        "height": 1526,
+        "sha256": "f9f52bb16d6e54a0cbbf697a2c64baff4ae27e831249151ee87de2aa5993c313"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "203363",
+      "leafCategoryId": "20257",
+      "leafCategoryTitle": "or Yarug-kadin(?)",
+      "familyId": "yarug-kadin",
+      "sourceGroupId": "zeno503-cat-20257",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/203363.jpg",
+        "width": 1810,
+        "height": 924,
+        "sha256": "84212bd95d48711387355b62fc90be9701508e7bd87cb2d9fd3094b7b7a0f3cd"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "204236",
+      "leafCategoryId": "15156",
+      "leafCategoryTitle": "Anonymous khaqan , type I",
+      "familyId": "ferghana-anon-khagan",
+      "sourceGroupId": "zeno503-cat-15156",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/204236.jpg",
+        "width": 839,
+        "height": 410,
+        "sha256": "2567c3fed2df779433e55093ce9cd6a72ab15e0c08dcc67c6a87aa82f062110d"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "214937",
+      "leafCategoryId": "15759",
+      "leafCategoryTitle": "熙寧元寳 xi-ning yuan-bao",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15759",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/214937.jpg",
+        "width": 3060,
+        "height": 1521,
+        "sha256": "d06cd4fbd9f314ce2930d4071e3d350da8fef31b4c95716b413c6c19074e9666"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "216064",
+      "leafCategoryId": "14905",
+      "leafCategoryTitle": "+ Inal Tegin(?), Runic {ä}r(?) and m(?), Soghdian prn (?)",
+      "familyId": "sr9",
+      "sourceGroupId": "zeno503-cat-14905",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/216064.jpg",
+        "width": 2418,
+        "height": 1214,
+        "sha256": "8974320536787ff2ea06b78f49218484fe2a1ef83db81f5d4ea8c9352445cad1"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "220903",
+      "leafCategoryId": "14905",
+      "leafCategoryTitle": "+ Inal Tegin(?), Runic {ä}r(?) and m(?), Soghdian prn (?)",
+      "familyId": "sr9",
+      "sourceGroupId": "zeno503-cat-14905",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/220903.jpg",
+        "width": 947,
+        "height": 485,
+        "sha256": "a5311f25481ab8c6d37ab19b0ac49654e59938227a27d416ff97f68f8172b70f"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "269231",
+      "leafCategoryId": "11583",
+      "leafCategoryTitle": "General Ir Chor Irti (?)",
+      "familyId": "general-ir-chor-irti",
+      "sourceGroupId": "zeno503-cat-11583",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/269231.jpg",
+        "width": 1131,
+        "height": 659,
+        "sha256": "8a36b9f39debe99a169e6847af7c63528c59878483f9dd037edc5a8ab114531f"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "275661",
+      "leafCategoryId": "20257",
+      "leafCategoryTitle": "or Yarug-kadin(?)",
+      "familyId": "yarug-kadin",
+      "sourceGroupId": "zeno503-cat-20257",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/275661.jpg",
+        "width": 3200,
+        "height": 1566,
+        "sha256": "af73c288280da6d66d9603b74940510c0e3048e1b17e8b2f212e2f41493fc9cd"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "280297",
+      "leafCategoryId": "15156",
+      "leafCategoryTitle": "Anonymous khaqan , type I",
+      "familyId": "ferghana-anon-khagan",
+      "sourceGroupId": "zeno503-cat-15156",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/280297.jpg",
+        "width": 2446,
+        "height": 1216,
+        "sha256": "441c681243808ea251deeecafea4189f0c7a8c01af1b014c84ebe83864a48b5e"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "288855",
+      "leafCategoryId": "22907",
+      "leafCategoryTitle": "大定通寶 da-ding tong-bao",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-22907",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/288855.jpg",
+        "width": 1228,
+        "height": 628,
+        "sha256": "0847d78bcbbf7f13478265d5c3fb68760c732227b31834048fb729deb0338c75"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "290004",
+      "leafCategoryId": "22907",
+      "leafCategoryTitle": "大定通寶 da-ding tong-bao",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-22907",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/290004.jpg",
+        "width": 2033,
+        "height": 1052,
+        "sha256": "d0bc1bcffdf3d14c20a7c738b6632d3eb7df1a3affe9733f9b035eeb9ea25aff"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "290503",
+      "leafCategoryId": "22907",
+      "leafCategoryTitle": "大定通寶 da-ding tong-bao",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-22907",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/290503.jpg",
+        "width": 1184,
+        "height": 629,
+        "sha256": "ea375356a5a89930877716d960c9be45a32bc27a3dce1f1fa7b73d4985a480af"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "291031",
+      "leafCategoryId": "22907",
+      "leafCategoryTitle": "大定通寶 da-ding tong-bao",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-22907",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/291031.jpg",
+        "width": 2340,
+        "height": 1200,
+        "sha256": "c6a81800d356ef48ad931dd938373909dacae12a9087bbd30c3529ea4cfaa396"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "291032",
+      "leafCategoryId": "22907",
+      "leafCategoryTitle": "大定通寶 da-ding tong-bao",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-22907",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/291032.jpg",
+        "width": 2400,
+        "height": 1200,
+        "sha256": "987e65629a1ead00fb9903b93d2552e86bbfc5a0a4304ca349a1bcb8b49078c4"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "298110",
+      "leafCategoryId": "15763",
+      "leafCategoryTitle": "開元通寳 kai-yuan tong-bao or 周元通寳 zhou-yuan tong-bao",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15763",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/298110.jpg",
+        "width": 1425,
+        "height": 721,
+        "sha256": "31c00aaa84b145efa51afe16eefa3349884e5a573cb7708578f80614e250ee51"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "299345",
+      "leafCategoryId": "15156",
+      "leafCategoryTitle": "Anonymous khaqan , type I",
+      "familyId": "ferghana-anon-khagan",
+      "sourceGroupId": "zeno503-cat-15156",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/299345.jpg",
+        "width": 1252,
+        "height": 619,
+        "sha256": "e1572c942551afbc799acc942b36d1e49b7c2ae81d53d416f52a8eccbf63d510"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "303751",
+      "leafCategoryId": "14905",
+      "leafCategoryTitle": "+ Inal Tegin(?), Runic {ä}r(?) and m(?), Soghdian prn (?)",
+      "familyId": "sr9",
+      "sourceGroupId": "zeno503-cat-14905",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/303751.jpg",
+        "width": 1389,
+        "height": 700,
+        "sha256": "395f765428bf064a62e764367d3a8e621806c4f665aa8614febd6084c17feddf"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "321956",
+      "leafCategoryId": "15761",
+      "leafCategoryTitle": "會昌 hui-chang period",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15761",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/321956.jpg",
+        "width": 1920,
+        "height": 1100,
+        "sha256": "cd49ba580ee13d5b0db047f81cbec9d4fd853b568a3543c2da0eda1b3eeda7e1"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "322572",
+      "leafCategoryId": "20257",
+      "leafCategoryTitle": "or Yarug-kadin(?)",
+      "familyId": "yarug-kadin",
+      "sourceGroupId": "zeno503-cat-20257",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/322572.jpg",
+        "width": 1659,
+        "height": 856,
+        "sha256": "05c347e4101d6fbd8ab6ed4f1f910cdff54ed72c279e9392de3780734bc4b32b"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "324248",
+      "leafCategoryId": "14905",
+      "leafCategoryTitle": "+ Inal Tegin(?), Runic {ä}r(?) and m(?), Soghdian prn (?)",
+      "familyId": "sr9",
+      "sourceGroupId": "zeno503-cat-14905",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/324248.jpg",
+        "width": 1179,
+        "height": 592,
+        "sha256": "855570a4efefbd7b7b8bb8692ccc83e463b1e2809b358753105b3394d02c4f14"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "327207",
+      "leafCategoryId": "14605",
+      "leafCategoryTitle": "Imitations of Chinese cash",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-14605",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/327207.jpg",
+        "width": 1703,
+        "height": 836,
+        "sha256": "a57ed5981856de985dbc9c82a9fa350d97eada7c48995ff4193c8101f1d68ef1"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "327844",
+      "leafCategoryId": "14905",
+      "leafCategoryTitle": "+ Inal Tegin(?), Runic {ä}r(?) and m(?), Soghdian prn (?)",
+      "familyId": "sr9",
+      "sourceGroupId": "zeno503-cat-14905",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/327844.jpg",
+        "width": 1920,
+        "height": 1044,
+        "sha256": "294b91e7f8aad0319f6cf4ce6bad1afa4d3380fce18fc72a28abcc3fd725e01f"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "331732",
+      "leafCategoryId": "15156",
+      "leafCategoryTitle": "Anonymous khaqan , type I",
+      "familyId": "ferghana-anon-khagan",
+      "sourceGroupId": "zeno503-cat-15156",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/331732.jpg",
+        "width": 1338,
+        "height": 699,
+        "sha256": "d609c3b188826f918afcb85baca9ee45f6fb3c2aff7fd0f7b632074ecfa80a18"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "339458",
+      "leafCategoryId": "15156",
+      "leafCategoryTitle": "Anonymous khaqan , type I",
+      "familyId": "ferghana-anon-khagan",
+      "sourceGroupId": "zeno503-cat-15156",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/339458.jpg",
+        "width": 1800,
+        "height": 880,
+        "sha256": "1d152fbe7ae6d2d08e1987d823783fb0a2a00d7211a9fca9a2f346a75a6cdcf8"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "344843",
+      "leafCategoryId": "15761",
+      "leafCategoryTitle": "會昌 hui-chang period",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15761",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/344843.jpg",
+        "width": 2080,
+        "height": 1058,
+        "sha256": "11947777c9448e528278acde5997b328174929816379bf83492a60d3e11bd930"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "347494",
+      "leafCategoryId": "15156",
+      "leafCategoryTitle": "Anonymous khaqan , type I",
+      "familyId": "ferghana-anon-khagan",
+      "sourceGroupId": "zeno503-cat-15156",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/347494.jpg",
+        "width": 1389,
+        "height": 742,
+        "sha256": "15325ed65969cce9f6a40f7cc3110e7b0498b49defd36468c5cf29e2d4329c6c"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "357427",
+      "leafCategoryId": "31007",
+      "leafCategoryTitle": "Undeciphered, Type 2, ...曆元 ... li yuan",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-31007",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/357427.jpg",
+        "width": 1060,
+        "height": 542,
+        "sha256": "9e33c4cfc3e9a462fa26826df421ea8a73420737b7de1b68550c75ff4425a46d"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "360236",
+      "leafCategoryId": "31007",
+      "leafCategoryTitle": "Undeciphered, Type 2, ...曆元 ... li yuan",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-31007",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/360236.jpg",
+        "width": 1823,
+        "height": 905,
+        "sha256": "6daa8bb6430a476988af5f04399066b97c1b739edfb0f3dfe4b670c74584f700"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "367609",
+      "leafCategoryId": "29134",
+      "leafCategoryTitle": "Undeciphered, Type 1, ...元寶 ... yuan bao",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-29134",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/367609.jpg",
+        "width": 2001,
+        "height": 981,
+        "sha256": "47c18517d2e239a4b7d71b752bc7bfc95dac1c9c3bb08dd632cc74558ad0e8d8"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "387406",
+      "leafCategoryId": "31007",
+      "leafCategoryTitle": "Undeciphered, Type 2, ...曆元 ... li yuan",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-31007",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/387406.jpg",
+        "width": 3999,
+        "height": 1985,
+        "sha256": "64074102aa50e0183aa14f2961078bde783025d4af74f172a31da28f32c7062f"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "39965",
+      "leafCategoryId": "15156",
+      "leafCategoryTitle": "Anonymous khaqan , type I",
+      "familyId": "ferghana-anon-khagan",
+      "sourceGroupId": "zeno503-cat-15156",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/39965.jpg",
+        "width": 1836,
+        "height": 969,
+        "sha256": "d3f282d4f1458d4cb757e5ee34b28641b1b5efb062817dee0619202244bd644a"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "56521",
+      "leafCategoryId": "11583",
+      "leafCategoryTitle": "General Ir Chor Irti (?)",
+      "familyId": "general-ir-chor-irti",
+      "sourceGroupId": "zeno503-cat-11583",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/56521.jpg",
+        "width": 2236,
+        "height": 1120,
+        "sha256": "641c2d76e932af3497c6d044e03875b6b34627d40f6df4b0d99a879d562e91e6"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "60326",
+      "leafCategoryId": "31007",
+      "leafCategoryTitle": "Undeciphered, Type 2, ...曆元 ... li yuan",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-31007",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/60326.jpg",
+        "width": 2228,
+        "height": 1128,
+        "sha256": "79ebc0455ae0a331125ea7aecacac8fb60997b849adf194b9ee858964fcbcf2f"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "68317",
+      "leafCategoryId": "15156",
+      "leafCategoryTitle": "Anonymous khaqan , type I",
+      "familyId": "ferghana-anon-khagan",
+      "sourceGroupId": "zeno503-cat-15156",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/68317.jpg",
+        "width": 2500,
+        "height": 1286,
+        "sha256": "b9f7c12fab98b7308e785210fd6a44313eeee7b3c2865a94c88c62caf6b9d10d"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "71530",
+      "leafCategoryId": "14905",
+      "leafCategoryTitle": "+ Inal Tegin(?), Runic {ä}r(?) and m(?), Soghdian prn (?)",
+      "familyId": "sr9",
+      "sourceGroupId": "zeno503-cat-14905",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/71530.jpg",
+        "width": 1171,
+        "height": 605,
+        "sha256": "1dc35c0f87bbe7a426671bf6d847d16ee97a88c268372bc81b9425a4a36cd560"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "74336",
+      "leafCategoryId": "29134",
+      "leafCategoryTitle": "Undeciphered, Type 1, ...元寶 ... yuan bao",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-29134",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/74336.jpg",
+        "width": 2246,
+        "height": 1155,
+        "sha256": "e92b26a4236eeab1b1a418beadd9b93e46eb0a9dc7cf2d36d88ed9376413b6de"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "336587",
+      "leafCategoryId": "11003",
+      "leafCategoryTitle": "Imitations of Chinese cash",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-11003",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/336587.jpg",
+        "width": 1870,
+        "height": 866,
+        "sha256": "f6c8ba5b4a5883581a61863873e79446aa2911270fc947b5df535271354a84b9"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "321966",
+      "leafCategoryId": "15755",
+      "leafCategoryTitle": "開元通寳 kai-yuan tong-bao",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15755",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/321966.jpg",
+        "width": 1920,
+        "height": 1120,
+        "sha256": "ca4cf2f114fcac781da4fa5fdccc06268333fe45041ae0c3590ea50fb395bc79"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "326685",
+      "leafCategoryId": "15755",
+      "leafCategoryTitle": "開元通寳 kai-yuan tong-bao",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15755",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/326685.jpg",
+        "width": 2432,
+        "height": 1185,
+        "sha256": "15cd9a3b4e040074bedb3c2e49ed4bb742f5f52b6f6209314d22a734e2503701"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "329094",
+      "leafCategoryId": "15755",
+      "leafCategoryTitle": "開元通寳 kai-yuan tong-bao",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15755",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/329094.jpg",
+        "width": 1535,
+        "height": 867,
+        "sha256": "a6375cf18f2bab952e9301496f5e45126569562d47fb1b224f02b0ec72b40b28"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "123656",
+      "leafCategoryId": "15756",
+      "leafCategoryTitle": "乾元重寳 qian-yuan zhong-bao",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15756",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/123656.jpg",
+        "width": 1000,
+        "height": 471,
+        "sha256": "d00a6e81f668c5a201275f20392902b78e587457f7ea12471b7c0b639b77199f"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "156733",
+      "leafCategoryId": "15756",
+      "leafCategoryTitle": "乾元重寳 qian-yuan zhong-bao",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15756",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/156733.jpg",
+        "width": 1606,
+        "height": 828,
+        "sha256": "8bd807665eb8b724aa885d046b0c9e13e6b2aa620483ded64bcd6022809ea339"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "156734",
+      "leafCategoryId": "15756",
+      "leafCategoryTitle": "乾元重寳 qian-yuan zhong-bao",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15756",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/156734.jpg",
+        "width": 1342,
+        "height": 690,
+        "sha256": "449c78da505cba58dea10fc289f4211f45310af7d05b02ca582dea5940283b33"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "182845",
+      "leafCategoryId": "15756",
+      "leafCategoryTitle": "乾元重寳 qian-yuan zhong-bao",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15756",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/182845.jpg",
+        "width": 3665,
+        "height": 1779,
+        "sha256": "3a74c3e54cd0a38304b0e34521437d9bdc912eef04bfb18d81fb41926de76911"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "214532",
+      "leafCategoryId": "15756",
+      "leafCategoryTitle": "乾元重寳 qian-yuan zhong-bao",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15756",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/214532.jpg",
+        "width": 2788,
+        "height": 1426,
+        "sha256": "8f0d78d8dae715534c47d52e8267d3d709d105494cf669d0a8a1ea7008762298"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "215472",
+      "leafCategoryId": "15756",
+      "leafCategoryTitle": "乾元重寳 qian-yuan zhong-bao",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15756",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/215472.jpg",
+        "width": 890,
+        "height": 462,
+        "sha256": "ceac8af9de695da50ee19cb84f93b4e2f5655fd21f1febca2d73f7022a0eaf36"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "217386",
+      "leafCategoryId": "15756",
+      "leafCategoryTitle": "乾元重寳 qian-yuan zhong-bao",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15756",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/217386.jpg",
+        "width": 925,
+        "height": 469,
+        "sha256": "e3325c43d8dd89e3464627315664514dc2df3268b1f7e0bf6d6782d7efbe51b9"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "218271",
+      "leafCategoryId": "15756",
+      "leafCategoryTitle": "乾元重寳 qian-yuan zhong-bao",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15756",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/218271.jpg",
+        "width": 924,
+        "height": 487,
+        "sha256": "80f515dc3ca1915b2cd1872ec0f00bad9b255f4d56629fd7bbb4b2c6f32683a1"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "335451",
+      "leafCategoryId": "15756",
+      "leafCategoryTitle": "乾元重寳 qian-yuan zhong-bao",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15756",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/335451.jpg",
+        "width": 1539,
+        "height": 755,
+        "sha256": "ecf2d85c753fd962eb0d2747b6822dbff1c98726ea677377fb69409dbe17b1d9"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "335452",
+      "leafCategoryId": "15756",
+      "leafCategoryTitle": "乾元重寳 qian-yuan zhong-bao",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15756",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/335452.jpg",
+        "width": 1491,
+        "height": 755,
+        "sha256": "f7a5bd6aafa9e6754af2593f5664a5d981f086cae17b1149a8889b53cccfc70e"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "350959",
+      "leafCategoryId": "15756",
+      "leafCategoryTitle": "乾元重寳 qian-yuan zhong-bao",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15756",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/350959.jpg",
+        "width": 1078,
+        "height": 547,
+        "sha256": "a9956f9d1c7ae4e664fd8e1033a84aa8f044f30b859f2ff4442c481dc586c4b9"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "134419",
+      "leafCategoryId": "15757",
+      "leafCategoryTitle": "大曆元寳 da-li yuan-bao",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15757",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/134419.jpg",
+        "width": 1573,
+        "height": 808,
+        "sha256": "2fd319828098ea4d452b786f28e2be039ae0c517380be8d8963aa5f36453c8ee"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "217214",
+      "leafCategoryId": "15757",
+      "leafCategoryTitle": "大曆元寳 da-li yuan-bao",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15757",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/217214.jpg",
+        "width": 2277,
+        "height": 1138,
+        "sha256": "01d7baf6b71b9a9ff3c4518322616625119b00a1486da585e3fb95d167c91bef"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "217215",
+      "leafCategoryId": "15757",
+      "leafCategoryTitle": "大曆元寳 da-li yuan-bao",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15757",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/217215.jpg",
+        "width": 2332,
+        "height": 1197,
+        "sha256": "1c1c8b721e82e255b2b517a7e8e586aaf1539e9d308937cb3775128dd2f427d2"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "217216",
+      "leafCategoryId": "15757",
+      "leafCategoryTitle": "大曆元寳 da-li yuan-bao",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15757",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/217216.jpg",
+        "width": 2092,
+        "height": 1051,
+        "sha256": "2062c81ef3fc50648f6370eddd88fdd51a087837c3d64196a8e37315710e44d7"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "223061",
+      "leafCategoryId": "15757",
+      "leafCategoryTitle": "大曆元寳 da-li yuan-bao",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15757",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/223061.jpg",
+        "width": 1496,
+        "height": 772,
+        "sha256": "4e8a22c695472ed8e3cc0134ba217fe88815173a8d13ec5b1abea470a44065a3"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "224991",
+      "leafCategoryId": "15757",
+      "leafCategoryTitle": "大曆元寳 da-li yuan-bao",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15757",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/224991.jpg",
+        "width": 934,
+        "height": 459,
+        "sha256": "c04a4cb2b4f0ae4a037ccf7ca4aed96d25357c8c7c5d261e66cb3fcb4bfc28dc"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "226081",
+      "leafCategoryId": "15757",
+      "leafCategoryTitle": "大曆元寳 da-li yuan-bao",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15757",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/226081.jpg",
+        "width": 1518,
+        "height": 770,
+        "sha256": "2941a7441a6caf5ad037c1986fadd155ad131624bf981e923818fd7f8eb3cd05"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "228724",
+      "leafCategoryId": "15757",
+      "leafCategoryTitle": "大曆元寳 da-li yuan-bao",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15757",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/228724.jpg",
+        "width": 2526,
+        "height": 1305,
+        "sha256": "1219f408b63c80e1a7324fd27fdb47b9c790edba981b834e1882644796b46131"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "232134",
+      "leafCategoryId": "15757",
+      "leafCategoryTitle": "大曆元寳 da-li yuan-bao",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15757",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/232134.jpg",
+        "width": 1544,
+        "height": 771,
+        "sha256": "f891d8236068a109c1de426bea6ef74ab113456ed8604384c41e66aa4265779b"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "281992",
+      "leafCategoryId": "15757",
+      "leafCategoryTitle": "大曆元寳 da-li yuan-bao",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15757",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/281992.jpg",
+        "width": 1600,
+        "height": 834,
+        "sha256": "bef4b9553a61d2e8a873bdd3067f394bbb2efd61874736fdabdc96b0ae687b80"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "282023",
+      "leafCategoryId": "15757",
+      "leafCategoryTitle": "大曆元寳 da-li yuan-bao",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15757",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/282023.jpg",
+        "width": 1796,
+        "height": 920,
+        "sha256": "4aab38006b4799020e078018daee20a910e3be1dca58f26f2d2b029da8b07429"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "282869",
+      "leafCategoryId": "15757",
+      "leafCategoryTitle": "大曆元寳 da-li yuan-bao",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15757",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/282869.jpg",
+        "width": 1136,
+        "height": 529,
+        "sha256": "2734ea06f190a67ab615c05b18adcc00a822dd44fea0bea03c2f1f79674cd2b3"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "3403",
+      "leafCategoryId": "15757",
+      "leafCategoryTitle": "大曆元寳 da-li yuan-bao",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15757",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/3403.jpg",
+        "width": 2253,
+        "height": 1149,
+        "sha256": "bf429f4a3953130e2dcc4e68afe39eb8124f5e293fbc8ba00bf2eeba1b3a9db0"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "343690",
+      "leafCategoryId": "15757",
+      "leafCategoryTitle": "大曆元寳 da-li yuan-bao",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15757",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/343690.jpg",
+        "width": 1067,
+        "height": 555,
+        "sha256": "63af1e3f19d7954e9c07a45800d3d9171149cec4e12d019b66c862838c106317"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "343717",
+      "leafCategoryId": "15757",
+      "leafCategoryTitle": "大曆元寳 da-li yuan-bao",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15757",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/343717.jpg",
+        "width": 1079,
+        "height": 688,
+        "sha256": "5f6dcf0c4b1e2344046de163ec18edecaf1ae4eb0217800331d93fe5e4229a24"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "696",
+      "leafCategoryId": "15757",
+      "leafCategoryTitle": "大曆元寳 da-li yuan-bao",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-15757",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/696.jpg",
+        "width": 2097,
+        "height": 1057,
+        "sha256": "fc2498c9b8f39af8e2abcef2d9c44d89d9a0885a75a346498649f159842520fc"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    },
+    {
+      "id": "345933",
+      "leafCategoryId": "31008",
+      "leafCategoryTitle": "正隆元宝 zheng long yuan bao",
+      "familyId": "semirechye-chinese-imitation",
+      "sourceGroupId": "zeno503-cat-31008",
+      "atlasImport": true,
+      "inclusionStatus": "included_stage2_visual_review",
+      "evidenceBasis": "source_taxonomy_plus_record_level_image_review",
+      "image": {
+        "path": "/coins/zeno/345933.jpg",
+        "width": 1000,
+        "height": 509,
+        "sha256": "6eec8c6791fc2cdd393b4878fb3a91fbaafb5108e00b0935d6875c8d8b575d6c"
+      },
+      "duplicateStatus": "source_record_not_proven_unique"
+    }
+  ],
+  "heldRecords": [
+    {
+      "id": "375693",
+      "leafCategoryId": "11003",
+      "reason": "round-hole / charm-like form; related record only",
+      "reviewStatus": "related_or_excluded_from_main_corpus",
+      "imageCache": "research/zeno/reviewed-related-images-503/375693.jpg"
+    },
+    {
+      "id": "377305",
+      "leafCategoryId": "11003",
+      "reason": "round-hole form; related record only",
+      "reviewStatus": "related_or_excluded_from_main_corpus",
+      "imageCache": "research/zeno/reviewed-related-images-503/377305.jpg"
+    },
+    {
+      "id": "306552",
+      "leafCategoryId": "15755",
+      "reason": "round-hole coin/charm; related record only",
+      "reviewStatus": "related_or_excluded_from_main_corpus",
+      "imageCache": "research/zeno/reviewed-related-images-503/306552.jpg"
+    },
+    {
+      "id": "326586",
+      "leafCategoryId": "15755",
+      "reason": "non-square open hole; related record only",
+      "reviewStatus": "related_or_excluded_from_main_corpus",
+      "imageCache": "research/zeno/reviewed-related-images-503/326586.jpg"
+    },
+    {
+      "id": "146052",
+      "leafCategoryId": "15756",
+      "reason": "clearly circular central hole; related record only",
+      "reviewStatus": "related_or_excluded_from_main_corpus",
+      "imageCache": "research/zeno/reviewed-related-images-503/146052.jpg"
+    },
+    {
+      "id": "293374",
+      "leafCategoryId": "15756",
+      "reason": "clearly circular central hole; related record only",
+      "reviewStatus": "related_or_excluded_from_main_corpus",
+      "imageCache": "research/zeno/reviewed-related-images-503/293374.jpg"
+    },
+    {
+      "id": "115509",
+      "leafCategoryId": "15757",
+      "reason": "circular central hole; related record only",
+      "reviewStatus": "related_or_excluded_from_main_corpus",
+      "imageCache": "research/zeno/reviewed-related-images-503/115509.jpg"
+    },
+    {
+      "id": "232909",
+      "leafCategoryId": "15757",
+      "reason": "circular central hole; related record only",
+      "reviewStatus": "related_or_excluded_from_main_corpus",
+      "imageCache": "research/zeno/reviewed-related-images-503/232909.jpg"
+    },
+    {
+      "id": "284607",
+      "leafCategoryId": "15757",
+      "reason": "circular central hole; related record only",
+      "reviewStatus": "related_or_excluded_from_main_corpus",
+      "imageCache": "research/zeno/reviewed-related-images-503/284607.jpg"
+    },
+    {
+      "id": "697",
+      "leafCategoryId": "15757",
+      "reason": "rosette/star aperture; retain as related record pending morphology policy review",
+      "reviewStatus": "related_or_excluded_from_main_corpus",
+      "imageCache": "research/zeno/reviewed-related-images-503/697.jpg"
+    },
+    {
+      "id": "350958",
+      "leafCategoryId": "31008",
+      "reason": "circular central hole; related record only",
+      "reviewStatus": "related_or_excluded_from_main_corpus",
+      "imageCache": "research/zeno/reviewed-related-images-503/350958.jpg"
+    }
+  ],
+  "deferredRules": [
+    "Mixed categories not listed here remain in pending record-level review.",
+    "No Zeno source record is treated as a unique physical specimen unless identity evidence exists.",
+    "Chinese prototype labels remain source-level catalogue groups; local issue, imitation and imported-coin roles require later evidence adjudication."
+  ]
+}

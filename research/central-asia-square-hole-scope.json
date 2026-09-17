@@ -355,8 +355,8 @@
         "title": "+  Inal Tegin(?), Runic {ä}r(?) and m(?), Soghdian prn(?)",
         "url": "https://www.zeno.ru/showgallery.php?cat=14905",
         "sourcePhotoCount": 10,
-        "scopeChecked": false,
-        "importedImages": 0,
+        "scopeChecked": true,
+        "importedImages": 10,
         "date": "2026-09-16",
         "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
       },
@@ -366,8 +366,8 @@
         "title": "or  Yarug-kadin(?)",
         "url": "https://www.zeno.ru/showgallery.php?cat=20257",
         "sourcePhotoCount": 3,
-        "scopeChecked": false,
-        "importedImages": 0,
+        "scopeChecked": true,
+        "importedImages": 3,
         "date": "2026-09-16",
         "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
       },
@@ -388,8 +388,8 @@
         "title": "General Ir Chor Irti (?)",
         "url": "https://www.zeno.ru/showgallery.php?cat=11583",
         "sourcePhotoCount": 3,
-        "scopeChecked": false,
-        "importedImages": 0,
+        "scopeChecked": true,
+        "importedImages": 3,
         "date": "2026-09-16",
         "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
       },
@@ -410,8 +410,8 @@
         "title": "Imitations of Chinese cash",
         "url": "https://www.zeno.ru/showgallery.php?cat=11003",
         "sourcePhotoCount": 172,
-        "scopeChecked": false,
-        "importedImages": 0,
+        "scopeChecked": "partial_record_level",
+        "importedImages": 1,
         "date": "2026-09-16",
         "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
       },
@@ -421,8 +421,8 @@
         "title": "AE cash, temp. Yelü Dashi (1124-1144), w. title malik ārām yīnāl qaraj",
         "url": "https://www.zeno.ru/showgallery.php?cat=796",
         "sourcePhotoCount": 0,
-        "scopeChecked": false,
-        "importedImages": 0,
+        "scopeChecked": true,
+        "importedImages": 58,
         "date": "2026-09-16",
         "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap."
       },
@@ -547,16 +547,22 @@
         "371668"
       ],
       "reason": "multi-coin source images require specimen-level splitting"
+    },
+    {
+      "id": "zeno503-stage2-related-holes",
+      "review_file": "research/zeno/review-503-stage2.json",
+      "record_count": 11,
+      "reason": "Stage-2 visually reviewed circular or special-aperture records retained as related/held rather than main-corpus coins."
     }
   ],
   "coverage_status": {
-    "current_atlas_families": 41,
-    "current_atlas_specimens": 854,
-    "current_atlas_images": 857,
+    "current_atlas_families": 44,
+    "current_atlas_specimens": 934,
+    "current_atlas_images": 937,
     "zeno_795_source_records": 254,
     "zeno_795_scope_reviewed": 254,
     "zeno_795_atlas_linked": 239,
-    "note": "Coverage is now Central-Asia-wide at metadata level (3,984 observed/recovered source records), with a conservative first Atlas import of 584 #503 source records. This is not a claim of complete Zeno #503 coverage or unique physical-specimen count; 854 downloaded target images remain for later mixed-category review.",
+    "note": "Coverage is Central-Asia-wide at metadata level (3,984 observed/recovered source records). Conservative #503 stage-1 imported 584 records; stage-2 record-level image review imported 80 additional records and classified 11 circular/special-aperture records as related/held. This is not a claim of complete Zeno #503 coverage or unique physical-specimen count.",
     "zeno_503_observed_source_records": 3984,
     "zeno_503_detail_records_parsed": 3984,
     "zeno_503_category_nodes_visited": 393,
@@ -568,7 +574,12 @@
     "zeno_503_stage1_source_records_selected": 586,
     "zeno_503_stage1_atlas_imported": 584,
     "zeno_503_stage1_held": 2,
-    "zeno_503_stage1_unreviewed_target_images": 854
+    "zeno_503_stage1_unreviewed_target_images": 854,
+    "zeno_503_stage2_source_records_reviewed": 91,
+    "zeno_503_stage2_atlas_imported": 80,
+    "zeno_503_stage2_related_or_held": 11,
+    "zeno_503_remaining_downloaded_images_pending_review": 762,
+    "zeno_503_remaining_target_without_valid_image": 1
   },
   "last_checked_at": "2026-09-16"
 }
