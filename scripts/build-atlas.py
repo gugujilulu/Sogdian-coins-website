@@ -308,14 +308,37 @@ for r in z503_recovered.get('recoveredRecords',[]):
  crumbs=r.get('breadcrumb') or []
  if rid and crumbs:
   zeno_paths[rid]=[{'categoryId':str(c.get('categoryId')),'title':c.get('title') or ''} for c in crumbs]
+def source_name_from_url(url):
+ u=(url or '').lower()
+ if 'zeno.ru' in u:return 'Zeno'
+ if 'cngcoins.com' in u:return 'CNG'
+ if 'numisbids.com' in u:return 'NumisBids'
+ if 'numista.com' in u:return 'Numista'
+ if 'sogdcoins.' in u:return 'Coins of Central Asia'
+ if 'bactrianumis' in u:return 'Bactrianumis'
+ if 'britishmuseum.org' in u:return 'British Museum'
+ if 'stevealbum.com' in u or 'stephenalbum' in u:return 'Stephen Album Rare Coins'
+ return 'Other / legacy source'
+
 for s in a['specimens']:
  if s['id'].startswith('zeno-'):
   rid=s['id'][5:]
+  s['sourceName']='Zeno'
   s['sourceRecordId']='Zeno '+rid
   s['sourcePath']=zeno_paths.get(rid,[])
  else:
   s['sourceRecordId']=s['id']
   s['sourcePath']=[]
+  primary=next((x for x in s.get('sources',[]) if x.get('relation')=='same_specimen'),(s.get('sources') or [{}])[0])
+  s['sourceName']=source_name_from_url(primary.get('url'))
+ primary=next((x for x in s.get('sources',[]) if x.get('relation')=='same_specimen'),(s.get('sources') or [{}])[0])
+ s['sourceRecordUrl']=primary.get('url')
+ # Image provenance stays explicit even when a specimen has several source records.
+ # No image or external record is removed when two sources later prove related.
+ for im in s.get('images',[]):
+  im['sourceName']=source_name_from_url(im.get('sourceUrl'))
+  im['sourceRecordId']=s['sourceRecordId']
+  im['sourceRecordUrl']=s['sourceRecordUrl']
 
 # Keep reviewed related / held / excluded source records visible to the product
 # without promoting them into the main square-hole specimen count. This layer is
