@@ -37,6 +37,7 @@ export default function Home(){
  useEffect(()=>{if(!data)return;const p=new URLSearchParams();if(view!=='atlas')p.set('view',view);if(selectedId)p.set('family',selectedId);if(view==='catalogue'&&catalogueMode==='source'&&catalogueSource)p.set('source',catalogueSource);if(lightbox)p.set('record',lightbox.id);const next=p.toString();history.replaceState(null,'',next?`#${next}`:window.location.pathname)},[view,selectedId,catalogueMode,catalogueSource,lightbox,data]);
 
  const specimensByFamily=useMemo(()=>{const m=new Map<string,Specimen[]>();for(const s of data?.specimens||[]){const a=m.get(s.familyId)||[];a.push(s);m.set(s.familyId,a)}return m},[data]);
+ const variantsByFamily=useMemo(()=>{const m=new Map<string,Variant[]>();for(const v of data?.variants||[]){const a=m.get(v.familyId)||[];a.push(v);m.set(v.familyId,a)}return m},[data]);
  const sources=useMemo<string[]>(()=>Array.from(new Set((data?.specimens||[]).map(s=>s.sourceName||sourceName(s.sources[0])))).sort(),[data]);
  const features=useMemo<string[]>(()=>Array.from(new Set((data?.specimens||[]).flatMap(s=>s.facets.filter(visibleFacet)))).sort(),[data]);
  const regions=useMemo<string[]>(()=>Array.from(new Set((data?.families||[]).map(f=>f.region))).sort(),[data]);
@@ -48,10 +49,10 @@ export default function Home(){
    const ss=specimensByFamily.get(f.id)||[];const placeId=f.anchor?.placeId||null;
    const sourceOk=sourceFilter==='all'||ss.some(s=>(s.sourceName||sourceName(s.sources[0]))===sourceFilter);
    const featureOk=featureFilter==='all'||ss.some(s=>s.facets.includes(featureFilter));
-   const qOk=!q||[f.title,f.zh,f.region,f.dateLabel,f.description,f.legend||'',...ss.flatMap(s=>[s.title,s.catalogue,s.description,s.sourceRecordId||'',sourcePathLabel(s),...s.sources.map(x=>x.label),...s.facets])].join(' ').toLowerCase().includes(q);
+   const vv=variantsByFamily.get(f.id)||[];const qOk=!q||[f.title,f.zh,f.region,f.dateLabel,f.description,f.legend||'',...vv.flatMap(v=>[v.title,v.reference,v.description,...v.facets]),...ss.flatMap(s=>[s.title,s.catalogue,s.description,s.sourceRecordId||'',sourcePathLabel(s),...s.sources.map(x=>x.label),...s.facets])].join(' ').toLowerCase().includes(q);
    return (region==='all'||f.region===region)&&(polity==='all'||f.polity===polity)&&(city==='all'||placeId===city)&&(familyFilter==='all'||f.id===familyFilter)&&(statusFilter==='all'||f.status===statusFilter)&&overlaps(f.start,f.end,allPeriods?null:year)&&sourceOk&&featureOk&&qOk;
   })
- },[data,query,region,polity,city,familyFilter,sourceFilter,featureFilter,statusFilter,year,allPeriods,specimensByFamily]);
+ },[data,query,region,polity,city,familyFilter,sourceFilter,featureFilter,statusFilter,year,allPeriods,specimensByFamily,variantsByFamily]);
  const selected=data?.families.find(f=>f.id===selectedId)||null;
  const selectedSpecimens=selected?specimensByFamily.get(selected.id)||[]:[];
  const selectedVariants=selected?data?.variants.filter(v=>v.familyId===selected.id)||[]:[];
