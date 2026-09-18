@@ -27,8 +27,16 @@ def validate_image_provenance(root, atlas, db, second_path):
         evidence = json.loads(evidence_json)
         for item in evidence:
             assert (root / item['document']).is_file()
+            if item.get('source_document'):
+                assert (root / item['source_document']).is_file()
             if item['raw_html']:
                 assert (root / item['raw_html']).is_file()
+                assert item['raw_html_status']=='available'
+            elif item['raw_html_reference']:
+                assert item['raw_html_status']=='missing'
+                assert not (root / item['raw_html_reference']).is_file()
+            else:
+                assert item['raw_html_status']=='not_recorded'
         if status == 'resolved':
             assert eid and evidence
             assert {(e['provider'], e['source_key']) for e in evidence} == {(provider, source_key)}
@@ -42,6 +50,7 @@ def validate_image_provenance(root, atlas, db, second_path):
     # A / B / C / D: view supports image, specimen, source-entity and provider/key queries.
     assert db.execute("SELECT specimen_id,provider,provider_source_key,status FROM image_provenance_detail WHERE image_id='z20696'").fetchone() == ('sr9','Zeno','20696','resolved')
     assert set(db.execute("SELECT image_id,provider,provider_source_key FROM image_provenance_detail WHERE specimen_id='zeno-264408'")) == {('z264408','Zeno','264408'),('bactrianumis-5898-photo','Bactrianumis','5898')}
+    assert db.execute("SELECT provider,provider_source_key,status FROM image_provenance_detail WHERE image_id='z1063'").fetchone() == ('Zeno','1063','resolved')
     cng = db.execute("SELECT source_entity_id FROM image_provenance_detail WHERE provider='CNG' AND provider_source_key='4-LGIJRO'").fetchone()[0]
     assert set(db.execute('SELECT image_id FROM image_provenance_detail WHERE source_entity_id=?',(cng,))) == {('cng611-576-photo',),('cng611-576-alternate',)}
     assert db.execute("SELECT provider,provider_source_key FROM image_provenance_detail WHERE image_id='sarc52-1614-photo'").fetchone() == ('NumisBids','sale/9278/lot/1614')
@@ -78,6 +87,8 @@ def validate_image_provenance(root, atlas, db, second_path):
     no_entity = sum(row[2] is None for row in rows)
     multiple_images = db.execute('SELECT e.provider,e.record_key,count(*) FROM image_provenance p JOIN external_record e ON e.id=p.external_record_id GROUP BY e.id HAVING count(*)>1 ORDER BY e.provider,e.record_key').fetchall()
     multiple_sources = db.execute('SELECT i.specimen_id,count(DISTINCT p.external_record_id) FROM image i JOIN image_provenance p ON p.image_id=i.id GROUP BY i.specimen_id HAVING count(DISTINCT p.external_record_id)>1 ORDER BY i.specimen_id').fetchall()
+    missing_html = sorted({row[0] for row in rows if any(e['raw_html_status']=='missing' for e in json.loads(row[5]))})
+    print('T04 images with recorded-but-missing HTML (local JSON evidence retained):',len(missing_html),missing_html)
     print('T04 provenance:',dict(counts),'resolved by provider:',dict(sorted(by_provider.items())),'no source entity:',no_entity)
     print('T04 sources with multiple images (including identified pages with pending keys):',multiple_images)
     print('T04 specimens with multiple image sources:',multiple_sources)

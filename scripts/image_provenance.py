@@ -18,15 +18,20 @@ def evidence_index(root):
             'identity_status': identity_status, 'source_page_url': page_url,
             'source_image_url': image_url, 'local_image_path': path,
             'document': document, 'record_id': str(record_id),
-            'raw_html': raw_html, 'method': method, **details,
+            'raw_html': raw_html if raw_html and (root / raw_html).is_file() else None,
+            'raw_html_reference': raw_html,
+            'raw_html_status': ('available' if (root / raw_html).is_file() else 'missing') if raw_html else 'not_recorded',
+            'method': method, **details,
         })
 
+    source_records = defaultdict(list)
     manifests = sorted((root / 'research/zeno').glob('manifest-*.json'))
     manifests.append(root / 'research/zeno/recovered-records-503.json')
     for file in manifests:
         data = json.loads(file.read_text())
         document = str(file.relative_to(root))
         for record in data.get('records', data.get('recoveredRecords', [])):
+            source_records[str(record['id'])].append((record, document))
             image = record.get('image') or {}
             image_url = image.get('url') or record.get('originalImageUrl')
             # This is build-atlas.py's established record-ID filename convention.
@@ -35,6 +40,16 @@ def evidence_index(root):
             add(path, image_url, record.get('url'), '', document, record['id'],
                 'manifest_path_and_url' if image.get('path') else 'record_filename_and_url',
                 raw_html=record.get('rawHtml'), original_id=record['id'])
+
+    # build-atlas.py uses these saved successful repairs instead of old glyph URLs.
+    # Join on explicit original record ID, exact downloaded path AND actual URL.
+    repair_document = 'research/zeno/image-repair-run-503.json'
+    for repaired in json.loads((root / repair_document).read_text())['successful']:
+        for record, source_document in source_records.get(str(repaired['id']), []):
+            add('/' + repaired['path'].removeprefix('public/'), repaired['url'],
+                record.get('url'), '', repair_document, repaired['id'],
+                'saved_repair_path_url_and_record', raw_html=record.get('rawHtml'),
+                original_id=record['id'], source_document=source_document)
 
     # Legacy paths are recorded explicitly in coins.json; use record IDs, not order.
     legacy = {record['id']: record['image'] for record in
