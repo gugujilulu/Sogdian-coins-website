@@ -44,14 +44,11 @@ next-env.d.ts
 /.codex/
 /outputs/
 /work/
-# Public research page caches; structured citations and manifests are tracked.
-/research/zeno/*.html
+# Original research HTML is evidence and must be versioned.
 *.tsbuildinfo
 
-# Downloaded #503 target images awaiting record-level scope review; preserved in handoff bundles, not Git/deploy.
-/research/zeno/pending-images-503/
+# Downloaded source images are research assets, including unreviewed records.
 
 # Python bytecode caches
 __pycache__/
 *.pyc
-/research/zeno/reviewed-related-images-503/

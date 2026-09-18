@@ -1,5 +1,6 @@
 # Central Asian Square-Hole Coinage Atlas
 
+
 An interactive spatial–temporal research atlas of the Chinese-style square-hole cash tradition across Central Asia and related eastern inland regions. The historical focus runs broadly from the post-Han world through the pre-Qing period; exact date cutoffs remain provisional and disputed/boundary records are retained rather than bulk-hidden. The repository retains the historical `sogdian-cash-atlas` project slug for continuity.
 
 
