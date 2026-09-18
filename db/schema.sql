@@ -313,3 +313,67 @@ CREATE VIEW physical_group_sources AS
 CREATE VIEW physical_group_images AS
  SELECT m.physical_group_id,p.* FROM physical_specimen_group_members m
  JOIN image_provenance_detail p ON p.specimen_id=m.specimen_id;
+
+-- T06: independent normalized research taxonomy; legacy source groups stay intact.
+CREATE TABLE taxonomy_node (
+ taxonomy_id TEXT PRIMARY KEY, stable_key TEXT NOT NULL UNIQUE,
+ parent_taxonomy_id TEXT REFERENCES taxonomy_node(taxonomy_id),
+ rank TEXT NOT NULL CHECK(rank IN ('family','major_type','variant','subvariant')),
+ canonical_name TEXT NOT NULL, display_name TEXT NOT NULL,
+ status TEXT NOT NULL CHECK(status IN ('accepted','provisional','deprecated','unresolved')),
+ legacy_family_id TEXT UNIQUE REFERENCES coin_type(id),
+ evidence_source TEXT NOT NULL, notes TEXT NOT NULL,
+ CHECK(parent_taxonomy_id IS NULL OR parent_taxonomy_id<>taxonomy_id),
+ CHECK((rank='family')=(legacy_family_id IS NOT NULL))
+);
+CREATE TABLE taxonomy_alias (
+ taxonomy_id TEXT NOT NULL REFERENCES taxonomy_node(taxonomy_id),
+ alias TEXT NOT NULL, evidence_source TEXT NOT NULL,
+ PRIMARY KEY(taxonomy_id,alias,evidence_source)
+);
+CREATE TABLE specimen_taxonomy_assignment (
+ specimen_id TEXT NOT NULL REFERENCES specimen(id),
+ taxonomy_id TEXT NOT NULL REFERENCES taxonomy_node(taxonomy_id),
+ assignment_status TEXT NOT NULL CHECK(assignment_status IN ('confirmed','provisional','unresolved')),
+ evidence_source TEXT NOT NULL, notes TEXT NOT NULL,
+ PRIMARY KEY(specimen_id,taxonomy_id)
+);
+CREATE TABLE taxonomy_resolution (
+ specimen_id TEXT NOT NULL REFERENCES specimen(id),
+ rank TEXT NOT NULL CHECK(rank IN ('major_type','variant')),
+ status TEXT NOT NULL CHECK(status IN ('assigned','provisional','unresolved')),
+ notes TEXT NOT NULL, PRIMARY KEY(specimen_id,rank)
+);
+-- Labels are source/context scoped; identical strings never imply equivalence.
+CREATE TABLE source_taxonomy_label (
+ label_id TEXT PRIMARY KEY, source_entity_id TEXT NOT NULL REFERENCES external_record(id),
+ scheme TEXT NOT NULL, context_json TEXT NOT NULL, source_label_key TEXT,
+ original_label TEXT NOT NULL, original_text TEXT NOT NULL, evidence_source TEXT NOT NULL,
+ UNIQUE(source_entity_id,scheme,context_json)
+);
+CREATE TABLE source_taxonomy_mapping (
+ label_id TEXT NOT NULL REFERENCES source_taxonomy_label(label_id),
+ taxonomy_id TEXT NOT NULL REFERENCES taxonomy_node(taxonomy_id),
+ relation TEXT NOT NULL CHECK(relation IN ('contextual_family','equivalent','broader','narrower')),
+ mapping_status TEXT NOT NULL CHECK(mapping_status IN ('confirmed','provisional','unresolved')),
+ evidence_source TEXT NOT NULL, notes TEXT NOT NULL,
+ PRIMARY KEY(label_id,taxonomy_id,relation)
+);
+CREATE VIEW taxonomy_ancestry AS
+ WITH RECURSIVE lineage(taxonomy_id,ancestor_id,depth) AS (
+ SELECT taxonomy_id,taxonomy_id,0 FROM taxonomy_node
+ UNION ALL
+ SELECT l.taxonomy_id,n.parent_taxonomy_id,l.depth+1
+ FROM lineage l JOIN taxonomy_node n ON n.taxonomy_id=l.ancestor_id
+ WHERE n.parent_taxonomy_id IS NOT NULL AND l.depth<3
+ ) SELECT * FROM lineage;
+CREATE VIEW specimen_taxonomy_path AS
+ SELECT DISTINCT a.specimen_id,a.taxonomy_id AS assigned_node,a.assignment_status,
+ n.taxonomy_id,n.rank,n.canonical_name,n.parent_taxonomy_id
+ FROM specimen_taxonomy_assignment a JOIN taxonomy_ancestry p ON p.taxonomy_id=a.taxonomy_id
+ JOIN taxonomy_node n ON n.taxonomy_id=p.ancestor_id;
+CREATE VIEW source_taxonomy_detail AS
+ SELECT l.*,e.provider,e.record_key AS source_key,e.url AS source_url,
+ m.taxonomy_id,m.relation,m.mapping_status
+ FROM source_taxonomy_label l JOIN external_record e ON e.id=l.source_entity_id
+ LEFT JOIN source_taxonomy_mapping m ON m.label_id=l.label_id;

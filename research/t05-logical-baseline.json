@@ -1,0 +1,532 @@
+{
+  "baseline_commit": "de9ac217f3c40ffa402b508c4fbe5861ec31dcb5",
+  "algorithm": "SHA256 of sorted compact UTF-8 JSON row arrays joined by newline, no trailing newline",
+  "tables": {
+    "authority": {
+      "columns": [
+        "id",
+        "name",
+        "kind",
+        "nomisma_uri"
+      ],
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "citation": {
+      "columns": [
+        "id",
+        "publication_id",
+        "locator",
+        "note"
+      ],
+      "count": 4044,
+      "sha256": "be8489e6bae3c41212694a502d1f35d18a4d7abfb9c79df815dfd50ab26bee44"
+    },
+    "coin_type": {
+      "columns": [
+        "id",
+        "corpus_id",
+        "title",
+        "parent_type_id",
+        "aperture",
+        "classification_status",
+        "exploration_reason",
+        "created_on",
+        "updated_on"
+      ],
+      "count": 176,
+      "sha256": "156d6575f60acbe7433e60dcb5062552a3f8a15eb19d7836839341748397848c"
+    },
+    "concept": {
+      "columns": [
+        "id",
+        "label",
+        "kind",
+        "nomisma_uri"
+      ],
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "corpus": {
+      "columns": [
+        "id",
+        "title",
+        "scope_note"
+      ],
+      "count": 1,
+      "sha256": "24d9e06039fd56a54f547512fab4c01d8de185f9996aa61ef7af14b2c5368b3d"
+    },
+    "coverage_record": {
+      "columns": [
+        "snapshot_id",
+        "source_record_key",
+        "external_record_id",
+        "source_manifest_path",
+        "raw_html_path",
+        "source_path_json",
+        "specimen_id",
+        "image_id",
+        "status"
+      ],
+      "count": 4288,
+      "sha256": "fbf80c52fc29443f8d82e18b1508625f867bde3588a00488957e5da71b93fd5a"
+    },
+    "coverage_snapshot": {
+      "columns": [
+        "id",
+        "provider",
+        "category_url",
+        "retrieved_on",
+        "expected_record_count",
+        "scope_note",
+        "manifest_path"
+      ],
+      "count": 4,
+      "sha256": "ec0d4f2210f9d4930863fa2ca622ec622333c5a98c195717e9d930dad024cdba"
+    },
+    "dating_claim": {
+      "columns": [
+        "id",
+        "type_id",
+        "start_year",
+        "end_year",
+        "display_text",
+        "interval_semantics",
+        "precision",
+        "confidence",
+        "citation_id",
+        "normalization_note",
+        "is_preferred"
+      ],
+      "count": 56,
+      "sha256": "ce2c3563f2fa233b88b2662195245a4066b3a293e20bb8d50c85592fdc078a77"
+    },
+    "display_anchor": {
+      "columns": [
+        "type_id",
+        "place_id",
+        "role",
+        "citation_id",
+        "editorial_note"
+      ],
+      "count": 38,
+      "sha256": "b70c7b1396906e9693412ba2866d23c003b6cb531cd5953957c0f783afc8e773"
+    },
+    "distribution_claim": {
+      "columns": [
+        "id",
+        "type_id",
+        "kind",
+        "geometry_geojson",
+        "method",
+        "citation_id",
+        "confidence",
+        "start_year",
+        "end_year",
+        "note"
+      ],
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "external_record": {
+      "columns": [
+        "id",
+        "provider",
+        "record_key",
+        "url",
+        "identity_status",
+        "record_kind",
+        "verification_status",
+        "checked_on",
+        "citation_id"
+      ],
+      "count": 3999,
+      "sha256": "bca4ba61c4d7277affd28224c558c36d6fd0fa67704afebb3e4c621649b29b88"
+    },
+    "external_record_classification": {
+      "columns": [
+        "external_record_id",
+        "scheme",
+        "path_json",
+        "leaf_key",
+        "leaf_label",
+        "citation_id"
+      ],
+      "count": 3986,
+      "sha256": "7f12e60b0c4cbaf1a64260035c19d0896336de1cb47e6a84a87be3c4ab262901"
+    },
+    "external_record_url": {
+      "columns": [
+        "external_record_id",
+        "url",
+        "citation_id"
+      ],
+      "count": 3999,
+      "sha256": "4c4bf04ef69bb5b8e82cd6a7e02500cd272651077af4a37c4e2a1bf748dfdb2c"
+    },
+    "face_symbol": {
+      "columns": [
+        "face_id",
+        "symbol_id",
+        "position",
+        "orientation",
+        "citation_id"
+      ],
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "find_context": {
+      "columns": [
+        "id",
+        "kind",
+        "place_id",
+        "description",
+        "citation_id",
+        "confidence"
+      ],
+      "count": 1,
+      "sha256": "e3cf221bd3f207808e4c75955b41cea2de9af5d675d217b401baad48e16bd9f2"
+    },
+    "find_dating": {
+      "columns": [
+        "id",
+        "find_context_id",
+        "event",
+        "start_year",
+        "end_year",
+        "citation_id"
+      ],
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "image": {
+      "columns": [
+        "id",
+        "specimen_id",
+        "view",
+        "local_path",
+        "source_url",
+        "credit",
+        "license_uri",
+        "rights_source_url",
+        "rights_status",
+        "width_px",
+        "height_px",
+        "iiif_manifest",
+        "citation_id"
+      ],
+      "count": 1013,
+      "sha256": "74abb2fee7fcee3014244e61b4f75960a3250a76acb71ce2e539b9924b2cb6cf"
+    },
+    "image_provenance": {
+      "columns": [
+        "image_id",
+        "external_record_id",
+        "source_page_url",
+        "status",
+        "method",
+        "evidence_json",
+        "notes"
+      ],
+      "count": 1013,
+      "sha256": "3d00c24a78e4d71a1c9f7bbbaf8bcaf800bfa22076eb5b41a9cf2f74e0d58a93"
+    },
+    "legend_reading": {
+      "columns": [
+        "id",
+        "face_id",
+        "original_text",
+        "transliteration",
+        "translation",
+        "language",
+        "script",
+        "reading_author",
+        "confidence",
+        "citation_id",
+        "note"
+      ],
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "manufacture_link": {
+      "columns": [
+        "id",
+        "specimen_a",
+        "specimen_b",
+        "relation",
+        "confidence",
+        "citation_id",
+        "note"
+      ],
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "physical_group_assertions": {
+      "columns": [
+        "physical_group_id",
+        "assertion_id"
+      ],
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "physical_specimen_group_members": {
+      "columns": [
+        "physical_group_id",
+        "specimen_id"
+      ],
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "physical_specimen_groups": {
+      "columns": [
+        "physical_group_id",
+        "created_method",
+        "notes"
+      ],
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "place": {
+      "columns": [
+        "id",
+        "historical_name",
+        "modern_name",
+        "kind",
+        "parent_id",
+        "nomisma_uri",
+        "pleiades_uri"
+      ],
+      "count": 14,
+      "sha256": "c9104b238b96de109ddde50393f87bbb0afa474b8b956a59c9aacbf99d3ffb8d"
+    },
+    "place_geometry": {
+      "columns": [
+        "id",
+        "place_id",
+        "geometry_geojson",
+        "label_lat",
+        "label_lon",
+        "precision",
+        "confidence",
+        "valid_start",
+        "valid_end",
+        "citation_id",
+        "note"
+      ],
+      "count": 14,
+      "sha256": "e154c8038221b3f8015da63737b932411b358d16cff520267bb74489bdea9c44"
+    },
+    "publication": {
+      "columns": [
+        "id",
+        "title",
+        "authors",
+        "year",
+        "publication_kind",
+        "container_title",
+        "doi",
+        "url",
+        "accessed_on",
+        "verification_status"
+      ],
+      "count": 4044,
+      "sha256": "30aec590b23a2eb1ae82e68f56feb7380ae3692ecc75e5b3c9d0ea96eb05f694"
+    },
+    "reconciliation_assertions": {
+      "columns": [
+        "assertion_id",
+        "specimen_id_a",
+        "specimen_id_b",
+        "status",
+        "evidence_type",
+        "evidence_json",
+        "review_note",
+        "created_method"
+      ],
+      "count": 1,
+      "sha256": "3bc8436adef587a50c2dd4c5036cf6765224373e4a1ea3645e643ee0b552dd07"
+    },
+    "reconciliation_candidates": {
+      "columns": [
+        "candidate_id",
+        "specimen_id_a",
+        "specimen_id_b",
+        "discovery_evidence_json"
+      ],
+      "count": 7,
+      "sha256": "fdb55babad775d66b978652db22d38cfa88f4ca28abfb678e844c0fc4bd33a71"
+    },
+    "specimen": {
+      "columns": [
+        "id",
+        "title",
+        "collection_name",
+        "inventory_number",
+        "material_text",
+        "weight_g",
+        "diameter_mm",
+        "axis_hours",
+        "citation_id",
+        "observed_on"
+      ],
+      "count": 1010,
+      "sha256": "478b0c1a46835d2f03a84cbf6e88871f5ea2320e95b53534dd1d0153bf2aa002"
+    },
+    "specimen_external_record": {
+      "columns": [
+        "specimen_id",
+        "external_record_id",
+        "relation"
+      ],
+      "count": 1020,
+      "sha256": "59a7e894e53643f8e55ef1722ecd02cff153c9be21b8b3f59ef1a2b5d451cb25"
+    },
+    "specimen_feature": {
+      "columns": [
+        "specimen_id",
+        "label",
+        "citation_id"
+      ],
+      "count": 1666,
+      "sha256": "c568464447d2a1012e2aa2681c43f91408988ba0fa97c26fd99b8b80ec1d4a0e"
+    },
+    "specimen_find_claim": {
+      "columns": [
+        "specimen_id",
+        "find_context_id",
+        "citation_id",
+        "note"
+      ],
+      "count": 1,
+      "sha256": "f62294a1fa9722d85784032f9116e5589db18ef880bbb5ef456eb6652fa46acb"
+    },
+    "specimen_type_claim": {
+      "columns": [
+        "id",
+        "specimen_id",
+        "type_id",
+        "citation_id",
+        "confidence",
+        "is_preferred",
+        "note"
+      ],
+      "count": 1010,
+      "sha256": "576579153373a858c822e9db60103c89d9ff6f0397f93df329dd55660baa4917"
+    },
+    "symbol": {
+      "columns": [
+        "id",
+        "label",
+        "kind",
+        "description",
+        "external_uri"
+      ],
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "symbol_relation_claim": {
+      "columns": [
+        "id",
+        "subject_id",
+        "object_id",
+        "relation",
+        "citation_id",
+        "confidence",
+        "note"
+      ],
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "type_authority_claim": {
+      "columns": [
+        "id",
+        "type_id",
+        "authority_id",
+        "role",
+        "citation_id",
+        "confidence",
+        "note"
+      ],
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "type_concept_claim": {
+      "columns": [
+        "type_id",
+        "concept_id",
+        "citation_id",
+        "note"
+      ],
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "type_external_record": {
+      "columns": [
+        "type_id",
+        "external_record_id",
+        "relation"
+      ],
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "type_face": {
+      "columns": [
+        "id",
+        "type_id",
+        "side",
+        "description",
+        "citation_id"
+      ],
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "type_level": {
+      "columns": [
+        "type_id",
+        "level",
+        "classification_scheme",
+        "note"
+      ],
+      "count": 176,
+      "sha256": "2c36826a63b72568d4ba017d0fdf18cae184f6d08b5c21d18fcc945579b9d2ca"
+    },
+    "type_place_claim": {
+      "columns": [
+        "id",
+        "type_id",
+        "place_id",
+        "role",
+        "confidence",
+        "citation_id",
+        "note",
+        "is_preferred"
+      ],
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "type_publication": {
+      "columns": [
+        "type_id",
+        "citation_id",
+        "role"
+      ],
+      "count": 102,
+      "sha256": "15233158c46b36fdb3d80715b448f3ae536b1d2e8a282ffb1d049d925cd860bf"
+    },
+    "type_reference": {
+      "columns": [
+        "id",
+        "type_id",
+        "citation_id",
+        "reference_number",
+        "relation"
+      ],
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "files": {
+    "public/data/atlas.json": "00d3ef2adadbf59184e8e356fbd760e42b49e67708e2e1542c7d80b6d68db556",
+    "research/physical-reconciliation.json": "c5243979ce67080191f0874468b65d03a5919dce0a1583ba88b837b934917954"
+  }
+}
