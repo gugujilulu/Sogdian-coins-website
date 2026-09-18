@@ -104,11 +104,11 @@ test('T40 original family date, region, polity, anchor and status filters still 
   const { filterAtlasRecords } = await import('../lib/record-filters.ts');
   const f = {...data.families[0],id:'test-family',region:'R',polity:'P',status:'S',start:700,end:799,anchor:{placeId:'city'}};
   const fixture = {...data,families:[f],specimens:records};
-  for(const year of [700,799]) assert.equal(filterAtlasRecords(fixture,{region:'R',polity:'P',city:'city',status:'S',year,sources:['CNG']}).recordCount,2);
-  for(const filters of [{year:699},{year:800},{region:'other'},{polity:'other'},{city:'other'},{status:'other'}]) assert.equal(filterAtlasRecords(fixture,filters).recordCount,0);
+  for(const year of [700,799]) assert.equal(filterAtlasRecords(fixture,{region:'R',polity:'P',city:'city',status:'S',date:{mode:'year',year},sources:['CNG']}).recordCount,2);
+  for(const filters of [{date:{mode:'year',year:699}},{date:{mode:'year',year:800}},{region:'other'},{polity:'other'},{city:'other'},{status:'other'}]) assert.equal(filterAtlasRecords(fixture,filters).recordCount,0);
   const unknown = {...fixture,families:[{...f,start:null,end:null}]};
-  assert.equal(filterAtlasRecords(unknown,{year:750}).recordCount,0);
-  assert.equal(filterAtlasRecords(unknown,{year:null}).recordCount,4);
+  assert.equal(filterAtlasRecords(unknown,{date:{mode:'year',year:750}}).recordCount,0);
+  assert.equal(filterAtlasRecords(unknown,{date:{mode:'all'}}).recordCount,4);
 });
 
 test('T40 search and drawer group/facet narrow individual records, not siblings', async () => {
@@ -122,4 +122,38 @@ test('T40 search and drawer group/facet narrow individual records, not siblings'
   assert.deepEqual(ids(filterAtlasRecords(data,{sources:['CNG'],catalogueGroupIds:[group]})),['cng611-576']);
   assert.equal(filterAtlasRecords(data,{sources:['CNG'],facet:'absent'}).recordCount,0);
   assert.ok(filterAtlasRecords(data,{unassignedGroup:true}).records.every(s=>s.variantId===null));
+});
+
+
+test('T07 modes partition actual records, preserve shared result counts and compose with sources', async () => {
+  const { filterAtlasRecords } = await import('../lib/record-filters.ts');
+  const all=filterAtlasRecords(data,{date:{mode:'all'}});
+  const unknown=filterAtlasRecords(data,{date:{mode:'unknown'}});
+  assert.equal(all.recordCount,1010);
+  assert.equal(unknown.recordCount,340);
+  assert.equal(unknown.dateAnomalies.length,0);
+  assert.equal([...unknown.recordsByFamily.values()].flat().length,340);
+  assert.deepEqual(new Set(unknown.families.map(f=>f.id)),unknown.familyIds);
+  assert.ok(unknown.records.every(s=>all.records.includes(s)));
+  assert.equal(filterAtlasRecords(data,{date:{mode:'unknown'},sources:['CNG']}).recordCount,0);
+  const zeno=filterAtlasRecords(data,{date:{mode:'unknown'},sources:['Zeno']});
+  assert.ok(zeno.recordCount>0 && zeno.records.every(s=>unknown.records.includes(s)));
+  assert.equal(filterAtlasRecords(data,{}).recordCount,1010);
+});
+
+test('T07 missing and invalid intervals remain distinct and never become known dates', async () => {
+  const { filterAtlasRecords, dateRangeStatus } = await import('../lib/record-filters.ts');
+  const intervals=[[700,799],[null,null],[700,null],[null,799],[800,700],[NaN,799],[700,Infinity],[0,0]];
+  const families=intervals.map(([start,end],i)=>({...data.families[0],id:`f${i}`,start,end}));
+  const fixture={...data,families,specimens:families.map(f=>({...base,id:f.id,familyId:f.id}))};
+  assert.equal(filterAtlasRecords(fixture,{date:{mode:'all'}}).recordCount,8);
+  const unknown=filterAtlasRecords(fixture,{date:{mode:'unknown'}});
+  assert.deepEqual(ids(unknown),['f1','f2','f3','f4','f5','f6']);
+  assert.deepEqual(unknown.dateAnomalies.map(a=>a.familyId),['f4','f5','f6']);
+  for(const year of [700,799]) assert.deepEqual(ids(filterAtlasRecords(fixture,{date:{mode:'year',year}})),['f0']);
+  for(const year of [699,800]) assert.equal(filterAtlasRecords(fixture,{date:{mode:'year',year}}).recordCount,0);
+  assert.deepEqual(ids(filterAtlasRecords(fixture,{date:{mode:'year',year:0}})),['f7']);
+  assert.equal(dateRangeStatus(undefined,799),'missing');
+  assert.equal(dateRangeStatus(700,undefined),'missing');
+  assert.throws(()=>filterAtlasRecords(fixture,{date:{mode:'year',year:NaN}}),RangeError);
 });

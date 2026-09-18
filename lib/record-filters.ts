@@ -69,14 +69,23 @@ export function filterRecords(records: readonly Specimen[], filters: RecordFilte
     familyIds: new Set(matched.map(record => record.familyId)) };
 }
 
+export type DateFilter = { mode: 'all' } | { mode: 'year'; year: number } | { mode: 'unknown' };
+
+/** Family-level filtering evidence only; never an independent specimen dating. */
+export function dateRangeStatus(start: number | null | undefined, end: number | null | undefined): 'known' | 'missing' | 'invalid' {
+  if ((start != null && !Number.isFinite(start)) || (end != null && !Number.isFinite(end))) return 'invalid';
+  if (start == null || end == null) return 'missing';
+  return start <= end ? 'known' : 'invalid';
+}
+
 export type AtlasFilters = RecordFilters & {
   query?: string;
   region?: string;
   polity?: string;
   city?: string;
   status?: string;
-  /** Existing family issue-range point filter; null/absent means all periods. */
-  year?: number | null;
+  /** Mutually exclusive modes; absent means all periods. */
+  date?: DateFilter;
   unassignedGroup?: boolean;
   facet?: string;
 };
@@ -86,6 +95,10 @@ export type AtlasFilters = RecordFilters & {
  * Record text searches never inspect siblings or other catalogue groups.
  */
 export function filterAtlasRecords(data: import('./atlas').Atlas, filters: AtlasFilters = {}) {
+  const date = filters.date ?? { mode: 'all' };
+  if (date.mode === 'year' && !Number.isFinite(date.year)) throw new RangeError('Filter year must be finite');
+  const dateAnomalies = data.families.filter(f => dateRangeStatus(f.start, f.end) === 'invalid')
+    .map(f => ({ familyId: f.id, start: f.start, end: f.end, reason: 'Invalid or reversed family date interval' }));
   const familiesById = new Map(data.families.map(f => [f.id, f]));
   const groups = new Map(data.variants.map(g => [g.id, g]));
   const q = filters.query?.trim().toLowerCase() ?? '';
@@ -97,8 +110,10 @@ export function filterAtlasRecords(data: import('./atlas').Atlas, filters: Atlas
     if (filters.polity && f.polity !== filters.polity) return false;
     if (filters.city && f.anchor?.placeId !== filters.city) return false;
     if (filters.status && f.status !== filters.status) return false;
-    if (filters.year != null && !(f.start != null && f.end != null &&
-        f.start <= filters.year && filters.year <= f.end)) return false;
+    const rangeStatus = dateRangeStatus(f.start, f.end);
+    if (date.mode === 'unknown' && rangeStatus === 'known') return false;
+    if (date.mode === 'year' && !(rangeStatus === 'known' && f.start != null && f.end != null &&
+        f.start <= date.year && date.year <= f.end)) return false;
     if (filters.unassignedGroup && s.variantId !== null) return false;
     if (filters.facet && !s.facets.includes(filters.facet)) return false;
     if (!q) return true;
@@ -116,6 +131,6 @@ export function filterAtlasRecords(data: import('./atlas').Atlas, filters: Atlas
     group.push(s);
     recordsByFamily.set(s.familyId, group);
   }
-  return { records, recordCount: records.length, familyIds, recordsByFamily,
+  return { records, recordCount: records.length, familyIds, recordsByFamily, dateAnomalies,
     families: data.families.filter(f => familyIds.has(f.id)) };
 }

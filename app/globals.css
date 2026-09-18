@@ -23,3 +23,9 @@
 .source-coverage-grid{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 26px}.source-coverage-grid>div{min-width:150px;border:1px solid #35474e;background:#132229;padding:10px 12px}.source-coverage-grid strong,.source-coverage-grid span{display:block}.source-coverage-grid strong{font:20px Georgia,serif;color:#d9bc7d}.source-coverage-grid span{font-size:9px;color:#93a4a7;margin-top:2px}
 
 .group-context{border:1px solid #35474e;background:#15262c;padding:9px 10px;margin:-3px 0 10px}.group-context strong{font-size:10px}.group-context span{font-size:8px;color:#d1b575;margin-left:7px}.group-context small{display:block;color:#879ba0;font-size:8px;margin-top:3px}.group-context p{font-size:9px;margin:5px 0 0;color:#9eadaf}
+
+/* T07: keep the date explanation within the existing compact timeline. */
+.timeline-floating{flex-wrap:wrap;max-width:calc(100% - 28px)}
+.timeline-floating small{flex-basis:100%;font-size:10px;color:#b8c6c9;line-height:1.4}
+.timeline-floating input{min-width:60px}
+@media(max-width:760px){.timeline-floating{gap:6px}.map-layer-note{bottom:105px}}
