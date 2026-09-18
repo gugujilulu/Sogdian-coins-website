@@ -68,3 +68,54 @@ export function filterRecords(records: readonly Specimen[], filters: RecordFilte
   return { records: matched, recordCount: matched.length,
     familyIds: new Set(matched.map(record => record.familyId)) };
 }
+
+export type AtlasFilters = RecordFilters & {
+  query?: string;
+  region?: string;
+  polity?: string;
+  city?: string;
+  status?: string;
+  /** Existing family issue-range point filter; null/absent means all periods. */
+  year?: number | null;
+  unassignedGroup?: boolean;
+  facet?: string;
+};
+
+/** One result for map entries, galleries, search and counts. Family metadata only
+ * supplies the existing contextual geography/date/status/search conditions.
+ * Record text searches never inspect siblings or other catalogue groups.
+ */
+export function filterAtlasRecords(data: import('./atlas').Atlas, filters: AtlasFilters = {}) {
+  const familiesById = new Map(data.families.map(f => [f.id, f]));
+  const groups = new Map(data.variants.map(g => [g.id, g]));
+  const q = filters.query?.trim().toLowerCase() ?? '';
+  const candidates = filterRecords(data.specimens, filters).records;
+  const records = candidates.filter(s => {
+    const f = familiesById.get(s.familyId);
+    if (!f) return false;
+    if (filters.region && f.region !== filters.region) return false;
+    if (filters.polity && f.polity !== filters.polity) return false;
+    if (filters.city && f.anchor?.placeId !== filters.city) return false;
+    if (filters.status && f.status !== filters.status) return false;
+    if (filters.year != null && !(f.start != null && f.end != null &&
+        f.start <= filters.year && filters.year <= f.end)) return false;
+    if (filters.unassignedGroup && s.variantId !== null) return false;
+    if (filters.facet && !s.facets.includes(filters.facet)) return false;
+    if (!q) return true;
+    const g = s.variantId ? groups.get(s.variantId) : undefined;
+    return [f.title, f.zh, f.region, f.dateLabel, f.description, f.legend ?? '',
+      ...(g ? [g.title, g.reference, g.description, ...g.facets] : []),
+      s.title, s.catalogue, s.description, s.sourceRecordId ?? '',
+      ...(s.sourcePath ?? []).map(p => p.title), ...s.sources.map(src => src.label), ...s.facets]
+      .join(' ').toLowerCase().includes(q);
+  });
+  const familyIds = new Set(records.map(s => s.familyId));
+  const recordsByFamily = new Map<string, Specimen[]>();
+  for (const s of records) {
+    const group = recordsByFamily.get(s.familyId) ?? [];
+    group.push(s);
+    recordsByFamily.set(s.familyId, group);
+  }
+  return { records, recordCount: records.length, familyIds, recordsByFamily,
+    families: data.families.filter(f => familyIds.has(f.id)) };
+}
