@@ -261,3 +261,54 @@ CREATE VIEW image_provenance_detail AS
         p.status,p.method,p.evidence_json,p.notes
  FROM image i JOIN image_provenance p ON p.image_id=i.id
  LEFT JOIN external_record e ON e.id=p.external_record_id;
+
+-- T05 additive overlay. Candidate discovery and reviewed identity stay separate.
+CREATE TABLE reconciliation_candidates (
+ candidate_id TEXT PRIMARY KEY,
+ specimen_id_a TEXT NOT NULL REFERENCES specimen(id),
+ specimen_id_b TEXT NOT NULL REFERENCES specimen(id),
+ discovery_evidence_json TEXT NOT NULL CHECK(json_valid(discovery_evidence_json)),
+ CHECK(specimen_id_a<specimen_id_b), UNIQUE(specimen_id_a,specimen_id_b)
+);
+CREATE TABLE reconciliation_assertions (
+ assertion_id TEXT PRIMARY KEY,
+ specimen_id_a TEXT NOT NULL REFERENCES specimen(id),
+ specimen_id_b TEXT NOT NULL REFERENCES specimen(id),
+ status TEXT NOT NULL CHECK(status IN ('confirmed_same','candidate_review','confirmed_distinct','unresolved')),
+ evidence_type TEXT NOT NULL, evidence_json TEXT NOT NULL CHECK(json_valid(evidence_json) AND json_array_length(evidence_json)>0),
+ review_note TEXT NOT NULL,
+ created_method TEXT NOT NULL CHECK(created_method='manual_object_evidence_review'),
+ CHECK(specimen_id_a<specimen_id_b), UNIQUE(specimen_id_a,specimen_id_b),
+ CHECK(status NOT IN ('confirmed_same','confirmed_distinct') OR evidence_type IN
+ ('explicit_provenance_cross_reference','unique_inventory_reference','explicit_auction_provenance_chain','explicit_same_object_statement'))
+);
+CREATE TABLE physical_specimen_groups (
+ physical_group_id TEXT PRIMARY KEY,
+ created_method TEXT NOT NULL CHECK(created_method='manual_object_evidence_review'), notes TEXT
+);
+CREATE TABLE physical_specimen_group_members (
+ physical_group_id TEXT NOT NULL REFERENCES physical_specimen_groups(physical_group_id),
+ specimen_id TEXT NOT NULL UNIQUE REFERENCES specimen(id),
+ PRIMARY KEY(physical_group_id,specimen_id)
+);
+CREATE TABLE physical_group_assertions (
+ physical_group_id TEXT NOT NULL REFERENCES physical_specimen_groups(physical_group_id),
+ assertion_id TEXT NOT NULL REFERENCES reconciliation_assertions(assertion_id),
+ PRIMARY KEY(physical_group_id,assertion_id)
+);
+CREATE VIEW reconciliation_decisions AS
+ WITH pairs AS (
+ SELECT specimen_id_a,specimen_id_b FROM reconciliation_candidates
+ UNION SELECT specimen_id_a,specimen_id_b FROM reconciliation_assertions)
+ SELECT p.specimen_id_a,p.specimen_id_b,COALESCE(a.status,'candidate_review') AS status,
+        c.candidate_id,c.discovery_evidence_json,a.assertion_id,a.evidence_type,a.evidence_json,a.review_note
+ FROM pairs p LEFT JOIN reconciliation_candidates c USING(specimen_id_a,specimen_id_b)
+ LEFT JOIN reconciliation_assertions a USING(specimen_id_a,specimen_id_b);
+CREATE VIEW physical_group_sources AS
+ SELECT DISTINCT m.physical_group_id,s.specimen_id,e.id AS source_entity_id,e.provider,e.record_key
+ FROM physical_specimen_group_members m
+ JOIN specimen_external_record s ON s.specimen_id=m.specimen_id
+ JOIN external_record e ON e.id=s.external_record_id WHERE s.relation='same_specimen';
+CREATE VIEW physical_group_images AS
+ SELECT m.physical_group_id,p.* FROM physical_specimen_group_members m
+ JOIN image_provenance_detail p ON p.specimen_id=m.specimen_id;

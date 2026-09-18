@@ -1,0 +1,66 @@
+"""Synthetic policy fixtures only. They never add claims to the real corpus."""
+import copy
+import json
+import sys
+import tempfile
+import unittest
+from pathlib import Path
+
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
+from physical_reconciliation import validate_plan, stable_id
+
+
+class ReconciliationPolicyTests(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        self.root = Path(self.tmp.name)
+        self.quote = 'Fixture only: a and b identify the very same object INV-TEST-1.'
+        (self.root/'fixture.json').write_text(json.dumps({'quote':self.quote}))
+        self.assertion = {
+            'specimen_id_a':'a','specimen_id_b':'b','status':'confirmed_same',
+            'evidence_type':'unique_inventory_reference',
+            'evidence':[{'document':'fixture.json','locator':'/quote','quoted_text':self.quote,
+                         'object_reference':{'namespace':'test collection','identifier':'INV-TEST-1','specimen_ids':['a','b']}}],
+            'created_method':'manual_object_evidence_review','review_note':'Synthetic positive test, not historical evidence.'}
+        self.plan = {'assertions':[self.assertion],'groups':[{'members':['a','b']}]}
+        self.ids = {'a','b','c'}
+
+    def test_explicit_review_can_form_group_without_replacing_records(self):
+        result = validate_plan(self.root,self.plan,self.ids)
+        self.assertEqual(set(result),{('a','b')})
+        self.assertEqual(self.ids,{'a','b','c'})
+        self.assertEqual(stable_id('physical-',sorted(['b','a'])),stable_id('physical-',sorted(['a','b'])))
+
+    def test_weak_evidence_cannot_confirm(self):
+        for weak in ('visual_similarity','image_hash','weight_tolerance','die_match','type_match','existing_comparison_reference'):
+            with self.subTest(weak=weak):
+                plan=copy.deepcopy(self.plan);plan['assertions'][0]['evidence_type']=weak
+                with self.assertRaises(ValueError):validate_plan(self.root,plan,self.ids)
+
+    def test_candidate_unresolved_and_distinct_cannot_form_group(self):
+        for status in ('candidate_review','unresolved','confirmed_distinct'):
+            with self.subTest(status=status):
+                plan=copy.deepcopy(self.plan);plan['assertions'][0]['status']=status
+                with self.assertRaises(ValueError):validate_plan(self.root,plan,self.ids)
+
+    def test_no_transitive_confirmation_or_conflicting_membership(self):
+        for groups in ([{'members':['a','b','c']}], [{'members':['a','b']},{'members':['a','b']}]):
+            plan=copy.deepcopy(self.plan);plan['groups']=groups
+            with self.assertRaises(ValueError):validate_plan(self.root,plan,self.ids)
+
+    def test_no_singleton_or_unknown_member(self):
+        for members in (['a'],['a','a'],['a','missing']):
+            plan=copy.deepcopy(self.plan);plan['groups']=[{'members':members}]
+            with self.assertRaises(ValueError):validate_plan(self.root,plan,self.ids)
+
+    def test_missing_snapshot_or_quote_cannot_confirm(self):
+        for field,value in (('document','missing.html'),('quoted_text','Not in source'),('locator','/missing')):
+            plan=copy.deepcopy(self.plan);plan['assertions'][0]['evidence'][0][field]=value
+            with self.assertRaises((ValueError,KeyError)):validate_plan(self.root,plan,self.ids)
+
+    def test_automatic_or_unstructured_confirmation_rejected(self):
+        plan=copy.deepcopy(self.plan);plan['assertions'][0]['created_method']='automatic_score'
+        with self.assertRaises(ValueError):validate_plan(self.root,plan,self.ids)
+        plan=copy.deepcopy(self.plan);del plan['assertions'][0]['evidence'][0]['object_reference']
+        with self.assertRaises(ValueError):validate_plan(self.root,plan,self.ids)

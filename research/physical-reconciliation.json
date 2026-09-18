@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "baseline_commit": "15b7c5cb88c9b8c0e24ce4e0b7fc1b016e5e051f",
+  "policy": "Additive only. No automated same-object confirmation. Weak or visual evidence never confirms identity.",
+  "assertions": [
+    {
+      "specimen_id_a": "zeno-1766",
+      "specimen_id_b": "zeno-1767",
+      "status": "unresolved",
+      "evidence_type": "saved_image_reuse_warning",
+      "evidence": [
+        {
+          "document": "research/zeno/review-795.json",
+          "locator": "/identityReview/doNotMerge/0/basis",
+          "quoted_text": "Images reuse the same obverse photograph but show different reverse photographs; this is an image/source anomaly, not evidence for one physical specimen."
+        }
+      ],
+      "review_note": "The saved review identifies an image/source anomaly. It supplies neither explicit object-level sameness nor sufficient object-level proof of distinctness. Do not infer identity from either photograph.",
+      "created_method": "manual_object_evidence_review"
+    }
+  ],
+  "groups": []
+}
