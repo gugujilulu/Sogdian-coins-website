@@ -280,7 +280,8 @@ CREATE TABLE reconciliation_assertions (
  created_method TEXT NOT NULL CHECK(created_method='manual_object_evidence_review'),
  CHECK(specimen_id_a<specimen_id_b), UNIQUE(specimen_id_a,specimen_id_b),
  CHECK(status NOT IN ('confirmed_same','confirmed_distinct') OR evidence_type IN
- ('explicit_provenance_cross_reference','unique_inventory_reference','explicit_auction_provenance_chain','explicit_same_object_statement'))
+ ('explicit_provenance_cross_reference','unique_inventory_reference','explicit_auction_provenance_chain','explicit_same_object_statement','exact_image_identity')),
+ CHECK(status<>'confirmed_distinct' OR evidence_type<>'exact_image_identity')
 );
 CREATE TABLE physical_specimen_groups (
  physical_group_id TEXT PRIMARY KEY,

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "baseline_commit": "15b7c5cb88c9b8c0e24ce4e0b7fc1b016e5e051f",
-  "policy": "Additive only. No automated same-object confirmation. Weak or visual evidence never confirms identity.",
+  "policy": "Additive only. Manual review may confirm explicit object references or technically verified exact-image identity without known misuse. Visual/perceptual similarity and all other weak cues never confirm identity.",
   "assertions": [
     {
       "specimen_id_a": "zeno-1766",
@@ -19,5 +19,138 @@
       "created_method": "manual_object_evidence_review"
     }
   ],
-  "groups": []
+  "groups": [],
+  "image_usage_warnings": [
+    {
+      "specimen_ids": [
+        "zeno-1766",
+        "zeno-1767"
+      ],
+      "flags": [
+        "reported_image_reuse_anomaly"
+      ],
+      "evidence": {
+        "document": "research/zeno/review-795.json",
+        "locator": "/identityReview/doNotMerge/0/basis",
+        "quoted_text": "Images reuse the same obverse photograph but show different reverse photographs; this is an image/source anomaly, not evidence for one physical specimen."
+      }
+    }
+  ],
+  "bounded_exact_image_audit": {
+    "scope": "Only images in the 7 existing comparison pairs and 1766/1767 unresolved pair; no all-corpus scan, perceptual hash or visual analysis.",
+    "pairs": [
+      [
+        "cng611-576",
+        "zeno-81165"
+      ],
+      [
+        "sarc22-55",
+        "zeno-130578"
+      ],
+      [
+        "sarc28-145",
+        "zeno-81165"
+      ],
+      [
+        "sarc28-146",
+        "zeno-77712"
+      ],
+      [
+        "sarc52-1614",
+        "zeno-81165"
+      ],
+      [
+        "un22",
+        "zeno-57521"
+      ],
+      [
+        "un24",
+        "zeno-63495"
+      ],
+      [
+        "zeno-1766",
+        "zeno-1767"
+      ]
+    ],
+    "images": {
+      "cng611-576-alternate": {
+        "specimen_id": "cng611-576",
+        "path": "/coins/nana/cng611-576-alternate.jpg",
+        "sha256": "ae85dca2a36985d5e92355f2779084211003402a4950d788a84cd49122bb4cc4"
+      },
+      "cng611-576-photo": {
+        "specimen_id": "cng611-576",
+        "path": "/coins/nana/cng611-576.jpg",
+        "sha256": "4473e52c27b64f9e07cb394cef6a6e5e48e88e2408c28a580d17fb40f7848bb4"
+      },
+      "sarc22-55-photo": {
+        "specimen_id": "sarc22-55",
+        "path": "/coins/nana/sarc22-55.jpg",
+        "sha256": "f170fc3d2ad76901dadcacd557cfb9fe1f6b44c3d353e8549800ca5c99f7fa68"
+      },
+      "sarc28-145-photo": {
+        "specimen_id": "sarc28-145",
+        "path": "/coins/nana/sarc28-145.jpg",
+        "sha256": "2dc9ebd90f7860f545477f54981e3e8ef343a994379210798f3e8cec05e0bd35"
+      },
+      "sarc28-146-photo": {
+        "specimen_id": "sarc28-146",
+        "path": "/coins/nana/sarc28-146.jpg",
+        "sha256": "c6548c18d099c8eb0ff2ad1b09e66afe8224787c83a83b9c8498bf39308a58f2"
+      },
+      "sarc52-1614-photo": {
+        "specimen_id": "sarc52-1614",
+        "path": "/coins/nana/sarc52-1614.jpg",
+        "sha256": "6ba2eedce32cb69dcc5fd7a8d76690295301a580d644a21167b733dddbd8b038"
+      },
+      "un22-photo": {
+        "specimen_id": "un22",
+        "path": "/coins/un22.jpg",
+        "sha256": "f5ca8db33f520c1bbfab0634ce202c355b97163daaffb1f78675f7a92cc1fbe7"
+      },
+      "un24-photo": {
+        "specimen_id": "un24",
+        "path": "/coins/un24.jpg",
+        "sha256": "0c50545af3392b6a469cf67ea8ceb41b7be9d0cb22e8373681973b544bc343d2"
+      },
+      "z130578": {
+        "specimen_id": "zeno-130578",
+        "path": "/coins/zeno/130578.jpg",
+        "sha256": "ea6375f2f31bc43fdd126ee4ddbbdfdb7dda716ee1d9894c653795c26dae2c64"
+      },
+      "z1766": {
+        "specimen_id": "zeno-1766",
+        "path": "/coins/zeno/1766.jpg",
+        "sha256": "68728f3bbd8e491a6dc717eca92aa9bc9ca8e42accbafb8e12cfb74617d5970b"
+      },
+      "z1767": {
+        "specimen_id": "zeno-1767",
+        "path": "/coins/zeno/1767.jpg",
+        "sha256": "a41e03cbd2d93baf41519d0fdd957f166a639ad0b653a315a84fef5a606fbf30"
+      },
+      "z57521": {
+        "specimen_id": "zeno-57521",
+        "path": "/coins/zeno/57521.jpg",
+        "sha256": "ab5fdb4344c1a7b982fc6faa996bfaee7c834542f8973de1cf9ab25e2b512965"
+      },
+      "z63495": {
+        "specimen_id": "zeno-63495",
+        "path": "/coins/zeno/63495.jpg",
+        "sha256": "228c6937660e6dafcbee98b71613c251c9de84d14c385b32e8cf6d596c0e39cf"
+      },
+      "z77712": {
+        "specimen_id": "zeno-77712",
+        "path": "/coins/zeno/77712.jpg",
+        "sha256": "addd08d73276f2cd8edee376a613a9e28650badca7ec15e0f955780dc8bc98ba"
+      },
+      "z81165": {
+        "specimen_id": "zeno-81165",
+        "path": "/coins/zeno/81165.jpg",
+        "sha256": "b31ad472ef69e3e2a63067e0160b6b7cfa2457f6c16186f35082306008a029de"
+      }
+    },
+    "cross_record_exact_sha256_matches": [],
+    "derivation_reports_reviewed": 0,
+    "note": "No cross-record exact file match found in this bounded queue. Different hashes do not prove distinct physical objects; no technical derivation proof supplied."
+  }
 }

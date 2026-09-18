@@ -79,7 +79,58 @@ def evidence_value(root, item):
         raise ValueError('Evidence quote not found at local locator')
 
 
+def validate_exact_image(root, item, pair):
+    proof = item.get('exact_image', {})
+    usage = proof.get('source_usage_review', {})
+    if usage.get('status') != 'reviewed_no_warning' or usage.get('flags') != [] or not usage.get('note'):
+        raise ValueError('Stock/reference/misassigned/placeholder risk needs manual review')
+    atlas = json.loads((root / 'public/data/atlas.json').read_text())
+    images = {im['id']: (record['id'], im['path']) for record in atlas['specimens'] for im in record['images']}
+    selected = proof.get('image_ids', [])
+    if len(selected) != 2 or len(set(selected)) != 2:
+        raise ValueError('Exact-image proof needs two explicit image IDs')
+    if sorted(images[i][0] for i in selected) != list(pair):
+        raise ValueError('Exact-image proof does not cover both specimen records')
+    hashes, paths = [], []
+    for image_id in selected:
+        path = (root / 'public' / images[image_id][1].lstrip('/')).resolve()
+        if not path.is_relative_to((root / 'public').resolve()) or not path.is_file():
+            raise ValueError('Exact-image local file is missing')
+        digest = hashlib.sha256(path.read_bytes()).hexdigest()
+        if proof.get('sha256', {}).get(image_id) != digest:
+            raise ValueError('Exact-image cryptographic hash mismatch')
+        paths.append(path)
+        hashes.append(digest)
+    kind = proof.get('kind')
+    if kind == 'same_file':
+        if paths[0] != paths[1]:
+            raise ValueError('Not the same original file')
+    elif kind == 'sha256':
+        if hashes[0] != hashes[1]:
+            raise ValueError('Different cryptographic hashes are not exact image identity')
+    elif kind == 'documented_direct_derivation':
+        report = proof.get('technical_evidence', {})
+        evidence_value(root, report)
+        # A local, reviewed technical report must identify both exact byte endpoints.
+        # This is not an image-similarity classifier or an automatic inference.
+        if report.get('sha256') != proof['sha256'] or report.get('result') != 'same_original_photo_verified':
+            raise ValueError('Derivation evidence does not verify these image files')
+        operations = report.get('operations', [])
+        if not operations or not set(operations) <= {'resize','crop','watermark','compression'}:
+            raise ValueError('Derivation must be a documented direct photo transformation')
+        if not report.get('reviewed_by'):
+            raise ValueError('Derivation technical evidence needs an identified reviewer')
+        if not all(digest in report['quoted_text'] for digest in hashes):
+            raise ValueError('Technical quote must bind both cryptographic endpoints')
+    else:
+        raise ValueError('Perceptual/visual similarity is not exact-image evidence')
+
+
 def validate_plan(root, plan, known_ids):
+    image_warnings = set()
+    for warning in plan.get('image_usage_warnings', []):
+        evidence_value(root, warning['evidence'])
+        image_warnings.add(tuple(sorted(warning['specimen_ids'])))
     decisions = {}
     for assertion in plan['assertions']:
         a, b = assertion['specimen_id_a'], assertion['specimen_id_b']
@@ -95,7 +146,12 @@ def validate_plan(root, plan, known_ids):
             raise ValueError('Review needs auditable evidence')
         for item in assertion['evidence']:
             evidence_value(root, item)
-        if status in {'confirmed_same', 'confirmed_distinct'}:
+        if status in {'confirmed_same', 'confirmed_distinct'} and assertion['evidence_type']=='exact_image_identity':
+            if status!='confirmed_same' or pair in image_warnings:
+                raise ValueError('Exact image cannot prove distinctness or bypass a recorded usage warning')
+            for item in assertion['evidence']:
+                validate_exact_image(root,item,pair)
+        elif status in {'confirmed_same', 'confirmed_distinct'}:
             if assertion['evidence_type'] not in STRONG_EVIDENCE:
                 raise ValueError('Weak evidence cannot confirm sameness or distinctness')
             for item in assertion['evidence']:
