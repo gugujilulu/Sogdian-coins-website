@@ -7,6 +7,19 @@ import tempfile
 from pathlib import Path
 
 from PIL import Image
+from source_identity import source_identity
+
+# Identity parsing is independent of internal specimen IDs and URL decoration.
+assert source_identity('https://www.zeno.ru/showphoto.php?photo=20696') == ('Zeno','20696','resolved')
+assert source_identity('http://zeno.ru/showphoto.php?cat=795&photo=20696#top') == ('Zeno','20696','resolved')
+assert source_identity('https://en.numista.com/20696') == ('Numista','20696','resolved')
+assert source_identity('https://www.zeno.ru/showphoto.php?photo=sr9')[2] == 'pending_resolution'
+assert source_identity('https://www.zeno.ru/showphoto.php?photo=1&photo=2')[2] == 'pending_resolution'
+assert source_identity('https://zeno.ru.example.org/showphoto.php?photo=20696')[0] != 'Zeno'
+try:
+ source_identity('https://www.zeno.ru/showphoto.php?photo=20696',provider='Zeno',record_id='999')
+except ValueError:pass
+else:raise AssertionError('Conflicting source IDs must not be silently reconciled')
 
 root=Path(__file__).resolve().parents[1]
 a=json.loads((root/'public/data/atlas.json').read_text())
@@ -222,6 +235,43 @@ with tempfile.TemporaryDirectory() as tmp:
  assert db.execute('SELECT count(*) FROM specimen').fetchone()[0]==len(a['specimens'])
  assert db.execute('SELECT count(*) FROM image').fetchone()[0]==sum(len(s['images']) for s in a['specimens'])
  assert not db.execute('PRAGMA foreign_key_check').fetchall()
+ # T03: real source identities, source URLs and memberships survive export.
+ sr9_sources=db.execute("SELECT e.provider,e.record_key,e.identity_status FROM specimen_external_record s JOIN external_record e ON e.id=s.external_record_id WHERE s.specimen_id='sr9'").fetchall()
+ assert ('Zeno','20696','resolved') in sr9_sources
+ assert not db.execute("SELECT 1 FROM external_record WHERE provider='Zeno' AND record_key='sr9'").fetchall()
+ nana_sources=set(db.execute("SELECT e.provider,e.record_key FROM specimen_external_record s JOIN external_record e ON e.id=s.external_record_id WHERE s.specimen_id='zeno-264408'"))
+ assert nana_sources=={('Zeno','264408'),('Bactrianumis','5898')}
+ assert not db.execute('SELECT provider,record_key FROM external_record GROUP BY provider,record_key HAVING count(*)>1').fetchall()
+ for record_id,categories in [('20696',{'503','795'}),('264408',{'503','3106'})]:
+  eid=db.execute("SELECT id FROM external_record WHERE provider='Zeno' AND record_key=?",(record_id,)).fetchone()[0]
+  rows=db.execute('SELECT s.category_url,c.external_record_id,c.raw_html_path,c.source_path_json FROM coverage_record c JOIN coverage_snapshot s ON s.id=c.snapshot_id WHERE c.source_record_key=?',(record_id,)).fetchall()
+  assert {row[0].split('cat=')[-1] for row in rows} >= categories
+  assert {row[1] for row in rows}=={eid}
+  assert all(row[2]=='research/zeno/'+record_id+'.html' and row[3] for row in rows)
+  for row in rows:
+   assert db.execute('SELECT 1 FROM external_record_classification WHERE external_record_id=? AND path_json=?',(eid,row[3])).fetchone()
+ # All existing source URLs remain associated, including pending-resolution records.
+ previous_urls={src['url'] for specimen in a['specimens'] for src in specimen['sources']}|{r['sourceUrl'] for r in a['relatedRecords']}
+ exported_urls={row[0] for row in db.execute('SELECT url FROM external_record_url')}
+ assert previous_urls <= exported_urls
+ for specimen in a['specimens']:
+  for src in specimen['sources']:
+   assert db.execute('SELECT 1 FROM specimen_external_record s JOIN external_record_url u ON u.external_record_id=s.external_record_id WHERE s.specimen_id=? AND u.url=? AND s.relation=?',(specimen['id'],src['url'],src['relation'])).fetchone()
+ assert not db.execute("SELECT 1 FROM external_record WHERE identity_status='pending_resolution' AND record_key NOT LIKE 'unresolved-url:%'").fetchone()
+ # Classification paths can coexist without creating a source or changing specimens.
+ eid=db.execute("SELECT id FROM external_record WHERE provider='Zeno' AND record_key='20696'").fetchone()[0]
+ before=db.execute('SELECT count(*) FROM external_record').fetchone()[0]
+ db.execute('SAVEPOINT classification_fixture')
+ paths=[json.dumps([{'categoryId':category,'title':'Test membership'}]) for category in ('test-a','test-b')]
+ for path in paths:
+  db.execute('INSERT INTO external_record_classification (external_record_id,scheme,path_json) VALUES (?,?,?)',(eid,'T03 test',path))
+ assert db.execute("SELECT count(*) FROM external_record_classification WHERE external_record_id=? AND scheme='T03 test'",(eid,)).fetchone()[0]==2
+ assert db.execute('SELECT count(*) FROM external_record').fetchone()[0]==before
+ db.execute('ROLLBACK TO classification_fixture')
+ db.execute('RELEASE classification_fixture')
+ assert not db.execute('PRAGMA foreign_key_check').fetchall()
+ print('T03 external identities:',db.execute('SELECT provider,identity_status,count(*) FROM external_record GROUP BY provider,identity_status').fetchall())
+ print('T03 source entities:',len(previous_urls),'previous URL entities ->',before,'provider/key entities; coverage memberships:',db.execute('SELECT count(*) FROM coverage_record').fetchone()[0])
  # Nana coverage remains independently verifiable even after other categories are added.
  nana_snapshot=db.execute("SELECT id FROM coverage_snapshot WHERE category_url LIKE '%cat=3106'").fetchone()[0]
  assert db.execute("SELECT count(*) FROM coverage_record WHERE snapshot_id=? AND status='image_imported'",(nana_snapshot,)).fetchone()[0]==14

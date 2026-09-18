@@ -159,16 +159,23 @@ CREATE TABLE type_publication (
 );
 CREATE TABLE external_record (
  id TEXT PRIMARY KEY, provider TEXT NOT NULL, record_key TEXT NOT NULL, url TEXT NOT NULL,
+ identity_status TEXT NOT NULL CHECK(identity_status IN ('resolved','pending_resolution')),
  record_kind TEXT NOT NULL CHECK(record_kind IN ('type','specimen','category','unknown')),
  verification_status TEXT NOT NULL CHECK(verification_status IN ('directly_checked','reported_by_source','unverified')),
  checked_on TEXT, citation_id TEXT REFERENCES citation(id),
  UNIQUE(provider,record_key)
 );
+-- Keep every observed URL even when several URLs resolve to one source identity.
+CREATE TABLE external_record_url (
+ external_record_id TEXT NOT NULL REFERENCES external_record(id), url TEXT NOT NULL,
+ citation_id TEXT NOT NULL REFERENCES citation(id),
+ PRIMARY KEY(external_record_id,url)
+);
 CREATE TABLE external_record_classification (
  external_record_id TEXT NOT NULL REFERENCES external_record(id),
  scheme TEXT NOT NULL, path_json TEXT NOT NULL, leaf_key TEXT, leaf_label TEXT,
  citation_id TEXT REFERENCES citation(id),
- PRIMARY KEY(external_record_id,scheme)
+ PRIMARY KEY(external_record_id,scheme,path_json)
 );
 CREATE TABLE specimen_external_record (
  specimen_id TEXT NOT NULL REFERENCES specimen(id), external_record_id TEXT NOT NULL REFERENCES external_record(id),
@@ -223,10 +230,13 @@ CREATE TABLE manufacture_link (
 );
 CREATE TABLE coverage_snapshot (
  id TEXT PRIMARY KEY, provider TEXT NOT NULL, category_url TEXT NOT NULL,
- retrieved_on TEXT NOT NULL, expected_record_count INTEGER, scope_note TEXT NOT NULL
+ retrieved_on TEXT NOT NULL, expected_record_count INTEGER, scope_note TEXT NOT NULL,
+ manifest_path TEXT NOT NULL
 );
 CREATE TABLE coverage_record (
  snapshot_id TEXT NOT NULL REFERENCES coverage_snapshot(id), source_record_key TEXT NOT NULL,
+ external_record_id TEXT NOT NULL REFERENCES external_record(id),
+ source_manifest_path TEXT NOT NULL, raw_html_path TEXT, source_path_json TEXT,
  specimen_id TEXT REFERENCES specimen(id), image_id TEXT REFERENCES image(id), status TEXT NOT NULL,
  PRIMARY KEY(snapshot_id,source_record_key)
 );

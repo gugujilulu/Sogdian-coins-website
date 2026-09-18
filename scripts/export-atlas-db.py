@@ -3,31 +3,33 @@ Usage: python scripts/export-atlas-db.py /absolute/path/atlas.sqlite
 """
 from pathlib import Path
 import json,sqlite3,sys,hashlib
+from source_identity import source_identity
 root=Path(__file__).resolve().parents[1];out=Path(sys.argv[1]);assert not out.exists(),'Refusing to overwrite existing database'
 d=json.loads((root/'public/data/atlas.json').read_text());db=sqlite3.connect(out);db.executescript((root/'db/schema.sql').read_text())
 def add(table,**row):
  db.execute('INSERT INTO '+table+' ('+','.join(row)+') VALUES ('+','.join('?' for _ in row)+')',tuple(row.values()))
 def key(url):return hashlib.sha256(url.encode()).hexdigest()[:16]
-def provider_name(url,label=''):
- if 'zeno.ru' in url:return 'Zeno'
- if 'cngcoins.com' in url:return 'CNG'
- if 'numista.com' in url:return 'Numista'
- if 'sogdcoins.' in url:return 'Coins of Central Asia'
- if 'bactrianumis' in url:return 'Bactrianumis'
- if 'sixbid' in url.lower():return 'Sixbid'
- if 'numisbids' in url.lower():return 'NumisBids'
- if 'biddr' in url.lower():return 'Biddr'
- if 'album' in (url+' '+label).lower() or 'sarc' in label.lower():return 'Stephen Album'
- try:
-  from urllib.parse import urlparse
-  return (urlparse(url).hostname or 'external').removeprefix('www.')
- except Exception:return 'external'
 seen=set()
 def cite(url,title=None):
  id=key(url)
  if id not in seen:
   add('publication',id=id,title=title or url,publication_kind='web_record',url=url,accessed_on='2026-09-16',verification_status='partly_read');add('citation',id='c-'+id,publication_id=id);seen.add(id)
  return 'c-'+id
+def external_record(url,label='',*,provider=None,record_id=None,verification='reported_by_source'):
+ provider,record_key,status=source_identity(url,label,provider=provider,record_id=record_id)
+ eid='ext-'+key(json.dumps([provider,record_key],ensure_ascii=False))
+ ci=cite(url,label or url)
+ if not db.execute('SELECT 1 FROM external_record WHERE id=?',(eid,)).fetchone():
+  add('external_record',id=eid,provider=provider,record_key=record_key,identity_status=status,url=url,record_kind='specimen',verification_status=verification,checked_on='2026-09-16',citation_id=ci)
+ db.execute('INSERT OR IGNORE INTO external_record_url VALUES (?,?,?)',(eid,url,ci))
+ return eid
+
+def classification(eid,path,url):
+ if not path:return
+ path_json=json.dumps(path,ensure_ascii=False,sort_keys=True)
+ db.execute('INSERT OR IGNORE INTO external_record_classification VALUES (?,?,?,?,?,?)',
+  (eid,'Zeno breadcrumb',path_json,str(path[-1].get('categoryId') or ''),path[-1].get('title') or '',cite(url)))
+
 add('corpus',id='square-hole',title='Central Asian Square-Hole Coinage Atlas',scope_note='Chinese-style square-hole cash tradition in Central Asia and related eastern inland zones, broadly post-Han through pre-Qing. Exact temporal cutoffs remain provisional; disputed and boundary records are retained. Includes pierced, intentionally unpierced and pseudo-aperture derivatives when source-supported. Current import is incomplete.')
 for p in d['places']:
  add('place',id=p['id'],historical_name=p['name'],modern_name=p['zh'],kind=p['kind'])
@@ -50,12 +52,15 @@ for s in d['specimens']:
  for im in s['images']:
   add('image',id=im['id'],specimen_id=s['id'],view='both' if im['view']!='single face' else 'unknown',local_path=im['path'],source_url=im['sourceUrl'],credit=im['credit'],license_uri=None,rights_source_url=im.get('rightsSourceUrl'),rights_status=im.get('rightsStatus','unverified'),width_px=im['width'],height_px=im['height'],citation_id=ci)
  for src in s['sources']:
-  url=src['url'];eid='ext-'+key(url);provider=provider_name(url,src.get('label',''))
-  record_key=(s.get('sourceRecordId') or url) if provider=='Zeno' and src['relation']=='same_specimen' else url
-  if not db.execute('SELECT 1 FROM external_record WHERE id=?',(eid,)).fetchone():add('external_record',id=eid,provider=provider,record_key=record_key,url=url,record_kind='specimen',verification_status='directly_checked' if src['relation']=='same_specimen' else 'reported_by_source',checked_on='2026-09-16',citation_id=cite(url,src['label']))
-  if provider=='Zeno' and src['relation']=='same_specimen' and s.get('sourcePath') and not db.execute('SELECT 1 FROM external_record_classification WHERE external_record_id=? AND scheme=?',(eid,'Zeno breadcrumb')).fetchone():
-   path=s['sourcePath'];add('external_record_classification',external_record_id=eid,scheme='Zeno breadcrumb',path_json=json.dumps(path,ensure_ascii=False),leaf_key=str(path[-1].get('categoryId') or '') if path else None,leaf_label=path[-1].get('title') if path else None,citation_id=cite(url,src['label']))
-  add('specimen_external_record',specimen_id=s['id'],external_record_id=eid,relation=src['relation'])
+  url=src['url'];eid=external_record(url,src.get('label',''),verification='directly_checked' if src['relation']=='same_specimen' else 'reported_by_source')
+  # A specimen-level path must not be copied onto a different source record.
+  provider,record_key,_=source_identity(url,src.get('label',''))
+  if provider=='Zeno' and s.get('sourceRecordId')=='Zeno '+record_key:
+   classification(eid,s.get('sourcePath'),url)
+  existing=db.execute('SELECT relation FROM specimen_external_record WHERE specimen_id=? AND external_record_id=?',(s['id'],eid)).fetchone()
+  if existing:
+   if existing[0]!=src['relation']:raise ValueError('Conflicting source relations for '+s['id']+' / '+url)
+  else:add('specimen_external_record',specimen_id=s['id'],external_record_id=eid,relation=src['relation'])
  for feature in s['facets']:add('specimen_feature',specimen_id=s['id'],label=feature,citation_id=ci)
  if s.get('findContextClaim'):
   fc=s['findContextClaim'];fid='find-'+s['id']
@@ -64,21 +69,18 @@ for s in d['specimens']:
 # Related / held / excluded source records remain first-class external records
 # even though they do not contribute to the main specimen count.
 for r in d.get('relatedRecords',[]):
- url=r['sourceUrl'];eid='ext-'+key(url);ci=cite(url,r.get('sourceRecordId') or r.get('title'))
- if not db.execute('SELECT 1 FROM external_record WHERE id=?',(eid,)).fetchone():
-  add('external_record',id=eid,provider=r.get('sourceName') or 'external',record_key=r.get('sourceRecordId') or url,url=url,record_kind='specimen',verification_status='directly_checked',checked_on='2026-09-16',citation_id=ci)
- if r.get('sourcePath') and not db.execute('SELECT 1 FROM external_record_classification WHERE external_record_id=? AND scheme=?',(eid,'Zeno breadcrumb')).fetchone():
-  path=r['sourcePath'];add('external_record_classification',external_record_id=eid,scheme='Zeno breadcrumb',path_json=json.dumps(path,ensure_ascii=False),leaf_key=str(r.get('leafCategoryId') or path[-1].get('categoryId') or ''),leaf_label=r.get('leafCategoryTitle') or path[-1].get('title'),citation_id=ci)
+ url=r['sourceUrl'];eid=external_record(url,r.get('sourceRecordId') or r.get('title',''),verification='directly_checked')
+ classification(eid,r.get('sourcePath'),url)
 
 # Every saved Zeno manifest becomes an independently scoped coverage snapshot.
 # This keeps Lady Nana 14/14 separate from later Semirechye batches and permits
 # partial crawls to be represented without claiming category completeness.
 scope_baselines={str(row['categoryId']):row for row in d.get('scopeCensus',[])}
-def linked_specimen(record_id):
- direct=next((s for s in d['specimens'] if s['id']=='zeno-'+record_id),None)
- if direct:return direct
- target='showphoto.php?photo='+record_id
- return next((s for s in d['specimens'] if any(target in src['url'] and src.get('relation')=='same_specimen' for src in s['sources'])),None)
+def linked_specimen(eid):
+ linked=db.execute("SELECT specimen_id FROM specimen_external_record WHERE external_record_id=? AND relation='same_specimen'",(eid,)).fetchall()
+ # Coverage has one optional specimen slot; never pick/merge one of several objects.
+ if len(linked)!=1:return None
+ return next(s for s in d['specimens'] if s['id']==linked[0][0])
 for manifest_path in sorted((root/'research/zeno').glob('manifest-*.json')):
  manifest=json.loads(manifest_path.read_text());cat=str(manifest.get('categoryId') or manifest_path.stem.split('-',1)[-1]);date=manifest.get('retrievedOn') or 'unknown'
  snapshot_id='zeno'+cat+'-'+date.replace('-','')
@@ -87,7 +89,8 @@ for manifest_path in sorted((root/'research/zeno').glob('manifest-*.json')):
  if expected is None:expected=baseline
  if cat=='3106' and expected is None:expected=d['coverage']['zenoRecordCount']
  scope_note=(manifest.get('countSemantics') or 'Observed source records; completeness not asserted.')+' Coverage status: '+manifest.get('coverageStatus','legacy_manifest')+'.'
- add('coverage_snapshot',id=snapshot_id,provider='Zeno',category_url=manifest.get('url') or ('https://www.zeno.ru/showgallery.php?cat='+cat),retrieved_on=date,expected_record_count=expected,scope_note=scope_note)
+ add('coverage_snapshot',id=snapshot_id,provider='Zeno',category_url=manifest.get('url') or ('https://www.zeno.ru/showgallery.php?cat='+cat),retrieved_on=date,expected_record_count=expected,scope_note=scope_note,manifest_path=str(manifest_path.relative_to(root)))
+ details={str(r['id']):(r,str(manifest_path.relative_to(root))) for r in manifest.get('records',[])}
  record_ids=[str(x) for x in (manifest.get('recordIds') or [str(r['id']) for r in manifest.get('records',[]) if r.get('id')])]
  # #503 has a bounded recovery file for seven scope-relevant pagination gaps.
  # Keep one coverage snapshot and union the recovered source IDs into it rather than
@@ -96,11 +99,18 @@ for manifest_path in sorted((root/'research/zeno').glob('manifest-*.json')):
   recovered_path=root/'research/zeno/recovered-records-503.json'
   if recovered_path.exists():
    recovered=json.loads(recovered_path.read_text())
+   details.update({str(r['id']):(r,str(recovered_path.relative_to(root))) for r in recovered.get('recoveredRecords',[])})
    record_ids=list(dict.fromkeys(record_ids+[str(r['id']) for r in recovered.get('recoveredRecords',[]) if r.get('id')]))
    scope_note+=f' Scope-relevant perpage=90 recovery adds {len(recovered.get("recoveredRecords",[]))} non-overlapping source records; remaining non-target repeated-page gaps stay unresolved.'
+ db.execute('UPDATE coverage_snapshot SET scope_note=? WHERE id=?',(scope_note,snapshot_id))
  for record_id in record_ids:
-  record_id=str(record_id);spec=linked_specimen(record_id);image=None
+  record_id=str(record_id)
+  record,source_manifest=details.get(record_id,({},str(manifest_path.relative_to(root))))
+  url=record.get('url') or 'https://www.zeno.ru/showphoto.php?photo='+record_id
+  eid=external_record(url,record.get('title',''),provider='Zeno',record_id=record_id)
+  classification(eid,record.get('breadcrumb'),url)
+  spec=linked_specimen(eid);image=None
   if spec:image=next((im for im in spec['images'] if im['path']==f'/coins/zeno/{record_id}.jpg'),None)
   status='image_imported' if image else 'specimen_linked_no_image' if spec else 'pending'
-  add('coverage_record',snapshot_id=snapshot_id,source_record_key=record_id,specimen_id=spec['id'] if spec else None,image_id=image['id'] if image else None,status=status)
+  add('coverage_record',snapshot_id=snapshot_id,source_record_key=record_id,external_record_id=eid,source_manifest_path=source_manifest,raw_html_path=record.get('rawHtml'),source_path_json=json.dumps(record['breadcrumb'],ensure_ascii=False,sort_keys=True) if record.get('breadcrumb') else None,specimen_id=spec['id'] if spec else None,image_id=image['id'] if image else None,status=status)
 assert not db.execute('PRAGMA foreign_key_check').fetchall();db.commit();print('Relational export:',out,';',len(d['specimens']),'specimen records;',len(list((root/'research/zeno').glob('manifest-*.json'))),'Zeno coverage snapshot(s)')
