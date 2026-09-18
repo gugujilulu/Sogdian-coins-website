@@ -240,3 +240,24 @@ CREATE TABLE coverage_record (
  specimen_id TEXT REFERENCES specimen(id), image_id TEXT REFERENCES image(id), status TEXT NOT NULL,
  PRIMARY KEY(snapshot_id,source_record_key)
 );
+
+-- T04: one attribution decision per stable image; conflicting candidates remain evidence.
+CREATE TABLE image_provenance (
+ image_id TEXT PRIMARY KEY REFERENCES image(id),
+ external_record_id TEXT REFERENCES external_record(id), source_page_url TEXT,
+ status TEXT NOT NULL CHECK(status IN ('resolved','unresolved','ambiguous')),
+ method TEXT NOT NULL, evidence_json TEXT NOT NULL CHECK(json_valid(evidence_json)), notes TEXT,
+ CHECK((external_record_id IS NULL)=(source_page_url IS NULL)),
+ CHECK(status<>'resolved' OR external_record_id IS NOT NULL),
+ CHECK(status<>'ambiguous' OR external_record_id IS NULL),
+ FOREIGN KEY(external_record_id,source_page_url) REFERENCES external_record_url(external_record_id,url)
+);
+CREATE INDEX idx_image_provenance_source ON image_provenance(external_record_id);
+-- Left joins keep unresolved images visible for all image/specimen queries.
+CREATE VIEW image_provenance_detail AS
+ SELECT i.id AS image_id,i.specimen_id,p.external_record_id AS source_entity_id,
+        e.provider,e.record_key AS provider_source_key,e.identity_status,
+        i.local_path,p.source_page_url,i.source_url AS source_image_url,
+        p.status,p.method,p.evidence_json,p.notes
+ FROM image i JOIN image_provenance p ON p.image_id=i.id
+ LEFT JOIN external_record e ON e.id=p.external_record_id;

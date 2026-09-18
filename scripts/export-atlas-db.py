@@ -4,6 +4,7 @@ Usage: python scripts/export-atlas-db.py /absolute/path/atlas.sqlite
 from pathlib import Path
 import json,sqlite3,sys,hashlib
 from source_identity import source_identity
+from image_provenance import export_image_provenance
 root=Path(__file__).resolve().parents[1];out=Path(sys.argv[1]);assert not out.exists(),'Refusing to overwrite existing database'
 d=json.loads((root/'public/data/atlas.json').read_text());db=sqlite3.connect(out);db.executescript((root/'db/schema.sql').read_text())
 def add(table,**row):
@@ -113,4 +114,5 @@ for manifest_path in sorted((root/'research/zeno').glob('manifest-*.json')):
   if spec:image=next((im for im in spec['images'] if im['path']==f'/coins/zeno/{record_id}.jpg'),None)
   status='image_imported' if image else 'specimen_linked_no_image' if spec else 'pending'
   add('coverage_record',snapshot_id=snapshot_id,source_record_key=record_id,external_record_id=eid,source_manifest_path=source_manifest,raw_html_path=record.get('rawHtml'),source_path_json=json.dumps(record['breadcrumb'],ensure_ascii=False,sort_keys=True) if record.get('breadcrumb') else None,specimen_id=spec['id'] if spec else None,image_id=image['id'] if image else None,status=status)
+export_image_provenance(root,d,db,cite)
 assert not db.execute('PRAGMA foreign_key_check').fetchall();db.commit();print('Relational export:',out,';',len(d['specimens']),'specimen records;',len(list((root/'research/zeno').glob('manifest-*.json'))),'Zeno coverage snapshot(s)')

@@ -8,6 +8,7 @@ from pathlib import Path
 
 from PIL import Image
 from source_identity import source_identity
+from validate_image_provenance import validate_image_provenance
 
 # Identity parsing is independent of internal specimen IDs and URL decoration.
 assert source_identity('https://www.zeno.ru/showphoto.php?photo=20696') == ('Zeno','20696','resolved')
@@ -317,6 +318,7 @@ with tempfile.TemporaryDirectory() as tmp:
   else:raise AssertionError('Invalid data accepted: '+sql)
  # Multiple photographs and external sources do not inflate the specimen count.
  assert db.execute("SELECT count(*) FROM image WHERE specimen_id='cng611-576'").fetchone()[0]==2
+ validate_image_provenance(root,a,db,Path(tmp)/'atlas-repeat.sqlite')
 
 whole_images=sum(len(s['images']) for s in a['specimens'])
 print(f'PASS: {len(a["families"])} families / {len(a["variants"])} source groups / {len(a["specimens"])} main records / {whole_images} images; {len(a.get("relatedRecords",[]))} related-held-excluded source records remain separately traceable; Nana and #795 coverage invariants, source paths, image rights, FK and geography checks hold.')
