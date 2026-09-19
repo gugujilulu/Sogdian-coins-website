@@ -1,7 +1,7 @@
 'use client';
 import {useEffect,useMemo,useState} from 'react';
 import type {RelatedRecord} from '@/lib/atlas';
-import {parseRelatedImageIndex,relatedPage,type RelatedThumbnail} from '@/lib/related-gallery';
+import {parseRelatedImageIndex,relatedPage,resetRelatedPaging,type RelatedThumbnail} from '@/lib/related-gallery';
 
 function Thumbnail({image}:{image:RelatedThumbnail|undefined}) {
  const [failed,setFailed]=useState(false);
@@ -11,8 +11,11 @@ function Thumbnail({image}:{image:RelatedThumbnail|undefined}) {
 export default function RelatedGallery({records,query,mainRecordCount}:{records:RelatedRecord[];query:string;mainRecordCount:number}) {
  const [index,setIndex]=useState<Map<string,RelatedThumbnail[]>|null>(null);
  const [failed,setFailed]=useState(false),[attempt,setAttempt]=useState(0);
- const [paging,setPaging]=useState({query:'',batches:1});
- const batches=paging.query===query?paging.batches:1;
+ const [paging,setPaging]=useState({query,batches:1});
+ const currentPaging=resetRelatedPaging(paging,query);
+ // Update this component before committing children so old query batches cannot return.
+ if(currentPaging!==paging)setPaging(currentPaging);
+ const batches=currentPaging.batches;
  const {matches,visible}=useMemo(()=>relatedPage(records,query,batches),[records,query,batches]);
  useEffect(()=>{
   const controller=new AbortController();

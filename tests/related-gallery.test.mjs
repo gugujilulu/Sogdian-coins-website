@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {parseRelatedImageIndex,relatedPage} from '../lib/related-gallery.ts';
+import {parseRelatedImageIndex,relatedPage,resetRelatedPaging} from '../lib/related-gallery.ts';
 const atlas=JSON.parse(readFileSync(new URL('../public/data/atlas.json',import.meta.url)));
 const saved=JSON.parse(readFileSync(new URL('../public/data/related-images.json',import.meta.url)));
 
@@ -26,4 +26,24 @@ test('40-record batches, filtered count, empty search and reset are independent 
 test('missing image stays empty; malformed and duplicate indexes fail rather than misassociate',()=>{
  assert.deepEqual(parseRelatedImageIndex({records:[{relatedRecordId:'x',images:[]}]}).get('x'),[]);
  for(const value of [null,{}, {records:[saved.records[0],saved.records[0]]}, {records:[{relatedRecordId:'x',images:[{id:'bad',path:'https://example.test/a',width:1,height:1}]}]}]) assert.throws(()=>parseRelatedImageIndex(value));
+});
+
+test('returning to an old search resets pagination before loading more again',()=>{
+ let paging={query:'',batches:2};
+ const count=()=>relatedPage(atlas.relatedRecords,paging.query,paging.batches).visible.length;
+ assert.equal(count(),80);
+ paging=resetRelatedPaging(paging,'105744');
+ assert.equal(count(),1);
+ assert.equal(paging.batches,1);
+ paging=resetRelatedPaging(paging,'');
+ assert.equal(count(),40);
+ assert.equal(relatedPage(atlas.relatedRecords,paging.query).matches.length,701);
+ paging={...paging,batches:paging.batches+1};
+ assert.equal(count(),80);
+ assert.equal(resetRelatedPaging(paging,''),paging);
+ paging=resetRelatedPaging(paging,'Chach');
+ paging={...paging,batches:2};
+ paging=resetRelatedPaging(paging,'105744');
+ paging=resetRelatedPaging(paging,'Chach');
+ assert.equal(paging.batches,1);
 });

@@ -24,3 +24,10 @@ export function relatedPage(records: readonly RelatedRecord[], query: string, ba
   const matches = records.filter(r => !q || [r.sourceRecordId,r.title,r.reviewStatus,r.reason,r.leafCategoryTitle,...r.sourcePath.map(x=>x.title)].join(' ').toLowerCase().includes(q));
   return { matches, visible: matches.slice(0, Math.max(1, batches) * RELATED_PAGE_SIZE) };
 }
+
+export type RelatedPaging = { query: string; batches: number };
+
+/** Remember every query transition, including a return to a previously used query. */
+export function resetRelatedPaging(paging: RelatedPaging, query: string): RelatedPaging {
+  return paging.query === query ? paging : { query, batches: 1 };
+}
