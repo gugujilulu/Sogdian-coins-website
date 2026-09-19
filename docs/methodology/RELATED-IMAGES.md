@@ -16,7 +16,30 @@ python scripts/validate-atlas.py
 ```
 
 使用已安装 Pillow 的项目 Python 环境。无网络请求、无下载、无图片转换。
-索引中的 `images[].path` 是 T09 可直接使用的静态 URL；`localPath` 是 Git 中保留的研究原件位置。research 原件按字节复制到 `/public/coins/related/`，该生成目录被忽略，不重复提交约194MB已有研究图片。**新 checkout、T09 开发或未来打包前必须先执行上述数据导出命令生成静态文件**；已有 `/public/coins/zeno/` 图直接复用，不复制。当前前端构建未自动接入该命令，本轮没有前端运行时改动。
+索引中的 `images[].path` 是静态 URL；`localPath` 是 Git 中保留的研究原件位置。research 原件按字节复制到 `/public/coins/related/`，该生成目录被忽略，不重复提交约194MB已有研究图片；已有 `/public/coins/zeno/` 图直接复用。
+
+### T09 正常开发与构建准备
+
+`pnpm dev` 和 `pnpm build` 经 `scripts/run-framework.mjs` 自动调用离线 `scripts/related_images.py --prepare`，从已跟踪原件恢复生成目录；无需运行全库 build-atlas，也不在浏览器请求中导出。准备先核对重建索引与已保存 sidecar 完全一致，原件缺失、变化或元数据不一致会停止启动/构建，不能静默交付缺图版本。
+
+需要 Python >=3.10 和 Pillow；默认使用 `python3`，可复用已安装环境：
+
+```sh
+ATLAS_PYTHON=/absolute/path/to/python pnpm dev
+ATLAS_PYTHON=/absolute/path/to/python pnpm build
+```
+
+若缺依赖，启动会输出具体错误和安装说明；不会自动安装。需要新建环境时：
+
+```sh
+python3 -m venv .venv
+.venv/bin/python -m pip install Pillow
+ATLAS_PYTHON=.venv/bin/python pnpm dev
+```
+
+Windows 使用 `.venv/Scripts/python.exe` 并设置同名环境变量。独立普通导出命令仅用于已授权的数据索引更新；不要用它绕过准备阶段的原件一致性错误。
+
+T09 图库按 relatedRecordId 精确关联，每批40条，只显示各记录首张现有照片（当前每条一图），图片懒加载、预留区域并保持比例。搜索及相关资料计数独立于主库；索引失败仍提供文字和来源链接，并可重试。原图详情留给T10。
 
 每个索引记录保存来源系统、原始来源编号、页面、原始URL、原审查状态/原因、imageStatus 和 issues。每张图片另有稳定ID、可用原图URL、原件路径、静态路径、实测尺寸/SHA256、署名、原始权利状态及条款链接、关联证据文档。`rightsStatus=unverified` 不表示拥有使用许可，原始来源措辞保存在 sourceRightsStatus/rightsNote。
 
