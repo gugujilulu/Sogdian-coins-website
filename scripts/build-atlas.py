@@ -389,3 +389,7 @@ for s in a['specimens']:
  if s['id']=='zeno-264184':s['description']='Source reports “Unearthed in N. Afghanistan”. This is an unverified regional find report with no specific site, coordinates or archaeological context. No findspot marker is inferred.'
 (root/'public/data/atlas.json').write_text(json.dumps(a,ensure_ascii=False,indent=2))
 print('Exported',len(a['families']),'families',len(a['variants']),'reference groups',len(a['specimens']),'specimen records',sum(len(s['images']) for s in a['specimens']),'images; Nana',a['coverage']['importedZenoRecords'],'Zeno records /',a['coverage']['images'],'images')
+
+# T08 sidecar keeps related images separate from main-corpus images and IDs.
+from related_images import export_related_images
+export_related_images(root,a)

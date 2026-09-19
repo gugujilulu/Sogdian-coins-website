@@ -326,3 +326,6 @@ with tempfile.TemporaryDirectory() as tmp:
 
 whole_images=sum(len(s['images']) for s in a['specimens'])
 print(f'PASS: {len(a["families"])} families / {len(a["variants"])} source groups / {len(a["specimens"])} main records / {whole_images} images; {len(a.get("relatedRecords",[]))} related-held-excluded source records remain separately traceable; Nana and #795 coverage invariants, source paths, image rights, FK and geography checks hold.')
+
+from validate_related_images import validate_related_images
+validate_related_images(root,a)
