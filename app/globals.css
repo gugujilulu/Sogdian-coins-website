@@ -29,3 +29,13 @@
 .timeline-floating small{flex-basis:100%;font-size:10px;color:#b8c6c9;line-height:1.4}
 .timeline-floating input{min-width:60px}
 @media(max-width:760px){.timeline-floating{gap:6px}.map-layer-note{bottom:105px}}
+
+/* T09: bounded, proportion-preserving related thumbnails. */
+.related-list article{min-width:0;overflow-wrap:anywhere}
+.related-list article>.related-thumbnail{display:grid;place-items:center;aspect-ratio:3/2;background:#e5e0d4;margin-bottom:12px;overflow:hidden;color:#39484d;text-align:center}
+.related-thumbnail img{display:block;width:100%;height:100%;object-fit:contain}
+.related-thumbnail span{font-size:12px;padding:12px}
+.related-list h2{font-size:14px;line-height:1.4;margin:8px 0}
+.related-list p{font-size:12px;line-height:1.5}
+.related-card-heading{flex-wrap:wrap}
+.related-pagination{margin:20px 0;display:flex;align-items:center;gap:12px;flex-wrap:wrap}

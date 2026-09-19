@@ -39,6 +39,21 @@ class RelatedImageTests(unittest.TestCase):
         self.assertTrue((self.root/'public'/result['images'][0]['path'].lstrip('/')).is_file())
         self.assertEqual(result,build_index(self.root,self.atlas)['records'][0])
 
+    def test_preparation_restores_generated_directory_and_refuses_missing_original(self):
+        import shutil
+        digest=self.photo('research/zeno/reviewed-related-images-503/42.jpg')
+        self.save('image-repair-run-503.json',{'successful':[{'id':'42','url':'https://www.zeno.ru/data/1/photo.jpg','path':'public/coins/zeno/42.jpg','sha256':digest}]})
+        exported=export_related_images(self.root,self.atlas)
+        generated=self.root/'public/coins/related'
+        shutil.rmtree(generated)  # Isolated disposable fixture, never repository originals.
+        restored=export_related_images(self.root,self.atlas,require_index_match=True)
+        self.assertEqual(restored,exported)
+        photo=self.root/'public'/restored['records'][0]['images'][0]['path'].lstrip('/')
+        self.assertEqual(hashlib.sha256(photo.read_bytes()).hexdigest(),digest)
+        (self.root/'research/zeno/reviewed-related-images-503/42.jpg').unlink()
+        with self.assertRaisesRegex(ValueError,'refusing degraded'):
+            export_related_images(self.root,self.atlas,require_index_match=True)
+
     def test_glyph_missing_file_and_hash_mismatch_are_not_photos(self):
         self.photo('public/coins/zeno/42.jpg')
         row=build_index(self.root,self.atlas)['records'][0]

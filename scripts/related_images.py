@@ -99,8 +99,12 @@ def build_index(root, atlas):
     return {'version': 1, 'recordCount': len(rows), 'records': rows}
 
 
-def export_related_images(root, atlas):
+def export_related_images(root, atlas, require_index_match=False):
     index = build_index(root, atlas)
+    if require_index_match:
+        saved = json.loads((root / 'public/data/related-images.json').read_text())
+        if index != saved:
+            raise ValueError('Related image evidence differs from saved index (missing/changed originals or metadata); refusing degraded preparation')
     for row in index['records']:
         for image in row['images']:
             original = root / image['localPath']
@@ -115,6 +119,7 @@ def export_related_images(root, atlas):
 
 if __name__ == '__main__':
     root = Path(__file__).resolve().parents[1]
-    result = export_related_images(root, json.loads((root / 'public/data/atlas.json').read_text()))
+    import sys
+    result = export_related_images(root, json.loads((root / 'public/data/atlas.json').read_text()), require_index_match='--prepare' in sys.argv)
     print('Related index:', len(result['records']), 'records;', sum(bool(r['images']) for r in result['records']),
           'with images;', sum(len(r['images']) for r in result['records']), 'images')
