@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {parseRelatedImageIndex,relatedPage,resetRelatedPaging} from '../lib/related-gallery.ts';
+import {parseRelatedImageIndex,relatedPage,resetRelatedPaging,relatedImage} from '../lib/related-gallery.ts';
 const atlas=JSON.parse(readFileSync(new URL('../public/data/atlas.json',import.meta.url)));
 const saved=JSON.parse(readFileSync(new URL('../public/data/related-images.json',import.meta.url)));
 
@@ -46,4 +46,24 @@ test('returning to an old search resets pagination before loading more again',()
  paging=resetRelatedPaging(paging,'105744');
  paging=resetRelatedPaging(paging,'Chach');
  assert.equal(paging.batches,1);
+});
+
+test('details keep each image provenance and select by record ID plus image ID',()=>{
+ const first={...saved.records[0].images[0]};
+ const second={...first,id:'second-photo',credit:'Second uploader',sourceRecordUrl:'https://example.org/record/2',sourceUrl:'https://example.org/photo/2.jpg',rightsStatus:null,width:null,height:null};
+ const input={records:[{relatedRecordId:'fixture',images:[second,first]}]};
+ const index=parseRelatedImageIndex(input);
+ assert.equal(relatedImage(index,'fixture',first.id).credit,first.credit);
+ const selected=relatedImage(index,'fixture','second-photo');
+ assert.equal(selected.credit,'Second uploader');
+ assert.equal(selected.sourceRecordUrl,second.sourceRecordUrl);
+ assert.equal(selected.rightsStatus,null);assert.equal(selected.width,null);
+ assert.equal(relatedImage(index,'other','second-photo'),undefined);
+ assert.equal(relatedImage(index,'fixture','absent'),undefined);
+ assert.equal(relatedImage(null,'fixture',first.id),undefined);
+ assert.equal('localPath' in selected,false);assert.equal('sha256' in selected,false);
+ assert.throws(()=>parseRelatedImageIndex({records:[{relatedRecordId:'fixture',images:[first,first]}]}));
+ const unknown=parseRelatedImageIndex({records:[{relatedRecordId:'missing',images:[{id:'x',path:'/coins/x.jpg',sourceUrl:'javascript:alert(1)'}]}]});
+ assert.equal(relatedImage(unknown,'missing','x').credit,null);
+ assert.equal(relatedImage(unknown,'missing','x').sourceUrl,null);
 });

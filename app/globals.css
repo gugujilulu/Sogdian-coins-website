@@ -39,3 +39,17 @@
 .related-list p{font-size:12px;line-height:1.5}
 .related-card-heading{flex-wrap:wrap}
 .related-pagination{margin:20px 0;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+/* Related details reuse the existing photo/info layout inside a native modal. */
+.related-open{display:block;width:100%;padding:0;text-align:center;margin-bottom:12px}
+.related-open .related-thumbnail{display:grid;place-items:center;aspect-ratio:3/2;background:#e5e0d4;overflow:hidden;color:#39484d}
+.related-dialog{padding:0;width:min(1180px,96vw);max-width:96vw;max-height:94dvh;border:1px solid #52636a;background:#101d22;color:inherit;overflow:hidden}
+.related-dialog::backdrop{background:#05090bd9;backdrop-filter:blur(10px)}
+.related-detail-header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px;border-bottom:1px solid #52636a}
+.related-detail-header button{flex-shrink:0}
+.related-detail-body.specimen-modal{width:100%;height:min(740px,calc(94dvh - 64px));border:0;box-shadow:none}
+.related-detail-body .modal-info{min-width:0;overflow-wrap:anywhere}
+.related-detail-body .modal-info p{font-size:14px;line-height:1.5}
+.related-detail-body .modal-image{min-height:0}
+.related-image-options{display:flex;flex-wrap:wrap;gap:8px}
+.related-image-options [aria-pressed=true]{border-color:#d5b46f}
+@media(max-width:760px){.related-detail-body.specimen-modal{grid-template-rows:minmax(150px,35%) minmax(0,65%)}.related-detail-header{padding:8px 12px}.related-detail-body .modal-info{padding:14px}}

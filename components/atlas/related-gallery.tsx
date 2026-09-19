@@ -1,14 +1,16 @@
 'use client';
 import {useEffect,useMemo,useState} from 'react';
+import RelatedDetails from './related-details';
 import type {RelatedRecord} from '@/lib/atlas';
 import {parseRelatedImageIndex,relatedPage,resetRelatedPaging,type RelatedThumbnail} from '@/lib/related-gallery';
 
 function Thumbnail({image}:{image:RelatedThumbnail|undefined}) {
  const [failed,setFailed]=useState(false);
- return <div className="related-thumbnail">{image&&!failed?<img src={image.path} width={image.width} height={image.height} loading="lazy" decoding="async" alt="相关资料来源图片" onError={()=>setFailed(true)}/>:<span>{failed?'图片加载失败；文字与来源仍可访问':'暂无可用图片'}</span>}</div>;
+ return <div className="related-thumbnail">{image&&!failed?<img src={image.path} width={image.width??undefined} height={image.height??undefined} loading="lazy" decoding="async" alt="相关资料来源图片" onError={()=>setFailed(true)}/>:<span>{failed?'图片加载失败；文字与来源仍可访问':'暂无可用图片'}</span>}</div>;
 }
 
 export default function RelatedGallery({records,query,mainRecordCount}:{records:RelatedRecord[];query:string;mainRecordCount:number}) {
+ const [selectedId,setSelectedId]=useState<string|null>(null);
  const [index,setIndex]=useState<Map<string,RelatedThumbnail[]>|null>(null);
  const [failed,setFailed]=useState(false),[attempt,setAttempt]=useState(0);
  const [paging,setPaging]=useState({query,batches:1});
@@ -22,6 +24,7 @@ export default function RelatedGallery({records,query,mainRecordCount}:{records:
   fetch('/data/related-images.json',{signal:controller.signal}).then(r=>{if(!r.ok)throw new Error('Index unavailable');return r.json()}).then(value=>{if(!controller.signal.aborted){setIndex(parseRelatedImageIndex(value));setFailed(false)}}).catch(()=>{if(!controller.signal.aborted)setFailed(true)});
   return()=>controller.abort();
  },[attempt]);
+ const selectedRecord=records.find(r=>r.id===selectedId);
  const groups=Array.from(new Set(matches.map(r=>r.reviewStatus))).sort();
  return <>
   <div className="catalogue-breadcrumb">来源目录 / related · held · excluded</div><h1>相关与暂缓资料</h1>
@@ -33,13 +36,14 @@ export default function RelatedGallery({records,query,mainRecordCount}:{records:
   <div className="related-list">{visible.map(r=>{
    const image=index?.get(r.id)?.[0];
    return <article key={r.id} data-related-id={r.id}>
-    {index?<Thumbnail key={image?.id||r.id} image={image}/>:<div className="related-thumbnail"><span>{failed?'图片索引不可用':'图片索引加载中'}</span></div>}
+    <button className="related-open" onClick={()=>setSelectedId(r.id)} aria-label={`查看详情：${r.title}`}>{index?<Thumbnail key={image?.id||r.id} image={image}/>:<div className="related-thumbnail"><span>{failed?'图片索引不可用':'图片索引加载中'}</span></div>}<span>查看详情</span></button>
     <div className="related-card-heading"><strong>{r.sourceName} · {r.sourceRecordId}</strong><span>{r.reviewStatus}</span></div>
     <h2>{r.title.replace(/^#\d+ - /,'')}</h2>
     {r.sourcePath.length>0&&<small>{r.sourcePath.map(x=>`${x.title} [${x.categoryId}]`).join(' › ')}</small>}
     <p>{r.reason}</p><a className="out-link" href={r.sourceUrl} target="_blank" rel="noreferrer">打开原始记录 ↗</a>
    </article>;
   })}</div>
+  {selectedRecord&&<RelatedDetails record={selectedRecord} index={index} onClose={()=>setSelectedId(null)}/>}
   <div className="related-pagination"><p aria-live="polite">已显示 {visible.length} / {matches.length} 条相关资料</p>{visible.length<matches.length&&<button onClick={()=>setPaging({query,batches:batches+1})}>加载更多（40条）</button>}</div>
  </>;
 }
