@@ -1,0 +1,10 @@
+import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
+import {buildCatalogueTree,renderCatalogueMarkdown} from '../lib/catalogue-tree.ts';
+import {projectSourceIndex} from '../lib/source-index.ts';
+const root=new URL('../',import.meta.url);
+const data=JSON.parse(readFileSync(new URL('public/data/atlas.json',root)));
+const index=JSON.parse(readFileSync(new URL('public/data/source-index.json',root)));
+const tree=buildCatalogueTree(data,data.specimens,projectSourceIndex(index,data.specimens).byRecord);
+mkdirSync(new URL('docs/catalogue/',root),{recursive:true});
+writeFileSync(new URL('docs/catalogue/ATLAS-CATALOGUE.md',root),renderCatalogueMarkdown(tree));
+console.log(`${tree.families.length} families / ${tree.groupCount} catalogue groups / ${tree.recordCount} records / ${tree.unassignedCount} unassigned`);
