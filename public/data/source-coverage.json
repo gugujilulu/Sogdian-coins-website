@@ -1,0 +1,279 @@
+[
+  {
+    "provider": "Zeno",
+    "categoryId": "801",
+    "date": "2026-09-16",
+    "count": 644,
+    "unit": "分类照片数",
+    "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap. 覆盖未核定。",
+    "evidence": "research/coverage-scopes.json"
+  },
+  {
+    "provider": "Zeno",
+    "categoryId": "800",
+    "date": "2026-09-16",
+    "count": 1769,
+    "unit": "分类照片数",
+    "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap. 覆盖未核定。",
+    "evidence": "research/coverage-scopes.json"
+  },
+  {
+    "provider": "Zeno",
+    "categoryId": "870",
+    "date": "2026-09-16",
+    "count": 667,
+    "unit": "分类照片数",
+    "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap. 覆盖未核定。",
+    "evidence": "research/coverage-scopes.json"
+  },
+  {
+    "provider": "Zeno",
+    "categoryId": "803",
+    "date": "2026-09-16",
+    "count": 27,
+    "unit": "分类照片数",
+    "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap. 覆盖未核定。",
+    "evidence": "research/coverage-scopes.json"
+  },
+  {
+    "provider": "Zeno",
+    "categoryId": "804",
+    "date": "2026-09-16",
+    "count": 31,
+    "unit": "分类照片数",
+    "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap. 覆盖未核定。",
+    "evidence": "research/coverage-scopes.json"
+  },
+  {
+    "provider": "Zeno",
+    "categoryId": "2141",
+    "date": "2026-09-16",
+    "count": 569,
+    "unit": "分类照片数",
+    "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap. 覆盖未核定。",
+    "evidence": "research/coverage-scopes.json"
+  },
+  {
+    "provider": "Zeno",
+    "categoryId": "22493",
+    "date": "2026-09-16",
+    "count": 31,
+    "unit": "分类照片数",
+    "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap. 覆盖未核定。",
+    "evidence": "research/coverage-scopes.json"
+  },
+  {
+    "provider": "Zeno",
+    "categoryId": "2142",
+    "date": "2026-09-16",
+    "count": 329,
+    "unit": "分类照片数",
+    "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap. 覆盖未核定。",
+    "evidence": "research/coverage-scopes.json"
+  },
+  {
+    "provider": "Zeno",
+    "categoryId": "13698",
+    "date": "2026-09-16",
+    "count": 20,
+    "unit": "分类照片数",
+    "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap. 覆盖未核定。",
+    "evidence": "research/coverage-scopes.json"
+  },
+  {
+    "provider": "Zeno",
+    "categoryId": "14605",
+    "date": "2026-09-16",
+    "count": 12,
+    "unit": "分类照片数",
+    "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap. 覆盖未核定。",
+    "evidence": "research/coverage-scopes.json"
+  },
+  {
+    "provider": "Zeno",
+    "categoryId": "14538",
+    "date": "2026-09-16",
+    "count": 13,
+    "unit": "分类照片数",
+    "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap. 覆盖未核定。",
+    "evidence": "research/coverage-scopes.json"
+  },
+  {
+    "provider": "Zeno",
+    "categoryId": "8585",
+    "date": "2026-09-16",
+    "count": 33,
+    "unit": "分类照片数",
+    "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap. 覆盖未核定。",
+    "evidence": "research/coverage-scopes.json"
+  },
+  {
+    "provider": "Zeno",
+    "categoryId": "795",
+    "date": "2026-09-16",
+    "count": 254,
+    "unit": "分类照片数",
+    "note": "Recursive #795 subtree fully acquired: 254/254 observed source records, 254 detail pages and 254 images. All records scope-reviewed. 239 source records are linked to Atlas; one (Zeno 20696) merges into existing sr9. Held records: 4 non-coins, 1 hoard/context record, 1 closed-aperture scope question, 3 circular-aperture related records, 5 multi-specimen source images awaiting split, and 1 Kai Yuan-style imitation awaiting family crosswalk. 覆盖未核定。",
+    "evidence": "research/coverage-scopes.json"
+  },
+  {
+    "provider": "Zeno",
+    "categoryId": "14859",
+    "date": "2026-09-16",
+    "count": 12,
+    "unit": "分类照片数",
+    "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap. 覆盖未核定。",
+    "evidence": "research/coverage-scopes.json"
+  },
+  {
+    "provider": "Zeno",
+    "categoryId": "14905",
+    "date": "2026-09-16",
+    "count": 10,
+    "unit": "分类照片数",
+    "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap. 覆盖未核定。",
+    "evidence": "research/coverage-scopes.json"
+  },
+  {
+    "provider": "Zeno",
+    "categoryId": "20257",
+    "date": "2026-09-16",
+    "count": 3,
+    "unit": "分类照片数",
+    "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap. 覆盖未核定。",
+    "evidence": "research/coverage-scopes.json"
+  },
+  {
+    "provider": "Zeno",
+    "categoryId": "799",
+    "date": "2026-09-16",
+    "count": 62,
+    "unit": "分类照片数",
+    "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap. 覆盖未核定。",
+    "evidence": "research/coverage-scopes.json"
+  },
+  {
+    "provider": "Zeno",
+    "categoryId": "11583",
+    "date": "2026-09-16",
+    "count": 3,
+    "unit": "分类照片数",
+    "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap. 覆盖未核定。",
+    "evidence": "research/coverage-scopes.json"
+  },
+  {
+    "provider": "Zeno",
+    "categoryId": "14890",
+    "date": "2026-09-16",
+    "count": 11,
+    "unit": "分类照片数",
+    "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap. 覆盖未核定。",
+    "evidence": "research/coverage-scopes.json"
+  },
+  {
+    "provider": "Zeno",
+    "categoryId": "11003",
+    "date": "2026-09-16",
+    "count": 172,
+    "unit": "分类照片数",
+    "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap. 覆盖未核定。",
+    "evidence": "research/coverage-scopes.json"
+  },
+  {
+    "provider": "Zeno",
+    "categoryId": "796",
+    "date": "2026-09-16",
+    "count": 0,
+    "unit": "分类照片数",
+    "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap. 覆盖未核定。",
+    "evidence": "research/coverage-scopes.json"
+  },
+  {
+    "provider": "Zeno",
+    "categoryId": "1251",
+    "date": "2026-09-16",
+    "count": 31,
+    "unit": "分类照片数",
+    "note": "Category photo count, not count of unique coins or square-holed types; parent and child totals overlap. 覆盖未核定。",
+    "evidence": "research/coverage-scopes.json"
+  },
+  {
+    "provider": "Zeno",
+    "categoryId": "2740",
+    "date": "2026-09-16",
+    "count": 36,
+    "unit": "当时直接观察的来源链接数",
+    "note": "来源声明直接数 37；已知缺口 1；incomplete_direct_observed_links。历史分页缺口登记，不代表当前补齐。",
+    "evidence": "research/zeno/coverage-gaps-503.json"
+  },
+  {
+    "provider": "Zeno",
+    "categoryId": "24941",
+    "date": "2026-09-16",
+    "count": 36,
+    "unit": "当时直接观察的来源链接数",
+    "note": "来源声明直接数 47；已知缺口 11；incomplete_direct_observed_links。历史分页缺口登记，不代表当前补齐。",
+    "evidence": "research/zeno/coverage-gaps-503.json"
+  },
+  {
+    "provider": "Zeno",
+    "categoryId": "911",
+    "date": "2026-09-16",
+    "count": 37,
+    "unit": "当时直接观察的来源链接数",
+    "note": "来源声明直接数 61；已知缺口 24；incomplete_direct_observed_links。历史分页缺口登记，不代表当前补齐。",
+    "evidence": "research/zeno/coverage-gaps-503.json"
+  },
+  {
+    "provider": "Zeno",
+    "categoryId": "914",
+    "date": "2026-09-16",
+    "count": 36,
+    "unit": "当时直接观察的来源链接数",
+    "note": "来源声明直接数 46；已知缺口 10；incomplete_direct_observed_links。历史分页缺口登记，不代表当前补齐。",
+    "evidence": "research/zeno/coverage-gaps-503.json"
+  },
+  {
+    "provider": "Zeno",
+    "categoryId": "2144",
+    "date": "2026-09-16",
+    "count": 36,
+    "unit": "当时直接观察的来源链接数",
+    "note": "来源声明直接数 37；已知缺口 1；incomplete_direct_observed_links。历史分页缺口登记，不代表当前补齐。",
+    "evidence": "research/zeno/coverage-gaps-503.json"
+  },
+  {
+    "provider": "Zeno",
+    "categoryId": "15758",
+    "date": "2026-09-16",
+    "count": 39,
+    "unit": "当时直接观察的来源链接数",
+    "note": "来源声明直接数 63；已知缺口 24；incomplete_direct_observed_links。历史分页缺口登记，不代表当前补齐。",
+    "evidence": "research/zeno/coverage-gaps-503.json"
+  },
+  {
+    "provider": "Zeno",
+    "categoryId": "796",
+    "date": "2026-09-16",
+    "count": 36,
+    "unit": "当时直接观察的来源链接数",
+    "note": "来源声明直接数 58；已知缺口 22；incomplete_direct_observed_links。历史分页缺口登记，不代表当前补齐。",
+    "evidence": "research/zeno/coverage-gaps-503.json"
+  },
+  {
+    "provider": "Zeno",
+    "categoryId": "503",
+    "date": "2026-09-16",
+    "note": "分页缺口登记涉及 24 个分类；非完整采集。",
+    "evidence": "research/zeno/coverage-gaps-503.json"
+  },
+  {
+    "provider": "Zeno",
+    "categoryId": "3106",
+    "date": "2026-09-16",
+    "count": 14,
+    "unit": "Nana分类快照来源记录数",
+    "note": "Lady Nana category 3106 only; corpus-wide comparison pending；独立覆盖快照，不是当前筛选结果。",
+    "evidence": "public/data/atlas.json#/coverage"
+  }
+]

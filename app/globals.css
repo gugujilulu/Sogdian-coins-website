@@ -65,3 +65,9 @@
 .catalogue-tree-actions .text-button{font-size:12px;min-height:36px}
 .atlas-record-tree button{display:flex;width:100%;justify-content:space-between;padding:8px;font-size:12px}
 .atlas-record-tree button.active{border-left:2px solid #d0ad69;background:#1c2d33;color:#e0c486}
+.source-classification-tree .source-tree-node .source-tree-node{margin-left:9px;border-left:1px solid #35474e}
+.source-classification-tree button{display:flex;width:100%;text-align:left;justify-content:space-between;align-items:flex-start;gap:8px;padding:8px;min-height:40px;font-size:12px}
+.source-classification-tree button span{min-width:0;overflow-wrap:anywhere}
+.source-classification-tree button small{flex-shrink:0;font-size:10px}
+.source-classification-tree button.active{border-color:#d0ad69;color:#e0c486}
+.source-coverage-note{border:1px solid #35474e;padding:10px;margin-bottom:16px;font-size:13px;overflow-wrap:anywhere}
