@@ -28,11 +28,11 @@ export function CatalogueTreeSidebar({tree,query,onFamily,onOpen,selectedId}:{tr
  </div>;
 }
 
-export function CatalogueTreeContent({node,onOpen}:{node:CatalogueFamily|undefined;onOpen:(record:Specimen)=>void}) {
+export function CatalogueTreeContent({node,onOpen,onCompare,compareIds}:{node:CatalogueFamily|undefined;onOpen:(record:Specimen)=>void;onCompare:(id:string)=>void;compareIds:readonly string[]}) {
  if(!node)return <div className="empty-state"><h1>Atlas 钱币纲目</h1><p>从左侧展开家族、来源/目录组和记录。所有时期的无年代、无坐标记录仍可访问；数量表示主库记录。</p></div>;
- return <><h1>{node.family.title}</h1><p>{node.family.dateLabel} · 地域：{node.family.region||'未明确'} · 政权：{node.family.polity||'未明确'}</p><p>{node.recordCount} 条当前匹配主库记录。来源/目录组不是已审定学术 variant。</p>
- {node.groups.map(g=><section key={g.id} className="group-list"><h2>{g.title} · {g.recordCount} 条</h2><small>{g.group?.id||g.id}</small><div className="catalogue-gallery atlas-tree-gallery">{g.records.map(item=><article key={item.id} className="specimen-tile">
+ return <><h1>{node.family.title}</h1><p className="family-zh">{node.family.zh}</p><p>{node.family.description}</p>{node.family.question&&<div className="question-note">{node.family.question}</div>}<p>{node.family.dateLabel} · 地域：{node.family.region||'未明确'} · 政权：{node.family.polity||'未明确'}</p><p>{node.recordCount} 条当前匹配主库记录。来源/目录组不是已审定学术 variant。</p>
+ {node.groups.map(g=><section key={g.id} className="group-list"><h2>{g.title} · {g.recordCount} 条</h2><small>{g.group?.id||g.id}</small>{g.group?.description&&<p>{g.group.description}</p>}<div className="catalogue-gallery atlas-tree-gallery">{g.records.map(item=><article key={item.id} className="specimen-tile">
   <button className="specimen-image" onClick={()=>onOpen(item.record)} aria-label={`图片详情 ${item.id}`}><img src={item.record.images[0]?.path} loading="lazy" alt={item.record.title}/></button>
-  <div className="specimen-copy"><strong>{item.id} · {item.record.title}</strong><p>实际来源：</p>{item.sources.length?item.sources.map(({source})=><p key={source.id}>{source.provider} · {source.identityStatus==='resolved'?source.recordKey:'编号待解析'} {source.urls.map(url=><a key={url} href={url} target="_blank" rel="noreferrer">来源 ↗ </a>)}</p>):<p>来源索引未加载或未记录</p>}</div>
+  <div className="specimen-copy"><strong>{item.id} · {item.record.title}</strong><p>重量：{item.record.weightG!=null?`${item.record.weightG} g`:'未记录'} · 直径：{item.record.diameterMm!=null?`${item.record.diameterMm} mm`:'未记录'}</p><div className="tile-actions"><button className={compareIds.includes(item.id)?'active':''} aria-pressed={compareIds.includes(item.id)} onClick={()=>onCompare(item.id)}>{compareIds.includes(item.id)?'取消对比':'加入对比'}</button></div><p>实际来源：</p>{item.sources.length?item.sources.map(({source})=><p key={source.id}>{source.provider} · {source.identityStatus==='resolved'?source.recordKey:'编号待解析'} {source.urls.map(url=><a key={url} href={url} target="_blank" rel="noreferrer">来源 ↗ </a>)}</p>):<p>来源索引未加载或未记录</p>}</div>
  </article>)}</div></section>)}</>;
 }
