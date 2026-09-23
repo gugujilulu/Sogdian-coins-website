@@ -42,3 +42,9 @@ test('filters, empty query and coverage snapshots stay independent',()=>{
  assert.deepEqual(coverageFor({...node,provider:'Other'},coverage),[]);
  assert.ok(coverage.some(c=>c.categoryId==='503'&&c.note.includes('分页')));
 });
+test('coverage projection preserves original dated evidence and known gaps',()=>{
+ const scopes=read('../research/coverage-scopes.json');
+ const gaps=read('../research/zeno/coverage-gaps-503.json');
+ for(const row of scopes){const hit=coverage.find(c=>c.evidence==='research/coverage-scopes.json'&&c.categoryId===String(row.categoryId));assert.equal(hit.count,row.sourcePhotoCount);assert.equal(hit.date,row.date)}
+ for(const row of gaps.recoveryPriorityCategories){const hit=coverage.find(c=>c.evidence==='research/zeno/coverage-gaps-503.json'&&c.categoryId===String(row.categoryId));assert.equal(hit.count,row.observedDirectCount);assert.ok(hit.note.includes('已知缺口 '+row.knownDirectShortfall));assert.equal(hit.date,gaps.generatedOn)}
+});

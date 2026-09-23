@@ -29,3 +29,19 @@
 3项Python测试检查重建、T03身份、重复分类成员、待解析键和冲突拒绝；2项索引Node测试检查实际多来源、comparison排除、原数据不变、筛选投影和重复链接。连同既有图库/筛选共19项Node测试通过。
 
 一次临时SQLite导出核对全部1006实体身份/ID及1020条关系逐项一致；全库external_record仍3999，外键干净。原atlas、related索引、研究文件、schema均未改。类型检查和生产构建通过；代表性页面验收见STATUS T11记录。
+
+## T13 · 来源分类树
+
+`lib/source-tree.ts`消费T11索引在T40 matchedRecords中的实际关联，生成平台→原分类路径→来源记录。分类实体键为provider+原categoryId；树中位置键为provider+完整祖先分类ID序列，来源叶再加既有external ID。没有路径的记录进入独立missing-path浏览节点，不借用主来源路径，不按标题造分类。相同分类/来源可有多个树中位置；父节点对来源ID、来源/主库配对、主库ID分别去重，不相加子计数。
+
+搜索按当前关联的来源编号、原标签、主库ID/标题、路径名称和原分类ID匹配；comparison继续单列。选中来源/分类可看对应关联，进入既有图片或Atlas家族；“返回来源目录”恢复来源选择、搜索及展开状态。零结果清理失效选中项，清空搜索恢复当前全局筛选。相关图库保持独立。未改T12对比、重量/尺寸及说明组件。
+
+### 覆盖证据
+
+离线 `python scripts/source_coverage.py` 生成独立 `public/data/source-coverage.json`（31条证据）。仅读取：
+
+- research/coverage-scopes.json：日期、分类ID与分类照片数登记；原注记保留，覆盖未核定。
+- research/zeno/coverage-gaps-503.json：登记日期、明确分类的直接观察链接数/声明数/已知缺口；#503另保留涉及24分类的分页缺口提示。历史登记不宣称已补齐。
+- atlas.json coverage：明确category URL中的3106，2026-09-16 Nana快照14条。
+
+仅provider+categoryId准确对应时展示，不向子分类继承或相加快照计数；没有对应证据显示覆盖未核定。快照值不随查询变化，不以当前主库关联数量推导采集率。范围仍是已关联主库的来源子集，不扩展全3999实体或全部快照。没有联网、改原资料或重建研究数据库。
