@@ -79,3 +79,24 @@
 .deep-copy small{overflow-wrap:anywhere}
 .deep-link-notice{position:fixed;z-index:200;top:60px;left:10px;right:10px;background:#fff5d9;color:#312a1e;border:1px solid #baaa87;padding:10px;overflow-wrap:anywhere}
 .family-copy-link{position:absolute;right:20px;bottom:15px;z-index:35;background:var(--paper,#f8f5ec);padding:3px 8px}
+
+/* T15 image viewport: transforms use original pixels; gestures stay inside this area. */
+.image-detail-dialog{margin:auto;height:min(850px,96dvh);max-height:96dvh}
+.image-detail-dialog .related-detail-header{height:48px;box-sizing:border-box}
+.image-detail-dialog .related-detail-body{height:calc(100% - 48px);max-height:none;min-height:0}
+.image-detail-dialog .modal-info{min-height:0;overscroll-behavior:contain}
+.detail-image-panel{min-width:0;min-height:0;display:flex;flex-direction:column;background:#e9e4d8;color:#17252b;overflow:hidden}
+.image-pagination,.image-toolbar{display:flex;gap:6px;align-items:center;flex-wrap:wrap;padding:8px}
+.image-pagination{justify-content:center;border-bottom:1px solid #aaa}
+.image-pagination button,.image-toolbar button,.image-viewport button{padding:6px 9px;border:1px solid #69777b;border-radius:4px;min-height:32px}
+.image-pagination button:disabled,.image-toolbar button:disabled,.image-viewport button:disabled{opacity:.4;cursor:default}
+.hires-viewer{display:flex;flex-direction:column;flex:1;min-height:0}
+.image-toolbar output{font-size:12px}
+.image-viewport{position:relative;overflow:hidden;flex:1;min-height:90px;touch-action:none;user-select:none;cursor:grab;background:#d8d2c5;display:grid;place-items:center}
+.image-viewport:active{cursor:grabbing}
+.image-viewport:focus-visible{outline:2px solid #956910;outline-offset:-3px}
+.image-viewport img{position:absolute;left:50%;top:50%;max-width:none;max-height:none;transform-origin:center;pointer-events:none}
+.image-viewport p{padding:10px;text-align:center;font-size:13px}
+.image-help{font-size:11px;line-height:1.5;padding:6px 10px;margin:0;overflow-wrap:anywhere}
+.image-help a{display:block;text-decoration:underline}
+@media(max-width:760px){.image-detail-dialog{width:96vw;height:96dvh;max-height:96dvh}.image-detail-dialog .related-detail-body{grid-template-rows:minmax(270px,49%) minmax(0,51%)}.image-toolbar,.image-pagination{padding:5px;gap:5px}.image-toolbar button{padding:5px;font-size:12px}.image-help{font-size:10px}.image-detail-dialog .modal-info h1{overflow-wrap:anywhere}}

@@ -43,7 +43,7 @@ export default function RelatedGallery({records,query,mainRecordCount,selectedId
     <p>{r.reason}</p><a className="out-link" href={r.sourceUrl} target="_blank" rel="noreferrer">打开原始记录 ↗</a>
    </article>;
   })}</div>
-  {selectedRecord&&<RelatedDetails record={selectedRecord} index={index} onClose={()=>onSelect(null)}/>}
+  {selectedRecord&&<RelatedDetails key={selectedRecord.id} record={selectedRecord} index={index} onClose={()=>onSelect(null)}/>}
   <div className="related-pagination"><p aria-live="polite">已显示 {visible.length} / {matches.length} 条相关资料</p>{visible.length<matches.length&&<button onClick={()=>setPaging({query,batches:batches+1})}>加载更多（40条）</button>}</div>
  </>;
 }
