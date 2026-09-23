@@ -1,12 +1,15 @@
 'use client';
+import {useEffect,useRef} from 'react';
 import type {SourceTreeNode,SourceCoverage} from '@/lib/source-tree';
 import {coverageFor} from '@/lib/source-tree';
 export function SourceTree({roots,expanded,onToggle,onSelect,selected}:{roots:SourceTreeNode[];expanded:Set<string>;onToggle:(id:string)=>void;onSelect:(id:string)=>void;selected:string|null}){
+ const container=useRef<HTMLDivElement>(null);
+ useEffect(()=>{if(selected)Array.from(container.current?.querySelectorAll<HTMLElement>('[data-source-node]')||[]).find(el=>el.dataset.sourceNode===selected)?.scrollIntoView({block:'nearest'})},[selected,expanded]);
  const render=(node:SourceTreeNode)=><div key={node.id} className="source-tree-node">
-  <button aria-expanded={node.children.length?expanded.has(node.id):undefined} aria-label={`${node.kind==='source'?'来源记录':'来源分类'} ${node.title}`} className={selected===node.id?'active':''} onClick={()=>{if(node.children.length)onToggle(node.id);onSelect(node.id)}}><span>{node.children.length?(expanded.has(node.id)?'▾ ':'▸ '):''}{node.title}{node.categoryId?` [${node.categoryId}]`:''}</span><small>{node.sourceCount} 来源 / {node.recordCount} 记录</small></button>
+  <button data-source-node={node.id} aria-expanded={node.children.length?expanded.has(node.id):undefined} aria-label={`${node.kind==='source'?'来源记录':'来源分类'} ${node.title}`} className={selected===node.id?'active':''} onClick={()=>{if(node.children.length)onToggle(node.id);onSelect(node.id)}}><span>{node.children.length?(expanded.has(node.id)?'▾ ':'▸ '):''}{node.title}{node.categoryId?` [${node.categoryId}]`:''}</span><small>{node.sourceCount} 来源 / {node.recordCount} 记录</small></button>
   {expanded.has(node.id)&&node.children.map(render)}
  </div>;
- return <div className="source-classification-tree">{roots.length?roots.map(render):<p role="status">没有匹配的实际来源。请清空搜索或调整筛选。</p>}</div>;
+ return <div ref={container} className="source-classification-tree">{roots.length?roots.map(render):<p role="status">没有匹配的实际来源。请清空搜索或调整筛选。</p>}</div>;
 }
 export function SourceCoverageNote({node,coverage}:{node:SourceTreeNode;coverage:SourceCoverage[]}){
  const evidence=coverageFor(node,coverage);

@@ -1,5 +1,6 @@
 'use client';
 import {useEffect,useRef,useState} from 'react';
+import CopyLink from './copy-link';
 import type {RelatedRecord} from '@/lib/atlas';
 import {relatedImage,type RelatedThumbnail} from '@/lib/related-gallery';
 
@@ -28,7 +29,7 @@ export default function RelatedDetails({record,index,onClose}:{record:RelatedRec
   <div className="specimen-modal related-detail-body">
    <div className="modal-image">{image?<DetailPhoto key={image.id} image={image}/>:<p role="status">{index?'暂无可用图片':'图片索引不可用；文字详情仍可阅读'}</p>}</div>
    <div className="modal-info">
-    <h1 id="related-detail-title">{record.title}</h1>
+    <h1 id="related-detail-title">{record.title}</h1><CopyLink link={{view:'catalogue',related:record.id}}/>
     <p>{record.sourceName} · {record.sourceRecordId}</p>
     <p><strong>审查状态：</strong>{record.reviewStatus}</p><p><strong>原始审查原因：</strong>{record.reason}</p>
     <p><strong>来源分类路径：</strong>{record.sourcePath.map(x=>`${x.title} [${x.categoryId}]`).join(' › ')||'未记录'}</p>
