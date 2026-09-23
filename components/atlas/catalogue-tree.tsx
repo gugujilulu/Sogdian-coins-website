@@ -4,7 +4,7 @@ import CopyLink from './copy-link';
 import type {Specimen} from '@/lib/atlas';
 import type {CatalogueTree,CatalogueFamily} from '@/lib/catalogue-tree';
 
-export function CatalogueTreeSidebar({tree,query,onFamily,onGroup,onOpen,selectedId,reveal}:{reveal:{family:string;group?:string;serial:number}|null;onGroup:(family:string,group:string)=>void;tree:CatalogueTree;query:string;onFamily:(id:string)=>void;onOpen:(record:Specimen)=>void;selectedId:string|null}) {
+export function CatalogueTreeSidebar({tree,query,onFamily,onGroup,onOpen,selectedId,reveal,selectedFamily,selectedGroup}:{selectedFamily:string|null;selectedGroup:string|null;reveal:{family:string;group?:string;serial:number}|null;onGroup:(family:string,group:string)=>void;tree:CatalogueTree;query:string;onFamily:(id:string)=>void;onOpen:(record:Specimen)=>void;selectedId:string|null}) {
  const container=useRef<HTMLDivElement>(null);
  useEffect(()=>{if(!reveal)return;setExpanded(old=>new Set([...old,'taxonomy:family:'+reveal.family,...(reveal.group?[reveal.group]:[])]));},[reveal]);
  useEffect(()=>{if(!reveal)return;const target=reveal.group||'taxonomy:family:'+reveal.family;const frame=requestAnimationFrame(()=>{Array.from(container.current?.querySelectorAll<HTMLElement>('[data-tree-id]')||[]).find(el=>el.dataset.treeId===target)?.scrollIntoView({block:'nearest'})});return()=>cancelAnimationFrame(frame)},[reveal]);
@@ -23,9 +23,9 @@ export function CatalogueTreeSidebar({tree,query,onFamily,onGroup,onOpen,selecte
   <p>来源/目录组不是已审定 variant；major type / variant 尚未审定。</p>
   {!tree.recordCount&&<p role="status">没有匹配的主库记录。请清空目录搜索或调整筛选。</p>}
   {tree.families.map(f=><div key={f.id}>
-   <button data-tree-id={f.id} aria-expanded={expanded.has(f.id)} aria-label={`家族 ${f.family.title}`} onClick={()=>{toggle(f.id);onFamily(f.family.id)}}><span>{expanded.has(f.id)?'▾':'▸'} {f.family.title}</span><small>{f.recordCount} 条</small></button>
+   <button className={selectedFamily===f.family.id?'active':''} data-tree-id={f.id} aria-expanded={expanded.has(f.id)} aria-label={`家族 ${f.family.title}`} onClick={()=>{toggle(f.id);onFamily(f.family.id)}}><span>{expanded.has(f.id)?'▾':'▸'} {f.family.title}</span><small>{f.recordCount} 条</small></button>
    {expanded.has(f.id)&&<div className="atlas-tree-groups">{f.groups.map(g=><div key={g.id}>
-    <button data-tree-id={g.id} aria-expanded={expanded.has(g.id)} aria-label={`目录组 ${g.title}`} onClick={()=>{toggle(g.id);onGroup(f.family.id,g.id)}}><span>{expanded.has(g.id)?'▾':'▸'} {g.title}</span><small>{g.recordCount} 条</small></button>
+    <button className={selectedGroup===g.id?'active':''} data-tree-id={g.id} aria-expanded={expanded.has(g.id)} aria-label={`目录组 ${g.title}`} onClick={()=>{toggle(g.id);onGroup(f.family.id,g.id)}}><span>{expanded.has(g.id)?'▾':'▸'} {g.title}</span><small>{g.recordCount} 条</small></button>
     {expanded.has(g.id)&&<div className="atlas-tree-records">{g.records.map(item=><button key={item.id} className={selectedId===item.id?'active':''} aria-label={`记录 ${item.id}`} onClick={()=>{onFamily(f.family.id);onOpen(item.record)}}><span>{item.id} · {item.record.title}</span></button>)}</div>}
    </div>)}</div>}
   </div>)}

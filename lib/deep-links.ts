@@ -15,6 +15,8 @@ export function parseLink(hash:string):DeepLink {
  const panel=p.get('panel');if(panel&&!['sources','related','references'].includes(panel))throw Error('无效的目录入口');
  if(panel)link.panel=panel as DeepLink['panel'];
  const old=p.get('source');
+ // Legacy source URLs also stored the last Atlas family, which was not source context.
+ if(old)delete link.family;
  if(old){if(panel||link.node)throw Error('新旧来源参数冲突');if(old==='__related__')link.panel='related';else if(old==='__references__')link.panel='references';else if(old.startsWith('__'))throw Error('旧来源链接缺少稳定路径，请从来源目录重新复制');else{link.panel='sources';link.node=JSON.stringify([old])}}
  if(link.node){let path:unknown;try{path=JSON.parse(link.node)}catch{throw Error('来源路径格式无效')}
   if(!Array.isArray(path)||!path.length||path.some(x=>typeof x!=='string'||!x)||path.slice(1).some(x=>!x.startsWith('category:')&&!x.startsWith('source:')&&x!=='missing-path'))throw Error('来源路径格式无效');

@@ -18,7 +18,7 @@ test('all object namespaces roundtrip with stable IDs and escaped provider/path'
  assert.equal(ancestorNodes(source.id).at(-1),source.id);
 });
 test('legacy legal view/family/source/record links and unsupported old values',()=>{
- for(const hash of ['#view=atlas&family=lady-nana','#record=sr9','#view=catalogue&source=Zeno','#source=__related__','#source=__references__'])assert.equal(validate(parseLink(hash)),'ready');
+ for(const hash of ['#view=atlas&family=lady-nana','#record=sr9','#view=catalogue&source=Zeno','#source=__related__','#source=__references__','#view=catalogue&family=lady-nana&source=Zeno&record=sr9'])assert.equal(validate(parseLink(hash)),'ready');
  for(const hash of ['#view=bogus','#source=__tree__','#record=sr9&record=sr9','#record=%ZZ','#unknown=x','#related=x&record=sr9','#panel=wrong','#node=[]','#node=not-json','#record='])assert.throws(()=>parseLink(hash));
 });
 test('missing targets, context mismatches, and failed vs pending indexes are distinct',()=>{
