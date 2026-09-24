@@ -100,3 +100,4 @@
 .image-help{font-size:11px;line-height:1.5;padding:6px 10px;margin:0;overflow-wrap:anywhere}
 .image-help a{display:block;text-decoration:underline}
 @media(max-width:760px){.image-detail-dialog{width:96vw;height:96dvh;max-height:96dvh}.image-detail-dialog .related-detail-body{grid-template-rows:minmax(270px,49%) minmax(0,51%)}.image-toolbar,.image-pagination{padding:5px;gap:5px}.image-toolbar button{padding:5px;font-size:12px}.image-help{font-size:10px}.image-detail-dialog .modal-info h1{overflow-wrap:anywhere}}
+.image-help,.image-help a{color:#26363b}
