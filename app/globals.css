@@ -134,3 +134,10 @@
 .compare-disclosure summary{cursor:pointer;font-size:11px;color:#d8bd83}.compare-disclosure .compare-tray{position:static;transform:none;width:min(800px,calc(100vw - 40px));max-height:50dvh;overflow:auto;margin-top:7px;box-shadow:none}
 @media(max-width:1100px){.atlas-map-stage .map-toolbar{top:auto;bottom:38px;right:12px}.atlas-map-stage .map-layer-note{top:auto;bottom:83px;right:12px;max-width:190px}}
 @media(max-width:760px){.view-atlas{--atlas-header:48px}.view-atlas .brand-button strong{display:none}.view-atlas .app-header nav{margin-left:auto}.view-atlas .app-header nav button{font-size:12px;padding:0 13px}.atlas-screen .atlas-search-panel{width:calc(100% - 24px);max-height:calc(100% - 180px)}.atlas-map-stage .map-toolbar{top:112px;bottom:auto}.atlas-map-stage .map-layer-note{top:153px;bottom:auto;max-width:190px}.atlas-screen .family-drawer{position:absolute;left:0;right:0;bottom:0;top:auto;width:100%;height:68%;border-radius:12px 12px 0 0}.atlas-screen.has-family .atlas-search-panel{max-height:calc(32% - 12px)}.atlas-screen.has-family .map-toolbar,.atlas-screen.has-family .map-layer-note{display:none}.atlas-screen.has-family .maplibregl-ctrl-bottom-left,.atlas-screen.has-family .maplibregl-ctrl-bottom-right{bottom:68%}.atlas-screen.has-family .timeline-floating{display:none}}
+/* MapLibre's stylesheet sets position: relative; retain the full stage bounds. */
+.atlas-map-stage .terrain-map{position:absolute;inset:0;width:100%;height:100%}
+@media(max-width:760px){
+ .atlas-screen .timeline-floating{bottom:90px}
+ .atlas-screen .maplibregl-ctrl-bottom-left{bottom:54px}
+ .atlas-screen.has-family .maplibregl-ctrl-bottom-left{bottom:calc(68% + 54px)}
+}
