@@ -1,5 +1,5 @@
 import type * as GL from 'maplibre-gl';
-import {canExpand,coverMember,intersects,uniqueMembers,type CoinPlace,type Box} from '@/lib/coin-map';
+import {canExpand,coverMember,layoutCoinEntries,markerGeometry,uniqueMembers,type CoinPlace,type Box} from '@/lib/coin-map';
 
 /** A small visible-marker projection of the existing MapLibre clustered source. */
 export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPlace[],getSelected:()=>string|undefined,onSelect:(id:string)=>void){
@@ -46,25 +46,24 @@ export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPla
   if(disposed||token!==generation)return;
   const occupied:Box[]=Array.from(map.getContainer().querySelectorAll<HTMLElement>('.historical-label')).filter(el=>el.style.visibility!=='hidden').map(el=>{const r=el.getBoundingClientRect(),c=map.getContainer().getBoundingClientRect();return{x:r.x-c.x+r.width/2,y:r.y-c.y+r.height/2,w:r.width,h:r.height}});
   const live=new Set<string>();
-  const ordered=entries.filter(e=>e!==null).sort((a,b)=>{const selected=getSelected();const ap=uniqueMembers(a.groups).some(m=>m.family.id===selected),bp=uniqueMembers(b.groups).some(m=>m.family.id===selected);return Number(bp)-Number(ap)||a.groups[0].place.id.localeCompare(b.groups[0].place.id)});
-  for(const e of ordered){
+  const layout=layoutCoinEntries(entries.filter(e=>e!==null),occupied,map.getContainer().clientWidth,map.getContainer().clientHeight,getSelected());
+  for(const e of layout){
    const members=uniqueMembers(e.groups),cover=coverMember(members,getSelected()),selected=members.some(m=>m.family.id===getSelected());
-   const w=map.getContainer().clientWidth<600?58:72,h=48;
-   // Put photographs above anchors, leaving the city label below the same point.
-   const box={x:e.point.x,y:e.point.y-36,w,h};const large=!!cover?.image&&box.x-w/2>=8&&box.x+w/2<=map.getContainer().clientWidth-8&&box.y-h/2>=8&&box.y+h/2<=map.getContainer().clientHeight-8&&!occupied.some(b=>intersects(box,b));if(large)occupied.push(box);
-   const signature=JSON.stringify([members.map(m=>[m.family.id,m.recordCount,m.image?.id]),cover?.image?.path,large,selected]);live.add(e.key);
+   const large=e.large,geometry=markerGeometry(e.point,large,map.getContainer().clientWidth<600,members.length,e.offset);
+   const signature=JSON.stringify([members.map(m=>[m.family.id,m.recordCount,m.image?.id]),cover?.image?.path,large,geometry.width,e.offset,e.displayCollection,selected]);live.add(e.key);
    let entry=markers.get(e.key);
    if(entry?.signature!==signature){entry?.marker.remove();const button=document.createElement('button');button.type='button';button.className=`coin-map-marker ${large?'photo':'compact'}${selected?' selected':''}`;
-    const label=`${e.cluster?'空间集合':e.groups.map(g=>g.place.name).join(' / ')} · ${members.length} 个匹配家族 · ${members.reduce((n,m)=>n+m.recordCount,0)} 条主库记录`;
-    button.setAttribute('aria-label',label);button.title=label+(cover?`\n封面：${cover.family.title}；图片来源见家族详情`:'');
+    button.style.width=`${geometry.width}px`;button.style.height=`${geometry.height}px`;
+    const label=`${e.displayCollection?'显示集合':e.cluster?'空间集合':e.groups.map(g=>g.place.name).join(' / ')} · ${members.length} 个匹配家族 · ${members.reduce((n,m)=>n+m.recordCount,0)} 条主库记录`;
+    button.setAttribute('aria-label',label);button.title=label+(cover?`\n${cover.image?'封面':'家族'}：${cover.family.title}；图片来源见家族详情`:'');
     if(large&&cover?.image)button.appendChild(image(cover.image.path));else{const star=document.createElement('span');star.textContent='✦';button.appendChild(star)}
-    if(members.length>1){const badge=document.createElement('b');badge.textContent=String(members.length);button.appendChild(badge)}
+    if(members.length>1){const badge=document.createElement('b');badge.textContent=String(members.length);badge.style.width=`${geometry.badgeWidth}px`;button.appendChild(badge)}
     const fallback=document.createElement('span');fallback.className='coin-marker-fallback';fallback.textContent=large?(cover?.family.title||'图片未加载'):'';button.appendChild(fallback);
-    entry={button,signature,marker:new gl.Marker({element:button,anchor:'center',offset:large?[0,-36]:[0,-12]}).setLngLat(e.coords).addTo(map)};markers.set(e.key,entry);
+    entry={button,signature,marker:new gl.Marker({element:button,anchor:'center',offset:[0,e.offset]}).setLngLat(e.coords).addTo(map)};markers.set(e.key,entry);
    }
    // Refresh handler on every projection; async work is invalidated on filter changes.
-   entry.button.onclick=async ev=>{ev.stopPropagation();if(e.cluster){try{const zoom=await src.getClusterExpansionZoom(e.id);if(disposed||currentRevision!==revision)return;if(canExpand(e.groups,map.getZoom(),map.getMaxZoom(),zoom)){map.easeTo({center:e.coords,zoom,duration:duration()});return}}catch{}}if(!disposed&&currentRevision===revision)show(e.groups,e.coords)};
-   entry.marker.setLngLat(e.coords);
+   entry.button.onclick=async ev=>{ev.stopPropagation();if(e.cluster&&!e.displayCollection){try{const zoom=await src.getClusterExpansionZoom(e.id);if(disposed||currentRevision!==revision)return;if(canExpand(e.groups,map.getZoom(),map.getMaxZoom(),zoom)){map.easeTo({center:e.coords,zoom,duration:duration()});return}}catch{}}if(!disposed&&currentRevision===revision)show(e.groups,e.coords)};
+   entry.marker.setLngLat(e.coords).setOffset([0,e.offset]);
   }
   for(const [key,entry]of markers)if(!live.has(key)){entry.marker.remove();markers.delete(key)}
  }
