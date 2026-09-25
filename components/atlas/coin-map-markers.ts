@@ -1,14 +1,16 @@
+import {collectionMembers,type CollectionContext} from '@/lib/map-selection';
 import type * as GL from 'maplibre-gl';
 import {canExpand,coverMember,layoutCoinEntries,markerGeometry,uniqueMembers,type CoinPlace,type Box} from '@/lib/coin-map';
 
 /** A small visible-marker projection of the existing MapLibre clustered source. */
-export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPlace[],getSelected:()=>string|undefined,onSelect:(id:string)=>void){
+export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPlace[],getSelected:()=>string|undefined,onSelect:(id:string,context?:CollectionContext)=>void){
  let disposed=false,generation=0,revision=0,popup:GL.Popup|null=null,queued=false;
+ let preview:GL.Popup|null=null;
  const markers=new Map<string,{marker:GL.Marker;button:HTMLButtonElement;signature:string}>();
  const duration=()=>matchMedia('(prefers-reduced-motion: reduce)').matches?0:450;
  const image=(src:string)=>{const img=document.createElement('img');img.src=src;img.alt='';img.draggable=false;img.onerror=()=>{img.hidden=true;img.closest('.coin-map-marker')?.classList.add('image-failed')};return img};
- function show(groups:CoinPlace[],coords:[number,number]){
-  popup?.remove();const members=uniqueMembers(groups);if(members.length===1){onSelect(members[0].family.id);return}
+ function show(groups:CoinPlace[],coords:[number,number],restore?:CollectionContext){
+  preview?.remove();popup?.remove();const members=uniqueMembers(groups);if(members.length===1&&!restore){onSelect(members[0].family.id);return}
   const node=document.createElement('div');node.className='coin-collection';
   const title=document.createElement('h3');title.textContent=groups.map(g=>g.place.name).join(' / ');node.appendChild(title);
   const hint=document.createElement('p');hint.textContent=`${members.length} 个匹配家族 · ${members.reduce((n,m)=>n+m.recordCount,0)} 条主库记录。集合封面不代表全部家族；位置角色见各家族。`;node.appendChild(hint);
@@ -19,12 +21,14 @@ export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPla
    name.textContent=member.family.title;count.textContent=`${member.recordCount} 条匹配记录`;
    role.textContent=`${member.family.anchor?.role||'位置角色未记录'} · ${member.family.anchor?.note||'位置说明未记录'}`;
    source.textContent=member.image?`封面：${member.image.sourceName||'来源待解析'} · ${member.image.sourceRecordId||'编号待解析'}；逐图来源见详情`:'无可用图片；仍可打开家族';
-   for(const child of [name,count,role,source])text.appendChild(child);row.appendChild(text);row.onclick=()=>{popup?.remove();onSelect(member.family.id)};node.appendChild(row);
+   for(const child of [name,count,role,source])text.appendChild(child);row.appendChild(text);row.onclick=()=>{const context={placeIds:groups.map(g=>g.place.id),familyIds:members.map(m=>m.family.id),scrollTop:node.scrollTop};popup?.remove();onSelect(member.family.id,context)};node.appendChild(row);
   }
   popup=new gl.Popup({closeButton:true,maxWidth:'340px',className:'coin-collection-popup',anchor:'center',focusAfterOpen:true}).setLngLat(coords).setDOMContent(node).addTo(map);
   const opened=popup;
+  node.scrollTop=restore?.scrollTop||0;
   requestAnimationFrame(()=>{
    if(disposed||popup!==opened||!opened.isOpen())return;
+   if(restore){node.scrollTop=restore.scrollTop;return}
    const box=opened.getElement().getBoundingClientRect(),bounds=map.getContainer().getBoundingClientRect();
    const dx=box.left<bounds.left+12?box.left-bounds.left-12:box.right>bounds.right-12?box.right-bounds.right+12:0;
    const dy=box.top<bounds.top+12?box.top-bounds.top-12:box.bottom>bounds.bottom-12?box.bottom-bounds.bottom+12:0;
@@ -50,9 +54,9 @@ export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPla
   for(const e of layout){
    const members=uniqueMembers(e.groups),cover=coverMember(members,getSelected()),selected=members.some(m=>m.family.id===getSelected());
    const large=e.large,geometry=markerGeometry(e.point,large,map.getContainer().clientWidth<600,members.length,e.offset);
-   const signature=JSON.stringify([members.map(m=>[m.family.id,m.recordCount,m.image?.id]),cover?.image?.path,large,geometry.width,e.offset,e.displayCollection,selected]);live.add(e.key);
+   const signature=JSON.stringify([members.map(m=>[m.family.id,m.recordCount,m.image?.id]),cover?.image?.path,large,geometry.width,e.offset,e.displayCollection,selected,!!getSelected()]);live.add(e.key);
    let entry=markers.get(e.key);
-   if(entry?.signature!==signature){entry?.marker.remove();const button=document.createElement('button');button.type='button';button.className=`coin-map-marker ${large?'photo':'compact'}${selected?' selected':''}`;
+   if(entry?.signature!==signature){entry?.marker.remove();const button=document.createElement('button');button.type='button';button.className=`coin-map-marker ${large?'photo':'compact'}${selected?' selected':getSelected()?' muted':''}`;
     button.style.width=`${geometry.width}px`;button.style.height=`${geometry.height}px`;
     const label=`${e.displayCollection?'显示集合':e.cluster?'空间集合':e.groups.map(g=>g.place.name).join(' / ')} · ${members.length} 个匹配家族 · ${members.reduce((n,m)=>n+m.recordCount,0)} 条主库记录`;
     button.setAttribute('aria-label',label);button.title=label+(cover?`\n${cover.image?'封面':'家族'}：${cover.family.title}；图片来源见家族详情`:'');
@@ -62,12 +66,16 @@ export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPla
     entry={button,signature,marker:new gl.Marker({element:button,anchor:'center',offset:[0,e.offset]}).setLngLat(e.coords).addTo(map)};markers.set(e.key,entry);
    }
    // Refresh handler on every projection; async work is invalidated on filter changes.
-   entry.button.onclick=async ev=>{ev.stopPropagation();if(e.cluster&&!e.displayCollection){try{const zoom=await src.getClusterExpansionZoom(e.id);if(disposed||currentRevision!==revision)return;if(canExpand(e.groups,map.getZoom(),map.getMaxZoom(),zoom)){map.easeTo({center:e.coords,zoom,duration:duration()});return}}catch{}}if(!disposed&&currentRevision===revision)show(e.groups,e.coords)};
+   entry.button.onmouseenter=entry.button.onfocus=()=>{preview?.remove();if(members.length!==1)return;const member=members[0],node=document.createElement('div');node.className='coin-preview';node.textContent=`${member.family.title} · ${member.family.dateLabel||'年代未记录'} · ${member.recordCount} 条匹配记录`;preview=new gl.Popup({closeButton:false,closeOnClick:false,focusAfterOpen:false,anchor:'bottom',offset:60,className:'coin-preview-popup'}).setLngLat(e.coords).setDOMContent(node).addTo(map)};
+   entry.button.onmouseleave=entry.button.onblur=()=>preview?.remove();
+   entry.button.onclick=async ev=>{preview?.remove();ev.stopPropagation();if(e.cluster&&!e.displayCollection){try{const zoom=await src.getClusterExpansionZoom(e.id);if(disposed||currentRevision!==revision)return;if(canExpand(e.groups,map.getZoom(),map.getMaxZoom(),zoom)){map.easeTo({center:e.coords,zoom,duration:duration()});return}}catch{}}if(!disposed&&currentRevision===revision)show(e.groups,e.coords)};
    entry.marker.setLngLat(e.coords).setOffset([0,e.offset]);
   }
   for(const [key,entry]of markers)if(!live.has(key)){entry.marker.remove();markers.delete(key)}
  }
  function schedule(){if(!queued&&!disposed){queued=true;requestAnimationFrame(()=>{if(!disposed)void render()})}}
+ function escape(ev:KeyboardEvent){if(ev.key!=='Escape'||document.querySelector('dialog[open]')||(ev.target instanceof Element&&ev.target.closest('input,textarea,select,[contenteditable]')))return;if(popup?.isOpen()){ev.preventDefault();ev.stopPropagation();popup.remove()}else preview?.remove()}
+ document.addEventListener('keydown',escape);
  map.on('moveend',schedule);map.on('idle',schedule);map.on('resize',schedule);
- return {refresh(){generation++;revision++;popup?.remove();for(const e of markers.values())e.marker.remove();markers.clear();schedule()},selectionChanged(){popup?.remove();schedule()},destroy(){disposed=true;generation++;popup?.remove();map.off('moveend',schedule);map.off('idle',schedule);map.off('resize',schedule);for(const e of markers.values())e.marker.remove();markers.clear()}};
+ return {returnToCollection(context:CollectionContext){const groups=collectionMembers(getGroups(),context);if(!groups.length)return false;const center=map.unproject([map.getContainer().clientWidth/2,map.getContainer().clientHeight/2]);show(groups,[center.lng,center.lat],context);return true},refresh(){generation++;revision++;preview?.remove();popup?.remove();for(const e of markers.values())e.marker.remove();markers.clear();schedule()},selectionChanged(){preview?.remove();popup?.remove();schedule()},destroy(){document.removeEventListener('keydown',escape);preview?.remove();disposed=true;generation++;popup?.remove();map.off('moveend',schedule);map.off('idle',schedule);map.off('resize',schedule);for(const e of markers.values())e.marker.remove();markers.clear()}};
 }

@@ -1,5 +1,7 @@
 'use client';
 import {useEffect,useMemo,useRef,useState,type ReactNode} from 'react';
+import {emptyFilters,galleryRecords,validGallerySelection,keepFullFamilySession,type FilterContext,type FullFamilySession,type CollectionContext} from '@/lib/map-selection';
+import FamilyDrawer from '@/components/atlas/family-drawer';
 import DetailDialog from '@/components/atlas/detail-dialog';
 import ImageViewer from '@/components/atlas/image-viewer';
 import ImageProvenance from '@/components/atlas/image-provenance';
@@ -51,8 +53,24 @@ export default function Home(){
  useEffect(()=>{fetch('/data/source-index.json').then(r=>{if(!r.ok)throw Error();return r.json()}).then(d=>setSourceIndex(d as SourceIndex)).catch(()=>setSourceIndexError(true))},[]);
  const [data,setData]=useState<Atlas|null>(null),[loadError,setLoadError]=useState(false);
  const [view,setView]=useState<View>('atlas'),[selectedId,setSelectedId]=useState<string|null>(null),[focus,setFocus]=useState(0);
- const [query,setQuery]=useState(''),[region,setRegion]=useState('all'),[polity,setPolity]=useState('all'),[city,setCity]=useState('all'),[familyFilter,setFamilyFilter]=useState('all'),[sourceFilter,setSourceFilter]=useState('all'),[inscriptionFilter,setInscriptionFilter]=useState('all'),[tamghaFilter,setTamghaFilter]=useState('all'),[featureFilter,setFeatureFilter]=useState('all'),[statusFilter,setStatusFilter]=useState('all');
- const [year,setYear]=useState(750),[dateMode,setDateMode]=useState<DateFilter['mode']>('all'),[filtersOpen,setFiltersOpen]=useState(false);
+ const [filters,setFilters]=useState<FilterContext>(emptyFilters);
+ const {query,region,polity,city,familyFilter,sourceFilter,inscriptionFilter,tamghaFilter,featureFilter,statusFilter,year,dateMode}=filters;
+ const setQuery=(value:FilterContext['query'])=>setFilters(old=>({...old,query:value}));
+ const setRegion=(value:FilterContext['region'])=>setFilters(old=>({...old,region:value}));
+ const setPolity=(value:FilterContext['polity'])=>setFilters(old=>({...old,polity:value}));
+ const setCity=(value:FilterContext['city'])=>setFilters(old=>({...old,city:value}));
+ const setFamilyFilter=(value:FilterContext['familyFilter'])=>setFilters(old=>({...old,familyFilter:value}));
+ const setSourceFilter=(value:FilterContext['sourceFilter'])=>setFilters(old=>({...old,sourceFilter:value}));
+ const setInscriptionFilter=(value:FilterContext['inscriptionFilter'])=>setFilters(old=>({...old,inscriptionFilter:value}));
+ const setTamghaFilter=(value:FilterContext['tamghaFilter'])=>setFilters(old=>({...old,tamghaFilter:value}));
+ const setFeatureFilter=(value:FilterContext['featureFilter'])=>setFilters(old=>({...old,featureFilter:value}));
+ const setStatusFilter=(value:FilterContext['statusFilter'])=>setFilters(old=>({...old,statusFilter:value}));
+ const setYear=(value:FilterContext['year'])=>setFilters(old=>({...old,year:value}));
+ const setDateMode=(value:FilterContext['dateMode'])=>setFilters(old=>({...old,dateMode:value}));
+ const [filtersOpen,setFiltersOpen]=useState(false);
+ const [collectionContext,setCollectionContext]=useState<CollectionContext|null>(null),[returnCollection,setReturnCollection]=useState<{context:CollectionContext;serial:number}|null>(null);
+ const [fullSession,setFullSession]=useState<FullFamilySession|null>(null);
+ useEffect(()=>{setFullSession(old=>keepFullFamilySession(old,selectedId,filters))},[filters,selectedId]);
  const [variant,setVariant]=useState('all'),[facet,setFacet]=useState('all');
  const [lightbox,setLightbox]=useState<Specimen|null>(null),[compareIds,setCompareIds]=useState<string[]>([]);
  const lastSourceQuery=useRef('');
@@ -80,8 +98,8 @@ export default function Home(){
   const choices=(value:string)=>value==='all'?[]:[value];
   return filterAtlasRecords(data,{query,region:choice(region),polity:choice(polity),city:choice(city),status:choice(statusFilter),
    familyIds:choices(familyFilter),sources:choices(sourceFilter),inscriptions:choices(inscriptionFilter),tamghas:choices(tamghaFilter),features:choices(featureFilter),
-   date:dateMode==='year'?{mode:'year',year}:{mode:dateMode},catalogueGroupIds:variant==='unassigned'?[]:choices(variant),unassignedGroup:variant==='unassigned',facet:choice(facet)});
- },[data,query,region,polity,city,statusFilter,familyFilter,sourceFilter,inscriptionFilter,tamghaFilter,featureFilter,year,dateMode,variant,facet]);
+   date:dateMode==='year'?{mode:'year',year}:{mode:dateMode}});
+ },[data,query,region,polity,city,statusFilter,familyFilter,sourceFilter,inscriptionFilter,tamghaFilter,featureFilter,year,dateMode]);
  const filteredFamilies=result?.families||[];
  const matchedRecords=result?.records||[];
  const specimensByFamily=result?.recordsByFamily||new Map<string,Specimen[]>();
@@ -93,7 +111,9 @@ export default function Home(){
  const selectedSpecimens=selected?specimensByFamily.get(selected.id)||[]:[];
  const selectedVariants=selected?data?.variants.filter(v=>v.familyId===selected.id)||[]:[];
  const selectedFacets:string[]=Array.from(new Set(selectedSpecimens.flatMap(s=>s.facets.filter(visibleFacet))));
- const shownSpecimens=selectedSpecimens;
+ const shownSpecimens=galleryRecords(selectedSpecimens,variant,facet);
+ const fullSpecimens=selected?data?.specimens.filter(s=>s.familyId===selected.id)||[]:[];
+ const actualSources=useMemo(()=>projectSourceIndex(sourceIndex||{version:1,sources:[],links:[]},matchedRecords).byRecord,[sourceIndex,result]);
  const selectedPlace=selected?.anchor?data?.places.find(p=>p.id===selected.anchor?.placeId):null;
  const compare=matchedRecords.filter(s=>compareIds.includes(s.id));
  const sourceProjection=useMemo(()=>projectSourceIndex(sourceIndex||{version:1,sources:[],links:[]},matchedRecords,catalogueQuery),[sourceIndex,result,catalogueQuery]);
@@ -122,11 +142,13 @@ export default function Home(){
   setSourceNodeId(link.node||null);setCatalogueGroup(restoredGroup||null);setSelectedId(family);setCatalogueFamily(family);setCatalogueRecord(record?.id||null);setLightbox(record||null);setRelatedId(link.related||null);setSourceReturn(null);
   if(link.node)setSourceExpanded(old=>new Set([...old,...ancestorNodes(link.node!)]));
   if(family)setReveal(old=>({family,group:restoredGroup,serial:(old?.serial||0)+1}));
-  setFocus(n=>n+1);
+  setCollectionContext(null);setReturnCollection(null);setFullSession(null);
+  if(family!==selectedId){setVariant('all');setFacet('all')}
  });
 
  useEffect(()=>{if(!navigation.restoring.current&&catalogueMode==='source'&&sourceNodeId&&!sourceTree.nodes.has(sourceNodeId))setSourceNodeId(null)},[sourceTree,catalogueMode,sourceNodeId]);
  useEffect(()=>{if(catalogueMode!=='source'||!sourceIndex||lastSourceQuery.current===catalogueQuery)return;lastSourceQuery.current=catalogueQuery;if(catalogueQuery.trim())setSourceExpanded(old=>new Set([...old,...sourceTree.nodes.keys()]))},[sourceTree,catalogueMode,catalogueQuery,sourceIndex]);
+ useEffect(()=>{if(!selected)return;const local=validGallerySelection(selectedSpecimens,variant,facet);if(local.group!==variant)setVariant(local.group);if(local.facet!==facet)setFacet(local.facet)},[result,selectedId]);
  const referenceGroup:SourceGroup={key:'__references__',source:'参考资料（非实际来源）',entries:sourceProjection.references,sourceCount:new Set(sourceProjection.references.map(e=>e.source.id)).size,recordCount:new Set(sourceProjection.references.map(e=>e.specimen.id)).size};
  const sourceGroup=catalogueSource==='__references__'?referenceGroup:catalogueSource==='__tree__'?(sourceNode?{key:sourceNode.id,source:sourceNode.title,entries:sourceNode.entries,sourceCount:sourceNode.sourceCount,recordCount:sourceNode.recordCount}:null):catalogueSourceGroups.find(g=>g.key===catalogueSource)||null;
  const relatedMatches=useMemo(()=>{const q=query.trim().toLowerCase();if(!q)return[];return (data?.relatedRecords||[]).filter(r=>[r.sourceRecordId,r.title,r.reviewStatus,r.reason,r.leafCategoryTitle,...r.sourcePath.map(x=>x.title)].join(' ').toLowerCase().includes(q))},[data,query]);
@@ -134,7 +156,7 @@ export default function Home(){
 
  useEffect(()=>{
   if(!result||navigation.restoring.current)return;
-  if(selectedId&&!result.familyIds.has(selectedId))setSelectedId(null);
+  if(selectedId&&!result.familyIds.has(selectedId)){setSelectedId(null);setCollectionContext(null);setFullSession(null)}
   if(catalogueFamily&&!result.familyIds.has(catalogueFamily))setCatalogueFamily(null);
   if(lightbox&&!result.records.some(s=>s.id===lightbox.id))setLightbox(null);
  },[result,selectedId,catalogueFamily,lightbox]);
@@ -147,10 +169,14 @@ export default function Home(){
   if(lightbox&&!ids.has(lightbox.id))setLightbox(null);
  },[catalogueTree,view,catalogueMode,catalogueRecord,catalogueFamily,lightbox]);
 
- function chooseFamily(id:string){setSelectedId(id);setVariant('all');setFacet('all');setFocus(x=>x+1);if(view==='catalogue')setCatalogueFamily(id)}
+ function chooseFamily(id:string,context?:CollectionContext){setSelectedId(id);setCollectionContext(context||null);setReturnCollection(null);if(id!==selectedId){setVariant('all');setFacet('all');setFullSession(null)}if(view==='catalogue')setCatalogueFamily(id)}
+ function closeFamily(){setSelectedId(null);setCollectionContext(null);setFullSession(null)}
+ function returnToCollection(){if(!collectionContext)return;setSelectedId(null);setFullSession(null);setReturnCollection(old=>({context:collectionContext,serial:(old?.serial||0)+1}));setCollectionContext(null)}
+ function showFullFamily(){if(!selected)return;const expanded={...emptyFilters,year:filters.year};setFullSession({familyId:selected.id,filters:{...filters},group:variant,facet,expandedSignature:JSON.stringify(expanded)});setFilters(expanded);setVariant('all');setFacet('all')}
+ function restoreFamilyFilters(){if(!fullSession||!data)return;setFilters(fullSession.filters);setVariant(fullSession.group);setFacet(fullSession.facet);setFullSession(null)}
  function openSpecimen(s:Specimen){setLightbox(s);if(view==='catalogue'&&catalogueMode==='atlas'){setCatalogueFamily(s.familyId);setCatalogueGroup(fullCatalogue?.families.find(f=>f.family.id===s.familyId)?.groups.find(g=>g.records.some(r=>r.id===s.id))?.id||null)}}
  function toggleCompare(id:string){setCompareIds(xs=>xs.includes(id)?xs.filter(x=>x!==id):xs.length>=3?[xs[1],xs[2],id]:[...xs,id])}
- function clearFilters(){setQuery('');setRegion('all');setPolity('all');setCity('all');setFamilyFilter('all');setSourceFilter('all');setInscriptionFilter('all');setTamghaFilter('all');setFeatureFilter('all');setStatusFilter('all');setDateMode('all');setVariant('all');setFacet('all');setCatalogueQuery('')}
+ function clearFilters(){setFilters({...emptyFilters,year});setFullSession(null);setVariant('all');setFacet('all');setCatalogueQuery('')}
  const imageCount=data?.specimens.reduce((n,s)=>n+s.images.length,0)||0;
  if(!data)return <main className="boot-state"><div><Database size={30}/><p>{loadError?'Catalogue could not load. Please reload.':'Loading Central Asian Square-Hole Coinage Atlas…'}</p></div></main>;
 
@@ -159,7 +185,7 @@ export default function Home(){
   <header className="app-header"><button className="brand-button" onClick={()=>setView('atlas')}><span className="brand-mark">◈</span><span><strong>CENTRAL ASIAN SQUARE-HOLE COINAGE ATLAS</strong><small>中亚方孔钱地图与图像资料库</small></span></button><nav>{([['atlas','Atlas'],['catalogue','Catalogue'],['research','Research']] as [View,string][]).map(([id,label])=><button key={id} className={view===id?'active':''} onClick={()=>setView(id)}>{label}</button>)}</nav><div className="header-stats"><span>{filteredFamilies.length} families</span><b>·</b><span>{matchedRecords.length} records</span></div></header>
 
   <section hidden={view!=='atlas'} className={'atlas-screen'+(selected?' has-family':'')}><div className="atlas-map-stage">
-   <TerrainMap sourceFilter={sourceFilter} active={view==='atlas'} data={data} records={matchedRecords} families={filteredFamilies} selected={selected} onSelect={chooseFamily} year={dateMode==='year'?year:null} focus={focus}/>
+   <TerrainMap returnCollection={returnCollection} onCollectionEmpty={()=>{setReturnCollection(null);setLinkNotice('原集合已没有匹配家族。')}} sourceFilter={sourceFilter} active={view==='atlas'} data={data} records={matchedRecords} families={filteredFamilies} selected={selected} onSelect={chooseFamily} year={dateMode==='year'?year:null} focus={focus}/>
    <div className="atlas-search-panel"><div className="atlas-search"><Search size={16}/><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="搜索类型、铭文、编号、来源…"/><button aria-label="Filters" aria-expanded={filtersOpen} aria-controls="atlas-filter-options" className={filtersOpen?'active':''} onClick={()=>setFiltersOpen(x=>!x)}><SlidersHorizontal size={16}/></button>{(query||region!=='all'||polity!=='all'||city!=='all'||familyFilter!=='all'||sourceFilter!=='all'||inscriptionFilter!=='all'||tamghaFilter!=='all'||featureFilter!=='all'||statusFilter!=='all'||dateMode!=='all'||variant!=='all'||facet!=='all')&&<button aria-label="Clear filters" onClick={clearFilters}><X size={15}/></button>}</div>
     {filtersOpen&&<div id="atlas-filter-options" className="filter-grid"><label>历史地区<select value={region} onChange={e=>setRegion(e.target.value)}><option value="all">全部地区</option>{regions.map(r=><option key={r} value={r}>{r}</option>)}</select></label><label>政权 / 地方体系<select value={polity} onChange={e=>setPolity(e.target.value)}><option value="all">全部政权与体系</option>{polities.map(p=><option key={p} value={p}>{p}</option>)}</select></label><label>城市 / 展示锚点<select value={city} onChange={e=>setCity(e.target.value)}><option value="all">全部位置</option>{data.places.map(p=><option key={p.id} value={p.id}>{p.name} · {p.zh}</option>)}</select></label><label>类型家族<select value={familyFilter} onChange={e=>setFamilyFilter(e.target.value)}><option value="all">全部家族</option>{data.families.map(f=><option key={f.id} value={f.id}>{f.title}</option>)}</select></label><label>来源<select value={sourceFilter} onChange={e=>setSourceFilter(e.target.value)}><option value="all">全部来源</option>{sources.map(s=><option key={s}>{s}</option>)}</select></label><label>研究状态<select value={statusFilter} onChange={e=>setStatusFilter(e.target.value)}><option value="all">全部状态</option>{researchStatuses.map(s=><option key={s}>{s}</option>)}</select></label>{inscriptions.length>0&&<label>铭文 / Legend<select value={inscriptionFilter} onChange={e=>setInscriptionFilter(e.target.value)}><option value="all">全部已标注铭文</option>{inscriptions.map(f=><option key={f}>{f}</option>)}</select></label>}{tamghas.length>0&&<label>Tamgha / 徽记<select value={tamghaFilter} onChange={e=>setTamghaFilter(e.target.value)}><option value="all">全部已标注徽记</option>{tamghas.map(f=><option key={f}>{f}</option>)}</select></label>}{features.length>0&&<label className="filter-wide">其他特征<select value={featureFilter} onChange={e=>setFeatureFilter(e.target.value)}><option value="all">全部其他特征</option>{features.map(f=><option key={f}>{f}</option>)}</select></label>}</div>}
     <div className="filter-result-line"><span><strong>{filteredFamilies.length}</strong> 家族 · <strong>{matchedRecords.length}</strong> 主库记录{filteredFamilies.some(f=>!f.anchor)&&<> · {filteredFamilies.filter(f=>!f.anchor).length} 家族无坐标</>}</span><button onClick={clearFilters}>清除筛选</button></div>
@@ -176,7 +202,7 @@ export default function Home(){
     {!!result?.dateAnomalies.length&&<small role="status">数据异常：{result.dateAnomalies.map(a=>a.familyId).join('、')} 的区间非法或倒置，列入未知模式待核。</small>}
    </div></details>
    {matchedRecords.length===0&&<p className="map-empty" role="status">没有匹配记录。请调整或清除筛选。</p>}
-   </div>{selected&&<FamilyDrawer onFullFamily={()=>{clearFilters();setFamilyFilter(selected.id)}} family={selected} placeName={selectedPlace?.name||null} specimens={shownSpecimens} allSpecimens={selectedSpecimens} variants={selectedVariants} facets={selectedFacets} variant={variant} facet={facet} setVariant={setVariant} setFacet={setFacet} onClose={()=>setSelectedId(null)} onCatalogue={()=>{setCatalogueMode('atlas');setCatalogueFamily(selected.id);setView('catalogue')}} onOpen={openSpecimen} onCompare={toggleCompare} compareIds={compareIds}/>}
+   </div>{selected&&<FamilyDrawer onFullFamily={showFullFamily} onRestore={fullSession?restoreFamilyFilters:undefined} fullSpecimens={fullSpecimens} onReturnCollection={collectionContext?returnToCollection:undefined} onLocate={selectedPlace?()=>setFocus(n=>n+1):undefined} sources={actualSources} sourceIndexError={sourceIndexError} family={selected} placeName={selectedPlace?.name||null} specimens={shownSpecimens} allSpecimens={selectedSpecimens} variants={selectedVariants} facets={selectedFacets} variant={variant} facet={facet} setVariant={setVariant} setFacet={setFacet} onClose={closeFamily} onCatalogue={()=>{setCatalogueMode('atlas');setCatalogueFamily(selected.id);setView('catalogue')}} onOpen={openSpecimen} onCompare={toggleCompare} compareIds={compareIds}/>}
   </section>
 
   {view==='catalogue'&&<section className="catalogue-page"><aside className="catalogue-tree"><div className="catalogue-title"><BookOpen size={18}/><div><strong>Catalogue</strong><small>纲目与来源目录 · 当前 Atlas 筛选同步</small></div></div><div className="catalogue-switch"><button className={catalogueMode==='atlas'?'active':''} onClick={()=>setCatalogueMode('atlas')}>Atlas 纲目</button><button className={catalogueMode==='source'?'active':''} onClick={()=>setCatalogueMode('source')}>来源目录</button></div><div className="catalogue-search"><Search size={14}/><input value={catalogueQuery} onChange={e=>setCatalogueQuery(e.target.value)} placeholder="搜索名称、编号、来源…"/></div>{catalogueMode==='atlas'?<><div className="catalogue-tree-actions"><button className="text-button" onClick={()=>setCatalogueQuery('')}>清空目录搜索</button><button className="text-button" onClick={clearFilters}>清除全部筛选</button></div>{sourceIndexError&&<p role="status">来源索引加载失败，仍可按主库ID或名称浏览。</p>}<CatalogueTreeSidebar selectedFamily={catalogueFamily} selectedGroup={catalogueGroup} reveal={reveal} onGroup={(family,group)=>{setCatalogueFamily(family);setSelectedId(family);setCatalogueGroup(group)}} tree={catalogueTree} query={catalogueQuery} selectedId={catalogueIds.has(catalogueRecord||'')?catalogueRecord:null} onFamily={id=>{setCatalogueFamily(id);setCatalogueGroup(null);setCatalogueSource(null);setSelectedId(id)}} onOpen={s=>{setCatalogueRecord(s.id);openSpecimen(s)}}/></>:<div className="tree-scroll"><button className={'special-tree-node '+(catalogueSource==='__related__'?'active':'')} onClick={()=>{setCatalogueSource('__related__');setCatalogueFamily(null)}}><span>相关 / held / excluded</span><small>{data.relatedRecords.length}</small></button>{sourceIndexError?<p role="status">来源索引加载失败；主库与相关资料仍可访问。</p>:!sourceIndex?<p role="status">来源索引加载中…</p>:<><div className="catalogue-tree-actions"><button onClick={()=>setCatalogueQuery('')}>清空目录搜索</button></div><p>{sourceTree.sourceCount} 实际来源记录 · {sourceTree.associationCount} 来源关联 · {sourceTree.recordCount} 去重主库记录</p><SourceTree roots={sourceTree.roots} expanded={sourceExpanded} selected={sourceNodeId} onToggle={id=>setSourceExpanded(old=>{const next=new Set(old);if(next.has(id))next.delete(id);else next.add(id);return next})} onSelect={id=>{setSourceNodeId(id);setCatalogueSource('__tree__');setCatalogueFamily(null)}}/><button onClick={()=>{setCatalogueSource('__references__');setCatalogueFamily(null)}}><span>参考资料 comparison / 其他非实际关系</span><small>{sourceProjection.references.length}</small></button></>}</div>}</aside>
@@ -190,14 +216,7 @@ export default function Home(){
  </main>
 }
 
-function FamilyDrawer({onFullFamily,family,placeName,specimens,allSpecimens,variants,facets,variant,facet,setVariant,setFacet,onClose,onCatalogue,onOpen,onCompare,compareIds}:{onFullFamily:()=>void;family:Family;placeName:string|null;specimens:Specimen[];allSpecimens:Specimen[];variants:Variant[];facets:string[];variant:string;facet:string;setVariant:(x:string)=>void;setFacet:(x:string)=>void;onClose:()=>void;onCatalogue:()=>void;onOpen:(s:Specimen)=>void;onCompare:(id:string)=>void;compareIds:string[]}){
- const activeVariant=variants.find(v=>v.id===variant)||null;
- return <aside className="family-drawer"><div className="drawer-head"><span>TYPE FAMILY / 类型家族</span><div className="drawer-head-actions"><button onClick={onFullFamily}>查看完整家族</button><button onClick={onCatalogue}><BookOpen size={15}/>目录</button><button onClick={onClose} aria-label="Close details"><X size={18}/></button></div></div><div className="drawer-scroll"><h1>{family.title}</h1><CopyLink link={{view:'atlas',family:family.id}}/><p className="family-zh">{family.zh}</p><div className="family-meta"><span>{family.dateLabel}</span><span>{family.region}</span>{family.polity&&<span>{family.polity}</span>}<span>{family.status}</span></div><p>{family.description}</p>{family.anchor&&<div className="evidence-note"><MapPin size={16}/><div><strong>{placeName||family.anchor.placeId}</strong><small>{family.anchor.role}</small><p>{family.anchor.note}</p></div></div>}{family.question&&<div className="question-note">{family.question}</div>}
- <div className="drawer-section-title"><div><Images size={15}/><strong>图库</strong></div><span>{allSpecimens.length} records · {allSpecimens.reduce((n,s)=>n+s.images.length,0)} images</span></div><div className="drawer-filters"><select value={variant} onChange={e=>setVariant(e.target.value)}><option value="all">全部 catalogue groups</option>{variants.map(v=><option key={v.id} value={v.id}>{v.title} ({allSpecimens.filter(s=>s.variantId===v.id).length})</option>)}{allSpecimens.some(s=>s.variantId===null)&&<option value="unassigned">分组待定</option>}</select>{facets.length>0&&<select value={facet} onChange={e=>setFacet(e.target.value)}><option value="all">全部铭文 / Tamgha / 特征</option>{facets.map(f=><option key={f}>{f}</option>)}</select>}</div>{activeVariant&&<div className="group-context"><strong>{activeVariant.title}</strong><span>{activeVariant.status}</span>{activeVariant.reference&&<small>{activeVariant.reference}</small>}<p>{activeVariant.description}</p></div>}<div className="drawer-gallery">{specimens.map(s=><SpecimenTile key={s.id} s={s} onOpen={onOpen} onCompare={onCompare} comparing={compareIds.includes(s.id)}/>)}</div>{!specimens.length&&<p className="empty-state">当前分组没有记录。</p>}
- <details className="research-block"><summary><BookOpen size={15}/>研究、铭文与来源</summary>{family.legend&&<><h3>铭文 / Inscription</h3><p className="inscription">{family.legend}</p>{family.legendNote&&<p>{family.legendNote}</p>}</>}<h3>研究与目录</h3>{family.publications.map(p=><div className="publication" key={p.url}><OutLink url={p.url}>{p.title}</OutLink><small>{p.role}</small></div>)}</details></div></aside>
-}
 
-function SpecimenTile({s,onOpen,onCompare,comparing}:{s:Specimen;onOpen:(s:Specimen)=>void;onCompare:(id:string)=>void;comparing:boolean}){const primary=s.sources[0];return <article className="specimen-tile"><button className="specimen-image" onClick={()=>onOpen(s)}><img src={s.images[0]?.path} alt={s.title}/><span><Maximize2 size={12}/>原图</span></button><div className="specimen-copy"><strong>{s.title}</strong><small>{[s.weightG!=null?`${s.weightG} g`:null,s.diameterMm!=null?`${s.diameterMm} mm`:null].filter(Boolean).join(' · ')||'尺寸未记录'}</small><small className="source-badge">{s.sourceName||(primary?sourceName(primary):'来源待整理')} · {s.sourceRecordId||s.id}</small><p>{s.catalogue}</p><div className="tile-actions"><button className={comparing?'active':''} onClick={()=>onCompare(s.id)}><GitCompareArrows size={13}/>{comparing?'已加入':'对比'}</button>{(s.sourceRecordUrl||primary?.url)&&<OutLink url={s.sourceRecordUrl||primary!.url}>来源</OutLink>}</div></div></article>}
 
 
 

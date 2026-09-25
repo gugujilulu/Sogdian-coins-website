@@ -1,4 +1,5 @@
 'use client';
+import {anchorPan,type CollectionContext} from '@/lib/map-selection';
 import {useEffect,useMemo,useRef,useState} from 'react';
 import type {Map as GLMap} from 'maplibre-gl';
 import type {Atlas,Family,Specimen} from '@/lib/atlas';
@@ -8,9 +9,9 @@ import {coinFeatures,coinPlaces} from '@/lib/coin-map';
 import {installCoinMarkers} from './coin-map-markers';
 import 'maplibre-gl/dist/maplibre-gl.css';
 
-type Props={active:boolean;sourceFilter:string;data:Atlas;records:Specimen[];families:Family[];selected:Family|null;onSelect:(id:string)=>void;year:number|null;focus:number};
+type Props={active:boolean;sourceFilter:string;data:Atlas;records:Specimen[];families:Family[];selected:Family|null;onSelect:(id:string,context?:CollectionContext)=>void;returnCollection?:{context:CollectionContext;serial:number}|null;onCollectionEmpty?:()=>void;year:number|null;focus:number};
 
-export default function TerrainMap({active,sourceFilter,data,records,families,selected,onSelect,year,focus}:Props){
+export default function TerrainMap({active,sourceFilter,data,records,families,selected,onSelect,year,focus,returnCollection,onCollectionEmpty}:Props){
  const container=useRef<HTMLDivElement>(null),map=useRef<GLMap|null>(null),select=useRef(onSelect),latestFamilies=useRef(families);
  const lastFocus=useRef('');
  const coinMarkers=useRef<ReturnType<typeof installCoinMarkers>|null>(null);
@@ -42,7 +43,7 @@ export default function TerrainMap({active,sourceFilter,data,records,families,se
 
      m.addSource('coins',{type:'geojson',cluster:true,clusterRadius:48,clusterMaxZoom:8,clusterProperties:{family_total:['+',['get','familyCount']],specimen_total:['+',['get','specimenCount']]},data:{type:'FeatureCollection',features:makeCoinFeatures()}});
      m.addLayer({id:'coin-source-layout',type:'circle',source:'coins',paint:{'circle-radius':1,'circle-opacity':0}});
-     coinMarkers.current=installCoinMarkers(gl,m,()=>groupsRef.current,()=>selectedRef.current,id=>select.current(id));
+     coinMarkers.current=installCoinMarkers(gl,m,()=>groupsRef.current,()=>selectedRef.current,(id,context)=>select.current(id,context));
      m.addSource('selected-coin',{type:'geojson',data:{type:'FeatureCollection',features:[]}});
      m.addLayer({id:'selected-halo',type:'circle',source:'selected-coin',paint:{'circle-radius':13,'circle-color':'#f4d692','circle-opacity':.16,'circle-stroke-color':'#f4d692','circle-stroke-width':2}});
 
@@ -61,7 +62,24 @@ export default function TerrainMap({active,sourceFilter,data,records,families,se
  useEffect(()=>{if(!ready||!map.current)return;const m=map.current;const areas=data.areas.filter(a=>a.familyId===selected?.id&&overlaps(a.start,a.end,year)&&(a.kind!=='geographic_context'||showContext));(m.getSource('areas') as import('maplibre-gl').GeoJSONSource).setData({type:'FeatureCollection',features:areas.map(a=>({type:'Feature',geometry:a.geometry,properties:{kind:a.kind,title:a.title}}))});const evidence=data.evidence.filter(e=>e.familyId===selected?.id&&overlaps(e.start,e.end,year));(m.getSource('evidence') as import('maplibre-gl').GeoJSONSource).setData({type:'FeatureCollection',features:evidence.flatMap(e=>{const p=data.places.find(p=>p.id===e.placeId);return p?[{type:'Feature' as const,geometry:{type:'Point' as const,coordinates:p.coordinates},properties:e}]:[]})});const p=selected?.anchor?data.places.find(x=>x.id===selected.anchor?.placeId):null;(m.getSource('selected-coin') as import('maplibre-gl').GeoJSONSource).setData({type:'FeatureCollection',features:p?[{type:'Feature',geometry:{type:'Point',coordinates:p.coordinates},properties:{}}]:[]})},[data,selected,year,ready,showContext]);
  useEffect(()=>{coinMarkers.current?.selectionChanged()},[selected?.id]);
  useEffect(()=>{if(active&&ready)map.current?.resize()},[active,ready]);
- useEffect(()=>{if(!active||!ready||!map.current)return;if(!selected?.anchor){lastFocus.current='';return}const key=selected.id+':'+focus;if(lastFocus.current===key)return;lastFocus.current=key;const p=data.places.find(p=>p.id===selected.anchor?.placeId);if(p){map.current.resize();const small=window.matchMedia('(max-width:760px)').matches;map.current.easeTo({center:p.coordinates,zoom:Math.max(6,map.current.getZoom()),offset:small?[0,-(container.current?.clientHeight||0)*.25]:[0,0],duration:window.matchMedia('(prefers-reduced-motion: reduce)').matches?0:550})}},[active,selected?.id,focus,ready,data]);
+ useEffect(()=>{
+  if(!active||!ready||!map.current)return;
+  if(!selected?.anchor){lastFocus.current='';return}
+  const key=selected.id+':'+focus;if(lastFocus.current===key)return;
+  const explicit=lastFocus.current.startsWith(selected.id+':')&&lastFocus.current!==key;
+  lastFocus.current=key;
+  const place=data.places.find(p=>p.id===selected.anchor?.placeId);if(!place)return;
+  const frame=requestAnimationFrame(()=>{
+   const m=map.current,el=container.current;if(!m||!el)return;m.resize();
+   const bounds=el.getBoundingClientRect();let bottom=bounds.height-65;
+   const drawer=document.querySelector('.family-drawer')?.getBoundingClientRect();
+   if(drawer&&drawer.left<bounds.right&&drawer.right>bounds.left)bottom=Math.min(bottom,drawer.top-bounds.top-32);
+   const area={left:45,right:Math.max(46,bounds.width-55),top:Math.min(120,bottom/2),bottom:Math.max(121,bottom)};
+   const point=m.project(place.coordinates);const pan=anchorPan(point,area,explicit);
+   if(pan[0]||pan[1])m.panBy(pan,{duration:matchMedia('(prefers-reduced-motion: reduce)').matches?0:400});
+  });return()=>cancelAnimationFrame(frame);
+ },[active,selected?.id,focus,ready,data]);
+ useEffect(()=>{if(!returnCollection||!ready)return;const frame=requestAnimationFrame(()=>{map.current?.resize();if(!coinMarkers.current?.returnToCollection(returnCollection.context))onCollectionEmpty?.()});return()=>cancelAnimationFrame(frame)},[returnCollection,ready]);
  const evidenceCount=data.evidence.filter(e=>e.familyId===selected?.id&&e.kind!=='context').length;
  return <div className="terrain-wrap"><div className="terrain-map" ref={container} aria-label="Interactive terrain map of Central Asia; drag to pan, scroll or pinch to zoom"/><div className="map-toolbar"><select aria-label="Basemap" value={base} onChange={e=>{setBase(e.target.value);setError('')}}><option value="terrain">Terrain · 地形</option><option value="topo">Topographic · 现代地形</option></select><button onClick={()=>map.current?.fitBounds([[59,34],[88,46]],{padding:60,duration:window.matchMedia('(prefers-reduced-motion: reduce)').matches?0:500})}>全域</button></div><details className="map-layer-note"><summary>图层说明</summary><div><span className="legend-star">✦</span>{families.filter(f=>f.anchor).length} 个有定位家族 · 角标=匹配家族数；封面仅代表集合之一{selected&&<><b>·</b><span>{selected.title}</span><b>·</b><span>{evidenceCount?`${evidenceCount} 条出土/窖藏证据`:'暂无核定出土/流通图层'}</span></>}{data.areas.some(a=>a.familyId===selected?.id&&a.kind==='geographic_context')&&<label><input type="checkbox" checked={showContext} onChange={e=>setShowContext(e.target.checked)}/>地理背景</label>}</div></details>{error&&<div className="map-error" role="status">{error}</div>}</div>;
 }
