@@ -3,23 +3,23 @@ import {useEffect,useMemo,useRef,useState} from 'react';
 import type {Map as GLMap} from 'maplibre-gl';
 import type {Atlas,Family,Specimen} from '@/lib/atlas';
 import {overlaps} from '@/lib/atlas';
-import {coinPlaces} from '@/lib/coin-map';
+import {recordSourceProvider} from '@/lib/record-filters';
+import {coinFeatures,coinPlaces} from '@/lib/coin-map';
 import {installCoinMarkers} from './coin-map-markers';
 import 'maplibre-gl/dist/maplibre-gl.css';
 
-type Props={active:boolean;data:Atlas;records:Specimen[];families:Family[];selected:Family|null;onSelect:(id:string)=>void;year:number|null;focus:number};
-type CoinFeature={type:'Feature';geometry:{type:'Point';coordinates:[number,number]};properties:{placeId:string;familyIds:string;familyCount:number;specimenCount:number}};
+type Props={active:boolean;sourceFilter:string;data:Atlas;records:Specimen[];families:Family[];selected:Family|null;onSelect:(id:string)=>void;year:number|null;focus:number};
 
-export default function TerrainMap({active,data,records,families,selected,onSelect,year,focus}:Props){
+export default function TerrainMap({active,sourceFilter,data,records,families,selected,onSelect,year,focus}:Props){
  const container=useRef<HTMLDivElement>(null),map=useRef<GLMap|null>(null),select=useRef(onSelect),latestFamilies=useRef(families);
  const lastFocus=useRef('');
  const coinMarkers=useRef<ReturnType<typeof installCoinMarkers>|null>(null);
  const selectedRef=useRef(selected?.id);selectedRef.current=selected?.id;
- const groups=useMemo(()=>coinPlaces(families,records,data.places),[families,records,data]);
+ const groups=useMemo(()=>coinPlaces(families,records,data.places,image=>sourceFilter==='all'||recordSourceProvider({url:image.sourceRecordUrl||'',label:'',relation:'same_specimen'})===sourceFilter),[families,records,data,sourceFilter]);
  const groupsRef=useRef(groups);groupsRef.current=groups;
  const [ready,setReady]=useState(false),[error,setError]=useState(''),[base,setBase]=useState('terrain'),[showContext,setShowContext]=useState(false);
  select.current=onSelect;latestFamilies.current=families;
- const makeCoinFeatures=():CoinFeature[]=>groupsRef.current.map(g=>({type:'Feature',geometry:{type:'Point',coordinates:g.place.coordinates},properties:{placeId:g.place.id,familyIds:JSON.stringify(g.members.map(m=>m.family.id)),familyCount:g.members.length,specimenCount:g.members.reduce((n,m)=>n+m.recordCount,0)}}));
+ const makeCoinFeatures=()=>coinFeatures(groupsRef.current);
  useEffect(()=>{let disposed=false;let cleanup=()=>{};
   import('maplibre-gl').then(gl=>{
    if(disposed||!container.current)return;
@@ -31,7 +31,7 @@ export default function TerrainMap({active,data,records,families,selected,onSele
      m.addSource('places',{type:'geojson',data:{type:'FeatureCollection',features:data.places.map(p=>({type:'Feature',geometry:{type:'Point',coordinates:p.coordinates},properties:{...p,label:p.name,minZoom:p.minZoom}}))}});
      m.addLayer({id:'historical-dots',type:'circle',source:'places',paint:{'circle-radius':['case',['==',['get','kind'],'site'],3.6,3],'circle-color':'#62422e','circle-stroke-color':'#f8ecd2','circle-stroke-width':1.2,'circle-opacity':.88}});
      const labels=data.places.map(p=>{const el=document.createElement('span');el.className='historical-label';el.textContent=p.name;new gl.Marker({element:el,anchor:'top',offset:[0,7]}).setLngLat(p.coordinates).addTo(m);return{p,el}});
-     const layoutLabels=()=>{const used:{x:number;y:number;w:number}[]=[];for(const {p,el} of labels){const pos=m.project(p.coordinates),w=el.offsetWidth||110;const hit=used.some(b=>Math.abs(b.y-pos.y)<19&&Math.abs(b.x-pos.x)<(b.w+w)/2+4);const show=m.getZoom()>=p.minZoom&&!hit;el.style.visibility=show?'visible':'hidden';if(show)used.push({x:pos.x,y:pos.y,w})}};
+     const layoutLabels=()=>{const used:{x:number;y:number;w:number}[]=[];for(const {p,el} of labels){const pos=m.project(p.coordinates),w=el.offsetWidth||110;const hit=used.some(b=>Math.abs(b.y-pos.y)<19&&Math.abs(b.x-pos.x)<(b.w+w)/2+4);const show=(p.minZoom<=4||m.getZoom()>=p.minZoom)&&!hit;el.style.visibility=show?'visible':'hidden';if(show)used.push({x:pos.x,y:pos.y,w})}};
      m.on('move',layoutLabels);layoutLabels();
 
      m.addSource('areas',{type:'geojson',data:{type:'FeatureCollection',features:[]}});
@@ -57,7 +57,7 @@ export default function TerrainMap({active,data,records,families,selected,onSele
   });return()=>{disposed=true;cleanup();map.current=null};
  },[data]);
  useEffect(()=>{if(!ready||!map.current)return;map.current.setMaxZoom(base==='terrain'?13:19);map.current.setLayoutProperty('physical','visibility',base==='terrain'?'visible':'none');map.current.setLayoutProperty('terrain','visibility',base==='terrain'?'visible':'none');map.current.setLayoutProperty('topo','visibility',base==='topo'?'visible':'none')},[base,ready]);
- useEffect(()=>{if(!ready||!map.current)return;coinMarkers.current?.refresh();const src=map.current.getSource('coins') as import('maplibre-gl').GeoJSONSource;src?.setData({type:'FeatureCollection',features:makeCoinFeatures()})},[families,records,ready,data]);
+ useEffect(()=>{if(!ready||!map.current)return;coinMarkers.current?.refresh();const src=map.current.getSource('coins') as import('maplibre-gl').GeoJSONSource;src?.setData({type:'FeatureCollection',features:makeCoinFeatures()})},[groups,ready,data]);
  useEffect(()=>{if(!ready||!map.current)return;const m=map.current;const areas=data.areas.filter(a=>a.familyId===selected?.id&&overlaps(a.start,a.end,year)&&(a.kind!=='geographic_context'||showContext));(m.getSource('areas') as import('maplibre-gl').GeoJSONSource).setData({type:'FeatureCollection',features:areas.map(a=>({type:'Feature',geometry:a.geometry,properties:{kind:a.kind,title:a.title}}))});const evidence=data.evidence.filter(e=>e.familyId===selected?.id&&overlaps(e.start,e.end,year));(m.getSource('evidence') as import('maplibre-gl').GeoJSONSource).setData({type:'FeatureCollection',features:evidence.flatMap(e=>{const p=data.places.find(p=>p.id===e.placeId);return p?[{type:'Feature' as const,geometry:{type:'Point' as const,coordinates:p.coordinates},properties:e}]:[]})});const p=selected?.anchor?data.places.find(x=>x.id===selected.anchor?.placeId):null;(m.getSource('selected-coin') as import('maplibre-gl').GeoJSONSource).setData({type:'FeatureCollection',features:p?[{type:'Feature',geometry:{type:'Point',coordinates:p.coordinates},properties:{}}]:[]})},[data,selected,year,ready,showContext]);
  useEffect(()=>{coinMarkers.current?.selectionChanged()},[selected?.id]);
  useEffect(()=>{if(active&&ready)map.current?.resize()},[active,ready]);

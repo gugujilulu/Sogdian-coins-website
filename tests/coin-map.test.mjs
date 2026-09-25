@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {coinPlaces,uniqueMembers,coverMember,canExpand,intersects} from '../lib/coin-map.ts';
+import {coinFeatures,coinPlaces,uniqueMembers,coverMember,canExpand,intersects} from '../lib/coin-map.ts';
 const data=JSON.parse(readFileSync(new URL('../public/data/atlas.json',import.meta.url)));
 test('matched records alone form unique location members and covers without mutation',()=>{
  const before=JSON.stringify(data),groups=coinPlaces(data.families,data.specimens,data.places),members=uniqueMembers(groups);
@@ -25,4 +25,18 @@ test('spatial expansion stops for coincident locations or zoom caps; collection 
  assert.equal(canExpand(groups,13,13,14),false);assert.equal(canExpand(groups,8,13,8),false);
  assert.equal(uniqueMembers([groups[0],groups[0]]).length,groups[0].members.length);
  assert.ok(intersects({x:0,y:0,w:60,h:40},{x:20,y:0,w:50,h:30}));assert.ok(!intersects({x:0,y:0,w:60,h:40},{x:200,y:0,w:50,h:30}));
+});
+test('source-scoped covers use their own provenance, never another image on a matching record',()=>{
+ const r=data.specimens.find(r=>r.id==='zeno-264408');
+ const bact=image=>image.sourceName==='Bactrianumis';
+ const member=uniqueMembers(coinPlaces(data.families,[r],data.places,bact))[0];
+ assert.equal(member.image.sourceName,'Bactrianumis');assert.equal(member.recordCount,1);
+ const none=uniqueMembers(coinPlaces(data.families,[r],data.places,()=>false))[0];assert.equal(none.image,null);assert.equal(none.recordCount,1);
+});
+
+test('coincident place IDs remain one navigable feature beyond clusterMaxZoom',()=>{
+ const groups=coinPlaces(data.families,data.specimens,data.places);
+ const pair=[groups[0],{...groups[1],place:{...groups[1].place,coordinates:groups[0].place.coordinates}}];
+ const features=coinFeatures(pair);assert.equal(features.length,1);assert.equal(features[0].properties.familyCount,uniqueMembers(pair).length);
+ assert.deepEqual(JSON.parse(features[0].properties.placeIds),pair.map(g=>g.place.id).sort());
 });

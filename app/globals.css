@@ -161,3 +161,8 @@
 .coin-collection .coin-popup-row small{font-size:10px;color:#bdc8c4;white-space:normal;line-height:1.5}
 @media(max-width:600px){.coin-map-marker.photo{width:58px}.coin-collection-popup .maplibregl-popup-content{max-width:calc(100vw - 32px)}}
 @media(prefers-reduced-motion:reduce){.coin-map-marker{transition:none}}
+.coin-collection-popup{z-index:15}
+.coin-collection{max-height:min(360px,calc(100dvh - 230px))}
+.coin-marker-fallback{font-size:9px;line-height:1.15;overflow:hidden;padding:3px;opacity:0}
+.coin-map-marker.image-failed .coin-marker-fallback{opacity:1}
+.coin-collection-popup .maplibregl-popup-tip{display:none}
