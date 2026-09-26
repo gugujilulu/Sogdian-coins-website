@@ -18,8 +18,12 @@ export const emptyFilters:FilterContext={query:'',region:'all',polity:'all',city
 export type FullFamilySession={familyId:string;filters:FilterContext;group:string;facet:string;expandedSignature:string};
 export function keepFullFamilySession(session:FullFamilySession|null,familyId:string|null,filters:FilterContext){return session?.familyId===familyId&&session.expandedSignature===JSON.stringify(filters)?session:null}
 /** Minimal pixel translation into the unobscured rectangle; never changes zoom. */
-export function anchorPan(point:{x:number;y:number},area:{left:number;right:number;top:number;bottom:number},locate=false):[number,number]{
- const x=locate?(area.left+area.right)/2:Math.max(area.left,Math.min(area.right,point.x));
- const y=locate?(area.top+area.bottom)/2:Math.max(area.top,Math.min(area.bottom,point.y));
- return [point.x-x,point.y-y];
+type Rect={left:number;right:number;top:number;bottom:number};
+export function anchorPan(point:{x:number;y:number},area:Rect,locate=false,obstacles:Rect[]=[]):[number,number]{
+ const clamp=(v:number,min:number,max:number)=>Math.max(min,Math.min(max,v));
+ const target={x:locate?(area.left+area.right)/2:clamp(point.x,area.left,area.right),y:locate?(area.top+area.bottom)/2:clamp(point.y,area.top,area.bottom)};
+ const xs=[target.x,...obstacles.flatMap(r=>[r.left-1,r.right+1])],ys=[target.y,...obstacles.flatMap(r=>[r.top-1,r.bottom+1])];
+ const options=xs.flatMap(x=>ys.map(y=>({x,y}))).filter(p=>p.x>=area.left&&p.x<=area.right&&p.y>=area.top&&p.y<=area.bottom&&!obstacles.some(r=>p.x>=r.left&&p.x<=r.right&&p.y>=r.top&&p.y<=r.bottom));
+ const closest=options.sort((a,b)=>Math.hypot(a.x-target.x,a.y-target.y)-Math.hypot(b.x-target.x,b.y-target.y))[0]||target;
+ return [point.x-closest.x,point.y-closest.y];
 }

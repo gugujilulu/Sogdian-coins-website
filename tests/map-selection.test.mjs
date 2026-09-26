@@ -37,3 +37,8 @@ test('visible anchor never pans, outside uses smallest pan, explicit locate cent
  assert.deepEqual(anchorPan({x:200,y:300},area,true),[-170,-60]);
  assert.deepEqual(anchorPan({x:195,y:500},{left:40,right:335,top:100,bottom:220}),[0,280]);
 });
+test('camera avoids the actual search/control rectangles with minimal translation',()=>{
+ const area={left:40,right:800,top:40,bottom:600},search={left:0,right:390,top:0,bottom:200};
+ assert.deepEqual(anchorPan({x:200,y:180},area,false,[search]),[0,-21]);
+ assert.deepEqual(anchorPan({x:600,y:180},area,false,[search]),[0,0]);
+});

@@ -74,8 +74,9 @@ export default function TerrainMap({active,sourceFilter,data,records,families,se
    const bounds=el.getBoundingClientRect();let bottom=bounds.height-65;
    const drawer=document.querySelector('.family-drawer')?.getBoundingClientRect();
    if(drawer&&drawer.left<bounds.right&&drawer.right>bounds.left)bottom=Math.min(bottom,drawer.top-bounds.top-32);
-   const area={left:45,right:Math.max(46,bounds.width-55),top:Math.min(120,bottom/2),bottom:Math.max(121,bottom)};
-   const point=m.project(place.coordinates);const pan=anchorPan(point,area,explicit);
+   const area={left:45,right:Math.max(46,bounds.width-55),top:45,bottom:Math.max(46,bottom)};
+   const obstacles=Array.from(document.querySelectorAll('.atlas-search-panel,.map-toolbar,.map-layer-note')).map(el=>el.getBoundingClientRect()).filter(r=>r.width&&r.height).map(r=>({left:r.left-bounds.left-30,right:r.right-bounds.left+30,top:r.top-bounds.top-30,bottom:r.bottom-bounds.top+30}));
+   const point=m.project(place.coordinates);const pan=anchorPan(point,area,explicit,obstacles);
    if(pan[0]||pan[1])m.panBy(pan,{duration:matchMedia('(prefers-reduced-motion: reduce)').matches?0:400});
   });return()=>cancelAnimationFrame(frame);
  },[active,selected?.id,focus,ready,data]);
