@@ -23,7 +23,7 @@ test('local gallery narrows global result without mutating it; group and facet a
  assert.deepEqual(validGallerySelection(records,'gone','gone'),{group:'all',facet:'all'});
 });
 test('single full-family snapshot preserves every filter and local choice, expires on global edits or family change',()=>{
- const filters={query:'nana',region:'region',polity:'polity',city:'city',familyFilter:'lady-nana',sourceFilter:'Zeno',inscriptionFilter:'legend',tamghaFilter:'tamgha',featureFilter:'feature',statusFilter:'review',year:700,dateMode:'year'};
+ const filters={query:'nana',region:['region:semirechye'],polity:['polity:turgesh'],city:['place:suyab'],familyFilter:'lady-nana',sourceFilter:'Zeno',inscriptionFilter:'legend',tamghaFilter:'tamgha',featureFilter:'feature',statusFilter:'review',year:700,dateMode:'year'};
  const expanded={...emptyFilters,year:700};const session={familyId:'lady-nana',filters:{...filters},group:'g',facet:'x',expandedSignature:JSON.stringify(expanded)};
  assert.equal(keepFullFamilySession(session,'lady-nana',expanded),session);assert.deepEqual(session.filters,filters);
  for(const key of Object.keys(filters)){const changed={...expanded,[key]:key==='year'?701:'changed'};assert.equal(keepFullFamilySession(session,'lady-nana',changed),null,key)}

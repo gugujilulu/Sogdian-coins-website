@@ -1,17 +1,27 @@
+import type {FilterContext} from './map-selection';
 import type {Atlas} from './atlas';
 import type {CatalogueTree} from './catalogue-tree';
 import type {SourceTreeNode} from './source-tree';
-export type DeepLink={view:'atlas'|'catalogue'|'research';family?:string;group?:string;panel?:'sources'|'related'|'references';node?:string;record?:string;related?:string};
+export type LinkFilters=Omit<FilterContext,'region'|'polity'|'city'>;
+export type DeepLink={region?:string[];polity?:string[];city?:string[];filters?:LinkFilters;view:'atlas'|'catalogue'|'research';family?:string;group?:string;panel?:'sources'|'related'|'references';node?:string;record?:string;related?:string};
 const keys=['view','family','group','panel','node','record','related'] as const;
-export function serializeLink(link:DeepLink){const p=new URLSearchParams();for(const key of keys)if(link[key])p.set(key,link[key]);return '#'+p.toString()}
+const filterKeys=['query','familyFilter','sourceFilter','inscriptionFilter','tamghaFilter','featureFilter','statusFilter','year','dateMode'] as const;
+export function serializeLink(link:DeepLink){const p=new URLSearchParams();for(const key of keys)if(link[key])p.set(key,link[key]);for(const key of ['region','polity','city'] as const)for(const id of [...new Set(link[key]||[])].sort())p.append(key,id);if(link.filters)p.set('filters',JSON.stringify(Object.fromEntries(filterKeys.map(k=>[k,link.filters![k]]))));return '#'+p.toString()}
 export function parseLink(hash:string):DeepLink {
  const raw=hash.replace(/^#/,'');
  try{decodeURIComponent(raw)}catch{throw Error('链接编码无效')}
  const p=new URLSearchParams(raw);
- for(const key of p.keys())if(![...keys,'source'].includes(key as typeof keys[number])||p.getAll(key).length!==1||!p.get(key))throw Error('链接包含无效或重复参数');
+ for(const key of p.keys()){if(![...keys,'source','region','polity','city','place','filters'].includes(key)||!p.get(key))throw Error('链接包含无效参数');if(!['region','polity','city','place'].includes(key)&&p.getAll(key).length!==1)throw Error('链接包含重复参数')}
+ if(p.has('city')&&p.has('place'))throw Error('city 与 place 参数重复');
  const view=p.get('view')||'atlas';if(!['atlas','catalogue','research'].includes(view))throw Error('不支持的旧视图或 view 参数');
  const link:DeepLink={view:view as DeepLink['view']};
  for(const key of ['family','group','node','record','related'] as const)if(p.has(key))link[key]=p.get(key)!;
+ for(const key of ['region','polity','city'] as const){const actual=key==='city'&&p.has('place')?'place':key;if(p.has(actual)){const ids=p.getAll(actual);if(ids.some(x=>!x.trim())||new Set(ids).size!==ids.length)throw Error('地理选项无效或重复');link[key]=ids.sort()}}
+ if(p.has('filters')){let value:unknown;try{value=JSON.parse(p.get('filters')!)}catch{throw Error('筛选参数格式无效')}
+  if(!value||typeof value!=='object'||Array.isArray(value))throw Error('筛选参数格式无效');
+  const f=value as Record<string,unknown>;if(Object.keys(f).some(k=>!filterKeys.includes(k as typeof filterKeys[number]))||filterKeys.some(k=>k==='year'?typeof f[k]!=='number'||!Number.isFinite(f[k]):typeof f[k]!=='string')||!['all','year','unknown'].includes(String(f.dateMode)))throw Error('筛选参数字段无效');
+  link.filters=f as LinkFilters;
+ }
  const panel=p.get('panel');if(panel&&!['sources','related','references'].includes(panel))throw Error('无效的目录入口');
  if(panel)link.panel=panel as DeepLink['panel'];
  const old=p.get('source');

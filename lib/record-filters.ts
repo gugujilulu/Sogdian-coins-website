@@ -79,6 +79,8 @@ export function dateRangeStatus(start: number | null | undefined, end: number | 
 }
 
 export type AtlasFilters = RecordFilters & {
+  /** T20 derived metadata projection; absent disables geography, empty Set means zero results. */
+  geographyRecordIds?: ReadonlySet<string>;
   query?: string;
   region?: string;
   polity?: string;
@@ -106,6 +108,7 @@ export function filterAtlasRecords(data: import('./atlas').Atlas, filters: Atlas
   const records = candidates.filter(s => {
     const f = familiesById.get(s.familyId);
     if (!f) return false;
+    if (filters.geographyRecordIds && !filters.geographyRecordIds.has(s.id)) return false;
     if (filters.region && f.region !== filters.region) return false;
     if (filters.polity && f.polity !== filters.polity) return false;
     if (filters.city && f.anchor?.placeId !== filters.city) return false;
