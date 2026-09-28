@@ -1,4 +1,4 @@
-import type {Atlas,Specimen,RelatedRecord,SourcePathNode} from './atlas';
+import type {Atlas,Specimen,RelatedRecord} from './atlas';
 export type GeoDimension='region'|'polity'|'place';
 export type GeoSelection=Record<GeoDimension,string[]>;
 export type GeoStatus='confirmed'|'probable'|'candidate'|'contextual'|'unresolved'|'not yet reviewed';
@@ -90,7 +90,7 @@ export function buildGeographyIndex(data:Atlas):GeographyIndex{
  const nodes=new Map<string,GeoNode>(),literal:Record<GeoDimension,Map<string,string>>={region:new Map(),polity:new Map(),place:new Map()};
  function node(d:GeoDimension,id:string,name:string,zh:string,aliases:string[]=[],status:GeoStatus='candidate'){
   const key=`${d}:${id}`;if(nodes.has(key))return nodes.get(key)!;
-  const value:GeoNode={id:key,dimension:d,name,zh,aliases:[name,...aliases],status,source_status:'user_scope',references:[reference('docs/workflow/T20-geography-filters.md#建设范围登记','user_scope','用户指定建设范围；不证明方孔钱发行或任何地理关系')],note:'研究导航项；不证明发行、铸地、出土或政治疆域。相关地区／地点仅为已有记录字段共现。',relatedRegions:[],relatedPlaces:[],relatedFamilies:[],evidenceState:'not yet mapped',roles:[]};nodes.set(key,value);return value;
+  const value:GeoNode={id:key,dimension:d,name,zh,aliases:[name,...aliases],status,source_status:'user_scope',references:[reference('docs/workflow/T20-geography-filters.md#数据与建设范围登记','user_scope','用户指定建设范围；不证明方孔钱发行或任何地理关系')],note:'研究导航项；不证明发行、铸地、出土或政治疆域。相关地区／地点仅为已有记录字段共现。',relatedRegions:[],relatedPlaces:[],relatedFamilies:[],evidenceState:'not yet mapped',roles:[]};nodes.set(key,value);return value;
  }
  for(const [d,table] of [['region',regionLabels],['polity',polityLabels]] as const)for(const line of table.split('\n')){const [id,name,zh]=line.split('|');node(d,id,name,zh);literal[d].set(name,`${d}:${id}`)}
  for(const [d,id,name,zh,aliases] of scope)node(d,id,name,zh,aliases);
