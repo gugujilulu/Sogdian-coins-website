@@ -8,16 +8,15 @@ export function installHistoricalMap(gl:GL,map:GLMap,onError:(message:string)=>v
  const empty={type:'FeatureCollection' as const,features:[]};
  function ensure(){
   try{
-   if(map.getSource('historical-ranges'))return;
-   map.addSource('historical-ranges',{type:'geojson',data:empty});
+   if(!map.getSource('historical-ranges'))map.addSource('historical-ranges',{type:'geojson',data:empty});
    const before=map.getLayer('coin-source-layout')?'coin-source-layout':undefined;
    const color=['get','color'] as ['get',string];
-   map.addLayer({id:'history-wash',type:'fill',source:'historical-ranges',paint:{'fill-color':color,'fill-opacity':.09}},before);
-   map.addLayer({id:'history-soft-edge',type:'line',source:'historical-ranges',filter:['==','precision','approximate'],paint:{'line-color':color,'line-width':['interpolate',['linear'],['zoom'],3,3,8,7,13,9],'line-blur':3,'line-opacity':.32}},before);
-   map.addLayer({id:'history-keyline',type:'line',source:'historical-ranges',filter:['==','precision','documented'],paint:{'line-color':'#fff7dc','line-width':3,'line-opacity':.65}},before);
-   map.addLayer({id:'history-ink',type:'line',source:'historical-ranges',filter:['==','kind','polity'],paint:{'line-color':color,'line-width':['interpolate',['linear'],['zoom'],3,.7,9,1.25],'line-opacity':['case',['==',['get','precision'],'approximate'],.4,.85]}},before);
-   map.addLayer({id:'history-circulation',type:'line',source:'historical-ranges',filter:['!=','kind','polity'],paint:{'line-color':color,'line-width':1.4,'line-dasharray':[2,3],'line-opacity':.8}},before);
-   map.addLayer({id:'history-hit',type:'fill',source:'historical-ranges',paint:{'fill-opacity':0}},before);
+   if(!map.getLayer('history-wash'))map.addLayer({id:'history-wash',type:'fill',source:'historical-ranges',paint:{'fill-color':color,'fill-opacity':.09}},before);
+   if(!map.getLayer('history-soft-edge'))map.addLayer({id:'history-soft-edge',type:'line',source:'historical-ranges',filter:['==','precision','approximate'],paint:{'line-color':color,'line-width':['interpolate',['linear'],['zoom'],3,3,8,7,13,9],'line-blur':3,'line-opacity':.32}},before);
+   if(!map.getLayer('history-keyline'))map.addLayer({id:'history-keyline',type:'line',source:'historical-ranges',filter:['==','precision','documented'],paint:{'line-color':'#fff7dc','line-width':3,'line-opacity':.65}},before);
+   if(!map.getLayer('history-ink'))map.addLayer({id:'history-ink',type:'line',source:'historical-ranges',filter:['==','kind','polity'],paint:{'line-color':color,'line-width':['interpolate',['linear'],['zoom'],3,.7,9,1.25],'line-opacity':['case',['==',['get','precision'],'approximate'],.4,.85]}},before);
+   if(!map.getLayer('history-circulation'))map.addLayer({id:'history-circulation',type:'line',source:'historical-ranges',filter:['!=','kind','polity'],paint:{'line-color':color,'line-width':1.4,'line-dasharray':[2,3],'line-opacity':.8}},before);
+   if(!map.getLayer('history-hit'))map.addLayer({id:'history-hit',type:'fill',source:'historical-ranges',paint:{'fill-opacity':0}},before);
   }catch{onError('历史图层未能加载。底图与目录仍可使用。')}
  }
  function show(at:[number,number],title:string,sections:{label:string;text:string;source?:string}[]){
@@ -33,7 +32,7 @@ export function installHistoricalMap(gl:GL,map:GLMap,onError:(message:string)=>v
    el.innerHTML=symbolSvg(preferred.role);const span=document.createElement('span');span.textContent=p.name;el.appendChild(span);el.setAttribute('aria-label',`${p.zh} · ${claims.map(c=>roleNames[c.role]).join('、')}`);el.onclick=()=>show(p.coordinates,`${p.zh} / ${p.name}`,claims.map(c=>({label:roleNames[c.role],text:`${periodLabel(c)}；${c.note}`,source:c.source})));
    markers.push(new gl.Marker({element:el,anchor:'top',offset:[0,-14]}).setLngLat(p.coordinates).addTo(map));nodes.push({el,position:p.coordinates,minZoom:p.minZoom,priority:0});
   }
-  for(const r of frame.ranges){const bounds=rangeBounds([r]);if(!bounds)continue;const at=r.label||[(bounds[0][0]+bounds[1][0])/2,(bounds[0][1]+bounds[1][1])/2] as [number,number];const el=document.createElement('button');el.className='history-range-label';el.style.color=rangeColor(r.objectId);const title=document.createElement('strong');title.textContent=r.title;const date=document.createElement('small');date.textContent=periodLabel(r);el.appendChild(title);el.appendChild(date);el.onclick=()=>show(at,r.title,[{label:r.kind==='polity'?'政权范围':'流通／空间背景',text:`${periodLabel(r)}；${r.precision==='approximate'?'大致范围':'资料所绘范围'}；${r.note}`,source:r.source}]);markers.push(new gl.Marker({element:el}).setLngLat(at).addTo(map));nodes.push({el,position:at,minZoom:4,priority:1});}
+  for(const r of frame.ranges){const bounds=rangeBounds([r]);if(!bounds)continue;const at=r.label||[(bounds[0][0]+bounds[1][0])/2,(bounds[0][1]+bounds[1][1])/2] as [number,number];const el=document.createElement('button');el.className='history-range-label';el.setAttribute('aria-label',r.title+' · '+periodLabel(r));el.style.color=rangeColor(r.objectId);const title=document.createElement('strong');title.textContent=r.title;const date=document.createElement('small');date.textContent=periodLabel(r);el.appendChild(title);el.appendChild(date);el.onclick=()=>show(at,r.title,[{label:r.kind==='polity'?'政权范围':'流通／空间背景',text:`${periodLabel(r)}；${r.precision==='approximate'?'大致范围':'资料所绘范围'}；${r.note}`,source:r.source}]);markers.push(new gl.Marker({element:el}).setLngLat(at).addTo(map));nodes.push({el,position:at,minZoom:4,priority:1});}
   layout=()=>{const used:{x:number;y:number;w:number;h:number}[]=[];for(const n of nodes.sort((a,b)=>a.priority-b.priority)){const p=map.project(n.position),w=n.el.offsetWidth||120,h=n.el.offsetHeight||32;const hit=used.some(b=>Math.abs(b.x-p.x)<(b.w+w)/2+8&&Math.abs(b.y-p.y)<(b.h+h)/2+4);const show=map.getZoom()>=n.minZoom&&!hit;n.el.style.visibility=show?'visible':'hidden';if(show)used.push({x:p.x,y:p.y,w,h})}};layout();
  }
  let layout=()=>{};const move=()=>layout();map.on('move',move);
