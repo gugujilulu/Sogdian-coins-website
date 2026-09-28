@@ -1,22 +1,14 @@
 import type {Map as GLMap,GeoJSONSource,Marker,Popup} from 'maplibre-gl';
 import {rangeColor,rangeBounds,periodLabel,roleNames,type MapRange,type MapPlace,type PlaceClaim} from '@/lib/map-layers';
+import {ensureRangeStyle} from '@/lib/map-layer-style';
 import {symbolSvg} from '@/lib/map-symbols';
 type GL=typeof import('maplibre-gl');
 type Frame={ranges:MapRange[];places:{place:MapPlace;claims:PlaceClaim[]}[]};
 export function installHistoricalMap(gl:GL,map:GLMap,onError:(message:string)=>void){
  let frame:Frame={ranges:[],places:[]},markers:Marker[]=[],popup:Popup|null=null;
- const empty={type:'FeatureCollection' as const,features:[]};
  function ensure(){
   try{
-   if(!map.getSource('historical-ranges'))map.addSource('historical-ranges',{type:'geojson',data:empty});
-   const before=map.getLayer('coin-source-layout')?'coin-source-layout':undefined;
-   const color=['get','color'] as ['get',string];
-   if(!map.getLayer('history-wash'))map.addLayer({id:'history-wash',type:'fill',source:'historical-ranges',paint:{'fill-color':color,'fill-opacity':.09}},before);
-   if(!map.getLayer('history-soft-edge'))map.addLayer({id:'history-soft-edge',type:'line',source:'historical-ranges',filter:['==','precision','approximate'],paint:{'line-color':color,'line-width':['interpolate',['linear'],['zoom'],3,3,8,7,13,9],'line-blur':3,'line-opacity':.32}},before);
-   if(!map.getLayer('history-keyline'))map.addLayer({id:'history-keyline',type:'line',source:'historical-ranges',filter:['==','precision','documented'],paint:{'line-color':'#fff7dc','line-width':3,'line-opacity':.65}},before);
-   if(!map.getLayer('history-ink'))map.addLayer({id:'history-ink',type:'line',source:'historical-ranges',filter:['==','kind','polity'],paint:{'line-color':color,'line-width':['interpolate',['linear'],['zoom'],3,.7,9,1.25],'line-opacity':['case',['==',['get','precision'],'approximate'],.4,.85]}},before);
-   if(!map.getLayer('history-circulation'))map.addLayer({id:'history-circulation',type:'line',source:'historical-ranges',filter:['!=','kind','polity'],paint:{'line-color':color,'line-width':1.4,'line-dasharray':[2,3],'line-opacity':.8}},before);
-   if(!map.getLayer('history-hit'))map.addLayer({id:'history-hit',type:'fill',source:'historical-ranges',paint:{'fill-opacity':0}},before);
+   ensureRangeStyle(map);
   }catch{onError('历史图层未能加载。底图与目录仍可使用。')}
  }
  function show(at:[number,number],title:string,sections:{label:string;text:string;source?:string}[]){
@@ -24,7 +16,7 @@ export function installHistoricalMap(gl:GL,map:GLMap,onError:(message:string)=>v
   for(const s of sections){const p=document.createElement('p');p.textContent=`${s.label} · ${s.text}`;box.appendChild(p);if(s.source){for(const source of s.source.split('\n')){if(/^https?:\/\//.test(source)){const a=document.createElement('a');a.href=source;a.textContent='查看来源 ↗';a.target='_blank';a.rel='noreferrer';box.appendChild(a)}else{const small=document.createElement('small');small.textContent=source.startsWith('demo:')?'独立视觉夹具；不代表历史事实':'现有 Atlas 字段／研究索引';box.appendChild(small)}}}}
   popup=new gl.Popup({maxWidth:'300px',closeOnClick:true}).setLngLat(at).setDOMContent(box).addTo(map);
  }
- function update(next:Frame){frame=next;ensure();const source=map.getSource('historical-ranges') as GeoJSONSource|undefined;
+ function update(next:Frame){popup?.remove();popup=null;frame=next;ensure();const source=map.getSource('historical-ranges') as GeoJSONSource|undefined;
   source?.setData({type:'FeatureCollection',features:frame.ranges.map(r=>({type:'Feature',id:r.id,geometry:r.geometry!,properties:{id:r.id,color:rangeColor(r.objectId),kind:r.kind,precision:r.precision}}))});
   markers.forEach(m=>m.remove());markers=[];
   const nodes:{el:HTMLElement;position:[number,number];minZoom:number;priority:number}[]=[];

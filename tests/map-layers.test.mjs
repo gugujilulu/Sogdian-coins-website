@@ -28,7 +28,7 @@ test('temporary background and base settings remain independent across close / f
  const base={...defaultLayers,sites:true},copy=JSON.stringify(base),b={places:[],ranges:[range('r',650,750)]};
  const temp=backgroundLayers(b,'a');assert.ok(effectiveLayers(base,temp,true).polities);assert.ok(!effectiveLayers(base,temp,false).polities);assert.equal(JSON.stringify(base),copy);
  assert.equal(visibleRanges(b,effectiveLayers(base,temp,true),{mode:'all',year:0},'a').length,1);
- assert.deepEqual(backgroundLayers(b,'missing'),{polities:false,circulation:false,findspots:false,hoards:false});
+ assert.deepEqual(backgroundLayers(b,'missing'),{polities:false,circulation:false,context:false,findspots:false,hoards:false});
 });
 test('one place identity retains only explicitly associated role claims and each source',()=>{
  const p={claims:[{role:'site',source:'site',start:null,end:null},{role:'hoard',familyId:'a',source:'hoard',start:700,end:750},{role:'center',familyId:'b',source:'center',start:700,end:750}]};
@@ -38,4 +38,11 @@ test('range colors are ID stable, circulation separate, empty geometry has no ca
  const a=rangeColor('p');assert.equal(rangeColor('p'),a);assert.notEqual(rangeColor('demo:semirechye'),rangeColor('demo:sogdiana'));
  assert.deepEqual(rangeBounds([range('a',0,1)]),[[65,39],[66,40]]);assert.equal(rangeBounds([{...range('a',0,1),geometry:undefined}]),null);
  const b={places:[],ranges:[range('a',0,1,{kind:'circulation'})]};assert.equal(visibleRanges(b,{...defaultLayers,polities:true},{mode:'all',year:0}).length,0);assert.equal(visibleRanges(b,{...defaultLayers,circulation:true},{mode:'all',year:0}).length,1);
+});
+
+test('range style installation recovers partial failure and full style replacement without duplicates',async()=>{
+ const {ensureRangeStyle}=await import('../lib/map-layer-style.ts');const sources=new Map(),layers=new Map();let fail=true;
+ const map={getSource:id=>sources.get(id),getLayer:id=>layers.get(id),addSource:(id,s)=>{assert.ok(!sources.has(id));sources.set(id,s)},addLayer:l=>{if(fail&&l.id==='history-ink'){fail=false;throw Error('fixture interrupted style load')}assert.ok(!layers.has(l.id));layers.set(l.id,l)}};
+ assert.throws(()=>ensureRangeStyle(map));ensureRangeStyle(map);assert.equal(layers.size,6);ensureRangeStyle(map);assert.equal(layers.size,6);
+ sources.clear();layers.clear();ensureRangeStyle(map);assert.equal(sources.size,1);assert.equal(layers.size,6);
 });

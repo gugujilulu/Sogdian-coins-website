@@ -1,9 +1,9 @@
 import type {Atlas,Area,Place} from './atlas';
 import type {GeographyIndex} from './geography-index';
-export const layerNames={coins:'钱币家族与集合',cities:'核心历史地点',centers:'政治中心',sites:'考古遗址',mints:'铸币地及候选',findspots:'单枚出土',hoards:'窖藏',polities:'政权范围',circulation:'钱币流通范围'} as const;
+export const layerNames={coins:'钱币家族与集合',cities:'核心历史地点',centers:'政治中心',sites:'考古遗址',mints:'铸币地及候选',findspots:'单枚出土',hoards:'窖藏',polities:'政权范围',circulation:'钱币流通范围',context:'地理背景（非流通）'} as const;
 export type LayerKey=keyof typeof layerNames;
 export type LayerSettings=Record<LayerKey,boolean>;
-export const defaultLayers:LayerSettings={coins:true,cities:true,centers:false,sites:false,mints:false,findspots:false,hoards:false,polities:false,circulation:false};
+export const defaultLayers:LayerSettings={coins:true,cities:true,centers:false,sites:false,mints:false,findspots:false,hoards:false,polities:false,circulation:false,context:false};
 export type SymbolRole='city'|'center'|'site'|'mint'|'mint-candidate'|'findspot'|'hoard';
 export const roleNames:Record<SymbolRole,string>={city:'历史城市／地点',center:'政治中心',site:'考古遗址',mint:'铸币地','mint-candidate':'铸币地候选',findspot:'单枚出土',hoard:'窖藏'};
 export type Period={start:number|null;end:number|null};
@@ -26,10 +26,10 @@ const palette=['#8d533e','#51766e','#8b753f','#666d86','#747d4c','#896675'];
 const fixed:Record<string,string>={'demo:semirechye':'#51766e','demo:sogdiana':'#a06443'};
 export function rangeColor(id:string){let h=0;for(const c of id)h=(h*31+c.charCodeAt(0))>>>0;return fixed[id]||palette[h%palette.length]}
 export function effectiveLayers(base:LayerSettings,temporary:Partial<LayerSettings>,enabled:boolean):LayerSettings{return enabled?{...base,...Object.fromEntries(Object.entries(temporary).filter(([,v])=>v))}:base}
-export function backgroundLayers(background:MapBackground,familyId:string):Partial<LayerSettings>{return{polities:background.ranges.some(r=>r.familyIds.includes(familyId)&&r.kind==='polity'&&!!r.geometry),circulation:background.ranges.some(r=>r.familyIds.includes(familyId)&&r.kind!=='polity'&&!!r.geometry),findspots:background.places.some(p=>p.claims.some(c=>c.familyId===familyId&&c.role==='findspot')),hoards:background.places.some(p=>p.claims.some(c=>c.familyId===familyId&&c.role==='hoard'))}}
+export function backgroundLayers(background:MapBackground,familyId:string):Partial<LayerSettings>{return{polities:background.ranges.some(r=>r.familyIds.includes(familyId)&&r.kind==='polity'&&!!r.geometry),circulation:background.ranges.some(r=>r.familyIds.includes(familyId)&&r.kind==='circulation'&&!!r.geometry),context:background.ranges.some(r=>r.familyIds.includes(familyId)&&r.kind==='context'&&!!r.geometry),findspots:background.places.some(p=>p.claims.some(c=>c.familyId===familyId&&c.role==='findspot')),hoards:background.places.some(p=>p.claims.some(c=>c.familyId===familyId&&c.role==='hoard'))}}
 export function visibleRanges(background:MapBackground,settings:LayerSettings,time:MapTime,familyId?:string,versions:Record<string,string>={}){
  // Never union temporal versions. Ambiguous versions require an explicit selection.
- const candidates=background.ranges.filter(r=>!!r.geometry&&(!familyId||r.familyIds.includes(familyId))&&settings[r.kind==='polity'?'polities':'circulation']&&timeMatches(r,time));
+ const candidates=background.ranges.filter(r=>!!r.geometry&&(!familyId||r.familyIds.includes(familyId))&&settings[r.kind==='polity'?'polities':r.kind]&&timeMatches(r,time));
  return candidates.filter(r=>{const peers=candidates.filter(x=>x.objectId===r.objectId);return peers.length===1||versions[r.objectId]===r.id});
 }
 export function placeClaims(p:MapPlace,settings:LayerSettings,time:MapTime,familyId?:string){return p.claims.filter(c=>{
