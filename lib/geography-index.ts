@@ -70,6 +70,9 @@ qara-khitai|Western Liao / Qara Khitai attribution|西辽归属体系
 yaghlaqar|Yaghlaqar clan / Turkic|药罗葛氏／突厥背景`;
 const scope: [GeoDimension,string,string,string,string[]][]=[
  ['region','sogdiana','Sogdiana','粟特',['Soghd','粟特绿洲与地方体系']],
+ ['region','west-sogdiana','Western Sogdiana','西粟特',['Western Sogd']],
+ ['region','south-sogdiana','Southern Sogdiana','南粟特',['Southern Sogd']],
+ ['region','xinjiang','Xinjiang','新疆',[]],
  ['region','tokharistan','Tokharistan','吐火罗',[]],['region','north-tokharistan','Northern Tokharistan','北吐火罗',[]],
  ['region','north-tokharistan-badakhshan','Northern Tokharistan & Badakhshan','北吐火罗与巴达赫尚',[]],
  ['region','bactria','Bactria','巴克特里亚',[]],['region','north-afghanistan','Northern Afghanistan','阿富汗北部',[]],['region','northeast-afghanistan','Northeastern Afghanistan','阿富汗东北部',[]],
@@ -81,6 +84,30 @@ const categoryMap:Record<string,string[]>={
  '2141':['region:semirechye'],'795':['polity:turgesh'],'870':['region:chach','polity:chach'],'2145':['region:chach','polity:chach'],
  '866':['region:bukhara'],'803':['region:ferghana'],'867':['region:kesh'],
  '2142':['region:north-tokharistan-badakhshan'],'9299':['polity:qara-khitai'],
+};
+/** Search ancestry explicitly present in existing labels, not a new historical attribution.
+ * Alternatives, disputed labels and the broad Northern Tokharistan & Badakhshan union
+ * are deliberately not converted to definite membership of either alternative.
+ */
+export const regionParents:Readonly<Record<string,readonly string[]>>={
+ 'region:termez':['region:north-tokharistan'],
+ 'region:vakhsh':['region:north-tokharistan'],
+ 'region:vakhsh-valley':['region:north-tokharistan'],
+ 'region:badakhshan':['region:north-tokharistan'],
+ 'region:north-tokharistan':['region:tokharistan'],
+ 'region:barkat':['region:east-sogdiana'],
+ 'region:kabudan':['region:east-sogdiana'],
+ 'region:samarkand':['region:east-sogdiana'],
+ 'region:east-sogdiana':['region:sogdiana'],
+ 'region:bukhara':['region:west-sogdiana'],
+ 'region:paykand':['region:west-sogdiana'],
+ 'region:west-sogdiana':['region:sogdiana'],
+ 'region:kesh':['region:south-sogdiana'],
+ 'region:south-sogdiana':['region:sogdiana'],
+ 'region:panch-samarkand':['region:sogdiana'],
+ 'region:sogdian-turkic':['region:semirechye'],
+ 'region:western-liao-semirechye':['region:semirechye'],
+ 'region:kucha':['region:xinjiang'],
 };
 export const geoStateLabels:Record<string,string>={unknown:'未标注／未定',unresolved:'未定／多种归属',research:'研究中／资料不足',source_only:'仅来源标签，尚未完成学术确认',candidate:'候选／尚未审阅',multiple:'多种关联（不表示已确认）'};
 export const stateId=(d:GeoDimension,state:string)=>`${d}:state:${state}`;
@@ -127,6 +154,21 @@ export function buildGeographyIndex(data:Atlas):GeographyIndex{
    m[d]=[...new Set(m[d])];
    for(const id of entities){const n=nodes.get(id)!;n.relatedRegions=[...new Set([...n.relatedRegions,...m.region.filter(x=>!x.includes(':state:'))])];n.relatedPlaces=[...new Set([...n.relatedPlaces,...m.place.filter(x=>!x.includes(':state:'))])]}
   }
+  // Expand only after deriving direct-label states: an ancestor is not an extra
+  // competing attribution and must not manufacture a "multiple" state.
+  const visited=new Set(m.region);
+  function ancestors(child:string){for(const parent of regionParents[child]||[]){
+   if(visited.has(parent))continue;visited.add(parent);
+   const origin=nodes.get(child)!;
+   add(m,'region',parent,reference(`lib/geography-index.ts#regionParents/${child}`,'atlas_field',`地区检索上级：${origin.name} → ${nodes.get(parent)!.name}；沿用下级证据及状态，不推导政权或地点角色`),f?.id);
+   const target=nodes.get(parent)!;
+   for(const ref of origin.references)if(!target.references.some(r=>r.reference===ref.reference&&r.note===ref.note))target.references.push(ref);
+   target.evidenceState='explicit region search ancestry; inherited labels, not scholarly confirmation';
+   target.relatedRegions=[...new Set([...target.relatedRegions,child])];
+   target.relatedPlaces=[...new Set([...target.relatedPlaces,...m.place.filter(id=>!id.includes(':state:'))])];
+   ancestors(parent);
+  }}
+  for(const child of [...m.region])ancestors(child);
   return m;
  }
  const main=new Map(data.specimens.map(r=>[r.id,member(r,true)])),related=new Map(data.relatedRecords.map(r=>[r.id,member(r,false)]));
