@@ -51,3 +51,10 @@ export function validateLink(link:DeepLink,data:Atlas,tree:CatalogueTree,sourceN
  return 'ready';
 }
 export function ancestorNodes(node:string){const path=JSON.parse(node) as string[];return path.map((_,i)=>JSON.stringify(path.slice(0,i+1)))}
+/** Continuous typing/slider updates remain shareable without one history entry per keystroke. */
+export function linkHistoryMode(previous:string,next:string):'pushState'|'replaceState'{
+ try{
+  const withoutContinuous=(hash:string)=>{const link=parseLink(hash);if(link.filters)link.filters={...link.filters,query:'',year:0};return serializeLink(link)};
+  return withoutContinuous(previous)===withoutContinuous(next)?'replaceState':'pushState';
+ }catch{return 'pushState'}
+}

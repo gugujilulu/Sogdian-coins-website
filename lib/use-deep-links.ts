@@ -1,6 +1,6 @@
 'use client';
 import {useLayoutEffect,useRef,useState} from 'react';
-import {parseLink,serializeLink,type DeepLink} from './deep-links';
+import {parseLink,serializeLink,linkHistoryMode,type DeepLink} from './deep-links';
 /** One owner for URL writes and external hash/popstate restoration. */
 export function useDeepLinks(current:DeepLink,ready:boolean,resolve:(link:DeepLink)=>'ready'|'waiting',apply:(link:DeepLink)=>void){
  const [error,setError]=useState(''),[tick,setTick]=useState(0);
@@ -17,7 +17,7 @@ export function useDeepLinks(current:DeepLink,ready:boolean,resolve:(link:DeepLi
    catch(e){state.pending=null;state.initialized=true;state.snapshot=signature;state.applied=true;apply({view:'catalogue'});setError(e instanceof Error?e.message:'链接无效')}
    return;
   }
-  if(state.initialized&&signature!==state.snapshot){state.snapshot=signature;setError('');const next=window.location.pathname+window.location.search+signature;if(window.location.hash!==signature){sync.current.observed=signature;history.pushState(null,'',next)}}
+  if(state.initialized&&signature!==state.snapshot){const method=linkHistoryMode(state.snapshot,signature);state.snapshot=signature;setError('');const next=window.location.pathname+window.location.search+signature;if(window.location.hash!==signature){sync.current.observed=signature;history[method](null,'',next)}}
  },[current,ready,resolve,apply,tick]);
  function home(){sync.current.pending='#view=catalogue';sync.current.observed='#view=catalogue';restoring.current=true;history.pushState(null,'',window.location.pathname+window.location.search+'#view=catalogue');setTick(n=>n+1)}
  return {error,home,restoring};

@@ -36,8 +36,10 @@
 
 沿用 T14 单一 URL 同步器。重复 `region`、`polity`、`city` 参数表示多选稳定 ID；读取也接受 `place`（不能与 city 同时出现）。例：`#view=atlas&region=region%3Asemirechye&polity=polity%3Aturgesh&city=place%3Asuyab`。
 
-`filters` 是 URL 编码的固定字段 JSON，保存其余 FilterContext：query、familyFilter、sourceFilter、inscriptionFilter、tamghaFilter、featureFilter、statusFilter、year、dateMode。所有复制入口继承当前筛选上下文；刷新、对象链接、前进后退恢复同一状态。非法参数／未知 ID 明确报错。旧对象链接仍支持，未附筛选时恢复默认全部条件；合法旧地理字段按精确别名转换，不模糊匹配。对象可以与筛选不匹配，仍保留详情并标注。
+`filters` 是 URL 编码的固定字段 JSON，保存其余 FilterContext：query、familyFilter、sourceFilter、inscriptionFilter、tamghaFilter、featureFilter、statusFilter、year、dateMode。所有复制入口继承当前筛选上下文；刷新、对象链接、前进后退恢复同一状态。连续搜索输入及年份拖动替换当前历史项，离散筛选和对象导航新增历史项。非法参数／未知 ID 明确报错。旧对象链接仍支持，未附筛选时恢复默认全部条件；合法旧地理字段按精确别名转换，不模糊匹配。对象可以与筛选不匹配，仍保留详情并标注。
 
 ## 验证进度
 
-已通过类型检查、现有26项相关测试及新增7项地理／URL／浏览上下文测试。生产构建和浏览器代表操作待本轮后续验收。原始资料、atlas、manifest、日期、图片、来源关系和 ID 未修改。
+51 项相关测试（含新增 8 项）及类型检查通过。桌面实际验证：七河＋突骑施＋碎叶 239 条；Nana 失配仍保留 0／20 条、0／22 图；完整家族往返恢复三维条件；高清详情失配提示、历史后退恢复／前进重现、关闭刷新不重开；Chach 原集合失配后保留空列表，清除恢复 3 家族／84 条；未定地点 18 家族／122 条在 Atlas 树和来源树一致，相关图库保留 701 条。复制操作显示成功，受浏览器剪贴板读取限制未复读系统剪贴板字节；URL 刷新和序列化测试通过。
+
+390×844 浏览器视口实际检查：三维分组可滚动访问，多选政权、清除地理恢复 Nana、高清打开／关闭返回可用；页面 scrollWidth 与 clientWidth 均390。不是手机真机或双指触控验收。截图见 [T20审阅附件](../reviews/T20/README.md)。开发服务中断后的 listen EPERM 通过网络权限恢复；未改依赖或配置。生产构建已通过，历史项收尾修改后再做最终构建确认。原始资料、atlas、manifest、日期、图片、来源关系和 ID 未修改。

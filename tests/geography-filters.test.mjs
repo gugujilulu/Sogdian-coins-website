@@ -65,3 +65,11 @@ test('real baseline and all source/unknown records remain immutable; no filters 
  assert.equal(data.families.length,56);assert.equal(data.variants.length,120);assert.equal(data.specimens.flatMap(r=>r.images).length,1013);assert.equal(idx.related.size,701);
  const nana=data.specimens.filter(r=>r.familyId==='lady-nana');assert.equal(nana.length,20);assert.equal(nana.flatMap(r=>r.images).length,22);assert.equal(data.coverage.importedZenoRecords,14);assert.equal(data.coverage.zenoRecordCount,14);
 });
+test('continuous search/year edits replace history; discrete filters and object navigation push',async()=>{
+ const {linkHistoryMode}=await import('../lib/deep-links.ts');const {region,polity,city,...filters}=emptyFilters;
+ const link={view:'atlas',filters};const before=serializeLink(link);
+ assert.equal(linkHistoryMode(before,serializeLink({...link,filters:{...filters,query:'Nana'}})),'replaceState');
+ assert.equal(linkHistoryMode(before,serializeLink({...link,filters:{...filters,year:700}})),'replaceState');
+ assert.equal(linkHistoryMode(before,serializeLink({...link,region:['region:semirechye']})),'pushState');
+ assert.equal(linkHistoryMode(before,serializeLink({...link,family:'lady-nana'})),'pushState');
+});
