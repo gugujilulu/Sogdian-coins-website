@@ -213,3 +213,6 @@
  .atlas-screen.layers-expanded .atlas-search-panel,.atlas-screen.layers-expanded .timeline-floating,.atlas-screen.layers-expanded .map-toolbar,.preview-stage.layers-expanded .map-toolbar,.preview-stage.layers-expanded .preview-badge{visibility:hidden;pointer-events:none}
  .atlas-screen.layers-expanded .maplibregl-ctrl-bottom-left,.atlas-screen.layers-expanded .maplibregl-ctrl-bottom-right,.preview-stage.layers-expanded .maplibregl-ctrl-bottom-left,.preview-stage.layers-expanded .maplibregl-ctrl-bottom-right{bottom:58%}
 }
+
+/* T21 print-map study: uncertainty is a fine broken boundary, never a fog halo. */
+.range-swatch.approximate{opacity:1;background:#80739733;border-bottom:1px dashed currentColor;box-shadow:none}

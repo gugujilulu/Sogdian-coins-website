@@ -23,7 +23,7 @@ export function buildMapBackground(data:Atlas,geography:GeographyIndex):MapBackg
  return{places,ranges};
 }
 const palette=['#8d533e','#51766e','#8b753f','#666d86','#747d4c','#896675'];
-const fixed:Record<string,string>={'demo:semirechye':'#51766e','demo:sogdiana':'#a06443'};
+const fixed:Record<string,string>={'demo:semirechye':'#807397','demo:sogdiana':'#a06443'};
 export function rangeColor(id:string){let h=0;for(const c of id)h=(h*31+c.charCodeAt(0))>>>0;return fixed[id]||palette[h%palette.length]}
 export function effectiveLayers(base:LayerSettings,temporary:Partial<LayerSettings>,enabled:boolean):LayerSettings{return enabled?{...base,...Object.fromEntries(Object.entries(temporary).filter(([,v])=>v))}:base}
 export function backgroundLayers(background:MapBackground,familyId:string):Partial<LayerSettings>{return{polities:background.ranges.some(r=>r.familyIds.includes(familyId)&&r.kind==='polity'&&!!r.geometry),circulation:background.ranges.some(r=>r.familyIds.includes(familyId)&&r.kind==='circulation'&&!!r.geometry),context:background.ranges.some(r=>r.familyIds.includes(familyId)&&r.kind==='context'&&!!r.geometry),findspots:background.places.some(p=>p.claims.some(c=>c.familyId===familyId&&c.role==='findspot')),hoards:background.places.some(p=>p.claims.some(c=>c.familyId===familyId&&c.role==='hoard'))}}

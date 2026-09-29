@@ -1,14 +1,10 @@
 import type {Map as GLMap,GeoJSONSource,Marker,Popup} from 'maplibre-gl';
 import {rangeColor,rangeBounds,periodLabel,roleNames,type MapRange,type MapPlace,type PlaceClaim} from '@/lib/map-layers';
 import {ensureRangeStyle} from '@/lib/map-layer-style';
-import {maskLayout} from '@/lib/range-mask';
 import {symbolSvg} from '@/lib/map-symbols';
 type GL=typeof import('maplibre-gl');
 type Frame={ranges:MapRange[];places:{place:MapPlace;claims:PlaceClaim[]}[]};
 export function installHistoricalMap(gl:GL,map:GLMap,onError:(message:string)=>void){
- const maskIds=new Set<string>();
- function clearMasks(){for(const id of maskIds){if(map.getLayer(id))map.removeLayer(id);if(map.getSource(id))map.removeSource(id)}maskIds.clear()}
- function updateMasks(){clearMasks();for(const r of frame.ranges.filter(r=>r.precision==='approximate')){const geometry=maskLayout(r);if(!geometry)continue;const canvas=document.createElement('canvas');canvas.width=geometry.width;canvas.height=geometry.height;const ctx=canvas.getContext('2d');if(!ctx)continue;ctx.filter=`blur(${geometry.blur}px)`;ctx.fillStyle=rangeColor(r.objectId);ctx.beginPath();for(const ring of geometry.rings){ring.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.closePath()}ctx.fill('evenodd');const id=`range-mask:${r.id}`;maskIds.add(id);map.addSource(id,{type:'canvas',canvas,coordinates:geometry.coordinates,animate:false});map.addLayer({id,type:'raster',source:id,paint:{'raster-opacity':r.display?.washOpacity??.19,'raster-fade-duration':0}},'history-keyline')}}
  let frame:Frame={ranges:[],places:[]},markers:Marker[]=[],popup:Popup|null=null;
  function ensure(){
   try{
@@ -21,8 +17,8 @@ export function installHistoricalMap(gl:GL,map:GLMap,onError:(message:string)=>v
   popup=new gl.Popup({maxWidth:'300px',closeOnClick:true}).setLngLat(at).setDOMContent(box).addTo(map);
  }
  function update(next:Frame){popup?.remove();popup=null;frame=next;ensure();const source=map.getSource('historical-ranges') as GeoJSONSource|undefined;
-  source?.setData({type:'FeatureCollection',features:frame.ranges.map(r=>({type:'Feature',id:r.id,geometry:r.geometry!,properties:{id:r.id,color:rangeColor(r.objectId),kind:r.kind,precision:r.precision}}))});
-  try{updateMasks()}catch{onError('范围渐弱图层未能加载，可使用图层重试；原始资料仍可访问。')}markers.forEach(m=>m.remove());markers=[];
+  source?.setData({type:'FeatureCollection',features:frame.ranges.map(r=>({type:'Feature',id:r.id,geometry:r.geometry!,properties:{id:r.id,color:rangeColor(r.objectId),kind:r.kind,precision:r.precision,opacity:r.display?.washOpacity??.22}}))});
+  markers.forEach(m=>m.remove());markers=[];
   const nodes:{el:HTMLElement;position:[number,number];minZoom:number;priority:number;angle?:number}[]=[];
   for(const {place:p,claims} of frame.places){const el=document.createElement('button');el.className='history-place historical-label';const preferred=[...claims].sort((a,b)=>['center','hoard','findspot','mint','mint-candidate','site','city'].indexOf(a.role)-['center','hoard','findspot','mint','mint-candidate','site','city'].indexOf(b.role))[0];
    el.innerHTML=symbolSvg(preferred.role);const span=document.createElement('span');span.textContent=p.name;el.appendChild(span);el.setAttribute('aria-label',`${p.zh} · ${claims.map(c=>roleNames[c.role]).join('、')}`);el.onclick=()=>show(p.coordinates,`${p.zh} / ${p.name}`,claims.map(c=>({label:roleNames[c.role],text:`${periodLabel(c)}；${c.note}`,source:c.source})));
@@ -40,5 +36,5 @@ export function installHistoricalMap(gl:GL,map:GLMap,onError:(message:string)=>v
  let layout=()=>{};const move=()=>layout();map.on('move',move);map.on('idle',move);
  const click=(e:import('maplibre-gl').MapMouseEvent)=>{if(!map.getLayer('history-hit'))return;const f=map.queryRenderedFeatures(e.point,{layers:['history-hit']})[0];const r=frame.ranges.find(r=>r.id===f?.properties.id);if(r)show([e.lngLat.lng,e.lngLat.lat],r.title,[{label:r.kind==='polity'?'政权范围':'流通／空间背景',text:`${periodLabel(r)}；${r.note}`,source:r.source}])};map.on('click',click);
  const reload=()=>update(frame);map.on('style.load',reload);ensure();
- return{update,retry:reload,destroy(){clearMasks();markers.forEach(m=>m.remove());popup?.remove();map.off('move',move);map.off('idle',move);map.off('click',click);map.off('style.load',reload)}};
+ return{update,retry:reload,destroy(){markers.forEach(m=>m.remove());popup?.remove();map.off('move',move);map.off('idle',move);map.off('click',click);map.off('style.load',reload)}};
 }

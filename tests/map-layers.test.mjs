@@ -43,6 +43,15 @@ test('range colors are ID stable, circulation separate, empty geometry has no ca
 test('range style installation recovers partial failure and full style replacement without duplicates',async()=>{
  const {ensureRangeStyle}=await import('../lib/map-layer-style.ts');const sources=new Map(),layers=new Map();let fail=true;
  const map={getSource:id=>sources.get(id),getLayer:id=>layers.get(id),addSource:(id,s)=>{assert.ok(!sources.has(id));sources.set(id,s)},addLayer:l=>{if(fail&&l.id==='history-ink'){fail=false;throw Error('fixture interrupted style load')}assert.ok(!layers.has(l.id));layers.set(l.id,l)}};
- assert.throws(()=>ensureRangeStyle(map));ensureRangeStyle(map);assert.equal(layers.size,5);ensureRangeStyle(map);assert.equal(layers.size,5);
- sources.clear();layers.clear();ensureRangeStyle(map);assert.equal(sources.size,1);assert.equal(layers.size,5);
+ assert.throws(()=>ensureRangeStyle(map));ensureRangeStyle(map);assert.equal(layers.size,6);ensureRangeStyle(map);assert.equal(layers.size,6);
+ sources.clear();layers.clear();ensureRangeStyle(map);assert.equal(sources.size,1);assert.equal(layers.size,6);
+});
+
+test('print-map ranges retain an unblurred fill and distinguish approximate boundaries',async()=>{
+ const {ensureRangeStyle}=await import('../lib/map-layer-style.ts');const layers=new Map();
+ const map={getSource:()=>true,addSource:()=>{},getLayer:id=>layers.get(id),addLayer:l=>layers.set(l.id,l)};
+ ensureRangeStyle(map);assert.equal(layers.get('history-wash').filter,undefined);
+ assert.equal(layers.get('history-wash').paint['fill-antialias'],true);
+ assert.deepEqual(layers.get('history-approximate').paint['line-dasharray'],[3,2]);
+ assert.ok([...layers.values()].every(l=>!('line-blur' in l.paint)));
 });
