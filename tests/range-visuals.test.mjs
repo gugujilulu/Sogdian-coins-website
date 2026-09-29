@@ -18,3 +18,10 @@ test('display mask preserves source geometry and pads all sides for the fading b
  assert.equal(maskLayout({...r,geometry:undefined}),null);
 });
 test('visual fixture remains excluded from production',()=>{const old=process.env.NODE_ENV;try{process.env.NODE_ENV='production';assert.deepEqual(visualFixture({places:[]}),{places:[],ranges:[]})}finally{process.env.NODE_ENV=old}});
+
+test('each range can configure its own transition without changing its query geometry',()=>{
+ const r=fixture.ranges[0],before=JSON.stringify(r.geometry);
+ const narrow=maskLayout({...r,display:{transitionKm:4}}),wide=maskLayout({...r,display:{transitionKm:12}});
+ assert.ok(wide.blur>narrow.blur);assert.ok(wide.coordinates[0][0]<narrow.coordinates[0][0]);
+ assert.equal(JSON.stringify(r.geometry),before);
+});

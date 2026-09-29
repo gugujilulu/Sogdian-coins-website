@@ -9,7 +9,7 @@ export const roleNames:Record<SymbolRole,string>={city:'历史城市／地点',c
 export type Period={start:number|null;end:number|null};
 export type PlaceClaim=Period&{role:SymbolRole;familyId?:string;source:string;note:string};
 export type MapPlace=Place&{claims:PlaceClaim[]};
-export type MapRange=Period&{id:string;objectId:string;familyIds:string[];kind:'polity'|'circulation'|'context';title:string;source:string;note:string;precision:'documented'|'approximate'|'undrawn';geometry?:Area['geometry'];label?:[number,number];labelLatin?:string;labelAngle?:number};
+export type MapRange=Period&{id:string;objectId:string;familyIds:string[];kind:'polity'|'circulation'|'context';title:string;source:string;note:string;precision:'documented'|'approximate'|'undrawn';geometry?:Area['geometry'];label?:[number,number];labelLatin?:string;labelAngle?:number;display?:{transitionKm?:number;washOpacity?:number}};
 export type MapBackground={places:MapPlace[];ranges:MapRange[];demo?:boolean};
 export type MapTime={mode:'all'|'year'|'unknown';year:number};
 export function validPeriod(p:Period){return p.start!==null&&p.end!==null&&Number.isFinite(p.start)&&Number.isFinite(p.end)&&p.start<=p.end}

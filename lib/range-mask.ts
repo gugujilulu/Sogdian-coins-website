@@ -3,7 +3,7 @@ const R=6378137;
 export function project([lon,lat]:number[]){return [R*lon*Math.PI/180,R*Math.log(Math.tan(Math.PI/4+lat*Math.PI/360))] as [number,number]}
 export function unproject([x,y]:number[]){return [x/R*180/Math.PI,(2*Math.atan(Math.exp(y/R))-Math.PI/2)*180/Math.PI] as [number,number]}
 /** A display-only mask envelope; the input polygon remains the hit-test/evidence geometry. */
-export function maskLayout(range:MapRange,transitionKm=18){
+export function maskLayout(range:MapRange,transitionKm=range.display?.transitionKm??18){
  if(!range.geometry)return null;
  const rings=range.geometry.type==='Polygon'?range.geometry.coordinates:range.geometry.coordinates.flat();
  const points=rings.flat().map(project),xs=points.map(p=>p[0]),ys=points.map(p=>p[1]);
