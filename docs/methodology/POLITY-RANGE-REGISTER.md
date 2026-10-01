@@ -6,7 +6,7 @@
 
 **78 个建设登记对象**：44 个地区节点、34 个政权维度节点。按性质：历史地域／地域标签（含复合、未定） 44项；政权／政权体系 7项；地方统治／复合地方体系 18项；归属、族群或输入背景标签（非单一政权） 9项。这些是保留原标签的建设身份，不宣称78个独立历史政权，更不是已证实发行方孔钱的名单。
 
-**完整范围0；已有局部范围1；待建77**。待建包括未定、复合及背景项，其正确成果可能是有出处的背景或明确缺口，不能强造政权polygon。13个对象主库匹配为0（地区8、政权5），全部列入。
+**完整范围0；已有局部范围2（西辽既有、突骑施本轮待审阅）；待建76**。待建包括未定、复合及背景项，其正确成果可能是有出处的背景或明确缺口，不能强造政权polygon。13个对象主库匹配为0（地区8、政权5），全部列入。
 
 西辽：**已有局部样本；范围含义待后续复核**。用户已明确暂缓面积及原图含义核对；本轮仅登记，不开展核查、不改几何。视觉通过不等于完整疆域完成。
 
@@ -24,7 +24,7 @@
 
 |稳定ID／名称／别名|性质；原状态|已有地区关系|主库记录数／关联家族|范围状态；来源入口|待完成内容／批次|
 |---|---|---|---|---|---|
-|`polity:turgesh`<br>突骑施 / Türgesh<br>原aliases：Türgesh|政权／政权体系；contextual / atlas_field<br>source classification label; not scholarly confirmation|共现地区（非隶属）：`region:semirechye`|**239**<br>`sr6`、`sr3`、`sr20`、`sr9`、`arslan-kul-irkin`、`alp-tagh`|待建；`public/data/atlas.json#families/sr6/polity`；Zeno分类 795|寻找范围资料并锁定一个明确时期；制作有出处的范围，分别表达本部、附属及不确定部分；[T22-4](T22-RANGE-BATCHES.md#t22-4)|
+|`polity:turgesh`<br>突骑施 / Türgesh<br>原aliases：Türgesh|政权／政权体系；contextual / atlas_field<br>source classification label; not scholarly confirmation|共现地区（非隶属）：`region:semirechye`|**239**<br>`sr6`、`sr3`、`sr20`、`sr9`、`arslan-kul-irkin`、`alp-tagh`|局部版本已接入待审阅；[Bregel第9图登记](range-intake/TURGESH.md)；`public/data/atlas.json#families/sr6/polity`；Zeno分类 795|北西边界未覆盖；边界独立适用年、本部/附属及其他时期仍待资料，归T22-4-remaining/polity:turgesh；[T22-4](T22-RANGE-BATCHES.md#t22-4)|
 |`polity:qarluq`<br>葛逻禄 / Qarluq / Karluk<br>原aliases：Qarluq / Karluk|政权／政权体系；contextual / atlas_field<br>inherited existing attribution; not independently confirmed|共现地区（非隶属）：`region:semirechye`|**12**<br>`qarluq-kobek`|待建；`public/data/atlas.json#families/qarluq-kobek/polity`|寻找范围资料并锁定一个明确时期；制作有出处的范围，分别表达本部、附属及不确定部分；[T22-7](T22-RANGE-BATCHES.md#t22-7)|
 |`polity:samarkand`<br>康国／撒马尔罕体系 / Samarkand Sogd<br>原aliases：Samarkand Sogd|地方统治／复合地方体系；contextual / atlas_field<br>inherited existing attribution; not independently confirmed|共现地区（非隶属）：`region:east-sogdiana`、`region:sogdiana`、`region:samarkand`|**189**<br>`es19`、`es18a`、`samarkand-shishpir`、`samarkand-turgar`、`samarkand-chinese-type`、`samarkand-wuzurg`、`samarkand-warkhuman`、`samarkand-urk-wartramuka`、`samarkand-mastich-unash`、`samarkand-tukaspadak`|待建；`public/data/atlas.json#families/es19/polity`|寻找范围资料并锁定一个明确时期；制作有出处的范围，分别表达本部、附属及不确定部分；[T22-17](T22-RANGE-BATCHES.md#t22-17)|
 |`polity:bukhara`<br>安国／布哈拉体系 / Bukhara Sogd<br>原aliases：Bukhara Sogd|地方统治／复合地方体系；contextual / atlas_field<br>inherited existing attribution; not independently confirmed|共现地区（非隶属）：`region:bukhara`、`region:sogdiana`|**38**<br>`bukhara-kaiyuan-tamgha`|待建；`public/data/atlas.json#families/bukhara-kaiyuan-tamgha/polity`|寻找范围资料并锁定一个明确时期；制作有出处的范围，分别表达本部、附属及不确定部分；[T22-23](T22-RANGE-BATCHES.md#t22-23)|
