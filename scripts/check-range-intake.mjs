@@ -2,7 +2,7 @@ import {readFileSync} from 'node:fs';
 import {pathToFileURL} from 'node:url';
 import {buildGeographyIndex} from '../lib/geography-index.ts';
 import {buildMapBackground} from '../lib/map-layers.ts';
-import {rangeTimeState} from '../lib/range-time.ts';
+import {rangeTimeState,isCrossPeriodRegion} from '../lib/range-time.ts';
 
 /** Structural intake checks only; not validation of historical accuracy. */
 export function checkRangeIntake(background,{objectIds,familyIds}) {
@@ -18,6 +18,7 @@ export function checkRangeIntake(background,{objectIds,familyIds}) {
   if(!objectIds.has(r.objectId)) issue(r,'建设对象引用不存在');
   for(const id of r.familyIds) if(!familyIds.has(id)) issue(r,`家族引用不存在：${id}`);
   if(!r.source?.trim()) issue(r,'来源/待解析登记说明缺失');
+  if(r.timeApplicability&&!isCrossPeriodRegion(r)) issue(r,'跨时期仅用于无数字端点的明确地域背景');
   if(rangeTimeState(r)==='invalid') issue(r,'年代非法或倒置');
   if((r.start===null||r.end===null)&&r.geometry&&!r.periodText?.trim()) issue(r,'不完整年代缺少原文或未知说明');
   if(r.precision==='undrawn'&&r.geometry) issue(r,'待绘状态与几何冲突');

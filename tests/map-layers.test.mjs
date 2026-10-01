@@ -8,8 +8,8 @@ const shape={type:'Polygon',coordinates:[[[65,39],[66,39],[66,40],[65,39]]]};
 const range=(id,start,end,extra={})=>({id,objectId:'p',familyIds:['a'],kind:'polity',title:'test',source:'fixture',note:'test',precision:'approximate',geometry:shape,start,end,...extra});
 test('formal adapter preserves the complete research scope and never invents geometry or polity dates',()=>{
  const before=JSON.stringify(data),geo=buildGeographyIndex(data),b=buildMapBackground(data,geo);
- assert.equal(b.places.length,14);assert.equal(b.ranges.length,geo.nodes.filter(n=>n.dimension==='polity').length+1);
- assert.equal(b.ranges.filter(r=>r.geometry).length,3);assert.ok(b.ranges.filter(r=>!r.geometry).every(r=>r.start===null&&r.end===null));assert.equal(b.ranges.find(r=>r.objectId==='polity:qara-khitai').objectId,'polity:qara-khitai');
+ assert.equal(b.places.length,14);assert.equal(b.ranges.length,geo.nodes.filter(n=>n.dimension==='polity').length+2);
+ assert.equal(b.ranges.filter(r=>r.geometry).length,4);assert.ok(b.ranges.filter(r=>!r.geometry).every(r=>r.start===null&&r.end===null));assert.equal(b.ranges.find(r=>r.objectId==='polity:qara-khitai').objectId,'polity:qara-khitai');
  assert.ok(b.places.every(p=>p.claims.every(c=>c.role==='city'||c.role==='site')));
  assert.equal(JSON.stringify(data),before);assert.deepEqual([data.families.length,data.variants.length,data.specimens.length,data.specimens.reduce((n,r)=>n+r.images.length,0),data.relatedRecords.length],[56,120,1010,1013,701]);
  const nana=data.specimens.filter(r=>r.familyId==='lady-nana');assert.equal(nana.length,20);assert.equal(nana.reduce((n,r)=>n+r.images.length,0),22);assert.equal(nana.filter(r=>r.id.startsWith('zeno-')).length,14);
@@ -44,8 +44,8 @@ test('range colors are ID stable, circulation separate, empty geometry has no ca
 test('range style installation recovers partial failure and full style replacement without duplicates',async()=>{
  const {ensureRangeStyle}=await import('../lib/map-layer-style.ts');const sources=new Map(),layers=new Map();let fail=true;
  const map={getSource:id=>sources.get(id),getLayer:id=>layers.get(id),addSource:(id,s)=>{assert.ok(!sources.has(id));sources.set(id,s)},addLayer:l=>{if(fail&&l.id==='history-ink'){fail=false;throw Error('fixture interrupted style load')}assert.ok(!layers.has(l.id));layers.set(l.id,l)}};
- assert.throws(()=>ensureRangeStyle(map));ensureRangeStyle(map);assert.equal(layers.size,6);ensureRangeStyle(map);assert.equal(layers.size,6);
- sources.clear();layers.clear();ensureRangeStyle(map);assert.equal(sources.size,2);assert.equal(layers.size,6);
+ assert.throws(()=>ensureRangeStyle(map));ensureRangeStyle(map);assert.equal(layers.size,7);ensureRangeStyle(map);assert.equal(layers.size,7);
+ sources.clear();layers.clear();ensureRangeStyle(map);assert.equal(sources.size,2);assert.equal(layers.size,7);
 });
 
 test('print-map ranges retain an unblurred fill and distinguish approximate boundaries',async()=>{

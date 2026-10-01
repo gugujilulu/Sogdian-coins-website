@@ -93,3 +93,7 @@ T22-3已集成。正式范围新增polity:turgesh的Bregel第9图局部摘录，
 ## T22-4整体版本续接
 
 突骑施增加 `synthesis:turgesh:foundation:overall:v1`，建国初期约700年前后的整体大致范围，Fedorov p.9与Bregel p.16/map8综合概括。默认优先级10；同对象原摘录仍可选，不同版本不叠加。数字起止未知，阶段文字保留；指定年份需主动背景查看。新版本没有裁切闭合边，原摘录裁切表达不变。详细资料收纳到“资料与方法”，地图/图例保留简洁名称与时期。[登记](range-intake/TURGESH.md)及[截图](../reviews/T22-4/OVERALL-REVIEW.md)。
+
+## T22-8 七河地域背景
+
+region:semirechye独立context版本，核心地域＋楚河定义，整体概括非政权疆域。详见[登记](range-intake/SEMIRECHYE.md)。地域点线、政权虚线和流通短虚线分别表达。显式timeApplicability=cross-period仅用于context/region且无数字端点；全部时期和指定年份显示，年代未知默认排除，可主动背景查看；既有政权时间规则不变。
