@@ -34,7 +34,7 @@ test('after-1141 label has no invented end year or family-date substitution',()=
 test('existing Qara Khitai association is reused; all other polity entries remain',()=>{
  const data=JSON.parse(readFileSync(new URL('../public/data/atlas.json',import.meta.url))),before=JSON.stringify(data);
  const geo=buildGeographyIndex(data),background=buildMapBackground(data,geo),node=geo.nodes.find(n=>n.id==='polity:qara-khitai');
- assert.deepEqual(background.ranges.find(r=>r.geometry).familyIds,node.relatedFamilies);assert.ok(node.relatedFamilies.length>0);
+ assert.deepEqual(background.ranges.find(r=>r.objectId==='polity:qara-khitai').familyIds,node.relatedFamilies);assert.ok(node.relatedFamilies.length>0);
  assert.equal(background.ranges.length,geo.nodes.filter(n=>n.dimension==='polity').length);
  assert.equal(JSON.stringify(data),before);
 });

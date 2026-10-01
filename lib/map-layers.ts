@@ -1,4 +1,5 @@
 import {rangeViews} from './range-time.ts';
+import {turgeshSample} from './turgesh-sample.ts';
 import {qaraKhitaiSample} from './qara-khitai-sample.ts';
 import type {Atlas,Area,Place} from './atlas';
 import type {GeographyIndex} from './geography-index';
@@ -21,7 +22,7 @@ export function buildMapBackground(data:Atlas,geography:GeographyIndex):MapBackg
  const places=data.places.map(p=>({...p,claims:[{role:p.kind==='site'?'site':'city',start:null,end:null,source:p.source,note:p.note},...data.evidence.filter(e=>e.placeId===p.id&&e.kind!=='context').map(e=>({role:e.kind as 'findspot'|'hoard',familyId:e.familyId,start:e.start,end:e.end,source:e.source,note:e.note}))] as PlaceClaim[]}));
  const ranges:MapRange[]=data.areas.map(a=>({id:a.id,objectId:`area:${a.id}`,familyIds:[a.familyId],kind:a.kind==='geographic_context'?'context':'circulation',title:a.title,source:a.source,note:a.note,start:a.start,end:a.end,precision:a.kind==='documented_circulation'?'documented':'approximate',geometry:a.geometry}));
  // Directory-only entries retain ALL research scope nodes. Family dates are never territory dates.
- for(const n of geography.nodes.filter(n=>n.dimension==='polity')){if(n.id==='polity:qara-khitai'){ranges.push(qaraKhitaiSample(n.relatedFamilies));continue}ranges.push({id:`undrawn:${n.id}`,objectId:n.id,familyIds:n.relatedFamilies,kind:'polity',title:`${n.zh} / ${n.name}`,source:n.references.map(r=>r.reference).join('\n'),note:`范围待补。${n.note}；${n.evidenceState}`,start:null,end:null,precision:'undrawn'});}
+ for(const n of geography.nodes.filter(n=>n.dimension==='polity')){if(n.id==='polity:turgesh'){ranges.push(turgeshSample(n.relatedFamilies));continue}if(n.id==='polity:qara-khitai'){ranges.push(qaraKhitaiSample(n.relatedFamilies));continue}ranges.push({id:`undrawn:${n.id}`,objectId:n.id,familyIds:n.relatedFamilies,kind:'polity',title:`${n.zh} / ${n.name}`,source:n.references.map(r=>r.reference).join('\n'),note:`范围待补。${n.note}；${n.evidenceState}`,start:null,end:null,precision:'undrawn'});}
  return{places,ranges};
 }
 const palette=['#8d533e','#51766e','#8b753f','#666d86','#747d4c','#896675'];

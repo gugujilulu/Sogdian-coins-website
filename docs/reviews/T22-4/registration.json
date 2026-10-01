@@ -1,0 +1,146 @@
+{
+  "method": "LCC intermediate 30N/60N 75E + affine least squares; not asserted source projection",
+  "controls": [
+    {
+      "placeId": "suyab",
+      "sourcePage": [
+        677.67,
+        495.27
+      ],
+      "existingAtlasCoordinate": [
+        75.2,
+        42.805
+      ],
+      "registered": [
+        74.87754,
+        42.87691
+      ],
+      "residualKm": 27.5
+    },
+    {
+      "placeId": "taraz",
+      "sourcePage": [
+        611.34,
+        499.47
+      ],
+      "existingAtlasCoordinate": [
+        71.366,
+        42.899
+      ],
+      "registered": [
+        71.46253,
+        42.86626
+      ],
+      "residualKm": 8.7
+    },
+    {
+      "placeId": "chach",
+      "sourcePage": [
+        571.33,
+        541.8
+      ],
+      "existingAtlasCoordinate": [
+        69.24,
+        41.32
+      ],
+      "registered": [
+        69.33495,
+        41.33547
+      ],
+      "residualKm": 8.1
+    },
+    {
+      "placeId": "kucha",
+      "sourcePage": [
+        843.28,
+        506.49
+      ],
+      "existingAtlasCoordinate": [
+        82.96,
+        41.72
+      ],
+      "registered": [
+        83.13134,
+        41.65292
+      ],
+      "residualKm": 16.1
+    },
+    {
+      "placeId": "kashgar",
+      "sourcePage": [
+        708.74,
+        583.89
+      ],
+      "existingAtlasCoordinate": [
+        75.99,
+        39.47
+      ],
+      "registered": [
+        75.93928,
+        39.51899
+      ],
+      "residualKm": 7.0
+    },
+    {
+      "placeId": "khotan",
+      "sourcePage": [
+        799.88,
+        639.24
+      ],
+      "existingAtlasCoordinate": [
+        79.92,
+        37.11
+      ],
+      "registered": [
+        79.87961,
+        37.10373
+      ],
+      "residualKm": 3.6
+    },
+    {
+      "placeId": "samarkand",
+      "sourcePage": [
+        525.57,
+        586.33
+      ],
+      "existingAtlasCoordinate": [
+        66.9877,
+        39.6713
+      ],
+      "registered": [
+        67.03352,
+        39.68259
+      ],
+      "residualKm": 4.1
+    },
+    {
+      "placeId": "bukhara",
+      "sourcePage": [
+        471.8,
+        583.04
+      ],
+      "existingAtlasCoordinate": [
+        64.414,
+        39.774
+      ],
+      "registered": [
+        64.41625,
+        39.73353
+      ],
+      "residualKm": 4.5
+    }
+  ],
+  "coefficients": [
+    [
+      -0.39733295028658894,
+      0.0006323562297088541,
+      -6.604504640549305e-05
+    ],
+    [
+      -0.6474050940703726,
+      -5.121553790601051e-05,
+      -0.0006218566561841307
+    ]
+  ],
+  "maxResidualKm": 27.5
+}
