@@ -16,7 +16,7 @@ export function assessRangeYear(r:MapRange,year:number):YearAssessment{
 export function rangeTimeDescription(r:MapRange){
  const state=rangeTimeState(r),raw=r.periodText?.trim();
  const fallback=state==='bounded'?`${r.start}–${r.end}年`:state==='lower'?`${r.start}年${r.timeEvidence?.startInclusive===false?'之后':'起'}`:state==='upper'?`${r.end}年${r.timeEvidence?.endInclusive===false?'之前':'及以前'}`:'适用时期未记录';
- const detail={bounded:'起止已知',lower:'下界已知，上界未知；不能推定持续有效',upper:'上界已知，下界未知；不能推定此前持续有效',unknown:'年代完全未知',invalid:'年代数据异常，不能计算匹配'}[state];
+ const detail={bounded:'起止已知',lower:'下界已知，上界未知；不能推定持续有效',upper:'上界已知，下界未知；不能推定此前持续有效',unknown:raw?'具体起止年未定':'年代完全未知',invalid:'年代数据异常，不能计算匹配'}[state];
  return `${raw||fallback} · ${detail}`;
 }
 export function rangeSpaceDescription(r:MapRange){

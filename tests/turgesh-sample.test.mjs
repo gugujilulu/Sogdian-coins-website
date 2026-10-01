@@ -11,6 +11,7 @@ const geo=buildGeographyIndex(data),bg=buildMapBackground(data,geo),sample=bg.ra
 test('stable Turgesh version reuses frozen 239 record association and keeps Qara Khitai',()=>{
  assert.equal(sample.id,'bregel:2003:map9:turgesh:first-half-8c:excerpt');
  assert.equal([...geo.main.values()].filter(m=>m.polity?.includes('polity:turgesh')).length,239);
+ assert.equal(sample.familyIds.length,6);
  assert.deepEqual(sample.familyIds,geo.nodes.find(n=>n.id==='polity:turgesh').relatedFamilies);
  assert.equal(bg.ranges.filter(r=>r.objectId==='polity:turgesh').length,2);
  assert.ok(bg.ranges.find(r=>r.objectId==='polity:qara-khitai').geometry);

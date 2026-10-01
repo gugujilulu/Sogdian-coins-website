@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {turgeshOverall} from '../lib/turgesh-overall.ts';
 import {turgeshSample} from '../lib/turgesh-sample.ts';
-import {orderedVersions,rangeViews} from '../lib/range-time.ts';
+import {orderedVersions,rangeViews,rangeTimeDescription} from '../lib/range-time.ts';
 const overall=turgeshOverall(['sr6']),excerpt=turgeshSample(['sr6']);
 test('explicit priority chooses overall regardless of order; research excerpt remains selectable',()=>{
  for(const ranges of [[overall,excerpt],[excerpt,overall]]){
@@ -25,7 +25,7 @@ test('overall construction has traceable segment sources, closed legal noncrossi
   assert.ok(!(cross(ring[i-1],ring[i],ring[j-1])*cross(ring[i-1],ring[i],ring[j])<0&&cross(ring[j-1],ring[j],ring[i-1])*cross(ring[j-1],ring[j],ring[i])<0));
  }
  assert.equal(overall.coverageEdge,undefined);assert.equal(overall.coverage.extent,'complete');
- assert.match(overall.note,/综合概括/);assert.equal(overall.precision,'approximate');
+ assert.match(overall.note,/综合概括/);assert.equal(overall.precision,'approximate');assert.match(rangeTimeDescription(overall),/具体起止年未定/);
 });
 test('general stage never becomes exact numeric annual match; active background and unknown mode work',()=>{
  for(const year of [699,700,706,730,1200]){

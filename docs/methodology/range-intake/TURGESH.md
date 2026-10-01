@@ -1,3 +1,40 @@
+# T22-4 突骑施范围接入登记
+
+## 当前整体版本（2026-10-01续接）
+
+续接 `72e0f0975498574c575d8bc0d4055dee547a5ed2`；同分支task/T22-4-turgesh-range，fetch确认远端一致，工作树干净。
+
+- 对象：`polity:turgesh`；新版本：`synthesis:turgesh:foundation:overall:v1`。
+- 名称：突骑施｜建国初期大致范围。阶段：建国初期，约700年前后；不将699–706的君主在位期赋给所有线段，start/end保留null。
+- 空间含义：政权主要历史空间的整体概括版本；本部与地方附属未分层，仍是后续研究项。几何闭合，无人为资料截面。
+- 范围状态：本资料版本整体大致范围已制作，待视觉/史料审阅；对象整体建设仍部分完成，其他时期未完成。
+- 原局部版本不变，作为研究版本选择；默认按明确的defaultPriority=10排序，不依赖数组顺序，显式选择仍优先。
+
+### 来源与制作
+
+1. Michael Fedorov，Money Circulation in Early-Mediaeval Semirech’e (Jety Su)，ONS Newsletter 178，Winter 2004，pp.7–16；本轮实际使用p.9右栏早期突骑施段。[学会原件](https://www.orientalnumismaticsociety.org/archive/ONS_178.pdf)。作者概括额尔齐斯—锡尔河及石国—别失八里／吐鲁番的空间，七河为中心。本地原件暂存/private/tmp/t22-ons178.pdf；2026-10-01取得，权利未记录，整本未发布。PDF文本编码异常，已渲染第7、9、10页并读取原页，不仅依赖搜索摘要。
+2. Yuri Bregel，An Historical Atlas of Central Asia，Brill，2003，p.16乌质勒建国段、map8 p.17地理关系。[既有原件](https://turkistanilibrary.com/sites/default/files/-yuri_bregel-an_historical_atlas_of_central_asia.pdf)。文字支持699建国时石国至别失八里的概括；地图混合西突厥旧疆与突骑施，不整体复制其旧疆。第9图仍属于旧研究摘录，不移植到新版本。
+3. NIS教材第20页苏禄图线索已发现，但浏览器DNS失败，未用作本版几何证据。Stark 2016的公开摘要支持阶段区别，但没有可用于落位的逐段边界，未将其列为几何来源。
+
+本轮不是完整扫描图配准描绘：**四个方向全部属于文献综合重建，没有直接描绘的逐点政治边界段**。地理节点以既有石国、碎叶、怛罗斯等空间参照及Bregel第8图河流/城市关系进行小比例尺落位。额尔齐斯至七河北部过渡是较弱的大致推定；没有借用原局部摘录27.5km残差评价新版本。
+
+[分段底稿](../../reviews/T22-4/overall-construction.json)保存西/北/东/南四段坐标、方法、来源ID与具体局限；[派生几何](../../../lib/turgesh-overall-geometry.ts)由 `python3 scripts/build-turgesh-overall.py` 离线重建。邻段共用端点，最终闭合。没有随机扰动、装饰平滑或机械配准误差指标；没有拼接苏禄时期粟特/吐火罗远征或塔里木围城最远点。
+
+### 接入、显示与验收
+
+`lib/turgesh-overall.ts` → `buildMapBackground`，与旧版本并列。6家族／239主库记录关联冻结。全局图层与家族背景共享rangeViews；一个对象同时仅显示一个版本。
+全部时期显示所选版本；指定年份为“该年范围待定”，不确认为年匹配，可主动背景查看；年份、模式、对象、版本变化按T22-2清除主动背景。年代未知按数字年代完整性显示，不改钱币年代。主要界面为名称、阶段、大致范围；详细空间/时间证据、方法与来源收纳在“资料与方法”。
+
+31项针对性测试、结构检查41版本/3几何、类型检查通过，最终构建及真实截图见[整体版本页面检查](../../reviews/T22-4/OVERALL-REVIEW.md)。原始Atlas、manifest、图片、来源、日期、ID和西辽几何未改。
+
+### 后续项
+
+T22-4-remaining/polity:turgesh：北/西界独立时期证据、各地控制程度与本部/附属关系、建国后/苏禄及更晚阶段。新整体版本的完成不等于全时期完成。西辽面积与原图含义复核仍暂缓。78对象/58批及13零匹配保持；本轮停止，不自动续批。
+
+---
+
+## 局部摘录执行历史（保留）
+
 # T22-4 突骑施局部范围接入登记
 
 起始SHA fb08fd05c0cf9d8bf1a11b93593aa7afcaa8a7ec；分支task/T22-4-turgesh-range。
