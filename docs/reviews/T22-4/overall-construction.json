@@ -1,0 +1,265 @@
+{
+  "versionId": "synthesis:turgesh:foundation:overall:v1",
+  "objectId": "polity:turgesh",
+  "stage": "建国初期（约700年前后）",
+  "numericEndpoints": null,
+  "acquired": "2026-10-01",
+  "sources": [
+    {
+      "id": "fedorov:2004:p9",
+      "author": "Michael Fedorov",
+      "title": "Money Circulation in Early-Mediaeval Semirech’e (Jety Su)",
+      "publication": "ONS Newsletter 178, Winter 2004",
+      "page": 9,
+      "url": "https://www.orientalnumismaticsociety.org/archive/ONS_178.pdf",
+      "rights": "未记录",
+      "original": "原件访问入口；本地暂存 /private/tmp/t22-ons178.pdf"
+    },
+    {
+      "id": "bregel:2003:p16",
+      "author": "Yuri Bregel",
+      "title": "An Historical Atlas of Central Asia",
+      "publication": "Brill, 2003",
+      "page": 16,
+      "url": "https://turkistanilibrary.com/sites/default/files/-yuri_bregel-an_historical_atlas_of_central_asia.pdf",
+      "rights": "未记录"
+    },
+    {
+      "id": "bregel:2003:map8:p17",
+      "author": "Yuri Bregel",
+      "title": "An Historical Atlas of Central Asia, Map 8",
+      "page": 17,
+      "url": "https://turkistanilibrary.com/sites/default/files/-yuri_bregel-an_historical_atlas_of_central_asia.pdf",
+      "rights": "未记录"
+    }
+  ],
+  "method": "文献支持的主要历史空间概括，不是扫描图逐点国界描绘。经纬度节点为制作时地理落位，河流/城市为定位参照，不主张每段沿河或山脊成界。未经随机扰动、平滑或军事最远点拼接。",
+  "segments": [
+    {
+      "id": "west",
+      "method": "文献概括重建",
+      "sources": [
+        "fedorov:2004:p9",
+        "bregel:2003:p16"
+      ],
+      "meaning": "锡尔河中游—石国—怛罗斯西侧；西端以石国为地理参照，未并入粟特远征区。",
+      "coordinates": [
+        [
+          69.1,
+          41.1
+        ],
+        [
+          68.6,
+          42.0
+        ],
+        [
+          68.0,
+          42.9
+        ],
+        [
+          68.9,
+          43.7
+        ],
+        [
+          70.0,
+          44.1
+        ],
+        [
+          71.6,
+          44.8
+        ],
+        [
+          73.0,
+          45.6
+        ]
+      ]
+    },
+    {
+      "id": "north",
+      "method": "文献概括及大致推定",
+      "sources": [
+        "fedorov:2004:p9"
+      ],
+      "meaning": "额尔齐斯河方向与七河北部的宽尺度包络；具体过渡位置未见逐段国界。用巴尔喀什以北至上额尔齐斯地理空间落位，不延伸至鄂毕河、托博尔河。",
+      "coordinates": [
+        [
+          73.0,
+          45.6
+        ],
+        [
+          74.8,
+          46.6
+        ],
+        [
+          76.6,
+          47.0
+        ],
+        [
+          78.6,
+          47.1
+        ],
+        [
+          80.0,
+          47.5
+        ],
+        [
+          81.8,
+          48.0
+        ],
+        [
+          83.0,
+          48.2
+        ],
+        [
+          84.6,
+          47.9
+        ],
+        [
+          85.4,
+          47.4
+        ],
+        [
+          86.5,
+          47.0
+        ],
+        [
+          87.0,
+          46.2
+        ]
+      ]
+    },
+    {
+      "id": "east",
+      "method": "文献概括重建",
+      "sources": [
+        "bregel:2003:p16",
+        "fedorov:2004:p9"
+      ],
+      "meaning": "别失八里／吐鲁番方向的东端概括。两来源明确列为早期统治范围端点；不沿军事箭头继续向东。",
+      "coordinates": [
+        [
+          87.0,
+          46.2
+        ],
+        [
+          88.4,
+          45.5
+        ],
+        [
+          89.2,
+          44.6
+        ],
+        [
+          89.8,
+          43.8
+        ],
+        [
+          89.8,
+          43.0
+        ],
+        [
+          89.0,
+          42.7
+        ],
+        [
+          87.4,
+          42.9
+        ],
+        [
+          85.8,
+          43.1
+        ]
+      ]
+    },
+    {
+      "id": "south",
+      "method": "历史地图辅助的概括重建",
+      "sources": [
+        "bregel:2003:map8:p17",
+        "bregel:2003:p16",
+        "fedorov:2004:p9"
+      ],
+      "meaning": "天山北侧—伊犁／楚河／怛罗斯至石国。图8突骑施699标注旁的南侧关系用于地理走向参照；不把图中西突厥旧疆、唐军路线或塔里木诸城的围攻记录纳入整体。未直接复制图8混合时期线条。",
+      "coordinates": [
+        [
+          85.8,
+          43.1
+        ],
+        [
+          84.4,
+          43.2
+        ],
+        [
+          83.0,
+          42.8
+        ],
+        [
+          81.7,
+          42.5
+        ],
+        [
+          80.4,
+          42.3
+        ],
+        [
+          79.3,
+          42.3
+        ],
+        [
+          78.2,
+          42.1
+        ],
+        [
+          77.2,
+          42.3
+        ],
+        [
+          76.1,
+          42.4
+        ],
+        [
+          75.0,
+          42.3
+        ],
+        [
+          74.0,
+          42.2
+        ],
+        [
+          73.1,
+          42.3
+        ],
+        [
+          72.3,
+          42.0
+        ],
+        [
+          71.4,
+          41.8
+        ],
+        [
+          70.6,
+          41.4
+        ],
+        [
+          69.8,
+          41.0
+        ],
+        [
+          69.1,
+          41.1
+        ]
+      ]
+    }
+  ],
+  "uncertainties": [
+    "额尔齐斯方向的北界与七河北缘过渡最弱，采用大致包络。",
+    "建国时期的东西控制程度及地方附属关系需进一步分段核对。",
+    "原图8有西突厥旧疆与突骑施多期标注；本版不将整个旧疆移植。"
+  ],
+  "remaining": [
+    "独立时期地图与逐段北西界证据",
+    "本部、附属与势力关系区分",
+    "与其他时期的范围版本比较"
+  ]
+}

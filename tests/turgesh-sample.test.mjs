@@ -7,12 +7,12 @@ import {turgeshSample} from '../lib/turgesh-sample.ts';
 import {assessRangeYear} from '../lib/range-time.ts';
 import {checkRangeIntake} from '../scripts/check-range-intake.mjs';
 const data=JSON.parse(readFileSync(new URL('../public/data/atlas.json',import.meta.url)));
-const geo=buildGeographyIndex(data),bg=buildMapBackground(data,geo),sample=bg.ranges.find(r=>r.objectId==='polity:turgesh');
+const geo=buildGeographyIndex(data),bg=buildMapBackground(data,geo),sample=bg.ranges.find(r=>r.id==='bregel:2003:map9:turgesh:first-half-8c:excerpt');
 test('stable Turgesh version reuses frozen 239 record association and keeps Qara Khitai',()=>{
  assert.equal(sample.id,'bregel:2003:map9:turgesh:first-half-8c:excerpt');
  assert.equal([...geo.main.values()].filter(m=>m.polity?.includes('polity:turgesh')).length,239);
  assert.deepEqual(sample.familyIds,geo.nodes.find(n=>n.id==='polity:turgesh').relatedFamilies);
- assert.equal(bg.ranges.filter(r=>r.objectId==='polity:turgesh').length,1);
+ assert.equal(bg.ranges.filter(r=>r.objectId==='polity:turgesh').length,2);
  assert.ok(bg.ranges.find(r=>r.objectId==='polity:qara-khitai').geometry);
  assert.deepEqual(checkRangeIntake(bg,{objectIds:new Set([...geo.nodes.map(n=>n.id),...data.areas.map(a=>`area:${a.id}`)]),familyIds:new Set(data.families.map(f=>f.id))}),[]);
 });

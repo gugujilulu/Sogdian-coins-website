@@ -25,7 +25,7 @@ export function rangeSpaceDescription(r:MapRange){
  const partial=r.coverage?.extent==='partial'||!!r.coverageEdge;
  return `${semantic} · ${partial?'局部范围':r.coverage?.extent==='complete'?'该资料版本完整范围':'覆盖完整性未记录'}${partial?`；${r.coverage?.note||'原图裁切，未覆盖部分保留未知；资料覆盖边缘不是国界'}`:''}`;
 }
-export function orderedVersions(ranges:MapRange[]){return [...ranges].sort((a,b)=>Number(!!b.geometry)-Number(!!a.geometry)||(Number.isFinite(a.start)?a.start??Infinity:Infinity)-(Number.isFinite(b.start)?b.start??Infinity:Infinity)||(a.id<b.id?-1:a.id>b.id?1:0))}
+export function orderedVersions(ranges:MapRange[]){return [...ranges].sort((a,b)=>(b.defaultPriority||0)-(a.defaultPriority||0)||Number(!!b.geometry)-Number(!!a.geometry)||(Number.isFinite(a.start)?a.start??Infinity:Infinity)-(Number.isFinite(b.start)?b.start??Infinity:Infinity)||(a.id<b.id?-1:a.id>b.id?1:0))}
 export function rangeViews(ranges:MapRange[],time:MapTime,versions:Record<string,string>={},backgrounds:string[]=[]):RangeView[]{
  const objects=[...new Set(ranges.map(r=>r.objectId))].sort();
  return objects.map(objectId=>{
@@ -35,9 +35,9 @@ export function rangeViews(ranges:MapRange[],time:MapTime,versions:Record<string
   const assessment=assessRangeYear(selected,time.year),state=rangeTimeState(selected);
   const allowed=time.mode==='all'||(time.mode==='unknown'?['lower','upper','unknown'].includes(state):assessment==='match');
   const background=!allowed&&backgrounds.includes(objectId)&&!!selected.geometry;
-  const message=!selected.geometry?'范围待补；对象与来源入口保留':time.mode==='all'?'显示所选资料版本，不叠加其他时期':time.mode==='unknown'?(allowed?'年代信息不完整；范围依据自身资料判断':'该范围起止已知，不属于年代未知'):assessment==='match'?`${time.year}年：所选版本明确匹配`:assessment==='no-match'?`${time.year}年：所选版本明确不匹配`:`${time.year}年：现有范围年代不足以确认该年`;
+  const message=!selected.geometry?'范围待补；对象与来源入口保留':time.mode==='all'?'显示所选版本':time.mode==='unknown'?(allowed?'范围年代待定':'该范围起止已知，不属于年代未知'):assessment==='match'?`${time.year}年：所选版本明确匹配`:assessment==='no-match'?`${time.year}年：所选版本明确不匹配`:`${time.year}年：该年范围待定`;
   const alternatives=time.mode==='year'&&!allowed&&choices.some(r=>r.geometry&&assessRangeYear(r,time.year)==='match')?'；其他版本有明确匹配，请主动选择（不会自动换期）':'';
-  return{objectId,choices,selected,assessment,message:message+alternatives+(background?'；仅作为历史背景查看，不计作当前时间匹配':''),visible:!!selected.geometry&&(allowed||background),background};
+  return{objectId,choices,selected,assessment,message:message+alternatives+(background?'；历史背景':''),visible:!!selected.geometry&&(allowed||background),background};
  });
 }
 export type RangeSelection={context:string;versions:Record<string,string>;backgrounds:string[]};

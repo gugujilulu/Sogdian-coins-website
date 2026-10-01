@@ -42,7 +42,7 @@ test('version default is reproducible; explicit versions stay selected when the 
 });
 test('background viewing retains the original mismatch and source, never creates a definite year match',()=>{
  for(const n of [1140,1150]){
-  const v=rangeViews([sample],year(n),{},[sample.objectId])[0];assert.equal(v.visible,true);assert.equal(v.background,true);assert.notEqual(v.assessment,'match');assert.match(v.message,/仅作为历史背景/);assert.equal(v.selected.source,sample.source);
+  const v=rangeViews([sample],year(n),{},[sample.objectId])[0];assert.equal(v.visible,true);assert.equal(v.background,true);assert.notEqual(v.assessment,'match');assert.match(v.message,/历史背景/);assert.equal(v.selected.source,sample.source);
   const rendered=visibleRanges({places:[],ranges:[sample]},{...defaultLayers,polities:true},year(n),'a',{},[sample.objectId]);assert.equal(rendered[0].presentation.background,true);assert.deepEqual(rendered[0].geometry,sample.geometry);
  }
  assert.equal(visibleRanges({places:[],ranges:[sample]},defaultLayers,year(1150),'a',{},[sample.objectId]).length,0);
