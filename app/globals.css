@@ -221,3 +221,10 @@
 .history-coverage-label{max-width:135px;padding:4px 7px;background:#f6f1e6e8;color:#665947;font:11px/1.5 serif;border-left:2px dotted #887e6f;pointer-events:none}.coverage-swatch{display:inline-block;width:22px;height:12px;background:linear-gradient(90deg,#b6927140 70%,transparent 70%);border-right:1px dotted #887e6f}.t21-preview .preview-badge{max-width:285px;background:#f5f0e7ed;color:#403d35}.t21-preview .preview-badge small{color:#665e51}.t21-preview .history-range-label{color:#805c3d!important}.t21-preview .history-range-label strong{letter-spacing:.3em;font-size:1.3em;font-weight:600}.t21-preview .history-place{color:#3e443e}
 
 @media(max-width:760px){.t21-preview .preview-badge{top:auto;bottom:90px;left:10px;max-width:calc(100% - 65px);font-size:10px}.t21-preview .history-coverage-label{max-width:105px;font-size:9px}.t21-preview .history-range-label{max-width:170px;padding:3px}.t21-preview .history-range-label small{font-size:8px}}
+
+/* Range evidence controls reuse the existing opaque, scrollable layer panel. */
+.range-version{border-top:1px solid #65716a;padding:9px 0;margin-top:8px;overflow-wrap:anywhere}
+.range-version strong{display:block;font-size:12px}.range-version p{font-size:11px;line-height:1.55;margin:6px 0}
+.range-version label{display:block}.range-version select{display:block;width:100%;min-width:0;max-width:100%;margin:6px 0}
+.range-version button{font-size:11px;padding:6px 8px;margin:5px 0}.range-version summary{cursor:pointer;font-size:11px}
+.range-version a{display:block;font-size:11px;margin:5px 0}.range-version [role=status]{color:#e2c89c}

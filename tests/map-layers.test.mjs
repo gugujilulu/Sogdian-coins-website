@@ -17,11 +17,12 @@ test('formal adapter preserves the complete research scope and never invents geo
 test('range own closed interval, unknown dates and inverted dates are not inferred from family',()=>{
  assert.ok(timeMatches({start:650,end:750},{mode:'year',year:650}));assert.ok(timeMatches({start:650,end:750},{mode:'year',year:750}));assert.ok(!timeMatches({start:650,end:750},{mode:'year',year:751}));assert.ok(!timeMatches({start:null,end:null},{mode:'year',year:700}));assert.ok(timeMatches({start:null,end:null},{mode:'unknown',year:700}));assert.ok(!timeMatches({start:750,end:650},{mode:'year',year:700}));assert.equal(periodLabel({start:null,end:null}),'适用时期未记录');
 });
-test('multiple range versions require a choice; never merge all periods',()=>{
+test('multiple range versions have a stable default; explicit choice never changes silently',()=>{
  const b={places:[],ranges:[range('old',650,700),range('new',701,750)]},s={...defaultLayers,polities:true};
- assert.equal(visibleRanges(b,s,{mode:'all',year:0}).length,0);
+ assert.deepEqual(visibleRanges(b,s,{mode:'all',year:0}).map(r=>r.id),['old']);
  assert.deepEqual(visibleRanges(b,s,{mode:'all',year:0},'a',{p:'old'}).map(r=>r.id),['old']);
- assert.deepEqual(visibleRanges(b,s,{mode:'year',year:720},'a').map(r=>r.id),['new']);
+ assert.equal(visibleRanges(b,s,{mode:'year',year:720},'a').length,0);
+ assert.deepEqual(visibleRanges(b,s,{mode:'year',year:720},'a',{p:'new'}).map(r=>r.id),['new']);
  assert.equal(visibleRanges(b,s,{mode:'all',year:0},'other',{p:'old'}).length,0);
 });
 test('temporary background and base settings remain independent across close / filters',()=>{

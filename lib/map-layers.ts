@@ -1,3 +1,4 @@
+import {rangeViews} from './range-time.ts';
 import {qaraKhitaiSample} from './qara-khitai-sample.ts';
 import type {Atlas,Area,Place} from './atlas';
 import type {GeographyIndex} from './geography-index';
@@ -10,7 +11,7 @@ export const roleNames:Record<SymbolRole,string>={city:'历史城市／地点',c
 export type Period={start:number|null;end:number|null;periodText?:string};
 export type PlaceClaim=Period&{role:SymbolRole;familyId?:string;source:string;note:string};
 export type MapPlace=Place&{claims:PlaceClaim[]};
-export type MapRange=Period&{id:string;objectId:string;familyIds:string[];kind:'polity'|'circulation'|'context';title:string;source:string;note:string;precision:'documented'|'approximate'|'undrawn';geometry?:Area['geometry'];boundary?:{type:'MultiLineString';coordinates:number[][][]};coverageEdge?:{type:'LineString';coordinates:number[][]};coverageLabel?:[number,number];label?:[number,number];labelTitle?:string;labelLatin?:string;labelAngle?:number;display?:{transitionKm?:number;washOpacity?:number}};
+export type MapRange=Period&{id:string;objectId:string;familyIds:string[];kind:'polity'|'circulation'|'context';title:string;source:string;note:string;precision:'documented'|'approximate'|'undrawn';geometry?:Area['geometry'];boundary?:{type:'MultiLineString';coordinates:number[][][]};coverageEdge?:{type:'LineString';coordinates:number[][]};coverageLabel?:[number,number];label?:[number,number];labelTitle?:string;labelLatin?:string;labelAngle?:number;display?:{transitionKm?:number;washOpacity?:number};timeEvidence?:{startInclusive?:boolean;endInclusive?:boolean};spatialMeaning?:'polity'|'local-system'|'region'|'core'|'dependency'|'influence'|'circulation'|'unknown';coverage?:{extent:'partial'|'complete'|'unknown';note?:string};presentation?:{background:boolean;message:string}};
 export type MapBackground={places:MapPlace[];ranges:MapRange[];demo?:boolean};
 export type MapTime={mode:'all'|'year'|'unknown';year:number};
 export function validPeriod(p:Period){return p.start!==null&&p.end!==null&&Number.isFinite(p.start)&&Number.isFinite(p.end)&&p.start<=p.end}
@@ -28,10 +29,9 @@ const fixed:Record<string,string>={'polity:qara-khitai':'#ae794e','demo:semirech
 export function rangeColor(id:string){let h=0;for(const c of id)h=(h*31+c.charCodeAt(0))>>>0;return fixed[id]||palette[h%palette.length]}
 export function effectiveLayers(base:LayerSettings,temporary:Partial<LayerSettings>,enabled:boolean):LayerSettings{return enabled?{...base,...Object.fromEntries(Object.entries(temporary).filter(([,v])=>v))}:base}
 export function backgroundLayers(background:MapBackground,familyId:string):Partial<LayerSettings>{return{polities:background.ranges.some(r=>r.familyIds.includes(familyId)&&r.kind==='polity'&&!!r.geometry),circulation:background.ranges.some(r=>r.familyIds.includes(familyId)&&r.kind==='circulation'&&!!r.geometry),context:background.ranges.some(r=>r.familyIds.includes(familyId)&&r.kind==='context'&&!!r.geometry),findspots:background.places.some(p=>p.claims.some(c=>c.familyId===familyId&&c.role==='findspot')),hoards:background.places.some(p=>p.claims.some(c=>c.familyId===familyId&&c.role==='hoard'))}}
-export function visibleRanges(background:MapBackground,settings:LayerSettings,time:MapTime,familyId?:string,versions:Record<string,string>={}){
- // Never union temporal versions. Ambiguous versions require an explicit selection.
- const candidates=background.ranges.filter(r=>!!r.geometry&&(!familyId||r.familyIds.includes(familyId))&&settings[r.kind==='polity'?'polities':r.kind]&&timeMatches(r,time));
- return candidates.filter(r=>{const peers=candidates.filter(x=>x.objectId===r.objectId);return peers.length===1||versions[r.objectId]===r.id});
+export function visibleRanges(background:MapBackground,settings:LayerSettings,time:MapTime,familyId?:string,versions:Record<string,string>={},backgrounds:string[]=[]){
+ const candidates=background.ranges.filter(r=>(!familyId||r.familyIds.includes(familyId))&&settings[r.kind==='polity'?'polities':r.kind]);
+ return rangeViews(candidates,time,versions,backgrounds).flatMap(v=>v.visible&&v.selected?[{...v.selected,presentation:{background:v.background,message:v.message}}]:[]);
 }
 export function placeClaims(p:MapPlace,settings:LayerSettings,time:MapTime,familyId?:string){return p.claims.filter(c=>{
  if(c.familyId&&c.familyId!==familyId)return false;
