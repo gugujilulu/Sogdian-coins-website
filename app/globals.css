@@ -231,7 +231,7 @@
 
 /* T23: one drawer and selection, three non-modal mobile heights. */
 .sheet-handle,.sheet-actions{display:none}
-@media(max-width:760px){
+@media(max-width:760px),(max-width:1000px) and (max-height:500px){
  .atlas-screen{--sheet-height:50%;height:calc(100dvh - var(--atlas-header,48px))}
  .atlas-screen[data-sheet-state=summary]{--sheet-height:min(128px,40%)}
  .atlas-screen[data-sheet-state=reading]{--sheet-height:88%}
@@ -257,7 +257,7 @@
  .sheet-handle:focus-visible,.sheet-actions button:focus-visible{outline:2px solid #e6ce91;outline-offset:2px}
 }
 @media(prefers-reduced-motion:reduce){.atlas-screen .family-drawer{transition:none}}
-@media(max-width:760px){
+@media(max-width:760px),(max-width:1000px) and (max-height:500px){
  .atlas-screen.has-family .map-toolbar{top:130px}.atlas-screen.has-family .history-controls{top:174px}
  .atlas-screen .family-drawer{transition:none}
  .atlas-screen [data-sheet-state=summary] .family-title p{display:none}
@@ -265,4 +265,21 @@
  .atlas-screen [data-sheet-state=summary] .sheet-actions button[aria-pressed=true],.atlas-screen [data-sheet-state=summary] .sheet-actions button:nth-child(2){display:none}
  .atlas-screen[data-sheet-state=reading] .atlas-search-panel{visibility:hidden;pointer-events:none}
  .atlas-screen[data-sheet-state=reading] .timeline-floating:not([open]){display:none}
+}
+@media(max-width:760px),(max-width:1000px) and (max-height:500px){.atlas-screen [data-sheet-state=summary] .drawer-scroll{position:absolute;top:128px;width:100%;height:calc(88dvh - 140px);padding:10px 12px;overflow:auto;pointer-events:none}}
+
+@media(max-width:760px),(max-width:1000px) and (max-height:500px){
+ .atlas-screen .family-drawer{position:absolute;left:0;right:0;bottom:0;top:auto;width:100%;max-width:none;border-radius:12px 12px 0 0}
+ .atlas-screen.layers-expanded>.family-drawer{visibility:hidden;pointer-events:none}
+ .atlas-screen.layers-expanded .atlas-search-panel,.atlas-screen.layers-expanded .map-toolbar{visibility:hidden;pointer-events:none}
+}
+@media(max-width:760px),(max-width:1000px) and (max-height:500px){
+ .atlas-screen .drawer-scroll{display:flex;flex-direction:column;gap:6px}
+ .drawer-scroll>.gallery-scope{order:0;margin:0;flex:none}
+ .drawer-scroll>.drawer-filters{order:1;margin:0;flex:none}.drawer-scroll>small{order:2}
+ .drawer-scroll>.drawer-gallery{order:3;flex:none;margin:0}.drawer-scroll>p[role=status]{order:3}
+ .drawer-scroll>.drawer-secondary{order:4;flex:none}.drawer-scroll>.family-meta{order:5;flex:none;margin:0}
+ .drawer-scroll>.family-location{order:6;flex:none}.drawer-scroll>.map-background{order:7;flex:none}
+ .drawer-scroll>.research-block{order:8;flex:none}
+ .gallery-scope small{font-size:10px;line-height:1.3}.gallery-scope strong{font-size:12px}
 }

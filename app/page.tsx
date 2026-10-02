@@ -4,7 +4,7 @@ import {viewedRecord,emptyFilters,galleryRecords,validGallerySelection,keepFullF
 import {buildMapBackground} from '@/lib/map-layers';
 import {useRangeSelection} from '@/components/atlas/use-range-selection';
 import FamilyMapBackground from '@/components/atlas/family-map-background';
-import type {SheetState} from '@/lib/mobile-sheet';
+import {mobileViewport,type SheetState} from '@/lib/mobile-sheet';
 import FamilyDrawer from '@/components/atlas/family-drawer';
 import DetailDialog from '@/components/atlas/detail-dialog';
 import ImageViewer from '@/components/atlas/image-viewer';
@@ -95,7 +95,7 @@ export default function Home(){
  const researchStatuses=useMemo<string[]>(()=>Array.from(new Set((data?.families||[]).map(f=>f.status))).sort(),[data]);
  const [sheetState,setSheetState]=useState<SheetState>('half');
  useEffect(()=>{setSheetState('half')},[selectedId]);
- function revealMap(){if(matchMedia('(max-width:760px)').matches)setSheetState('summary')}
+ function revealMap(){if(mobileViewport(window.innerWidth,window.innerHeight))setSheetState('summary')}
  const [backgroundFamily,setBackgroundFamily]=useState<string|null>(null),[rangeFocus,setRangeFocus]=useState(0),[backgroundObject,setBackgroundObject]=useState('');
  useEffect(()=>{setBackgroundFamily(null);setBackgroundObject('')},[selectedId]);
  const rangeControl=useRangeSelection(JSON.stringify([selectedId,backgroundObject,dateMode,dateMode==='year'?year:null]));

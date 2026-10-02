@@ -18,14 +18,14 @@ export default function FamilyDrawer(p:Props){
  const activeGroup=variants.find(v=>v.id===variant);
  return <aside ref={sheet} data-sheet-state={state} style={dragHeight===null?undefined:{height:dragHeight}} className="family-drawer"
  aria-label={`家族详情 ${family.title}`}>
-  <div className="sheet-handle" role="slider" tabIndex={0} aria-label="详情面板高度" aria-valuemin={0} aria-valuemax={2} aria-valuenow={state==='summary'?0:state==='half'?1:2} aria-valuetext={state==='summary'?'收起摘要':state==='half'?'半展开浏览':'展开阅读'}
+  {p.onSheetState&&<div className="sheet-handle" role="slider" tabIndex={0} aria-label="详情面板高度" aria-valuemin={0} aria-valuemax={2} aria-valuenow={state==='summary'?0:state==='half'?1:2} aria-valuetext={state==='summary'?'收起摘要':state==='half'?'半展开浏览':'展开阅读'}
    onKeyDown={e=>{if(e.key==='ArrowUp'||e.key==='ArrowDown'){e.preventDefault();p.onSheetState?.(e.key==='ArrowUp'?(state==='summary'?'half':'reading'):(state==='reading'?'half':'summary'))}}}
    onPointerDown={e=>{if(!e.isPrimary)return;e.stopPropagation();e.currentTarget.setPointerCapture(e.pointerId);drag.current={id:e.pointerId,y:e.clientY,height:sheet.current?.clientHeight||0,available:sheet.current?.parentElement?.clientHeight||0}}}
    onPointerMove={e=>{const d=drag.current;if(!d||d.id!==e.pointerId)return;e.stopPropagation();setDragHeight(Math.max(sheetHeight('summary',d.available),Math.min(sheetHeight('reading',d.available),d.height+d.y-e.clientY)))}}
    onPointerUp={e=>{const d=drag.current;if(!d)return;p.onSheetState?.(snapSheet(d.height+d.y-e.clientY,d.available));drag.current=null;setDragHeight(null)}}
-   onPointerCancel={()=>{drag.current=null;setDragHeight(null)}}><span/></div>
+   onPointerCancel={()=>{drag.current=null;setDragHeight(null)}}><span/></div>}
   <header className="drawer-head family-title"><div><h1>{family.title}</h1>{family.zh&&<p>{family.zh}</p>}</div><button onClick={p.onClose} aria-label="Close details"><X size={20}/></button></header>
-  <div className="sheet-actions"><small>{allSpecimens.length} 条匹配 / {fullSpecimens.length} 条家族记录</small><div>{(['summary','half','reading'] as SheetState[]).map(s=><button key={s} aria-pressed={state===s} onClick={()=>p.onSheetState?.(s)}>{s==='summary'?'收起':s==='half'?'浏览':'展开'}</button>)}<button onClick={p.onTools}>时间 / 地图</button>{p.onReturnCollection&&<button onClick={p.onReturnCollection}>返回集合</button>}</div></div>
+  {p.onSheetState&&<div className="sheet-actions"><small>{allSpecimens.length} 条匹配 / {fullSpecimens.length} 条家族记录</small><div>{(['summary','half','reading'] as SheetState[]).map(s=><button key={s} aria-pressed={state===s} onClick={()=>p.onSheetState?.(s)}>{s==='summary'?'收起':s==='half'?'浏览':'展开'}</button>)}<button onClick={p.onTools}>时间 / 地图</button>{p.onReturnCollection&&<button onClick={p.onReturnCollection}>返回集合</button>}</div></div>}
   <div ref={scroll} className="drawer-scroll">
    <div className="drawer-secondary"><CopyLink link={{view:'atlas',family:family.id}}/><button onClick={p.onCatalogue}><BookOpen size={14}/>目录</button>{p.onReturnCollection&&<button onClick={p.onReturnCollection}>返回此集合</button>}</div>
    <div className="family-meta"><span>{family.dateLabel||'年代未记录'}</span><span>{family.region||'地区未记录'}</span><span>{family.polity||'政权未记录'}</span><span>{family.status}</span></div>
