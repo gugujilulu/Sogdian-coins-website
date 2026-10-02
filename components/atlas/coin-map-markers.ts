@@ -33,7 +33,7 @@ export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPla
    for(const child of [name,count,role,source])text.appendChild(child);row.appendChild(text);row.onclick=()=>{const context={...popupContext!,scrollTop:node.scrollTop};lastMember=member.family.id;removePopup();onSelect(member.family.id,context)};node.appendChild(row);
   }
   popup=new gl.Popup({closeButton:true,maxWidth:'340px',className:'coin-collection-popup',anchor:'center',focusAfterOpen:!passive}).setLngLat(coords).setDOMContent(node).addTo(map);
-  const opened=popup;opened.on('close',()=>{if(restoreOnClose&&!disposed)restoreMarker()});
+  popup.getElement().querySelector('.maplibregl-popup-close-button')?.setAttribute('aria-label',tr('Close popup'));const opened=popup;opened.on('close',()=>{if(restoreOnClose&&!disposed)restoreMarker()});
   node.scrollTop=restore?.scrollTop||0;
   requestAnimationFrame(()=>{
    if(disposed||popup!==opened||!opened.isOpen())return;

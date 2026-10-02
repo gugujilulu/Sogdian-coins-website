@@ -1,5 +1,5 @@
 'use client';
-import {countLabel} from '@/lib/i18n';
+import {copyKnown,countLabel} from '@/lib/i18n';
 import {useLanguage,useCopy} from './language';
 import {useEffect,useRef,useState,type ReactNode} from 'react';
 import {X,MapPin,BookOpen,Maximize2,GitCompareArrows,ChevronUp,ChevronDown,Clock3} from 'lucide-react';
@@ -28,7 +28,7 @@ export default function FamilyDrawer(p:Props){
  useEffect(()=>{if(state==='summary'&&scroll.current?.contains(document.activeElement))sheet.current?.querySelector<HTMLElement>('.sheet-handle')?.focus({preventScroll:true})},[state]);
  const activeGroup=variants.find(v=>v.id===variant);
  const overview=<>   <div className="drawer-secondary"><CopyLink link={{view:'atlas',family:family.id}}/><button onClick={p.onCatalogue}><BookOpen size={14}/>{tr("目录")}</button>{p.onReturnCollection&&<button onClick={p.onReturnCollection}>{tr("返回此集合")}</button>}</div>
-   <div className="family-meta"><span>{family.dateLabel||tr("年代未记录")}</span><span>{family.region||tr("地区未记录")}</span><span>{family.polity||tr("政权未记录")}</span><span className="family-research-status">{family.status}</span></div>
+   <div className="family-meta"><span>{family.dateLabel||tr("年代未记录")}</span><span>{family.region||tr("地区未记录")}</span><span>{family.polity||tr("政权未记录")}</span><span className="family-research-status">{copyKnown(family.status,locale)}</span></div>
    <div className="family-location"><MapPin size={14}/><span>{p.placeName||tr("位置未记录")} · {family.anchor?.role||tr("位置角色未记录")}</span>{p.onLocate?<button onClick={p.onLocate}>{tr("定位")}</button>:<span>{tr("暂无地图定位")}</span>}</div>
 </>;
  return <aside ref={sheet} data-sheet-state={state} style={{height:dragHeight??undefined,transition:reduceMotion?'none':undefined}} className="family-drawer"

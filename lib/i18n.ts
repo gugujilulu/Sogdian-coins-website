@@ -1139,6 +1139,71 @@ export const dictionary={
   "en": "Search",
   "zh": "搜索",
   "ru": "Поиск"
+ },
+ "unknown": {
+  "en": "Unassigned / unknown",
+  "zh": "未标注／未定",
+  "ru": "Не указано / неизвестно"
+ },
+ "research": {
+  "en": "Under study / insufficient evidence",
+  "zh": "研究中／资料不足",
+  "ru": "Исследуется / недостаточно данных"
+ },
+ "source_only": {
+  "en": "Source label only",
+  "zh": "仅来源标签",
+  "ru": "Только метка источника"
+ },
+ "multiple": {
+  "en": "Multiple attributions",
+  "zh": "多种关联",
+  "ru": "Несколько атрибуций"
+ },
+ "catalogue_linked": {
+  "en": "Catalogue-linked",
+  "zh": "已关联目录",
+  "ru": "Связано с каталогом"
+ },
+ "exploration": {
+  "en": "Under study",
+  "zh": "研究中",
+  "ru": "Исследуется"
+ },
+ "mapped": {
+  "en": "Mapped",
+  "zh": "已定位",
+  "ru": "Нанесено на карту"
+ },
+ "source_linked": {
+  "en": "Source-linked",
+  "zh": "已关联来源",
+  "ru": "Связано с источником"
+ },
+ "source_linked_candidate": {
+  "en": "Source-linked candidate",
+  "zh": "有来源的候选",
+  "ru": "Кандидат со ссылкой на источник"
+ },
+ "source_linked_context_family": {
+  "en": "Contextual family",
+  "zh": "背景家族",
+  "ru": "Контекстное семейство"
+ },
+ "atlas_field": {
+  "en": "Atlas attribution",
+  "zh": "已有归属",
+  "ru": "Атрибуция атласа"
+ },
+ "user_scope": {
+  "en": "Research scope",
+  "zh": "建设范围",
+  "ru": "Объект исследования"
+ },
+ "Close popup": {
+  "en": "Close popup",
+  "zh": "关闭弹窗",
+  "ru": "Закрыть окно"
  }
 } as const satisfies Record<string,Record<Locale,string>>;
 export type CopyKey=keyof typeof dictionary;
@@ -1150,7 +1215,7 @@ export function countLabel(n:number,kind:'records'|'families'|'images',locale:Lo
  if(locale==='ru'){const plural=new Intl.PluralRules('ru').select(n) as keyof typeof ru.records;return `${n} ${ru[kind][plural]||ru[kind].other}`}
  const names={en:{records:n===1?'record':'records',families:n===1?'family':'families',images:n===1?'image':'images'},zh:{records:'条记录',families:'个家族',images:'张图片'}};return `${n} ${names[locale][kind]}`
 }
-export function displayName(names:{name:string;zh?:string;ru?:string},locale:Locale=current){return locale==='zh'?(names.zh||names.name):locale==='ru'?(names.ru||names.name):names.name}
+export function displayName(names:{name:string;zh?:string;ru?:string},locale:Locale=current){return locale==='zh'?(names.zh&&names.zh!=='原始标签（中文未记录）'?names.zh:names.name):locale==='ru'?(names.ru||names.name):names.name}
 export function menuIndex(index:number,key:string){return key==='Home'?0:key==='End'?2:key==='ArrowDown'?(index+1)%3:key==='ArrowUp'?(index+2)%3:index}
 
-export function copyKnown(text:string,locale:Locale=current){return text in dictionary?tr(text as CopyKey,locale):text}
+export function copyKnown(text:string,locale:Locale=current){return Object.hasOwn(dictionary,text)?tr(text as CopyKey,locale):text}
