@@ -512,27 +512,27 @@ export const dictionary={
  },
  "Filters": {
   "en": "Filters",
-  "zh": "Filters",
+  "zh": "筛选",
   "ru": "Фильтры"
  },
  "Clear filters": {
   "en": "Clear filters",
-  "zh": "Clear filters",
+  "zh": "清除筛选",
   "ru": "Сбросить фильтры"
  },
  "Close details": {
   "en": "Close details",
-  "zh": "Close details",
+  "zh": "关闭详情",
   "ru": "Закрыть сведения"
  },
  "Basemap": {
   "en": "Basemap",
-  "zh": "Basemap",
+  "zh": "底图",
   "ru": "Подложка"
  },
  "Issue date filter": {
   "en": "Year",
-  "zh": "Issue date filter",
+  "zh": "年份",
   "ru": "Год"
  },
  "历史地区 / Region": {
@@ -592,22 +592,22 @@ export const dictionary={
  },
  "Atlas": {
   "en": "Atlas",
-  "zh": "Atlas",
+  "zh": "地图",
   "ru": "Атлас"
  },
  "Catalogue": {
   "en": "Catalogue",
-  "zh": "Catalogue",
+  "zh": "目录",
   "ru": "Каталог"
  },
  "Research": {
   "en": "Research",
-  "zh": "Research",
+  "zh": "研究",
   "ru": "Исследования"
  },
  "CENTRAL ASIAN SQUARE-HOLE COINAGE ATLAS": {
-  "en": "CENTRAL ASIAN COINAGE ATLAS",
-  "zh": "CENTRAL ASIAN SQUARE-HOLE COINAGE ATLAS",
+  "en": "CENTRAL ASIAN SQUARE-HOLE COINAGE ATLAS",
+  "zh": "中亚方孔钱地图",
   "ru": "АТЛАС МОНЕТ ЦЕНТРАЛЬНОЙ АЗИИ"
  },
  "中亚方孔钱地图与图像资料库": {
@@ -972,7 +972,7 @@ export const dictionary={
  },
  "Interactive terrain map of Central Asia; drag to pan, scroll or pinch to zoom": {
   "en": "Central Asia map: drag to pan, scroll or pinch to zoom",
-  "zh": "Interactive terrain map of Central Asia; drag to pan, scroll or pinch to zoom",
+  "zh": "中亚地图：拖动平移，滚轮或双指缩放",
   "ru": "Карта Центральной Азии: перемещение перетаскиванием, масштаб колесом или жестом"
  },
  "图片视口：滚轮或双指缩放，Shift＋方向键或拖动平移": {
@@ -992,55 +992,164 @@ export const dictionary={
  },
  "confirmed": {
   "en": "Confirmed",
-  "zh": "confirmed",
+  "zh": "已确认",
   "ru": "Подтверждено"
  },
  "probable": {
   "en": "Probable",
-  "zh": "probable",
+  "zh": "可能",
   "ru": "Вероятно"
  },
  "candidate": {
   "en": "Candidate",
-  "zh": "candidate",
+  "zh": "候选",
   "ru": "Кандидат"
  },
  "contextual": {
   "en": "Contextual",
-  "zh": "contextual",
+  "zh": "背景",
   "ru": "Контекст"
  },
  "unresolved": {
   "en": "Unresolved",
-  "zh": "unresolved",
+  "zh": "未定",
   "ru": "Не определено"
  },
  "not yet reviewed": {
   "en": "Not yet reviewed",
-  "zh": "not yet reviewed",
+  "zh": "尚未审查",
   "ru": "Ещё не изучено"
  },
  "researching": {
   "en": "Under study",
-  "zh": "researching",
+  "zh": "研究中",
   "ru": "Исследуется"
  },
  "source_label": {
   "en": "Source label",
-  "zh": "source_label",
+  "zh": "来源标签",
   "ru": "Метка источника"
  },
  "unassigned": {
   "en": "Unassigned",
-  "zh": "unassigned",
+  "zh": "未定",
   "ru": "Не определено"
+ },
+ "无坐标": {
+  "en": "Unmapped",
+  "zh": "无坐标",
+  "ru": "Без координат"
+ },
+ "城市及地点未记录": {
+  "en": "Place not recorded",
+  "zh": "城市及地点未记录",
+  "ru": "Место не указано"
+ },
+ "Zoom in": {
+  "en": "Zoom in",
+  "zh": "放大",
+  "ru": "Увеличить"
+ },
+ "Zoom out": {
+  "en": "Zoom out",
+  "zh": "缩小",
+  "ru": "Уменьшить"
+ },
+ "Toggle attribution": {
+  "en": "Map attribution",
+  "zh": "地图署名",
+  "ru": "Источники карты"
+ },
+ "正在加载原图…": {
+  "en": "Loading original image…",
+  "zh": "正在加载原图…",
+  "ru": "Загрузка оригинала…"
+ },
+ "图片加载失败；记录和来源仍可阅读。": {
+  "en": "Image unavailable. Record and sources remain accessible.",
+  "zh": "图片加载失败；记录和来源仍可阅读。",
+  "ru": "Изображение недоступно. Запись и источники доступны."
+ },
+ "已达两次重试上限": {
+  "en": "Retry limit reached",
+  "zh": "已达两次重试上限",
+  "ru": "Число повторов исчерпано"
+ },
+ "暂无可用图片；记录与来源仍可阅读。": {
+  "en": "No image available. Record and sources remain accessible.",
+  "zh": "暂无可用图片；记录与来源仍可阅读。",
+  "ru": "Изображение отсутствует. Запись и источники доступны."
+ },
+ "当前完整原图": {
+  "en": "Original image",
+  "zh": "当前完整原图",
+  "ru": "Исходное изображение"
+ },
+ "尺寸待图片加载确认。": {
+  "en": "Dimensions available after loading.",
+  "zh": "尺寸待图片加载确认。",
+  "ru": "Размеры появятся после загрузки."
+ },
+ "左右键切图，＋／－缩放，0适应窗口，Shift＋方向键平移。滚轮／双指缩放，放大后拖动。": {
+  "en": "Arrows: switch image. +/−: zoom. 0: fit. Shift+arrows: pan. Scroll or pinch to zoom, drag to pan.",
+  "zh": "左右键切图，＋／－缩放，0适应窗口，Shift＋方向键平移。滚轮／双指缩放，放大后拖动。",
+  "ru": "Стрелки: смена изображения. +/−: масштаб. 0: вписать. Shift+стрелки: перемещение. Колесо или жест: масштаб; перетаскивание: перемещение."
+ },
+ "新标签页打开本地原图 ↗": {
+  "en": "Open original in new tab ↗",
+  "zh": "新标签页打开本地原图 ↗",
+  "ru": "Открыть оригинал в новой вкладке ↗"
+ },
+ "历史图层未能加载。底图与目录仍可使用。": {
+  "en": "Historical layers unavailable. Map and catalogue remain accessible.",
+  "zh": "历史图层未能加载。底图与目录仍可使用。",
+  "ru": "Исторические слои недоступны. Карта и каталог доступны."
+ },
+ "筛选": {
+  "en": "Filters",
+  "zh": "筛选",
+  "ru": "Фильтры"
+ },
+ "年代 · 收起": {
+  "en": "Time · collapse",
+  "zh": "年代 · 收起",
+  "ru": "Время · свернуть"
+ },
+ "关联地点": {
+  "en": "Related places",
+  "zh": "关联地点",
+  "ru": "Связанные места"
+ },
+ "相关 / held / excluded": {
+  "en": "Related / held / excluded",
+  "zh": "相关 / held / excluded",
+  "ru": "Связанные / отложенные / исключённые"
+ },
+ "条来源记录匹配当前搜索": {
+  "en": "source records match this search",
+  "zh": "条来源记录匹配当前搜索",
+  "ru": "записей источников найдено"
+ },
+ "数据异常：年代区间非法或倒置。": {
+  "en": "Invalid or reversed date interval.",
+  "zh": "数据异常：年代区间非法或倒置。",
+  "ru": "Недопустимый или обратный интервал дат."
+ },
+ "搜索": {
+  "en": "Search",
+  "zh": "搜索",
+  "ru": "Поиск"
  }
 } as const satisfies Record<string,Record<Locale,string>>;
 export type CopyKey=keyof typeof dictionary;
 let current:Locale='en';
 export function setCopyLocale(locale:Locale){current=locale}
 export function tr(key:CopyKey,locale:Locale=current):string{return dictionary[key][locale]}
-export function countLabel(n:number,kind:'records'|'families'|'images',locale:Locale=current){const names={en:{records:n===1?'record':'records',families:n===1?'family':'families',images:n===1?'image':'images'},zh:{records:'条记录',families:'个家族',images:'张图片'},ru:{records:'записей',families:'семейств',images:'изображений'}};return `${n} ${names[locale][kind]}`}
+export function countLabel(n:number,kind:'records'|'families'|'images',locale:Locale=current){
+ const ru={records:{one:'запись',few:'записи',many:'записей',other:'записи'},families:{one:'семейство',few:'семейства',many:'семейств',other:'семейства'},images:{one:'изображение',few:'изображения',many:'изображений',other:'изображения'}};
+ if(locale==='ru'){const plural=new Intl.PluralRules('ru').select(n) as keyof typeof ru.records;return `${n} ${ru[kind][plural]||ru[kind].other}`}
+ const names={en:{records:n===1?'record':'records',families:n===1?'family':'families',images:n===1?'image':'images'},zh:{records:'条记录',families:'个家族',images:'张图片'}};return `${n} ${names[locale][kind]}`
+}
 export function displayName(names:{name:string;zh?:string;ru?:string},locale:Locale=current){return locale==='zh'?(names.zh||names.name):locale==='ru'?(names.ru||names.name):names.name}
 export function menuIndex(index:number,key:string){return key==='Home'?0:key==='End'?2:key==='ArrowDown'?(index+1)%3:key==='ArrowUp'?(index+2)%3:index}
 

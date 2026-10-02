@@ -24,7 +24,7 @@ export function installHistoricalMap(gl:GL,map:GLMap,onError:(message:string)=>v
   popup.on('close',()=>{if(restoring&&box.contains(document.activeElement))focusReturn(opener)});
   popup.getElement().querySelector<HTMLButtonElement>('.maplibregl-popup-close-button')?.addEventListener('click',()=>queueMicrotask(()=>focusReturn(opener)));
  }
- function update(next:Frame){const focused=document.activeElement instanceof HTMLElement?document.activeElement:null;const focusKey=focused?.dataset.historyKey;removePopup();popup=null;frame=next;ensure();const source=map.getSource('historical-ranges') as GeoJSONSource|undefined;
+ function update(next:Frame,preservePopup=false){const focused=document.activeElement instanceof HTMLElement?document.activeElement:null;const focusKey=focused?.dataset.historyKey;if(!preservePopup){removePopup();popup=null}frame=next;if(preservePopup&&popup?.isOpen()){popup.getElement().querySelectorAll('summary').forEach(el=>el.textContent=tr('资料与方法'));popup.getElement().querySelectorAll('a').forEach(el=>el.textContent=tr('查看来源 ↗'))}ensure();const source=map.getSource('historical-ranges') as GeoJSONSource|undefined;
   source?.setData({type:'FeatureCollection',features:frame.ranges.map(r=>({type:'Feature',id:r.id,geometry:r.geometry!,properties:{id:r.id,color:rangeColor(r.objectId),kind:r.kind,precision:r.precision,opacity:r.display?.washOpacity??.22}}))});
   (map.getSource('historical-boundaries') as GeoJSONSource|undefined)?.setData(rangeBoundaryFeatures(frame.ranges));
   markers.forEach(m=>m.remove());markers=[];
