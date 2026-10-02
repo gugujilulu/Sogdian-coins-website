@@ -97,3 +97,7 @@ T22-3已集成。正式范围新增polity:turgesh的Bregel第9图局部摘录，
 ## T22-8 七河地域背景
 
 region:semirechye独立context版本，核心地域＋楚河定义，整体概括非政权疆域。详见[登记](range-intake/SEMIRECHYE.md)。地域点线、政权虚线和流通短虚线分别表达。显式timeApplicability=cross-period仅用于context/region且无数字端点；全部时期和指定年份显示，年代未知默认排除，可主动背景查看；既有政权时间规则不变。
+
+## T22-17 康国与撒马尔罕绿洲
+
+生产入口lib/samarkand-ranges.ts，派生几何lib/samarkand-geometry.ts；离线重建`python3 scripts/build-samarkand-ranges.py`。两个独立对象，政权core虚线与context地域点线，默认优先级10。康国概括阶段不补年份，指定年份待定并可主动背景查看；绿洲cross-period沿用T22-8，年代未知不自动显示。全局、家族背景、定位、图例和资料与方法使用原入口。详见[登记](range-intake/SAMARKAND.md)。本部推定与四河渠间定义不等于全部粟特或宗主关系疆域。

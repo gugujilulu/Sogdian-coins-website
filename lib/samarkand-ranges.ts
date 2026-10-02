@@ -8,7 +8,7 @@ export function samarkandCore(familyIds:string[]):MapRange{
   coverage:{extent:'partial',note:'撒马尔罕—达尔戈姆核心区；附属体系另列。'},
   source:'Yuri Bregel，An Historical Atlas of Central Asia，2003，p.16／第8图 p.17\nhttps://turkistanilibrary.com/sites/default/files/-yuri_bregel-an_historical_atlas_of_central_asia.pdf\nPavel Lurje，SOGDIANA ii. Historical Geography，2017\nhttps://www.iranicaonline.org/articles/sogdiana-historical-geography/\nFrantz Grenet，SAMARQAND i. History and Archaeology，2002，更新2013\nhttps://www.iranicaonline.org/articles/samarqand-i/\n'+landscapeSource,
   note:'本版按本部核心区方案综合重建：首府与达尔戈姆腹地作为中心，周边曹、米、屈霜那等体系分别保留。南侧参考图2河渠地貌，其他方向为推定过渡，并非原图所绘政治界线。Bregel的宗主关系未并为连续疆域；潘治、布哈拉及其他附属关系不进入本部色面。制作底稿记录推定段、比例尺定位和后续核对项。',
-  geometry:{type:'Polygon',coordinates:[samarkandCoreRing]},boundary:{type:'MultiLineString',coordinates:[samarkandCoreRing]},label:[66.98,39.61],display:{washOpacity:.25}};
+  geometry:{type:'Polygon',coordinates:[samarkandCoreRing]},boundary:{type:'MultiLineString',coordinates:[samarkandCoreRing]},label:[67.16,39.585],display:{washOpacity:.25}};
 }
 export function samarkandOasis(familyIds:string[]):MapRange{
  return {id:'synthesis:samarkand:four-doabs:v1',objectId:'region:samarkand',familyIds,defaultPriority:10,
