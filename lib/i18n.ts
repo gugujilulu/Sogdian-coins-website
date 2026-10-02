@@ -1204,18 +1204,497 @@ export const dictionary={
   "en": "Close popup",
   "zh": "关闭弹窗",
   "ru": "Закрыть окно"
+ },
+
+ "Atlas 钱币纲目": {
+  "en": "Atlas coin catalogue",
+  "zh": "Atlas 钱币纲目",
+  "ru": "Каталог монет Atlas"
+ },
+ "Atlas 纲目": {
+  "en": "Atlas catalogue",
+  "zh": "Atlas 纲目",
+  "ru": "Каталог Atlas"
+ },
+ "来源目录": {
+  "en": "Sources",
+  "zh": "来源目录",
+  "ru": "Источники"
+ },
+ "纲目与来源目录 · 当前 Atlas 筛选同步": {
+  "en": "Catalogue and sources · current Atlas filters",
+  "zh": "纲目与来源目录 · 当前 Atlas 筛选同步",
+  "ru": "Каталог и источники · фильтры Atlas"
+ },
+ "搜索名称、编号、来源…": {
+  "en": "Search names, IDs, sources…",
+  "zh": "搜索名称、编号、来源…",
+  "ru": "Поиск названий, номеров, источников…"
+ },
+ "清空目录搜索": {
+  "en": "Clear catalogue search",
+  "zh": "清空目录搜索",
+  "ru": "Очистить поиск"
+ },
+ "清除全部筛选": {
+  "en": "Clear all filters",
+  "zh": "清除全部筛选",
+  "ru": "Сбросить все фильтры"
+ },
+ "返回来源目录": {
+  "en": "Back to sources",
+  "zh": "返回来源目录",
+  "ru": "Назад к источникам"
+ },
+ "请选择有匹配记录的目录节点": {
+  "en": "Choose a catalogue entry",
+  "zh": "请选择有匹配记录的目录节点",
+  "ru": "Выберите раздел каталога"
+ },
+ "当前选择可能已被筛掉。请从左侧重新选择，或返回 Atlas 调整筛选。": {
+  "en": "Select an entry on the left, or adjust Atlas filters.",
+  "zh": "当前选择可能已被筛掉。请从左侧重新选择，或返回 Atlas 调整筛选。",
+  "ru": "Выберите раздел слева или измените фильтры Atlas."
+ },
+ "来源索引加载失败，仍可按主库ID或名称浏览。": {
+  "en": "Source index unavailable. Browse by record ID or name.",
+  "zh": "来源索引加载失败，仍可按主库ID或名称浏览。",
+  "ru": "Индекс источников недоступен. Поиск по номеру или названию доступен."
+ },
+ "来源索引加载失败；主库与相关资料仍可访问。": {
+  "en": "Source index unavailable. Records and related material remain accessible.",
+  "zh": "来源索引加载失败；主库与相关资料仍可访问。",
+  "ru": "Индекс источников недоступен. Записи и связанные материалы доступны."
+ },
+ "来源索引加载中…": {
+  "en": "Loading source index…",
+  "zh": "来源索引加载中…",
+  "ru": "Загрузка индекса источников…"
+ },
+ "重试来源索引": {
+  "en": "Retry source index",
+  "zh": "重试来源索引",
+  "ru": "Загрузить индекс повторно"
+ },
+ "参考资料 comparison / 其他非实际关系": {
+  "en": "References · comparison and other links",
+  "zh": "参考资料 comparison / 其他非实际关系",
+  "ru": "Справочные материалы · сравнения и другие связи"
+ },
+ "参考关系不计入实际来源。": {
+  "en": "Reference links are listed separately from actual sources.",
+  "zh": "参考关系不计入实际来源。",
+  "ru": "Справочные ссылки приведены отдельно от источников монет."
+ },
+ "来源/目录组不是已审定 variant；major type / variant 尚未审定。": {
+  "en": "Source / catalogue groups are editorial groupings; types and variants are under review.",
+  "zh": "来源/目录组不是已审定 variant；major type / variant 尚未审定。",
+  "ru": "Группы источников / каталога — редакционные группы; типы и варианты уточняются."
+ },
+ "没有匹配的主库记录。请清空目录搜索或调整筛选。": {
+  "en": "No matching records. Clear the catalogue search or adjust filters.",
+  "zh": "没有匹配的主库记录。请清空目录搜索或调整筛选。",
+  "ru": "Нет подходящих записей. Очистите поиск или измените фильтры."
+ },
+ "家族 {name}": {
+  "en": "Family: {name}",
+  "zh": "家族 {name}",
+  "ru": "Семейство: {name}"
+ },
+ "目录组 {name}": {
+  "en": "Catalogue group: {name}",
+  "zh": "目录组 {name}",
+  "ru": "Группа каталога: {name}"
+ },
+ "记录 {id}": {
+  "en": "Record {id}",
+  "zh": "记录 {id}",
+  "ru": "Запись {id}"
+ },
+ "从左侧展开家族、来源/目录组和记录。所有时期的无年代、无坐标记录仍可访问；数量表示主库记录。": {
+  "en": "Expand families, source / catalogue groups and records on the left. Undated and unmapped records remain accessible in All periods.",
+  "zh": "从左侧展开家族、来源/目录组和记录。所有时期的无年代、无坐标记录仍可访问；数量表示主库记录。",
+  "ru": "Раскройте семейства, группы источников / каталога и записи слева. В режиме «Все периоды» доступны записи без дат и координат."
+ },
+ "未分组（目录归属未明确）": {
+  "en": "Ungrouped",
+  "zh": "未分组（目录归属未明确）",
+  "ru": "Без группы"
+ },
+ "未明确": {
+  "en": "Unspecified",
+  "zh": "未明确",
+  "ru": "Не указано"
+ },
+ "地域": {
+  "en": "Region",
+  "zh": "地域",
+  "ru": "Регион"
+ },
+ "政权": {
+  "en": "Polity",
+  "zh": "政权",
+  "ru": "Политическое образование"
+ },
+ "重量": {
+  "en": "Weight",
+  "zh": "重量",
+  "ru": "Вес"
+ },
+ "直径": {
+  "en": "Diameter",
+  "zh": "直径",
+  "ru": "Диаметр"
+ },
+ "实际来源": {
+  "en": "Actual sources",
+  "zh": "实际来源",
+  "ru": "Источники монеты"
+ },
+ "来源索引未加载或未记录": {
+  "en": "Source index unavailable or source not recorded",
+  "zh": "来源索引未加载或未记录",
+  "ru": "Индекс недоступен или источник не указан"
+ },
+ "来源记录": {
+  "en": "Source record",
+  "zh": "来源记录",
+  "ru": "Запись источника"
+ },
+ "来源分类": {
+  "en": "Source category",
+  "zh": "来源分类",
+  "ru": "Категория источника"
+ },
+ "分类路径未记录": {
+  "en": "Category path not recorded",
+  "zh": "分类路径未记录",
+  "ru": "Путь категории не указан"
+ },
+ "没有匹配的实际来源。请清空搜索或调整筛选。": {
+  "en": "No matching sources. Clear the search or adjust filters.",
+  "zh": "没有匹配的实际来源。请清空搜索或调整筛选。",
+  "ru": "Нет подходящих источников. Очистите поиск или измените фильтры."
+ },
+ "当前可浏览主库子集": {
+  "en": "Currently browsable records",
+  "zh": "当前可浏览主库子集",
+  "ru": "Доступные записи"
+ },
+ "历史快照": {
+  "en": "Dated snapshot",
+  "zh": "历史快照",
+  "ru": "Снимок источника"
+ },
+ "覆盖未核定：没有明确对应此分类ID的覆盖证据。": {
+  "en": "Coverage not established for this category.",
+  "zh": "覆盖未核定：没有明确对应此分类ID的覆盖证据。",
+  "ru": "Охват этой категории не установлен."
+ },
+ "历史快照不随筛选变化；主库关联数量不是来源采集完成率。": {
+  "en": "Snapshot counts stay fixed when filters change. Linked records are shown separately.",
+  "zh": "历史快照不随筛选变化；主库关联数量不是来源采集完成率。",
+  "ru": "Число записей в снимке не зависит от фильтров. Связанные записи учитываются отдельно."
+ },
+ "出处": {
+  "en": "Source reference",
+  "zh": "出处",
+  "ru": "Источник сведений"
+ },
+ "范围仅为当前筛选结果已关联的主库来源，不代表全部3999来源实体或全部来源快照。参考关系不计入实际来源。": {
+  "en": "Browse sources linked to the current records. Reference links are listed separately.",
+  "zh": "范围仅为当前筛选结果已关联的主库来源，不代表全部3999来源实体或全部来源快照。参考关系不计入实际来源。",
+  "ru": "Здесь показаны источники текущих записей. Справочные ссылки приведены отдельно."
+ },
+ "打开记录 {id}": {
+  "en": "Open record {id}",
+  "zh": "打开记录 {id}",
+  "ru": "Открыть запись {id}"
+ },
+ "主库记录 ID": {
+  "en": "Record ID",
+  "zh": "主库记录 ID",
+  "ru": "Номер записи"
+ },
+ "关系": {
+  "en": "Relationship",
+  "zh": "关系",
+  "ru": "Связь"
+ },
+ "原始标签": {
+  "en": "Original labels",
+  "zh": "原始标签",
+  "ru": "Исходные метки"
+ },
+ "来源分类路径": {
+  "en": "Source category path",
+  "zh": "来源分类路径",
+  "ru": "Путь категории источника"
+ },
+ "原始来源页面": {
+  "en": "Original source page",
+  "zh": "原始来源页面",
+  "ru": "Страница первоисточника"
+ },
+ "same_specimen": {
+  "en": "Same coin",
+  "zh": "same_specimen",
+  "ru": "Та же монета"
+ },
+ "comparison": {
+  "en": "Comparison",
+  "zh": "comparison",
+  "ru": "Сравнение"
+ },
+ "相关与暂缓资料": {
+  "en": "Related and held material",
+  "zh": "相关与暂缓资料",
+  "ru": "Связанные и отложенные материалы"
+ },
+ "相关资料来源图片": {
+  "en": "Source image for related material",
+  "zh": "相关资料来源图片",
+  "ru": "Изображение связанного материала"
+ },
+ "图片加载失败；文字与来源仍可访问": {
+  "en": "Image unavailable. Text and sources remain accessible.",
+  "zh": "图片加载失败；文字与来源仍可访问",
+  "ru": "Изображение недоступно. Текст и источники доступны."
+ },
+ "暂无可用图片": {
+  "en": "No image available",
+  "zh": "暂无可用图片",
+  "ru": "Изображение отсутствует"
+ },
+ "相关资料": {
+  "en": "Related material",
+  "zh": "相关资料",
+  "ru": "Связанные материалы"
+ },
+ "地理条件匹配": {
+  "en": "Matching geography",
+  "zh": "地理条件匹配",
+  "ru": "По географическим фильтрам"
+ },
+ "当前搜索匹配": {
+  "en": "Search results",
+  "zh": "当前搜索匹配",
+  "ru": "Результаты поиска"
+ },
+ "主库记录": {
+  "en": "Main records",
+  "zh": "主库记录",
+  "ru": "Основные записи"
+ },
+ "保留原始来源、分类路径、审查状态和原因；状态不触发原始资料删除。": {
+  "en": "Original sources, category paths and review decisions are retained.",
+  "zh": "保留原始来源、分类路径、审查状态和原因；状态不触发原始资料删除。",
+  "ru": "Сохранены исходные источники, пути категорий и решения проверки."
+ },
+ "图片索引加载失败，文字资料和来源链接仍可访问。": {
+  "en": "Image index unavailable. Text and source links remain accessible.",
+  "zh": "图片索引加载失败，文字资料和来源链接仍可访问。",
+  "ru": "Индекс изображений недоступен. Текст и ссылки на источники доступны."
+ },
+ "重试图片索引": {
+  "en": "Retry image index",
+  "zh": "重试图片索引",
+  "ru": "Загрузить индекс изображений повторно"
+ },
+ "正在加载图片索引；文字资料可先浏览。": {
+  "en": "Loading image index. You can browse text now.",
+  "zh": "正在加载图片索引；文字资料可先浏览。",
+  "ru": "Загрузка индекса изображений. Текст уже доступен."
+ },
+ "没有匹配的相关资料。请调整搜索词。": {
+  "en": "No related material found. Try another search.",
+  "zh": "没有匹配的相关资料。请调整搜索词。",
+  "ru": "Связанные материалы не найдены. Измените запрос."
+ },
+ "查看详情": {
+  "en": "View details",
+  "zh": "查看详情",
+  "ru": "Подробнее"
+ },
+ "查看详情：{title}": {
+  "en": "View details: {title}",
+  "zh": "查看详情：{title}",
+  "ru": "Подробнее: {title}"
+ },
+ "图片索引不可用": {
+  "en": "Image index unavailable",
+  "zh": "图片索引不可用",
+  "ru": "Индекс изображений недоступен"
+ },
+ "图片索引加载中": {
+  "en": "Loading image index",
+  "zh": "图片索引加载中",
+  "ru": "Загрузка индекса изображений"
+ },
+ "打开原始记录": {
+  "en": "Open original record",
+  "zh": "打开原始记录",
+  "ru": "Открыть исходную запись"
+ },
+ "已显示 {visible} / {total} 条相关资料": {
+  "en": "Showing {visible} of {total} related records",
+  "zh": "已显示 {visible} / {total} 条相关资料",
+  "ru": "Показано {visible} из {total} связанных записей"
+ },
+ "加载更多（40条）": {
+  "en": "Load 40 more",
+  "zh": "加载更多（40条）",
+  "ru": "Загрузить ещё 40"
+ },
+ "相关资料详情": {
+  "en": "Related record details",
+  "zh": "相关资料详情",
+  "ru": "Связанная запись"
+ },
+ "审查状态": {
+  "en": "Review status",
+  "zh": "审查状态",
+  "ru": "Статус проверки"
+ },
+ "原始审查原因": {
+  "en": "Original review reason",
+  "zh": "原始审查原因",
+  "ru": "Исходная причина решения"
+ },
+ "原始记录页面": {
+  "en": "Original record page",
+  "zh": "原始记录页面",
+  "ru": "Страница исходной записи"
+ },
+ "related": {
+  "en": "Related",
+  "zh": "related",
+  "ru": "Связанный материал"
+ },
+ "held": {
+  "en": "Held for review",
+  "zh": "held",
+  "ru": "Отложено для проверки"
+ },
+ "excluded": {
+  "en": "Excluded from main catalogue",
+  "zh": "excluded",
+  "ru": "Не включено в основной каталог"
+ },
+ "当前图片来源信息：未记录": {
+  "en": "Image provenance not recorded",
+  "zh": "当前图片来源信息：未记录",
+  "ru": "Происхождение изображения не указано"
+ },
+ "当前图片来源信息": {
+  "en": "Current image provenance",
+  "zh": "当前图片来源信息",
+  "ru": "Происхождение текущего изображения"
+ },
+ "当前图片来源": {
+  "en": "Current image source",
+  "zh": "当前图片来源",
+  "ru": "Источник текущего изображения"
+ },
+ "来源平台": {
+  "en": "Source platform",
+  "zh": "来源平台",
+  "ru": "Платформа источника"
+ },
+ "原始记录编号": {
+  "en": "Original record ID",
+  "zh": "原始记录编号",
+  "ru": "Исходный номер записи"
+ },
+ "未记录 / 待解析": {
+  "en": "Not recorded / unresolved",
+  "zh": "未记录 / 待解析",
+  "ru": "Не указано / уточняется"
+ },
+ "来源记录页面": {
+  "en": "Source record page",
+  "zh": "来源记录页面",
+  "ru": "Страница записи источника"
+ },
+ "来源网站原始图片": {
+  "en": "Original source image",
+  "zh": "来源网站原始图片",
+  "ru": "Исходное изображение источника"
+ },
+ "图片署名": {
+  "en": "Image credit",
+  "zh": "图片署名",
+  "ru": "Авторство изображения"
+ },
+ "权利状态": {
+  "en": "Rights status",
+  "zh": "权利状态",
+  "ru": "Статус прав"
+ },
+ "未核实（unverified），不表示开放许可": {
+  "en": "Unverified",
+  "zh": "未核实（unverified），不表示开放许可",
+  "ru": "Не проверено"
+ },
+ "原始权利说明": {
+  "en": "Original rights statement",
+  "zh": "原始权利说明",
+  "ru": "Исходные сведения о правах"
+ },
+ "权利说明出处": {
+  "en": "Rights statement source",
+  "zh": "权利说明出处",
+  "ru": "Источник сведений о правах"
+ },
+ "记录尺寸": {
+  "en": "Recorded dimensions",
+  "zh": "记录尺寸",
+  "ru": "Указанные размеры"
+ },
+ "未记录；加载后的实际尺寸见图片视口": {
+  "en": "Not recorded; loaded dimensions appear in the image viewer",
+  "zh": "未记录；加载后的实际尺寸见图片视口",
+  "ru": "Не указано; размеры загруженного изображения показаны в просмотрщике"
+ },
+ "署名不等于权利人，也不代表开放许可。": {
+  "en": "Credit does not establish rights or an open licence.",
+  "zh": "署名不等于权利人，也不代表开放许可。",
+  "ru": "Указание авторства не подтверждает права или открытую лицензию."
+ },
+ "计数说明": {
+  "en": "About these counts",
+  "zh": "计数说明",
+  "ru": "Об этих числах"
+ },
+ "目录说明": {
+  "en": "About the catalogue",
+  "zh": "目录说明",
+  "ru": "О каталоге"
+ },
+ "资料说明": {
+  "en": "About this material",
+  "zh": "资料说明",
+  "ru": "Об этих материалах"
  }
+
+,
+ "分类照片数": {"en":"category photos","zh":"分类照片数","ru":"фотографий категории"},
+ "来源编号": {"en":"source IDs","zh":"来源编号","ru":"номеров источника"}
 } as const satisfies Record<string,Record<Locale,string>>;
 export type CopyKey=keyof typeof dictionary;
 let current:Locale='en';
 export function setCopyLocale(locale:Locale){current=locale}
 export function tr(key:CopyKey,locale:Locale=current):string{return dictionary[key][locale]}
-export function countLabel(n:number,kind:'records'|'families'|'images',locale:Locale=current){
- const ru={records:{one:'запись',few:'записи',many:'записей',other:'записи'},families:{one:'семейство',few:'семейства',many:'семейств',other:'семейства'},images:{one:'изображение',few:'изображения',many:'изображений',other:'изображения'}};
+export function countLabel(n:number,kind:'records'|'families'|'images'|'sources'|'associations'|'groups',locale:Locale=current){
+ const ru={sources:{one:'запись источника',few:'записи источников',many:'записей источников',other:'записи источников'},associations:{one:'связь',few:'связи',many:'связей',other:'связи'},groups:{one:'группа',few:'группы',many:'групп',other:'группы'},records:{one:'запись',few:'записи',many:'записей',other:'записи'},families:{one:'семейство',few:'семейства',many:'семейств',other:'семейства'},images:{one:'изображение',few:'изображения',many:'изображений',other:'изображения'}};
  if(locale==='ru'){const plural=new Intl.PluralRules('ru').select(n) as keyof typeof ru.records;return `${n} ${ru[kind][plural]||ru[kind].other}`}
- const names={en:{records:n===1?'record':'records',families:n===1?'family':'families',images:n===1?'image':'images'},zh:{records:'条记录',families:'个家族',images:'张图片'}};return `${n} ${names[locale][kind]}`
+ const names={en:{sources:n===1?'source record':'source records',associations:n===1?'association':'associations',groups:n===1?'group':'groups',records:n===1?'record':'records',families:n===1?'family':'families',images:n===1?'image':'images'},zh:{sources:'条来源记录',associations:'条关联',groups:'个组',records:'条记录',families:'个家族',images:'张图片'}};return `${n} ${names[locale][kind]}`
 }
 export function displayName(names:{name:string;zh?:string;ru?:string},locale:Locale=current){return locale==='zh'?(names.zh&&names.zh!=='原始标签（中文未记录）'?names.zh:names.name):locale==='ru'?(names.ru||names.name):names.name}
 export function menuIndex(index:number,key:string){return key==='Home'?0:key==='End'?2:key==='ArrowDown'?(index+1)%3:key==='ArrowUp'?(index+2)%3:index}
 
 export function copyKnown(text:string,locale:Locale=current){return Object.hasOwn(dictionary,text)?tr(text as CopyKey,locale):text}
+
+/** Interpolate complete sentences without changing IDs or original content. */
+export function formatCopy(key:CopyKey,values:Record<string,string|number>,locale:Locale=current){return tr(key,locale).replace(/\{(\w+)\}/g,(token,name)=>values[name]===undefined?token:String(values[name]))}
+export function geographyName(node:{id:string;name:string;zh?:string;ru?:string}|undefined,locale:Locale,id=''){return node?(node.id.includes(':state:')?copyKnown(node.name,locale):displayName(node,locale)):id}

@@ -322,3 +322,12 @@
 .language-menu button{width:100%;display:flex;justify-content:space-between;padding:10px;color:#f2e7cd;background:transparent;border:0;text-align:left}
 .language-menu button:hover,.language-menu button:focus-visible{background:#504636}
 @media(max-width:760px),(max-width:1000px) and (max-height:500px){.app-header{gap:5px}.app-header nav{gap:0}.app-header nav button{padding:8px 5px;font-size:12px}.language-control>button{padding:7px 5px;gap:3px;font-size:12px}.brand-button{min-width:0}.brand-button strong{max-width:110px}.history-controls label span,.sheet-actions button{overflow-wrap:anywhere}.header-stats{display:none}}
+/* i18n-2: allow long source paths and operation labels without shrinking text. */
+.catalogue-switch button,.catalogue-tree-actions button{overflow-wrap:anywhere;white-space:normal}
+.catalogue-tree-actions{flex-wrap:wrap}
+.atlas-record-tree button,.source-classification-tree button{min-width:0;align-items:flex-start;gap:8px}
+.atlas-record-tree button>span,.source-classification-tree button>span{min-width:0;overflow-wrap:anywhere;white-space:normal}
+.atlas-record-tree button>small,.source-classification-tree button>small{flex-shrink:0;max-width:42%;text-align:right;white-space:normal}
+.source-record-list article>div{min-width:0;overflow-wrap:anywhere}
+.source-record-actions{flex-wrap:wrap;justify-content:flex-start}
+.catalogue-content h1,.catalogue-content h2{overflow-wrap:anywhere}

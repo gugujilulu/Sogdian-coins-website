@@ -1,7 +1,7 @@
 'use client';
 import {createContext,useContext,useEffect,useRef,useState,type ReactNode} from 'react';
 import {Globe,Check} from 'lucide-react';
-import {dictionary,languageNames,readLocale,saveLocale,setCopyLocale,menuIndex,type Locale,type CopyKey} from '@/lib/i18n';
+import {dictionary,formatCopy,languageNames,readLocale,saveLocale,setCopyLocale,menuIndex,type Locale,type CopyKey} from '@/lib/i18n';
 const Context=createContext({locale:'en' as Locale,setLocale:(_locale:Locale)=>{}});
 export function LanguageProvider({children}:{children:ReactNode}){
  const [locale,setValue]=useState<Locale>('en');
@@ -9,7 +9,7 @@ export function LanguageProvider({children}:{children:ReactNode}){
  const setLocale=(value:Locale)=>{setCopyLocale(value);setValue(value);document.documentElement.lang=value;try{saveLocale(window.localStorage,value)}catch{}};
  return <Context.Provider value={{locale,setLocale}}>{children}</Context.Provider>;
 }
-export function useCopy(){const {locale}=useContext(Context);return (key:CopyKey)=>dictionary[key][locale]}
+export function useCopy(){const {locale}=useContext(Context);return (key:CopyKey,values?:Record<string,string|number>)=>values?formatCopy(key,values,locale):dictionary[key][locale]}
 export function useLanguage(){return useContext(Context)}
 export default function LanguageMenu(){
  const {locale,setLocale}=useLanguage();const [open,setOpen]=useState(false);const root=useRef<HTMLDivElement>(null),trigger=useRef<HTMLButtonElement>(null);const locales=['en','zh','ru'] as const;
