@@ -1,5 +1,6 @@
 'use client';
 import {useEffect,useMemo,useRef,useState,type ReactNode} from 'react';
+import {editableTarget,focusReturn} from '@/lib/keyboard';
 import {viewedRecord,emptyFilters,galleryRecords,validGallerySelection,keepFullFamilySession,type FilterContext,type FullFamilySession,type CollectionContext} from '@/lib/map-selection';
 import {buildMapBackground} from '@/lib/map-layers';
 import {useRangeSelection} from '@/components/atlas/use-range-selection';
@@ -167,6 +168,14 @@ export default function Home(){
  const quickSpecimens=useMemo(()=>{const q=query.trim().toLowerCase();if(!q)return[];return matchedRecords.filter(s=>[s.title,s.sourceRecordId||'',s.catalogue,s.description,sourcePathLabel(s),...s.sources.map(x=>x.label),...s.facets].join(' ').toLowerCase().includes(q)).slice(0,6)},[result,query]);
 
  function chooseFamily(id:string,context?:CollectionContext){setFiltersOpen(false);setSelectedId(id);setCollectionContext(context||null);setReturnCollection(null);if(id!==selectedId){setVariant('all');setFacet('all');setFullSession(null)}if(view==='catalogue')setCatalogueFamily(id)}
+ useEffect(()=>{const key=(event:KeyboardEvent)=>{
+  if(event.defaultPrevented||event.key!=='Escape'||editableTarget(event.target)||document.querySelector('dialog[open]'))return;
+  const layers=document.querySelector<HTMLDetailsElement>('.history-controls[open]'),time=document.querySelector<HTMLDetailsElement>('.timeline-floating[open]');
+  const panel=layers||time;
+  if(panel){event.preventDefault();event.stopImmediatePropagation();panel.open=false;requestAnimationFrame(()=>focusReturn(panel.querySelector<HTMLElement>('summary')));return}
+  if(document.querySelector('.coin-collection-popup'))return;
+  if(selectedId&&view==='atlas'){event.preventDefault();event.stopImmediatePropagation();closeFamily();requestAnimationFrame(()=>focusReturn(document.querySelector<HTMLElement>('.coin-map-marker.selected')))}
+ };document.addEventListener('keydown',key,true);return ()=>document.removeEventListener('keydown',key,true)},[selectedId,view]);
  function closeFamily(){setSelectedId(null);setCollectionContext(null);setFullSession(null)}
  function returnToCollection(){if(!collectionContext)return;setSelectedId(null);setFullSession(null);setReturnCollection(old=>({context:collectionContext,serial:(old?.serial||0)+1}))}
  function showFullFamily(){if(!selected)return;const expanded={...emptyFilters,year:filters.year};setFullSession({familyId:selected.id,filters:{...filters},group:variant,facet,expandedSignature:JSON.stringify(expanded)});setFilters(expanded);setVariant('all');setFacet('all')}
