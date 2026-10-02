@@ -1,6 +1,6 @@
 'use client';
 import {useEffect,useMemo,useRef,useState,type ReactNode} from 'react';
-import {editableTarget,focusReturn} from '@/lib/keyboard';
+import {editableTarget,escapeTarget,focusReturn} from '@/lib/keyboard';
 import {viewedRecord,emptyFilters,galleryRecords,validGallerySelection,keepFullFamilySession,type FilterContext,type FullFamilySession,type CollectionContext} from '@/lib/map-selection';
 import {buildMapBackground} from '@/lib/map-layers';
 import {useRangeSelection} from '@/components/atlas/use-range-selection';
@@ -169,14 +169,16 @@ export default function Home(){
 
  function chooseFamily(id:string,context?:CollectionContext){setFiltersOpen(false);setSelectedId(id);setCollectionContext(context||null);setReturnCollection(null);if(id!==selectedId){setVariant('all');setFacet('all');setFullSession(null)}if(view==='catalogue')setCatalogueFamily(id)}
  useEffect(()=>{const key=(event:KeyboardEvent)=>{
-  if(event.defaultPrevented||event.key!=='Escape'||editableTarget(event.target)||document.querySelector('dialog[open]'))return;
+  if(event.defaultPrevented||event.key!=='Escape')return;
   const layers=document.querySelector<HTMLDetailsElement>('.history-controls[open]'),time=document.querySelector<HTMLDetailsElement>('.timeline-floating[open]');
-  const panel=layers||time;
+  const target=escapeTarget({modal:!!document.querySelector('dialog[open]'),tools:layers?'layers':time?'time':filtersOpen?'filters':null,collection:!!document.querySelector('.maplibregl-popup:not(.coin-preview-popup)'),family:!!selectedId&&view==='atlas'},editableTarget(event.target));if(!target)return;
+  if(target==='filters'){event.preventDefault();event.stopImmediatePropagation();setFiltersOpen(false);requestAnimationFrame(()=>focusReturn(document.querySelector<HTMLElement>('.atlas-search button[aria-label=Filters]')));return}
+  const panel=target==='layers'?layers:target==='time'?time:null;
   if(panel){event.preventDefault();event.stopImmediatePropagation();panel.open=false;requestAnimationFrame(()=>focusReturn(panel.querySelector<HTMLElement>('summary')));return}
-  if(document.querySelector('.coin-collection-popup'))return;
-  if(selectedId&&view==='atlas'){event.preventDefault();event.stopImmediatePropagation();closeFamily();requestAnimationFrame(()=>focusReturn(document.querySelector<HTMLElement>('.coin-map-marker.selected')))}
- };document.addEventListener('keydown',key,true);return ()=>document.removeEventListener('keydown',key,true)},[selectedId,view]);
- function closeFamily(){setSelectedId(null);setCollectionContext(null);setFullSession(null)}
+  if(target==='collection'){const popup=document.querySelector<HTMLElement>('.maplibregl-popup:not(.coin-preview-popup):not(.coin-collection-popup)');if(popup){event.preventDefault();event.stopImmediatePropagation();popup.querySelector<HTMLButtonElement>('.maplibregl-popup-close-button')?.click();focusReturn(document.querySelector<HTMLElement>('.maplibregl-canvas'))}return}
+  if(selectedId&&view==='atlas'){event.preventDefault();event.stopImmediatePropagation();closeFamily()}
+ };document.addEventListener('keydown',key,true);return ()=>document.removeEventListener('keydown',key,true)},[selectedId,view,filtersOpen]);
+ function closeFamily(){const id=selectedId;setSelectedId(null);setCollectionContext(null);setFullSession(null);requestAnimationFrame(()=>{const marker=[...document.querySelectorAll<HTMLElement>('.coin-map-marker')].find(el=>JSON.parse(el.dataset.familyIds||'[]').includes(id));focusReturn(marker||document.querySelector<HTMLElement>('.maplibregl-canvas'))})}
  function returnToCollection(){if(!collectionContext)return;setSelectedId(null);setFullSession(null);setReturnCollection(old=>({context:collectionContext,serial:(old?.serial||0)+1}))}
  function showFullFamily(){if(!selected)return;const expanded={...emptyFilters,year:filters.year};setFullSession({familyId:selected.id,filters:{...filters},group:variant,facet,expandedSignature:JSON.stringify(expanded)});setFilters(expanded);setVariant('all');setFacet('all')}
  function restoreFamilyFilters(){if(!fullSession||!data)return;setFilters(fullSession.filters);setVariant(fullSession.group);setFacet(fullSession.facet);setFullSession(null)}

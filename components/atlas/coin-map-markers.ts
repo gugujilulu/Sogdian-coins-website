@@ -1,4 +1,4 @@
-import {focusReturn} from '@/lib/keyboard';
+import {focusReturn,stableFocusIndex} from '@/lib/keyboard';
 import {motionDuration} from '@/lib/motion';
 import {collectionReturn,collectionMembers,type CollectionContext} from '@/lib/map-selection';
 import type * as GL from 'maplibre-gl';
@@ -11,7 +11,7 @@ export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPla
  let popupContext:CollectionContext|null=null;
  let lastMember:string|null=null,openerFamilies:string[]=[],restoreOnClose=true,pendingFocus:string[]|null=null;
  const rememberFocus=()=>{const active=document.activeElement;for(const entry of markers.values())if(entry.button===active)pendingFocus=JSON.parse(entry.button.dataset.familyIds||'[]')};
- const restoreMarker=()=>{const ids=pendingFocus||openerFamilies;const entry=[...markers.values()].find(e=>JSON.parse(e.button.dataset.familyIds||'[]').some((id:string)=>ids.includes(id)));if(entry)entry.button.focus({preventScroll:true});else focusReturn(map.getCanvas());pendingFocus=null};
+ const restoreMarker=()=>{const ids=pendingFocus||openerFamilies;const entries=[...markers.values()];const entry=entries[stableFocusIndex(ids,entries.map(e=>JSON.parse(e.button.dataset.familyIds||'[]')))];if(entry)entry.button.focus({preventScroll:true});else focusReturn(map.getCanvas());pendingFocus=null};
  function removePopup(){restoreOnClose=false;popup?.remove();restoreOnClose=true}
  const markers=new Map<string,{marker:GL.Marker;button:HTMLButtonElement;signature:string}>();
  const duration=()=>motionDuration(450);
@@ -86,5 +86,5 @@ export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPla
  function escape(ev:KeyboardEvent){if(ev.defaultPrevented||ev.key!=='Escape'||document.querySelector('dialog[open]')||(ev.target instanceof Element&&ev.target.closest('input,textarea,select,[contenteditable]')))return;if(popup?.isOpen()){ev.preventDefault();ev.stopImmediatePropagation();popup.remove()}else preview?.remove()}
  document.addEventListener('keydown',escape);
  map.on('moveend',schedule);map.on('idle',schedule);map.on('resize',schedule);
- return {returnToCollection(context:CollectionContext){const {groups}=collectionReturn(getGroups(),context);const center=map.unproject([map.getContainer().clientWidth/2,map.getContainer().clientHeight/2]);show(groups,[center.lng,center.lat],context);return true},refresh(){rememberFocus();generation++;revision++;preview?.remove();const context=popup?.isOpen()&&popupContext?{...popupContext,scrollTop:popup.getElement().querySelector('.coin-collection')?.scrollTop||0}:null;const hadPopupFocus=!!popup?.getElement().contains(document.activeElement);removePopup();if(context){const center=map.getCenter();show(collectionMembers(getGroups(),context),[center.lng,center.lat],context,!hadPopupFocus)}for(const e of markers.values())e.marker.remove();markers.clear();schedule()},selectionChanged(){preview?.remove();removePopup();schedule()},destroy(){document.removeEventListener('keydown',escape);preview?.remove();disposed=true;generation++;popup?.remove();map.off('moveend',schedule);map.off('idle',schedule);map.off('resize',schedule);for(const e of markers.values())e.marker.remove();markers.clear()}};
+ return {returnToCollection(context:CollectionContext){const {groups}=collectionReturn(getGroups(),context);const center=map.unproject([map.getContainer().clientWidth/2,map.getContainer().clientHeight/2]);show(groups,[center.lng,center.lat],context);return true},refresh(){rememberFocus();generation++;revision++;preview?.remove();const context=popup?.isOpen()&&popupContext?{...popupContext,scrollTop:popup.getElement().querySelector('.coin-collection')?.scrollTop||0}:null;const hadPopupFocus=!!popup?.getElement()?.contains(document.activeElement);removePopup();if(context){const center=map.getCenter();show(collectionMembers(getGroups(),context),[center.lng,center.lat],context,!hadPopupFocus)}for(const e of markers.values())e.marker.remove();markers.clear();schedule()},selectionChanged(){preview?.remove();removePopup();schedule()},destroy(){document.removeEventListener('keydown',escape);preview?.remove();disposed=true;generation++;popup?.remove();map.off('moveend',schedule);map.off('idle',schedule);map.off('resize',schedule);for(const e of markers.values())e.marker.remove();markers.clear()}};
 }

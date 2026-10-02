@@ -3,6 +3,7 @@ import {useEffect,useRef,useState,type ReactNode} from 'react';
 import {X,MapPin,BookOpen,Maximize2,GitCompareArrows,ChevronUp,ChevronDown,Clock3} from 'lucide-react';
 import {sheetHeight,snapSheet,type SheetState} from '@/lib/mobile-sheet';
 import {galleryCaption} from '@/lib/gallery-presentation';
+import {motionQuery,watchMotion} from '@/lib/motion';
 import {sheetKey} from '@/lib/keyboard';
 import CopyLink from './copy-link';
 import type {Family,Specimen,Variant} from '@/lib/atlas';
@@ -12,7 +13,8 @@ type Props={sheetState?:SheetState;onSheetState?:(s:SheetState)=>void;onTools?:(
 export default function FamilyDrawer(p:Props){
  const {family,specimens,allSpecimens,fullSpecimens,variants,variant,facet}=p;
  const sheet=useRef<HTMLElement>(null),drag=useRef<{id:number;y:number;height:number;available:number}|null>(null);
- const [dragHeight,setDragHeight]=useState<number|null>(null);
+ const [dragHeight,setDragHeight]=useState<number|null>(null),[reduceMotion,setReduceMotion]=useState(false);
+ useEffect(()=>watchMotion(matchMedia(motionQuery),setReduceMotion),[]);
  const state=p.sheetState||'half';
  const [mobile,setMobile]=useState(false);
  useEffect(()=>{const media=matchMedia('(max-width:760px), (max-width:1000px) and (max-height:500px)');const update=()=>setMobile(media.matches);update();media.addEventListener('change',update);return ()=>media.removeEventListener('change',update)},[]);
@@ -24,9 +26,9 @@ export default function FamilyDrawer(p:Props){
    <div className="family-meta"><span>{family.dateLabel||'年代未记录'}</span><span>{family.region||'地区未记录'}</span><span>{family.polity||'政权未记录'}</span><span className="family-research-status">{family.status}</span></div>
    <div className="family-location"><MapPin size={14}/><span>{p.placeName||'位置未记录'} · {family.anchor?.role||'位置角色未记录'}</span>{p.onLocate?<button onClick={p.onLocate}>定位</button>:<span>暂无地图定位</span>}</div>
 </>;
- return <aside ref={sheet} data-sheet-state={state} style={dragHeight===null?undefined:{height:dragHeight}} className="family-drawer"
+ return <aside ref={sheet} data-sheet-state={state} style={{height:dragHeight??undefined,transition:reduceMotion?'none':undefined}} className="family-drawer"
  aria-label={`家族详情 ${family.title}`}>
-  {p.onSheetState&&<div className="sheet-handle" role="slider" tabIndex={0} aria-label="详情面板高度" aria-valuemin={0} aria-valuemax={2} aria-valuenow={state==='summary'?0:state==='half'?1:2} aria-valuetext={state==='summary'?'收起摘要':state==='half'?'半展开浏览':'展开阅读'}
+  {p.onSheetState&&<div className="sheet-handle" role="slider" tabIndex={0} aria-label="详情面板高度" aria-orientation="vertical" aria-valuemin={0} aria-valuemax={2} aria-valuenow={state==='summary'?0:state==='half'?1:2} aria-valuetext={state==='summary'?'收起摘要':state==='half'?'半展开浏览':'展开阅读'}
    onKeyDown={e=>{const next=sheetKey(state,e.key);if(next){e.preventDefault();p.onSheetState?.(next)}}}
    onPointerDown={e=>{if(!e.isPrimary)return;e.stopPropagation();e.currentTarget.setPointerCapture(e.pointerId);drag.current={id:e.pointerId,y:e.clientY,height:sheet.current?.clientHeight||0,available:sheet.current?.parentElement?.clientHeight||0}}}
    onPointerMove={e=>{const d=drag.current;if(!d||d.id!==e.pointerId)return;e.stopPropagation();setDragHeight(Math.max(sheetHeight('summary',d.available),Math.min(sheetHeight('reading',d.available),d.height+d.y-e.clientY)))}}
