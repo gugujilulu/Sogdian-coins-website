@@ -1,0 +1,397 @@
+{
+  "task": "T22-18",
+  "accessed": "2026-10-01",
+  "sources": [
+    {
+      "id": "marshak-2002",
+      "author": "Boris I. Marshak",
+      "title": "PANJIKANT",
+      "year": 2002,
+      "updated": 2016,
+      "url": "https://www.iranicaonline.org/articles/panjikant/",
+      "section": "Location and early history; Archaeology",
+      "rights": "未记录"
+    },
+    {
+      "id": "mir-makhamad-2024",
+      "author": "Basira Mir-Makhamad et al.",
+      "title": "Agriculture along the upper part of the Middle Zarafshan River during the first millennium AD",
+      "year": 2024,
+      "url": "https://doi.org/10.1371/journal.pone.0297896",
+      "section": "Introduction; Study area; figs1–3",
+      "rights": "CC BY，见原文版权段"
+    },
+    {
+      "id": "sanjar-survey-2013",
+      "author": "Sanjar-Shah excavation team / Society for the Exploration of EurAsia",
+      "title": "Sanjar-shah Excavations Report, 2013",
+      "year": 2013,
+      "url": "https://www.exploration-eurasia.com/inhalt/projekt_5.htm",
+      "figure": "Fig22 Archaeological map of the Upper Zeravshan Region",
+      "imageURL": "https://www.exploration-eurasia.com/inhalt/projekt_5_clip_image044.jpg",
+      "localOriginal": "/private/tmp/t22-18-survey.jpg",
+      "rights": "未记录；原图不放public"
+    }
+  ],
+  "method": "Geographic core reconstruction from survey terrain/terraces plus textual definitions; NOT a traced district boundary",
+  "calibration": {
+    "method": "Two-point local similarity transform in equirectangular metres",
+    "projection": "local around39.487199 degrees latitude",
+    "imageSize": [
+      659,
+      337
+    ],
+    "controls": [
+      {
+        "name": "Ancient Penjikent shahristan",
+        "pixel": [
+          151,
+          187
+        ],
+        "lonLat": [
+          67.620844,
+          39.487199
+        ],
+        "source": "Mir-Makhamad2024 Study area; fig22 ancient-town symbol approximately read"
+      },
+      {
+        "name": "Sanjar-Shah",
+        "pixel": [
+          343,
+          194
+        ],
+        "lonLat": [
+          67.722012,
+          39.485359
+        ],
+        "source": "Mir-Makhamad2024 Study area; fig22 symbol approximately read"
+      }
+    ],
+    "residuals": "Two controls fit exactly by construction; no independent residual available",
+    "limits": "Small online image and approximate symbol centres; geographical display calibration, not historical boundary accuracy. No extrapolation beyond local city/confluence segment."
+  },
+  "versions": [
+    {
+      "id": "synthesis:panch:core-early-c8:v1",
+      "objectId": "polity:panch",
+      "period": "7世纪末—8世纪初（概括阶段）",
+      "meaning": "古潘治城市与近侧农业阶地本部核心；非全部统辖空间",
+      "sources": [
+        "marshak-2002",
+        "mir-makhamad-2024",
+        "sanjar-survey-2013"
+      ],
+      "pixelRing": [
+        [
+          139,
+          168
+        ],
+        [
+          151,
+          170
+        ],
+        [
+          168,
+          170
+        ],
+        [
+          180,
+          173
+        ],
+        [
+          194,
+          174
+        ],
+        [
+          210,
+          179
+        ],
+        [
+          225,
+          180
+        ],
+        [
+          240,
+          184
+        ],
+        [
+          254,
+          185
+        ],
+        [
+          266,
+          189
+        ],
+        [
+          262,
+          196
+        ],
+        [
+          249,
+          200
+        ],
+        [
+          233,
+          201
+        ],
+        [
+          221,
+          197
+        ],
+        [
+          206,
+          196
+        ],
+        [
+          194,
+          191
+        ],
+        [
+          181,
+          192
+        ],
+        [
+          170,
+          195
+        ],
+        [
+          157,
+          194
+        ],
+        [
+          147,
+          192
+        ],
+        [
+          136,
+          189
+        ],
+        [
+          131,
+          179
+        ],
+        [
+          139,
+          168
+        ]
+      ],
+      "segments": [
+        {
+          "section": "north",
+          "basis": "Survey fig22 lower valley below river; Marshak fertile irrigated valley",
+          "method": "Generalized near-town terrace edge, not attested political frontier"
+        },
+        {
+          "section": "south",
+          "basis": "Survey fig22 piedmont gullies behind ancient town",
+          "method": "Terrain-referenced agricultural core transition"
+        },
+        {
+          "section": "east/west",
+          "basis": "Immediate ancient-town hinterland",
+          "method": "Inferred core transitions; Sanjar-Shah authority/relations unresolved, not included in this limited core"
+        }
+      ]
+    },
+    {
+      "id": "synthesis:panch:local-oasis:v1",
+      "objectId": "region:panch",
+      "period": "跨时期地方绿洲背景",
+      "meaning": "古城附近泽拉夫尚南岸河谷及马吉安河口阶地；地方地域核心定义",
+      "sources": [
+        "marshak-2002",
+        "mir-makhamad-2024",
+        "sanjar-survey-2013"
+      ],
+      "pixelRing": [
+        [
+          80,
+          149
+        ],
+        [
+          94,
+          147
+        ],
+        [
+          110,
+          142
+        ],
+        [
+          126,
+          140
+        ],
+        [
+          142,
+          143
+        ],
+        [
+          161,
+          145
+        ],
+        [
+          178,
+          153
+        ],
+        [
+          195,
+          152
+        ],
+        [
+          210,
+          155
+        ],
+        [
+          228,
+          157
+        ],
+        [
+          247,
+          155
+        ],
+        [
+          269,
+          153
+        ],
+        [
+          290,
+          149
+        ],
+        [
+          311,
+          146
+        ],
+        [
+          329,
+          153
+        ],
+        [
+          335,
+          164
+        ],
+        [
+          333,
+          179
+        ],
+        [
+          340,
+          190
+        ],
+        [
+          351,
+          207
+        ],
+        [
+          348,
+          226
+        ],
+        [
+          339,
+          234
+        ],
+        [
+          325,
+          228
+        ],
+        [
+          312,
+          221
+        ],
+        [
+          299,
+          216
+        ],
+        [
+          283,
+          213
+        ],
+        [
+          268,
+          207
+        ],
+        [
+          251,
+          205
+        ],
+        [
+          236,
+          199
+        ],
+        [
+          221,
+          197
+        ],
+        [
+          205,
+          196
+        ],
+        [
+          191,
+          191
+        ],
+        [
+          179,
+          193
+        ],
+        [
+          167,
+          199
+        ],
+        [
+          153,
+          198
+        ],
+        [
+          137,
+          194
+        ],
+        [
+          125,
+          191
+        ],
+        [
+          109,
+          190
+        ],
+        [
+          93,
+          185
+        ],
+        [
+          84,
+          171
+        ],
+        [
+          80,
+          149
+        ]
+      ],
+      "segments": [
+        {
+          "section": "north",
+          "basis": "Fig22 Zarafshan valley margin",
+          "method": "Generalized south-bank alluvial terrace; not entire river basin"
+        },
+        {
+          "section": "south",
+          "basis": "Fig22 piedmont/gully transition",
+          "method": "Generalized local valley landscape, not ridge-wide territory"
+        },
+        {
+          "section": "east",
+          "basis": "Magian confluence/terrace transition in fig22",
+          "method": "Geographic local-oasis limit, not political separation"
+        },
+        {
+          "section": "west",
+          "basis": "Valley terrace west of ancient town in fig22",
+          "method": "Local core transition inferred; broader westward oasis remains a follow-up"
+        }
+      ]
+    }
+  ],
+  "remaining": [
+    "Broader Panch district boundaries and the Sanjar-Shah relation need dedicated evidence",
+    "Other historical phases; Parghar personal/domain relations are separate from this core",
+    "Local-oasis western transition and palaeochannels need finer field mapping; no full Upper Zeravshan polygon claimed"
+  ]
+}

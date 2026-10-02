@@ -1,3 +1,4 @@
+import {panchCore,panchOasis} from './panch-ranges.ts';
 import {samarkandCore,samarkandOasis} from './samarkand-ranges.ts';
 import {semirechyeBackground} from './semirechye-background.ts';
 import {rangeViews} from './range-time.ts';
@@ -25,15 +26,17 @@ export function buildMapBackground(data:Atlas,geography:GeographyIndex):MapBackg
  const places=data.places.map(p=>({...p,claims:[{role:p.kind==='site'?'site':'city',start:null,end:null,source:p.source,note:p.note},...data.evidence.filter(e=>e.placeId===p.id&&e.kind!=='context').map(e=>({role:e.kind as 'findspot'|'hoard',familyId:e.familyId,start:e.start,end:e.end,source:e.source,note:e.note}))] as PlaceClaim[]}));
  const ranges:MapRange[]=data.areas.map(a=>({id:a.id,objectId:`area:${a.id}`,familyIds:[a.familyId],kind:a.kind==='geographic_context'?'context':'circulation',title:a.title,source:a.source,note:a.note,start:a.start,end:a.end,precision:a.kind==='documented_circulation'?'documented':'approximate',geometry:a.geometry}));
  // Directory-only entries retain ALL research scope nodes. Family dates are never territory dates.
- for(const n of geography.nodes.filter(n=>n.dimension==='polity')){if(n.id==='polity:samarkand'){ranges.push(samarkandCore(n.relatedFamilies));continue}if(n.id==='polity:turgesh'){ranges.push(turgeshOverall(n.relatedFamilies),turgeshSample(n.relatedFamilies));continue}if(n.id==='polity:qara-khitai'){ranges.push(qaraKhitaiSample(n.relatedFamilies));continue}ranges.push({id:`undrawn:${n.id}`,objectId:n.id,familyIds:n.relatedFamilies,kind:'polity',title:`${n.zh} / ${n.name}`,source:n.references.map(r=>r.reference).join('\n'),note:`范围待补。${n.note}；${n.evidenceState}`,start:null,end:null,precision:'undrawn'});}
+ for(const n of geography.nodes.filter(n=>n.dimension==='polity')){if(n.id==='polity:panch'){ranges.push(panchCore(n.relatedFamilies));continue}if(n.id==='polity:samarkand'){ranges.push(samarkandCore(n.relatedFamilies));continue}if(n.id==='polity:turgesh'){ranges.push(turgeshOverall(n.relatedFamilies),turgeshSample(n.relatedFamilies));continue}if(n.id==='polity:qara-khitai'){ranges.push(qaraKhitaiSample(n.relatedFamilies));continue}ranges.push({id:`undrawn:${n.id}`,objectId:n.id,familyIds:n.relatedFamilies,kind:'polity',title:`${n.zh} / ${n.name}`,source:n.references.map(r=>r.reference).join('\n'),note:`范围待补。${n.note}；${n.evidenceState}`,start:null,end:null,precision:'undrawn'});}
  const semirechye=geography.nodes.find(n=>n.id==='region:semirechye');
  if(semirechye)ranges.push(semirechyeBackground(semirechye.relatedFamilies));
  const samarkand=geography.nodes.find(n=>n.id==='region:samarkand');
  if(samarkand)ranges.push(samarkandOasis(samarkand.relatedFamilies));
+ const panch=geography.nodes.find(n=>n.id==='region:panch');
+ if(panch)ranges.push(panchOasis(panch.relatedFamilies));
  return{places,ranges};
 }
 const palette=['#8d533e','#51766e','#8b753f','#666d86','#747d4c','#896675'];
-const fixed:Record<string,string>={'polity:samarkand':'#99684f','region:samarkand':'#667c8e','region:semirechye':'#8a7391','polity:qara-khitai':'#ae794e','demo:semirechye':'#807397','demo:sogdiana':'#a06443'};
+const fixed:Record<string,string>={'polity:panch':'#8a6c45','region:panch':'#5f8079','polity:samarkand':'#99684f','region:samarkand':'#667c8e','region:semirechye':'#8a7391','polity:qara-khitai':'#ae794e','demo:semirechye':'#807397','demo:sogdiana':'#a06443'};
 export function rangeColor(id:string){let h=0;for(const c of id)h=(h*31+c.charCodeAt(0))>>>0;return fixed[id]||palette[h%palette.length]}
 export function effectiveLayers(base:LayerSettings,temporary:Partial<LayerSettings>,enabled:boolean):LayerSettings{return enabled?{...base,...Object.fromEntries(Object.entries(temporary).filter(([,v])=>v))}:base}
 export function backgroundLayers(background:MapBackground,familyId:string):Partial<LayerSettings>{return{polities:background.ranges.some(r=>r.familyIds.includes(familyId)&&r.kind==='polity'&&!!r.geometry),circulation:background.ranges.some(r=>r.familyIds.includes(familyId)&&r.kind==='circulation'&&!!r.geometry),context:background.ranges.some(r=>r.familyIds.includes(familyId)&&r.kind==='context'&&!!r.geometry),findspots:background.places.some(p=>p.claims.some(c=>c.familyId===familyId&&c.role==='findspot')),hoards:background.places.some(p=>p.claims.some(c=>c.familyId===familyId&&c.role==='hoard'))}}
@@ -51,4 +54,11 @@ export function placeClaims(p:MapPlace,settings:LayerSettings,time:MapTime,famil
 export function rangeBounds(ranges:MapRange[]):[[number,number],[number,number]]|null{
  const points=ranges.flatMap(r=>r.geometry?(r.geometry.type==='Polygon'?r.geometry.coordinates.flat():r.geometry.coordinates.flat(2)):[]);
  if(!points.length)return null;return[[Math.min(...points.map(p=>p[0])),Math.min(...points.map(p=>p[1]))],[Math.max(...points.map(p=>p[0])),Math.max(...points.map(p=>p[1]))]];
+}
+
+// Only explicit range focus uses this cap; ordinary filters never move the camera.
+export function rangeFocusMaxZoom(bounds:[[number,number],[number,number]]){
+ const latitude=(bounds[0][1]+bounds[1][1])/2;
+ const span=Math.max((bounds[1][0]-bounds[0][0])*Math.cos(latitude*Math.PI/180),bounds[1][1]-bounds[0][1]);
+ return span<.25?11:8;
 }
