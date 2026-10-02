@@ -101,3 +101,9 @@ region:semirechye独立context版本，核心地域＋楚河定义，整体概�
 ## T22-17 康国与撒马尔罕绿洲
 
 生产入口lib/samarkand-ranges.ts，派生几何lib/samarkand-geometry.ts；离线重建`python3 scripts/build-samarkand-ranges.py`。两个独立对象，政权core虚线与context地域点线，默认优先级10。康国概括阶段不补年份，指定年份待定并可主动背景查看；绿洲cross-period沿用T22-8，年代未知不自动显示。全局、家族背景、定位、图例和资料与方法使用原入口。详见[登记](range-intake/SAMARKAND.md)。本部推定与四河渠间定义不等于全部粟特或宗主关系疆域。
+
+## T22-18 潘治核心版本
+
+lib/panch-ranges.ts分别适配polity:panch与region:panch；lib/panch-geometry.ts由`python3 scripts/build-panch-ranges.py`从[制作底稿](../reviews/T22-18/construction.json)生成。两个局部核心：政权为前伊斯兰末期概括阶段，数字端点未知；绿洲为明确cross-period，沿用T22-8未知模式规则。默认优先级10，原有图层、家族选择及资料入口复用。
+
+小范围主动定位按真实几何跨度允许maxZoom11，较大范围保持8；只影响用户点击“查看相关范围”，不修改坐标/普通筛选定位。范围名称精简以避让城市，时期在面板及图例保留；小屏碰撞可隐藏地图名称而保留图例。详见[登记](range-intake/PANCH.md)。

@@ -18,7 +18,7 @@ test('two independent source versions reuse frozen references without expanding 
  assert.equal(g.nodes.find(n=>n.id==='region:semirechye').relatedFamilies.length,17);assert.equal(b.ranges.filter(x=>x.objectId==='polity:turgesh').length,2);assert.ok(b.ranges.find(x=>x.objectId==='polity:qara-khitai').coverageEdge);
 });
 test('source calibration and inferred political segments remain explicit; valid closed rings do not cross',()=>{
- const c=JSON.parse(readFileSync(new URL('../docs/reviews/T22-17/construction.json',import.meta.url)));const ids=new Set(c.sources.map(s=>s.id));
+ const c=JSON.parse(readFileSync(new URL('../docs/reviews/T22-18/construction.json',import.meta.url)));const ids=new Set(c.sources.map(s=>s.id));
  assert.equal(c.calibration.controls.length,2);assert.ok(c.versions.every(v=>v.sources.every(id=>ids.has(id))));assert.match(c.method,/NOT a traced/);
  for(const v of [p,r]){const ring=v.geometry.coordinates[0];assert.deepEqual(ring[0],ring.at(-1));assert.ok(ring.every(([x,y])=>Number.isFinite(x)&&Number.isFinite(y)&&Math.abs(x)<=180&&Math.abs(y)<=90));
   const cross=(a,b,c)=>(b[0]-a[0])*(c[1]-a[1])-(b[1]-a[1])*(c[0]-a[0]);
