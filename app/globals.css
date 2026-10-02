@@ -315,3 +315,10 @@
  .atlas-screen .maplibregl-ctrl-group button{width:38px;height:38px}
 }
 @media(max-width:760px),(max-width:1000px) and (max-height:500px){.atlas-screen[data-sheet-state=reading] .maplibregl-ctrl-group{visibility:hidden;pointer-events:none}}
+
+.language-control{position:relative;margin-left:auto;flex-shrink:0;z-index:100}
+.language-control>button{display:flex;align-items:center;gap:6px;padding:8px;color:#eee2c4;background:transparent;border:1px solid #786548;border-radius:5px}
+.language-menu{position:absolute;right:0;top:calc(100% + 6px);width:156px;padding:5px;background:#25251f;border:1px solid #786548;border-radius:6px;box-shadow:0 8px 24px #0007}
+.language-menu button{width:100%;display:flex;justify-content:space-between;padding:10px;color:#f2e7cd;background:transparent;border:0;text-align:left}
+.language-menu button:hover,.language-menu button:focus-visible{background:#504636}
+@media(max-width:760px),(max-width:1000px) and (max-height:500px){.app-header{gap:5px}.app-header nav{gap:0}.app-header nav button{padding:8px 5px;font-size:12px}.language-control>button{padding:7px 5px;gap:3px;font-size:12px}.brand-button{min-width:0}.brand-button strong{max-width:110px}.history-controls label span,.sheet-actions button{overflow-wrap:anywhere}.header-stats{display:none}}

@@ -1,3 +1,4 @@
+import {tr,countLabel} from '@/lib/i18n';
 import {focusReturn,stableFocusIndex} from '@/lib/keyboard';
 import {motionDuration} from '@/lib/motion';
 import {collectionReturn,collectionMembers,type CollectionContext} from '@/lib/map-selection';
@@ -20,15 +21,15 @@ export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPla
   preview?.remove();removePopup();const members=uniqueMembers(groups);if(members.length===1&&!restore){onSelect(members[0].family.id);return}
   popupContext=restore||{placeIds:groups.map(g=>g.place.id),familyIds:members.map(m=>m.family.id),scrollTop:0};
   const node=document.createElement('div');node.className='coin-collection';
-  const title=document.createElement('h3');title.textContent=groups.length?groups.map(g=>g.place.name).join(' / '):'原集合当前无匹配结果';node.appendChild(title);
-  const hint=document.createElement('p');hint.textContent=`${members.length} 个匹配家族 · ${members.reduce((n,m)=>n+m.recordCount,0)} 条主库记录。集合封面不代表全部家族；位置角色见各家族。`;node.appendChild(hint);if(!members.length){hint.textContent='原集合当前无匹配结果；恢复筛选后可继续浏览。'}
+  const title=document.createElement('h3');title.textContent=groups.length?groups.map(g=>g.place.name).join(' / '):tr('原集合当前无匹配结果');node.appendChild(title);
+  const hint=document.createElement('p');hint.textContent=`${countLabel(members.length,'families')} · ${countLabel(members.reduce((n,m)=>n+m.recordCount,0),'records')}`;node.appendChild(hint);if(!members.length){hint.textContent=tr('原集合当前无匹配结果；恢复筛选后可继续浏览。')}
   for(const member of members){
    const row=document.createElement('button');row.type='button';row.className='coin-popup-row';row.dataset.familyId=member.family.id;
    if(member.image)row.appendChild(image(member.image.path));
    const text=document.createElement('span'),name=document.createElement('strong'),count=document.createElement('small'),role=document.createElement('small'),source=document.createElement('small');
-   name.textContent=member.family.title;count.textContent=`${member.recordCount} 条匹配记录`;
-   role.textContent=`${member.family.anchor?.role||'位置角色未记录'} · ${member.family.anchor?.note||'位置说明未记录'}`;
-   source.textContent=member.image?`封面：${member.image.sourceName||'来源待解析'} · ${member.image.sourceRecordId||'编号待解析'}；逐图来源见详情`:'无可用图片；仍可打开家族';
+   name.textContent=member.family.title;count.textContent=countLabel(member.recordCount,'records');
+   role.textContent=`${member.family.anchor?.role||tr('位置角色未记录')} · ${member.family.anchor?.note||'位置说明未记录'}`;
+   source.textContent=member.image?`${member.image.sourceName||tr('来源待解析')} · ${member.image.sourceRecordId||tr('编号待解析')}`:tr('无可用图片；仍可打开家族');
    for(const child of [name,count,role,source])text.appendChild(child);row.appendChild(text);row.onclick=()=>{const context={...popupContext!,scrollTop:node.scrollTop};lastMember=member.family.id;removePopup();onSelect(member.family.id,context)};node.appendChild(row);
   }
   popup=new gl.Popup({closeButton:true,maxWidth:'340px',className:'coin-collection-popup',anchor:'center',focusAfterOpen:!passive}).setLngLat(coords).setDOMContent(node).addTo(map);
@@ -66,7 +67,7 @@ export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPla
    let entry=markers.get(e.key);
    if(entry?.signature!==signature){entry?.marker.remove();const button=document.createElement('button');button.type='button';button.className=`coin-map-marker ${large?'photo':'compact'}${selected?' selected':getSelected()?' muted':''}`;
     button.style.width=`${geometry.width}px`;button.style.height=`${geometry.height}px`;
-    const label=`${e.displayCollection?'显示集合':e.cluster?'空间集合':e.groups.map(g=>g.place.name).join(' / ')} · ${members.length} 个匹配家族 · ${members.reduce((n,m)=>n+m.recordCount,0)} 条主库记录`;
+    const label=`${e.displayCollection?tr('显示集合'):e.cluster?tr('空间集合'):e.groups.map(g=>g.place.name).join(' / ')} · ${countLabel(members.length,'families')} · ${countLabel(members.reduce((n,m)=>n+m.recordCount,0),'records')}`;
     button.dataset.familyIds=JSON.stringify(members.map(m=>m.family.id));button.setAttribute('aria-label',label);button.title=label+(cover?`\n${cover.image?'封面':'家族'}：${cover.family.title}；图片来源见家族详情`:'');
     if(large&&cover?.image)button.appendChild(image(cover.image.path));else{const star=document.createElement('span');star.textContent='✦';button.appendChild(star)}
     if(members.length>1){const badge=document.createElement('b');badge.textContent=String(members.length);badge.style.width=`${geometry.badgeWidth}px`;button.appendChild(badge)}
@@ -74,7 +75,7 @@ export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPla
     entry={button,signature,marker:new gl.Marker({element:button,anchor:'center',offset:[0,e.offset]}).setLngLat(e.coords).addTo(map)};markers.set(e.key,entry);
    }
    // Refresh handler on every projection; async work is invalidated on filter changes.
-   entry.button.onmouseenter=entry.button.onfocus=()=>{preview?.remove();if(members.length!==1)return;const member=members[0],node=document.createElement('div');node.className='coin-preview';node.textContent=`${member.family.title} · ${member.family.dateLabel||'年代未记录'} · ${member.recordCount} 条匹配记录`;preview=new gl.Popup({closeButton:false,closeOnClick:false,focusAfterOpen:false,anchor:'bottom',offset:60,className:'coin-preview-popup'}).setLngLat(e.coords).setDOMContent(node).addTo(map)};
+   entry.button.onmouseenter=entry.button.onfocus=()=>{preview?.remove();if(members.length!==1)return;const member=members[0],node=document.createElement('div');node.className='coin-preview';node.textContent=`${member.family.title} · ${member.family.dateLabel||tr('年代未记录')} · ${countLabel(member.recordCount,'records')}`;preview=new gl.Popup({closeButton:false,closeOnClick:false,focusAfterOpen:false,anchor:'bottom',offset:60,className:'coin-preview-popup'}).setLngLat(e.coords).setDOMContent(node).addTo(map)};
    entry.button.onmouseleave=entry.button.onblur=()=>preview?.remove();
    entry.button.onclick=async ev=>{preview?.remove();openerFamilies=members.map(m=>m.family.id);ev.stopPropagation();if(e.cluster&&!e.displayCollection){try{const zoom=await src.getClusterExpansionZoom(e.id);if(disposed||currentRevision!==revision)return;if(canExpand(e.groups,map.getZoom(),map.getMaxZoom(),zoom)){map.easeTo({center:e.coords,zoom,duration:duration()});return}}catch{}}if(!disposed&&currentRevision===revision)show(e.groups,e.coords)};
    entry.marker.setLngLat(e.coords).setOffset([0,e.offset]);
