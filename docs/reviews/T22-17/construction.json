@@ -1,0 +1,410 @@
+{
+  "task": "T22-17",
+  "accessed": "2026-10-01",
+  "sources": [
+    {
+      "id": "rondelli-mantellini-2004",
+      "author": "Bernardo Rondelli; Simone Mantellini",
+      "title": "Methods and Perspectives for Ancient Settlement Studies in the Middle Zeravshan Valley",
+      "year": 2004,
+      "pages": "The Silk Road 2/2, pp.35–39; fig.2 p.36",
+      "url": "https://edspace.american.edu/silkroadjournal/wp-content/uploads/sites/984/2017/09/srjournal_v2n2-December-2004.pdf",
+      "rights": "未记录；原图不进入public",
+      "original": "/private/tmp/t22-17-silkroad.pdf",
+      "figure": "/private/tmp/t22-17-figure-0.png"
+    },
+    {
+      "id": "bregel-2003",
+      "author": "Yuri Bregel",
+      "title": "An Historical Atlas of Central Asia",
+      "year": 2003,
+      "pages": "p.16; map8 p.17",
+      "url": "https://turkistanilibrary.com/sites/default/files/-yuri_bregel-an_historical_atlas_of_central_asia.pdf",
+      "rights": "版权资料；整本不发布",
+      "original": "/private/tmp/t22-17-bregel.pdf"
+    },
+    {
+      "id": "lurje-2017",
+      "author": "Pavel Lurje",
+      "title": "SOGDIANA ii. Historical Geography",
+      "year": 2017,
+      "pages": "Chinese sources / cantons paragraphs",
+      "url": "https://www.iranicaonline.org/articles/sogdiana-historical-geography/",
+      "rights": "未记录"
+    },
+    {
+      "id": "grenet-2002",
+      "author": "Frantz Grenet",
+      "title": "SAMARQAND i. History and Archaeology",
+      "year": 2002,
+      "pages": "pre-Islamic town / ca.660 paintings paragraphs; updated2013",
+      "url": "https://www.iranicaonline.org/articles/samarqand-i/",
+      "rights": "未记录"
+    }
+  ],
+  "calibration": {
+    "method": "Local north-up equirectangular scale calibration, not multi-point georeferencing",
+    "imageSize": [
+      675,
+      444
+    ],
+    "anchorPixel": [
+      330,
+      166
+    ],
+    "anchorLonLat": [
+      66.9877,
+      39.6713
+    ],
+    "anchorSource": "Existing atlas places/samarkand editorial Afrasiab anchor; approximate map city-centre mismatch retained",
+    "scalePixels": 295,
+    "scaleKm": 100,
+    "north": "source compass; pixel y down",
+    "projection": "local equirectangular around39.6713°",
+    "residuals": null,
+    "limits": "One approximate urban anchor + printed scale and north. No independent control residual or historical precision claim; source drawing itself small-scale and unprojected."
+  },
+  "versions": [
+    {
+      "id": "synthesis:samarkand:core-c7:v1",
+      "objectId": "polity:samarkand",
+      "method": "User-approved core reconstruction, NOT traced political borders",
+      "sources": [
+        "bregel-2003",
+        "lurje-2017",
+        "grenet-2002",
+        "rondelli-mantellini-2004"
+      ],
+      "period": "7世纪后半叶（概括阶段）",
+      "meaning": "本部核心：撒马尔罕—达尔戈姆；不绘宗主关系",
+      "pixelRing": [
+        [
+          278,
+          142
+        ],
+        [
+          297,
+          147
+        ],
+        [
+          311,
+          145
+        ],
+        [
+          322,
+          141
+        ],
+        [
+          335,
+          146
+        ],
+        [
+          346,
+          154
+        ],
+        [
+          359,
+          168
+        ],
+        [
+          374,
+          174
+        ],
+        [
+          390,
+          184
+        ],
+        [
+          405,
+          195
+        ],
+        [
+          418,
+          201
+        ],
+        [
+          405,
+          204
+        ],
+        [
+          400,
+          216
+        ],
+        [
+          387,
+          219
+        ],
+        [
+          372,
+          211
+        ],
+        [
+          356,
+          199
+        ],
+        [
+          339,
+          193
+        ],
+        [
+          320,
+          185
+        ],
+        [
+          304,
+          174
+        ],
+        [
+          282,
+          173
+        ],
+        [
+          267,
+          176
+        ],
+        [
+          262,
+          166
+        ],
+        [
+          269,
+          154
+        ],
+        [
+          278,
+          142
+        ]
+      ],
+      "segments": [
+        {
+          "section": "north/east/west",
+          "evidence": "City hinterland and separation from surrounding cantons",
+          "method": "Inferred core transitions; not attested political demarcation"
+        },
+        {
+          "section": "south",
+          "evidence": "Fig2 Dargom-side landscape",
+          "method": "Geographic reference for approximate core edge; canal not claimed historical border"
+        }
+      ]
+    },
+    {
+      "id": "synthesis:samarkand:four-doabs:v1",
+      "objectId": "region:samarkand",
+      "method": "Generalized exterior of four river/canal interfluves in fig2",
+      "sources": [
+        "rondelli-mantellini-2004"
+      ],
+      "period": "跨时期绿洲地域背景",
+      "meaning": "撒马尔罕绿洲：四个河渠间地区，不是完整流域或12地区的全部行政范围",
+      "pixelRing": [
+        [
+          75,
+          25
+        ],
+        [
+          100,
+          27
+        ],
+        [
+          126,
+          30
+        ],
+        [
+          156,
+          37
+        ],
+        [
+          181,
+          44
+        ],
+        [
+          210,
+          45
+        ],
+        [
+          237,
+          52
+        ],
+        [
+          259,
+          62
+        ],
+        [
+          280,
+          70
+        ],
+        [
+          290,
+          82
+        ],
+        [
+          316,
+          94
+        ],
+        [
+          345,
+          108
+        ],
+        [
+          372,
+          114
+        ],
+        [
+          395,
+          123
+        ],
+        [
+          421,
+          125
+        ],
+        [
+          438,
+          131
+        ],
+        [
+          450,
+          144
+        ],
+        [
+          453,
+          159
+        ],
+        [
+          449,
+          176
+        ],
+        [
+          440,
+          190
+        ],
+        [
+          450,
+          202
+        ],
+        [
+          428,
+          200
+        ],
+        [
+          407,
+          202
+        ],
+        [
+          400,
+          216
+        ],
+        [
+          387,
+          219
+        ],
+        [
+          372,
+          211
+        ],
+        [
+          356,
+          199
+        ],
+        [
+          339,
+          193
+        ],
+        [
+          320,
+          185
+        ],
+        [
+          304,
+          174
+        ],
+        [
+          282,
+          173
+        ],
+        [
+          265,
+          178
+        ],
+        [
+          246,
+          181
+        ],
+        [
+          238,
+          160
+        ],
+        [
+          237,
+          142
+        ],
+        [
+          230,
+          130
+        ],
+        [
+          225,
+          115
+        ],
+        [
+          205,
+          102
+        ],
+        [
+          187,
+          87
+        ],
+        [
+          174,
+          72
+        ],
+        [
+          149,
+          59
+        ],
+        [
+          126,
+          53
+        ],
+        [
+          105,
+          48
+        ],
+        [
+          82,
+          46
+        ],
+        [
+          75,
+          37
+        ],
+        [
+          75,
+          25
+        ]
+      ],
+      "segments": [
+        {
+          "section": "north",
+          "evidence": "Ak Darya and Bulungur edges",
+          "method": "Generalized from figure"
+        },
+        {
+          "section": "east/south",
+          "evidence": "Zeravshan meeting and Dargom edge",
+          "method": "Generalized from figure"
+        },
+        {
+          "section": "west",
+          "evidence": "Interfluve convergence in figure",
+          "method": "Generalized from figure, not modern administrative edge"
+        }
+      ]
+    }
+  ],
+  "remaining": [
+    "Core boundaries versus Cao/Mi and other autonomous systems remain inferred; verify with dedicated textual/topographic study",
+    "Other periods and dependency relations are separate follow-up, not included",
+    "Oasis palaeocanal changes and approximate one-anchor placement need future multi-control refinement"
+  ]
+}
