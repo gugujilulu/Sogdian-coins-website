@@ -37,10 +37,24 @@ test('phone edges stay within viewport; constrained height retains a visible rem
   const config=input(city,{width:390,height:780});config.entries[0].point=point;const result=displayCoins(config);
   assert.equal(result.length,15);for(const e of result){assert.ok(e.bounds.x-e.bounds.w/2>=0);assert.ok(e.bounds.x+e.bounds.w/2<=390);assert.ok(e.bounds.y-e.bounds.h/2>=0);assert.ok(e.bounds.y+e.bounds.h/2<=780)}
  }
- const result=displayCoins(input(city,{width:360,height:180})),remaining=result.find(e=>e.overflow);assert.ok(remaining);assert.ok(result.some(e=>e.kind==='family'));
+ const short=input(city,{width:360,height:180});short.entries[0].point={x:180,y:90};const result=displayCoins(short),remaining=result.find(e=>e.overflow);assert.ok(remaining);assert.ok(result.some(e=>e.kind==='family'));
  assert.deepEqual(ids(result),city.members.map(m=>m.family.id).sort());assert.equal(displayCollectionContext(remaining).familyIds.length,15);
 });
 test('coincident different places retain identities and member deduplication',()=>{
  const second={place:{...city.place,id:'separate-place'},members:[city.members[0]]};const config=input(city);config.entries[0].groups.push(second);
- const result=displayCoins(config);assert.equal(result.length,15);assert.deepEqual(result[0].anchors.map(a=>a.placeId),['suyab','separate-place']);assert.deepEqual(displayCollectionContext(result[0]).placeIds,['suyab','separate-place']);
+ const result=displayCoins(config);assert.equal(result.length,15);assert.deepEqual(result[0].anchors.map(a=>a.placeId),['separate-place','suyab']);assert.deepEqual(displayCollectionContext(result[0]).placeIds,['separate-place','suyab']);
+});
+test('8.5 resolves still-clustered source leaves into real city anchors before expansion',()=>{
+ const nearby=groups.find(g=>g.place.id==='balasagun'),config=input(city,{zoom:8.5,project:coords=>({x:coords[0]===city.place.coordinates[0]?640:1000,y:400})});
+ config.entries[0]={...config.entries[0],cluster:true,groups:[city,nearby],coords:[75.22,42.78]};
+ const result=displayCoins(config),expanded=result.filter(e=>e.sameCityExpansion);assert.equal(expanded.length,15);
+ assert.ok(expanded.every(e=>e.coords===city.place.coordinates&&e.point.x===640));
+ assert.equal(result.find(e=>e.members.some(m=>m.family.id==='western-liao-zhouyuan')).point.x,1000);
+});
+test('expanded grid avoids visible search controls and reserves a remaining entry above a short sheet',()=>{
+ const obstacle={x:230,y:110,w:440,h:180},config=input(city,{expansionObstacles:[obstacle]});
+ config.entries[0].point={x:640,y:300};const result=displayCoins(config);assert.ok(result.every(e=>!intersects(e.bounds,obstacle)));
+ const phone=input(city,{width:390,height:780,expansionHeight:250});phone.entries[0].point={x:195,y:300};
+ const limited=displayCoins(phone);assert.ok(limited.some(e=>e.overflow));assert.ok(limited.some(e=>e.kind==='family'));assert.deepEqual(ids(limited),city.members.map(m=>m.family.id).sort());
+ assert.ok(limited.every(e=>e.bounds.y+e.bounds.h/2<=250));
 });

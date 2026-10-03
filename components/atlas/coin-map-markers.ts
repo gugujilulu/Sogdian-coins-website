@@ -59,8 +59,12 @@ export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPla
   }));
   if(disposed||token!==generation)return;
   const occupied:Box[]=Array.from(map.getContainer().querySelectorAll<HTMLElement>('.historical-label')).filter(el=>el.style.visibility!=='hidden').map(el=>{const r=el.getBoundingClientRect(),c=map.getContainer().getBoundingClientRect();return{x:r.x-c.x+r.width/2,y:r.y-c.y+r.height/2,w:r.width,h:r.height}});
+  const bounds=map.getContainer().getBoundingClientRect(),screen=map.getContainer().closest('.atlas-screen');
+  const expansionObstacles:Box[]=Array.from(screen?.querySelectorAll<HTMLElement>('.atlas-search-panel,.map-toolbar,.timeline-floating,.history-controls')||[]).filter(el=>getComputedStyle(el).visibility!=='hidden').map(el=>{const r=el.getBoundingClientRect();return{x:r.x-bounds.x+r.width/2,y:r.y-bounds.y+r.height/2,w:r.width,h:r.height}});
+  const drawer=screen?.querySelector('.family-drawer')?.getBoundingClientRect();
+  const expansionHeight=drawer&&drawer.left<bounds.right&&drawer.right>bounds.left?Math.max(100,Math.min(bounds.height,drawer.top-bounds.top-12)):bounds.height;
   rememberFocus();const live=new Set<string>();
-  const layout=displayCoins({entries:entries.filter(e=>e!==null),labels:occupied,width:map.getContainer().clientWidth,height:map.getContainer().clientHeight,zoom:map.getZoom(),selectedId:getSelected()});
+  const layout=displayCoins({entries:entries.filter(e=>e!==null),labels:occupied,width:map.getContainer().clientWidth,height:map.getContainer().clientHeight,zoom:map.getZoom(),selectedId:getSelected(),project:coords=>map.project(coords),expansionObstacles,expansionHeight});
   for(const e of layout){
    const members=e.members,cover=e.representative,selected=members.some(m=>m.family.id===getSelected());
    const large=e.large,geometry=markerGeometry(e.point,large,map.getContainer().clientWidth<600,members.length,e.offset,cover?.image);
@@ -86,7 +90,7 @@ export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPla
    entry.marker.setLngLat(e.coords).setOffset([e.offsetX,e.offset]);
   }
   // One restrained stem per city, not a line web through every coin image.
-  connections.replaceChildren();connections.setAttribute('width',String(map.getContainer().clientWidth));connections.setAttribute('height',String(map.getContainer().clientHeight));
+  connections.replaceChildren();connections.dataset.zoom=String(map.getZoom());connections.setAttribute('width',String(map.getContainer().clientWidth));connections.setAttribute('height',String(map.getContainer().clientHeight));
   const cityKeys=new Set<string>();for(const e of layout.filter(e=>e.sameCityExpansion&&e.offsetX!==undefined)){
    const key=JSON.stringify(e.anchors.map(a=>a.placeId));if(cityKeys.has(key))continue;cityKeys.add(key);
    const siblings=layout.filter(p=>p.sameCityExpansion&&JSON.stringify(p.anchors.map(a=>a.placeId))===key);
