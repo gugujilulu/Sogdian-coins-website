@@ -687,6 +687,23 @@
     },
     {
       "namespace": "r2",
+      "asset": "detail-frame-fitted",
+      "source": "T46-R2-art-only-v2/assets/detail-frame-fitted.png",
+      "sha256": "138975333e1b89b6da7befcc58f6d69e83a7019e9d94d4bfd5c6b3c1441003fd",
+      "alphaCrop": [
+        0,
+        0,
+        484,
+        987
+      ],
+      "output": "/visual/t47/r2/detail-frame-fitted.webp",
+      "size": [
+        441,
+        900
+      ]
+    },
+    {
+      "namespace": "r2",
       "asset": "watermark",
       "source": "T46-R2-art-only-v2/assets/watermark.png",
       "sha256": "31efd8440dc539af1646fc26a8a317b68feaff107af0a287b42e2ab433d4dedb",

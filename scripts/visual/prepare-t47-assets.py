@@ -9,13 +9,13 @@ entries=[]
 for group in ['r1','r2']:
  src=inputs/('T46-R1-art-only-v2' if group=='r1' else 'T46-R2-art-only-v2')
  names=['header-background','figure-left','figure-right','rosette','paper','corner','search','filters','layers','fit','locate','clock','globe','plus','minus','close','chevron','back','info']
- if group=='r2':names+=['dark-surface','detail-frame','watermark','card-corner','frieze','book','pin','range','share','expand','layers-light','clock-light']
+ if group=='r2':names+=['dark-surface','detail-frame','detail-frame-fitted','watermark','card-corner','frieze','book','pin','range','share','expand','layers-light','clock-light']
  target=out/group;target.mkdir(exist_ok=True)
  for name in names:
   p=src/'assets'/f'{name}.png'; im=Image.open(p).convert('RGBA');box=im.getchannel('A').getbbox() or (0,0,*im.size)
   # Display icons are cropped to their visible alpha; materials retain their full canvas.
-  crop=box if name not in ['paper','header-background','dark-surface','detail-frame'] else (0,0,*im.size)
-  im=im.crop(crop);limit=192 if name in ['search','filters','layers','fit','locate','clock','globe','plus','minus','close','chevron','back','info','book','pin','range','share','expand','layers-light','clock-light'] else 1600 if name=='header-background' else 900 if name=='detail-frame' else 600
+  crop=box if name not in ['paper','header-background','dark-surface','detail-frame','detail-frame-fitted'] else (0,0,*im.size)
+  im=im.crop(crop);limit=192 if name in ['search','filters','layers','fit','locate','clock','globe','plus','minus','close','chevron','back','info','book','pin','range','share','expand','layers-light','clock-light'] else 1600 if name=='header-background' else 900 if name in ['detail-frame','detail-frame-fitted'] else 600
   im.thumbnail((limit,limit),Image.Resampling.LANCZOS);im.save(target/f'{name}.webp',quality=94,method=6)
   entries.append({'namespace':group,'asset':name,'source':str(p.relative_to(inputs)),'sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'alphaCrop':crop,'output':f'/visual/t47/{group}/{name}.webp','size':im.size})
  for name in ['ASSET-MAP.md','CODEX-START-HERE.md']:
