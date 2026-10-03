@@ -5,6 +5,26 @@ export function validLocale(value:unknown):Locale{return value==='zh'||value==='
 export function readLocale(storage:Pick<Storage,'getItem'>|null):Locale{try{return validLocale(storage?.getItem(storageKey))}catch{return 'en'}}
 export function saveLocale(storage:Pick<Storage,'setItem'>|null,locale:Locale){try{storage?.setItem(storageKey,locale);return true}catch{return false}}
 export const dictionary={
+ "查看资料":{"en": "View references", "zh": "查看资料", "ru": "Просмотреть источники"},
+ "钱币描述":{"en": "Coin description", "zh": "钱币描述", "ru": "Описание монеты"},
+ "当前版本与覆盖":{"en": "Current collection & coverage", "zh": "当前版本与覆盖", "ru": "Текущая коллекция и охват"},
+ "学习待开发":{"en": "Learning materials are planned. The reference collection is available now.", "zh": "学习板块待开发，现可查阅参考资料。", "ru": "Учебный раздел запланирован. Подборка источников уже доступна."},
+ "价格规划":{"en": "Planned: an auction and price archive, updated every four months.", "zh": "规划中：拍卖与价格档案，每四个月更新一次。", "ru": "В планах: архив аукционов и цен с обновлением раз в четыре месяца."},
+ "拍卖与价格":{"en": "Auction & price records", "zh": "拍卖与价格记录", "ru": "Аукционы и цены"},
+ "学习规划":{"en": "Planned: readings, symbols and the cultural history of coinage, alongside learning materials.", "zh": "规划中：铭文释读、徽记和钱币文化历史研究，以及学习资料。", "ru": "В планах: чтение надписей, символы, культурная история монет и учебные материалы."},
+ "语言铭文徽记":{"en": "Languages, inscriptions & tamghas", "zh": "语言、铭文与徽记", "ru": "Языки, надписи и тамги"},
+ "范围与钱币规划":{"en": "More regions, political systems and coin types, with source-based historical backgrounds.", "zh": "继续建设更多地区、政权范围与钱币类型，接入有出处的历史背景。", "ru": "Новые регионы, политические системы и типы монет с историческим контекстом по источникам."},
+ "范围与钱币建设":{"en": "Regions & coin types", "zh": "地区与钱币类型", "ru": "Регионы и типы монет"},
+ "更多资料":{"en": "More references", "zh": "更多资料", "ru": "Другие материалы"},
+ "历史地图与地域":{"en": "Historical maps & places", "zh": "历史地图与地域", "ru": "Исторические карты и места"},
+ "原始来源":{"en": "Original sources", "zh": "原始来源", "ru": "Первичные источники"},
+ "钱币目录与研究":{"en": "Coin catalogues & studies", "zh": "钱币目录与研究", "ru": "Каталоги монет и исследования"},
+ "研究导语":{"en": "Coins, places and the cultures of Central Asia. Explore the sources and the work ahead.", "zh": "从钱币、地点与文化理解中亚，查阅资料并了解后续建设。", "ru": "Монеты, места и культуры Центральной Азии. Источники и направления дальнейшей работы."},
+ "研究与学习":{"en": "Research & learning", "zh": "研究与学习", "ru": "Исследования и обучение"},
+ "图片操作说明":{"en": "Image controls", "zh": "图片操作说明", "ru": "Управление изображением"},
+ "打开高清浏览器":{"en": "Open image viewer", "zh": "打开高清浏览器", "ru": "Открыть изображение"},
+ "返回详情":{"en": "Back to details", "zh": "返回详情", "ru": "Вернуться к описанию"},
+ "高清图片":{"en": "High-resolution image", "zh": "高清图片", "ru": "Изображение высокого разрешения"},
  "关闭": {
   "en": "Close",
   "zh": "关闭",

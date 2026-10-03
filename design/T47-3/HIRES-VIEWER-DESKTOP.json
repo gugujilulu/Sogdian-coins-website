@@ -1,0 +1,256 @@
+{
+  "canvas": {
+    "width": 1448,
+    "height": 1086
+  },
+  "page": "HIRES-VIEWER-DESKTOP",
+  "state": "existing high-resolution viewer / same controls and focus semantics",
+  "purpose": "static art and live-layout reference only",
+  "assets": [
+    {
+      "asset": "figure-left.png",
+      "x": -5,
+      "y": -9,
+      "width": 125,
+      "height": 115,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": 98
+    },
+    {
+      "asset": "figure-right.png",
+      "x": 1190,
+      "y": -6,
+      "width": 134,
+      "height": 111,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": 98
+    },
+    {
+      "asset": "rosette.png",
+      "x": 138,
+      "y": 23,
+      "width": 54,
+      "height": 54,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "globe.png",
+      "x": 1351,
+      "y": 43,
+      "width": 25,
+      "height": 25,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "card-corner.png",
+      "x": 1368,
+      "y": 984,
+      "width": 62,
+      "height": 62,
+      "opacity": 0.46,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "card-corner.png",
+      "x": 18,
+      "y": 128,
+      "width": 62,
+      "height": 62,
+      "opacity": 0.3,
+      "rotation": 180,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "close.png",
+      "x": 1383,
+      "y": 149,
+      "width": 21,
+      "height": 21,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "back.png",
+      "x": 58,
+      "y": 221,
+      "width": 22,
+      "height": 22,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "chevron.png",
+      "x": 283,
+      "y": 221,
+      "width": 22,
+      "height": 22,
+      "opacity": 1,
+      "rotation": 90,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "zoom-out.png",
+      "x": 674,
+      "y": 221,
+      "width": 22,
+      "height": 22,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "zoom-in.png",
+      "x": 857,
+      "y": 221,
+      "width": 22,
+      "height": 22,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "fit.png",
+      "x": 1023,
+      "y": 221,
+      "width": 22,
+      "height": 22,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "coin-264408-preview.png",
+      "x": 58,
+      "y": 323,
+      "width": 1332,
+      "height": 599,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    }
+  ],
+  "liveText": [
+    {
+      "text": "Zeno 264408 · Image viewer",
+      "x": 46,
+      "y": 145,
+      "size": 25,
+      "width": null,
+      "bold": false,
+      "color": "#F5EADB",
+      "lines": 1
+    },
+    {
+      "text": "Previous",
+      "x": 89,
+      "y": 221,
+      "size": 18,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "1 / 2",
+      "x": 211,
+      "y": 224,
+      "size": 20,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Next",
+      "x": 314,
+      "y": 221,
+      "size": 18,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Zoom out",
+      "x": 705,
+      "y": 221,
+      "size": 18,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Zoom in",
+      "x": 888,
+      "y": 221,
+      "size": 18,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Fit",
+      "x": 1054,
+      "y": 221,
+      "size": 18,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "100%",
+      "x": 1159,
+      "y": 221,
+      "size": 18,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Zeno · 264408",
+      "x": 47,
+      "y": 999,
+      "size": 18,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Image credit: vaxtankava",
+      "x": 1159,
+      "y": 1002,
+      "size": 15,
+      "width": null,
+      "bold": false,
+      "color": "#777268",
+      "lines": 1
+    }
+  ]
+}

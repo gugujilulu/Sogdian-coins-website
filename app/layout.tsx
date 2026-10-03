@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "./atlas-visual.css";
 import "./catalogue-visual.css";
+import "./details-visual.css";
 
 export const metadata: Metadata = {
   title: "Central Asian Square-Hole Coinage Atlas",
