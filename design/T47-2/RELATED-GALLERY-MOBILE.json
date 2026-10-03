@@ -1,0 +1,413 @@
+{
+  "canvas": {
+    "width": 390,
+    "height": 1120
+  },
+  "page": "RELATED-GALLERY-MOBILE",
+  "state": "mobile source or related gallery; retain existing page batch state",
+  "purpose": "static art and live-layout reference only",
+  "assets": [
+    {
+      "asset": "figure-left.png",
+      "x": 0,
+      "y": -3,
+      "width": 52,
+      "height": 54,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": 50
+    },
+    {
+      "asset": "figure-right.png",
+      "x": 280,
+      "y": -3,
+      "width": 53,
+      "height": 54,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": 50
+    },
+    {
+      "asset": "rosette.png",
+      "x": 59,
+      "y": 13,
+      "width": 26,
+      "height": 26,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "globe.png",
+      "x": 341,
+      "y": 19,
+      "width": 14,
+      "height": 14,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "search.png",
+      "x": 28,
+      "y": 188,
+      "width": 22,
+      "height": 22,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "filters.png",
+      "x": 339,
+      "y": 189,
+      "width": 20,
+      "height": 20,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "card-corner.png",
+      "x": 358,
+      "y": 268,
+      "width": 16,
+      "height": 16,
+      "opacity": 0.46,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "card-corner.png",
+      "x": 16,
+      "y": 235,
+      "width": 16,
+      "height": 16,
+      "opacity": 0.3,
+      "rotation": 180,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "chevron.png",
+      "x": 30,
+      "y": 253,
+      "width": 12,
+      "height": 12,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "card-corner.png",
+      "x": 312,
+      "y": 642,
+      "width": 62,
+      "height": 62,
+      "opacity": 0.46,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "card-corner.png",
+      "x": 16,
+      "y": 409,
+      "width": 62,
+      "height": 62,
+      "opacity": 0.3,
+      "rotation": 180,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "coin-105744-preview.png",
+      "x": 30,
+      "y": 427,
+      "width": 330,
+      "height": 159,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "expand.png",
+      "x": 336,
+      "y": 555,
+      "width": 16,
+      "height": 16,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "external.png",
+      "x": 337,
+      "y": 670,
+      "width": 17,
+      "height": 17,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "card-corner.png",
+      "x": 312,
+      "y": 953,
+      "width": 62,
+      "height": 62,
+      "opacity": 0.46,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "card-corner.png",
+      "x": 16,
+      "y": 720,
+      "width": 62,
+      "height": 62,
+      "opacity": 0.3,
+      "rotation": 180,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "coin-106965-preview.png",
+      "x": 30,
+      "y": 738,
+      "width": 330,
+      "height": 159,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "expand.png",
+      "x": 336,
+      "y": 866,
+      "width": 16,
+      "height": 16,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "external.png",
+      "x": 337,
+      "y": 981,
+      "width": 17,
+      "height": 17,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "chevron.png",
+      "x": 103,
+      "y": 1050,
+      "width": 22,
+      "height": 22,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    }
+  ],
+  "liveText": [
+    {
+      "text": "Atlas",
+      "x": 108,
+      "y": 21,
+      "size": 13,
+      "width": null,
+      "bold": false,
+      "color": "#F5EADB",
+      "lines": 1
+    },
+    {
+      "text": "Catalogue",
+      "x": 153,
+      "y": 21,
+      "size": 13,
+      "width": null,
+      "bold": true,
+      "color": "#E4BE72",
+      "lines": 1
+    },
+    {
+      "text": "Research",
+      "x": 222,
+      "y": 21,
+      "size": 13,
+      "width": null,
+      "bold": false,
+      "color": "#F5EADB",
+      "lines": 1
+    },
+    {
+      "text": "EN",
+      "x": 359,
+      "y": 18,
+      "size": 13,
+      "width": null,
+      "bold": false,
+      "color": "#F5EADB",
+      "lines": 1
+    },
+    {
+      "text": "Catalogue",
+      "x": 18,
+      "y": 72,
+      "size": 31,
+      "width": null,
+      "bold": true,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Atlas catalogue",
+      "x": 31,
+      "y": 131,
+      "size": 16,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Sources",
+      "x": 216,
+      "y": 131,
+      "size": 16,
+      "width": null,
+      "bold": false,
+      "color": "#F3EEE4",
+      "lines": 1
+    },
+    {
+      "text": "Search source records…",
+      "x": 64,
+      "y": 188,
+      "size": 17,
+      "width": null,
+      "bold": false,
+      "color": "#777268",
+      "lines": 1
+    },
+    {
+      "text": "Related material",
+      "x": 53,
+      "y": 249,
+      "size": 19,
+      "width": null,
+      "bold": true,
+      "color": "#F5EADB",
+      "lines": 1
+    },
+    {
+      "text": "Related material",
+      "x": 18,
+      "y": 319,
+      "size": 30,
+      "width": null,
+      "bold": true,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "40 of 701 records",
+      "x": 20,
+      "y": 365,
+      "size": 18,
+      "width": null,
+      "bold": false,
+      "color": "#777268",
+      "lines": 1
+    },
+    {
+      "text": "Chach · Unknown ruler",
+      "x": 30,
+      "y": 609,
+      "size": 21,
+      "width": 330,
+      "bold": true,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Bronze · 2.8 g · 21 mm",
+      "x": 30,
+      "y": 640,
+      "size": 16,
+      "width": 330,
+      "bold": false,
+      "color": "#777268",
+      "lines": 1
+    },
+    {
+      "text": "Zeno · 105744",
+      "x": 30,
+      "y": 669,
+      "size": 17,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Kanka · Unknown ruler",
+      "x": 30,
+      "y": 920,
+      "size": 21,
+      "width": 330,
+      "bold": true,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Bronze · 3.1 g · 20 mm",
+      "x": 30,
+      "y": 951,
+      "size": 16,
+      "width": 330,
+      "bold": false,
+      "color": "#777268",
+      "lines": 1
+    },
+    {
+      "text": "Zeno · 106965",
+      "x": 30,
+      "y": 980,
+      "size": 17,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Load more",
+      "x": 134,
+      "y": 1050,
+      "size": 18,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    }
+  ]
+}
