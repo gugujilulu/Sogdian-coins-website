@@ -60,6 +60,11 @@ export const dictionary={
   "zh": "全部来源",
   "ru": "Все источники"
  },
+ "全部特征": {
+  "en": "All features",
+  "zh": "全部特征",
+  "ru": "Все признаки"
+ },
  "研究状态": {
   "en": "Research status",
   "zh": "研究状态",
