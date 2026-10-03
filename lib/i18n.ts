@@ -5,6 +5,7 @@ export function validLocale(value:unknown):Locale{return value==='zh'||value==='
 export function readLocale(storage:Pick<Storage,'getItem'>|null):Locale{try{return validLocale(storage?.getItem(storageKey))}catch{return 'en'}}
 export function saveLocale(storage:Pick<Storage,'setItem'>|null,locale:Locale){try{storage?.setItem(storageKey,locale);return true}catch{return false}}
 export const dictionary={
+ "更多家族":{"en":"More families","zh":"更多家族","ru":"Другие семейства"},
  "查看资料":{"en": "View references", "zh": "查看资料", "ru": "Просмотреть источники"},
  "钱币描述":{"en": "Coin description", "zh": "钱币描述", "ru": "Описание монеты"},
  "当前版本与覆盖":{"en": "Current collection & coverage", "zh": "当前版本与覆盖", "ru": "Текущая коллекция и охват"},

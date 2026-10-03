@@ -44,6 +44,7 @@ export default function TerrainMap({rangeControl:providedControl,active,sourceFi
  frameRef.current={ranges,places:background.places.map(place=>({place,claims:placeClaims(place,effective,time,selected?.id)})).filter(p=>p.claims.length)};
  const coinMarkers=useRef<ReturnType<typeof installCoinMarkers>|null>(null);
  const selectedRef=useRef(selected?.id);selectedRef.current=families.some(f=>f.id===selected?.id)?selected?.id:undefined;
+ const previousSelection=useRef(selected?.id);
  const groups=useMemo(()=>coinPlaces(families,records,data.places,image=>sourceFilter==='all'||recordSourceProvider({url:image.sourceRecordUrl||'',label:'',relation:'same_specimen'})===sourceFilter),[families,records,data,sourceFilter]);
  const groupsRef=useRef(groups);groupsRef.current=groups;
  const [ready,setReady]=useState(false),[error,setError]=useState(''),[base,setBase]=useState<string>(initialBase);
@@ -76,7 +77,7 @@ export default function TerrainMap({rangeControl:providedControl,active,sourceFi
  useEffect(()=>{if(!ready||!map.current)return;coinMarkers.current?.refresh();const src=map.current.getSource('coins') as import('maplibre-gl').GeoJSONSource;src?.setData({type:'FeatureCollection',features:makeCoinFeatures()})},[groups,ready,data,layers.coins]);
  useEffect(()=>{if(!ready||!map.current)return;history.current?.update(frameRef.current);coinMarkers.current?.refresh();const p=effective.coins&&families.some(f=>f.id===selected?.id)&&selected?.anchor?data.places.find(x=>x.id===selected.anchor?.placeId):null;(map.current.getSource('selected-coin') as import('maplibre-gl').GeoJSONSource)?.setData({type:'FeatureCollection',features:p?[{type:'Feature',geometry:{type:'Point',coordinates:p.coordinates},properties:{}}]:[]})},[data,selected,families,year,dateMode,ready,layers,versions,backgrounds,backgroundEnabled,backgroundObject,background]);
  useEffect(()=>{if(!ready)return;coinMarkers.current?.refresh();history.current?.update(frameRef.current,true);const root=map.current?.getContainer();for(const [selector,key]of [['.maplibregl-ctrl-zoom-in','Zoom in'],['.maplibregl-ctrl-zoom-out','Zoom out'],['.maplibregl-ctrl-attrib-button','Toggle attribution']] as const){const button=root?.querySelector(selector);button?.setAttribute('aria-label',tr(key));button?.setAttribute('title',tr(key))}},[locale,ready]);
- useEffect(()=>{coinMarkers.current?.selectionChanged()},[selected?.id]);
+ useEffect(()=>{const closed=previousSelection.current&&!selected?.id&&!returnCollection?previousSelection.current:undefined;previousSelection.current=selected?.id;coinMarkers.current?.selectionChanged(closed)},[selected?.id]);
  useEffect(()=>{if(active&&ready)map.current?.resize()},[active,ready]);
  useEffect(()=>{
   if(!active||!ready||!map.current)return;

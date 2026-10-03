@@ -83,24 +83,77 @@ export function layoutCoinEntries(entries:MapCoinEntry[],labels:Box[],width:numb
  * MapLibre's screen-radius clustering separates places as projected distances grow.
  * Exact anchors stay grouped: T42 consumes sameCityExpansion, without fake coordinates.
  */
-export const coinDisplayRules={middleZoom:5.5,nearZoom:8.5,clusterRadius:48,clusterMaxZoom:8,photoOffset:-64} as const;
+export const coinDisplayRules={middleZoom:5.5,nearZoom:8.5,clusterRadius:48,clusterMaxZoom:8,photoOffset:-64,expansionGap:12,expansionMargin:12,anchorClearance:44,desktopColumns:5,mobileColumns:3} as const;
 export type CoinDisplayStage='far'|'middle'|'near';
 export function coinDisplayStage(zoom:number):CoinDisplayStage{return zoom<coinDisplayRules.middleZoom?'far':zoom<coinDisplayRules.nearZoom?'middle':'near'}
 export function coinMarkerVisual(image:ImageRecord|null|undefined,failed=false){return image&&!failed?'image':'placeholder'}
 export type CoinDisplay=DisplayCoinEntry&{
  stage:CoinDisplayStage;kind:'family'|'collection';members:CoinMember[];representative:CoinMember|undefined;
  sameCityExpansion:boolean;anchors:{placeId:string;coordinates:[number,number]}[];
+ offsetX:number;collectionGroups:CoinPlace[];fullMembers:CoinMember[];overflow:boolean;
 };
+/** One grid belongs to its real anchor. Slots never depend on selection or image aspect ratio. */
+function expandCity(entry:MapCoinEntry,width:number,height:number,labels:Box[],controls:Box[]=[],top=0):CoinDisplay[]{
+ const members=uniqueMembers(entry.groups),small=width<600,size=small?coinMarkerSizes.mobile:coinMarkerSizes.desktop;
+ const {expansionGap:gap,expansionMargin:margin,anchorClearance:clearance}=coinDisplayRules;
+ const cellW=size.normal+gap,cellH=size.maxHeight+gap;
+ const columns=Math.max(1,Math.min(small?coinDisplayRules.mobileColumns:coinDisplayRules.desktopColumns,Math.floor((width-margin*2)/cellW),members.length));
+ const maxRows=Math.max(1,Math.floor((height-top-margin*2-clearance)/cellH));
+ const capacity=columns*maxRows,overflow=members.length>capacity;
+ const shown=overflow?members.slice(0,Math.max(0,capacity-1)):members;
+ const slots=shown.length+(overflow?1:0),rows=Math.ceil(slots/columns),gridW=columns*cellW-gap,gridH=rows*cellH-gap;
+ const clamp=(v:number,extent:number,total:number,start=0)=>Math.max(margin+start,Math.min(total-margin-extent,v));
+ const candidates=[
+  {x:entry.point.x-gridW/2,y:entry.point.y-clearance-gridH},
+  {x:entry.point.x-gridW/2,y:entry.point.y+clearance},
+  {x:entry.point.x+clearance,y:entry.point.y-gridH/2},
+  {x:entry.point.x-clearance-gridW,y:entry.point.y-gridH/2},
+ ].map(p=>({x:clamp(p.x,gridW,width),y:clamp(p.y,gridH,height,top)}));
+ const shape=(p:{x:number;y:number},index:number,member?:CoinMember)=>{
+  const point={x:p.x+(index%columns)*cellW+size.normal/2,y:p.y+Math.floor(index/columns)*cellH+size.maxHeight/2};
+  return markerGeometry(point,true,small,member?1:members.length-shown.length,0,member?.image);
+ };
+ const anchor={x:entry.point.x,y:entry.point.y+8,w:100,h:50};
+ const penalty=(p:{x:number;y:number})=>Array.from({length:slots},(_,i)=>shape(p,i,shown[i]).box).reduce((n,b)=>n+labels.filter(label=>intersects(b,label)).length+50*controls.filter(control=>intersects(b,control)).length+(intersects(b,anchor)?20:0),0);
+ const origin=candidates.map((p,i)=>({p,i,penalty:penalty(p)})).sort((a,b)=>a.penalty-b.penalty||a.i-b.i)[0].p;
+ const anchors=entry.groups.map(g=>({placeId:g.place.id,coordinates:g.place.coordinates}));
+ const base={...entry,stage:'near' as const,large:true,displayCollection:false,entryKeys:[entry.key],sameCityExpansion:true,anchors,collectionGroups:entry.groups,fullMembers:members};
+ const cityKey=JSON.stringify(anchors.map(a=>a.placeId).sort());
+ return Array.from({length:slots},(_,i)=>{
+  const member=shown[i],geometry=shape(origin,i,member),bounds=geometry.box;
+  const x=origin.x+(i%columns)*cellW+size.normal/2,y=origin.y+Math.floor(i/columns)*cellH+size.maxHeight/2;
+  const remaining=members.slice(shown.length);
+  return {...base,key:`city:${cityKey}:${member?member.family.id:'remaining'}`,members:member?[member]:remaining,representative:member,
+   kind:member?'family' as const:'collection' as const,overflow:!member,offsetX:x-entry.point.x,offset:y-entry.point.y,bounds};
+ });
+}
+export function displayCollectionContext(entry:CoinDisplay){return {placeIds:entry.collectionGroups.map(g=>g.place.id),familyIds:entry.fullMembers.map(m=>m.family.id),scrollTop:0}}
 /** The renderer consumes one decision for images, collection counts and T42 expansion. */
-export function displayCoins(input:{zoom:number;width:number;height:number;entries:MapCoinEntry[];labels:Box[];selectedId?:string}):CoinDisplay[]{
+export function displayCoins(input:{zoom:number;width:number;height:number;entries:MapCoinEntry[];labels:Box[];selectedId?:string;project?:(coordinates:[number,number])=>{x:number;y:number};expansionObstacles?:Box[];expansionHeight?:number;expansionTop?:number}):CoinDisplay[]{
  const stage=coinDisplayStage(input.zoom);
- return layoutCoinEntries(input.entries,input.labels,input.width,input.height,input.selectedId).map(entry=>{
-  const members=uniqueMembers(entry.groups),preferred=coverMember(members,input.selectedId);
+ // A fractional zoom (8.5–9) can still query the source's last integer cluster.
+ // Resolve its original anchors here so the public near threshold remains exact.
+ const at=new Map<string,{entry:MapCoinEntry;groups:CoinPlace[]}>();
+ if(stage==='near')for(const entry of input.entries)for(const group of entry.groups){
+  const key=group.place.coordinates.join(','),value=at.get(key)||{entry,groups:[]};
+  if(!value.groups.some(g=>g.place.id===group.place.id))value.groups.push(group);at.set(key,value);
+ }
+ const entries=stage==='near'?[...at.values()].map(({entry,groups})=>{
+  groups.sort((a,b)=>stable(a.place,b.place));const coords=groups[0].place.coordinates;
+  return {...entry,key:`p:${JSON.stringify(groups.map(g=>g.place.id))}`,coords,point:input.project?.(coords)||entry.point,groups,cluster:false};
+ }).filter(e=>e.point.x>=0&&e.point.x<=input.width&&e.point.y>=0&&e.point.y<=input.height):input.entries;
+ // Expand the original city groups before collision merging. Expanded slots must not
+ // pass through layoutCoinEntries, which intentionally merges coincident footprints.
+ const cities=stage==='near'?entries.filter(e=>uniqueMembers(e.groups).length>1):[];
+ const expanded=[...cities].sort((a,b)=>a.key.localeCompare(b.key)).flatMap(e=>expandCity(e,input.width,Math.min(input.height,input.expansionHeight??input.height),input.labels,input.expansionObstacles||[],input.expansionTop||0));
+ const ordinary=entries.filter(e=>!cities.includes(e));
+ return [...layoutCoinEntries(ordinary,[...input.labels,...expanded.map(e=>e.bounds)],input.width,input.height,input.selectedId).map(entry=>{
+  const members=uniqueMembers(entry.groups);
   // A selected member without an eligible photo retains its highlight, while a collection
   // may use another eligible member's photo; never borrow an unfiltered image.
   const representative=representativeMember(members,input.selectedId);
   const sameCityExpansion=stage==='near'&&entry.groups.some(g=>g.members.length>1);
-  return {...entry,stage,kind:members.length>1?'collection':'family',members,representative,sameCityExpansion,
+  return {...entry,stage,kind:members.length>1?'collection' as const:'family' as const,members,representative,sameCityExpansion,offsetX:0,collectionGroups:entry.groups,fullMembers:members,overflow:false,
    anchors:entry.groups.map(g=>({placeId:g.place.id,coordinates:g.place.coordinates}))};
- });
+ }),...expanded];
 }

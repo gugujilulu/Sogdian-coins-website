@@ -339,3 +339,9 @@
 .research-page #sources-methods p{max-width:75ch;line-height:1.7}
 .research-page .metrics-row{flex-wrap:wrap}
 .research-page .metrics-row span{font-size:.78rem;line-height:1.4}
+
+/* T42: screen-space city expansion; no geographic data offsets. */
+.coin-city-connections{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.coin-city-connections line{stroke:#92724b;stroke-width:1;stroke-opacity:.45;stroke-dasharray:3 4}
+.coin-city-remaining{background:var(--atlas-paper)!important;color:var(--atlas-ink)!important;min-width:44px;min-height:32px}
+.coin-city-remaining .coin-marker-fallback{font:700 16px var(--atlas-serif)}
