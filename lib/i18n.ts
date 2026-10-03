@@ -1735,6 +1735,29 @@ export const dictionary={
 "影响范围":{"en": "Sphere of influence", "zh": "影响范围", "ru": "Сфера влияния"},
 "地方体系范围":{"en": "Local political system", "zh": "地方体系范围", "ru": "Местная политическая система"},
 "空间含义未记录":{"en": "Spatial meaning not recorded", "zh": "空间含义未记录", "ru": "Пространственный смысл не указан"}
+,
+"Attributed city · 归属城市展示锚点":{"en": "Attributed city · display anchor", "zh": "归属城市展示锚点", "ru": "Предполагаемый город · опорная точка"},
+"City display anchor · 城市展示锚点":{"en": "City display anchor", "zh": "城市展示锚点", "ru": "Городская опорная точка"},
+"Regional orientation · 区域浏览锚点":{"en": "Regional display anchor", "zh": "区域浏览锚点", "ru": "Региональная опорная точка"},
+"Regional/city orientation · 区域／城市浏览锚点":{"en": "Regional / city display anchor", "zh": "区域／城市浏览锚点", "ru": "Региональная / городская опорная точка"},
+"返回目录":{"en": "Back to catalogue", "zh": "返回目录", "ru": "Вернуться в каталог"},
+"关闭提示":{"en": "Dismiss", "zh": "关闭提示", "ru": "Закрыть сообщение"},
+"已选对比":{"en": "Selected for comparison", "zh": "已选对比", "ru": "Выбрано для сравнения"},
+"已恢复链接筛选并清除目录搜索。":{"en": "Link filters restored; catalogue search cleared.", "zh": "已恢复链接筛选并清除目录搜索。", "ru": "Фильтры ссылки восстановлены; поиск каталога очищен."},
+"家族不存在":{"en": "Family not found", "zh": "家族不存在", "ru": "Семейство не найдено"},
+"主库记录不存在":{"en": "Record not found", "zh": "主库记录不存在", "ru": "Запись не найдена"},
+"相关资料记录不存在":{"en": "Related record not found", "zh": "相关资料记录不存在", "ru": "Сопутствующая запись не найдена"},
+"目录节点不存在":{"en": "Catalogue node not found", "zh": "目录节点不存在", "ru": "Узел каталога не найден"},
+"来源节点或路径不存在":{"en": "Source node or path not found", "zh": "来源节点或路径不存在", "ru": "Узел или путь источника не найден"},
+"来源路径格式无效":{"en": "Invalid source path", "zh": "来源路径格式无效", "ru": "Некорректный путь источника"},
+"链接无效":{"en": "Invalid link", "zh": "链接无效", "ru": "Некорректная ссылка"}
+,
+"地点角色":{"en":"Place role","zh":"地点角色","ru":"Роль места"}
+,
+"open_license":{"en": "Open licence", "zh": "开放许可", "ru": "Открытая лицензия"},
+"permission":{"en": "Permission recorded", "zh": "已有许可记录", "ru": "Разрешение указано"},
+"public_domain":{"en": "Public domain", "zh": "公有领域", "ru": "Общественное достояние"},
+"家族年代":{"en": "Family date", "zh": "家族年代", "ru": "Даты семейства"}
 } as const satisfies Record<string,Record<Locale,string>>;
 export type CopyKey=keyof typeof dictionary;
 let current:Locale='en';
@@ -1753,3 +1776,5 @@ export function copyKnown(text:string,locale:Locale=current){return Object.hasOw
 /** Interpolate complete sentences without changing IDs or original content. */
 export function formatCopy(key:CopyKey,values:Record<string,string|number>,locale:Locale=current){return tr(key,locale).replace(/\{(\w+)\}/g,(token,name)=>values[name]===undefined?token:String(values[name]))}
 export function geographyName(node:{id:string;name:string;zh?:string;ru?:string}|undefined,locale:Locale,id=''){return node?(node.id.includes(':state:')?copyKnown(node.name,locale):displayName(node,locale)):id}
+
+export function copyMessage(text:string,locale:Locale=current){const split=text.indexOf("：");return split<0?copyKnown(text,locale):`${copyKnown(text.slice(0,split),locale)}: ${text.slice(split+1)}`}

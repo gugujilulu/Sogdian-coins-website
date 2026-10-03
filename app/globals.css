@@ -338,3 +338,4 @@
 .research-page p,.research-page a{overflow-wrap:anywhere}
 .research-page #sources-methods p{max-width:75ch;line-height:1.7}
 .research-page .metrics-row{flex-wrap:wrap}
+.research-page .metrics-row span{font-size:.78rem;line-height:1.4}
