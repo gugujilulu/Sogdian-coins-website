@@ -26,6 +26,8 @@ export default function FamilyDrawer(p:Props){
  const scroll=useRef<HTMLDivElement>(null);
  useEffect(()=>{scroll.current?.scrollTo({top:0});if(!document.querySelector('dialog[open]'))sheet.current?.querySelector<HTMLButtonElement>('.family-title>button')?.focus({preventScroll:true})},[family.id]);
  useEffect(()=>{if(state==='summary'&&scroll.current?.contains(document.activeElement))sheet.current?.querySelector<HTMLElement>('.sheet-handle')?.focus({preventScroll:true})},[state]);
+ // The reading sheet covers the map canvas; keep its markers out of keyboard navigation.
+ useEffect(()=>{const map=sheet.current?.closest('.atlas-screen')?.querySelector<HTMLElement>('.terrain-map');if(!map)return;if(mobile&&state==='reading'&&map.contains(document.activeElement))sheet.current?.querySelector<HTMLElement>('.sheet-handle')?.focus({preventScroll:true});map.inert=mobile&&state==='reading';return()=>{map.inert=false}},[mobile,state]);
  const activeGroup=variants.find(v=>v.id===variant);
  const overview=<>   <div className="drawer-secondary"><CopyLink link={{view:'atlas',family:family.id}}/><button onClick={p.onCatalogue}><BookOpen size={14}/>{tr("目录")}</button>{p.onReturnCollection&&<button onClick={p.onReturnCollection}>{tr("返回此集合")}</button>}</div>
    <div className="family-meta"><span>{family.dateLabel||tr("年代未记录")}</span><span>{family.region||tr("地区未记录")}</span><span>{family.polity||tr("政权未记录")}</span><span className="family-research-status">{copyKnown(family.status,locale)}</span></div>
