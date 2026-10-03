@@ -1,0 +1,580 @@
+{
+  "canvas": {
+    "width": 1448,
+    "height": 1086
+  },
+  "page": "CONTROLS-DESKTOP",
+  "state": "style specimens, not new interaction requirements",
+  "purpose": "static art and live-layout reference only",
+  "assets": [
+    {
+      "asset": "figure-left.png",
+      "x": -5,
+      "y": -9,
+      "width": 125,
+      "height": 115,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": 98
+    },
+    {
+      "asset": "figure-right.png",
+      "x": 1190,
+      "y": -6,
+      "width": 134,
+      "height": 111,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": 98
+    },
+    {
+      "asset": "rosette.png",
+      "x": 138,
+      "y": 23,
+      "width": 54,
+      "height": 54,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "globe.png",
+      "x": 1351,
+      "y": 43,
+      "width": 25,
+      "height": 25,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "card-corner.png",
+      "x": 307,
+      "y": 780,
+      "width": 62,
+      "height": 62,
+      "opacity": 0.46,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "card-corner.png",
+      "x": 49,
+      "y": 263,
+      "width": 62,
+      "height": 62,
+      "opacity": 0.3,
+      "rotation": 180,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "card-corner.png",
+      "x": 848,
+      "y": 780,
+      "width": 62,
+      "height": 62,
+      "opacity": 0.46,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "card-corner.png",
+      "x": 415,
+      "y": 263,
+      "width": 62,
+      "height": 62,
+      "opacity": 0.3,
+      "rotation": 180,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "card-corner.png",
+      "x": 1337,
+      "y": 780,
+      "width": 62,
+      "height": 62,
+      "opacity": 0.46,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "card-corner.png",
+      "x": 956,
+      "y": 263,
+      "width": 62,
+      "height": 62,
+      "opacity": 0.3,
+      "rotation": 180,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "globe.png",
+      "x": 86,
+      "y": 360,
+      "width": 23,
+      "height": 23,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "globe.png",
+      "x": 86,
+      "y": 420,
+      "width": 23,
+      "height": 23,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "globe.png",
+      "x": 86,
+      "y": 480,
+      "width": 23,
+      "height": 23,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "search.png",
+      "x": 450,
+      "y": 356,
+      "width": 22,
+      "height": 22,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "filters.png",
+      "x": 852,
+      "y": 357,
+      "width": 20,
+      "height": 20,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "chevron.png",
+      "x": 850,
+      "y": 439,
+      "width": 13,
+      "height": 13,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "chevron.png",
+      "x": 850,
+      "y": 507,
+      "width": 13,
+      "height": 13,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "chevron.png",
+      "x": 850,
+      "y": 575,
+      "width": 13,
+      "height": 13,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "chevron.png",
+      "x": 850,
+      "y": 643,
+      "width": 13,
+      "height": 13,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "chevron.png",
+      "x": 850,
+      "y": 711,
+      "width": 13,
+      "height": 13,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "city.png",
+      "x": 979,
+      "y": 348,
+      "width": 28,
+      "height": 28,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "range.png",
+      "x": 979,
+      "y": 410,
+      "width": 28,
+      "height": 28,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "pin.png",
+      "x": 979,
+      "y": 472,
+      "width": 28,
+      "height": 28,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "fit.png",
+      "x": 991,
+      "y": 665,
+      "width": 22,
+      "height": 22,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "card-corner.png",
+      "x": 1350,
+      "y": 984,
+      "width": 49,
+      "height": 49,
+      "opacity": 0.46,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "card-corner.png",
+      "x": 49,
+      "y": 885,
+      "width": 49,
+      "height": 49,
+      "opacity": 0.3,
+      "rotation": 180,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "back.png",
+      "x": 500,
+      "y": 959,
+      "width": 22,
+      "height": 22,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    }
+  ],
+  "liveText": [
+    {
+      "text": "Controls & states",
+      "x": 49,
+      "y": 132,
+      "size": 38,
+      "width": null,
+      "bold": true,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Existing behavior, consistent visual treatment",
+      "x": 50,
+      "y": 191,
+      "size": 21,
+      "width": null,
+      "bold": false,
+      "color": "#777268",
+      "lines": 1
+    },
+    {
+      "text": "Language",
+      "x": 72,
+      "y": 285,
+      "size": 28,
+      "width": null,
+      "bold": true,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Search & filters",
+      "x": 438,
+      "y": 285,
+      "size": 28,
+      "width": null,
+      "bold": true,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Layers & legend",
+      "x": 979,
+      "y": 285,
+      "size": 28,
+      "width": null,
+      "bold": true,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "English",
+      "x": 128,
+      "y": 359,
+      "size": 20,
+      "width": null,
+      "bold": false,
+      "color": "#F5EADB",
+      "lines": 1
+    },
+    {
+      "text": "中文",
+      "x": 128,
+      "y": 419,
+      "size": 20,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Русский",
+      "x": 128,
+      "y": 479,
+      "size": 20,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Search coins, IDs and sources…",
+      "x": 486,
+      "y": 356,
+      "size": 17,
+      "width": null,
+      "bold": false,
+      "color": "#777268",
+      "lines": 1
+    },
+    {
+      "text": "Regions",
+      "x": 458,
+      "y": 431,
+      "size": 20,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Polities",
+      "x": 458,
+      "y": 499,
+      "size": 20,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Cities",
+      "x": 458,
+      "y": 567,
+      "size": 20,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Source",
+      "x": 458,
+      "y": 635,
+      "size": 20,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Period",
+      "x": 458,
+      "y": 703,
+      "size": 20,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Historical places",
+      "x": 1026,
+      "y": 351,
+      "size": 20,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Historical ranges",
+      "x": 1026,
+      "y": 413,
+      "size": 20,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Coin locations",
+      "x": 1026,
+      "y": 475,
+      "size": 20,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Türgesh",
+      "x": 981,
+      "y": 568,
+      "size": 23,
+      "width": null,
+      "bold": true,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Early state · around 700",
+      "x": 981,
+      "y": 608,
+      "size": 19,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Locate range",
+      "x": 1022,
+      "y": 665,
+      "size": 18,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Sources and methods",
+      "x": 981,
+      "y": 734,
+      "size": 17,
+      "width": null,
+      "bold": false,
+      "color": "#777268",
+      "lines": 1
+    },
+    {
+      "text": "No results",
+      "x": 71,
+      "y": 907,
+      "size": 25,
+      "width": null,
+      "bold": true,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Clear filters",
+      "x": 71,
+      "y": 958,
+      "size": 20,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Images unavailable",
+      "x": 488,
+      "y": 907,
+      "size": 25,
+      "width": null,
+      "bold": true,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Retry",
+      "x": 531,
+      "y": 959,
+      "size": 18,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Loading",
+      "x": 985,
+      "y": 911,
+      "size": 25,
+      "width": null,
+      "bold": true,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Loading images…",
+      "x": 985,
+      "y": 961,
+      "size": 18,
+      "width": null,
+      "bold": false,
+      "color": "#777268",
+      "lines": 1
+    }
+  ]
+}

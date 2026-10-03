@@ -1,0 +1,558 @@
+{
+  "canvas": {
+    "width": 390,
+    "height": 1300
+  },
+  "page": "CONTROLS-MOBILE",
+  "state": "style specimens for existing menus, filters, layers and states",
+  "purpose": "static art and live-layout reference only",
+  "assets": [
+    {
+      "asset": "figure-left.png",
+      "x": 0,
+      "y": -3,
+      "width": 52,
+      "height": 54,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": 50
+    },
+    {
+      "asset": "figure-right.png",
+      "x": 280,
+      "y": -3,
+      "width": 53,
+      "height": 54,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": 50
+    },
+    {
+      "asset": "rosette.png",
+      "x": 59,
+      "y": 13,
+      "width": 26,
+      "height": 26,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "globe.png",
+      "x": 341,
+      "y": 19,
+      "width": 14,
+      "height": 14,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "card-corner.png",
+      "x": 321,
+      "y": 274,
+      "width": 53,
+      "height": 53,
+      "opacity": 0.46,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "card-corner.png",
+      "x": 16,
+      "y": 168,
+      "width": 53,
+      "height": 53,
+      "opacity": 0.3,
+      "rotation": 180,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "card-corner.png",
+      "x": 312,
+      "y": 564,
+      "width": 62,
+      "height": 62,
+      "opacity": 0.46,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "card-corner.png",
+      "x": 16,
+      "y": 345,
+      "width": 62,
+      "height": 62,
+      "opacity": 0.3,
+      "rotation": 180,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "card-corner.png",
+      "x": 312,
+      "y": 842,
+      "width": 62,
+      "height": 62,
+      "opacity": 0.46,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "card-corner.png",
+      "x": 16,
+      "y": 644,
+      "width": 62,
+      "height": 62,
+      "opacity": 0.3,
+      "rotation": 180,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "card-corner.png",
+      "x": 312,
+      "y": 1098,
+      "width": 62,
+      "height": 62,
+      "opacity": 0.46,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "card-corner.png",
+      "x": 16,
+      "y": 922,
+      "width": 62,
+      "height": 62,
+      "opacity": 0.3,
+      "rotation": 180,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "globe.png",
+      "x": 315,
+      "y": 193,
+      "width": 25,
+      "height": 25,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "search.png",
+      "x": 44,
+      "y": 415,
+      "width": 22,
+      "height": 22,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "filters.png",
+      "x": 323,
+      "y": 416,
+      "width": 20,
+      "height": 20,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "chevron.png",
+      "x": 322,
+      "y": 471,
+      "width": 12,
+      "height": 12,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "chevron.png",
+      "x": 322,
+      "y": 504,
+      "width": 12,
+      "height": 12,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "chevron.png",
+      "x": 322,
+      "y": 537,
+      "width": 12,
+      "height": 12,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "chevron.png",
+      "x": 322,
+      "y": 570,
+      "width": 12,
+      "height": 12,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "city.png",
+      "x": 35,
+      "y": 706,
+      "width": 24,
+      "height": 24,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "range.png",
+      "x": 35,
+      "y": 751,
+      "width": 24,
+      "height": 24,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "pin.png",
+      "x": 35,
+      "y": 796,
+      "width": 24,
+      "height": 24,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "back.png",
+      "x": 47,
+      "y": 1127,
+      "width": 22,
+      "height": 22,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "mountain-footer.png",
+      "x": 0,
+      "y": 1136,
+      "width": 390,
+      "height": 120,
+      "opacity": 0.38,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "rosette.png",
+      "x": 16,
+      "y": 1243,
+      "width": 30,
+      "height": 30,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    }
+  ],
+  "liveText": [
+    {
+      "text": "Atlas",
+      "x": 108,
+      "y": 21,
+      "size": 13,
+      "width": null,
+      "bold": true,
+      "color": "#E4BE72",
+      "lines": 1
+    },
+    {
+      "text": "Catalogue",
+      "x": 153,
+      "y": 21,
+      "size": 13,
+      "width": null,
+      "bold": false,
+      "color": "#F5EADB",
+      "lines": 1
+    },
+    {
+      "text": "Research",
+      "x": 222,
+      "y": 21,
+      "size": 13,
+      "width": null,
+      "bold": false,
+      "color": "#F5EADB",
+      "lines": 1
+    },
+    {
+      "text": "EN",
+      "x": 359,
+      "y": 18,
+      "size": 13,
+      "width": null,
+      "bold": false,
+      "color": "#F5EADB",
+      "lines": 1
+    },
+    {
+      "text": "Existing controls",
+      "x": 18,
+      "y": 73,
+      "size": 29,
+      "width": null,
+      "bold": true,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Visual treatments",
+      "x": 19,
+      "y": 114,
+      "size": 17,
+      "width": null,
+      "bold": false,
+      "color": "#777268",
+      "lines": 1
+    },
+    {
+      "text": "Language",
+      "x": 33,
+      "y": 185,
+      "size": 24,
+      "width": null,
+      "bold": true,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Search & filters",
+      "x": 33,
+      "y": 362,
+      "size": 24,
+      "width": null,
+      "bold": true,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Historical layers",
+      "x": 33,
+      "y": 661,
+      "size": 24,
+      "width": null,
+      "bold": true,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "States",
+      "x": 33,
+      "y": 939,
+      "size": 24,
+      "width": null,
+      "bold": true,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "English",
+      "x": 42,
+      "y": 222,
+      "size": 18,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "中文",
+      "x": 42,
+      "y": 252,
+      "size": 18,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Русский",
+      "x": 42,
+      "y": 282,
+      "size": 18,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Search coins…",
+      "x": 80,
+      "y": 415,
+      "size": 17,
+      "width": null,
+      "bold": false,
+      "color": "#777268",
+      "lines": 1
+    },
+    {
+      "text": "Region",
+      "x": 41,
+      "y": 464,
+      "size": 18,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Polity",
+      "x": 41,
+      "y": 497,
+      "size": 18,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "City",
+      "x": 41,
+      "y": 530,
+      "size": 18,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Date: All periods",
+      "x": 41,
+      "y": 563,
+      "size": 18,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Historical places",
+      "x": 77,
+      "y": 708,
+      "size": 18,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Historical ranges",
+      "x": 77,
+      "y": 753,
+      "size": 18,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Coin locations",
+      "x": 77,
+      "y": 798,
+      "size": 18,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Sources and methods",
+      "x": 35,
+      "y": 855,
+      "size": 15,
+      "width": null,
+      "bold": false,
+      "color": "#777268",
+      "lines": 1
+    },
+    {
+      "text": "No results",
+      "x": 35,
+      "y": 987,
+      "size": 24,
+      "width": null,
+      "bold": true,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Clear filters",
+      "x": 35,
+      "y": 1024,
+      "size": 18,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Images unavailable",
+      "x": 35,
+      "y": 1081,
+      "size": 21,
+      "width": null,
+      "bold": true,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Retry",
+      "x": 78,
+      "y": 1127,
+      "size": 17,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Central Asian Coinage Atlas",
+      "x": 58,
+      "y": 1248,
+      "size": 17,
+      "width": null,
+      "bold": false,
+      "color": "#F5EADB",
+      "lines": 1
+    }
+  ]
+}

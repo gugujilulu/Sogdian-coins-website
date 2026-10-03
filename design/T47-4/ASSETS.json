@@ -1,0 +1,22 @@
+{
+  "package": "T46-R3-complete-visual-pack (1).zip",
+  "assets": [
+    {
+      "id": "city",
+      "source": "web-ready/city.png",
+      "sha256": "0fad8fd1f5275bfee71af2c0731634cd5b9f452af7888e4795f56c832304c503",
+      "alphaCrop": [
+        8,
+        19,
+        243,
+        153
+      ],
+      "size": [
+        235,
+        134
+      ],
+      "output": "/visual/t47/r3/city.webp"
+    }
+  ],
+  "processing": "Visible-alpha crop, no recoloring or coin image processing."
+}
