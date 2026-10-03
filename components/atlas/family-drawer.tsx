@@ -29,7 +29,7 @@ export default function FamilyDrawer(p:Props){
  const activeGroup=variants.find(v=>v.id===variant);
  const overview=<>   <div className="drawer-secondary"><CopyLink link={{view:'atlas',family:family.id}}/><button onClick={p.onCatalogue}><BookOpen size={14}/>{tr("目录")}</button>{p.onReturnCollection&&<button onClick={p.onReturnCollection}>{tr("返回此集合")}</button>}</div>
    <div className="family-meta"><span>{family.dateLabel||tr("年代未记录")}</span><span>{family.region||tr("地区未记录")}</span><span>{family.polity||tr("政权未记录")}</span><span className="family-research-status">{copyKnown(family.status,locale)}</span></div>
-   <div className="family-location"><MapPin size={14}/><span>{p.placeName||tr("位置未记录")} · {family.anchor?.role||tr("位置角色未记录")}</span>{p.onLocate?<button onClick={p.onLocate}>{tr("定位")}</button>:<span>{tr("暂无地图定位")}</span>}</div>
+   <div className="family-location"><MapPin size={14}/><span>{p.placeName||tr("位置未记录")} · {family.anchor?.role?copyKnown(family.anchor.role,locale):tr("位置角色未记录")}</span>{p.onLocate?<button onClick={p.onLocate}>{tr("定位")}</button>:<span>{tr("暂无地图定位")}</span>}</div>
 </>;
  return <aside ref={sheet} data-sheet-state={state} style={{height:dragHeight??undefined,transition:reduceMotion?'none':undefined}} className="family-drawer"
  aria-label={`${tr('家族详情')} ${family.title}`}>
@@ -57,7 +57,7 @@ export default function FamilyDrawer(p:Props){
    {mobile&&overview}
    {p.mapBackground}
    <details className="research-block"><summary>{tr("家族说明与研究问题")}</summary><p>{tr("来源／目录组不等同于已审定学术 variant。")}</p><p>{family.description}</p>{family.question&&<div className="question-note">{family.question}</div>}{family.anchor&&<p>{family.anchor.note}</p>}</details>
-   {activeGroup&&<details className="research-block"><summary>目录组说明 · {activeGroup.title}</summary><p>{activeGroup.status} · {activeGroup.reference}</p><p>{activeGroup.description}</p></details>}
+   {activeGroup&&<details className="research-block"><summary>{tr("目录组说明")} · {activeGroup.title}</summary><p>{activeGroup.status} · {activeGroup.reference}</p><p>{activeGroup.description}</p></details>}
    <details className="research-block"><summary>{tr("铭文、文献与来源")}</summary>{family.legend&&<><h3>{tr("铭文 / Inscription")}</h3><p className="inscription">{family.legend}</p><p>{family.legendNote}</p></>}{family.publications.map(pub=><div className="publication" key={pub.url}><a href={pub.url} target="_blank" rel="noreferrer">{pub.title}</a><small>{pub.role}</small></div>)}</details>
   </div>
  </aside>

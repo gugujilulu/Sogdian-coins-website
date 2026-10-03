@@ -331,3 +331,10 @@
 .source-record-list article>div{min-width:0;overflow-wrap:anywhere}
 .source-record-actions{flex-wrap:wrap;justify-content:flex-start}
 .catalogue-content h1,.catalogue-content h2{overflow-wrap:anywhere}
+
+/* Research copy follows the existing page layout and remains readable in all locales. */
+.research-page #sources-methods details,.research-page .research-references{padding:.8rem 0;border-bottom:1px solid var(--border,#d6d0c4)}
+.research-page summary{cursor:pointer;font-weight:600;line-height:1.5}
+.research-page p,.research-page a{overflow-wrap:anywhere}
+.research-page #sources-methods p{max-width:75ch;line-height:1.7}
+.research-page .metrics-row{flex-wrap:wrap}
