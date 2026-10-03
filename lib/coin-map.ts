@@ -90,7 +90,7 @@ export function coinMarkerVisual(image:ImageRecord|null|undefined,failed=false){
 export type CoinDisplay=DisplayCoinEntry&{
  stage:CoinDisplayStage;kind:'family'|'collection';members:CoinMember[];representative:CoinMember|undefined;
  sameCityExpansion:boolean;anchors:{placeId:string;coordinates:[number,number]}[];
- offsetX:number;collectionGroups:CoinPlace[];fullMembers:CoinMember[];overflow:boolean;
+ offsetX:number;collectionGroups:CoinPlace[];fullMembers:CoinMember[];overflow:boolean;occluded?:boolean;
 };
 /** Stable, bounded screen-space scattering. No random state or geographic edits. */
 export type CoinScatterPosition={offsetX:number;offset:number};
@@ -131,7 +131,7 @@ function scatterCoins(entries:MapCoinEntry[],input:{width:number;height:number;l
  const pending=cities.flatMap(city=>city.members.map(member=>({city,member,key:`city:${city.cityKey}:${member.family.id}`})));
  // Keep every still-valid old slot first. Small pans, selection and filters don't reshuffle neighbours.
  const remaining:typeof pending=[];
- for(const item of [...pending].sort((a,b)=>Number(b.member.family.id===input.selectedId)-Number(a.member.family.id===input.selectedId))){const old=input.previous?.get(item.key);const e=old&&make(item.city,item.member,[],old);if(e&&free(e)){item.city.placed.push(e);occupied.push(e.bounds);result.push(e)}else remaining.push(item)}
+ for(const item of [...pending].sort((a,b)=>Number(b.member.family.id===input.selectedId)-Number(a.member.family.id===input.selectedId))){const old=input.previous?.get(item.key);let e=old&&make(item.city,item.member,[],old);if((!e||!free(e))&&item.member.family.id===input.selectedId)e=candidates(item.city,item.member.family.id).map(pos=>make(item.city,item.member,[],pos)).find(free);if(e&&free(e)){item.city.placed.push(e);occupied.push(e.bounds);result.push(e)}else remaining.push(item)}
  remaining.sort((a,b)=>Number(b.member.family.id===input.selectedId)-Number(a.member.family.id===input.selectedId)||hash(a.key)-hash(b.key)||a.key.localeCompare(b.key));
  for(const item of remaining){const e=candidates(item.city,item.member.family.id).map(pos=>make(item.city,item.member,[],pos)).find(free);if(e){item.city.placed.push(e);occupied.push(e.bounds);result.push(e)}}
  for(const city of cities){
@@ -140,10 +140,11 @@ function scatterCoins(entries:MapCoinEntry[],input:{width:number;height:number;l
   let e=findRemaining();
   // Reserve an actionable collection footprint, never displace the selected family.
   if(!e){const removable=[...city.placed].reverse().find(e=>e.members[0].family.id!==input.selectedId);if(removable){occupied.splice(occupied.indexOf(removable.bounds),1);result.splice(result.indexOf(removable),1);city.placed.splice(city.placed.indexOf(removable),1);unplaced=city.members.filter(m=>!city.placed.some(e=>e.members[0].family.id===m.family.id));e=findRemaining()||make(city,undefined,unplaced,{offsetX:removable.offsetX,offset:removable.offset});if(!free(e))e=undefined}}
-  // Completely covered anchors retain their members through a nearby visible collection,
-  // using the same bounded candidates. No off-screen or overlapping fallback is drawn.
   if(e){result.push(e);occupied.push(e.bounds)}else{
-   const target=result.find(e=>e.overflow);if(target){target.members=uniqueMembers([{...city.entry.groups[0],members:[...target.members,...unplaced]}]);target.fullMembers=uniqueMembers([...target.collectionGroups,...city.entry.groups]);target.collectionGroups=[...target.collectionGroups,...city.entry.groups];}
+   // Fully occluded map space (e.g. reading/tool overlay) has no usable target.
+   // Keep the city's complete remainder in the display model, but don't expose
+   // an overlapping or hidden keyboard target underneath the covering panel.
+   result.push({...make(city,undefined,unplaced,{offsetX:0,offset:0}),occluded:true});
   }
  }
  return result.sort((a,b)=>a.key.localeCompare(b.key));
