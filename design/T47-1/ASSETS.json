@@ -1,0 +1,876 @@
+{
+  "sourcePackages": [
+    "Sogdian-Atlas-T46-R1-Art-Only-v2.zip",
+    "Sogdian-Atlas-T46-R2-Art-Only-v2.zip"
+  ],
+  "processing": "Visible alpha crop, proportionate downsampling and WebP export only. Source art unchanged. No coin/map images processed.",
+  "assets": [
+    {
+      "namespace": "r1",
+      "asset": "header-background",
+      "source": "T46-R1-art-only-v2/assets/header-background.png",
+      "sha256": "70b55c8a00791d7918c6fda6bec24bff1efe2a808a9a3b18f4d972863f535ead",
+      "alphaCrop": [
+        0,
+        0,
+        2048,
+        682
+      ],
+      "output": "/visual/t47/r1/header-background.webp",
+      "size": [
+        1600,
+        533
+      ]
+    },
+    {
+      "namespace": "r1",
+      "asset": "figure-left",
+      "source": "T46-R1-art-only-v2/assets/figure-left.png",
+      "sha256": "621f88269efbd0051122dc28ff0362f41006f0f2925f9593c168116e474f099d",
+      "alphaCrop": [
+        0,
+        0,
+        1177,
+        1210
+      ],
+      "output": "/visual/t47/r1/figure-left.webp",
+      "size": [
+        584,
+        600
+      ]
+    },
+    {
+      "namespace": "r1",
+      "asset": "figure-right",
+      "source": "T46-R1-art-only-v2/assets/figure-right.png",
+      "sha256": "01d3ef37261cfb48d6af9b95456ec55e34cf60955538402ae21c5f559e12eaeb",
+      "alphaCrop": [
+        0,
+        0,
+        1280,
+        1173
+      ],
+      "output": "/visual/t47/r1/figure-right.webp",
+      "size": [
+        600,
+        550
+      ]
+    },
+    {
+      "namespace": "r1",
+      "asset": "rosette",
+      "source": "T46-R1-art-only-v2/assets/rosette.png",
+      "sha256": "3cbf62949300d0472337ca151713381a36e929f50369f1f85ef42d880cef4d94",
+      "alphaCrop": [
+        0,
+        0,
+        1263,
+        1246
+      ],
+      "output": "/visual/t47/r1/rosette.webp",
+      "size": [
+        600,
+        592
+      ]
+    },
+    {
+      "namespace": "r1",
+      "asset": "paper",
+      "source": "T46-R1-art-only-v2/assets/paper.png",
+      "sha256": "f44e2dc9dc807ee508a7c7d99e10413dd225e7880d7d42492121902b8581b6e6",
+      "alphaCrop": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "output": "/visual/t47/r1/paper.webp",
+      "size": [
+        600,
+        600
+      ]
+    },
+    {
+      "namespace": "r1",
+      "asset": "corner",
+      "source": "T46-R1-art-only-v2/assets/corner.png",
+      "sha256": "01004bb91553b206ebce19d8fbe18ef516ba52908c33c67d2209f7ece7b10112",
+      "alphaCrop": [
+        11,
+        0,
+        1267,
+        1216
+      ],
+      "output": "/visual/t47/r1/corner.webp",
+      "size": [
+        600,
+        581
+      ]
+    },
+    {
+      "namespace": "r1",
+      "asset": "search",
+      "source": "T46-R1-art-only-v2/assets/search.png",
+      "sha256": "fff9bb56a2f64f0b17f1ef727f134b2d9e58c7dde61a952df870fe6c24f92f40",
+      "alphaCrop": [
+        0,
+        20,
+        1232,
+        1214
+      ],
+      "output": "/visual/t47/r1/search.webp",
+      "size": [
+        192,
+        186
+      ]
+    },
+    {
+      "namespace": "r1",
+      "asset": "filters",
+      "source": "T46-R1-art-only-v2/assets/filters.png",
+      "sha256": "f006d93a52826b1641d7e155c1b0ae3892b17a1891be4f2fb11681d1d6211231",
+      "alphaCrop": [
+        0,
+        20,
+        1298,
+        1199
+      ],
+      "output": "/visual/t47/r1/filters.webp",
+      "size": [
+        192,
+        174
+      ]
+    },
+    {
+      "namespace": "r1",
+      "asset": "layers",
+      "source": "T46-R1-art-only-v2/assets/layers.png",
+      "sha256": "47a35278c1545a082d150015d0a0ba1d28507cc8cb70c515d4b2b2cf4f951fee",
+      "alphaCrop": [
+        47,
+        25,
+        1210,
+        1230
+      ],
+      "output": "/visual/t47/r1/layers.webp",
+      "size": [
+        185,
+        192
+      ]
+    },
+    {
+      "namespace": "r1",
+      "asset": "fit",
+      "source": "T46-R1-art-only-v2/assets/fit.png",
+      "sha256": "31300f307662161b4629723fe42ab89c467e5caf1f4292efd98cc3a1c1da382c",
+      "alphaCrop": [
+        0,
+        51,
+        1240,
+        1204
+      ],
+      "output": "/visual/t47/r1/fit.webp",
+      "size": [
+        192,
+        179
+      ]
+    },
+    {
+      "namespace": "r1",
+      "asset": "locate",
+      "source": "T46-R1-art-only-v2/assets/locate.png",
+      "sha256": "fbe3d4442d30b0834c9ca37b39b71011027f6643b5caa356ca1622efd0b7476d",
+      "alphaCrop": [
+        21,
+        31,
+        1182,
+        1217
+      ],
+      "output": "/visual/t47/r1/locate.webp",
+      "size": [
+        188,
+        192
+      ]
+    },
+    {
+      "namespace": "r1",
+      "asset": "clock",
+      "source": "T46-R1-art-only-v2/assets/clock.png",
+      "sha256": "f723bb76da184e4013982c3a5b669ec2d5de717d37adba58f5a7006ce279085d",
+      "alphaCrop": [
+        97,
+        21,
+        1208,
+        1212
+      ],
+      "output": "/visual/t47/r1/clock.webp",
+      "size": [
+        179,
+        192
+      ]
+    },
+    {
+      "namespace": "r1",
+      "asset": "globe",
+      "source": "T46-R1-art-only-v2/assets/globe.png",
+      "sha256": "f0295f761f3ec89502eb6847d7bbfb22c0f6d26e36205203831007e3fac47203",
+      "alphaCrop": [
+        160,
+        151,
+        1222,
+        1246
+      ],
+      "output": "/visual/t47/r1/globe.webp",
+      "size": [
+        186,
+        192
+      ]
+    },
+    {
+      "namespace": "r1",
+      "asset": "plus",
+      "source": "T46-R1-art-only-v2/assets/plus.png",
+      "sha256": "f642ed765ad51d162b6620fc8276ba2d322c493ea0f37255dfb2663b3ad47267",
+      "alphaCrop": [
+        49,
+        19,
+        1327,
+        1161
+      ],
+      "output": "/visual/t47/r1/plus.webp",
+      "size": [
+        192,
+        172
+      ]
+    },
+    {
+      "namespace": "r1",
+      "asset": "minus",
+      "source": "T46-R1-art-only-v2/assets/minus.png",
+      "sha256": "cd3fa2250bef7a76c55aa55277065e83918adbf31328b62064fd5469b3f1c137",
+      "alphaCrop": [
+        65,
+        21,
+        1442,
+        952
+      ],
+      "output": "/visual/t47/r1/minus.webp",
+      "size": [
+        192,
+        130
+      ]
+    },
+    {
+      "namespace": "r1",
+      "asset": "close",
+      "source": "T46-R1-art-only-v2/assets/close.png",
+      "sha256": "f2c0e429bef7da183eb5b09db0f762c098593c39e620b3d91f03c95e8b2c57af",
+      "alphaCrop": [
+        19,
+        21,
+        1210,
+        1254
+      ],
+      "output": "/visual/t47/r1/close.webp",
+      "size": [
+        185,
+        192
+      ]
+    },
+    {
+      "namespace": "r1",
+      "asset": "chevron",
+      "source": "T46-R1-art-only-v2/assets/chevron.png",
+      "sha256": "87d0cb00c932aed8f46fd0cbc13d17054a800c575620695378928b6d895b9e78",
+      "alphaCrop": [
+        105,
+        32,
+        1522,
+        952
+      ],
+      "output": "/visual/t47/r1/chevron.webp",
+      "size": [
+        192,
+        125
+      ]
+    },
+    {
+      "namespace": "r1",
+      "asset": "back",
+      "source": "T46-R1-art-only-v2/assets/back.png",
+      "sha256": "417f218e05da0160787ccc77f1bb7a37fa98c620c7f8509e0de37f8074f3a9f4",
+      "alphaCrop": [
+        65,
+        21,
+        1436,
+        982
+      ],
+      "output": "/visual/t47/r1/back.webp",
+      "size": [
+        192,
+        135
+      ]
+    },
+    {
+      "namespace": "r1",
+      "asset": "info",
+      "source": "T46-R1-art-only-v2/assets/info.png",
+      "sha256": "ce6bbe9b3ff3bbbeb9e51695af81d7ed0ea0cc2e73c10a23635a4c0d5ff86ddc",
+      "alphaCrop": [
+        23,
+        15,
+        1210,
+        1254
+      ],
+      "output": "/visual/t47/r1/info.webp",
+      "size": [
+        184,
+        192
+      ]
+    },
+    {
+      "namespace": "r2",
+      "asset": "header-background",
+      "source": "T46-R2-art-only-v2/assets/header-background.png",
+      "sha256": "70b55c8a00791d7918c6fda6bec24bff1efe2a808a9a3b18f4d972863f535ead",
+      "alphaCrop": [
+        0,
+        0,
+        2048,
+        682
+      ],
+      "output": "/visual/t47/r2/header-background.webp",
+      "size": [
+        1600,
+        533
+      ]
+    },
+    {
+      "namespace": "r2",
+      "asset": "figure-left",
+      "source": "T46-R2-art-only-v2/assets/figure-left.png",
+      "sha256": "621f88269efbd0051122dc28ff0362f41006f0f2925f9593c168116e474f099d",
+      "alphaCrop": [
+        0,
+        0,
+        1177,
+        1210
+      ],
+      "output": "/visual/t47/r2/figure-left.webp",
+      "size": [
+        584,
+        600
+      ]
+    },
+    {
+      "namespace": "r2",
+      "asset": "figure-right",
+      "source": "T46-R2-art-only-v2/assets/figure-right.png",
+      "sha256": "01d3ef37261cfb48d6af9b95456ec55e34cf60955538402ae21c5f559e12eaeb",
+      "alphaCrop": [
+        0,
+        0,
+        1280,
+        1173
+      ],
+      "output": "/visual/t47/r2/figure-right.webp",
+      "size": [
+        600,
+        550
+      ]
+    },
+    {
+      "namespace": "r2",
+      "asset": "rosette",
+      "source": "T46-R2-art-only-v2/assets/rosette.png",
+      "sha256": "3cbf62949300d0472337ca151713381a36e929f50369f1f85ef42d880cef4d94",
+      "alphaCrop": [
+        0,
+        0,
+        1263,
+        1246
+      ],
+      "output": "/visual/t47/r2/rosette.webp",
+      "size": [
+        600,
+        592
+      ]
+    },
+    {
+      "namespace": "r2",
+      "asset": "paper",
+      "source": "T46-R2-art-only-v2/assets/paper.png",
+      "sha256": "f44e2dc9dc807ee508a7c7d99e10413dd225e7880d7d42492121902b8581b6e6",
+      "alphaCrop": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "output": "/visual/t47/r2/paper.webp",
+      "size": [
+        600,
+        600
+      ]
+    },
+    {
+      "namespace": "r2",
+      "asset": "corner",
+      "source": "T46-R2-art-only-v2/assets/corner.png",
+      "sha256": "01004bb91553b206ebce19d8fbe18ef516ba52908c33c67d2209f7ece7b10112",
+      "alphaCrop": [
+        11,
+        0,
+        1267,
+        1216
+      ],
+      "output": "/visual/t47/r2/corner.webp",
+      "size": [
+        600,
+        581
+      ]
+    },
+    {
+      "namespace": "r2",
+      "asset": "search",
+      "source": "T46-R2-art-only-v2/assets/search.png",
+      "sha256": "fff9bb56a2f64f0b17f1ef727f134b2d9e58c7dde61a952df870fe6c24f92f40",
+      "alphaCrop": [
+        0,
+        20,
+        1232,
+        1214
+      ],
+      "output": "/visual/t47/r2/search.webp",
+      "size": [
+        192,
+        186
+      ]
+    },
+    {
+      "namespace": "r2",
+      "asset": "filters",
+      "source": "T46-R2-art-only-v2/assets/filters.png",
+      "sha256": "f006d93a52826b1641d7e155c1b0ae3892b17a1891be4f2fb11681d1d6211231",
+      "alphaCrop": [
+        0,
+        20,
+        1298,
+        1199
+      ],
+      "output": "/visual/t47/r2/filters.webp",
+      "size": [
+        192,
+        174
+      ]
+    },
+    {
+      "namespace": "r2",
+      "asset": "layers",
+      "source": "T46-R2-art-only-v2/assets/layers.png",
+      "sha256": "47a35278c1545a082d150015d0a0ba1d28507cc8cb70c515d4b2b2cf4f951fee",
+      "alphaCrop": [
+        47,
+        25,
+        1210,
+        1230
+      ],
+      "output": "/visual/t47/r2/layers.webp",
+      "size": [
+        185,
+        192
+      ]
+    },
+    {
+      "namespace": "r2",
+      "asset": "fit",
+      "source": "T46-R2-art-only-v2/assets/fit.png",
+      "sha256": "31300f307662161b4629723fe42ab89c467e5caf1f4292efd98cc3a1c1da382c",
+      "alphaCrop": [
+        0,
+        51,
+        1240,
+        1204
+      ],
+      "output": "/visual/t47/r2/fit.webp",
+      "size": [
+        192,
+        179
+      ]
+    },
+    {
+      "namespace": "r2",
+      "asset": "locate",
+      "source": "T46-R2-art-only-v2/assets/locate.png",
+      "sha256": "fbe3d4442d30b0834c9ca37b39b71011027f6643b5caa356ca1622efd0b7476d",
+      "alphaCrop": [
+        21,
+        31,
+        1182,
+        1217
+      ],
+      "output": "/visual/t47/r2/locate.webp",
+      "size": [
+        188,
+        192
+      ]
+    },
+    {
+      "namespace": "r2",
+      "asset": "clock",
+      "source": "T46-R2-art-only-v2/assets/clock.png",
+      "sha256": "f723bb76da184e4013982c3a5b669ec2d5de717d37adba58f5a7006ce279085d",
+      "alphaCrop": [
+        97,
+        21,
+        1208,
+        1212
+      ],
+      "output": "/visual/t47/r2/clock.webp",
+      "size": [
+        179,
+        192
+      ]
+    },
+    {
+      "namespace": "r2",
+      "asset": "globe",
+      "source": "T46-R2-art-only-v2/assets/globe.png",
+      "sha256": "f0295f761f3ec89502eb6847d7bbfb22c0f6d26e36205203831007e3fac47203",
+      "alphaCrop": [
+        160,
+        151,
+        1222,
+        1246
+      ],
+      "output": "/visual/t47/r2/globe.webp",
+      "size": [
+        186,
+        192
+      ]
+    },
+    {
+      "namespace": "r2",
+      "asset": "plus",
+      "source": "T46-R2-art-only-v2/assets/plus.png",
+      "sha256": "f642ed765ad51d162b6620fc8276ba2d322c493ea0f37255dfb2663b3ad47267",
+      "alphaCrop": [
+        49,
+        19,
+        1327,
+        1161
+      ],
+      "output": "/visual/t47/r2/plus.webp",
+      "size": [
+        192,
+        172
+      ]
+    },
+    {
+      "namespace": "r2",
+      "asset": "minus",
+      "source": "T46-R2-art-only-v2/assets/minus.png",
+      "sha256": "cd3fa2250bef7a76c55aa55277065e83918adbf31328b62064fd5469b3f1c137",
+      "alphaCrop": [
+        65,
+        21,
+        1442,
+        952
+      ],
+      "output": "/visual/t47/r2/minus.webp",
+      "size": [
+        192,
+        130
+      ]
+    },
+    {
+      "namespace": "r2",
+      "asset": "close",
+      "source": "T46-R2-art-only-v2/assets/close.png",
+      "sha256": "f2c0e429bef7da183eb5b09db0f762c098593c39e620b3d91f03c95e8b2c57af",
+      "alphaCrop": [
+        19,
+        21,
+        1210,
+        1254
+      ],
+      "output": "/visual/t47/r2/close.webp",
+      "size": [
+        185,
+        192
+      ]
+    },
+    {
+      "namespace": "r2",
+      "asset": "chevron",
+      "source": "T46-R2-art-only-v2/assets/chevron.png",
+      "sha256": "87d0cb00c932aed8f46fd0cbc13d17054a800c575620695378928b6d895b9e78",
+      "alphaCrop": [
+        105,
+        32,
+        1522,
+        952
+      ],
+      "output": "/visual/t47/r2/chevron.webp",
+      "size": [
+        192,
+        125
+      ]
+    },
+    {
+      "namespace": "r2",
+      "asset": "back",
+      "source": "T46-R2-art-only-v2/assets/back.png",
+      "sha256": "417f218e05da0160787ccc77f1bb7a37fa98c620c7f8509e0de37f8074f3a9f4",
+      "alphaCrop": [
+        65,
+        21,
+        1436,
+        982
+      ],
+      "output": "/visual/t47/r2/back.webp",
+      "size": [
+        192,
+        135
+      ]
+    },
+    {
+      "namespace": "r2",
+      "asset": "info",
+      "source": "T46-R2-art-only-v2/assets/info.png",
+      "sha256": "ce6bbe9b3ff3bbbeb9e51695af81d7ed0ea0cc2e73c10a23635a4c0d5ff86ddc",
+      "alphaCrop": [
+        23,
+        15,
+        1210,
+        1254
+      ],
+      "output": "/visual/t47/r2/info.webp",
+      "size": [
+        184,
+        192
+      ]
+    },
+    {
+      "namespace": "r2",
+      "asset": "dark-surface",
+      "source": "T46-R2-art-only-v2/assets/dark-surface.png",
+      "sha256": "2c55b215ca8e978f259946ebc39900221103ba6340c1cd712952131051de3d86",
+      "alphaCrop": [
+        0,
+        0,
+        570,
+        682
+      ],
+      "output": "/visual/t47/r2/dark-surface.webp",
+      "size": [
+        501,
+        600
+      ]
+    },
+    {
+      "namespace": "r2",
+      "asset": "detail-frame",
+      "source": "T46-R2-art-only-v2/assets/detail-frame.png",
+      "sha256": "c255be1611951b54343570427405ae78ea03b471b42811cb532256fc13358aa7",
+      "alphaCrop": [
+        0,
+        0,
+        887,
+        1774
+      ],
+      "output": "/visual/t47/r2/detail-frame.webp",
+      "size": [
+        450,
+        900
+      ]
+    },
+    {
+      "namespace": "r2",
+      "asset": "detail-frame-fitted",
+      "source": "T46-R2-art-only-v2/assets/detail-frame-fitted.png",
+      "sha256": "138975333e1b89b6da7befcc58f6d69e83a7019e9d94d4bfd5c6b3c1441003fd",
+      "alphaCrop": [
+        0,
+        0,
+        484,
+        987
+      ],
+      "output": "/visual/t47/r2/detail-frame-fitted.webp",
+      "size": [
+        441,
+        900
+      ]
+    },
+    {
+      "namespace": "r2",
+      "asset": "watermark",
+      "source": "T46-R2-art-only-v2/assets/watermark.png",
+      "sha256": "31efd8440dc539af1646fc26a8a317b68feaff107af0a287b42e2ab433d4dedb",
+      "alphaCrop": [
+        0,
+        14,
+        1122,
+        1402
+      ],
+      "output": "/visual/t47/r2/watermark.webp",
+      "size": [
+        485,
+        600
+      ]
+    },
+    {
+      "namespace": "r2",
+      "asset": "card-corner",
+      "source": "T46-R2-art-only-v2/assets/card-corner.png",
+      "sha256": "9a32e3c6479c8c5ef39b3115ac182bfe1c1d1dfd89db3029139a430a80f57b22",
+      "alphaCrop": [
+        49,
+        21,
+        1364,
+        1115
+      ],
+      "output": "/visual/t47/r2/card-corner.webp",
+      "size": [
+        600,
+        499
+      ]
+    },
+    {
+      "namespace": "r2",
+      "asset": "frieze",
+      "source": "T46-R2-art-only-v2/assets/frieze.png",
+      "sha256": "8f4f7a247a1047eb817f81eada682ed55ca50feb403f01138680add9018ff2c3",
+      "alphaCrop": [
+        0,
+        19,
+        2172,
+        682
+      ],
+      "output": "/visual/t47/r2/frieze.webp",
+      "size": [
+        600,
+        183
+      ]
+    },
+    {
+      "namespace": "r2",
+      "asset": "book",
+      "source": "T46-R2-art-only-v2/assets/book.png",
+      "sha256": "df563d3e7a613cb2502531aced5ae9c6bc56d89433131bb0b74680a92fa8c389",
+      "alphaCrop": [
+        65,
+        8,
+        1454,
+        984
+      ],
+      "output": "/visual/t47/r2/book.webp",
+      "size": [
+        192,
+        135
+      ]
+    },
+    {
+      "namespace": "r2",
+      "asset": "pin",
+      "source": "T46-R2-art-only-v2/assets/pin.png",
+      "sha256": "097e433b7bd4a71179a617d20f25351141c3a7f036df7c7a778de54de0c7d6c8",
+      "alphaCrop": [
+        105,
+        53,
+        1210,
+        1150
+      ],
+      "output": "/visual/t47/r2/pin.webp",
+      "size": [
+        192,
+        191
+      ]
+    },
+    {
+      "namespace": "r2",
+      "asset": "range",
+      "source": "T46-R2-art-only-v2/assets/range.png",
+      "sha256": "0b62e4e093bbbb82624f4f4df50ab657a5a72cd57ce135ccab0d906fa3f63e7c",
+      "alphaCrop": [
+        0,
+        19,
+        1328,
+        1157
+      ],
+      "output": "/visual/t47/r2/range.webp",
+      "size": [
+        192,
+        165
+      ]
+    },
+    {
+      "namespace": "r2",
+      "asset": "share",
+      "source": "T46-R2-art-only-v2/assets/share.png",
+      "sha256": "17aa382b97474b6e1335faa5605e45fdc2fffbe011efce0818b9c44bed6c7c53",
+      "alphaCrop": [
+        23,
+        21,
+        1248,
+        1152
+      ],
+      "output": "/visual/t47/r2/share.webp",
+      "size": [
+        192,
+        177
+      ]
+    },
+    {
+      "namespace": "r2",
+      "asset": "expand",
+      "source": "T46-R2-art-only-v2/assets/expand.png",
+      "sha256": "f9ee150c249e256f7edf465de7931b75828932ccc177715faaf3c55ae5ac8770",
+      "alphaCrop": [
+        35,
+        21,
+        1085,
+        1160
+      ],
+      "output": "/visual/t47/r2/expand.webp",
+      "size": [
+        177,
+        192
+      ]
+    },
+    {
+      "namespace": "r2",
+      "asset": "layers-light",
+      "source": "T46-R2-art-only-v2/assets/layers-light.png",
+      "sha256": "76c942debb9a44e97e95b682584f8b9c21ffc88959584c943dae4bfd313c525c",
+      "alphaCrop": [
+        47,
+        25,
+        1210,
+        1230
+      ],
+      "output": "/visual/t47/r2/layers-light.webp",
+      "size": [
+        185,
+        192
+      ]
+    },
+    {
+      "namespace": "r2",
+      "asset": "clock-light",
+      "source": "T46-R2-art-only-v2/assets/clock-light.png",
+      "sha256": "b17203e3b20762e41c5051c0872210a43cc178a4a7c26b4909b1eeffb8209afe",
+      "alphaCrop": [
+        97,
+        21,
+        1208,
+        1212
+      ],
+      "output": "/visual/t47/r2/clock-light.webp",
+      "size": [
+        179,
+        192
+      ]
+    }
+  ]
+}
