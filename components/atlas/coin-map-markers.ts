@@ -62,7 +62,7 @@ export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPla
   const layout=displayCoins({entries:entries.filter(e=>e!==null),labels:occupied,width:map.getContainer().clientWidth,height:map.getContainer().clientHeight,zoom:map.getZoom(),selectedId:getSelected()});
   for(const e of layout){
    const members=e.members,cover=e.representative,selected=members.some(m=>m.family.id===getSelected());
-   const large=e.large,geometry=markerGeometry(e.point,large,map.getContainer().clientWidth<600,members.length,e.offset);
+   const large=e.large,geometry=markerGeometry(e.point,large,map.getContainer().clientWidth<600,members.length,e.offset,cover?.image);
    const signature=JSON.stringify([members.map(m=>[m.family.id,m.recordCount,m.image?.id]),cover?.image?.path,large,geometry.width,e.offset,e.displayCollection,selected,!!getSelected(),e.stage,e.sameCityExpansion]);live.add(e.key);
    let entry=markers.get(e.key);
    if(entry?.signature!==signature){entry?.marker.remove();const button=document.createElement('button');button.type='button';button.className=`coin-map-marker ${large?'photo':'compact'}${selected?' selected':getSelected()?' muted':''}`;

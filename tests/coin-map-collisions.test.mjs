@@ -14,7 +14,7 @@ function verify(input,output){
  for(let i=0;i<output.length;i++)for(let j=i+1;j<output.length;j++)assert.equal(intersects(output[i].bounds,output[j].bounds),false);
 }
 test('photo plus nearby compact form an accessible display collection, preserving originals',()=>{
- const entries=[point('a',150,180),point('b',173,166,false)],before=JSON.stringify(entries);
+ const entries=[point('a',150,180),point('b',173,130,false)],before=JSON.stringify(entries);
  const result=layoutCoinEntries(entries,[],500,400);verify(entries,result);
  assert.equal(result.length,1);assert.equal(result[0].displayCollection,true);assert.equal(result[0].groups.length,2);
  assert.equal(JSON.stringify(entries),before);
@@ -26,8 +26,8 @@ test('two overlapping compact entries keep both members; selected anchor wins in
  assert.deepEqual(result,layoutCoinEntries([...entries].reverse(),[],500,400,'b0'));
 });
 test('protruding badge participates even when compact bodies do not intersect',()=>{
- const entries=[point('a',150,180,false,2),point('b',190,180,false,2)];
- assert.equal(intersects({x:150,y:168,w:32,h:32},{x:190,y:168,w:32,h:32}),false);
+ const entries=[point('a',150,180,false,2),point('b',206,180,false,2)];
+ assert.equal(intersects({x:150,y:168,w:48,h:32},{x:206,y:168,w:48,h:32}),false);
  assert.equal(intersects(markerGeometry(entries[0].point,false,true,2).box,markerGeometry(entries[1].point,false,true,2).box),true);
  const result=layoutCoinEntries(entries,[],390,400);verify(entries,result);assert.equal(result.length,1);
 });

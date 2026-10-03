@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {coinPlaces,displayCoins,coinMarkerVisual} from '../lib/coin-map.ts';
+import {coinPlaces,displayCoins,coinMarkerVisual,markerGeometry} from '../lib/coin-map.ts';
 const d=JSON.parse(readFileSync(new URL('../public/data/atlas.json',import.meta.url)));
 const places=coinPlaces(d.families,d.specimens,d.places);
 const panch=places.find(g=>g.members.some(m=>m.family.id==='lady-nana'));
@@ -32,4 +32,20 @@ test('source-restricted covers and missing/failed images use bounded neutral fal
  assert.equal(run(groups)[0].representative.image.sourceName,'Bactrianumis');
  assert.equal(coinMarkerVisual(run(groups)[0].representative.image,true),'placeholder');
  const none=coinPlaces(d.families,[r],d.places,()=>false);assert.equal(run(none)[0].members.length,1);assert.equal(coinMarkerVisual(run(none)[0].representative.image),'placeholder');
+});
+
+test('actual aspect-ratio footprints preserve wide, square and single-face images; compact remains readable',()=>{
+ for(const small of [false,true])for(const [width,height]of [[2200,1100],[800,800],[400,700]]){
+  const image={width,height};const normal=markerGeometry({x:200,y:200},true,small,3,-64,image),compact=markerGeometry({x:200,y:200},false,small,3,-64,image);
+  assert.ok(Math.abs(normal.width/normal.height-width/height)<.001);
+  assert.ok(Math.abs(compact.width/compact.height-width/height)<.001);
+  assert.ok(compact.width/normal.width>=.8);assert.ok(compact.height/normal.height>=.8);
+  assert.ok(normal.box.w>normal.width);assert.ok(normal.box.h>normal.height);
+ }
+});
+test('Bukhara presentation preference uses inspected existing photo, with filtered fallback',()=>{
+ const member=coinPlaces(d.families,d.specimens,d.places).flatMap(g=>g.members).find(m=>m.family.id==='bukhara-kaiyuan-tamgha');
+ assert.equal(member.image.id,'z1062');assert.equal(member.record.id,'zeno-1062');
+ const only=d.specimens.filter(r=>r.id==='zeno-1031');const filtered=coinPlaces(d.families,only,d.places).flatMap(g=>g.members)[0];
+ assert.equal(filtered.image.id,'z1031');assert.equal(filtered.recordCount,1);
 });

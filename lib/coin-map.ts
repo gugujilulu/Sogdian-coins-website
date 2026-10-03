@@ -1,6 +1,8 @@
 import type {Family, Place, Specimen, ImageRecord} from './atlas';
 export type CoinMember={family:Family;recordCount:number;record:Specimen|null;image:ImageRecord|null};
 export type CoinPlace={place:Place;members:CoinMember[]};
+// Presentation preference only: inspected existing double-face photo, without title block.
+export const coinCoverPreferences:Readonly<Record<string,readonly string[]>>={'bukhara-kaiyuan-tamgha':['z1062']};
 const stable=(a:{id:string},b:{id:string})=>a.id<b.id?-1:a.id>b.id?1:0;
 /** Only matched records supply covers. Family artwork is never substituted. */
 export function coinPlaces(families:Family[],records:Specimen[],places:Place[],imageMatches:(image:ImageRecord)=>boolean=()=>true):CoinPlace[]{
@@ -9,8 +11,9 @@ export function coinPlaces(families:Family[],records:Specimen[],places:Place[],i
  const groups=new Map<string,CoinMember[]>();
  for(const f of [...new Map(families.map(f=>[f.id,f])).values()].sort(stable)){
   const rs=[...(byFamily.get(f.id)||[])].sort(stable);if(!f.anchor||!rs.length)continue;
-  const record=rs.find(r=>r.images.some(i=>i.path&&imageMatches(i)))||rs[0];
-  const image=[...record.images].filter(i=>i.path&&imageMatches(i)).sort(stable)[0]||null;
+  const preferred=coinCoverPreferences[f.id]||[];
+  const record=rs.find(r=>r.images.some(i=>preferred.includes(i.id)&&i.path&&imageMatches(i)))||rs.find(r=>r.images.some(i=>i.path&&imageMatches(i)))||rs[0];
+  const image=[...record.images].filter(i=>i.path&&imageMatches(i)).sort((a,b)=>Number(preferred.includes(b.id))-Number(preferred.includes(a.id))||stable(a,b))[0]||null;
   const members=groups.get(f.anchor.placeId)||[];members.push({family:f,recordCount:rs.length,record,image});groups.set(f.anchor.placeId,members);
  }
  return [...places].sort(stable).flatMap(place=>groups.has(place.id)?[{place,members:groups.get(place.id)!}]:[]);
@@ -32,24 +35,29 @@ export function coinFeatures(groups:CoinPlace[]){
 export type MapCoinEntry={key:string;coords:[number,number];point:{x:number;y:number};groups:CoinPlace[];cluster:boolean;id:number};
 export type DisplayCoinEntry=MapCoinEntry&{large:boolean;offset:number;bounds:Box;displayCollection:boolean;entryKeys:string[]};
 /** Shared with the DOM renderer: border-box dimensions, including the protruding badge. */
-export function markerGeometry(point:{x:number;y:number},large:boolean,small:boolean,count:number,offset=large?-36:-12){
- const width=large?(small?58:72):32,height=large?48:32;
+export const coinMarkerSizes={desktop:{normal:72,compact:60,maxHeight:60},mobile:{normal:64,compact:56,maxHeight:56},placeholder:48} as const;
+export function markerGeometry(point:{x:number;y:number},large:boolean,small:boolean,count:number,offset=large?-36:-12,image?:ImageRecord|null){
+ const size=small?coinMarkerSizes.mobile:coinMarkerSizes.desktop;
+ const ratio=image?.width&&image?.height&&image.width>0&&image.height>0?image.width/image.height:1.5;
+ const base=image?(large?size.normal:size.compact):coinMarkerSizes.placeholder;
+ const height=Math.min(base/ratio,size.maxHeight),width=Math.min(base,height*ratio);
  const badgeWidth=count>1?Math.max(20,String(count).length*7+10):0;
  const left=Math.min(-width/2,badgeWidth?width/2+6-badgeWidth:-width/2);
  const right=width/2+(badgeWidth?6:0),top=offset-height/2-(badgeWidth?8:0),bottom=offset+height/2;
  return {width,height,badgeWidth,offset,box:{x:point.x+(left+right)/2,y:point.y+(top+bottom)/2,w:right-left,h:bottom-top}};
 }
+function representativeMember(members:CoinMember[],selectedId?:string){const preferred=coverMember(members,selectedId);return preferred?.image?preferred:members.find(m=>m.image)||preferred}
 /** Screen-only collision groups. Every input entry survives in exactly one output entry. */
 export function layoutCoinEntries(entries:MapCoinEntry[],labels:Box[],width:number,height:number,selectedId?:string):DisplayCoinEntry[]{
  const selected=(e:MapCoinEntry)=>uniqueMembers(e.groups).some(m=>m.family.id===selectedId);
  const rank=(a:MapCoinEntry,b:MapCoinEntry)=>Number(selected(b))-Number(selected(a))||(a.key<b.key?-1:a.key>b.key?1:0);
  const inside=(b:Box)=>b.x-b.w/2>=4&&b.x+b.w/2<=width-4&&b.y-b.h/2>=4&&b.y+b.h/2<=height-4;
  function shape(e:MapCoinEntry){
-  const members=uniqueMembers(e.groups),hasImage=!!coverMember(members,selectedId)?.image;
-  const photo=markerGeometry(e.point,true,width<600,members.length,coinDisplayRules.photoOffset);
+  const members=uniqueMembers(e.groups),cover=representativeMember(members,selectedId),hasImage=!!cover?.image;
+  const photo=markerGeometry(e.point,true,width<600,members.length,coinDisplayRules.photoOffset,cover?.image);
   if(hasImage&&inside(photo.box)&&!labels.some(b=>intersects(photo.box,b)))return {large:true,offset:photo.offset,bounds:photo.box};
   // Vertical screen offsets preserve the geographic anchor while avoiding label rectangles.
-  const candidates=[-12,-40,-64,24,48].map(offset=>markerGeometry(e.point,false,width<600,members.length,offset));
+  const candidates=[-12,-40,-64,24,48].map(offset=>markerGeometry(e.point,false,width<600,members.length,offset,cover?.image));
   const compact=candidates.find(g=>inside(g.box)&&!labels.some(b=>intersects(g.box,b)))||candidates.find(g=>inside(g.box))||candidates[0];
   return {large:false,offset:compact.offset,bounds:compact.box};
  }
@@ -90,7 +98,7 @@ export function displayCoins(input:{zoom:number;width:number;height:number;entri
   const members=uniqueMembers(entry.groups),preferred=coverMember(members,input.selectedId);
   // A selected member without an eligible photo retains its highlight, while a collection
   // may use another eligible member's photo; never borrow an unfiltered image.
-  const representative=preferred?.image?preferred:members.find(m=>m.image)||preferred;
+  const representative=representativeMember(members,input.selectedId);
   const sameCityExpansion=stage==='near'&&entry.groups.some(g=>g.members.length>1);
   return {...entry,stage,kind:members.length>1?'collection':'family',members,representative,sameCityExpansion,
    anchors:entry.groups.map(g=>({placeId:g.place.id,coordinates:g.place.coordinates}))};
