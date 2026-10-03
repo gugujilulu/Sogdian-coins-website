@@ -1,0 +1,690 @@
+{
+  "canvas": {
+    "width": 1448,
+    "height": 1086
+  },
+  "page": "RESEARCH-DESKTOP",
+  "state": "references / research programme / quiet methods entry",
+  "purpose": "static art and live-layout reference only",
+  "assets": [
+    {
+      "asset": "figure-left.png",
+      "x": -5,
+      "y": -9,
+      "width": 125,
+      "height": 115,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": 98
+    },
+    {
+      "asset": "figure-right.png",
+      "x": 1190,
+      "y": -6,
+      "width": 134,
+      "height": 111,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": 98
+    },
+    {
+      "asset": "rosette.png",
+      "x": 138,
+      "y": 23,
+      "width": 54,
+      "height": 54,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "globe.png",
+      "x": 1351,
+      "y": 43,
+      "width": 25,
+      "height": 25,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "procession.png",
+      "x": 765,
+      "y": 113,
+      "width": 668,
+      "height": 236,
+      "opacity": 0.47,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "floral-spray.png",
+      "x": 17,
+      "y": 276,
+      "width": 146,
+      "height": 126,
+      "opacity": 0.25,
+      "rotation": 180,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "rosette.png",
+      "x": 48,
+      "y": 175,
+      "width": 63,
+      "height": 63,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "card-corner.png",
+      "x": 428,
+      "y": 563,
+      "width": 62,
+      "height": 62,
+      "opacity": 0.46,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "card-corner.png",
+      "x": 51,
+      "y": 415,
+      "width": 62,
+      "height": 62,
+      "opacity": 0.3,
+      "rotation": 180,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "book.png",
+      "x": 71,
+      "y": 438,
+      "width": 30,
+      "height": 30,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "external.png",
+      "x": 453,
+      "y": 489,
+      "width": 17,
+      "height": 17,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "external.png",
+      "x": 453,
+      "y": 528,
+      "width": 17,
+      "height": 17,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "external.png",
+      "x": 453,
+      "y": 567,
+      "width": 17,
+      "height": 17,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "card-corner.png",
+      "x": 882,
+      "y": 563,
+      "width": 62,
+      "height": 62,
+      "opacity": 0.46,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "card-corner.png",
+      "x": 505,
+      "y": 415,
+      "width": 62,
+      "height": 62,
+      "opacity": 0.3,
+      "rotation": 180,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "archive.png",
+      "x": 525,
+      "y": 438,
+      "width": 30,
+      "height": 30,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "external.png",
+      "x": 907,
+      "y": 489,
+      "width": 17,
+      "height": 17,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "external.png",
+      "x": 907,
+      "y": 528,
+      "width": 17,
+      "height": 17,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "external.png",
+      "x": 907,
+      "y": 567,
+      "width": 17,
+      "height": 17,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "card-corner.png",
+      "x": 1336,
+      "y": 563,
+      "width": 62,
+      "height": 62,
+      "opacity": 0.46,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "card-corner.png",
+      "x": 959,
+      "y": 415,
+      "width": 62,
+      "height": 62,
+      "opacity": 0.3,
+      "rotation": 180,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "range.png",
+      "x": 979,
+      "y": 438,
+      "width": 30,
+      "height": 30,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "external.png",
+      "x": 1361,
+      "y": 489,
+      "width": 17,
+      "height": 17,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "external.png",
+      "x": 1361,
+      "y": 528,
+      "width": 17,
+      "height": 17,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "external.png",
+      "x": 1361,
+      "y": 567,
+      "width": 17,
+      "height": 17,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "card-corner.png",
+      "x": 1374,
+      "y": 768,
+      "width": 21,
+      "height": 21,
+      "opacity": 0.46,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "card-corner.png",
+      "x": 51,
+      "y": 724,
+      "width": 21,
+      "height": 21,
+      "opacity": 0.3,
+      "rotation": 180,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "document.png",
+      "x": 73,
+      "y": 740,
+      "width": 28,
+      "height": 28,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "card-corner.png",
+      "x": 1374,
+      "y": 844,
+      "width": 21,
+      "height": 21,
+      "opacity": 0.46,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "card-corner.png",
+      "x": 51,
+      "y": 800,
+      "width": 21,
+      "height": 21,
+      "opacity": 0.3,
+      "rotation": 180,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "families.png",
+      "x": 73,
+      "y": 816,
+      "width": 28,
+      "height": 28,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "card-corner.png",
+      "x": 1374,
+      "y": 920,
+      "width": 21,
+      "height": 21,
+      "opacity": 0.46,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "card-corner.png",
+      "x": 51,
+      "y": 876,
+      "width": 21,
+      "height": 21,
+      "opacity": 0.3,
+      "rotation": 180,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "calendar.png",
+      "x": 73,
+      "y": 892,
+      "width": 28,
+      "height": 28,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "chevron.png",
+      "x": 1373,
+      "y": 975,
+      "width": 14,
+      "height": 14,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "mountain-footer.png",
+      "x": 0,
+      "y": 922,
+      "width": 1448,
+      "height": 120,
+      "opacity": 0.38,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    },
+    {
+      "asset": "rosette.png",
+      "x": 34,
+      "y": 1029,
+      "width": 40,
+      "height": 40,
+      "opacity": 1,
+      "rotation": 0,
+      "stretch": false,
+      "clipBottom": null
+    }
+  ],
+  "liveText": [
+    {
+      "text": "RESEARCH COLLECTION",
+      "x": 138,
+      "y": 141,
+      "size": 14,
+      "width": null,
+      "bold": false,
+      "color": "#7A5C3C",
+      "lines": 1
+    },
+    {
+      "text": "Research",
+      "x": 139,
+      "y": 175,
+      "size": 53,
+      "width": null,
+      "bold": true,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "References, recorded sources and the next stage of the Atlas.",
+      "x": 142,
+      "y": 255,
+      "size": 23,
+      "width": 823,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Reference library",
+      "x": 51,
+      "y": 360,
+      "size": 31,
+      "width": null,
+      "bold": true,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Coin catalogues",
+      "x": 117,
+      "y": 437,
+      "size": 25,
+      "width": null,
+      "bold": true,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Smirnova · Sogdian coinage",
+      "x": 73,
+      "y": 484,
+      "size": 20,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Shagalov & Kuznetsov",
+      "x": 73,
+      "y": 523,
+      "size": 20,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Catalogue references",
+      "x": 73,
+      "y": 562,
+      "size": 20,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Collection sources",
+      "x": 571,
+      "y": 437,
+      "size": 25,
+      "width": null,
+      "bold": true,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Zeno · Original records",
+      "x": 527,
+      "y": 484,
+      "size": 20,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Coins of Central Asia",
+      "x": 527,
+      "y": 523,
+      "size": 20,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Auction and museum sources",
+      "x": 527,
+      "y": 562,
+      "size": 20,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Historical geography",
+      "x": 1025,
+      "y": 437,
+      "size": 25,
+      "width": null,
+      "bold": true,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Bregel · Historical atlas",
+      "x": 981,
+      "y": 484,
+      "size": 20,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Panch and Samarkand",
+      "x": 981,
+      "y": 523,
+      "size": 20,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Range sources and methods",
+      "x": 981,
+      "y": 562,
+      "size": 20,
+      "width": null,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Next chapter",
+      "x": 51,
+      "y": 666,
+      "size": 31,
+      "width": null,
+      "bold": true,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Planned research & learning",
+      "x": 283,
+      "y": 677,
+      "size": 18,
+      "width": null,
+      "bold": false,
+      "color": "#777268",
+      "lines": 1
+    },
+    {
+      "text": "Inscriptions & symbols",
+      "x": 119,
+      "y": 734,
+      "size": 22,
+      "width": null,
+      "bold": true,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Learn to read coin legends, scripts and tamghas.",
+      "x": 440,
+      "y": 738,
+      "size": 20,
+      "width": 874,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Historical coverage",
+      "x": 119,
+      "y": 810,
+      "size": 22,
+      "width": null,
+      "bold": true,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Extend coin families and historical ranges across Central Asia.",
+      "x": 440,
+      "y": 814,
+      "size": 20,
+      "width": 874,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Market records",
+      "x": 119,
+      "y": 886,
+      "size": 22,
+      "width": null,
+      "bold": true,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Build an auction archive with updates every four months.",
+      "x": 440,
+      "y": 890,
+      "size": 20,
+      "width": 874,
+      "bold": false,
+      "color": "#15394F",
+      "lines": 1
+    },
+    {
+      "text": "Sources and methods",
+      "x": 54,
+      "y": 970,
+      "size": 17,
+      "width": null,
+      "bold": false,
+      "color": "#777268",
+      "lines": 1
+    },
+    {
+      "text": "CENTRAL ASIAN SQUARE-HOLE COINAGE ATLAS",
+      "x": 92,
+      "y": 1035,
+      "size": 20,
+      "width": null,
+      "bold": false,
+      "color": "#F5EADB",
+      "lines": 1
+    },
+    {
+      "text": "Atlas     Catalogue     Research",
+      "x": 1080,
+      "y": 1039,
+      "size": 18,
+      "width": null,
+      "bold": false,
+      "color": "#F5EADB",
+      "lines": 1
+    }
+  ]
+}

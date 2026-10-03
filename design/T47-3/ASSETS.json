@@ -1,0 +1,166 @@
+{
+  "package": "T46-R3-complete-visual-pack (1).zip",
+  "processing": "Visible-alpha crop and WebP; no coin image processing.",
+  "assets": [
+    {
+      "id": "procession",
+      "source": "web-ready/procession.png",
+      "sha256": "735b57757115bd99cfa0721195a31d86cbe0f3adc0e68d448eb15eb42621b6af",
+      "alphaCrop": [
+        0,
+        0,
+        1536,
+        500
+      ],
+      "size": [
+        1536,
+        500
+      ],
+      "output": "/visual/t47/r3/procession.webp"
+    },
+    {
+      "id": "mountain-footer",
+      "source": "web-ready/mountain-footer.png",
+      "sha256": "9be95d19ef626b5807c75dd0d4b9a7fc832a688925d6a8e798a1c6917566c74f",
+      "alphaCrop": [
+        0,
+        0,
+        1536,
+        359
+      ],
+      "size": [
+        1536,
+        359
+      ],
+      "output": "/visual/t47/r3/mountain-footer.webp"
+    },
+    {
+      "id": "range",
+      "source": "web-ready/range.png",
+      "sha256": "baf1301373bb664e9acc758cd29629992784aa829412cede41d43eb4461a19ea",
+      "alphaCrop": [
+        29,
+        17,
+        222,
+        208
+      ],
+      "size": [
+        193,
+        191
+      ],
+      "output": "/visual/t47/r3/range.webp"
+    },
+    {
+      "id": "document",
+      "source": "web-ready/document.png",
+      "sha256": "73168e536c2d0dfa722e2464d407190be1647eb0b4060c50cc4099f681faa86c",
+      "alphaCrop": [
+        74,
+        13,
+        206,
+        155
+      ],
+      "size": [
+        132,
+        142
+      ],
+      "output": "/visual/t47/r3/document.webp"
+    },
+    {
+      "id": "families",
+      "source": "web-ready/families.png",
+      "sha256": "7d608b80a5cc44a36488f9f48340f61ff14ddb7c8658473b405cdfbac06c0680",
+      "alphaCrop": [
+        43,
+        9,
+        231,
+        191
+      ],
+      "size": [
+        188,
+        182
+      ],
+      "output": "/visual/t47/r3/families.webp"
+    },
+    {
+      "id": "calendar",
+      "source": "web-ready/calendar.png",
+      "sha256": "c1fbc2943aeefd6a2a7e5d5c0faf41cc0504e3d4e239ff20c4a85642af1aa141",
+      "alphaCrop": [
+        49,
+        3,
+        198,
+        162
+      ],
+      "size": [
+        149,
+        159
+      ],
+      "output": "/visual/t47/r3/calendar.webp"
+    },
+    {
+      "id": "zoom-in",
+      "source": "web-ready/zoom-in.png",
+      "sha256": "6e92ee2148532a65c1b84c834d53b33f30d2cc5e53b0e308a2c5451756d4abfe",
+      "alphaCrop": [
+        43,
+        0,
+        227,
+        178
+      ],
+      "size": [
+        184,
+        178
+      ],
+      "output": "/visual/t47/r3/zoom-in.webp"
+    },
+    {
+      "id": "zoom-out",
+      "source": "web-ready/zoom-out.png",
+      "sha256": "3d25f43c810f8093f421d1e0087730159a346586328ab624020468fef68937a9",
+      "alphaCrop": [
+        53,
+        13,
+        212,
+        170
+      ],
+      "size": [
+        159,
+        157
+      ],
+      "output": "/visual/t47/r3/zoom-out.webp"
+    },
+    {
+      "id": "fit",
+      "source": "web-ready/fit.png",
+      "sha256": "7322ef4ca0be404b34a534a9812f0b6a49f729810de0c7d046bdf129c8d8fbc6",
+      "alphaCrop": [
+        5,
+        7,
+        256,
+        237
+      ],
+      "size": [
+        251,
+        230
+      ],
+      "output": "/visual/t47/r3/fit.webp"
+    },
+    {
+      "id": "close",
+      "source": "web-ready/close.png",
+      "sha256": "7363e914f4fa833a37321dc18f4e7385ff22b2a4a4dc8aa8b6396e90c04e5f0d",
+      "alphaCrop": [
+        20,
+        17,
+        229,
+        232
+      ],
+      "size": [
+        209,
+        215
+      ],
+      "output": "/visual/t47/r3/close.webp"
+    }
+  ]
+}
