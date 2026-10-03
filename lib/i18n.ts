@@ -55,6 +55,9 @@ export const dictionary={
   "zh": "来源",
   "ru": "Источник"
  },
+ "浏览钱币与来源": {"en":"Browse coins and their sources","zh":"浏览钱币与来源","ru":"Монеты и их источники"},
+ "浏览原始来源与关联钱币": {"en":"Open original records and browse their Atlas coins","zh":"查看原始来源与关联钱币","ru":"Исходные записи и связанные монеты Атласа"},
+ "浏览更多相关资料": {"en":"Browse the wider collection","zh":"浏览更多相关资料","ru":"Другие материалы коллекции"},
  "全部来源": {
   "en": "All sources",
   "zh": "全部来源",
