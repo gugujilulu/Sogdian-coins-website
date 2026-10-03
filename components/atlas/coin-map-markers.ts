@@ -3,7 +3,7 @@ import {focusReturn,stableFocusIndex} from '@/lib/keyboard';
 import {motionDuration} from '@/lib/motion';
 import {collectionReturn,collectionMembers,type CollectionContext} from '@/lib/map-selection';
 import type * as GL from 'maplibre-gl';
-import {canExpand,displayCoins,coinMarkerVisual,markerGeometry,uniqueMembers,type CoinPlace,type Box} from '@/lib/coin-map';
+import {canExpand,displayCoins,displayCollectionContext,coinMarkerVisual,markerGeometry,uniqueMembers,type CoinPlace,type Box} from '@/lib/coin-map';
 
 /** A small visible-marker projection of the existing MapLibre clustered source. */
 export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPlace[],getSelected:()=>string|undefined,onSelect:(id:string,context?:CollectionContext)=>void){
@@ -15,6 +15,7 @@ export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPla
  const restoreMarker=()=>{const ids=pendingFocus||openerFamilies;const entries=[...markers.values()];const entry=entries[stableFocusIndex(ids,entries.map(e=>JSON.parse(e.button.dataset.familyIds||'[]')))];if(entry)entry.button.focus({preventScroll:true});else focusReturn(map.getCanvas());pendingFocus=null};
  function removePopup(){restoreOnClose=false;popup?.remove();restoreOnClose=true}
  const markers=new Map<string,{marker:GL.Marker;button:HTMLButtonElement;signature:string}>();
+ const connections=document.createElementNS('http://www.w3.org/2000/svg','svg');connections.classList.add('coin-city-connections');connections.setAttribute('aria-hidden','true');map.getContainer().appendChild(connections);
  const duration=()=>motionDuration(450);
  const image=(src:string)=>{const img=document.createElement('img');img.src=src;img.alt='';img.draggable=false;img.onerror=()=>{img.hidden=true;img.closest('.coin-map-marker')?.classList.add('image-failed')};return img};
  function show(groups:CoinPlace[],coords:[number,number],restore?:CollectionContext,passive=false){
@@ -63,23 +64,34 @@ export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPla
   for(const e of layout){
    const members=e.members,cover=e.representative,selected=members.some(m=>m.family.id===getSelected());
    const large=e.large,geometry=markerGeometry(e.point,large,map.getContainer().clientWidth<600,members.length,e.offset,cover?.image);
-   const signature=JSON.stringify([members.map(m=>[m.family.id,m.recordCount,m.image?.id]),cover?.image?.path,large,geometry.width,e.offset,e.displayCollection,selected,!!getSelected(),e.stage,e.sameCityExpansion]);live.add(e.key);
+   const signature=JSON.stringify([members.map(m=>[m.family.id,m.recordCount,m.image?.id]),cover?.image?.path,large,geometry.width,e.offsetX,e.offset,e.displayCollection,selected,!!getSelected(),e.stage,e.sameCityExpansion]);live.add(e.key);
    let entry=markers.get(e.key);
    if(entry?.signature!==signature){entry?.marker.remove();const button=document.createElement('button');button.type='button';button.className=`coin-map-marker ${large?'photo':'compact'}${selected?' selected':getSelected()?' muted':''}`;
     button.style.width=`${geometry.width}px`;button.style.height=`${geometry.height}px`;
-    const label=`${e.displayCollection?tr('显示集合'):e.cluster?tr('空间集合'):e.groups.map(g=>g.place.name).join(' / ')} · ${countLabel(members.length,'families')} · ${countLabel(members.reduce((n,m)=>n+m.recordCount,0),'records')}`;
+    const location=e.groups.map(g=>g.place.name).join(' / ');
+    const label=e.kind==='family'?`${members[0].family.title} · ${location} · ${countLabel(members[0].recordCount,'records')}`:`${e.overflow?tr('更多家族'):e.displayCollection?tr('显示集合'):e.cluster?tr('空间集合'):location} · ${countLabel(members.length,'families')} · ${countLabel(members.reduce((n,m)=>n+m.recordCount,0),'records')}`;
     button.dataset.familyIds=JSON.stringify(members.map(m=>m.family.id));button.setAttribute('aria-label',label);button.title=label+(cover?`\n${cover.family.title}`:'');
     button.dataset.stage=e.stage;button.dataset.sameCityExpansion=String(e.sameCityExpansion);
+    button.dataset.placeIds=JSON.stringify(e.anchors.map(a=>a.placeId));button.dataset.offsetX=String(e.offsetX);button.dataset.offsetY=String(e.offset);button.dataset.overflow=String(e.overflow);
     if(coinMarkerVisual(cover?.image)==='image')button.appendChild(image(cover!.image!.path));else button.classList.add('image-failed');
-    if(members.length>1){const badge=document.createElement('b');badge.textContent=String(members.length);badge.style.width=`${geometry.badgeWidth}px`;button.appendChild(badge)}
+    if(members.length>1&&!e.overflow){const badge=document.createElement('b');badge.textContent=String(members.length);badge.style.width=`${geometry.badgeWidth}px`;button.appendChild(badge)}
     const fallback=document.createElement('span');fallback.className='coin-marker-fallback';fallback.textContent='—';fallback.setAttribute('aria-hidden','true');button.appendChild(fallback);
-    entry={button,signature,marker:new gl.Marker({element:button,anchor:'center',offset:[0,e.offset]}).setLngLat(e.coords).addTo(map)};markers.set(e.key,entry);
+    if(e.overflow){button.classList.add('coin-city-remaining');fallback.textContent=`+${members.length}`}
+    entry={button,signature,marker:new gl.Marker({element:button,anchor:'center',offset:[e.offsetX,e.offset]}).setLngLat(e.coords).addTo(map)};markers.set(e.key,entry);
    }
    // Refresh handler on every projection; async work is invalidated on filter changes.
-   entry.button.onmouseenter=entry.button.onfocus=()=>{preview?.remove();if(members.length!==1)return;const member=members[0],node=document.createElement('div');node.className='coin-preview';node.textContent=`${member.family.title} · ${member.family.dateLabel||tr('年代未记录')} · ${countLabel(member.recordCount,'records')}`;preview=new gl.Popup({closeButton:false,closeOnClick:false,focusAfterOpen:false,anchor:'bottom',offset:60,className:'coin-preview-popup'}).setLngLat(e.coords).setDOMContent(node).addTo(map)};
+   entry.button.onmouseenter=entry.button.onfocus=()=>{preview?.remove();if(members.length!==1)return;const member=members[0],node=document.createElement('div');node.className='coin-preview';node.textContent=`${member.family.title} · ${member.family.dateLabel||tr('年代未记录')} · ${countLabel(member.recordCount,'records')}`;preview=new gl.Popup({closeButton:false,closeOnClick:false,focusAfterOpen:false,anchor:'bottom',offset:[e.offsetX,e.offset-geometry.height/2-12],className:'coin-preview-popup'}).setLngLat(e.coords).setDOMContent(node).addTo(map)};
    entry.button.onmouseleave=entry.button.onblur=()=>preview?.remove();
-   entry.button.onclick=async ev=>{preview?.remove();openerFamilies=members.map(m=>m.family.id);ev.stopPropagation();if(e.cluster&&!e.displayCollection){try{const zoom=await src.getClusterExpansionZoom(e.id);if(disposed||currentRevision!==revision)return;if(canExpand(e.groups,map.getZoom(),map.getMaxZoom(),zoom)){map.easeTo({center:e.coords,zoom,duration:duration()});return}}catch{}}if(!disposed&&currentRevision===revision)show(e.groups,e.coords)};
-   entry.marker.setLngLat(e.coords).setOffset([0,e.offset]);
+   entry.button.onclick=async ev=>{preview?.remove();openerFamilies=members.map(m=>m.family.id);ev.stopPropagation();if(e.sameCityExpansion&&e.kind==='family'){lastMember=members[0].family.id;removePopup();onSelect(lastMember,displayCollectionContext(e));return}if(e.cluster&&!e.displayCollection){try{const zoom=await src.getClusterExpansionZoom(e.id);if(disposed||currentRevision!==revision)return;if(canExpand(e.groups,map.getZoom(),map.getMaxZoom(),zoom)){map.easeTo({center:e.coords,zoom,duration:duration()});return}}catch{}}if(!disposed&&currentRevision===revision)show(e.collectionGroups,e.coords,e.overflow?displayCollectionContext(e):undefined)};
+   entry.marker.setLngLat(e.coords).setOffset([e.offsetX,e.offset]);
+  }
+  // One restrained stem per city, not a line web through every coin image.
+  connections.replaceChildren();connections.setAttribute('width',String(map.getContainer().clientWidth));connections.setAttribute('height',String(map.getContainer().clientHeight));
+  const cityKeys=new Set<string>();for(const e of layout.filter(e=>e.sameCityExpansion&&e.offsetX!==undefined)){
+   const key=JSON.stringify(e.anchors.map(a=>a.placeId));if(cityKeys.has(key))continue;cityKeys.add(key);
+   const siblings=layout.filter(p=>p.sameCityExpansion&&JSON.stringify(p.anchors.map(a=>a.placeId))===key);
+   const closest=siblings.reduce((a,b)=>Math.hypot(a.offsetX,a.offset)<Math.hypot(b.offsetX,b.offset)?a:b);
+   const line=document.createElementNS(connections.namespaceURI,'line');line.setAttribute('x1',String(e.point.x));line.setAttribute('y1',String(e.point.y));line.setAttribute('x2',String(e.point.x+closest.offsetX));line.setAttribute('y2',String(e.point.y+closest.offset));connections.appendChild(line);
   }
   for(const [key,entry]of markers)if(!live.has(key)){entry.marker.remove();markers.delete(key)}
   if(pendingFocus)restoreMarker();
@@ -87,6 +99,6 @@ export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPla
  function schedule(){if(!queued&&!disposed){queued=true;requestAnimationFrame(()=>{if(!disposed)void render()})}}
  function escape(ev:KeyboardEvent){if(ev.defaultPrevented||ev.key!=='Escape'||document.querySelector('dialog[open]')||(ev.target instanceof Element&&ev.target.closest('input,textarea,select,[contenteditable]')))return;if(popup?.isOpen()){ev.preventDefault();ev.stopImmediatePropagation();popup.remove()}else preview?.remove()}
  document.addEventListener('keydown',escape);
- map.on('moveend',schedule);map.on('idle',schedule);map.on('resize',schedule);
- return {returnToCollection(context:CollectionContext){const {groups}=collectionReturn(getGroups(),context);const center=map.unproject([map.getContainer().clientWidth/2,map.getContainer().clientHeight/2]);show(groups,[center.lng,center.lat],context);return true},refresh(){rememberFocus();generation++;revision++;preview?.remove();const context=popup?.isOpen()&&popupContext?{...popupContext,scrollTop:popup.getElement().querySelector('.coin-collection')?.scrollTop||0}:null;const popupAt=popup?.isOpen()?popup.getLngLat():null;const activeMember=popup?.getElement()?.querySelector<HTMLButtonElement>('.coin-popup-row:focus')?.dataset.familyId;if(activeMember)lastMember=activeMember;const hadPopupFocus=!!popup?.getElement()?.contains(document.activeElement);removePopup();if(context){const center=popupAt||map.getCenter();show(collectionMembers(getGroups(),context),[center.lng,center.lat],context,!hadPopupFocus)}for(const e of markers.values())e.marker.remove();markers.clear();schedule()},selectionChanged(){preview?.remove();removePopup();schedule()},destroy(){document.removeEventListener('keydown',escape);preview?.remove();disposed=true;generation++;popup?.remove();map.off('moveend',schedule);map.off('idle',schedule);map.off('resize',schedule);for(const e of markers.values())e.marker.remove();markers.clear()}};
+ const clearConnections=()=>connections.replaceChildren();map.on('movestart',clearConnections);map.on('moveend',schedule);map.on('idle',schedule);map.on('resize',schedule);
+ return {returnToCollection(context:CollectionContext){const {groups}=collectionReturn(getGroups(),context);const center=map.unproject([map.getContainer().clientWidth/2,map.getContainer().clientHeight/2]);show(groups,[center.lng,center.lat],context);return true},refresh(){rememberFocus();generation++;revision++;preview?.remove();const context=popup?.isOpen()&&popupContext?{...popupContext,scrollTop:popup.getElement().querySelector('.coin-collection')?.scrollTop||0}:null;const popupAt=popup?.isOpen()?popup.getLngLat():null;const activeMember=popup?.getElement()?.querySelector<HTMLButtonElement>('.coin-popup-row:focus')?.dataset.familyId;if(activeMember)lastMember=activeMember;const hadPopupFocus=!!popup?.getElement()?.contains(document.activeElement);removePopup();if(context){const center=popupAt||map.getCenter();show(collectionMembers(getGroups(),context),[center.lng,center.lat],context,!hadPopupFocus)}for(const e of markers.values())e.marker.remove();markers.clear();schedule()},selectionChanged(){preview?.remove();removePopup();schedule()},destroy(){document.removeEventListener('keydown',escape);preview?.remove();disposed=true;generation++;popup?.remove();connections.remove();map.off('movestart',clearConnections);map.off('moveend',schedule);map.off('idle',schedule);map.off('resize',schedule);for(const e of markers.values())e.marker.remove();markers.clear()}};
 }

@@ -16,8 +16,9 @@ test('single and multi-family entries share photo policy and complete family cou
 });
 test('stages and same-city expansion retain all members and real anchors',()=>{
  for(const [zoom,stage,expand]of [[4,'far',false],[6,'middle',false],[9,'near',true]]){
-  const result=run([panch],zoom)[0];assert.equal(result.stage,stage);assert.equal(result.sameCityExpansion,expand);
-  assert.deepEqual(result.members.map(m=>m.family.id),panch.members.map(m=>m.family.id));assert.deepEqual(result.anchors[0].coordinates,panch.place.coordinates);
+  const results=run([panch],zoom),result=results[0];assert.equal(result.stage,stage);assert.equal(result.sameCityExpansion,expand);
+  assert.deepEqual(results.flatMap(e=>e.members.map(m=>m.family.id)).sort(),panch.members.map(m=>m.family.id).sort());assert.deepEqual(result.anchors[0].coordinates,panch.place.coordinates);
+  assert.equal(results.length,expand?panch.members.length:1);
  }
 });
 test('projected separation permits independent images, stable order and selected cover',()=>{
