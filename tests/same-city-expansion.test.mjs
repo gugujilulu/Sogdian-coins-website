@@ -54,7 +54,7 @@ test('8.5 resolves still-clustered source leaves into real city anchors before e
 test('expanded grid avoids visible search controls and reserves a remaining entry above a short sheet',()=>{
  const obstacle={x:230,y:110,w:440,h:180},config=input(city,{expansionObstacles:[obstacle]});
  config.entries[0].point={x:640,y:300};const result=displayCoins(config);assert.ok(result.every(e=>!intersects(e.bounds,obstacle)));
- const phone=input(city,{width:390,height:780,expansionHeight:250});phone.entries[0].point={x:195,y:300};
+ const phone=input(city,{width:390,height:780,expansionHeight:250,expansionTop:120});phone.entries[0].point={x:195,y:300};
  const limited=displayCoins(phone);assert.ok(limited.some(e=>e.overflow));assert.ok(limited.some(e=>e.kind==='family'));assert.deepEqual(ids(limited),city.members.map(m=>m.family.id).sort());
- assert.ok(limited.every(e=>e.bounds.y+e.bounds.h/2<=250));
+ assert.ok(limited.every(e=>e.bounds.y+e.bounds.h/2<=250&&e.bounds.y-e.bounds.h/2>=120));
 });

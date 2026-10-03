@@ -63,8 +63,10 @@ export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPla
   const expansionObstacles:Box[]=Array.from(screen?.querySelectorAll<HTMLElement>('.atlas-search-panel,.map-toolbar,.timeline-floating,.history-controls')||[]).filter(el=>getComputedStyle(el).visibility!=='hidden').map(el=>{const r=el.getBoundingClientRect();return{x:r.x-bounds.x+r.width/2,y:r.y-bounds.y+r.height/2,w:r.width,h:r.height}});
   const drawer=screen?.querySelector('.family-drawer')?.getBoundingClientRect();
   const expansionHeight=drawer&&drawer.left<bounds.right&&drawer.right>bounds.left?Math.max(100,Math.min(bounds.height,drawer.top-bounds.top-12)):bounds.height;
+  const search=screen?.querySelector('.atlas-search-panel')?.getBoundingClientRect();
+  const expansionTop=bounds.width<600&&search&&search.width>bounds.width*.6?Math.max(0,Math.min(expansionHeight-100,search.bottom-bounds.top+12)):0;
   rememberFocus();const live=new Set<string>();
-  const layout=displayCoins({entries:entries.filter(e=>e!==null),labels:occupied,width:map.getContainer().clientWidth,height:map.getContainer().clientHeight,zoom:map.getZoom(),selectedId:getSelected(),project:coords=>map.project(coords),expansionObstacles,expansionHeight});
+  const layout=displayCoins({entries:entries.filter(e=>e!==null),labels:occupied,width:map.getContainer().clientWidth,height:map.getContainer().clientHeight,zoom:map.getZoom(),selectedId:getSelected(),project:coords=>map.project(coords),expansionObstacles,expansionHeight,expansionTop});
   for(const e of layout){
    const members=e.members,cover=e.representative,selected=members.some(m=>m.family.id===getSelected());
    const large=e.large,geometry=markerGeometry(e.point,large,map.getContainer().clientWidth<600,members.length,e.offset,cover?.image);

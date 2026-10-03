@@ -93,22 +93,22 @@ export type CoinDisplay=DisplayCoinEntry&{
  offsetX:number;collectionGroups:CoinPlace[];fullMembers:CoinMember[];overflow:boolean;
 };
 /** One grid belongs to its real anchor. Slots never depend on selection or image aspect ratio. */
-function expandCity(entry:MapCoinEntry,width:number,height:number,labels:Box[],controls:Box[]=[]):CoinDisplay[]{
+function expandCity(entry:MapCoinEntry,width:number,height:number,labels:Box[],controls:Box[]=[],top=0):CoinDisplay[]{
  const members=uniqueMembers(entry.groups),small=width<600,size=small?coinMarkerSizes.mobile:coinMarkerSizes.desktop;
  const {expansionGap:gap,expansionMargin:margin,anchorClearance:clearance}=coinDisplayRules;
  const cellW=size.normal+gap,cellH=size.maxHeight+gap;
  const columns=Math.max(1,Math.min(small?coinDisplayRules.mobileColumns:coinDisplayRules.desktopColumns,Math.floor((width-margin*2)/cellW),members.length));
- const maxRows=Math.max(1,Math.floor((height-margin*2-clearance)/cellH));
+ const maxRows=Math.max(1,Math.floor((height-top-margin*2-clearance)/cellH));
  const capacity=columns*maxRows,overflow=members.length>capacity;
  const shown=overflow?members.slice(0,Math.max(0,capacity-1)):members;
  const slots=shown.length+(overflow?1:0),rows=Math.ceil(slots/columns),gridW=columns*cellW-gap,gridH=rows*cellH-gap;
- const clamp=(v:number,extent:number,total:number)=>Math.max(margin,Math.min(total-margin-extent,v));
+ const clamp=(v:number,extent:number,total:number,start=0)=>Math.max(margin+start,Math.min(total-margin-extent,v));
  const candidates=[
   {x:entry.point.x-gridW/2,y:entry.point.y-clearance-gridH},
   {x:entry.point.x-gridW/2,y:entry.point.y+clearance},
   {x:entry.point.x+clearance,y:entry.point.y-gridH/2},
   {x:entry.point.x-clearance-gridW,y:entry.point.y-gridH/2},
- ].map(p=>({x:clamp(p.x,gridW,width),y:clamp(p.y,gridH,height)}));
+ ].map(p=>({x:clamp(p.x,gridW,width),y:clamp(p.y,gridH,height,top)}));
  const shape=(p:{x:number;y:number},index:number,member?:CoinMember)=>{
   const point={x:p.x+(index%columns)*cellW+size.normal/2,y:p.y+Math.floor(index/columns)*cellH+size.maxHeight/2};
   return markerGeometry(point,true,small,member?1:members.length-shown.length,0,member?.image);
@@ -129,7 +129,7 @@ function expandCity(entry:MapCoinEntry,width:number,height:number,labels:Box[],c
 }
 export function displayCollectionContext(entry:CoinDisplay){return {placeIds:entry.collectionGroups.map(g=>g.place.id),familyIds:entry.fullMembers.map(m=>m.family.id),scrollTop:0}}
 /** The renderer consumes one decision for images, collection counts and T42 expansion. */
-export function displayCoins(input:{zoom:number;width:number;height:number;entries:MapCoinEntry[];labels:Box[];selectedId?:string;project?:(coordinates:[number,number])=>{x:number;y:number};expansionObstacles?:Box[];expansionHeight?:number}):CoinDisplay[]{
+export function displayCoins(input:{zoom:number;width:number;height:number;entries:MapCoinEntry[];labels:Box[];selectedId?:string;project?:(coordinates:[number,number])=>{x:number;y:number};expansionObstacles?:Box[];expansionHeight?:number;expansionTop?:number}):CoinDisplay[]{
  const stage=coinDisplayStage(input.zoom);
  // A fractional zoom (8.5–9) can still query the source's last integer cluster.
  // Resolve its original anchors here so the public near threshold remains exact.
@@ -145,7 +145,7 @@ export function displayCoins(input:{zoom:number;width:number;height:number;entri
  // Expand the original city groups before collision merging. Expanded slots must not
  // pass through layoutCoinEntries, which intentionally merges coincident footprints.
  const cities=stage==='near'?entries.filter(e=>uniqueMembers(e.groups).length>1):[];
- const expanded=[...cities].sort((a,b)=>a.key.localeCompare(b.key)).flatMap(e=>expandCity(e,input.width,Math.min(input.height,input.expansionHeight??input.height),input.labels,input.expansionObstacles||[]));
+ const expanded=[...cities].sort((a,b)=>a.key.localeCompare(b.key)).flatMap(e=>expandCity(e,input.width,Math.min(input.height,input.expansionHeight??input.height),input.labels,input.expansionObstacles||[],input.expansionTop||0));
  const ordinary=entries.filter(e=>!cities.includes(e));
  return [...layoutCoinEntries(ordinary,[...input.labels,...expanded.map(e=>e.bounds)],input.width,input.height,input.selectedId).map(entry=>{
   const members=uniqueMembers(entry.groups);
