@@ -34,13 +34,13 @@ export default function RelatedGallery({records,allRecords=records,filterKey='',
  const imageCount=matches.reduce((n,r)=>n+(index?.get(r.id)?.length||0),0);
  const groups=Array.from(new Set(matches.map(r=>r.reviewStatus))).sort();
  return <>
-  <header className="related-browse-heading"><h1><ArtIcon name="archive" collection="r3" size={30}/>{tr("相关资料")}</h1><p className="browse-count">{countLabel(matches.length,'records',locale)}{index&&` · ${countLabel(imageCount,'images',locale)}`}</p><p>{tr("浏览更多相关资料")}</p></header><details className="browse-notes"><summary>{tr("资料说明")}</summary>
+  <header className="related-browse-heading"><h1><ArtIcon name="archive" collection="r3" size={30}/>{tr("相关资料")}</h1><p className="browse-count">{countLabel(matches.length,'records',locale)}{index&&` · ${countLabel(imageCount,'images',locale)}`}</p></header><div className="related-guide"><details className="browse-notes"><summary>{tr("资料说明")}</summary>
   <p>{tr("相关资料")}：{countLabel(allRecords.length,'records',locale)} · {tr("地理条件匹配")}：{countLabel(records.length,'records',locale)} · {tr("当前搜索匹配")}：{countLabel(matches.length,'records',locale)} · {tr("主库记录")}：{countLabel(mainRecordCount,'records',locale)}</p>
   <p>{tr("保留原始来源、分类路径、审查状态和原因；状态不触发原始资料删除。")}</p></details>
   {failed?<p role="status">{tr("图片索引加载失败，文字资料和来源链接仍可访问。")}<button onClick={()=>{setFailed(false);setAttempt(n=>n+1)}}>{tr("重试图片索引")}</button></p>:!index&&<p role="status">{tr("正在加载图片索引；文字资料可先浏览。")}</p>}
   <details className="browse-notes"><summary>{tr("研究状态")}</summary><div className="related-status-grid">{groups.map(g=><div key={g}><strong>{matches.filter(r=>r.reviewStatus===g).length}</strong><span>{copyKnown(g,locale)}</span></div>)}</div></details>
   {matches.length===0&&<p role="status">{tr("没有匹配的相关资料。请调整搜索词。")}</p>}
-  <div className="related-list">{visible.map(r=>{
+  </div><div className="related-list">{visible.map(r=>{
    const image=index?.get(r.id)?.[0];
    return <article className="browse-card" key={r.id} data-related-id={r.id}>
     <button className="related-open" onClick={()=>onSelect(r.id)} aria-label={tr("查看详情：{title}",{title:r.title})}>{index?<Thumbnail key={image?.id||r.id} image={image}/>:<div className="related-thumbnail"><span>{failed?tr("图片索引不可用"):tr("图片索引加载中")}</span></div>}<span className="browse-expand" aria-hidden="true"><ArtIcon name="expand" collection="r3" size={17}/></span></button><div className="browse-card-copy">
