@@ -20,7 +20,7 @@ test('middle-near-middle cycle and selected family do not reshuffle expanded slo
  const before=JSON.stringify(city),middle=displayCoins(input(city,{zoom:8.49})),near=displayCoins(input(city,{zoom:8.5}));
  assert.equal(middle.length,1);assert.equal(middle[0].kind,'collection');assert.equal(near.length,15);
  assert.deepEqual(displayCoins(input(city,{zoom:8.49})),middle);
- assert.deepEqual(displayCoins(input(city,{zoom:8.5,selectedId:city.members[8].family.id})),near);
+ assert.deepEqual(displayCoins(input(city,{zoom:8.5,selectedId:city.members[8].family.id,previous:new Map(near.map(e=>[e.key,{offsetX:e.offsetX,offset:e.offset}]))})),near);
  const shuffled={...city,members:[...city.members].reverse()};assert.deepEqual(displayCoins(input(shuffled,{zoom:8.5})).map(e=>[e.key,e.offsetX,e.offset,e.representative.image?.id]),near.map(e=>[e.key,e.offsetX,e.offset,e.representative.image?.id]));
  assert.equal(JSON.stringify(city),before);
 });
@@ -35,7 +35,7 @@ test('source constrained multi, single, zero and missing photos stay operable',(
 test('phone edges stay within viewport; constrained height retains a visible remaining entry',()=>{
  for(const point of [{x:12,y:20},{x:380,y:750},{x:195,y:390}]){
   const config=input(city,{width:390,height:780});config.entries[0].point=point;const result=displayCoins(config);
-  assert.equal(result.length,15);for(const e of result){assert.ok(e.bounds.x-e.bounds.w/2>=0);assert.ok(e.bounds.x+e.bounds.w/2<=390);assert.ok(e.bounds.y-e.bounds.h/2>=0);assert.ok(e.bounds.y+e.bounds.h/2<=780)}
+  assert.deepEqual(ids(result),city.members.map(m=>m.family.id).sort());for(const e of result){assert.ok(e.bounds.x-e.bounds.w/2>=0);assert.ok(e.bounds.x+e.bounds.w/2<=390);assert.ok(e.bounds.y-e.bounds.h/2>=0);assert.ok(e.bounds.y+e.bounds.h/2<=780)}
  }
  const short=input(city,{width:360,height:180});short.entries[0].point={x:180,y:90};const result=displayCoins(short),remaining=result.find(e=>e.overflow);assert.ok(remaining);assert.ok(result.some(e=>e.kind==='family'));
  assert.deepEqual(ids(result),city.members.map(m=>m.family.id).sort());assert.equal(displayCollectionContext(remaining).familyIds.length,15);
@@ -51,7 +51,7 @@ test('8.5 resolves still-clustered source leaves into real city anchors before e
  assert.ok(expanded.every(e=>e.coords===city.place.coordinates&&e.point.x===640));
  assert.equal(result.find(e=>e.members.some(m=>m.family.id==='western-liao-zhouyuan')).point.x,1000);
 });
-test('expanded grid avoids visible search controls and reserves a remaining entry above a short sheet',()=>{
+test('expanded scatter avoids visible search controls and reserves a remaining entry above a short sheet',()=>{
  const obstacle={x:230,y:110,w:440,h:180},config=input(city,{expansionObstacles:[obstacle]});
  config.entries[0].point={x:640,y:300};const result=displayCoins(config);assert.ok(result.every(e=>!intersects(e.bounds,obstacle)));
  const phone=input(city,{width:390,height:780,expansionHeight:250,expansionTop:120});phone.entries[0].point={x:195,y:300};

@@ -83,7 +83,7 @@ export function layoutCoinEntries(entries:MapCoinEntry[],labels:Box[],width:numb
  * MapLibre's screen-radius clustering separates places as projected distances grow.
  * Exact anchors stay grouped: T42 consumes sameCityExpansion, without fake coordinates.
  */
-export const coinDisplayRules={middleZoom:5.5,nearZoom:8.5,clusterRadius:48,clusterMaxZoom:8,photoOffset:-64,expansionGap:12,expansionMargin:12,anchorClearance:44,desktopColumns:5,mobileColumns:3} as const;
+export const coinDisplayRules={middleZoom:5.5,nearZoom:8.5,clusterRadius:48,clusterMaxZoom:8,photoOffset:-64,expansionMargin:12,scatterCandidates:160,scatterRadius:400,scatterMobileRadius:420} as const;
 export type CoinDisplayStage='far'|'middle'|'near';
 export function coinDisplayStage(zoom:number):CoinDisplayStage{return zoom<coinDisplayRules.middleZoom?'far':zoom<coinDisplayRules.nearZoom?'middle':'near'}
 export function coinMarkerVisual(image:ImageRecord|null|undefined,failed=false){return image&&!failed?'image':'placeholder'}
@@ -92,44 +92,65 @@ export type CoinDisplay=DisplayCoinEntry&{
  sameCityExpansion:boolean;anchors:{placeId:string;coordinates:[number,number]}[];
  offsetX:number;collectionGroups:CoinPlace[];fullMembers:CoinMember[];overflow:boolean;
 };
-/** One grid belongs to its real anchor. Slots never depend on selection or image aspect ratio. */
-function expandCity(entry:MapCoinEntry,width:number,height:number,labels:Box[],controls:Box[]=[],top=0):CoinDisplay[]{
- const members=uniqueMembers(entry.groups),small=width<600,size=small?coinMarkerSizes.mobile:coinMarkerSizes.desktop;
- const {expansionGap:gap,expansionMargin:margin,anchorClearance:clearance}=coinDisplayRules;
- const cellW=size.normal+gap,cellH=size.maxHeight+gap;
- const columns=Math.max(1,Math.min(small?coinDisplayRules.mobileColumns:coinDisplayRules.desktopColumns,Math.floor((width-margin*2)/cellW),members.length));
- const maxRows=Math.max(1,Math.floor((height-top-margin*2-clearance)/cellH));
- const capacity=columns*maxRows,overflow=members.length>capacity;
- const shown=overflow?members.slice(0,Math.max(0,capacity-1)):members;
- const slots=shown.length+(overflow?1:0),rows=Math.ceil(slots/columns),gridW=columns*cellW-gap,gridH=rows*cellH-gap;
- const clamp=(v:number,extent:number,total:number,start=0)=>Math.max(margin+start,Math.min(total-margin-extent,v));
- const candidates=[
-  {x:entry.point.x-gridW/2,y:entry.point.y-clearance-gridH},
-  {x:entry.point.x-gridW/2,y:entry.point.y+clearance},
-  {x:entry.point.x+clearance,y:entry.point.y-gridH/2},
-  {x:entry.point.x-clearance-gridW,y:entry.point.y-gridH/2},
- ].map(p=>({x:clamp(p.x,gridW,width),y:clamp(p.y,gridH,height,top)}));
- const shape=(p:{x:number;y:number},index:number,member?:CoinMember)=>{
-  const point={x:p.x+(index%columns)*cellW+size.normal/2,y:p.y+Math.floor(index/columns)*cellH+size.maxHeight/2};
-  return markerGeometry(point,true,small,member?1:members.length-shown.length,0,member?.image);
- };
- const anchor={x:entry.point.x,y:entry.point.y+8,w:100,h:50};
- const penalty=(p:{x:number;y:number})=>Array.from({length:slots},(_,i)=>shape(p,i,shown[i]).box).reduce((n,b)=>n+labels.filter(label=>intersects(b,label)).length+50*controls.filter(control=>intersects(b,control)).length+(intersects(b,anchor)?20:0),0);
- const origin=candidates.map((p,i)=>({p,i,penalty:penalty(p)})).sort((a,b)=>a.penalty-b.penalty||a.i-b.i)[0].p;
- const anchors=entry.groups.map(g=>({placeId:g.place.id,coordinates:g.place.coordinates}));
- const base={...entry,stage:'near' as const,large:true,displayCollection:false,entryKeys:[entry.key],sameCityExpansion:true,anchors,collectionGroups:entry.groups,fullMembers:members};
- const cityKey=JSON.stringify(anchors.map(a=>a.placeId).sort());
- return Array.from({length:slots},(_,i)=>{
-  const member=shown[i],geometry=shape(origin,i,member),bounds=geometry.box;
-  const x=origin.x+(i%columns)*cellW+size.normal/2,y=origin.y+Math.floor(i/columns)*cellH+size.maxHeight/2;
-  const remaining=members.slice(shown.length);
-  return {...base,key:`city:${cityKey}:${member?member.family.id:'remaining'}`,members:member?[member]:remaining,representative:member,
-   kind:member?'family' as const:'collection' as const,overflow:!member,offsetX:x-entry.point.x,offset:y-entry.point.y,bounds};
+/** Stable, bounded screen-space scattering. No random state or geographic edits. */
+export type CoinScatterPosition={offsetX:number;offset:number};
+const hash=(value:string)=>{let h=2166136261;for(const c of value)h=Math.imul(h^c.charCodeAt(0),16777619);return h>>>0};
+function scatterCoins(entries:MapCoinEntry[],input:{width:number;height:number;labels:Box[];selectedId?:string;expansionObstacles?:Box[];expansionHeight?:number;expansionTop?:number;previous?:ReadonlyMap<string,CoinScatterPosition>}):CoinDisplay[]{
+ const small=input.width<600,margin=coinDisplayRules.expansionMargin;
+ const top=input.expansionTop||0,bottom=Math.min(input.height,input.expansionHeight??input.height);
+ const cities=[...entries].sort((a,b)=>a.key<b.key?-1:a.key>b.key?1:0).map(entry=>{
+  const members=uniqueMembers(entry.groups),anchors=entry.groups.map(g=>({placeId:g.place.id,coordinates:g.place.coordinates})),cityKey=JSON.stringify(anchors.map(a=>a.placeId).sort());
+  return {entry,members,anchors,cityKey,placed:[] as CoinDisplay[]};
  });
+ const centers=cities.map(c=>({x:c.entry.point.x,y:c.entry.point.y+9,w:126,h:64}));
+ const obstacles=[...input.labels,...centers,...input.expansionObstacles||[]];
+ const occupied:Box[]=[],result:CoinDisplay[]=[];
+ function make(city:typeof cities[number],member:CoinMember|undefined,remaining:CoinMember[],pos:CoinScatterPosition):CoinDisplay{
+  const {entry,anchors,members,cityKey}=city,geometry=markerGeometry({x:entry.point.x+pos.offsetX,y:entry.point.y+pos.offset},true,small,member?1:remaining.length,0,member?.image);
+  // Include selected outline and a usable minimum pointer target in collision geometry.
+  const bounds={...geometry.box,w:Math.max(44,geometry.box.w)+4,h:Math.max(32,geometry.box.h)+4};
+  return {...entry,key:`city:${cityKey}:${member?member.family.id:'remaining'}`,stage:'near',large:true,displayCollection:false,entryKeys:[entry.key],sameCityExpansion:members.length>1,anchors,collectionGroups:entry.groups,fullMembers:members,
+   members:member?[member]:remaining,representative:member,kind:member?'family':'collection',overflow:!member,...pos,bounds};
+ }
+ const inside=(b:Box)=>b.x-b.w/2>=margin&&b.x+b.w/2<=input.width-margin&&b.y-b.h/2>=top+margin&&b.y+b.h/2<=bottom-margin;
+ const free=(e:CoinDisplay)=>inside(e.bounds)&&!obstacles.some(b=>intersects(e.bounds,b))&&!occupied.some(b=>intersects(e.bounds,b));
+ function candidates(city:typeof cities[number],id:string):CoinScatterPosition[]{
+  const seed=hash(city.cityKey+':'+id),angle=(seed%360)*Math.PI/180;
+  const radius=small?coinDisplayRules.scatterMobileRadius:coinDisplayRules.scatterRadius;
+  const initial=65+(seed>>>9)%50;
+  return Array.from({length:coinDisplayRules.scatterCandidates},(_,i)=>{
+   // Different ID phases and radius bands produce staggered directions, not a circle/spiral queue.
+   const a=angle+i*2.3999632297+(hash(id+':'+i)%37-18)*Math.PI/180;
+   const r=initial+Math.floor(i/10)*26+(hash(city.cityKey+':'+i)%31);
+   const distance=Math.min(radius,r);
+   const x=city.entry.point.x+Math.cos(a)*distance,y=city.entry.point.y+Math.sin(a)*distance*.86;
+   const padX=small?38:42,padY=36;
+   return {offsetX:Math.round(Math.max(margin+padX,Math.min(input.width-margin-padX,x))-city.entry.point.x),offset:Math.round(Math.max(top+margin+padY,Math.min(bottom-margin-padY,y))-city.entry.point.y)};
+  });
+ }
+ const pending=cities.flatMap(city=>city.members.map(member=>({city,member,key:`city:${city.cityKey}:${member.family.id}`})));
+ // Keep every still-valid old slot first. Small pans, selection and filters don't reshuffle neighbours.
+ const remaining:typeof pending=[];
+ for(const item of [...pending].sort((a,b)=>Number(b.member.family.id===input.selectedId)-Number(a.member.family.id===input.selectedId))){const old=input.previous?.get(item.key);const e=old&&make(item.city,item.member,[],old);if(e&&free(e)){item.city.placed.push(e);occupied.push(e.bounds);result.push(e)}else remaining.push(item)}
+ remaining.sort((a,b)=>Number(b.member.family.id===input.selectedId)-Number(a.member.family.id===input.selectedId)||hash(a.key)-hash(b.key)||a.key.localeCompare(b.key));
+ for(const item of remaining){const e=candidates(item.city,item.member.family.id).map(pos=>make(item.city,item.member,[],pos)).find(free);if(e){item.city.placed.push(e);occupied.push(e.bounds);result.push(e)}}
+ for(const city of cities){
+  let unplaced=city.members.filter(m=>!city.placed.some(e=>e.members[0].family.id===m.family.id));if(!unplaced.length)continue;
+  const findRemaining=()=>candidates(city,'remaining').map(pos=>make(city,undefined,unplaced,pos)).find(free);
+  let e=findRemaining();
+  // Reserve an actionable collection footprint, never displace the selected family.
+  if(!e){const removable=[...city.placed].reverse().find(e=>e.members[0].family.id!==input.selectedId);if(removable){occupied.splice(occupied.indexOf(removable.bounds),1);result.splice(result.indexOf(removable),1);city.placed.splice(city.placed.indexOf(removable),1);unplaced=city.members.filter(m=>!city.placed.some(e=>e.members[0].family.id===m.family.id));e=findRemaining()||make(city,undefined,unplaced,{offsetX:removable.offsetX,offset:removable.offset});if(!free(e))e=undefined}}
+  // Completely covered anchors retain their members through a nearby visible collection,
+  // using the same bounded candidates. No off-screen or overlapping fallback is drawn.
+  if(e){result.push(e);occupied.push(e.bounds)}else{
+   const target=result.find(e=>e.overflow);if(target){target.members=uniqueMembers([{...city.entry.groups[0],members:[...target.members,...unplaced]}]);target.fullMembers=uniqueMembers([...target.collectionGroups,...city.entry.groups]);target.collectionGroups=[...target.collectionGroups,...city.entry.groups];}
+  }
+ }
+ return result.sort((a,b)=>a.key.localeCompare(b.key));
 }
 export function displayCollectionContext(entry:CoinDisplay){return {placeIds:entry.collectionGroups.map(g=>g.place.id),familyIds:entry.fullMembers.map(m=>m.family.id),scrollTop:0}}
 /** The renderer consumes one decision for images, collection counts and T42 expansion. */
-export function displayCoins(input:{zoom:number;width:number;height:number;entries:MapCoinEntry[];labels:Box[];selectedId?:string;project?:(coordinates:[number,number])=>{x:number;y:number};expansionObstacles?:Box[];expansionHeight?:number;expansionTop?:number}):CoinDisplay[]{
+export function displayCoins(input:{zoom:number;width:number;height:number;entries:MapCoinEntry[];labels:Box[];selectedId?:string;project?:(coordinates:[number,number])=>{x:number;y:number};expansionObstacles?:Box[];expansionHeight?:number;expansionTop?:number;previous?:ReadonlyMap<string,CoinScatterPosition>}):CoinDisplay[]{
  const stage=coinDisplayStage(input.zoom);
  // A fractional zoom (8.5–9) can still query the source's last integer cluster.
  // Resolve its original anchors here so the public near threshold remains exact.
@@ -144,16 +165,10 @@ export function displayCoins(input:{zoom:number;width:number;height:number;entri
  }).filter(e=>e.point.x>=0&&e.point.x<=input.width&&e.point.y>=0&&e.point.y<=input.height):input.entries;
  // Expand the original city groups before collision merging. Expanded slots must not
  // pass through layoutCoinEntries, which intentionally merges coincident footprints.
- const cities=stage==='near'?entries.filter(e=>uniqueMembers(e.groups).length>1):[];
- const expanded=[...cities].sort((a,b)=>a.key.localeCompare(b.key)).flatMap(e=>expandCity(e,input.width,Math.min(input.height,input.expansionHeight??input.height),input.labels,input.expansionObstacles||[],input.expansionTop||0));
- const ordinary=entries.filter(e=>!cities.includes(e));
- return [...layoutCoinEntries(ordinary,[...input.labels,...expanded.map(e=>e.bounds)],input.width,input.height,input.selectedId).map(entry=>{
-  const members=uniqueMembers(entry.groups);
-  // A selected member without an eligible photo retains its highlight, while a collection
-  // may use another eligible member's photo; never borrow an unfiltered image.
-  const representative=representativeMember(members,input.selectedId);
-  const sameCityExpansion=stage==='near'&&entry.groups.some(g=>g.members.length>1);
-  return {...entry,stage,kind:members.length>1?'collection' as const:'family' as const,members,representative,sameCityExpansion,offsetX:0,collectionGroups:entry.groups,fullMembers:members,overflow:false,
+ if(stage==='near')return scatterCoins(entries,input);
+ return layoutCoinEntries(entries,input.labels,input.width,input.height,input.selectedId).map(entry=>{
+  const members=uniqueMembers(entry.groups),representative=representativeMember(members,input.selectedId);
+  return {...entry,stage,kind:members.length>1?'collection' as const:'family' as const,members,representative,sameCityExpansion:false,offsetX:0,collectionGroups:entry.groups,fullMembers:members,overflow:false,
    anchors:entry.groups.map(g=>({placeId:g.place.id,coordinates:g.place.coordinates}))};
- }),...expanded];
+ });
 }
