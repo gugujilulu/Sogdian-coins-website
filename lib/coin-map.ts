@@ -70,3 +70,29 @@ export function layoutCoinEntries(entries:MapCoinEntry[],labels:Box[],width:numb
  }
  return placed.sort(rank);
 }
+
+/** T41 display policy; source clustering and visible projection share these thresholds.
+ * MapLibre's screen-radius clustering separates places as projected distances grow.
+ * Exact anchors stay grouped: T42 consumes sameCityExpansion, without fake coordinates.
+ */
+export const coinDisplayRules={middleZoom:5.5,nearZoom:8.5,clusterRadius:48,clusterMaxZoom:8} as const;
+export type CoinDisplayStage='far'|'middle'|'near';
+export function coinDisplayStage(zoom:number):CoinDisplayStage{return zoom<coinDisplayRules.middleZoom?'far':zoom<coinDisplayRules.nearZoom?'middle':'near'}
+export function coinMarkerVisual(image:ImageRecord|null|undefined,failed=false){return image&&!failed?'image':'placeholder'}
+export type CoinDisplay=DisplayCoinEntry&{
+ stage:CoinDisplayStage;kind:'family'|'collection';members:CoinMember[];representative:CoinMember|undefined;
+ sameCityExpansion:boolean;anchors:{placeId:string;coordinates:[number,number]}[];
+};
+/** The renderer consumes one decision for images, collection counts and T42 expansion. */
+export function displayCoins(input:{zoom:number;width:number;height:number;entries:MapCoinEntry[];labels:Box[];selectedId?:string}):CoinDisplay[]{
+ const stage=coinDisplayStage(input.zoom);
+ return layoutCoinEntries(input.entries,input.labels,input.width,input.height,input.selectedId).map(entry=>{
+  const members=uniqueMembers(entry.groups),preferred=coverMember(members,input.selectedId);
+  // A selected member without an eligible photo retains its highlight, while a collection
+  // may use another eligible member's photo; never borrow an unfiltered image.
+  const representative=preferred?.image?preferred:members.find(m=>m.image)||preferred;
+  const sameCityExpansion=stage==='near'&&entry.groups.some(g=>g.members.length>1);
+  return {...entry,stage,kind:members.length>1?'collection':'family',members,representative,sameCityExpansion,
+   anchors:entry.groups.map(g=>({placeId:g.place.id,coordinates:g.place.coordinates}))};
+ });
+}

@@ -15,7 +15,7 @@ import type {RangeControl} from './range-controls';
 import {mapPadding,mobileViewport} from '@/lib/mobile-sheet';
 import MapLayerPanel from './map-layer-panel';
 import {recordSourceProvider} from '@/lib/record-filters';
-import {coinFeatures,coinPlaces} from '@/lib/coin-map';
+import {coinFeatures,coinPlaces,coinDisplayRules} from '@/lib/coin-map';
 import {installCoinMarkers} from './coin-map-markers';
 import 'maplibre-gl/dist/maplibre-gl.css';
 
@@ -58,7 +58,7 @@ export default function TerrainMap({rangeControl:providedControl,active,sourceFi
     m.on('style.load',()=>{
      if(disposed)return;
      history.current?.destroy();coinMarkers.current?.destroy();
-     if(!m.getSource('coins'))m.addSource('coins',{type:'geojson',cluster:true,clusterRadius:48,clusterMaxZoom:8,clusterProperties:{family_total:['+',['get','familyCount']],specimen_total:['+',['get','specimenCount']]},data:{type:'FeatureCollection',features:makeCoinFeatures()}});
+     if(!m.getSource('coins'))m.addSource('coins',{type:'geojson',cluster:true,clusterRadius:coinDisplayRules.clusterRadius,clusterMaxZoom:coinDisplayRules.clusterMaxZoom,clusterProperties:{family_total:['+',['get','familyCount']],specimen_total:['+',['get','specimenCount']]},data:{type:'FeatureCollection',features:makeCoinFeatures()}});
      if(!m.getLayer('coin-source-layout'))m.addLayer({id:'coin-source-layout',type:'circle',source:'coins',paint:{'circle-radius':1,'circle-opacity':0}});
      coinMarkers.current=installCoinMarkers(gl,m,()=>effectiveRef.current.coins?groupsRef.current:[],()=>selectedRef.current,(id,context)=>select.current(id,context));
      if(!m.getSource('selected-coin'))m.addSource('selected-coin',{type:'geojson',data:{type:'FeatureCollection',features:[]}});

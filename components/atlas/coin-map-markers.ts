@@ -3,7 +3,7 @@ import {focusReturn,stableFocusIndex} from '@/lib/keyboard';
 import {motionDuration} from '@/lib/motion';
 import {collectionReturn,collectionMembers,type CollectionContext} from '@/lib/map-selection';
 import type * as GL from 'maplibre-gl';
-import {canExpand,coverMember,layoutCoinEntries,markerGeometry,uniqueMembers,type CoinPlace,type Box} from '@/lib/coin-map';
+import {canExpand,displayCoins,coinMarkerVisual,markerGeometry,uniqueMembers,type CoinPlace,type Box} from '@/lib/coin-map';
 
 /** A small visible-marker projection of the existing MapLibre clustered source. */
 export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPlace[],getSelected:()=>string|undefined,onSelect:(id:string,context?:CollectionContext)=>void){
@@ -59,19 +59,20 @@ export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPla
   if(disposed||token!==generation)return;
   const occupied:Box[]=Array.from(map.getContainer().querySelectorAll<HTMLElement>('.historical-label')).filter(el=>el.style.visibility!=='hidden').map(el=>{const r=el.getBoundingClientRect(),c=map.getContainer().getBoundingClientRect();return{x:r.x-c.x+r.width/2,y:r.y-c.y+r.height/2,w:r.width,h:r.height}});
   rememberFocus();const live=new Set<string>();
-  const layout=layoutCoinEntries(entries.filter(e=>e!==null),occupied,map.getContainer().clientWidth,map.getContainer().clientHeight,getSelected());
+  const layout=displayCoins({entries:entries.filter(e=>e!==null),labels:occupied,width:map.getContainer().clientWidth,height:map.getContainer().clientHeight,zoom:map.getZoom(),selectedId:getSelected()});
   for(const e of layout){
-   const members=uniqueMembers(e.groups),cover=coverMember(members,getSelected()),selected=members.some(m=>m.family.id===getSelected());
+   const members=e.members,cover=e.representative,selected=members.some(m=>m.family.id===getSelected());
    const large=e.large,geometry=markerGeometry(e.point,large,map.getContainer().clientWidth<600,members.length,e.offset);
-   const signature=JSON.stringify([members.map(m=>[m.family.id,m.recordCount,m.image?.id]),cover?.image?.path,large,geometry.width,e.offset,e.displayCollection,selected,!!getSelected()]);live.add(e.key);
+   const signature=JSON.stringify([members.map(m=>[m.family.id,m.recordCount,m.image?.id]),cover?.image?.path,large,geometry.width,e.offset,e.displayCollection,selected,!!getSelected(),e.stage,e.sameCityExpansion]);live.add(e.key);
    let entry=markers.get(e.key);
    if(entry?.signature!==signature){entry?.marker.remove();const button=document.createElement('button');button.type='button';button.className=`coin-map-marker ${large?'photo':'compact'}${selected?' selected':getSelected()?' muted':''}`;
     button.style.width=`${geometry.width}px`;button.style.height=`${geometry.height}px`;
     const label=`${e.displayCollection?tr('显示集合'):e.cluster?tr('空间集合'):e.groups.map(g=>g.place.name).join(' / ')} · ${countLabel(members.length,'families')} · ${countLabel(members.reduce((n,m)=>n+m.recordCount,0),'records')}`;
     button.dataset.familyIds=JSON.stringify(members.map(m=>m.family.id));button.setAttribute('aria-label',label);button.title=label+(cover?`\n${cover.family.title}`:'');
-    if(large&&cover?.image)button.appendChild(image(cover.image.path));else{const star=document.createElement('span');star.textContent='✦';button.appendChild(star)}
+    button.dataset.stage=e.stage;button.dataset.sameCityExpansion=String(e.sameCityExpansion);
+    if(coinMarkerVisual(cover?.image)==='image')button.appendChild(image(cover!.image!.path));else button.classList.add('image-failed');
     if(members.length>1){const badge=document.createElement('b');badge.textContent=String(members.length);badge.style.width=`${geometry.badgeWidth}px`;button.appendChild(badge)}
-    const fallback=document.createElement('span');fallback.className='coin-marker-fallback';fallback.textContent=large?(cover?.family.title||'图片未加载'):'';button.appendChild(fallback);
+    const fallback=document.createElement('span');fallback.className='coin-marker-fallback';fallback.textContent='—';fallback.setAttribute('aria-hidden','true');button.appendChild(fallback);
     entry={button,signature,marker:new gl.Marker({element:button,anchor:'center',offset:[0,e.offset]}).setLngLat(e.coords).addTo(map)};markers.set(e.key,entry);
    }
    // Refresh handler on every projection; async work is invalidated on filter changes.
