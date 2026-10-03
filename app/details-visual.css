@@ -91,3 +91,20 @@ dialog.art-detail::backdrop{background:#10253183;backdrop-filter:none}
 .art-detail .related-detail-header .language-menu{position:absolute;top:calc(100% + 6px);right:0}
 .art-detail .modal-info>button{position:absolute;right:20px;top:24px;width:30px;height:30px;min-width:30px;padding:0;border:0;font-size:0;background:url('/visual/t47/r3/share.webp') center/23px no-repeat}
 .art-detail :is(button,a,summary):focus-visible,.art-research :is(button,a,summary):focus-visible{outline:2px solid #306681;outline-offset:3px}
+.art-detail .modal-info>.deep-copy{position:absolute;right:20px;top:24px;z-index:1}
+.art-detail .modal-info>.deep-copy>button{width:30px;height:30px;padding:0;border:0;font-size:0;background:url('/visual/t47/r3/share.webp') center/23px no-repeat}
+.art-detail .modal-info>.deep-copy>small{font-size:12px;display:block;max-width:180px;background:var(--atlas-paper);color:var(--atlas-ink)}
+.art-detail .modal-info>.deep-copy>input{max-width:100%;background:var(--atlas-paper);color:var(--atlas-ink)}
+.art-detail .related-detail-header>button .art-icon{filter:brightness(0) invert(.93) sepia(.3)}
+.art-detail .image-pagination{border-bottom:1px solid #c4ad8a}
+.art-detail .viewer-credit{display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap;flex:none;font-size:13px;color:#8a7251;padding-top:6px}
+.art-research .research-reference-cards article{align-self:stretch}
+.art-detail button[hidden]{display:none!important}
+dialog.art-detail{margin:calc(var(--atlas-header) + 16px) auto 0;height:min(900px,calc(100dvh - var(--atlas-header) - 32px))}
+.art-detail .image-toolbar .image-actual-size{display:inline;font-size:13px}
+@media(max-width:760px){dialog.art-detail{height:calc(100dvh - var(--atlas-header) - 32px)}}
+@media(max-height:500px) and (max-width:760px){dialog.art-detail{margin:8px auto;height:calc(100dvh - 16px)}}
+.art-detail[data-kind=related]{width:min(1224px,calc(100vw - 36px));height:min(830px,calc(100dvh - var(--atlas-header) - 32px))}
+.art-detail[data-kind=related] .related-detail-body{grid-template-columns:minmax(0,1.9fr) minmax(300px,1fr)}
+.art-detail .modal-info:after{content:"";position:absolute;bottom:0;left:0;right:0;height:90px;z-index:-1;background:url('/visual/t47/r3/mountain-footer.webp') center bottom/cover no-repeat;opacity:.18;pointer-events:none}
+@media(max-width:760px){.art-detail[data-kind=related]{width:calc(100vw - 18px);height:calc(100dvh - var(--atlas-header) - 32px)}}

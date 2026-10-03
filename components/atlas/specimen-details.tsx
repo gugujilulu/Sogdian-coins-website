@@ -19,7 +19,7 @@ export default function SpecimenDetails({matches,link,specimen,family,onClose}:{
  <CopyLink link={link}/><span className="eyebrow">{family?.title}</span><h1>{specimen.title}</h1>
  <dl className="record-facts"><div><dt>{tr('重量')}</dt><dd>{specimen.weightG!=null?`${specimen.weightG} g`:tr('重量未记录')}</dd></div><div><dt>{tr('直径')}</dt><dd>{specimen.diameterMm!=null?`${specimen.diameterMm} mm`:tr('直径未记录')}</dd></div>{family&&<><div><dt>{tr('家族年代')}</dt><dd>{family.dateLabel||tr('年代未记录')}</dd></div><div><dt>{tr('历史地区 / Region')}</dt><dd>{family.region||tr('地区未记录')}</dd></div><div><dt>{tr('政权')}</dt><dd>{family.polity||tr('政权未记录')}</dd></div></>}</dl>
  {specimen.description&&<section className="record-description"><h2>{tr('钱币描述')}</h2><p>{specimen.description}</p></section>}
- <div className="record-source-links">{specimen.sources.map((s,i)=><a className="out-link" key={s.url+i} href={s.url} target="_blank" rel="noreferrer">{s.label} ↗</a>)}</div>
+ <div className="record-source-links">{specimen.sources.map((s,i)=><a className="out-link" key={s.url+i} href={s.url} target="_blank" rel="noreferrer">{specimen.sourceRecordId&&s.label.includes(specimen.sourceRecordId)?tr("原始记录页面"):s.label} ↗</a>)}</div>
  <ImageProvenance compact image={image}/>
  <details className="record-methods"><summary>{tr('资料与方法')}</summary>
  {specimen.sourceRecordId&&!specimen.title.includes(specimen.sourceRecordId)&&<p>{sourceIdentity(specimen.sourceName,specimen.sourceRecordId)}</p>}
