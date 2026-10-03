@@ -1,4 +1,4 @@
-import {tr,countLabel} from '@/lib/i18n';
+import {tr,countLabel,copyKnown} from '@/lib/i18n';
 import {focusReturn,stableFocusIndex} from '@/lib/keyboard';
 import {motionDuration} from '@/lib/motion';
 import {collectionReturn,collectionMembers,type CollectionContext} from '@/lib/map-selection';
@@ -28,7 +28,7 @@ export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPla
    if(member.image)row.appendChild(image(member.image.path));
    const text=document.createElement('span'),name=document.createElement('strong'),count=document.createElement('small'),role=document.createElement('small'),source=document.createElement('small');
    name.textContent=member.family.title;count.textContent=countLabel(member.recordCount,'records');
-   role.textContent=`${member.family.anchor?.role||tr('位置角色未记录')} · ${member.family.anchor?.note||'位置说明未记录'}`;
+   role.textContent=member.family.anchor?.role?copyKnown(member.family.anchor.role):tr('位置角色未记录');
    source.textContent=member.image?`${member.image.sourceName||tr('来源待解析')} · ${member.image.sourceRecordId||tr('编号待解析')}`:tr('无可用图片；仍可打开家族');
    for(const child of [name,count,role,source])text.appendChild(child);row.appendChild(text);row.onclick=()=>{const context={...popupContext!,scrollTop:node.scrollTop};lastMember=member.family.id;removePopup();onSelect(member.family.id,context)};node.appendChild(row);
   }
