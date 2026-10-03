@@ -47,7 +47,7 @@ export default function RelatedGallery({records,allRecords=records,filterKey='',
 
     <h2>{r.title.replace(/^#\d+ - /,'')}</h2>
     <details className="browse-notes"><summary>{tr("资料说明")}</summary><span>{copyKnown(r.reviewStatus,locale)}</span>{r.sourcePath.length>0&&<small>{r.sourcePath.map(x=>`${x.title} [${x.categoryId}]`).join(' › ')}</small>}
-    <p>{r.reason}</p></details><a className="out-link" href={r.sourceUrl} target="_blank" rel="noreferrer">{r.sourceName} · {r.sourceRecordId}<ArtIcon name="external" collection="r3" size={15}/></a></div>
+    <p>{r.reason}</p></details><a className="out-link" href={r.sourceUrl} target="_blank" rel="noreferrer">{r.sourceRecordId.startsWith(r.sourceName+' ')?r.sourceRecordId:`${r.sourceName} · ${r.sourceRecordId}`}<ArtIcon name="external" collection="r3" size={15}/></a></div>
    </article>;
   })}</div>
   {selectedRecord&&<RelatedDetails matches={matches.some(r=>r.id===selectedRecord.id)} key={selectedRecord.id} record={selectedRecord} index={index} onClose={()=>onSelect(null)}/>}
