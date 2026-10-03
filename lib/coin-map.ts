@@ -46,7 +46,7 @@ export function layoutCoinEntries(entries:MapCoinEntry[],labels:Box[],width:numb
  const inside=(b:Box)=>b.x-b.w/2>=4&&b.x+b.w/2<=width-4&&b.y-b.h/2>=4&&b.y+b.h/2<=height-4;
  function shape(e:MapCoinEntry){
   const members=uniqueMembers(e.groups),hasImage=!!coverMember(members,selectedId)?.image;
-  const photo=markerGeometry(e.point,true,width<600,members.length);
+  const photo=markerGeometry(e.point,true,width<600,members.length,coinDisplayRules.photoOffset);
   if(hasImage&&inside(photo.box)&&!labels.some(b=>intersects(photo.box,b)))return {large:true,offset:photo.offset,bounds:photo.box};
   // Vertical screen offsets preserve the geographic anchor while avoiding label rectangles.
   const candidates=[-12,-40,-64,24,48].map(offset=>markerGeometry(e.point,false,width<600,members.length,offset));
@@ -75,7 +75,7 @@ export function layoutCoinEntries(entries:MapCoinEntry[],labels:Box[],width:numb
  * MapLibre's screen-radius clustering separates places as projected distances grow.
  * Exact anchors stay grouped: T42 consumes sameCityExpansion, without fake coordinates.
  */
-export const coinDisplayRules={middleZoom:5.5,nearZoom:8.5,clusterRadius:48,clusterMaxZoom:8} as const;
+export const coinDisplayRules={middleZoom:5.5,nearZoom:8.5,clusterRadius:48,clusterMaxZoom:8,photoOffset:-64} as const;
 export type CoinDisplayStage='far'|'middle'|'near';
 export function coinDisplayStage(zoom:number):CoinDisplayStage{return zoom<coinDisplayRules.middleZoom?'far':zoom<coinDisplayRules.nearZoom?'middle':'near'}
 export function coinMarkerVisual(image:ImageRecord|null|undefined,failed=false){return image&&!failed?'image':'placeholder'}
