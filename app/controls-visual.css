@@ -29,7 +29,7 @@
 .atlas-screen .coin-collection h3{font:700 21px/1.25 var(--atlas-serif);margin:2px 25px 10px 0}.atlas-screen .coin-collection p{color:#667579;font-size:14px;line-height:1.4}.atlas-screen .coin-collection .coin-popup-row{color:var(--atlas-ink);border-color:var(--atlas-rule);padding:10px 0;min-height:65px;text-align:left;gap:10px;background:transparent}.atlas-screen .coin-collection .coin-popup-row:hover{background:#e8dcc7}.atlas-screen .coin-collection .coin-popup-row img{width:76px;height:52px;object-fit:contain;background:transparent;border-radius:3px}.atlas-screen .coin-collection .coin-popup-row strong{font:700 17px/1.25 var(--atlas-serif)}.atlas-screen .coin-collection .coin-popup-row small{font-size:14px;line-height:1.4;color:#667579}
 .atlas-screen .coin-preview{font:15px/1.4 var(--atlas-serif);color:var(--atlas-ink);background:transparent;padding:0}.atlas-screen .coin-preview-popup .maplibregl-popup-tip{display:none}
 /* Grid row height follows the tallest real record, not unused flexible spacing. */
-.catalogue-page[data-mode=atlas] .catalogue-gallery{align-items:start;grid-auto-rows:auto}
+.catalogue-page[data-mode=atlas] .catalogue-gallery{align-items:stretch;grid-auto-rows:auto}
 .catalogue-page[data-mode=atlas] .browse-card{height:auto;min-height:0}
 .catalogue-page[data-mode=atlas] .browse-card-copy{flex:none;padding-bottom:3px}
 .catalogue-page[data-mode=atlas] .browse-card-copy .browse-measure{margin-bottom:7px}
@@ -44,3 +44,12 @@
  .catalogue-page[data-content=related] .catalogue-switch{padding:5px 16px 8px}.catalogue-page[data-content=related] .catalogue-search{margin-bottom:4px}
  .catalogue-page[data-content=related] .catalogue-content{padding-top:12px}.catalogue-page[data-content=related] .related-browse-heading{margin-bottom:9px;padding:0 25px 8px 0}.catalogue-page[data-content=related] .related-browse-heading h1{font-size:25px;margin:0 0 5px}.catalogue-page[data-content=related] .related-browse-heading .browse-count{font-size:17px;margin:5px 0 0}.catalogue-page[data-content=related] .related-guide{gap:5px 16px;margin-bottom:10px}.catalogue-page[data-content=related] .related-guide summary{font-size:14px}
 }
+.atlas-screen .historical-info-popup{z-index:16}
+.atlas-screen .map-toolbar button{display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.atlas-screen .timeline-floating[open]>summary{display:flex;align-items:center;gap:8px;min-height:36px}
+.atlas-screen .timeline-floating[open] .desktop-control-label{display:inline;flex:1;white-space:normal}
+.atlas-screen .timeline-floating[open]>summary:after{content:'';display:block;width:28px;height:28px;flex:none;background:url('/visual/t47/r3/close.webp') center/14px no-repeat}
+.atlas-screen .filter-grid>button,.atlas-screen .geography-filters>button{min-height:32px;padding:6px 9px;border-radius:5px}
+.catalogue-page[data-mode=atlas] .browse-source-links{flex-direction:row;flex-wrap:wrap;align-items:center;gap:5px 9px}
+.catalogue-page[data-mode=atlas] .browse-source-links>a{flex:1;min-width:120px}
+.catalogue-page[data-mode=atlas] .browse-source-links>small{font-size:13px;color:#667579}
