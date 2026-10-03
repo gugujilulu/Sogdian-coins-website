@@ -13,6 +13,7 @@ export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPla
  let lastMember:string|null=null,openerFamilies:string[]=[],restoreOnClose=true,pendingFocus:string[]|null=null;
  let closingFamily:string|undefined;
  let scatterPositions=new Map<string,CoinScatterPosition>();
+ const scatterFrames=new Map<string,Map<string,CoinScatterPosition>>();
  const observed=new Set<Element>();const obstaclesObserver=new ResizeObserver(()=>schedule());
  const rememberFocus=()=>{const active=document.activeElement;for(const entry of markers.values())if(entry.button===active)pendingFocus=JSON.parse(entry.button.dataset.familyIds||'[]')};
  const restoreMarker=()=>{const ids=closingFamily?[closingFamily]:pendingFocus||openerFamilies;const entries=[...markers.values()].filter(e=>e.button.dataset.occluded!=='true');const entry=entries[stableFocusIndex(ids,entries.map(e=>JSON.parse(e.button.dataset.familyIds||'[]')))];if(entry)entry.button.focus({preventScroll:true});else focusReturn(map.getCanvas());pendingFocus=null;closingFamily=undefined};
@@ -69,6 +70,11 @@ export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPla
   const expansionHeight=drawer&&drawer.left<bounds.right&&drawer.right>bounds.left?Math.max(100,Math.min(bounds.height,drawer.top-bounds.top-12)):bounds.height;
   const search=screen?.querySelector('.atlas-search-panel')?.getBoundingClientRect();
   const expansionTop=bounds.width<600&&search&&search.width>bounds.width*.6?Math.max(0,Math.min(expansionHeight-100,search.bottom-bounds.top+12)):0;
+  const frameKey=JSON.stringify([Math.round(bounds.width),Math.round(bounds.height),Math.round(drawer?.height||0),Math.round(search?.height||0),...['.history-controls','.timeline-floating'].map(selector=>Math.round(screen?.querySelector(selector)?.getBoundingClientRect().height||0))]);
+  if(!scatterFrames.has(frameKey))scatterFrames.set(frameKey,new Map(scatterPositions));
+  scatterPositions=scatterFrames.get(frameKey)!;
+  // Retain a handful of actual panel/viewport configurations, not an unbounded pan history.
+  if(scatterFrames.size>12){const oldest=scatterFrames.keys().next().value;if(oldest!==undefined&&oldest!==frameKey)scatterFrames.delete(oldest)}
   rememberFocus();const live=new Set<string>();
   const layout=displayCoins({entries:entries.filter(e=>e!==null),labels:occupied,width:map.getContainer().clientWidth,height:map.getContainer().clientHeight,zoom:map.getZoom(),selectedId:getSelected(),project:coords=>map.project(coords),expansionObstacles,expansionHeight,expansionTop,previous:scatterPositions});
   if(map.getZoom()>=8.5)for(const e of layout)if(!e.overflow)scatterPositions.set(e.key,{offsetX:e.offsetX,offset:e.offset});
