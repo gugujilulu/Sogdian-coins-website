@@ -28,7 +28,7 @@ test('source constrained multi, single, zero and missing photos stay operable',(
  const matched=data.specimens.filter(r=>r.familyId.startsWith('sr')&&r.sources.some(s=>s.url.includes('zeno.ru')));
  const subset=coinPlaces(data.families,matched,data.places,i=>i.sourceName==='Zeno').find(g=>g.place.id==='suyab');
  assert.ok(subset.members.length>1);for(const e of displayCoins(input(subset)))assert.equal(e.representative.image.sourceName,'Zeno');
- const one={...subset,members:subset.members.slice(0,1)};assert.equal(displayCoins(input(one)).length,1);assert.equal(displayCoins(input(one))[0].sameCityExpansion,false);
+ const one={...subset,members:subset.members.slice(0,1)};assert.equal(displayCoins(input(one)).length,1);assert.equal(displayCoins(input(one))[0].sameCityExpansion,false);assert.equal(displayCollectionContext(displayCoins(input(one))[0]).familyIds.length,1);
  assert.deepEqual(displayCoins({...input(one),entries:[]}),[]);
  const missing={...city,members:city.members.map(m=>({...m,image:null}))};const result=displayCoins(input(missing));assert.equal(result.length,15);assert.ok(result.every(e=>coinMarkerVisual(e.representative.image)==='placeholder'));
 });
