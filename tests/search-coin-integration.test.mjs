@@ -28,7 +28,7 @@ test('clear query retains source and time; clear all restores existing full resu
  const filters={...emptyFilters,query:'Lady Nana',sourceFilter:'Bactrianumis',dateMode:'year',year:700};
  const before=filterAtlasRecords(data,contextRecordFilters(filters));assert.equal(before.records.length,1);
  const cleared={...filters,query:''};const after=filterAtlasRecords(data,contextRecordFilters(cleared));assert.ok(after.records.length>=before.records.length);assert.ok(after.records.every(r=>r.sources.some(s=>s.relation==='same_specimen'&&recordSourceProvider(s)==='Bactrianumis')));
- assert.equal(contextRecordFilters(cleared).date.year,700);const sourceOnly=filterAtlasRecords(data,contextRecordFilters({...cleared,dateMode:'all'}));assert.ok(sourceOnly.records.length>before.records.length);assert.deepEqual(contextRecordFilters(cleared).sources,['Bactrianumis']);
+ assert.equal(contextRecordFilters(cleared).date.year,700);const sourceOnly=filterAtlasRecords(data,contextRecordFilters({...cleared,dateMode:'all'}));assert.deepEqual(sourceOnly.records.map(r=>r.id),before.records.map(r=>r.id));assert.deepEqual(contextRecordFilters(cleared).sources,['Bactrianumis']);
  const all=filterAtlasRecords(data,contextRecordFilters({...emptyFilters,year:700}));assert.equal(all.families.length,56);assert.equal(all.records.length,1010);
 });
 test('real matching records drive covers, city members and family selection without reducing the other search results',()=>{

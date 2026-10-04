@@ -123,8 +123,9 @@ function AtlasHome(){
  function submitSearch(){if(!data||!query.trim())return;navigation.commitSearch(currentLink);const request={serial:++searchSerial.current,query,filterKey:JSON.stringify(filters),target:searchMapTarget(data,matchedRecords)};setSearchRequest(request);setCameraRequest(request)}
  function cancelSearch(){setSearchRequest(null);setCameraRequest({serial:++searchSerial.current,query,filterKey:JSON.stringify(filters),intent:'cancel',target:{kind:'none',coordinates:[],placeIds:[],recordCount:0,unlocatedRecords:0}})}
  useEffect(()=>{if(cameraRequest&&cameraRequest.intent!=='cancel'&&cameraRequest.filterKey!==JSON.stringify(filters))cancelSearch()},[filters]);
- function chooseSearchFamily(id:string){chooseFamily(id);if(data)setCameraRequest({serial:++searchSerial.current,query,filterKey:JSON.stringify(filters),intent:'selection',target:searchMapTarget(data,matchedRecords.filter(r=>r.familyId===id))})}
- function chooseSearchRecord(record:Specimen){openSpecimen(record);if(data)setCameraRequest({serial:++searchSerial.current,query,filterKey:JSON.stringify(filters),intent:'selection',target:searchMapTarget(data,[record])})}
+ function chooseSearchFamily(id:string){chooseFamily(id);locateSearchSelection(matchedRecords.filter(r=>r.familyId===id))}
+ function chooseSearchRecord(record:Specimen){openSpecimen(record);locateSearchSelection([record])}
+ function locateSearchSelection(records:Specimen[]){if(!data)return;const request:SearchMapRequest={serial:++searchSerial.current,query,filterKey:JSON.stringify(filters),intent:'selection',target:searchMapTarget(data,records)};setCameraRequest(request);setSearchRequest({...request,target:searchMapTarget(data,matchedRecords)})}
 
  const specimensByFamily=result?.recordsByFamily||new Map<string,Specimen[]>();
  const catalogueTree=useMemo(()=>data?buildCatalogueTree(data,matchedRecords,projectSourceIndex(sourceIndex||{version:1,sources:[],links:[]},matchedRecords).byRecord,catalogueQuery):{families:[],recordCount:0,groupCount:0,unassignedCount:0},[data,result,sourceIndex,catalogueQuery]);
@@ -167,7 +168,8 @@ function AtlasHome(){
   setFilters(nextFilters);setSearchRequest(null);
   const matches=filterAtlasRecords(data,{...contextRecordFilters(nextFilters),geographyRecordIds:geographyRecordIds(geography,restored)}).records;
   const target=searchMapTarget(data,family?data.specimens.filter(r=>r.familyId===family):matches);
-  setCameraRequest({serial:++searchSerial.current,query:nextFilters.query,filterKey:JSON.stringify(nextFilters),intent:link.view==='atlas'&&(camera||family||nextFilters.query.trim())?'restore':'cancel',camera:camera||undefined,target});
+  const request:SearchMapRequest={serial:++searchSerial.current,query:nextFilters.query,filterKey:JSON.stringify(nextFilters),intent:link.view==='atlas'&&(camera||family||nextFilters.query.trim())?'restore':'cancel',camera:camera||undefined,target};
+  setCameraRequest(request);setSearchRequest(nextFilters.query.trim()?{...request,target:searchMapTarget(data,matches)}:null);
   if(catalogueQuery){setCatalogueQuery('');setLinkNotice('已恢复链接筛选并清除目录搜索。')}else setLinkNotice('');
   setView(link.view);setCatalogueMode(link.panel?'source':'atlas');setCatalogueSource(link.panel==='related'?'__related__':link.panel==='references'?'__references__':link.node?'__tree__':null);
   setSourceNodeId(link.node||null);setCatalogueGroup(restoredGroup||null);setSelectedId(family);setCatalogueFamily(family);setCatalogueRecord(record?.id||null);setLightbox(record||null);setRelatedId(link.related||null);setSourceReturn(null);
