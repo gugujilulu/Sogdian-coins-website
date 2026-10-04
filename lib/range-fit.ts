@@ -1,6 +1,9 @@
 import type {Map as GLMap,PaddingOptions} from 'maplibre-gl';
 import {rangeFocusMaxZoom} from './map-layers.ts';
 
+/** Preserve a saved wide range view when restoring the existing camera history. */
+export function rangeInitialMinZoom(zoom?:number){return zoom!==undefined&&Number.isFinite(zoom)?Math.max(0,Math.min(3,zoom)):3}
+
 /** Explicit range fit may need a wider view than the normal coin-browsing limits. */
 export function fitHistoricalRange(map:Pick<GLMap,'cameraForBounds'|'getMinZoom'|'setMinZoom'|'setMaxBounds'|'stop'|'fitBounds'>,bounds:[[number,number],[number,number]],padding:PaddingOptions,duration:number){
  const maxZoom=rangeFocusMaxZoom(bounds);

@@ -50,7 +50,8 @@ test('bounded label placement avoids actual coins and overlays without changing 
 });
 
 test('explicit range fit admits the full bounds on a narrow screen using actual overlay padding',async()=>{
- const {fitHistoricalRange}=await import('../lib/range-fit.ts');
+ const {fitHistoricalRange,rangeInitialMinZoom}=await import('../lib/range-fit.ts');
+ assert.equal(rangeInitialMinZoom(),3);assert.equal(rangeInitialMinZoom(9),3);assert.equal(rangeInitialMinZoom(2.4),2.4);
  const events=[],bounds=[[55,36],[94,49]],padding={top:100,bottom:180,left:24,right:66};
  const map={cameraForBounds:(b,o)=>{assert.deepEqual(b,bounds);assert.deepEqual(o.padding,padding);return{zoom:2.4}},getMinZoom:()=>3,stop:()=>events.push('stop'),setMaxBounds:b=>events.push(['bounds',b]),setMinZoom:z=>events.push(['min',z]),fitBounds:(b,o)=>events.push(['fit',b,o])};
  fitHistoricalRange(map,bounds,padding,0);
