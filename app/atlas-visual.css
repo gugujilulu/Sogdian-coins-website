@@ -105,6 +105,7 @@
  .app-header .language-menu{right:0}
  /* Shorter labels give the original portrait crop more room, rather than wider word gaps. */
  html[lang=en] .app-header{--header-edge:clamp(54px,calc(20vw - 18px),68px)}
+ html[lang=en] .app-header nav{gap:6px}
  html[lang=zh] .app-header{--header-edge:clamp(62px,calc(20vw - 8px),78px)}
  html[lang=en] .app-header nav button,html[lang=zh] .app-header nav button{font-size:17px}
  html[lang=zh] .app-header nav button.active:after{width:2em;left:50%;right:auto;transform:translateX(-50%)}
@@ -114,6 +115,7 @@
  .app-header nav,.view-atlas .app-header nav{gap:3px}
  .app-header nav button,.view-atlas .app-header nav button{font-size:16px;padding:0 1.5px}
  .app-header nav button.active:after{left:1.5px;right:1.5px}
+ html[lang=en] .app-header nav{gap:5px}
  html[lang=en] .app-header nav button,html[lang=zh] .app-header nav button{font-size:16px}
  html[lang=en] .app-header nav button.active:after{left:1.5px;right:1.5px}
 }
