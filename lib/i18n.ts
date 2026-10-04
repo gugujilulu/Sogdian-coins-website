@@ -5,6 +5,7 @@ export function validLocale(value:unknown):Locale{return value==='zh'||value==='
 export function readLocale(storage:Pick<Storage,'getItem'>|null):Locale{try{return validLocale(storage?.getItem(storageKey))}catch{return 'en'}}
 export function saveLocale(storage:Pick<Storage,'setItem'>|null,locale:Locale){try{storage?.setItem(storageKey,locale);return true}catch{return false}}
 export const dictionary={
+ "清除搜索":{"en":"Clear search","zh":"清除搜索","ru":"Очистить поиск"},
  "提交搜索并定位":{"en":"Search and locate on map","zh":"搜索并定位地图","ru":"Найти и показать на карте"},
  "搜索无匹配结果":{"en":"No matching results.","zh":"没有匹配结果。","ru":"Совпадений нет."},
  "搜索结果暂无地图位置":{"en":"These results have no map location.","zh":"当前结果暂无地图位置。","ru":"У этих результатов нет местоположения на карте."},

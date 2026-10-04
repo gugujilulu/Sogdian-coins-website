@@ -1,6 +1,7 @@
 import type {Atlas,Specimen} from './atlas';
 export type SearchMapTarget={kind:'none'|'unlocated'|'single'|'multiple';coordinates:[number,number][];placeIds:string[];recordCount:number;unlocatedRecords:number};
-export type SearchMapRequest={serial:number;query:string;filterKey:string;target:SearchMapTarget};
+export type MapCameraView={center:[number,number];zoom:number};
+export type SearchMapRequest={serial:number;query:string;filterKey:string;target:SearchMapTarget;intent?:'search'|'selection'|'restore'|'cancel';camera?:MapCameraView};
 /** The same matching records supply both display and navigation; no geographic inference. */
 export function searchMapTarget(data:Atlas,records:readonly Specimen[]):SearchMapTarget{
  const families=new Map(data.families.map(f=>[f.id,f])),places=new Map(data.places.map(p=>[p.id,p]));
@@ -37,5 +38,5 @@ export function searchMapPadding(width:number,height:number,obstacles:ScreenRect
 export function searchNavigationQueue(run:(request:SearchMapRequest)=>void){
  let latest=0,ready=false,disposed=false,pending:SearchMapRequest|null=null;
  const flush=()=>{if(!disposed&&ready&&pending){const request=pending;pending=null;run(request)}};
- return {offer(request:SearchMapRequest){if(disposed||request.serial<=latest)return;latest=request.serial;pending=request;flush()},setReady(value:boolean){ready=value;flush()},dispose(){disposed=true;pending=null}};
+ return {offer(request:SearchMapRequest){if(disposed||request.serial<=latest)return;latest=request.serial;pending=request;flush()},setReady(value:boolean){ready=value;flush()},cancel(){pending=null},dispose(){disposed=true;pending=null}};
 }

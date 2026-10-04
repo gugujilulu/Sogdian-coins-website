@@ -17,14 +17,15 @@ import MapLayerPanel from './map-layer-panel';
 import {recordSourceProvider} from '@/lib/record-filters';
 import {coinFeatures,coinPlaces,coinDisplayRules} from '@/lib/coin-map';
 import {installCoinMarkers} from './coin-map-markers';
-import {searchNavigationQueue,searchBounds,searchMapPadding,type SearchMapRequest} from '@/lib/search-map-navigation';
+import {searchNavigationQueue,searchBounds,searchMapPadding,type SearchMapRequest,type MapCameraView} from '@/lib/search-map-navigation';
 import 'maplibre-gl/dist/maplibre-gl.css';
 
-type Props={searchRequest?:SearchMapRequest|null;rangeControl?:RangeControl;initialBase?:'terrain'|'historical'|'topo';initialView?:{center:[number,number];zoom:number};background?:MapBackground;initialLayers?:LayerSettings;backgroundEnabled?:boolean;backgroundObject?:string;rangeFocus?:number;dateMode?:'all'|'year'|'unknown';active:boolean;sourceFilter:string;data:Atlas;records:Specimen[];families:Family[];selected:Family|null;onSelect:(id:string,context?:CollectionContext)=>void;returnCollection?:{context:CollectionContext;serial:number}|null;onCollectionEmpty?:()=>void;year:number|null;focus:number};
+type Props={onCameraChange?:(camera:MapCameraView)=>void;searchRequest?:SearchMapRequest|null;rangeControl?:RangeControl;initialBase?:'terrain'|'historical'|'topo';initialView?:{center:[number,number];zoom:number};background?:MapBackground;initialLayers?:LayerSettings;backgroundEnabled?:boolean;backgroundObject?:string;rangeFocus?:number;dateMode?:'all'|'year'|'unknown';active:boolean;sourceFilter:string;data:Atlas;records:Specimen[];families:Family[];selected:Family|null;onSelect:(id:string,context?:CollectionContext)=>void;returnCollection?:{context:CollectionContext;serial:number}|null;onCollectionEmpty?:()=>void;year:number|null;focus:number};
 
-export default function TerrainMap({searchRequest,rangeControl:providedControl,active,sourceFilter,data,records,families,selected,onSelect,year,focus,returnCollection,onCollectionEmpty,initialView,initialBase='terrain',background:providedBackground,initialLayers,backgroundEnabled=false,backgroundObject,rangeFocus=0,dateMode='all'}:Props){
+export default function TerrainMap({onCameraChange,searchRequest,rangeControl:providedControl,active,sourceFilter,data,records,families,selected,onSelect,year,focus,returnCollection,onCollectionEmpty,initialView,initialBase='terrain',background:providedBackground,initialLayers,backgroundEnabled=false,backgroundObject,rangeFocus=0,dateMode='all'}:Props){
  const tr=useCopy();const {locale}=useLanguage();
  const container=useRef<HTMLDivElement>(null),map=useRef<GLMap|null>(null),select=useRef(onSelect);
+ const cameraChange=useRef(onCameraChange);cameraChange.current=onCameraChange;
  const searchQueue=useRef<ReturnType<typeof searchNavigationQueue>|null>(null),lastSearch=useRef(0);
  const [searchNotice,setSearchNotice]=useState(false);
  const lastFocus=useRef(focus),lastRangeFocus=useRef(rangeFocus);
@@ -61,12 +62,13 @@ export default function TerrainMap({searchRequest,rangeControl:providedControl,a
     map.current=m;
     searchQueue.current=searchNavigationQueue(request=>{
      if(request.serial<=lastSearch.current)return;lastSearch.current=request.serial;
-     m.stop();setSearchNotice(false);const target=searchBounds(request.target);if(!target)return;
+     m.stop();setSearchNotice(false);if(request.intent==='cancel')return;if(request.camera){m.jumpTo({...request.camera,bearing:0,pitch:0});return}const target=searchBounds(request.target);if(!target)return;
      const rect=m.getContainer().getBoundingClientRect(),screen=m.getContainer().closest('.atlas-screen');
      const obstacles=Array.from(screen?.querySelectorAll<HTMLElement>('.atlas-search-panel,.family-drawer,.map-toolbar,.history-controls,.timeline-floating,.maplibregl-ctrl,.map-error')||[]).filter(el=>{const style=getComputedStyle(el),r=el.getBoundingClientRect();return style.visibility!=='hidden'&&style.display!=='none'&&r.width>0&&r.height>0}).map(el=>{const r=el.getBoundingClientRect();return{left:r.left-rect.left,right:r.right-rect.left,top:r.top-rect.top,bottom:r.bottom-rect.top}});
      const padding=searchMapPadding(rect.width,rect.height,obstacles);if(!padding){setSearchNotice(true);return}
-     m.fitBounds(target,{padding,maxZoom:Math.min(9,m.getMaxZoom()),duration:motionDuration(550),linear:true,bearing:0,pitch:0});
+     m.fitBounds(target,{padding,maxZoom:Math.min(9,m.getMaxZoom()),duration:request.intent==='restore'?0:motionDuration(550),linear:true,bearing:0,pitch:0});
     });
+    m.on('moveend',()=>{const c=m.getCenter();cameraChange.current?.({center:[c.lng,c.lat],zoom:m.getZoom()})});
     m.touchZoomRotate.disableRotation();m.addControl(new gl.NavigationControl({showCompass:false}),'bottom-right');m.addControl(new gl.ScaleControl({unit:'metric'}),'bottom-left');
     m.on('style.load',()=>{
      if(disposed)return;
@@ -78,7 +80,7 @@ export default function TerrainMap({searchRequest,rangeControl:providedControl,a
      if(!m.getLayer('selected-halo'))m.addLayer({id:'selected-halo',type:'circle',source:'selected-coin',paint:{'circle-radius':13,'circle-color':'#f4d692','circle-opacity':.16,'circle-stroke-color':'#f4d692','circle-stroke-width':2}});
 
      history.current=installHistoricalMap(gl,m,setLayerError);history.current.update(frameRef.current);
-     setReady(true);
+     setReady(true);const c=m.getCenter();cameraChange.current?.({center:[c.lng,c.lat],zoom:m.getZoom()});
     });
     let failures=0;m.on('error',()=>{if(++failures>=4)setError('部分地图瓦片未能加载，可切换底图或稍后重试。')});
     const resize=new ResizeObserver(()=>{if(container.current?.clientWidth&&container.current?.clientHeight)m.resize()});resize.observe(container.current);cleanup=()=>{resize.disconnect();searchQueue.current?.dispose();searchQueue.current=null;history.current?.destroy();history.current=null;coinMarkers.current?.destroy();coinMarkers.current=null;m.remove()};
@@ -91,7 +93,7 @@ export default function TerrainMap({searchRequest,rangeControl:providedControl,a
  useEffect(()=>{if(!ready)return;coinMarkers.current?.refresh();history.current?.update(frameRef.current,true);const root=map.current?.getContainer();for(const [selector,key]of [['.maplibregl-ctrl-zoom-in','Zoom in'],['.maplibregl-ctrl-zoom-out','Zoom out'],['.maplibregl-ctrl-attrib-button','Toggle attribution']] as const){const button=root?.querySelector(selector);button?.setAttribute('aria-label',tr(key));button?.setAttribute('title',tr(key))}},[locale,ready]);
  useEffect(()=>{const closed=previousSelection.current&&!selected?.id&&!returnCollection?previousSelection.current:undefined;previousSelection.current=selected?.id;coinMarkers.current?.selectionChanged(closed)},[selected?.id]);
  useEffect(()=>{if(active&&ready)map.current?.resize()},[active,ready]);
- useEffect(()=>{const queue=searchQueue.current;queue?.setReady(false);if(searchRequest)queue?.offer(searchRequest);queue?.setReady(active&&ready)},[searchRequest?.serial,active,ready]);
+ useEffect(()=>{const queue=searchQueue.current;queue?.setReady(false);if(searchRequest?.intent==='cancel'){queue?.cancel();lastSearch.current=Math.max(lastSearch.current,searchRequest.serial);map.current?.stop();setSearchNotice(false);return}if(searchRequest)queue?.offer(searchRequest);queue?.setReady(active&&ready)},[searchRequest?.serial,active,ready]);
  useEffect(()=>{
   if(!active||!ready||!map.current)return;
   if(lastFocus.current===focus)return;lastFocus.current=focus;

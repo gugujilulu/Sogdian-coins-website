@@ -137,3 +137,11 @@ export function filterAtlasRecords(data: import('./atlas').Atlas, filters: Atlas
   return { records, recordCount: records.length, familyIds, recordsByFamily, dateAnomalies,
     families: data.families.filter(f => familyIds.has(f.id)) };
 }
+
+/** UI and restored links use the same adapter into the existing record filter. */
+export function contextRecordFilters(context:import('./map-selection').FilterContext):AtlasFilters{
+ const choices=(value:string)=>value==='all'?[]:[value];
+ return {query:context.query,status:context.statusFilter==='all'?undefined:context.statusFilter,
+  familyIds:choices(context.familyFilter),sources:choices(context.sourceFilter),inscriptions:choices(context.inscriptionFilter),tamghas:choices(context.tamghaFilter),features:choices(context.featureFilter),
+  date:context.dateMode==='year'?{mode:'year',year:context.year}:{mode:context.dateMode}};
+}

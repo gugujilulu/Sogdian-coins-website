@@ -58,3 +58,21 @@ export function linkHistoryMode(previous:string,next:string):'pushState'|'replac
   return withoutContinuous(previous)===withoutContinuous(next)?'replaceState':'pushState';
  }catch{return 'pushState'}
 }
+
+/** A draft query remains local until submission; it must not overwrite the last submitted entry. */
+export function automaticLinkWrite(previous:string,next:string):'pushState'|'replaceState'|'draft'{
+ try{const a=parseLink(previous),b=parseLink(next);if(a.filters?.query!==b.filters?.query){
+  const withoutQuery=(link:DeepLink)=>serializeLink({...link,filters:link.filters?{...link.filters,query:''}:undefined});
+  if(b.filters?.query.trim()&&withoutQuery(a)===withoutQuery(b))return 'draft';
+  return 'pushState';
+ }}catch{}
+ return linkHistoryMode(previous,next);
+}
+export type MapCameraView={center:[number,number];zoom:number};
+export function historyCamera(value:unknown,signature:string):MapCameraView|null{
+ const saved=(value as {coinAtlas?:{signature?:string;camera?:MapCameraView}}|null)?.coinAtlas,c=saved?.camera;
+ return saved?.signature===signature&&c&&Array.isArray(c.center)&&c.center.length===2&&c.center.every(Number.isFinite)&&Math.abs(c.center[0])<=180&&Math.abs(c.center[1])<=90&&Number.isFinite(c.zoom)&&c.zoom>=0&&c.zoom<=24?{center:[...c.center],zoom:c.zoom}:null;
+}
+export function cameraHistoryState(value:unknown,signature:string,camera:MapCameraView|null){
+ return {...(value&&typeof value==='object'&&!Array.isArray(value)?value:{}),coinAtlas:{signature,camera}};
+}
