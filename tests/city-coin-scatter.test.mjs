@@ -43,4 +43,10 @@ test('Panch four members have staggered distances and directions, no city-centre
  for(const e of result)assert.equal(intersects(e.bounds,{x:640,y:359,w:126,h:64}),false);
 });
 
+test('desktop side drawer leaves map height usable and keeps the selected coin outside its footprint',()=>{
+ const drawer={x:1060,y:351,w:440,h:702};const result=run({selectedId:'sr9',expansionObstacles:[drawer]});
+ assert.ok(result.find(e=>!e.overflow&&e.members[0].family.id==='sr9'));assert.deepEqual(ids(result),[...suyab.members,...balasagun.members].map(m=>m.family.id).sort());noCollisions(result);
+ for(const e of result)assert.equal(intersects(e.bounds,drawer),false);
+});
+
 test('a fully covered map retains all identities without hidden keyboard targets in the renderer model',()=>{const result=run({expansionObstacles:[{x:640,y:351,w:1280,h:702}]});assert.deepEqual(ids(result),[...suyab.members,...balasagun.members].map(m=>m.family.id).sort());assert.ok(result.every(e=>e.occluded&&e.overflow));});
