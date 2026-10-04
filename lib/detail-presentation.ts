@@ -15,3 +15,8 @@ export function recordDescription(text:string,key?:string|null){
  const escaped=id.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
  return text.replace(new RegExp(`^\\s*#?${escaped}\\s*[-–—:]\\s*`),'');
 }
+
+export function typeDescription(text:string,recordText:string){
+ if(text===recordText)return '';
+ return recordText&&text.startsWith(recordText+' ')?text.slice(recordText.length).trimStart():text;
+}

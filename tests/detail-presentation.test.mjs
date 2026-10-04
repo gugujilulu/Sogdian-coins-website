@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {detailCloseTarget,sourceIdentity,distinctSourceLinks,recordDescription} from '../lib/detail-presentation.ts';
+import {detailCloseTarget,sourceIdentity,distinctSourceLinks,recordDescription,typeDescription} from '../lib/detail-presentation.ts';
 test('closing expanded image returns to the same record before closing the record',()=>{
  assert.equal(detailCloseTarget(true),'image');
  assert.equal(detailCloseTarget(false),'record');
@@ -23,4 +23,11 @@ test('only the current leading record number is removed from the display descrip
  assert.equal(recordDescription('#123 - comparison with 388312','388312'),'#123 - comparison with 388312');
  assert.equal(recordDescription('Dates 709–722; catalogue 245.','388312'),'Dates 709–722; catalogue 245.');
  assert.equal(recordDescription('#1 - raw description'), '#1 - raw description');
+});
+
+test('type introduction omits an identical leading record description without rewriting the remainder',()=>{
+ assert.equal(typeDescription('Sogdian legend. Sources disagree on attribution.','Sogdian legend.'),'Sources disagree on attribution.');
+ assert.equal(typeDescription('Sogdian legend.','Sogdian legend.'),'');
+ assert.equal(typeDescription('A comparison mentions Sogdian legend.','Sogdian legend.'),'A comparison mentions Sogdian legend.');
+ assert.equal(typeDescription('Original type description.',''),'Original type description.');
 });
