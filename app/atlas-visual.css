@@ -106,19 +106,19 @@
 /* T47.5: mobile-only composition; the supplied portraits keep one visible height. */
 @media(max-width:760px){
  :root,.view-atlas{--atlas-header:56px}
- .app-header,.view-atlas .app-header{--header-edge:36px;display:grid;grid-template-columns:minmax(0,1fr) 52px;gap:10px;padding:0 var(--header-edge);height:var(--atlas-header)}
+ .app-header,.view-atlas .app-header{--header-edge:36px;display:grid;grid-template-columns:minmax(0,1fr) 52px;gap:10px;padding:0 calc(var(--header-edge) + 6px);height:var(--atlas-header)}
  .app-header .brand-button{display:none}
  .app-header .header-figure{top:0;height:calc(var(--atlas-header) - 1px);width:var(--header-edge);background-size:auto 62px;opacity:1;mask-image:linear-gradient(to bottom,#000 0%,#000 78%,transparent 100%);pointer-events:none}
  .app-header .header-figure-left{left:0;background-position:right top}
  .app-header .header-figure-right{right:0;background-position:left top}
- .app-header nav,.view-atlas .app-header nav{margin:0;min-width:0;height:100%;gap:4px;justify-content:space-between;align-items:stretch}
- .app-header nav button,.view-atlas .app-header nav button{font-size:16px;padding:0 4px;min-height:44px;min-width:0;flex:1;white-space:nowrap}
+ .app-header nav,.view-atlas .app-header nav{margin:0;min-width:0;height:100%;gap:3px;justify-content:space-between;align-items:stretch}
+ .app-header nav button,.view-atlas .app-header nav button{font-size:16px;padding:0 2px;min-height:44px;min-width:44px;flex:1 0 auto;white-space:nowrap}
  .app-header .language-control{position:relative;right:auto;margin:0;justify-self:stretch}
  .app-header .language-control>button{width:100%;height:44px;min-height:44px;justify-content:center;font-size:16px;gap:4px;padding:6px 4px}
  .app-header .language-menu{right:0}
 }
 @media(max-width:340px){
- .app-header,.view-atlas .app-header{--header-edge:28px;grid-template-columns:minmax(0,1fr) 50px;gap:8px}
+ .app-header,.view-atlas .app-header{--header-edge:24px;grid-template-columns:minmax(0,1fr) 50px;gap:8px;padding:0 calc(var(--header-edge) + 4px)}
  .app-header nav,.view-atlas .app-header nav{gap:2px}
  .app-header nav button,.view-atlas .app-header nav button{font-size:15px;padding:0 2px}
 }
