@@ -82,7 +82,6 @@
  .atlas-screen .drawer-scroll{padding:5px 12px 20px}.atlas-screen .gallery-scope{flex-direction:row;flex-wrap:wrap;gap:5px;padding:5px 0;margin:0}.atlas-screen .gallery-scope strong{font-size:18px}.atlas-screen .gallery-scope:after{width:50px}.atlas-screen .gallery-scope:before{width:21px;height:21px}.atlas-screen .drawer-filters{gap:8px}.atlas-screen .drawer-filters select{font-size:13px;padding:7px}.atlas-screen .specimen-image{height:114px}.atlas-screen .specimen-copy>strong{font-size:16px}.atlas-screen .specimen-copy>small,.atlas-screen .tile-source-list a{font-size:12px}.atlas-screen .specimen-tile{padding:5px}.atlas-screen .specimen-copy{padding:7px 2px 0}.atlas-screen .drawer-gallery{gap:8px}.atlas-screen .drawer-secondary>button{font-size:14px;padding:7px}.atlas-screen .family-meta span{font-size:13px}.atlas-screen .family-location{font-size:14px}
  .atlas-screen [data-sheet-state=summary] .family-title h1{font-size:20px;margin:0}.atlas-screen [data-sheet-state=summary] .drawer-head{height:42px;flex-shrink:0}.atlas-screen [data-sheet-state=summary] .sheet-actions{display:flex;align-items:center;justify-content:space-between;gap:5px;padding-bottom:4px}.atlas-screen [data-sheet-state=summary] .sheet-actions>div{gap:8px}.atlas-screen [data-sheet-state=summary] .sheet-actions button{font-size:12px}.atlas-screen [data-sheet-state=summary] .sheet-summary-count{font-size:12px;white-space:nowrap}
 }
-@media(max-width:365px){.app-header{padding-left:32px}.header-figure-left{width:30px}.app-header .brand-button{width:21px}.app-header .brand-mark{width:21px;height:21px}.app-header nav{margin-right:83px}.app-header nav button{font-size:15px;padding:0 3px}.header-figure-right{width:20px;right:0}.language-control{right:25px}}
 @media(prefers-reduced-motion:reduce){.app-header *,.atlas-screen *{scroll-behavior:auto!important;transition:none!important}}
 /* Match legacy full-screen shell measurements without changing camera or sheet state. */
 .view-atlas{--atlas-header:98px}.view-atlas .app-header{gap:28px}.view-atlas .brand-button strong{font-size:21px;letter-spacing:0}.view-atlas .brand-button small{display:block}
@@ -93,7 +92,6 @@
 /* Existing layer overlay retains its layout and scroll containment; only its surface changes. */
 .atlas-screen .history-controls[open] .history-panel-head,.atlas-screen .history-controls[open] .history-controls-scroll,.atlas-screen.has-family .history-controls[open] .history-controls-scroll,.atlas-screen.layers-expanded .history-controls[open]{background:#f3ebdd url('/visual/t47/r2/paper.webp') center/600px;color:var(--atlas-ink)}
 @media(max-width:760px),(max-width:1000px) and (max-height:500px){.atlas-screen.has-family .atlas-search-panel[data-filters-open=true] .filter-result-line{display:flex;gap:8px;flex-wrap:wrap}}
-@media(max-width:365px){.view-atlas .app-header nav{margin-right:83px}.view-atlas .app-header nav button{font-size:15px;padding:0 3px}}
 .atlas-screen .sheet-handle:focus-visible{outline:0}.atlas-screen .sheet-handle:focus-visible span{outline:2px solid #306681;outline-offset:3px}
 
 /* Full native options, with a readable wrapping caption in the closed control. */
@@ -104,3 +102,23 @@
 .atlas-screen .drawer-filter:focus-within{outline:2px solid #306681;outline-offset:2px}
 .atlas-screen .tile-sources{margin-top:5px}.atlas-screen .tile-sources summary{font-size:13px;cursor:pointer;color:#586b72}.atlas-screen .tile-sources small{font-size:12px;overflow-wrap:anywhere}
 @media(max-width:760px),(max-width:1000px) and (max-height:500px){.atlas-screen .drawer-filter>span{font-size:13px;padding:7px;min-height:36px}}
+
+/* T47.5: mobile-only composition; the supplied portraits keep one visible height. */
+@media(max-width:760px){
+ :root,.view-atlas{--atlas-header:56px}
+ .app-header,.view-atlas .app-header{--header-edge:36px;display:grid;grid-template-columns:minmax(0,1fr) 52px;gap:10px;padding:0 var(--header-edge);height:var(--atlas-header)}
+ .app-header .brand-button{display:none}
+ .app-header .header-figure{top:0;height:calc(var(--atlas-header) - 1px);width:var(--header-edge);background-size:auto 62px;opacity:1;mask-image:linear-gradient(to bottom,#000 0%,#000 78%,transparent 100%);pointer-events:none}
+ .app-header .header-figure-left{left:0;background-position:right top}
+ .app-header .header-figure-right{right:0;background-position:left top}
+ .app-header nav,.view-atlas .app-header nav{margin:0;min-width:0;height:100%;gap:4px;justify-content:space-between;align-items:stretch}
+ .app-header nav button,.view-atlas .app-header nav button{font-size:16px;padding:0 4px;min-height:44px;min-width:0;flex:1;white-space:nowrap}
+ .app-header .language-control{position:relative;right:auto;margin:0;justify-self:stretch}
+ .app-header .language-control>button{width:100%;height:44px;min-height:44px;justify-content:center;font-size:16px;gap:4px;padding:6px 4px}
+ .app-header .language-menu{right:0}
+}
+@media(max-width:340px){
+ .app-header,.view-atlas .app-header{--header-edge:28px;grid-template-columns:minmax(0,1fr) 50px;gap:8px}
+ .app-header nav,.view-atlas .app-header nav{gap:2px}
+ .app-header nav button,.view-atlas .app-header nav button{font-size:15px;padding:0 2px}
+}
