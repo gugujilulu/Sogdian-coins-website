@@ -12,6 +12,17 @@ export function installHistoricalMap(gl:GL,map:GLMap,onError:(message:string)=>v
  let restoring=true;
  const removePopup=()=>{restoring=false;popup?.remove();restoring=true};
  let frame:Frame={ranges:[],places:[]},markers:Marker[]=[],popup:Popup|null=null;
+ const attribution=map.getContainer().querySelector<HTMLDetailsElement>('.maplibregl-ctrl-attrib');
+ let phoneAttributionInitialized=false,attributionFrame=0;
+ const attributionObserver=new ResizeObserver(()=>{
+  cancelAnimationFrame(attributionFrame);attributionFrame=requestAnimationFrame(()=>{
+  if(!phoneAttributionInitialized&&attribution?.classList.contains('maplibregl-compact')&&window.matchMedia('(max-width:760px),(max-width:1000px) and (max-height:500px)').matches){
+   phoneAttributionInitialized=true;attribution.classList.remove('maplibregl-compact-show');attribution.open=false;
+  }
+  layout();
+  });
+ });
+ if(attribution)attributionObserver.observe(attribution);
  function ensure(){
   try{
    ensureRangeStyle(map);
@@ -38,6 +49,11 @@ export function installHistoricalMap(gl:GL,map:GLMap,onError:(message:string)=>v
   layout=()=>{const used:DOMRect[]=[];const obstacles=Array.from(map.getContainer().parentElement?.querySelectorAll('.coin-map-marker,.map-toolbar,.history-controls,.preview-badge,.atlas-search-panel')||[]).filter(e=>getComputedStyle(e).visibility!=='hidden').map(e=>e.getBoundingClientRect());
    const overlaps=(a:DOMRect,b:DOMRect)=>a.left<b.right+5&&a.right>b.left-5&&a.top<b.bottom+5&&a.bottom>b.top-5;
    for(const n of nodes.sort((a,b)=>a.priority-b.priority)){if(n.priority){const z=map.getZoom();n.el.style.fontSize=`${Math.max(14,Math.min(23,15+(z-4)*2.5))}px`;}
+    const caption=n.priority===0?n.el.querySelector<HTMLElement>('span'):null;
+    if(caption){caption.style.translate='';if(window.matchMedia('(max-width:760px),(max-width:1000px) and (max-height:500px)').matches&&attribution?.classList.contains('maplibregl-compact-show')){
+     const label=caption.getBoundingClientRect(),cover=attribution.getBoundingClientRect(),viewport=map.getContainer().getBoundingClientRect();
+     if(overlaps(label,cover)){const dx=cover.left-label.right-8;caption.style.translate=label.left+dx>=viewport.left+8?`${dx}px 0px`:`0px ${cover.top-label.bottom-8}px`;}
+    }}
     const box=n.el.getBoundingClientRect();const hit=used.some(b=>overlaps(box,b))||(n.priority===1&&obstacles.some(b=>overlaps(box,b)));
     const show=map.getZoom()>=n.minZoom&&!hit;n.el.style.visibility=show?'visible':'hidden';if(show)used.push(box);
    }
@@ -46,5 +62,5 @@ export function installHistoricalMap(gl:GL,map:GLMap,onError:(message:string)=>v
  let layout=()=>{};const move=()=>layout();map.on('move',move);map.on('idle',move);
  const click=(e:import('maplibre-gl').MapMouseEvent)=>{if(!map.getLayer('history-hit'))return;const f=map.queryRenderedFeatures(e.point,{layers:['history-hit']})[0];const r=frame.ranges.find(r=>r.id===f?.properties.id);if(r)show([e.lngLat.lng,e.lngLat.lat],r.title,[{label:r.kind==='polity'?'政权范围':r.kind==='context'?'地域背景':'钱币流通范围',text:`${periodLabel(r)} · ${r.precision==='approximate'?tr('大致范围'):tr('资料所绘范围')}`,method:`${rangeSpaceDescription(r)}；${r.note}`,source:r.source}])};map.on('click',click);
  const reload=()=>update(frame);map.on('style.load',reload);ensure();
- return{update,retry:reload,destroy(){restoring=false;markers.forEach(m=>m.remove());popup?.remove();map.off('move',move);map.off('idle',move);map.off('click',click);map.off('style.load',reload)}};
+ return{update,retry:reload,destroy(){attributionObserver.disconnect();cancelAnimationFrame(attributionFrame);restoring=false;markers.forEach(m=>m.remove());popup?.remove();map.off('move',move);map.off('idle',move);map.off('click',click);map.off('style.load',reload)}};
 }
