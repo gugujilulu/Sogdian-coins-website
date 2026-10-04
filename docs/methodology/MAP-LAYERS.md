@@ -107,3 +107,10 @@ region:semirechye独立context版本，核心地域＋楚河定义，整体概�
 lib/panch-ranges.ts分别适配polity:panch与region:panch；lib/panch-geometry.ts由`python3 scripts/build-panch-ranges.py`从[制作底稿](../reviews/T22-18/construction.json)生成。两个局部核心：政权为前伊斯兰末期概括阶段，数字端点未知；绿洲为明确cross-period，沿用T22-8未知模式规则。默认优先级10，原有图层、家族选择及资料入口复用。
 
 小范围主动定位按真实几何跨度允许maxZoom11，较大范围保持8；只影响用户点击“查看相关范围”，不修改坐标/普通筛选定位。范围名称精简以避让城市，时期在面板及图例保留；小屏碰撞可隐藏地图名称而保留图例。详见[登记](range-intake/PANCH.md)。
+
+
+## T62 核心范围呈现更新
+
+范围几何、对象/版本与年代证据保持。普通地图/图例/家族入口共用 `range-copy.ts` 的三语短名称与时期，本部、绿洲、局部分别表达；原始文字与覆盖说明留在资料与方法。填色outline透明，政治/地域线只来自独立boundary；有coverageEdge而无boundary的版本不推导闭合国界。制作边缘不作为常驻地图提示。
+
+名称按实际币图及控件矩形作最多13个有限候选避让，原经纬度不改；币图完成重绘后重新检查。只有主动定位使用 `range-fit.ts` 放宽浏览区域/缩放下限以容纳既有轮廓，padding仍由真实可见控件计算；选择/切换/重绘不fit。详见[T62实测](../reviews/T62/README.md)。

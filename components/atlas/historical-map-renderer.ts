@@ -62,7 +62,10 @@ export function installHistoricalMap(gl:GL,map:GLMap,onError:(message:string)=>v
   };layout();if(focusKey){const target=nodes.find(n=>n.el.dataset.historyKey===focusKey)?.el;focusReturn(target&&focusable(target)?target:map.getCanvas())};
  }
  let layout=()=>{},layoutFrame=0;const move=()=>{cancelAnimationFrame(layoutFrame);layoutFrame=requestAnimationFrame(()=>layout())};map.on('move',move);map.on('idle',move);
+ // Coin markers settle independently after camera/source updates; recheck their actual boxes.
+ const coinObserver=new MutationObserver(records=>{if(records.some(r=>r.type==='childList'||(r.target instanceof Element&&r.target.closest('.coin-map-marker'))))move()});
+ coinObserver.observe(map.getContainer(),{childList:true,subtree:true,attributes:true,attributeFilter:['style']});
  const click=(e:import('maplibre-gl').MapMouseEvent)=>{if(!map.getLayer('history-hit'))return;const f=map.queryRenderedFeatures(e.point,{layers:['history-hit']})[0];const r=frame.ranges.find(r=>r.id===f?.properties.id);if(r)show([e.lngLat.lng,e.lngLat.lat],rangeName(r),[{label:r.kind==='polity'?'政权范围':r.kind==='context'?'地域背景':'钱币流通范围',text:`${rangePeriodCopy(r)} · ${r.precision==='approximate'?tr('大致范围'):tr('资料所绘范围')}`,method:`${rangeSpaceDescription(r)}；${r.note}`,source:r.source}])};map.on('click',click);
  const reload=()=>update(frame);map.on('style.load',reload);ensure();
- return{update,retry:reload,destroy(){attributionObserver.disconnect();cancelAnimationFrame(attributionFrame);cancelAnimationFrame(layoutFrame);restoring=false;markers.forEach(m=>m.remove());popup?.remove();map.off('move',move);map.off('idle',move);map.off('click',click);map.off('style.load',reload)}};
+ return{update,retry:reload,destroy(){attributionObserver.disconnect();coinObserver.disconnect();cancelAnimationFrame(attributionFrame);cancelAnimationFrame(layoutFrame);restoring=false;markers.forEach(m=>m.remove());popup?.remove();map.off('move',move);map.off('idle',move);map.off('click',click);map.off('style.load',reload)}};
 }
