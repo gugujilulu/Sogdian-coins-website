@@ -249,7 +249,7 @@ function AtlasHome(){
 
   {view==='research'&&<ResearchView data={data} imageCount={imageCount} sources={sources} ranges={mapBackground?.ranges}/>}
 
-  {activeLightbox&&<SpecimenLightbox matches={viewed.matches} key={activeLightbox.id} link={currentLink} specimen={activeLightbox} family={data.families.find(f=>f.id===activeLightbox.familyId)||null} onClose={()=>setLightbox(null)}/>}
+  {activeLightbox&&<SpecimenLightbox matches={viewed.matches} key={activeLightbox.id} link={currentLink} specimen={activeLightbox} group={data.variants.find(v=>v.id===activeLightbox.variantId)} family={data.families.find(f=>f.id===activeLightbox.familyId)||null} onClose={()=>setLightbox(null)}/>}
  </main></FilterLinkContext.Provider>
 }
 
