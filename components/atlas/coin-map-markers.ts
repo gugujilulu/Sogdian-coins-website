@@ -65,14 +65,15 @@ export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPla
   const occupied:Box[]=Array.from(map.getContainer().querySelectorAll<HTMLElement>('.historical-label,.history-place span')).filter(el=>getComputedStyle(el).visibility!=='hidden').map(el=>{const r=el.getBoundingClientRect(),c=map.getContainer().getBoundingClientRect();return{x:r.x-c.x+r.width/2,y:r.y-c.y+r.height/2,w:r.width,h:r.height}});
   const bounds=map.getContainer().getBoundingClientRect(),screen=map.getContainer().closest('.atlas-screen');
   const expansionObstacles:Box[]=Array.from(screen?.querySelectorAll<HTMLElement>('.atlas-search-panel,.map-toolbar,.timeline-floating,.history-controls,.maplibregl-ctrl,.background-notice,.map-error,.historical-map-popup')||[]).filter(el=>getComputedStyle(el).visibility!=='hidden'&&getComputedStyle(el).display!=='none'&&el.getBoundingClientRect().width>0).map(el=>{const r=el.getBoundingClientRect();return{x:r.x-bounds.x+r.width/2,y:r.y-bounds.y+r.height/2,w:r.width,h:r.height}});
-  for(const el of screen?.querySelectorAll('.family-drawer,.atlas-search-panel,.history-controls,.timeline-floating,.map-toolbar')||[]){if(!observed.has(el)){observed.add(el);obstaclesObserver.observe(el)}}
+  for(const el of screen?.querySelectorAll('.family-drawer,.atlas-search-panel,.history-controls,.timeline-floating,.map-toolbar,.maplibregl-ctrl-attrib')||[]){if(!observed.has(el)){observed.add(el);obstaclesObserver.observe(el)}}
   const drawerElement=screen?.querySelector('.family-drawer');const drawer=drawerElement&&getComputedStyle(drawerElement).visibility!=='hidden'?drawerElement.getBoundingClientRect():undefined;
   if(drawer&&drawer.left<bounds.right&&drawer.right>bounds.left)expansionObstacles.push({x:drawer.x-bounds.x+drawer.width/2,y:drawer.y-bounds.y+drawer.height/2,w:drawer.width,h:drawer.height});
   // A bottom sheet reduces height; a desktop side drawer excludes its real rectangle.
   const expansionHeight=drawer&&drawer.width>bounds.width*.6?Math.max(100,Math.min(bounds.height,drawer.top-bounds.top-12)):bounds.height;
   const search=screen?.querySelector('.atlas-search-panel')?.getBoundingClientRect();
   const expansionTop=bounds.width<600&&search&&search.width>bounds.width*.6?Math.max(0,Math.min(expansionHeight-100,search.bottom-bounds.top+12)):0;
-  const frameKey=JSON.stringify([Math.round(bounds.width),Math.round(bounds.height),Math.round(drawer?.height||0),Math.round(search?.height||0),...['.history-controls','.timeline-floating'].map(selector=>Math.round(screen?.querySelector(selector)?.getBoundingClientRect().height||0))]);
+  const attribution=screen?.querySelector('.maplibregl-ctrl-attrib')?.getBoundingClientRect();
+  const frameKey=JSON.stringify([Math.round(bounds.width),Math.round(bounds.height),Math.round(drawer?.height||0),Math.round(search?.height||0),...['.history-controls','.timeline-floating'].map(selector=>Math.round(screen?.querySelector(selector)?.getBoundingClientRect().height||0)),Math.round(attribution?.width||0),Math.round(attribution?.height||0)]);
   if(!scatterFrames.has(frameKey))scatterFrames.set(frameKey,new Map(scatterPositions));
   scatterPositions=scatterFrames.get(frameKey)!;
   // Retain a handful of actual panel/viewport configurations, not an unbounded pan history.
