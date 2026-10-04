@@ -352,3 +352,6 @@
  .atlas-screen.has-family .maplibregl-ctrl-attrib.maplibregl-compact-show{max-width:130px}
  .atlas-screen.has-family .maplibregl-ctrl-attrib-inner{overflow-wrap:anywhere}
 }
+
+/* T44: one quiet search outcome beside the existing filters. */
+.search-navigation-note{margin:0;padding:6px 12px;color:var(--atlas-ink);font:13px/1.4 var(--atlas-serif)}
