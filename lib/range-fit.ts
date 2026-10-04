@@ -8,5 +8,5 @@ export function fitHistoricalRange(map:Pick<GLMap,'cameraForBounds'|'getMinZoom'
  if(!camera||camera.zoom===undefined||!Number.isFinite(camera.zoom))return;
  map.stop();map.setMaxBounds(null);
  if(camera.zoom<map.getMinZoom())map.setMinZoom(Math.max(0,camera.zoom-.01));
- map.fitBounds(bounds,{padding,maxZoom,duration,linear:true,retainPadding:false});
+ map.fitBounds(bounds,{padding,maxZoom,duration,linear:true});
 }

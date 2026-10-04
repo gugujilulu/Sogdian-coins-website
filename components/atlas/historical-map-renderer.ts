@@ -61,8 +61,8 @@ export function installHistoricalMap(gl:GL,map:GLMap,onError:(message:string)=>v
    }
   };layout();if(focusKey){const target=nodes.find(n=>n.el.dataset.historyKey===focusKey)?.el;focusReturn(target&&focusable(target)?target:map.getCanvas())};
  }
- let layout=()=>{};const move=()=>layout();map.on('move',move);map.on('idle',move);
+ let layout=()=>{},layoutFrame=0;const move=()=>{cancelAnimationFrame(layoutFrame);layoutFrame=requestAnimationFrame(()=>layout())};map.on('move',move);map.on('idle',move);
  const click=(e:import('maplibre-gl').MapMouseEvent)=>{if(!map.getLayer('history-hit'))return;const f=map.queryRenderedFeatures(e.point,{layers:['history-hit']})[0];const r=frame.ranges.find(r=>r.id===f?.properties.id);if(r)show([e.lngLat.lng,e.lngLat.lat],rangeName(r),[{label:r.kind==='polity'?'政权范围':r.kind==='context'?'地域背景':'钱币流通范围',text:`${rangePeriodCopy(r)} · ${r.precision==='approximate'?tr('大致范围'):tr('资料所绘范围')}`,method:`${rangeSpaceDescription(r)}；${r.note}`,source:r.source}])};map.on('click',click);
  const reload=()=>update(frame);map.on('style.load',reload);ensure();
- return{update,retry:reload,destroy(){attributionObserver.disconnect();cancelAnimationFrame(attributionFrame);restoring=false;markers.forEach(m=>m.remove());popup?.remove();map.off('move',move);map.off('idle',move);map.off('click',click);map.off('style.load',reload)}};
+ return{update,retry:reload,destroy(){attributionObserver.disconnect();cancelAnimationFrame(attributionFrame);cancelAnimationFrame(layoutFrame);restoring=false;markers.forEach(m=>m.remove());popup?.remove();map.off('move',move);map.off('idle',move);map.off('click',click);map.off('style.load',reload)}};
 }
