@@ -48,3 +48,13 @@ test('bounded label placement avoids actual coins and overlays without changing 
  assert.equal(rangeLabelOffset(box,viewport,[viewport]),null);
  const edge={left:2,right:82,top:200,bottom:230};assert.ok(rangeLabelOffset(edge,viewport,[])[0]>0);
 });
+
+test('explicit range fit admits the full bounds on a narrow screen without retaining camera padding',async()=>{
+ const {fitHistoricalRange}=await import('../lib/range-fit.ts');
+ const events=[],bounds=[[55,36],[94,49]],padding={top:100,bottom:180,left:24,right:66};
+ const map={cameraForBounds:(b,o)=>{assert.deepEqual(b,bounds);assert.deepEqual(o.padding,padding);return{zoom:2.4}},getMinZoom:()=>3,stop:()=>events.push('stop'),setMaxBounds:b=>events.push(['bounds',b]),setMinZoom:z=>events.push(['min',z]),fitBounds:(b,o)=>events.push(['fit',b,o])};
+ fitHistoricalRange(map,bounds,padding,0);
+ assert.deepEqual(events.slice(0,3),['stop',['bounds',null],['min',2.39]]);
+ assert.deepEqual(events[3][1],bounds);assert.equal(events[3][2].retainPadding,false);assert.equal(events[3][2].duration,0);assert.deepEqual(events[3][2].padding,padding);
+ events.length=0;map.cameraForBounds=()=>undefined;fitHistoricalRange(map,bounds,padding,400);assert.deepEqual(events,[]);
+});
