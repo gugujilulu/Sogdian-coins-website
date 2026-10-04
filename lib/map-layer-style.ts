@@ -5,7 +5,7 @@ export function ensureRangeStyle(map:Pick<GLMap,'getSource'|'addSource'|'getLaye
    if(!map.getSource('historical-boundaries'))map.addSource('historical-boundaries',{type:'geojson',data:empty});
    const before=map.getLayer('coin-source-layout')?'coin-source-layout':undefined;
    const color=['get','color'] as ['get',string];
-   if(!map.getLayer('history-wash'))map.addLayer({id:'history-wash',type:'fill',source:'historical-ranges',paint:{'fill-color':color,'fill-opacity':['coalesce',['get','opacity'],.22],'fill-antialias':true}},before);
+   if(!map.getLayer('history-wash'))map.addLayer({id:'history-wash',type:'fill',source:'historical-ranges',paint:{'fill-color':color,'fill-opacity':['coalesce',['get','opacity'],.22],'fill-antialias':true,'fill-outline-color':'rgba(0,0,0,0)'}},before);
    if(!map.getLayer('history-keyline'))map.addLayer({id:'history-keyline',type:'line',source:'historical-boundaries',filter:['==','precision','documented'],paint:{'line-color':color,'line-width':2.1,'line-opacity':.12}},before);
    if(!map.getLayer('history-ink'))map.addLayer({id:'history-ink',type:'line',source:'historical-boundaries',filter:['all',['==','kind','polity'],['==','precision','documented']],paint:{'line-color':color,'line-width':['interpolate',['linear'],['zoom'],3,.55,9,.9],'line-opacity':.8}},before);
    if(!map.getLayer('history-approximate'))map.addLayer({id:'history-approximate',type:'line',source:'historical-boundaries',filter:['all',['==','kind','polity'],['==','precision','approximate']],paint:{'line-color':color,'line-width':['interpolate',['linear'],['zoom'],4,.65,8,1.05],'line-dasharray':[3,2],'line-opacity':.85}},before);

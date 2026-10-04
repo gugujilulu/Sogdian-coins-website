@@ -5,6 +5,20 @@ export function validLocale(value:unknown):Locale{return value==='zh'||value==='
 export function readLocale(storage:Pick<Storage,'getItem'>|null):Locale{try{return validLocale(storage?.getItem(storageKey))}catch{return 'en'}}
 export function saveLocale(storage:Pick<Storage,'setItem'>|null,locale:Locale){try{storage?.setItem(storageKey,locale);return true}catch{return false}}
 export const dictionary={
+ "突骑施":{"en": "Türgesh", "zh": "突骑施", "ru": "Тюргеши"},
+ "突骑施｜南侧研究摘录":{"en": "Türgesh · southern excerpt", "zh": "突骑施｜南侧研究摘录", "ru": "Тюргеши · южный фрагмент"},
+ "七河":{"en": "Semirechye", "zh": "七河", "ru": "Семиречье"},
+ "康国／撒马尔罕｜本部":{"en": "Samarkand · core", "zh": "康国／撒马尔罕｜本部", "ru": "Самарканд · основная территория"},
+ "撒马尔罕绿洲":{"en": "Samarkand oasis", "zh": "撒马尔罕绿洲", "ru": "Самаркандский оазис"},
+ "潘治｜本部":{"en": "Panch · core", "zh": "潘治｜本部", "ru": "Панч · основная территория"},
+ "潘治绿洲":{"en": "Panch oasis", "zh": "潘治绿洲", "ru": "Оазис Панча"},
+ "西辽｜局部范围":{"en": "Qara Khitai · partial", "zh": "西辽｜局部范围", "ru": "Каракитаи · часть области"},
+ "约700年前后":{"en": "c. 700", "zh": "约700年前后", "ru": "Около 700 г."},
+ "8世纪上半叶":{"en": "First half of the 8th century", "zh": "8世纪上半叶", "ru": "Первая половина VIII века"},
+ "7世纪后半叶":{"en": "Late 7th century", "zh": "7世纪后半叶", "ru": "Вторая половина VII века"},
+ "7世纪末—8世纪初":{"en": "Late 7th–early 8th century", "zh": "7世纪末—8世纪初", "ru": "Конец VII — начало VIII века"},
+ "1141年后":{"en": "After 1141", "zh": "1141年后", "ru": "После 1141 г."},
+
  "相关范围":{"en":"Related range","zh":"相关范围","ru":"Связанная область"},
  "当前范围":{"en":"Current range","zh":"当前范围","ru":"Текущая область"},
  "全局范围":{"en":"Global range","zh":"全局范围","ru":"Общая область"},
