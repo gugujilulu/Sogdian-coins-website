@@ -164,7 +164,7 @@ export const dictionary={
  },
  "铭文 / Legend": {
   "en": "Inscription",
-  "zh": "铭文 / Legend",
+  "zh": "铭文",
   "ru": "Надпись"
  },
  "全部已标注铭文": {
@@ -174,7 +174,7 @@ export const dictionary={
  },
  "Tamgha / 徽记": {
   "en": "Tamgha",
-  "zh": "Tamgha / 徽记",
+  "zh": "徽记",
   "ru": "Тамга"
  },
  "全部已标注徽记": {
@@ -369,7 +369,7 @@ export const dictionary={
  },
  "铭文 / Inscription": {
   "en": "Inscription",
-  "zh": "铭文 / Inscription",
+  "zh": "铭文",
   "ru": "Надпись"
  },
  "年代未记录": {
