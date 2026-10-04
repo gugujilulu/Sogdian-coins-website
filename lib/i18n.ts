@@ -5,6 +5,12 @@ export function validLocale(value:unknown):Locale{return value==='zh'||value==='
 export function readLocale(storage:Pick<Storage,'getItem'>|null):Locale{try{return validLocale(storage?.getItem(storageKey))}catch{return 'en'}}
 export function saveLocale(storage:Pick<Storage,'setItem'>|null,locale:Locale){try{storage?.setItem(storageKey,locale);return true}catch{return false}}
 export const dictionary={
+ "相关范围":{"en":"Related range","zh":"相关范围","ru":"Связанная область"},
+ "当前范围":{"en":"Current range","zh":"当前范围","ru":"Текущая область"},
+ "全局范围":{"en":"Global range","zh":"全局范围","ru":"Общая область"},
+ "全部已开启范围":{"en":"All enabled ranges","zh":"全部已开启范围","ru":"Все включённые области"},
+ "显示相关范围":{"en":"Show related range","zh":"显示相关范围","ru":"Показать связанную область"},
+ "定位范围":{"en":"Locate range","zh":"定位范围","ru":"Показать область на карте"},
  "清除搜索":{"en":"Clear search","zh":"清除搜索","ru":"Очистить поиск"},
  "提交搜索并定位":{"en":"Search and locate on map","zh":"搜索并定位地图","ru":"Найти и показать на карте"},
  "搜索无匹配结果":{"en":"No matching results.","zh":"没有匹配结果。","ru":"Совпадений нет."},

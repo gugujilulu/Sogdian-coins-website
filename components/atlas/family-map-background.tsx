@@ -3,10 +3,19 @@ import {useCopy} from './language';
 import {type MapBackground,type MapTime} from '@/lib/map-layers';
 import {rangeViews} from '@/lib/range-time';
 import RangeControls,{type RangeControl} from './range-controls';
-export default function FamilyMapBackground({time,control,background,familyId,enabled,onEnabled,onRange,object,onObject}:{time:MapTime;control:RangeControl;background:MapBackground;familyId:string;enabled:boolean;onEnabled:(v:boolean)=>void;onRange:()=>void;object:string;onObject:(id:string)=>void}){
+export default function FamilyMapBackground({time,control,background,familyId,enabled,onEnabled,onRange,object,onObject,objectName}:{time:MapTime;control:RangeControl;background:MapBackground;familyId:string;enabled:boolean;onEnabled:()=>void;onRange:()=>void;object:string;onObject:(id:string)=>void;objectName:(id:string)=>string}){
  const tr=useCopy();
- const ranges=background.ranges.filter(r=>r.familyIds.includes(familyId));
- const objects=rangeViews(ranges,time,control.selection.versions).map(v=>v.selected||v.choices[0]);
- const places=background.places.filter(p=>p.claims.some(c=>c.familyId===familyId));
- return <details className="map-background"><summary>{tr("地图背景 · 当前查看家族")}</summary><p>{tr("当前查看家族的历史背景")}</p><label><input type="checkbox" checked={enabled} onChange={e=>onEnabled(e.target.checked)}/>{tr("显示相关背景")}</label>{objects.length>1&&<label>{tr("背景解释／时期体系")}<select aria-label={tr("家族背景体系")} value={object} onChange={e=>onObject(e.target.value)}><option value="">{tr("请选择（不合并解释）")}</option>{objects.map(r=><option key={r.objectId} value={r.objectId}>{r.title}</option>)}</select></label>}{objects.length>1&&!object&&<p>{tr("请先选择背景体系，再查看对应范围。")}</p>}{ranges.length?<RangeControls ranges={object?ranges.filter(r=>r.objectId===object):ranges} allowBackground={objects.length===1||!!object} time={time} enabled={enabled} control={{...control,setBackground:(id,value)=>{if(value)onEnabled(true);control.setBackground(id,value)}}}/>:<p>{tr("相关政权／地方体系关系未记录，保留原有归属说明。")}</p>}{places.length>0&&<p>{places.length} {tr('关联地点')}</p>}{ranges.some(r=>r.geometry)?<button disabled={objects.length>1&&!object} onClick={onRange}>{tr("查看相关范围")}</button>:<p>{tr("范围待补")}</p>}</details>;
+ const associated=background.ranges.filter(r=>r.familyIds.includes(familyId));
+ const objects=rangeViews(associated,time,control.selection.versions);
+ const ranges=background.ranges.filter(r=>r.objectId===object);
+ const view=rangeViews(ranges,time,control.selection.versions,control.selection.backgrounds)[0];
+ const global=!!object&&!objects.some(v=>v.objectId===object);
+ return <section className="map-background family-range"><strong>{tr('相关范围')}{global&&<small> · {tr('全局范围')}</small>}</strong>
+ {objects.length>1||global?<select aria-label={tr('相关范围')} value={object} onChange={e=>onObject(e.target.value)}>
+ {!object&&<option value="">{tr('全部已开启范围')}</option>}{global&&<option value={object}>{objectName(object)}</option>}
+ {objects.map(v=><option key={v.objectId} value={v.objectId}>{objectName(v.objectId)} · {tr(v.choices[0].kind==='polity'?'政权范围':'地域背景')}{!v.selected?.geometry?' · '+tr('范围待补'):''}</option>)}
+ </select>:null}
+ {ranges.length?<RangeControls compact name={objectName(object)} ranges={ranges} time={time} enabled={enabled} control={control}/>:<p>{tr(!object&&objects.length?'全部已开启范围':'范围待补')}</p>}
+ {view?.selected?.geometry&&<div className="family-range-actions">{!enabled&&<button onClick={onEnabled}>{tr('显示相关范围')}</button>}{enabled&&view.visible&&<button onClick={onRange}>{tr('定位范围')}</button>}</div>}
+ </section>;
 }

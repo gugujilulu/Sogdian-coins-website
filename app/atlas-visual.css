@@ -132,3 +132,12 @@
 .atlas-screen .drawer-filter:focus-within{outline:2px solid #306681;outline-offset:2px}
 .atlas-screen .tile-sources{margin-top:5px}.atlas-screen .tile-sources summary{font-size:13px;cursor:pointer;color:#586b72}.atlas-screen .tile-sources small{font-size:12px;overflow-wrap:anywhere}
 @media(max-width:760px),(max-width:1000px) and (max-height:500px){.atlas-screen .drawer-filter>span{font-size:13px;padding:7px;min-height:36px}}
+
+/* T61: existing family background controls, with one shared range selection. */
+.atlas-screen .family-range>strong{display:block;margin-bottom:6px;font-size:16px}
+.atlas-screen .family-range>select{width:100%;max-width:100%;font-size:14px;padding:7px 8px}
+.atlas-screen .family-range .range-version>strong{display:block;margin-top:6px;font-size:15px;overflow-wrap:anywhere}
+.atlas-screen .family-range p{margin:5px 0}
+.atlas-screen .family-range-actions{display:flex;gap:8px;flex-wrap:wrap}
+.atlas-screen .family-range-actions button{font-size:14px;min-height:36px;padding:6px 10px;margin:4px 0}
+.atlas-screen .family-range .range-version select{max-width:100%;width:100%}
