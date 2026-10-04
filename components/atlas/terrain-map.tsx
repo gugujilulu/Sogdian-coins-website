@@ -91,7 +91,7 @@ export default function TerrainMap({searchRequest,rangeControl:providedControl,a
  useEffect(()=>{if(!ready)return;coinMarkers.current?.refresh();history.current?.update(frameRef.current,true);const root=map.current?.getContainer();for(const [selector,key]of [['.maplibregl-ctrl-zoom-in','Zoom in'],['.maplibregl-ctrl-zoom-out','Zoom out'],['.maplibregl-ctrl-attrib-button','Toggle attribution']] as const){const button=root?.querySelector(selector);button?.setAttribute('aria-label',tr(key));button?.setAttribute('title',tr(key))}},[locale,ready]);
  useEffect(()=>{const closed=previousSelection.current&&!selected?.id&&!returnCollection?previousSelection.current:undefined;previousSelection.current=selected?.id;coinMarkers.current?.selectionChanged(closed)},[selected?.id]);
  useEffect(()=>{if(active&&ready)map.current?.resize()},[active,ready]);
- useEffect(()=>{if(searchRequest)searchQueue.current?.offer(searchRequest);searchQueue.current?.setReady(active&&ready)},[searchRequest?.serial,active,ready]);
+ useEffect(()=>{const queue=searchQueue.current;queue?.setReady(false);if(searchRequest)queue?.offer(searchRequest);queue?.setReady(active&&ready)},[searchRequest?.serial,active,ready]);
  useEffect(()=>{
   if(!active||!ready||!map.current)return;
   if(lastFocus.current===focus)return;lastFocus.current=focus;

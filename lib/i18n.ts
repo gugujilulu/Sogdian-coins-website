@@ -8,7 +8,7 @@ export const dictionary={
  "提交搜索并定位":{"en":"Search and locate on map","zh":"搜索并定位地图","ru":"Найти и показать на карте"},
  "搜索无匹配结果":{"en":"No matching results.","zh":"没有匹配结果。","ru":"Совпадений нет."},
  "搜索结果暂无地图位置":{"en":"These results have no map location.","zh":"当前结果暂无地图位置。","ru":"У этих результатов нет местоположения на карте."},
- "搜索另有未定位记录":{"en":"{records} have no map location.","zh":"另有{records}暂无地图位置。","ru":"Для {records} местоположение не указано."},
+ "搜索另有未定位记录":{"en":"No map location: {records}.","zh":"另有{records}暂无地图位置。","ru":"Без местоположения на карте: {records}."},
  "搜索地图空间不足":{"en":"Collapse a panel, then search again to locate results.","zh":"请收起面板后再次搜索定位。","ru":"Сверните панель и повторите поиск, чтобы увидеть результаты."},
  "更多家族":{"en":"More families","zh":"更多家族","ru":"Другие семейства"},
  "查看资料":{"en": "View references", "zh": "查看资料", "ru": "Просмотреть источники"},
