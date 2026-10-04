@@ -50,6 +50,8 @@ export const dictionary={
  "历史地图与地域":{"en": "Historical maps & places", "zh": "历史地图与地域", "ru": "Исторические карты и места"},
  "原始来源":{"en": "Original sources", "zh": "原始来源", "ru": "Первичные источники"},
  "钱币目录与研究":{"en": "Coin catalogues & studies", "zh": "钱币目录与研究", "ru": "Каталоги монет и исследования"},
+ "来源索引":{"en":"Source index","zh":"来源索引","ru":"Указатель источников"},
+ "相关资料图库":{"en":"Related material gallery","zh":"相关资料图库","ru":"Галерея сопутствующих материалов"},
  "研究页面导语":{"en": "References, source pages and plans for future research.", "zh": "查阅参考资料与来源，了解后续建设和研究方向。", "ru": "Литература, страницы источников и планы дальнейших исследований."},
  "参考目录用途":{"en": "Coin descriptions, catalogue references and numismatic studies.", "zh": "查阅钱币描述、目录参考及钱币学研究。", "ru": "Описания монет, каталожные ссылки и нумизматические исследования."},
  "参考来源用途":{"en": "Original coin records and source classifications.", "zh": "查看原始钱币记录与来源分类。", "ru": "Исходные записи о монетах и классификация в источниках."},
