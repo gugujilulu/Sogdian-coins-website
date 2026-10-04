@@ -28,7 +28,7 @@ export default function FamilyDrawer(p:Props){
  // The reading sheet covers the map canvas; keep its markers out of keyboard navigation.
  useEffect(()=>{const map=sheet.current?.closest('.atlas-screen')?.querySelector<HTMLElement>('.terrain-map');if(!map)return;if(mobile&&state==='reading'&&map.contains(document.activeElement))sheet.current?.querySelector<HTMLElement>('.sheet-handle')?.focus({preventScroll:true});map.inert=mobile&&state==='reading';return()=>{map.inert=false}},[mobile,state]);
  const activeGroup=variants.find(v=>v.id===variant);
- const overview=<>   <div className="drawer-secondary"><CopyLink link={{view:'atlas',family:family.id}}/><button onClick={p.onCatalogue}><ArtIcon name="book" size={14}/>{tr("目录")}</button>{p.onReturnCollection&&<button onClick={p.onReturnCollection}>{tr("返回此集合")}</button>}</div>
+ const overview=<>   <div className="drawer-secondary"><button onClick={p.onCatalogue}><ArtIcon name="book" size={14}/>{tr("目录")}</button>{p.onReturnCollection&&<button onClick={p.onReturnCollection}>{tr("返回此集合")}</button>}</div>
    <div className="family-meta"><span>{family.dateLabel||tr("年代未记录")}</span><span>{family.region||tr("地区未记录")}</span><span>{family.polity||tr("政权未记录")}</span></div>
    <div className="family-location"><ArtIcon name="pin" size={14}/><span>{p.placeName||tr("位置未记录")}</span>{p.onLocate?<button onClick={p.onLocate}><ArtIcon name="locate" size={17}/>{tr("定位")}</button>:<span>{tr("暂无地图定位")}</span>}</div>
 </>;
@@ -40,7 +40,7 @@ export default function FamilyDrawer(p:Props){
    onPointerMove={e=>{const d=drag.current;if(!d||d.id!==e.pointerId)return;e.stopPropagation();setDragHeight(Math.max(sheetHeight('summary',d.available),Math.min(sheetHeight('reading',d.available),d.height+d.y-e.clientY)))}}
    onPointerUp={e=>{const d=drag.current;if(!d)return;p.onSheetState?.(snapSheet(d.height+d.y-e.clientY,d.available));drag.current=null;setDragHeight(null)}}
    onPointerCancel={()=>{drag.current=null;setDragHeight(null)}}><span/></div>}
-  <header className="drawer-head family-title"><div><h1>{family.title}</h1>{family.zh&&<p>{family.zh}</p>}</div><button onClick={p.onClose} aria-label={tr("Close details")}><ArtIcon name="close" size={20}/></button></header>
+  <header className="drawer-head family-title"><div><h1>{family.title}</h1>{family.zh&&<p>{family.zh}</p>}</div><div className="detail-actions"><CopyLink label="分享家族" link={{view:'atlas',family:family.id}}/><button onClick={p.onClose} aria-label={tr("Close details")}><ArtIcon name="close" size={20}/></button></div></header>
   {p.onSheetState&&<div className="sheet-actions"><small className="sheet-summary-count">{caption}</small><div>{state!=='reading'&&<button className="sheet-expand" aria-label={tr("展开家族详情")} onClick={()=>p.onSheetState?.(state==='summary'?'half':'reading')}><ArtIcon name="chevron" size={16}/>{tr("展开")}</button>}{state!=='summary'&&<button aria-label={tr("收起家族详情")} onClick={()=>p.onSheetState?.(state==='reading'?'half':'summary')}><ArtIcon name="chevron" size={16}/>{tr("收起")}</button>}<button onClick={p.onTools}><ArtIcon name="clock" size={15}/>{tr("时间 / 地图")}</button>{p.onReturnCollection&&<button onClick={p.onReturnCollection}>{tr("返回集合")}</button>}</div></div>}
 
   <div ref={scroll} className="drawer-scroll">
