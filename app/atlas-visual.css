@@ -67,7 +67,6 @@
 .atlas-screen .coin-collection-popup{color:var(--atlas-ink);background:#f3ebdd url('/visual/t47/r2/paper.webp') center/600px;border-color:var(--atlas-rule)}.atlas-screen .coin-popup-row{background:none;color:var(--atlas-ink);border-color:var(--atlas-rule)}.atlas-screen .coin-popup-row small{color:#777268}
 @media(max-width:1250px) and (min-width:761px){.app-header{padding-left:100px;gap:14px}.header-figure-left{width:95px}.app-header .brand-mark{width:40px;height:40px}.app-header .brand-button strong{font-size:17px}.app-header .brand-button small{font-size:13px}.app-header nav{margin-right:210px;gap:0}.app-header nav button{font-size:20px;padding:0 8px}.header-figure-right{width:110px;right:96px}.language-control>button{font-size:19px;min-height:42px}.atlas-screen .atlas-search-panel{width:350px}.atlas-screen.has-family .atlas-search-panel{max-width:calc(100% - 430px)}}
 @media(max-width:760px),(max-width:1000px) and (max-height:500px){
- :root{--atlas-header:50px}.app-header{padding:0 3px 0 39px;gap:4px}.header-figure-left{width:37px;left:0}.header-figure-right{width:27px;right:0;opacity:.75}.app-header .brand-button{flex:none;width:23px}.app-header .brand-mark{width:23px;height:23px}.app-header .brand-button>span{display:none}.app-header nav{margin:0 94px 0 0;gap:0;flex:1;justify-content:space-between;min-width:0}.app-header nav button{font:16px/1.15 var(--atlas-serif);padding:0 3px}.app-header nav button.active:after{left:5px;right:5px}.language-control{right:34px}.language-control>button{font:16px var(--atlas-serif);padding:7px 5px;gap:4px;min-height:32px;border-radius:6px}.language-control>button .art-icon{width:17px!important;height:17px!important}
  .atlas-screen{height:calc(100dvh - var(--atlas-header))}
  .atlas-screen .atlas-search-panel{top:12px;left:12px;width:calc(100% - 76px);max-width:none;border-radius:14px;max-height:calc(100% - 24px)}.atlas-screen .atlas-search{margin:0;border:0;border-radius:14px;padding:9px 10px;gap:9px}.atlas-screen .atlas-search input{font-size:14px}.atlas-screen .atlas-search-panel:before{display:none}.atlas-screen .atlas-search-panel:after{width:42px;height:42px;opacity:.3}.atlas-screen .filter-result-line{font-size:12px;padding:5px 10px}.atlas-screen .filter-result-line button{font-size:12px}.atlas-screen .filter-summary{font-size:13px;padding:5px 10px}
  .atlas-screen .map-toolbar,.atlas-screen.has-family .map-toolbar{top:12px;right:12px;display:flex;gap:6px;padding:0;border:0;background:none;box-shadow:none}
@@ -88,7 +87,31 @@
 .atlas-screen .family-drawer{flex:0 0 clamp(380px,33.4vw,484px)}
 .atlas-screen.has-family .map-toolbar,.atlas-screen.has-family .history-controls{right:16px}
 @media(max-width:1250px) and (min-width:761px){.view-atlas .app-header{gap:14px}.view-atlas .brand-button strong{font-size:17px}}
-@media(max-width:760px),(max-width:1000px) and (max-height:500px){.view-atlas{--atlas-header:50px}.view-atlas .app-header{gap:4px}.view-atlas .app-header nav{margin:0 94px 0 0}.view-atlas .app-header nav button{font-size:16px;padding:0 3px}.atlas-screen .family-drawer{flex:none}.atlas-screen.has-family .map-toolbar,.atlas-screen.has-family .history-controls{right:12px}.atlas-screen .timeline-floating:not([open]) .desktop-control-label,.atlas-screen .history-controls:not([open]) .desktop-control-label{display:none}.atlas-screen .sheet-actions .sheet-expand .art-icon{transform:rotate(180deg)}}
+@media(max-width:760px),(max-width:1000px) and (max-height:500px){.atlas-screen .family-drawer{flex:none}.atlas-screen.has-family .map-toolbar,.atlas-screen.has-family .history-controls{right:12px}.atlas-screen .timeline-floating:not([open]) .desktop-control-label,.atlas-screen .history-controls:not([open]) .desktop-control-label{display:none}.atlas-screen .sheet-actions .sheet-expand .art-icon{transform:rotate(180deg)}}
+/* T47.5 rework: complete brand above navigation; only the portrait layers clip. */
+@media(max-width:1000px){
+ :root,.view-atlas{--atlas-header:188px}
+ .app-header,.view-atlas .app-header{--header-portrait:clamp(60px,18vw,96px);--header-brand-height:136px;display:grid;grid-template-columns:minmax(0,1fr) 60px;grid-template-rows:var(--header-brand-height) 51px;column-gap:12px;row-gap:0;height:var(--atlas-header);padding:0 12px;overflow:visible}
+ .app-header:after{content:'';position:absolute;top:var(--header-brand-height);left:0;right:0;border-top:1px solid #c49a62;pointer-events:none;z-index:-1}
+ .app-header .header-figure{top:0;width:var(--header-portrait);height:var(--header-brand-height);background-size:auto 148px;opacity:1;pointer-events:none}
+ .app-header .header-figure-left{left:0;background-position:right top}
+ .app-header .header-figure-right{right:0;background-position:calc(var(--header-portrait) - 88px) top}
+ .app-header .brand-button{grid-column:1/-1;grid-row:1;display:flex;align-items:center;justify-content:center;width:100%;height:100%;max-width:none;padding:0 calc(var(--header-portrait) - 4px);gap:8px;margin:0}
+ .app-header .brand-mark{width:32px;height:32px}
+ .app-header .brand-button>span{display:block;min-width:0}
+ .app-header .brand-button strong,.view-atlas .brand-button strong{display:block;max-width:none;font-size:clamp(18px,2.3vw,22px);line-height:1.16;letter-spacing:0;overflow-wrap:normal}
+ .app-header .brand-button small,.view-atlas .brand-button small{display:block;font-size:13px;line-height:1.25;letter-spacing:0;margin-top:6px}
+ .app-header nav,.view-atlas .app-header nav{grid-column:1;grid-row:2;margin:0;min-width:0;height:100%;gap:3px;justify-content:space-between;align-items:stretch}
+ .app-header nav button,.view-atlas .app-header nav button{font-size:clamp(18px,2.3vw,22px);padding:0 2px;min-height:44px;min-width:44px;flex:1 0 auto;white-space:nowrap}
+ .app-header .language-control{grid-column:2;grid-row:2;position:relative;right:auto;margin:0;justify-self:stretch;align-self:center}
+ .app-header .language-control>button{width:100%;height:44px;min-height:44px;justify-content:center;font-size:18px;gap:5px;padding:6px 4px}
+ .app-header .language-control>button .art-icon{width:19px!important;height:19px!important}
+ .app-header .language-menu{right:0}
+}
+@media(max-width:340px){
+ .app-header,.view-atlas .app-header{grid-template-columns:minmax(0,1fr) 56px;column-gap:8px}
+ .app-header nav button,.view-atlas .app-header nav button{font-size:17px}
+}
 /* Existing layer overlay retains its layout and scroll containment; only its surface changes. */
 .atlas-screen .history-controls[open] .history-panel-head,.atlas-screen .history-controls[open] .history-controls-scroll,.atlas-screen.has-family .history-controls[open] .history-controls-scroll,.atlas-screen.layers-expanded .history-controls[open]{background:#f3ebdd url('/visual/t47/r2/paper.webp') center/600px;color:var(--atlas-ink)}
 @media(max-width:760px),(max-width:1000px) and (max-height:500px){.atlas-screen.has-family .atlas-search-panel[data-filters-open=true] .filter-result-line{display:flex;gap:8px;flex-wrap:wrap}}
@@ -102,23 +125,3 @@
 .atlas-screen .drawer-filter:focus-within{outline:2px solid #306681;outline-offset:2px}
 .atlas-screen .tile-sources{margin-top:5px}.atlas-screen .tile-sources summary{font-size:13px;cursor:pointer;color:#586b72}.atlas-screen .tile-sources small{font-size:12px;overflow-wrap:anywhere}
 @media(max-width:760px),(max-width:1000px) and (max-height:500px){.atlas-screen .drawer-filter>span{font-size:13px;padding:7px;min-height:36px}}
-
-/* T47.5: mobile-only composition; the supplied portraits keep one visible height. */
-@media(max-width:760px){
- :root,.view-atlas{--atlas-header:56px}
- .app-header,.view-atlas .app-header{--header-edge:36px;display:grid;grid-template-columns:minmax(0,1fr) 52px;gap:10px;padding:0 calc(var(--header-edge) + 6px);height:var(--atlas-header)}
- .app-header .brand-button{display:none}
- .app-header .header-figure{top:0;height:calc(var(--atlas-header) - 1px);width:var(--header-edge);background-size:auto 62px;opacity:1;mask-image:linear-gradient(to bottom,#000 0%,#000 78%,transparent 100%);pointer-events:none}
- .app-header .header-figure-left{left:0;background-position:right top}
- .app-header .header-figure-right{right:0;background-position:left top}
- .app-header nav,.view-atlas .app-header nav{margin:0;min-width:0;height:100%;gap:3px;justify-content:space-between;align-items:stretch}
- .app-header nav button,.view-atlas .app-header nav button{font-size:16px;padding:0 2px;min-height:44px;min-width:44px;flex:1 0 auto;white-space:nowrap}
- .app-header .language-control{position:relative;right:auto;margin:0;justify-self:stretch}
- .app-header .language-control>button{width:100%;height:44px;min-height:44px;justify-content:center;font-size:16px;gap:4px;padding:6px 4px}
- .app-header .language-menu{right:0}
-}
-@media(max-width:340px){
- .app-header,.view-atlas .app-header{--header-edge:24px;grid-template-columns:minmax(0,1fr) 50px;gap:8px;padding:0 calc(var(--header-edge) + 4px)}
- .app-header nav,.view-atlas .app-header nav{gap:2px}
- .app-header nav button,.view-atlas .app-header nav button{font-size:15px;padding:0 2px}
-}
