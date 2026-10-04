@@ -4,6 +4,7 @@ import type {MapRange} from '@/lib/map-layers';
 import {countLabel} from '@/lib/i18n';
 import ArtIcon from '@/components/visual/ArtIcon';
 import {useCopy,useLanguage} from './language';
+import {referenceTitle} from '@/lib/browse-copy';
 import {serializeLink} from '@/lib/deep-links';
 export default function ResearchView({data,imageCount,sources,ranges=[]}:{data:Atlas;imageCount:number;sources:string[];ranges?:MapRange[]}){
  const tr=useCopy(),{locale}=useLanguage();
@@ -13,7 +14,7 @@ export default function ResearchView({data,imageCount,sources,ranges=[]}:{data:A
  const rangeSources=Array.from(new Set(ranges.filter(r=>r.geometry).map(r=>r.source)));
  const mapLinks=Array.from(new Map(rangeSources.flatMap(source=>Array.from(source.matchAll(/https?:\/\/[^\s;]+/g),m=>({url:m[0],title:source.slice(0,m.index).trim().split('\n').at(-1)||tr('来源')}))).filter(p=>!references.some(r=>r.url===p.url)).map(p=>[p.url,p])).values());
  const sections=[['记录分类','资料分类说明'],['图片署名','图片方法说明'],['年代','年代方法说明'],['地点','地点方法说明'],['历史范围','范围方法说明'],['来源快照','资料覆盖说明']] as const;
- const referenceLink=(p:{url:string;title:string})=><a key={p.url} href={p.url} target="_blank" rel="noreferrer">{p.title}<ArtIcon name="external" collection="r3" size={16}/></a>;
+ const referenceLink=(p:{url:string;title:string})=><a key={p.url} href={p.url} target="_blank" rel="noreferrer">{referenceTitle(p.title,locale)}<ArtIcon name="external" collection="r3" size={16}/></a>;
  const links=(entries:{url:string;title:string}[],limit=3)=><>{entries.slice(0,limit).map(referenceLink)}{entries.length>limit&&<details><summary>{tr('更多资料')}</summary>{entries.slice(limit).map(referenceLink)}</details>}</>;
  return <section className="research-page art-research"><div className="research-hero"><ArtIcon name="rosette" collection="r3" size={45}/><h1>{tr('Research')}</h1><p>{tr('研究页面导语')}</p></div>
  <h2>{tr('主要参考资料')}</h2><div className="research-reference-cards">
