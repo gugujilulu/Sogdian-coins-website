@@ -52,6 +52,7 @@ export const dictionary={
  "钱币目录与研究":{"en": "Coin catalogues & studies", "zh": "钱币目录与研究", "ru": "Каталоги монет и исследования"},
  "来源索引":{"en":"Source index","zh":"来源索引","ru":"Указатель источников"},
  "相关资料图库":{"en":"Related material gallery","zh":"相关资料图库","ru":"Галерея сопутствующих материалов"},
+ "查看全部记录":{"en":"View all {records}","zh":"查看全部{records}","ru":"Просмотреть все {records}"},
  "部分家族记录":{"en": "Showing {shown} of {total}", "zh": "显示 {shown}／{total}", "ru": "Показано: {shown} · В семействе: {total}"},
  "暂无地图位置的家族":{"en": "{families} without map locations", "zh": "{families}暂无地图位置", "ru": "Без местоположения на карте: {families}"},
  "引用图号":{"en": "Fig. {n}", "zh": "第{n}图", "ru": "Рис. {n}"},
@@ -1257,8 +1258,8 @@ export const dictionary={
  },
  "catalogue_linked": {
   "en": "Catalogue reference available",
-  "zh": "已关联目录",
-  "ru": "Связано с каталогом"
+  "zh": "有目录参考",
+  "ru": "Есть каталожная ссылка"
  },
  "exploration": {
   "en": "Under study",
@@ -1272,8 +1273,8 @@ export const dictionary={
  },
  "source_linked": {
   "en": "Source record available",
-  "zh": "已关联来源",
-  "ru": "Связано с источником"
+  "zh": "有来源记录",
+  "ru": "Есть запись источника"
  },
  "source_linked_candidate": {
   "en": "Attribution under study",

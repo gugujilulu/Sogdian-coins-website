@@ -1,5 +1,5 @@
 'use client';
-import {copyKnown} from '@/lib/i18n';
+import {copyKnown,countLabel} from '@/lib/i18n';
 import {familyTitle,familyCount,familyDescription,referenceTitle} from '@/lib/browse-copy';
 import {useLanguage,useCopy} from './language';
 import {useEffect,useRef,useState,type ReactNode} from 'react';
@@ -46,7 +46,7 @@ export default function FamilyDrawer(p:Props){
   <div ref={scroll} className="drawer-scroll">
    {metadata}
    <div className="gallery-scope"><strong>{caption}</strong>
-   {p.onRestore?<button onClick={p.onRestore}>{tr("返回筛选结果")}</button>:specimens.length<fullSpecimens.length&&<button onClick={p.onFullFamily}>{tr('查看全部')} {fullSpecimens.length}</button>}
+   {p.onRestore?<button onClick={p.onRestore}>{tr("返回筛选结果")}</button>:specimens.length<fullSpecimens.length&&<button onClick={p.onFullFamily}>{tr('查看全部记录',{records:countLabel(fullSpecimens.length,'records',locale)})}</button>}
    </div>
    <div className="drawer-filters"><FamilyFilter label={tr("家族来源／目录组")} value={variant} onChange={p.setVariant} caption={variant==='all'?tr(mobile?"全部来源":"全部来源／目录组"):activeGroup?.title||tr("分组待定")}><option value="all">{tr("全部来源／目录组")}</option>{variants.map(v=><option key={v.id} value={v.id}>{v.title} ({allSpecimens.filter(s=>s.variantId===v.id).length})</option>)}{fullSpecimens.some(s=>s.variantId===null)&&<option value="unassigned">{tr("分组待定")}</option>}</FamilyFilter>{p.facets.length>0&&<FamilyFilter label={tr("家族铭文／徽记／特征")} value={facet} onChange={p.setFacet} caption={facet==='all'?tr(mobile?"全部特征":"全部铭文 / 徽记 / 特征"):copyKnown(facet,locale)}><option value="all">{tr("全部铭文 / 徽记 / 特征")}</option>{p.facets.map(f=><option key={f} value={f}>{copyKnown(f,locale)}</option>)}</FamilyFilter>}</div>
    <div className="drawer-gallery">{specimens.map(s=><article key={s.id} className="specimen-tile"><button className="specimen-image" onClick={()=>p.onOpen(s)} aria-label={`${tr('打开图片')} ${s.title}`}>
