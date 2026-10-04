@@ -4,7 +4,7 @@ import {copyKnown,copyMessage,countLabel,geographyName} from '@/lib/i18n';
 import {useEffect,useMemo,useRef,useState,type ReactNode} from 'react';
 import {editableTarget,escapeTarget,focusReturn} from '@/lib/keyboard';
 import {viewedRecord,emptyFilters,galleryRecords,validGallerySelection,keepFullFamilySession,type FilterContext,type FullFamilySession,type CollectionContext} from '@/lib/map-selection';
-import {buildMapBackground,defaultLayers,type MapRange} from '@/lib/map-layers';
+import {buildMapBackground,defaultLayers} from '@/lib/map-layers';
 import {familyRangeObject,linkRangeLayers,rangeLayer} from '@/lib/range-linking';
 import {useRangeSelection} from '@/components/atlas/use-range-selection';
 import FamilyMapBackground from '@/components/atlas/family-map-background';
