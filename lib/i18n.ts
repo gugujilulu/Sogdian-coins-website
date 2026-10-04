@@ -52,6 +52,21 @@ export const dictionary={
  "钱币目录与研究":{"en": "Coin catalogues & studies", "zh": "钱币目录与研究", "ru": "Каталоги монет и исследования"},
  "来源索引":{"en":"Source index","zh":"来源索引","ru":"Указатель источников"},
  "相关资料图库":{"en":"Related material gallery","zh":"相关资料图库","ru":"Галерея сопутствующих материалов"},
+ "查看全部记录":{"en":"View all {records}","zh":"查看全部{records}","ru":"Просмотреть все {records}"},
+ "部分家族记录":{"en": "Showing {shown} of {total}", "zh": "显示 {shown}／{total}", "ru": "Показано: {shown} · В семействе: {total}"},
+ "暂无地图位置的家族":{"en": "{families} without map locations", "zh": "{families}暂无地图位置", "ru": "Без местоположения на карте: {families}"},
+ "引用图号":{"en": "Fig. {n}", "zh": "第{n}图", "ru": "Рис. {n}"},
+ "引用页码":{"en": "p. {n}", "zh": "第{n}页", "ru": "с. {n}"},
+ "引用更新":{"en": "updated {n}", "zh": "更新{n}", "ru": "обновлено в {n} г."},
+ "类型介绍原文":{"en": "Original type notes", "zh": "类型介绍原文", "ru": "Исходные примечания к типу"},
+ "Panch tamgha · 潘治徽记":{"en": "Panch tamgha", "zh": "潘治徽记", "ru": "Тамга Панча"},
+ "Semi-italic legend · 半草书铭文":{"en": "Semi-italic legend", "zh": "半草书铭文", "ru": "Надпись полукурсивом"},
+ "Imported coin · 区域输入钱":{"en": "Imported coin", "zh": "区域输入钱", "ru": "Привозная монета"},
+ "7th–8th century; often attributed c.709–722 / 728":{"en": "7th–8th century; often attributed c.709–722 / 728", "zh": "7—8世纪；常归于约709—722／728年", "ru": "VII–VIII вв.; часто датируется около 709–722 / 728 гг."},
+ "First half of 8th–mid-9th century":{"en": "First half of 8th–mid-9th century", "zh": "8世纪上半叶—9世纪中叶", "ru": "Первая половина VIII — середина IX в."},
+ "Square-holed cast bronze with a Sogdian legend and the Panch tamgha. Sources differ in date, face order and the interpretation of Nana.":{"en": "Square-holed cast bronze with a Sogdian legend and the Panch tamgha. Sources differ in date, face order and the interpretation of Nana.", "zh": "带粟特文铭文与潘治徽记的方孔铸造铜钱。各来源对年代、正反面顺序及娜娜的解释有所不同。", "ru": "Литая бронзовая монета с квадратным отверстием, согдийской надписью и тамгой Панча. Источники расходятся в датировке, порядке сторон и толковании образа Наны."},
+ "Sogdian Türgesh-qaghan legend with Türgesh tamgha. Zeno #795 source groups preserve standard, degraded, one-sided and additional-sign subseries; the legacy Kamyshev 24 record is one catalogue group, not a label for every imported specimen.":{"en": "Sogdian Türgesh-qaghan legend with the Türgesh tamgha. Zeno #795 includes standard, degraded, one-sided and additional-sign subseries. Kamyshev 24 refers to one catalogue group.", "zh": "粟特文突骑施可汗铭文与突骑施徽记。Zeno #795包括常规、退化、单面及带附加符号的子系列；Kamyshev 24对应其中一个目录组。", "ru": "Согдийская надпись с титулом тюргешского кагана и тюргешская тамга. В Zeno #795 представлены обычные, деградированные, односторонние варианты и варианты с дополнительными знаками. Kamyshev 24 обозначает одну каталожную группу."},
+ "CNG 611/576 原文所列不同读法，意译为“潘治的娜娜夫人”。正反面命名因目录而异。":{"en": "CNG 611/576 gives alternative readings, interpreted as “Lady Nana of Panch”. The names of the two sides differ between catalogues.", "zh": "CNG 611/576原文列有不同读法，意译为“潘治的娜娜夫人”。正反面命名因目录而异。", "ru": "CNG 611/576 приводит разные чтения, интерпретируемые как «Госпожа Нана из Панча». Названия сторон различаются в каталогах."},
  "研究页面导语":{"en": "References, source pages and plans for future research.", "zh": "查阅参考资料与来源，了解后续建设和研究方向。", "ru": "Литература, страницы источников и планы дальнейших исследований."},
  "参考目录用途":{"en": "Coin descriptions, catalogue references and numismatic studies.", "zh": "查阅钱币描述、目录参考及钱币学研究。", "ru": "Описания монет, каталожные ссылки и нумизматические исследования."},
  "参考来源用途":{"en": "Original coin records and source classifications.", "zh": "查看原始钱币记录与来源分类。", "ru": "Исходные записи о монетах и классификация в источниках."},
@@ -149,7 +164,7 @@ export const dictionary={
  },
  "铭文 / Legend": {
   "en": "Inscription",
-  "zh": "铭文 / Legend",
+  "zh": "铭文",
   "ru": "Надпись"
  },
  "全部已标注铭文": {
@@ -159,7 +174,7 @@ export const dictionary={
  },
  "Tamgha / 徽记": {
   "en": "Tamgha",
-  "zh": "Tamgha / 徽记",
+  "zh": "徽记",
   "ru": "Тамга"
  },
  "全部已标注徽记": {
@@ -354,7 +369,7 @@ export const dictionary={
  },
  "铭文 / Inscription": {
   "en": "Inscription",
-  "zh": "铭文 / Inscription",
+  "zh": "铭文",
   "ru": "Надпись"
  },
  "年代未记录": {
@@ -1043,7 +1058,7 @@ export const dictionary={
  },
  "此记录不符合当前筛选；不计入当前匹配数量。": {
   "en": "This record is outside the current results.",
-  "zh": "此记录不符合当前筛选；不计入当前匹配数量。",
+  "zh": "此记录不在当前筛选结果中。",
   "ru": "Эта запись не входит в текущие результаты."
  },
  "来源／目录组不等同于已审定学术 variant。": {
@@ -1242,9 +1257,9 @@ export const dictionary={
   "ru": "Несколько атрибуций"
  },
  "catalogue_linked": {
-  "en": "Catalogue-linked",
-  "zh": "已关联目录",
-  "ru": "Связано с каталогом"
+  "en": "Catalogue reference available",
+  "zh": "有目录参考",
+  "ru": "Есть каталожная ссылка"
  },
  "exploration": {
   "en": "Under study",
@@ -1257,14 +1272,14 @@ export const dictionary={
   "ru": "Нанесено на карту"
  },
  "source_linked": {
-  "en": "Source-linked",
-  "zh": "已关联来源",
-  "ru": "Связано с источником"
+  "en": "Source record available",
+  "zh": "有来源记录",
+  "ru": "Есть запись источника"
  },
  "source_linked_candidate": {
-  "en": "Source-linked candidate",
-  "zh": "有来源的候选",
-  "ru": "Кандидат со ссылкой на источник"
+  "en": "Attribution under study",
+  "zh": "归属研究中",
+  "ru": "Атрибуция изучается"
  },
  "source_linked_context_family": {
   "en": "Contextual family",
@@ -1358,9 +1373,9 @@ export const dictionary={
   "ru": "Загрузить индекс повторно"
  },
  "参考资料 comparison / 其他非实际关系": {
-  "en": "References · comparison and other links",
-  "zh": "参考资料 comparison / 其他非实际关系",
-  "ru": "Справочные материалы · сравнения и другие связи"
+  "en": "References and other links",
+  "zh": "参考资料与其他链接",
+  "ru": "Справочные материалы и другие ссылки"
  },
  "参考关系不计入实际来源。": {
   "en": "Reference links are listed separately from actual sources.",
