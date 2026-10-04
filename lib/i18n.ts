@@ -1373,9 +1373,9 @@ export const dictionary={
   "ru": "Загрузить индекс повторно"
  },
  "参考资料 comparison / 其他非实际关系": {
-  "en": "References · comparison and other links",
-  "zh": "参考资料 comparison / 其他非实际关系",
-  "ru": "Справочные материалы · сравнения и другие связи"
+  "en": "References and other links",
+  "zh": "参考资料与其他链接",
+  "ru": "Справочные материалы и другие ссылки"
  },
  "参考关系不计入实际来源。": {
   "en": "Reference links are listed separately from actual sources.",
