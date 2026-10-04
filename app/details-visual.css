@@ -39,8 +39,11 @@ dialog.art-detail::backdrop{background:#10253183;backdrop-filter:none}
 .art-detail .related-detail-header>button .art-icon{filter:brightness(1.5)}
 .art-detail .related-detail-body{width:100%;height:calc(100% - 60px);grid-template-columns:minmax(0,1.7fr) minmax(320px,1fr);border:0;background:transparent;box-shadow:none;overflow:hidden}
 .art-detail .detail-image-panel{position:relative;padding:16px 18px 14px;min-width:0;background:transparent;overflow:auto;border-right:1px solid #c4ad8a;overscroll-behavior:contain}
-.art-detail .detail-image-panel:before,.art-detail .detail-image-panel:after{content:"";position:absolute;width:53px;height:53px;background:url('/visual/t47/r3/card-corner.webp') center/contain no-repeat;pointer-events:none;z-index:1;opacity:.58}
-.art-detail .detail-image-panel:before{top:0;left:0}.art-detail .detail-image-panel:after{bottom:0;right:0;transform:rotate(180deg)}
+.art-detail .detail-image-panel:before,.art-detail .detail-image-panel:after{content:"";position:absolute;width:36px;height:36px;background:url('/visual/t47/r3/card-corner.webp') center/contain no-repeat;pointer-events:none;z-index:0;opacity:.4}
+.art-detail .detail-image-panel:before{top:2px;left:2px}.art-detail .detail-image-panel:after{bottom:2px;right:2px;transform:rotate(180deg)}
+.art-detail .detail-image-panel>.image-pagination,.art-detail .detail-image-panel>.hires-viewer{position:relative;z-index:1}
+.art-detail .image-pagination button,.art-detail .image-help{background-color:#f4ead8}
+.art-detail .record-description p,.art-detail .family-introduction p{white-space:pre-line}
 .art-detail .hires-viewer{flex:1;min-height:0;display:flex;flex-direction:column}
 .art-detail .image-pagination{padding:0 0 10px;min-height:44px;flex-wrap:nowrap;gap:10px;font-size:15px}
 .art-detail .image-pagination span{margin:0 auto;color:#806a4a}
@@ -106,3 +109,5 @@ dialog.art-detail{margin:calc(var(--atlas-header) + 16px) auto 0;height:min(900p
 @media(max-width:760px){.art-detail[data-kind=related]{width:calc(100vw - 18px);height:calc(100dvh - var(--atlas-header) - 32px)}}
 
 .art-detail .related-detail-header .deep-copy>button{background:transparent;padding:0}.art-detail .related-detail-header .deep-copy .art-icon{filter:brightness(0) invert(.93) sepia(.3)}
+
+.art-detail .record-catalogue{margin:20px 0;padding:12px 0;border-block:1px solid #c8b692}.art-detail .record-catalogue h2{font-size:18px;margin:0 0 8px}.art-detail .record-catalogue p{margin:0 0 8px}.art-detail .record-catalogue a{font-size:15px}

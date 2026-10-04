@@ -23,15 +23,14 @@ export default function FamilyDrawer(p:Props){
  const [mobile,setMobile]=useState(false);
  useEffect(()=>{const media=matchMedia('(max-width:760px), (max-width:1000px) and (max-height:500px)');const update=()=>setMobile(media.matches);update();media.addEventListener('change',update);return ()=>media.removeEventListener('change',update)},[]);
  const scroll=useRef<HTMLDivElement>(null);
- useEffect(()=>{scroll.current?.scrollTo({top:0});if(!document.querySelector('dialog[open]'))sheet.current?.querySelector<HTMLButtonElement>('.family-title>button')?.focus({preventScroll:true})},[family.id]);
+ useEffect(()=>{scroll.current?.scrollTo({top:0});if(!document.querySelector('dialog[open]'))sheet.current?.querySelector<HTMLButtonElement>('.detail-actions>button')?.focus({preventScroll:true})},[family.id]);
  useEffect(()=>{if(state==='summary'&&scroll.current?.contains(document.activeElement))sheet.current?.querySelector<HTMLElement>('.sheet-handle')?.focus({preventScroll:true})},[state]);
  // The reading sheet covers the map canvas; keep its markers out of keyboard navigation.
  useEffect(()=>{const map=sheet.current?.closest('.atlas-screen')?.querySelector<HTMLElement>('.terrain-map');if(!map)return;if(mobile&&state==='reading'&&map.contains(document.activeElement))sheet.current?.querySelector<HTMLElement>('.sheet-handle')?.focus({preventScroll:true});map.inert=mobile&&state==='reading';return()=>{map.inert=false}},[mobile,state]);
  const activeGroup=variants.find(v=>v.id===variant);
- const overview=<>   <div className="drawer-secondary"><button onClick={p.onCatalogue}><ArtIcon name="book" size={14}/>{tr("目录")}</button>{p.onReturnCollection&&<button onClick={p.onReturnCollection}>{tr("返回此集合")}</button>}</div>
-   <div className="family-meta"><span>{family.dateLabel||tr("年代未记录")}</span><span>{family.region||tr("地区未记录")}</span><span>{family.polity||tr("政权未记录")}</span></div>
-   <div className="family-location"><ArtIcon name="pin" size={14}/><span>{p.placeName||tr("位置未记录")}</span>{p.onLocate?<button onClick={p.onLocate}><ArtIcon name="locate" size={17}/>{tr("定位")}</button>:<span>{tr("暂无地图定位")}</span>}</div>
-</>;
+ const metadata=<div className="family-meta">{family.dateLabel&&<span>{family.dateLabel}</span>}{family.region&&<span>{family.region}</span>}{family.polity&&family.polity!==family.region&&<span>{family.polity}</span>}</div>;
+ const navigation=<div className="drawer-secondary"><button onClick={p.onCatalogue}><ArtIcon name="book" size={14}/>{tr("目录")}</button>{!mobile&&p.onReturnCollection&&<button onClick={p.onReturnCollection}>{tr("返回此集合")}</button>}</div>;
+ const location=p.placeName&&<div className="family-location"><ArtIcon name="pin" size={14}/><span>{p.placeName}</span>{p.onLocate&&<button onClick={p.onLocate}><ArtIcon name="locate" size={17}/>{tr("定位")}</button>}</div>;
  return <aside ref={sheet} data-sheet-state={state} style={{height:dragHeight??undefined,transition:reduceMotion?'none':undefined}} className="family-drawer"
  aria-label={`${tr('家族详情')} ${family.title}`}>
   {p.onSheetState&&<div className="sheet-handle" role="slider" tabIndex={0} aria-label={tr("详情面板高度")} aria-orientation="vertical" aria-valuemin={0} aria-valuemax={2} aria-valuenow={state==='summary'?0:state==='half'?1:2} aria-valuetext={state==='summary'?tr("收起摘要"):state==='half'?tr("半展开浏览"):tr("展开阅读")}
@@ -44,7 +43,7 @@ export default function FamilyDrawer(p:Props){
   {p.onSheetState&&<div className="sheet-actions"><small className="sheet-summary-count">{caption}</small><div>{state!=='reading'&&<button className="sheet-expand" aria-label={tr("展开家族详情")} onClick={()=>p.onSheetState?.(state==='summary'?'half':'reading')}><ArtIcon name="chevron" size={16}/>{tr("展开")}</button>}{state!=='summary'&&<button aria-label={tr("收起家族详情")} onClick={()=>p.onSheetState?.(state==='reading'?'half':'summary')}><ArtIcon name="chevron" size={16}/>{tr("收起")}</button>}<button onClick={p.onTools}><ArtIcon name="clock" size={15}/>{tr("时间 / 地图")}</button>{p.onReturnCollection&&<button onClick={p.onReturnCollection}>{tr("返回集合")}</button>}</div></div>}
 
   <div ref={scroll} className="drawer-scroll">
-   {!mobile&&overview}
+   {metadata}
    <div className="gallery-scope"><strong>{caption}</strong>
    {p.onRestore?<button onClick={p.onRestore}>{tr("返回筛选结果")}</button>:specimens.length<fullSpecimens.length&&<button onClick={p.onFullFamily}>{tr('查看全部')} {fullSpecimens.length}</button>}
    </div>
@@ -54,11 +53,20 @@ export default function FamilyDrawer(p:Props){
    </button><div className="specimen-copy"><strong>{s.title}</strong><small>{s.weightG==null?tr("重量未记录"):`${s.weightG} g`} · {s.diameterMm==null?tr("直径未记录"):`${s.diameterMm} mm`}</small>
    <details className="tile-sources"><summary>{tr("来源")}</summary><div className="tile-source-list">{p.sources.get(s.id)?.map(e=><a key={e.source.id} href={e.source.urls[0]} target="_blank" rel="noreferrer" aria-label={`${e.source.provider} ${e.source.recordKey}`}>{e.source.provider}{e.source.identityStatus!=='resolved'?tr('（待解析）'):''}</a>)||<small>{p.sourceIndexError?tr("来源索引加载失败；原始来源见详情"):tr("来源索引加载中")}</small>}{s.images[0]?.credit&&<small>{tr("图片署名")} · {s.images[0].credit}</small>}</div></details></div></article>)}</div>
    {!specimens.length&&<p role="status">{tr("没有符合条件的记录。")}<button onClick={()=>{p.setVariant('all');p.setFacet('all')}}>{tr("清除家族内筛选")}</button></p>}
-   {mobile&&overview}
+   {(family.description||family.legend||family.question)&&<section className="family-introduction">
+    {family.description&&<><h2>{tr("类型介绍")}</h2><p>{family.description}</p></>}
+    {family.legend&&<><h3>{tr("铭文 / Inscription")}</h3><p className="inscription">{family.legend}</p>{family.legendNote&&<p>{family.legendNote}</p>}</>}
+    {family.question&&<details className="research-block"><summary>{tr("研究问题")}</summary><p>{family.question}</p></details>}
+   </section>}
+   {location}
    {p.mapBackground}
-   <details className="research-block"><summary>{tr("家族说明与研究问题")}</summary><p>{tr("来源／目录组不等同于已审定学术 variant。")}</p><p>{family.description}</p>{family.question&&<div className="question-note">{family.question}</div>}{family.anchor&&<p>{family.anchor.note}</p>}</details>
-   {activeGroup&&<details className="research-block"><summary>{tr("目录组说明")} · {activeGroup.title}</summary><p>{activeGroup.status} · {activeGroup.reference}</p><p>{activeGroup.description}</p></details>}
-   <details className="research-block"><summary>{tr("铭文、文献与来源")}</summary>{family.legend&&<><h3>{tr("铭文 / Inscription")}</h3><p className="inscription">{family.legend}</p><p>{family.legendNote}</p></>}{family.publications.map(pub=><div className="publication" key={pub.url}><a href={pub.url} target="_blank" rel="noreferrer">{pub.title}</a><small>{pub.role}</small></div>)}</details>
+   {navigation}
+   {(family.publications.length>0||family.anchor?.note||activeGroup?.description)&&<details className="research-block"><summary>{tr("资料与方法")}</summary>
+    {activeGroup?.description&&<p>{activeGroup.description}</p>}
+    {family.publications.map(pub=><div className="publication" key={pub.url}><a href={pub.url} target="_blank" rel="noreferrer">{pub.title}</a><small>{pub.role}</small></div>)}
+    {family.anchor?.note&&<p>{family.anchor.note}</p>}
+   </details>}
+
   </div>
  </aside>
 }
