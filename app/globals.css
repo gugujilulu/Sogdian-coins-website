@@ -73,10 +73,15 @@
 .source-coverage-note{border:1px solid #35474e;padding:10px;margin-bottom:16px;font-size:13px;overflow-wrap:anywhere}
 
 /* T14: compact link controls and feedback, including mobile/manual-copy fallback. */
-.deep-copy{display:inline-flex;gap:8px;align-items:center;flex-wrap:wrap;max-width:100%;margin:6px 0}
-.deep-copy button,.deep-link-notice button{padding:7px 10px;border:1px solid #b8b1a4;border-radius:4px}
-.deep-copy input{width:100%;min-width:0;max-width:100%;padding:6px;font-size:12px}
-.deep-copy small{overflow-wrap:anywhere}
+.deep-copy{position:relative;display:inline-flex;flex:none;margin:0}
+.deep-copy>button{display:grid;place-items:center;width:40px;height:40px;padding:0;border:0;background:transparent;border-radius:3px}
+.deep-link-notice button{padding:7px 10px;border:1px solid #b8b1a4;border-radius:4px}
+.share-feedback{position:absolute;right:0;top:calc(100% + 4px);z-index:10;width:max-content;max-width:min(260px,70vw);padding:6px 9px;background:var(--atlas-paper,#f1e6cc);color:var(--atlas-ink,#243a41);border:1px solid #b8b1a4;border-radius:3px;font-size:12px;overflow-wrap:anywhere}
+.share-feedback input{display:block;width:100%;min-width:0;max-width:100%;margin-top:5px;padding:6px;font-size:12px}
+.detail-actions{display:flex;align-items:center;gap:8px;flex:none!important}
+.detail-actions>button{min-width:40px;min-height:40px;padding:8px;border:0;background:none;flex:none}
+.family-title>div:first-child{flex:1}
+
 .deep-link-notice{position:fixed;z-index:200;top:60px;left:10px;right:10px;background:#fff5d9;color:#312a1e;border:1px solid #baaa87;padding:10px;overflow-wrap:anywhere}
 .family-copy-link{position:absolute;right:20px;bottom:15px;z-index:35;background:var(--paper,#f8f5ec);padding:3px 8px}
 

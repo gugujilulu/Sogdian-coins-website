@@ -9,14 +9,13 @@ import {useCopy,useLanguage} from './language';
 import DetailDialog from './detail-dialog';
 import ImageViewer from './image-viewer';
 import ImageProvenance from './image-provenance';
-import CopyLink from './copy-link';
 export default function SpecimenDetails({matches,link,specimen,family,onClose}:{matches:boolean;link:DeepLink;specimen:Specimen;family:Family|null;onClose:()=>void}){
  const tr=useCopy(),{locale}=useLanguage();
  const [imageId,setImageId]=useState<string|null>(null),image=selectedImage(specimen.images,imageId);
- return <DetailDialog title={tr('主库图片详情')} nana={family?.id==='lady-nana'} onClose={onClose}>
+ return <DetailDialog title={tr('主库图片详情')} shareLink={link} nana={family?.id==='lady-nana'} onClose={onClose}>
  <ImageViewer images={specimen.images} imageId={imageId} onSelect={setImageId}/>
  <div className="modal-info">{!matches&&<p role="status">{tr('此记录不符合当前筛选；不计入当前匹配数量。')}</p>}
- <CopyLink link={link}/><span className="eyebrow">{family?.title}</span><h1>{specimen.title}</h1>
+ <span className="eyebrow">{family?.title}</span><h1>{specimen.title}</h1>
  <dl className="record-facts"><div><dt>{tr('重量')}</dt><dd>{specimen.weightG!=null?`${specimen.weightG} g`:tr('重量未记录')}</dd></div><div><dt>{tr('直径')}</dt><dd>{specimen.diameterMm!=null?`${specimen.diameterMm} mm`:tr('直径未记录')}</dd></div>{family&&<><div><dt>{tr('家族年代')}</dt><dd>{family.dateLabel||tr('年代未记录')}</dd></div><div><dt>{tr('历史地区 / Region')}</dt><dd>{family.region||tr('地区未记录')}</dd></div><div><dt>{tr('政权')}</dt><dd>{family.polity||tr('政权未记录')}</dd></div></>}</dl>
  {specimen.description&&<section className="record-description"><h2>{tr('钱币描述')}</h2><p>{specimen.description}</p></section>}
  <div className="record-source-links">{specimen.sources.map((s,i)=><a className="out-link" key={s.url+i} href={s.url} target="_blank" rel="noreferrer">{specimen.sourceRecordId&&s.label.includes(specimen.sourceRecordId)?tr("原始记录页面"):s.label} ↗</a>)}</div>
