@@ -1,0 +1,134 @@
+[
+  {
+    "original": "design/T67-6/portraits/P01_Turgesh-Qarluq_Semirechye.png",
+    "sha256": "a4c185918b50ed0b39887a99a016ce1a174b6fa3b9eface45ad8cb2a4722b54c",
+    "web": "public/visual/t67-6/p01.webp",
+    "size": [
+      1122,
+      1402
+    ],
+    "alpha": "opaque source retained; CSS multiply approved by user",
+    "conversion": "Pillow WebP quality=92 method=6; no crop or resizing"
+  },
+  {
+    "original": "design/T67-6/portraits/P02_Proto-Qarakhanid.png",
+    "sha256": "7e2b2f368097d788e3dbfdd5f4ef6a4a1881eeea5bdb7d7ec06801ccc2901b43",
+    "web": "public/visual/t67-6/p02.webp",
+    "size": [
+      1122,
+      1402
+    ],
+    "alpha": "opaque source retained; CSS multiply approved by user",
+    "conversion": "Pillow WebP quality=92 method=6; no crop or resizing"
+  },
+  {
+    "original": "design/T67-6/portraits/P03_Samarkand_Sogdian_Court.png",
+    "sha256": "b6d716c2fdbdbf130362c12e1222f93e0a62155ed38d88bbd346274dadb1434d",
+    "web": "public/visual/t67-6/p03.webp",
+    "size": [
+      1122,
+      1402
+    ],
+    "alpha": "opaque source retained; CSS multiply approved by user",
+    "conversion": "Pillow WebP quality=92 method=6; no crop or resizing"
+  },
+  {
+    "original": "design/T67-6/portraits/P04_Panch-Panjikent_Sogdian.png",
+    "sha256": "5efb9579864cdc93dce4b11b784d96adad66b5b328a2b9462b672104c22c53a2",
+    "web": "public/visual/t67-6/p04.webp",
+    "size": [
+      1122,
+      1402
+    ],
+    "alpha": "opaque source retained; CSS multiply approved by user",
+    "conversion": "Pillow WebP quality=92 method=6; no crop or resizing"
+  },
+  {
+    "original": "design/T67-6/portraits/P05_Bukhara-Paykand-Kesh_Sogdian.png",
+    "sha256": "92f2e3577fc535bbc8619da86103952e31ca984a45f69dbfdc87ae42bcbee258",
+    "web": "public/visual/t67-6/p05.webp",
+    "size": [
+      1122,
+      1402
+    ],
+    "alpha": "opaque source retained; CSS multiply approved by user",
+    "conversion": "Pillow WebP quality=92 method=6; no crop or resizing"
+  },
+  {
+    "original": "design/T67-6/portraits/P06_Chach-Ferghana_Sogdo-Turkic.png",
+    "sha256": "d31744b4ee2a9bb349fa7da0dc2eec547dd875f91eed5e2bcba60aab447ab6c8",
+    "web": "public/visual/t67-6/p06.webp",
+    "size": [
+      1122,
+      1402
+    ],
+    "alpha": "opaque source retained; CSS multiply approved by user",
+    "conversion": "Pillow WebP quality=92 method=6; no crop or resizing"
+  },
+  {
+    "original": "design/T67-6/portraits/P07_Isfijab-Sayram-Keder_Frontier.png",
+    "sha256": "a457f9f32ee14850633dc656f131a990ccf3f9cad33ee9b3654dafb04680d97c",
+    "web": "public/visual/t67-6/p07.webp",
+    "size": [
+      1122,
+      1402
+    ],
+    "alpha": "opaque source retained; CSS multiply approved by user",
+    "conversion": "Pillow WebP quality=92 method=6; no crop or resizing"
+  },
+  {
+    "original": "design/T67-6/portraits/P08_Uyghur-Yaghlaqar.png",
+    "sha256": "57baf5dd13da21059cd61dce1c60cee9abe6ce2f51acbe1513a5b401a7dc1bdf",
+    "web": "public/visual/t67-6/p08.webp",
+    "size": [
+      1122,
+      1402
+    ],
+    "alpha": "opaque source retained; CSS multiply approved by user",
+    "conversion": "Pillow WebP quality=92 method=6; no crop or resizing"
+  },
+  {
+    "original": "design/T67-6/portraits/P09_Western_Liao-Qara_Khitai.png",
+    "sha256": "91a07919d5ac4bd48a282c55c47683971d9b0112f0727e947fdbdf533f36c8a8",
+    "web": "public/visual/t67-6/p09.webp",
+    "size": [
+      1122,
+      1402
+    ],
+    "alpha": "opaque source retained; CSS multiply approved by user",
+    "conversion": "Pillow WebP quality=92 method=6; no crop or resizing"
+  },
+  {
+    "original": "design/T67-6/portraits/P10_Northern_Tokharistan-Oxus.png",
+    "sha256": "1cc78131f6af5717e9df071d800f8cb5838af97cb0ee5a71b8c590502c46aee0",
+    "web": "public/visual/t67-6/p10.webp",
+    "size": [
+      1122,
+      1402
+    ],
+    "alpha": "opaque source retained; CSS multiply approved by user",
+    "conversion": "Pillow WebP quality=92 method=6; no crop or resizing"
+  },
+  {
+    "original": "design/T67-6/portraits/P11_Tang-East_Asian_Presence.png",
+    "sha256": "203947ef0efee83f5564a921a49eae552cb065bedff0136fac67611ec2727646",
+    "web": "public/visual/t67-6/p11.webp",
+    "size": [
+      1122,
+      1402
+    ],
+    "alpha": "opaque source retained; CSS multiply approved by user",
+    "conversion": "Pillow WebP quality=92 method=6; no crop or resizing"
+  },
+  {
+    "original": "design/T67-6/portraits/P12_Uncertain-Eastern_Sogdo-Turkic.png",
+    "sha256": "d28b857b204a593a60ede296d738703be8ecf77a1141c7e25beb444f60b6fc17",
+    "web": "public/visual/t67-6/p12.webp",
+    "size": [
+      1122,
+      1402
+    ],
+    "alpha": "opaque source retained; CSS multiply approved by user",
+    "conversion": "Pillow WebP quality=92 method=6; no crop or resizing"
+  }
+]
