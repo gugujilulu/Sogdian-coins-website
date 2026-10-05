@@ -17,6 +17,8 @@
  opacity:1;box-shadow:0 4px 7px rgb(0 0 0 /16%);
  pointer-events:none;z-index:-1;
 }
+/* The source frame has asymmetric transparent side margins. */
+.art-detail[data-kind="record"] .detail-frame::before {left:12px;right:6px}
 /* The family wrapper ends at its visible frame, not the asset alpha margin. */
 .atlas-screen .family-drawer::before {inset:-9px}
 .atlas-screen .family-drawer::after {inset:0}
