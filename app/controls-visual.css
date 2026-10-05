@@ -64,7 +64,7 @@
 .atlas-screen .atlas-search input {padding-top:5px;padding-bottom:3px}
 .catalogue-page .catalogue-search input {position:relative;top:1px}
 .atlas-screen .map-toolbar :is(button,select) {padding-top:8px;padding-bottom:6px}
-.atlas-screen .filter-grid select {padding-top:8px;padding-bottom:6px}
+.atlas-screen .filter-grid select {padding-top:9px;padding-bottom:7px}
 .atlas-screen .time-options button,
 .atlas-screen .history-panel-head button,
 .atlas-screen .range-version :is(button,select) {padding-top:8px;padding-bottom:6px}
@@ -77,9 +77,6 @@
 .art-detail .image-toolbar button {padding-top:7px;padding-bottom:5px}
 .art-detail .image-toolbar .art-icon {align-self:center}
 .language-menu button {align-items:center;padding-top:11px;padding-bottom:9px}
-/* Compensate the glyph baseline without moving the language button or globe. */
-.language-control>button {line-height:1.35}
-.art-research .research-gallery-link {display:inline-flex;align-items:center}
 @media(max-width:760px),(max-width:1000px) and (max-height:500px) {
  .atlas-screen .drawer-filter>span {padding-top:8px;padding-bottom:6px}
  .catalogue-page .catalogue-switch button {padding-top:9px;padding-bottom:7px}
