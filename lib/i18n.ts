@@ -5,6 +5,14 @@ export function validLocale(value:unknown):Locale{return value==='zh'||value==='
 export function readLocale(storage:Pick<Storage,'getItem'>|null):Locale{try{return validLocale(storage?.getItem(storageKey))}catch{return 'en'}}
 export function saveLocale(storage:Pick<Storage,'setItem'>|null,locale:Locale){try{storage?.setItem(storageKey,locale);return true}catch{return false}}
 export const dictionary={
+ "记录原始说明":{"en":"Original record notes","zh":"记录原始说明","ru":"Исходные примечания к записи"},
+ "Unearthed in N. Afghanistan":{"en":"Unearthed in N. Afghanistan","zh":"来源记载出土于阿富汗北部。","ru":"Источник сообщает о находке в Северном Афганистане."},
+ "Kyrgyzstan":{"en":"Kyrgyzstan","zh":"吉尔吉斯斯坦","ru":"Кыргызстан"},
+ "Unearthed in Kyrgyzstan.":{"en":"Unearthed in Kyrgyzstan.","zh":"来源记载出土于吉尔吉斯斯坦。","ru":"Источник сообщает о находке в Кыргызстане."},
+ "Unearthed at Krasnaya Rechka site, Kyrgyzstan.":{"en":"Unearthed at Krasnaya Rechka site, Kyrgyzstan.","zh":"来源记载出土于吉尔吉斯斯坦红河古城遗址。","ru":"Источник сообщает о находке на городище Красная Речка в Кыргызстане."},
+ "AE Turgesh coin":{"en":"AE Turgesh coin","zh":"突骑施铜钱","ru":"Бронзовая монета тюргешей"},
+ "Chach Farankat, Benakan":{"en":"Chach Farankat, Benakan","zh":"赭时，Farankat／Benakan钱币。","ru":"Чач, монета Farankat / Benakan."},
+
  "突骑施":{"en": "Türgesh", "zh": "突骑施", "ru": "Тюргеши"},
  "突骑施｜南侧研究摘录":{"en": "Türgesh · southern excerpt", "zh": "突骑施｜南侧研究摘录", "ru": "Тюргеши · южный фрагмент"},
  "七河":{"en": "Semirechye", "zh": "七河", "ru": "Семиречье"},

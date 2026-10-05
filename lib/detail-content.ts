@@ -1,6 +1,6 @@
 import content from './content/detail-content.json' with {type:'json'};
 import type {Locale} from './i18n';
-export type DescriptionSource={text:string;url:string;provider:string;rawHtml?:string|null};
+export type DescriptionSource={text:string;url:string;provider:string;rawHtml?:string|null;metal?:string|null};
 /** Image correspondence wins among real source links, never comparison records. */
 export function orderDescriptions(entries:readonly DescriptionSource[],imageUrl?:string){
  return [...entries].sort((a,b)=>Number(b.provider==='Zeno')-Number(a.provider==='Zeno')||Number(b.url===imageUrl)-Number(a.url===imageUrl)||a.url.localeCompare(b.url));
@@ -10,7 +10,7 @@ export function familyIntroduction(id:string,locale:Locale){return (content.fami
 /** Short localized reading aid, based only on words in this record's source text.
  * The complete source text follows, with inscriptions and detailed claims intact. */
 const features=[
- [/Sog[dh]+ian (?:royal )?(?:legend|inscription)|Sog[dh]+ian text/i,['a Sogdian inscription','粟特文铭文','согдийская надпись']],
+ [/Sog[dh]+ian (?:royal )?(?:legend|inscription|script)|Sog[dh]+ian text/i,['a Sogdian inscription','粟特文铭文','согдийская надпись']],
  [/Arabic|Kufic/i,['an Arabic inscription','阿拉伯文铭文','арабская надпись']],
  [/Chinese (?:legend|character|inscription)|Kai.?yuan|開元通寶|周元通寶/i,['Chinese cash lettering','汉字钱文','китайская монетная надпись']],
  [/runic/i,['runic signs','如尼符号','рунические знаки']],

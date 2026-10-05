@@ -3,7 +3,7 @@ import json,re,html
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 def clean(text):
-    text=html.unescape(re.sub(r'<[^>]+>',' ',text or ''))
+    text=html.unescape(re.sub(r'</?(?:p|div|span|a|br|b|i|em|strong|table|tr|td|ul|li)(?:\s[^>]*)?/?>',' ',text or ''))
     text=re.sub(r'\s+',' ',text).strip()
     text=re.sub(r'^#\d+\s*[-–—:]\s*','',text)
     text=re.sub(r'Photos? courtesy of [^.]+\.?|Image courtesy [^.]+\.?|I will inform you about the parameters of the coin additionally|Any comments[^.!?]*[.!?]|Unpublished, unresearched and (?:probably )?unique(?: for the moment)?[.!]?','',text,flags=re.I).strip()
@@ -18,7 +18,9 @@ def source_descriptions(specimen, records):
         text=clean(r.get('photoNote') or r.get('description'))
         if not text or text in seen:continue
         seen.add(text)
-        out.append(dict(text=text,url=source['url'],provider='Zeno',rawHtml=r.get('rawHtml')))
+        metal=(r.get('metalText') or r.get('sourceFields',{}).get('Metal') or '').strip()
+        metal=metal if re.fullmatch(r'AE|AR|AV|Æ|Copper|Bronze|Silver|Gold',metal,re.I) else None
+        out.append(dict(text=text,url=source['url'],provider='Zeno',rawHtml=r.get('rawHtml'),metal=metal))
     text=clean(specimen['description'])
     if not out and text and not re.search(r'^(Primary Zeno|Source specimen\.|Stage-\d)',text):
         source=next((s for s in specimen['sources'] if s.get('relation')!='comparison'),None)

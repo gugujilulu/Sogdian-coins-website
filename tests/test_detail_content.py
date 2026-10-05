@@ -10,4 +10,8 @@ class DescriptionTests(unittest.TestCase):
   s={'description':'Legacy wording','sources':[{'url':u,'relation':'same_specimen'} for u in ['z1','z2','z3']]}
   result=m.source_descriptions(s,{'z1':{'photoNote':'#1 - Sogdian inscription.'},'z2':{'description':'Tamgha on reverse.'},'z3':{'description':'Sogdian inscription.'}})
   self.assertEqual(len(result),2);self.assertNotIn('Legacy wording',[r['text'] for r in result])
+ def test_material_comes_from_this_source_field_not_title_or_family(self):
+  s={'description':'Fallback','sources':[{'url':'z','relation':'same_specimen'}]}
+  self.assertEqual(m.source_descriptions(s,{'z':{'description':'Royal cash','sourceFields':{'Metal':'AE'}}})[0]['metal'],'AE')
+  self.assertIsNone(m.source_descriptions(s,{'z':{'description':'Bronze comparison','sourceFields':{'Metal':'Invalid scraped text'}}})[0]['metal'])
 if __name__=='__main__':unittest.main()
