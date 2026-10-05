@@ -1,0 +1,14 @@
+{
+  "records": 1010,
+  "families": 56,
+  "recordsWithIndividualSourceText": 1007,
+  "recordsWithZenoText": 990,
+  "recordsWithOtherSourceText": 17,
+  "recordsWithLocalizedFamilyBackground": 1010,
+  "familiesWithThreeLanguages": 56,
+  "recordsUsingFamilyOnly": [
+    "zeno-56521",
+    "zeno-277428",
+    "zeno-277427"
+  ]
+}
