@@ -37,3 +37,14 @@
  .catalogue-frame>.catalogue-content {overflow:visible;padding:10px 6px 24px}
  .catalogue-frame>.catalogue-tree {overflow:visible}
 }
+/* Only the sidebar's previously obscured floral spray moves. */
+.catalogue-frame>.catalogue-tree::before {
+ inset:0 0 auto auto;width:125px;height:113.57px;
+ background-position:center;background-size:contain;
+ transform:rotate(-90deg);transform-origin:center;pointer-events:none;
+}
+.catalogue-frame .catalogue-title {padding-right:125px}
+@media(max-width:760px) {
+ .catalogue-frame>.catalogue-tree::before {width:80px;height:72.68px}
+ .catalogue-frame .catalogue-title {padding-right:80px}
+}
