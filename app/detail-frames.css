@@ -1,0 +1,71 @@
+/* T67.2 V2: fixed decorative edges around independently scrolling content. */
+.atlas-screen .family-drawer.family-drawer {
+ background:transparent;border:0;border-radius:0;box-shadow:none;
+ isolation:isolate;padding:10px;box-sizing:border-box;
+}
+.atlas-screen .family-drawer::before,
+.art-detail[data-kind="record"] .detail-frame::after {
+ content:"";position:absolute;inset:0;box-sizing:border-box;
+ border:34px solid transparent;
+ border-image:url('/visual/t67-2/frame-master.png') 180 / 34px stretch;
+ opacity:.64;pointer-events:none;z-index:2;
+}
+.atlas-screen .family-drawer::after,
+.art-detail[data-kind="record"] .detail-frame::before {
+ content:"";position:absolute;inset:9px;width:auto;height:auto;
+ background:#f3ead8 url('/visual/t67-2/paper.png') center/620px;
+ opacity:1;box-shadow:0 4px 7px rgb(0 0 0 /16%);
+ pointer-events:none;z-index:-1;
+}
+/* The source frame has asymmetric transparent side margins. */
+.art-detail[data-kind="record"] .detail-frame::before {left:12px;right:6px}
+/* The family wrapper ends at its visible frame, not the asset alpha margin. */
+.atlas-screen .family-drawer::before {inset:-9px}
+.atlas-screen .family-drawer::after {inset:0}
+dialog.art-detail[data-kind="record"] {
+ background:transparent;border:0;box-shadow:none;border-radius:0;overflow:visible;
+ margin:calc(var(--atlas-header) + 60px) auto 0;
+ height:calc(100dvh - var(--atlas-header) - 76px);
+}
+.art-detail[data-kind="record"] .related-detail-header {
+ position:absolute;right:10px;bottom:calc(100% - 4px);height:40px;
+ width:auto;padding:0;gap:14px;background:none;border:0;color:white;z-index:5;
+}
+.art-detail[data-kind="record"] .related-detail-header>strong,
+.art-detail[data-kind="record"] .related-detail-header>.art-icon {display:none}
+.art-detail[data-kind="record"] .related-detail-header button {
+ background:none;border:0;box-shadow:none;min-width:40px;min-height:40px;color:white;
+}
+.art-detail[data-kind="record"] .related-detail-header button img {
+ filter:brightness(0) invert(1) drop-shadow(0 2px 2px rgb(12 22 28 /85%));
+}
+.art-detail[data-kind="record"] .related-detail-header .language-button {
+ text-shadow:0 2px 2px rgb(12 22 28 /85%);
+}
+.art-detail[data-kind="record"] .related-detail-body.specimen-modal {
+ height:100%;display:grid;grid-template-columns:minmax(0,1.72fr) minmax(0,1fr);
+ gap:0;overflow:visible;background:transparent;
+}
+.art-detail[data-kind="record"] .detail-frame {
+ position:relative;isolation:isolate;min-width:0;min-height:0;padding:18px;
+ display:flex;box-sizing:border-box;
+}
+.art-detail[data-kind="record"] .detail-frame+.detail-frame {margin-left:0}
+.art-detail[data-kind="record"] .detail-frame>.detail-image-panel,
+.art-detail[data-kind="record"] .detail-frame>.modal-info {
+ width:100%;height:100%;box-sizing:border-box;border:0;overflow:auto;
+ padding:10px;background:transparent;
+}
+.art-detail[data-kind="record"] .detail-image-panel::before,
+.art-detail[data-kind="record"] .detail-image-panel::after {display:none}
+.art-detail[data-kind="record"][data-image-expanded="true"] .related-detail-body {grid-template-columns:1fr}
+.art-detail[data-kind="record"][data-image-expanded="true"] .detail-frame:nth-child(2) {display:none}
+@media(max-width:760px) {
+ .art-detail[data-kind="record"] .related-detail-body.specimen-modal {display:block;overflow:auto}
+ .art-detail[data-kind="record"] .detail-frame {display:block;padding:18px}
+ .art-detail[data-kind="record"] .detail-frame+.detail-frame {margin-left:0}
+ .art-detail[data-kind="record"] .detail-frame>.detail-image-panel {height:420px;overflow:visible}
+ .art-detail[data-kind="record"] .detail-frame>.modal-info {height:auto;overflow:visible}
+ .art-detail[data-kind="record"][data-image-expanded="true"] .detail-frame {height:100%}
+ .art-detail[data-kind="record"][data-image-expanded="true"] .detail-frame>.detail-image-panel {height:100%;overflow:auto}
+}
