@@ -1,0 +1,133 @@
+{
+  "portraits": {
+    "P01": {
+      "src": "/visual/t67-6/p01.webp",
+      "width": 1122,
+      "height": 1402,
+      "original": "P01_Turgesh-Qarluq_Semirechye.png"
+    },
+    "P02": {
+      "src": "/visual/t67-6/p02.webp",
+      "width": 1122,
+      "height": 1402,
+      "original": "P02_Proto-Qarakhanid.png"
+    },
+    "P03": {
+      "src": "/visual/t67-6/p03.webp",
+      "width": 1122,
+      "height": 1402,
+      "original": "P03_Samarkand_Sogdian_Court.png"
+    },
+    "P04": {
+      "src": "/visual/t67-6/p04.webp",
+      "width": 1122,
+      "height": 1402,
+      "original": "P04_Panch-Panjikent_Sogdian.png"
+    },
+    "P05": {
+      "src": "/visual/t67-6/p05.webp",
+      "width": 1122,
+      "height": 1402,
+      "original": "P05_Bukhara-Paykand-Kesh_Sogdian.png"
+    },
+    "P06": {
+      "src": "/visual/t67-6/p06.webp",
+      "width": 1122,
+      "height": 1402,
+      "original": "P06_Chach-Ferghana_Sogdo-Turkic.png"
+    },
+    "P07": {
+      "src": "/visual/t67-6/p07.webp",
+      "width": 1122,
+      "height": 1402,
+      "original": "P07_Isfijab-Sayram-Keder_Frontier.png"
+    },
+    "P08": {
+      "src": "/visual/t67-6/p08.webp",
+      "width": 1122,
+      "height": 1402,
+      "original": "P08_Uyghur-Yaghlaqar.png"
+    },
+    "P09": {
+      "src": "/visual/t67-6/p09.webp",
+      "width": 1122,
+      "height": 1402,
+      "original": "P09_Western_Liao-Qara_Khitai.png"
+    },
+    "P10": {
+      "src": "/visual/t67-6/p10.webp",
+      "width": 1122,
+      "height": 1402,
+      "original": "P10_Northern_Tokharistan-Oxus.png"
+    },
+    "P11": {
+      "src": "/visual/t67-6/p11.webp",
+      "width": 1122,
+      "height": 1402,
+      "original": "P11_Tang-East_Asian_Presence.png"
+    },
+    "P12": {
+      "src": "/visual/t67-6/p12.webp",
+      "width": 1122,
+      "height": 1402,
+      "original": "P12_Uncertain-Eastern_Sogdo-Turkic.png"
+    }
+  },
+  "families": {
+    "sr3": "P01",
+    "sr6": "P01",
+    "sr9": "P01",
+    "sr14": "P01",
+    "sr20": "P01",
+    "alp-tagh": "P01",
+    "arslan-kul-irkin": "P01",
+    "qarluq-kobek": "P01",
+    "yarug-kadin": "P01",
+    "semirechye-chinese-imitation": "P01",
+    "semirechye-runic-sh-gamma": "P01",
+    "semirechye-unattributed-cash": "P01",
+    "sr21": "P02",
+    "es19": "P03",
+    "es18a": "P03",
+    "samarkand-shishpir": "P03",
+    "samarkand-wuzurg": "P03",
+    "samarkand-warkhuman": "P03",
+    "samarkand-mastich-unash": "P03",
+    "samarkand-tukaspadak": "P03",
+    "samarkand-turgar": "P03",
+    "samarkand-urk-wartramuka": "P03",
+    "samarkand-chinese-type": "P03",
+    "samarkand-unlisted-square-hole": "P03",
+    "panch-amukian": "P04",
+    "panch-chekin-chur-bilge": "P04",
+    "panch-pycwtt": "P04",
+    "kabudan-cash": "P05",
+    "barkat-ramchitak": "P05",
+    "barkat-zatak": "P05",
+    "bukhara-kaiyuan-tamgha": "P05",
+    "paykand-square-hole": "P05",
+    "kesh-akhurpat": "P05",
+    "chach-farankat": "P06",
+    "chach-khagan-square-hole": "P06",
+    "ferghana-anon-khagan": "P06",
+    "ferghana-two-tamgha-cash": "P06",
+    "ferghana-chach-anepigraphic-cash": "P06",
+    "sayram-anonymous-tutuk": "P07",
+    "keder-cash": "P07",
+    "general-ir-chor-irti": "P07",
+    "yaghlaqar": "P08",
+    "western-liao-zhouyuan": "P09",
+    "tokharistan-square-hole": "P10",
+    "vakhsh-cross-tamgha-cash": "P10",
+    "termez-cash-like": "P10",
+    "badakhshan-kaiyuan-arabic": "P10",
+    "dali": "P11",
+    "regional-east-asian-imports": "P11",
+    "un16": "P12",
+    "un22": "P12",
+    "un24": "P12",
+    "fansar-pargar-square-hole": "P12",
+    "uncertain-central-asian-square-hole": "P12",
+    "nwr-pry-square-hole": "P12"
+  }
+}

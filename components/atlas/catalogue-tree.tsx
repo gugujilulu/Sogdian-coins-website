@@ -3,6 +3,7 @@ import {useCopy,useLanguage} from './language';
 import {countLabel,copyKnown} from '@/lib/i18n';
 import {useEffect,useRef,useState} from 'react';
 import {catalogueGroupTitle,familyTitle,catalogueExpansion,familyDescription} from '@/lib/browse-copy';
+import portraitConfig from '@/lib/catalogue-portraits.json';
 import ArtIcon from '@/components/visual/ArtIcon';
 import BrowseCoinImage from '@/components/visual/BrowseCoinImage';
 import type {Specimen} from '@/lib/atlas';
@@ -41,7 +42,11 @@ export function CatalogueTreeContent({node,onOpen,onCompare,compareIds,selectedG
  const content=useRef<HTMLDivElement>(null);
  useEffect(()=>{if(selectedGroup)Array.from(content.current?.querySelectorAll<HTMLElement>('[data-group-id]')||[]).find(el=>el.dataset.groupId===selectedGroup)?.scrollIntoView({block:'start'})},[selectedGroup]);
  if(!node)return <div className="empty-state"><h1>{tr("Atlas 钱币纲目")}</h1><p>{tr("从左侧展开家族、来源/目录组和记录。所有时期的无年代、无坐标记录仍可访问；数量表示主库记录。")}</p></div>;
- return <div ref={content} className="catalogue-family-content"><header className="catalogue-family-heading"><h1>{familyTitle(node.family,locale)}</h1><p className="browse-date">{copyKnown(node.family.dateLabel,locale)} · {node.family.region||tr("未明确")} · {node.family.polity||tr("未明确")}</p></header>
+ const portraitGroup=portraitConfig.families[node.family.id as keyof typeof portraitConfig.families];
+ const portrait=portraitGroup ? portraitConfig.portraits[portraitGroup as keyof typeof portraitConfig.portraits] : null;
+ return <div ref={content} className="catalogue-family-content" data-cultural-portrait={portrait ? 'true' : undefined}>
+ {portrait && <img key={portrait.src} className="catalogue-cultural-portrait" src={portrait.src} width={portrait.width} height={portrait.height} alt="" aria-hidden="true" decoding="async" onError={event=>{event.currentTarget.style.visibility='hidden'}} />}
+ <header className="catalogue-family-heading"><h1>{familyTitle(node.family,locale)}</h1><p className="browse-date">{copyKnown(node.family.dateLabel,locale)} · {node.family.region||tr("未明确")} · {node.family.polity||tr("未明确")}</p></header>
  {node.groups.map(g=><section key={g.id} data-group-id={g.id} className="group-list"><div className="group-heading"><ArtIcon name="rosette" collection="r3" size={28}/><h2>{catalogueGroupTitle(g,locale)}</h2><span>{countLabel(g.recordCount,'records',locale)}</span>{g.group?.description&&<details className="browse-notes group-info"><summary aria-label={tr("目录组说明")} title={tr("目录组说明")}><ArtIcon name="info" collection="r3" size={18}/></summary><p>{g.group.description}</p></details>}</div><div className="catalogue-gallery atlas-tree-gallery">{g.records.map(item=><article key={item.id} className="browse-card">
   <button className="browse-image" onClick={()=>onOpen(item.record)} aria-label={tr("打开记录 {id}",{id:item.id})}><BrowseCoinImage key={item.record.images[0]?.id||item.id} path={item.record.images[0]?.path} title={item.record.title}/></button>
   <div className="browse-card-copy"><strong>{item.record.title}</strong><p className="browse-measure">{[item.record.weightG!=null?`${item.record.weightG} g`:null,item.record.diameterMm!=null?`${item.record.diameterMm} mm`:null].filter(Boolean).join(" · ")}</p>{item.sources.length?item.sources.map(({source})=><div key={source.id} className="browse-source-links">{source.identityStatus!=='resolved'&&<small>{tr("编号待解析")}</small>}{source.urls.map(url=><a key={url} href={url} target="_blank" rel="noreferrer" aria-label={`${source.provider} ${source.recordKey}`}>{item.sources.length===1?tr("打开原始记录"):source.provider}<ArtIcon name="external" collection="r3" size={15}/></a>)}</div>):<p>{tr("来源索引未加载或未记录")}</p>}</div>

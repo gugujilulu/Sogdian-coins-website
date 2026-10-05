@@ -46,3 +46,9 @@
 .catalogue-page .related-pagination>p{color:var(--atlas-muted)}
 
 @media(max-width:760px){.catalogue-page[data-mode=atlas] .catalogue-tree>.tree-scroll{max-height:160px}.catalogue-content .source-browse-heading>p:not(.browse-count){display:none}}
+
+/* T67.6: selected-family artwork; Nana retains its existing watermark. */
+.catalogue-page[data-mode=atlas] .catalogue-content:has([data-cultural-portrait]):before{content:none}
+.catalogue-family-content[data-cultural-portrait]{position:relative;isolation:isolate}
+.catalogue-cultural-portrait{position:absolute;right:0;top:0;width:250px;height:auto;max-width:38%;opacity:.22;mix-blend-mode:multiply;pointer-events:none;z-index:-1}
+@media(max-width:760px){.catalogue-cultural-portrait{width:155px;max-width:45%;opacity:.18}}
