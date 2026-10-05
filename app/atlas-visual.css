@@ -7,11 +7,14 @@
 /* T67.1 approved visual pack: independent artwork; existing DOM and interaction. */
 .app-header{--composition-offset:calc((100vw - 1440px)/2);height:var(--atlas-header);display:block;padding:0;overflow:visible;isolation:isolate;backdrop-filter:none;background:#193a50 url('/visual/t67-1/header-blue.webp') center/cover no-repeat;border-bottom:1px solid rgb(175 153 114 / 75%);color:#f1e6cf;font-family:var(--atlas-serif)}
 .header-art{position:absolute;inset:0;overflow:hidden;pointer-events:none;user-select:none;z-index:-1}
-.header-figure,.header-vine{position:absolute;pointer-events:none;background:center/100% 100% no-repeat}
+.header-figure{position:absolute;pointer-events:none;background:center/100% 100% no-repeat;z-index:1}
 .header-figure-left{left:6px;top:-9px;width:123px;height:126.45px;background-image:url('/visual/t67-1/figure-left.webp')}
 .header-figure-right{right:-2px;top:-8px;width:124px;height:113.63px;background-image:url('/visual/t67-1/figure-right.webp')}
-.header-vine-left{left:-12px;top:-22px;width:177px;height:138px;background-image:url('/visual/t67-1/vine-left.webp');opacity:.47}
-.header-vine-right{left:calc(795px + var(--composition-offset));top:-50px;width:650px;height:377.43px;background-image:url('/visual/t67-1/vine-right.webp');opacity:.6}
+.header-flower{position:absolute;height:auto;object-fit:contain;pointer-events:none;z-index:0}
+.header-flower-left-upper{left:-10px;top:-10px;width:120px;opacity:.8}
+.header-flower-left-lower{left:90px;top:68px;width:180px;opacity:.74}
+.header-flower-right-upper{right:5px;top:-12px;width:390px;opacity:.76}
+.header-flower-right-lower{right:-8px;bottom:0;width:290px;opacity:.76}
 .app-header .brand-button{position:absolute;left:calc(142px + var(--composition-offset));top:24px;display:flex;align-items:flex-start;gap:13px;background:none;min-width:0;color:#f1e6cf}
 .app-header .brand-mark{width:39px;height:39px;margin-top:5px;object-fit:contain;flex:none}
 .app-header .brand-button strong{font:400 22px/28px var(--atlas-serif);letter-spacing:.25px;color:#f1e6cf;white-space:nowrap;text-transform:uppercase;text-shadow:0 .7px 0 rgb(4 18 29 / 69%)}
@@ -109,7 +112,6 @@ html[lang=zh] .app-header nav button{font-family:'Atlas CJK',sans-serif}
  .app-header nav{left:25%;gap:24px}
  .app-header nav button{font-size:18px}
  .app-header .language-control{left:auto;right:150px}
- .header-vine-right{left:auto;right:-35px}
 }
 /* The approved mobile crop keeps the left portrait; the right portrait is outside it. */
 @media(max-width:760px),(max-width:1000px) and (max-height:500px){
@@ -118,8 +120,10 @@ html[lang=zh] .app-header nav button{font-family:'Atlas CJK',sans-serif}
  .app-header .brand-button{display:none}
  .header-figure-left{left:-5px;top:-5px;width:71px;height:72.99px}
  .header-figure-right{display:none}
- .header-vine-left{left:-9px;top:-8px;width:63px;height:58px;opacity:.4}
- .header-vine-right{left:auto;right:-68px;top:-62px;width:245px;height:142.26px;opacity:.65}
+ .header-flower-left-upper{width:94px}
+ .header-flower-left-lower{left:32px;top:55px;width:94px}
+ .header-flower-right-upper{right:25px;top:-6px;width:145px}
+ .header-flower-right-lower{right:-8px;width:115px}
  .app-header nav,.view-atlas .app-header nav{left:78px;right:70px;top:14px;bottom:auto;margin:0;min-width:0;height:44px;gap:10px;justify-content:space-between;align-items:center}
  .app-header nav button,.view-atlas .app-header nav button{height:44px;min-height:44px;min-width:44px;padding:0 0 4px;font-size:18px;flex:none;white-space:nowrap}
  .app-header nav button.active:after{left:50%;right:auto;width:100%;max-width:none;transform:translateX(-50%);bottom:0}
