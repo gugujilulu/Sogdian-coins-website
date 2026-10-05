@@ -4,20 +4,22 @@
 @font-face{font-family:Atlas CJK;src:url('/visual/t47/fonts/atlas-cjk.woff2') format('woff2');font-display:swap}
 :root{--atlas-ink:#15394f;--atlas-navy:#173d57;--atlas-paper:#f3ebdd;--atlas-gold:#c49a62;--atlas-rule:#d5c3a5;--atlas-header:98px;--atlas-serif:'Atlas Roman',Georgia,'Atlas CJK',serif}
 .art-icon{display:inline-block;object-fit:contain;flex:none;vertical-align:middle;pointer-events:none}
-.app-header{height:var(--atlas-header);background:#173d57 url('/visual/t47/r2/header-background.webp') center/cover;border-bottom:1px solid #c49a62;padding:0 16px 0 138px;gap:28px;backdrop-filter:none;isolation:isolate}
-.header-figure{position:absolute;top:0;height:100%;width:140px;pointer-events:none;background:center top/contain no-repeat;z-index:-1;clip-path:inset(0)}
-.header-figure-left{left:-5px;background-image:url('/visual/t47/r2/figure-left.webp')}
-.header-figure-right{right:114px;background-image:url('/visual/t47/r2/figure-right.webp')}
-.app-header .brand-button{background:none;flex:1;min-width:0;max-width:600px;gap:16px;color:#fff1d8}
-.app-header .brand-mark{width:54px;height:54px;object-fit:contain;flex:none}
-.app-header .brand-button strong{font:21px/1.2 var(--atlas-serif);letter-spacing:0;color:#fff7e9;max-width:540px}
-.app-header .brand-button small{font:15px/1.25 var(--atlas-serif);color:#e4ded1;letter-spacing:0;margin-top:10px}
-.app-header nav{margin:0 270px 0 auto;flex:none;gap:8px;align-items:stretch}
-.app-header nav button{background:transparent;font:23px/1.2 var(--atlas-serif);color:#f5ebdb;padding:0 10px;white-space:nowrap}
-.app-header nav button.active{color:#e5b665}.app-header nav button.active:after{height:3px;background:#d7b171}
-.app-header .header-stats{display:none}.language-control{margin-left:0;flex:none;position:absolute;right:16px}
-.language-control>button{background:#173d57 url('/visual/t47/r2/dark-surface.webp') center/cover;border:1px solid #c49a62;border-radius:8px;color:#fff3de;padding:9px 12px;gap:8px;font:24px/1 var(--atlas-serif);min-height:48px}
-.language-menu{background:#173d57;border-color:#c49a62;color:#fff3de;z-index:60;min-width:150px}.language-menu button{font:18px var(--atlas-serif);color:#fff3de;min-height:40px}.language-menu button:hover,.language-menu button[aria-checked=true]{background:#265472}
+/* T67.1: one mural, independent portraits, and the Demo's inward composition. */
+.app-header{height:var(--atlas-header);background:#18384f url('/visual/t67/header-mural.webp') center 10%/100% auto no-repeat;border-bottom:1px solid #b99c6d;padding:0 150px 0 clamp(128px,calc(50vw - 520px),330px);gap:24px;backdrop-filter:none;isolation:isolate}
+.header-figure{position:absolute;top:0;height:100%;width:136px;pointer-events:none;background:center top/auto 108px no-repeat;z-index:-1;clip-path:inset(0)}
+.header-figure-left{left:0;background-image:url('/visual/t47/r2/figure-left.webp');background-position:right top}
+.header-figure-right{right:0;background-image:url('/visual/t47/r2/figure-right.webp');background-position:left top}
+.app-header .brand-button{background:none;flex:0 1 560px;min-width:0;gap:14px;color:#fff1d8}
+.app-header .brand-mark{width:48px;height:48px;object-fit:contain;flex:none}
+.app-header .brand-button strong{font:20px/1.2 var(--atlas-serif);font-variant-caps:small-caps;letter-spacing:.45px;color:#fff7e9;text-shadow:0 1px 2px #071c2b66}
+.app-header .brand-initial{font-size:1.1em}
+.app-header .brand-button small{font:14px/1.25 var(--atlas-serif);color:#f0e5d1;opacity:.85;letter-spacing:1.45px;margin-top:7px}
+.app-header nav{margin:0;flex:none;gap:6px;align-items:stretch;height:62px;align-self:flex-end}
+.app-header nav button{background:transparent;font:21px/1.2 var(--atlas-serif);color:#f5ebdb;padding:0 10px;white-space:nowrap}
+.app-header nav button.active{color:#efd18d}.app-header nav button.active:after{height:3px;background:#d7b171;left:10px;right:10px;bottom:0}
+.app-header .header-stats{display:none}.language-control{margin-left:auto;flex:none;position:relative;right:auto}
+.language-control>button{background:#193c54 url('/visual/t47/r2/dark-surface.webp') center/cover;border:1px solid #b99c6d;border-radius:6px;color:#fff3de;padding:8px 10px;gap:6px;font:20px/1 var(--atlas-serif);min-height:44px}
+.language-menu{background:#18384f;border-color:#b99c6d;color:#fff3de;z-index:60;min-width:150px}.language-menu button{font:18px var(--atlas-serif);color:#fff3de;min-height:40px}.language-menu button:hover,.language-menu button[aria-checked=true]{background:#265472}
 .app-header button:focus-visible{outline:2px solid #efce92;outline-offset:3px}
 .atlas-screen{height:calc(100dvh - var(--atlas-header));--atlas-surface:url('/visual/t47/r2/paper.webp');color:var(--atlas-ink);font-family:var(--atlas-serif)}
 .atlas-screen button,.atlas-screen input,.atlas-screen select{font-family:var(--atlas-serif)}
@@ -65,7 +67,7 @@
 .atlas-screen .specimen-copy{padding:9px 3px 0;position:relative;z-index:1}.atlas-screen .specimen-copy>strong{font:700 17px/1.2 var(--atlas-serif);color:var(--atlas-ink)}.atlas-screen .specimen-copy>small{font:14px/1.4 var(--atlas-serif);color:#777268;overflow-wrap:anywhere}.atlas-screen .tile-source-list a{display:block;color:var(--atlas-ink);font:14px/1.4 var(--atlas-serif);overflow-wrap:anywhere}.atlas-screen .tile-actions button{border:0;background:none;font-size:10px;color:#777268;padding:5px 0}
 .atlas-screen .research-block,.atlas-screen .map-background{border-color:var(--atlas-rule);color:var(--atlas-ink);margin-top:16px}.atlas-screen :is(.research-block,.map-background) summary{font:18px var(--atlas-serif);color:var(--atlas-ink)}.atlas-screen :is(.research-block,.map-background) :is(p,label,a,small,h3){color:var(--atlas-ink);font-size:14px;line-height:1.5}.atlas-screen .range-version{border-color:var(--atlas-rule)}.atlas-screen .question-note{background:#eadbc3;border-color:var(--atlas-gold);color:var(--atlas-ink)}
 .atlas-screen .coin-collection-popup{color:var(--atlas-ink);background:#f3ebdd url('/visual/t47/r2/paper.webp') center/600px;border-color:var(--atlas-rule)}.atlas-screen .coin-popup-row{background:none;color:var(--atlas-ink);border-color:var(--atlas-rule)}.atlas-screen .coin-popup-row small{color:#777268}
-@media(max-width:1250px) and (min-width:761px){.app-header{padding-left:100px;gap:14px}.header-figure-left{width:95px}.app-header .brand-mark{width:40px;height:40px}.app-header .brand-button strong{font-size:17px}.app-header .brand-button small{font-size:13px}.app-header nav{margin-right:210px;gap:0}.app-header nav button{font-size:20px;padding:0 8px}.header-figure-right{width:110px;right:96px}.language-control>button{font-size:19px;min-height:42px}.atlas-screen .atlas-search-panel{width:350px}.atlas-screen.has-family .atlas-search-panel{max-width:calc(100% - 430px)}}
+@media(max-width:1250px) and (min-width:761px){.app-header{padding-left:100px;padding-right:110px;gap:16px}.header-figure{width:96px;background-size:auto 100px}.app-header .brand-mark{width:40px;height:40px}.app-header .brand-button strong{font-size:18px}.app-header .brand-button small{font-size:12px;letter-spacing:1px}.app-header nav{gap:0}.app-header nav button{font-size:20px;padding:0 8px}.language-control>button{font-size:19px}.atlas-screen .atlas-search-panel{width:350px}.atlas-screen.has-family .atlas-search-panel{max-width:calc(100% - 430px)}}
 @media(max-width:760px),(max-width:1000px) and (max-height:500px){
  .atlas-screen{height:calc(100dvh - var(--atlas-header))}
  .atlas-screen .atlas-search-panel{top:12px;left:12px;width:calc(100% - 76px);max-width:none;border-radius:14px;max-height:calc(100% - 24px)}.atlas-screen .atlas-search{margin:0;border:0;border-radius:14px;padding:9px 10px;gap:9px}.atlas-screen .atlas-search input{font-size:14px}.atlas-screen .atlas-search-panel:before{display:none}.atlas-screen .atlas-search-panel:after{width:42px;height:42px;opacity:.3}.atlas-screen .filter-result-line{font-size:12px;padding:5px 10px}.atlas-screen .filter-result-line button{font-size:12px}.atlas-screen .filter-summary{font-size:13px;padding:5px 10px}
@@ -83,20 +85,19 @@
 }
 @media(prefers-reduced-motion:reduce){.app-header *,.atlas-screen *{scroll-behavior:auto!important;transition:none!important}}
 /* Match legacy full-screen shell measurements without changing camera or sheet state. */
-.view-atlas{--atlas-header:98px}.view-atlas .app-header{gap:28px}.view-atlas .brand-button strong{font-size:21px;letter-spacing:0}.view-atlas .brand-button small{display:block}
+.view-atlas{--atlas-header:98px}.view-atlas .brand-button small{display:block}
 .atlas-screen .family-drawer{flex:0 0 clamp(380px,33.4vw,484px)}
 .atlas-screen.has-family .map-toolbar,.atlas-screen.has-family .history-controls{right:16px}
-@media(max-width:1250px) and (min-width:761px){.view-atlas .app-header{gap:14px}.view-atlas .brand-button strong{font-size:17px}}
 @media(max-width:760px),(max-width:1000px) and (max-height:500px){.atlas-screen .family-drawer{flex:none}.atlas-screen.has-family .map-toolbar,.atlas-screen.has-family .history-controls{right:12px}.atlas-screen .timeline-floating:not([open]) .desktop-control-label,.atlas-screen .history-controls:not([open]) .desktop-control-label{display:none}.atlas-screen .sheet-actions .sheet-expand .art-icon{transform:rotate(180deg)}}
-/* T47.5: single-row mobile navigation; portraits use the desktop artwork and crop. */
+/* Mobile crops the same mural; the accepted single-row portrait/navigation layout stays. */
 @media(max-width:760px),(max-width:1000px) and (max-height:500px){
  :root,.view-atlas{--atlas-header:72px}
- .app-header,.view-atlas .app-header{--header-edge:48px;display:grid;grid-template-columns:minmax(0,1fr) 50px;column-gap:10px;height:var(--atlas-header);padding:0 calc(var(--header-edge) + 6px);overflow:visible}
+ .app-header,.view-atlas .app-header{--header-edge:48px;display:grid;grid-template-columns:minmax(0,1fr) 50px;column-gap:10px;height:var(--atlas-header);padding:0 calc(var(--header-edge) + 6px);overflow:visible;background-size:auto 144px;background-position:62% 12%}
  .app-header .brand-button{display:none}
  .app-header .header-figure{top:0;width:var(--header-edge);height:100%;background-size:auto 72px;opacity:1;pointer-events:none}
  .app-header .header-figure-left{left:0;background-position:right top}
  .app-header .header-figure-right{right:0;background-position:left top}
- .app-header nav,.view-atlas .app-header nav{margin:0;min-width:0;height:100%;gap:4px;justify-content:center;align-items:stretch}
+ .app-header nav,.view-atlas .app-header nav{margin:0;min-width:0;height:100%;gap:4px;justify-content:center;align-items:stretch;align-self:stretch}
  .app-header nav button,.view-atlas .app-header nav button{font-size:16.5px;padding:0 3px;min-height:44px;min-width:44px;flex:none;white-space:nowrap}
  .app-header nav button.active:after{left:3px;right:3px}
  .app-header .language-control{position:relative;right:auto;margin:0;justify-self:stretch;align-self:center}
