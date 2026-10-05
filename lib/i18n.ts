@@ -5,6 +5,10 @@ export function validLocale(value:unknown):Locale{return value==='zh'||value==='
 export function readLocale(storage:Pick<Storage,'getItem'>|null):Locale{try{return validLocale(storage?.getItem(storageKey))}catch{return 'en'}}
 export function saveLocale(storage:Pick<Storage,'setItem'>|null,locale:Locale){try{storage?.setItem(storageKey,locale);return true}catch{return false}}
 export const dictionary={
+ "Gold":{"en":"Gold","zh":"金","ru":"Золото"},
+ "Silver":{"en":"Silver","zh":"银","ru":"Серебро"},
+ "Bronze":{"en":"Bronze","zh":"青铜","ru":"Бронза"},
+ "Copper":{"en":"Copper","zh":"铜","ru":"Медь"},
  "记录原始说明":{"en":"Original record notes","zh":"记录原始说明","ru":"Исходные примечания к записи"},
  "Unearthed in N. Afghanistan":{"en":"Unearthed in N. Afghanistan","zh":"来源记载出土于阿富汗北部。","ru":"Источник сообщает о находке в Северном Афганистане."},
  "Kyrgyzstan":{"en":"Kyrgyzstan","zh":"吉尔吉斯斯坦","ru":"Кыргызстан"},
