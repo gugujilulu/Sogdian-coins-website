@@ -96,10 +96,18 @@ html[lang=zh] .app-header nav button{font-family:'Atlas CJK',sans-serif}
 .atlas-screen .family-drawer{flex:0 0 clamp(380px,33.4vw,484px)}
 .atlas-screen.has-family .map-toolbar,.atlas-screen.has-family .history-controls{right:16px}
 @media(max-width:760px),(max-width:1000px) and (max-height:500px){.atlas-screen .family-drawer{flex:none}.atlas-screen.has-family .map-toolbar,.atlas-screen.has-family .history-controls{right:12px}.atlas-screen .timeline-floating:not([open]) .desktop-control-label,.atlas-screen .history-controls:not([open]) .desktop-control-label{display:none}.atlas-screen .sheet-actions .sheet-expand .art-icon{transform:rotate(180deg)}}
+/* Keep the approved 1440px positions; inward centering cannot cross the edge portraits. */
+@media(min-width:1280px) and (max-width:1439px){
+ .app-header .brand-button{left:142px}
+ .app-header .brand-button strong{font-size:calc(22px - (1440px - 100vw)*.02)}
+ .app-header .brand-initial{font-size:calc(28px - (1440px - 100vw)*.025)}
+ .app-header .language-control{left:auto;right:140px}
+}
 /* Smaller desktop widths retain the same composition without colliding with portraits. */
 @media(min-width:761px) and (max-width:1279px){
  .app-header .brand-button{display:none}
- .app-header nav{left:25%;gap:28px}
+ .app-header nav{left:25%;gap:24px}
+ .app-header nav button{font-size:18px}
  .app-header .language-control{left:auto;right:150px}
  .header-vine-right{left:auto;right:-35px}
 }
@@ -113,9 +121,11 @@ html[lang=zh] .app-header nav button{font-family:'Atlas CJK',sans-serif}
  .header-vine-left{left:-9px;top:-8px;width:63px;height:58px;opacity:.4}
  .header-vine-right{left:auto;right:-68px;top:-62px;width:245px;height:142.26px;opacity:.65}
  .app-header nav,.view-atlas .app-header nav{left:78px;right:70px;top:14px;bottom:auto;margin:0;min-width:0;height:44px;gap:10px;justify-content:space-between;align-items:center}
- .app-header nav button,.view-atlas .app-header nav button{height:44px;min-height:44px;min-width:0;padding:0 0 4px;font-size:18px;flex:none;white-space:nowrap}
- .app-header nav button.active:after{left:0;right:0;bottom:0}
+ .app-header nav button,.view-atlas .app-header nav button{height:44px;min-height:44px;min-width:44px;padding:0 0 4px;font-size:18px;flex:none;white-space:nowrap}
+ .app-header nav button.active:after{left:50%;right:auto;width:100%;max-width:none;transform:translateX(-50%);bottom:0}
+ .app-header nav button:first-child.active:after{width:2.1em}
  html[lang=zh] .app-header nav button{font-size:17px}
+ html[lang=zh] .app-header nav button.active:after{width:2em}
  html[lang=ru] .app-header nav button{font-size:15px}
  .app-header .language-control{left:auto;right:10px;top:15px;margin:0}
  .app-header .language-control>button{width:46px;height:44px;min-height:44px;font-size:13px;gap:4px;padding:0}
