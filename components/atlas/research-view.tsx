@@ -1,6 +1,6 @@
+'use client';
 import ResearchCoverage from './research-coverage';
 import {copyKnown} from '@/lib/i18n';
-'use client';
 import {useEffect,useRef} from 'react';
 import type {Atlas} from '@/lib/atlas';
 import type {MapRange} from '@/lib/map-layers';
@@ -46,7 +46,7 @@ export default function ResearchView({data,ranges=[],sourceCount}:{data:Atlas;im
   <div ref={viewport} className="research-scroll" tabIndex={0} aria-label={tr('Research')} onFocusCapture={event=>{const scroll=viewport.current,node=(event.target as HTMLElement).closest<HTMLElement>('a,summary');if(!scroll||!node)return;const box=node.getBoundingClientRect(),bounds=scroll.getBoundingClientRect(),fade=parseFloat(getComputedStyle(panel.current!).getPropertyValue('--research-fade'))||40;if(box.bottom>bounds.bottom-fade||box.top<bounds.top)scroll.scrollTop+=box.top-bounds.top-(scroll.clientHeight-fade-box.height)/2;node.style.pointerEvents=''}}>
    <div ref={content} className="research-content" lang={locale}>
     <h1>{rosette()}{tr('后续建设')}</h1>
-    <table className="research-plan"><colgroup><col className="plan-goal"/><col className="plan-description"/><col className="plan-phase"/></colgroup><thead><tr><th scope="col">{tr('规划目标')}</th><th scope="col">{tr('规划说明')}</th><th scope="col">{tr('开发规划')}</th></tr></thead><tbody>{roadmap.map(([goal,description,phase])=><tr key={goal}><th scope="row"><span>{rosette()}<span>{tr(goal)}</span></span></th><td>{tr(description)}</td><td><span className="research-stage">{tr(phase)}</span></td></tr>)}</tbody></table>
+    <table className="research-plan"><colgroup><col className="plan-goal"/><col className="plan-description"/><col className="plan-phase"/></colgroup><thead><tr><th scope="col">{tr('规划目标')}</th><th scope="col">{tr('规划说明')}</th><th scope="col" aria-label={tr('开发规划')}><span className="research-desktop-label">{tr('开发规划')}</span><span className="research-mobile-label" aria-hidden="true">{tr('阶段')}</span></th></tr></thead><tbody>{roadmap.map(([goal,description,phase])=><tr key={goal}><th scope="row"><span>{rosette()}<span>{tr(goal)}</span></span></th><td>{tr(description)}</td><td><span className="research-stage" aria-label={tr(phase)}><span className="research-desktop-label">{tr(phase)}</span><span className="research-mobile-label" aria-hidden="true">{phase==='二期'?'II':'III'}</span></span></td></tr>)}</tbody></table>
     <h2>{rosette()}{tr('参考资料与来源')}</h2>
     <div className="research-references">{[
      ['钱币目录与研究','参考目录用途',publications],['原始来源','参考来源用途',original],['历史地图与地域','参考地理用途',mapLinks]

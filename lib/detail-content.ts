@@ -30,4 +30,4 @@ export function sourceReading(text:string,locale:Locale){
 }
 
 /** Exact, reviewed source-text mappings; never modify raw records or infer individual facts. */
-export function descriptionCopy(text:string,locale:Locale){return locale==='en'?text:(display as Record<string,Record<string,string>>)[text]?.[locale]||copyKnown(text,locale)}
+export function descriptionCopy(text:string,locale:Locale){return (display as Record<string,Record<string,string>>)[text]?.[locale]||copyKnown(text,locale)}

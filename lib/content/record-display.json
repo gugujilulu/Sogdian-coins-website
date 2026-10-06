@@ -270,5 +270,993 @@
   "Smirnova #769.": {
     "zh": "目录参照：Smirnova 769号。",
     "ru": "Каталожная ссылка: Smirnova №769."
+  },
+  "Square-hole bronze; Türgesh tamgha, runic sign and Chinese yuan character.": {
+    "zh": "方孔青铜钱，带有突骑施徽记、如尼符号和汉字“元”。",
+    "ru": "Бронзовая монета с квадратным отверстием, тюргешской тамгой, руническим знаком и китайским знаком 元."
+  },
+  "Sogdian royal legend; a large stylized Türgesh tamgha on reverse.": {
+    "zh": "粟特文王号铭文；背面为大型、程式化的突骑施徽记。",
+    "ru": "Согдийская царская легенда; на обороте — крупная стилизованная тюргешская тамга."
+  },
+  "Obv: Sogdian legend: yn´l tkyn xwbw pny , \"Fen of king Inal-Tegin\". Rev: Turgesh-tamgha, runic letter \"p\" and sogdian word \"prn\". Kam 33. This image is published with kind permission from “COINS OF CENTRAL ASIA”.": {
+    "zh": "正面粟特文铭文：yn´l tkyn xwbw pny，释为“伊纳尔特勤王之钱”。背面为突骑施徽记、如尼字母“p”及粟特文“prn”。Kam 33。图片经“COINS OF CENTRAL ASIA”许可刊载。",
+    "ru": "На лицевой стороне согдийская легенда yn´l tkyn xwbw pny — «фэнь царя Инал-Тегина». На обороте — тюргешская тамга, руническая буква «p» и согдийское слово «prn». Kam 33. Изображение опубликовано с разрешения «COINS OF CENTRAL ASIA»."
+  },
+  "Legends on both sides link the Tukhus ruler and Türgesh kagan.": {
+    "zh": "两面铭文将 Tukhus 统治者与突骑施可汗联系起来。",
+    "ru": "Легенды обеих сторон связывают правителя Тухусов с тюргешским каганом."
+  },
+  "Sogdian legend; four depressed trident-like signs on reverse.": {
+    "zh": "粟特文铭文；背面有四个凹下的三叉形符号。",
+    "ru": "Согдийская легенда; на обороте — четыре углублённых трезубцеобразных знака."
+  },
+  "Four Arabic words around the aperture; plain reverse. Historical attribution requires review.": {
+    "zh": "穿孔周围有四个阿拉伯文词，背面素面。历史归属仍需核对。",
+    "ru": "Вокруг отверстия — четыре арабских слова; оборот гладкий. Историческая атрибуция требует проверки."
+  },
+  "Sogdian legend around square hole; plain reverse. Regional attribution is tentative.": {
+    "zh": "方孔周围为粟特文铭文，背面素面。地域归属为暂定。",
+    "ru": "Согдийская легенда вокруг квадратного отверстия; оборот гладкий. Региональная атрибуция предварительная."
+  },
+  "Sogdian legend on obverse; reverse has tamgha left and inscription right. Unpublished in this catalogue.": {
+    "zh": "正面为粟特文铭文；背面左侧有徽记，右侧有铭文。本目录此前未刊此型。",
+    "ru": "На лицевой стороне — согдийская легенда; на обороте слева тамга, справа надпись. В данном каталоге тип ранее не публиковался."
+  },
+  "Matching tamghas flank the hole; reverse inscription repeats one word three times. Unpublished in this catalogue.": {
+    "zh": "孔两侧有相同的徽记，背面铭文将同一个词重复三次。本目录此前未刊此型。",
+    "ru": "По сторонам отверстия — одинаковые тамги; надпись на обороте трижды повторяет одно слово. В данном каталоге тип ранее не публиковался."
+  },
+  "Paired tamghas and Sogdian royal inscription around a square hole.": {
+    "zh": "方孔周围有成对徽记与粟特文王号铭文。",
+    "ru": "Парные тамги и согдийская царская легенда вокруг квадратного отверстия."
+  },
+  "Paired tamghas; reverse inscription in two concentric lines.": {
+    "zh": "带成对徽记，背面铭文分作两圈同心行排列。",
+    "ru": "Парные тамги; легенда на обороте расположена двумя концентрическими строками."
+  },
+  "Cast copper-alloy coin from Kucha with four Chinese characters around its square hole.": {
+    "zh": "龟兹铸造铜合金钱，四个汉字围绕方孔排列。",
+    "ru": "Литая медносплавная монета Кучи с четырьмя китайскими знаками вокруг квадратного отверстия."
+  },
+  "Pendjikent AE, Nana, lady of Panch": {
+    "zh": "片治肯特铜钱，潘治的娜娜夫人。",
+    "ru": "Медная монета Пенджикента: Нана, госпожа Панча."
+  },
+  "Pendjikend, AE unit, Lady Nana": {
+    "zh": "片治肯特铜钱，娜娜夫人。",
+    "ru": "Медная монета Пенджикента: госпожа Нана."
+  },
+  "Samarqand Soghd, domain Panch, lady Nana": {
+    "zh": "撒马尔罕粟特地区，潘治领地，娜娜夫人。",
+    "ru": "Самаркандский Согд, владение Панч: госпожа Нана."
+  },
+  "Penjikent, Nana, lady of Panch. Smir type 3: # 834-996": {
+    "zh": "片治肯特，潘治的娜娜夫人。Smirnova 类型3，编号834–996。",
+    "ru": "Пенджикент: Нана, госпожа Панча. Тип 3 по Smirnova, № 834–996."
+  },
+  "Domain Panch / Penjikent, lady Nana. Obv. Tamgha frames square hole. Rev.- The sogdian legend reads: \"pncy nn δβnpnwh\" (Nana, lady of Panch ( or Nana, city goddess of Penjikent?)) Mint: Penjikent Date: 8th cent. AD Metal: AE, cast.": {
+    "zh": "潘治／片治肯特领地，娜娜夫人。正面徽记围绕方孔；背面粟特文铭文为“pncy nn δβnpnwh”，释为“潘治的娜娜夫人”（或“片治肯特的城市女神娜娜”？）。铸地：片治肯特；年代：公元8世纪；材质与制作：铸造铜钱。",
+    "ru": "Владение Панч / Пенджикент: госпожа Нана. На лицевой стороне тамга обрамляет квадратное отверстие. На обороте согдийская легенда «pncy nn δβnpnwh», прочитанная как «Нана, госпожа Панча» (или «Нана, городская богиня Пенджикента»?). Место чеканки: Пенджикент; VIII век н. э.; литая медная монета."
+  },
+  "Ex Stephen Album rare coins: Auction 7: Lot 97 SOGDIANA: Queen Nana, 709-722, AE cash (1.60g), Panchekanth. Smirnova-769. Circular semi-italic Sogdian legend / Tamgha of Panchekanth type around square hole.": {
+    "zh": "出自 Stephen Album Rare Coins 第7场拍卖、第97号拍品。粟特娜娜女王，709–722年，潘治铸铜钱，1.60克，Smirnova 769。环形、略带斜体的粟特文铭文；另一面为方孔周围的潘治式徽记。",
+    "ru": "Из аукциона Stephen Album Rare Coins 7, лот 97. Согдиана: царица Нана, 709–722, медная монета Панча, 1,60 г, Smirnova 769. Круговая слегка наклонная согдийская легенда; на другой стороне — тамга панчского типа вокруг квадратного отверстия."
+  },
+  "rather similar to Smirnova 834-36": {
+    "zh": "与 Smirnova 834–836 较为相似。",
+    "ru": "Довольно близка к Smirnova 834–836."
+  },
+  "Smirnova 894": {
+    "zh": "Smirnova 894",
+    "ru": "Smirnova 894"
+  },
+  "Smirnova 890": {
+    "zh": "Smirnova 890",
+    "ru": "Smirnova 890"
+  },
+  "Smirnova #834. Seems to be first Nana's coin in the database...": {
+    "zh": "Smirnova 834。原记录称，这可能是该数据库中第一枚娜娜钱。",
+    "ru": "Smirnova 834. В исходной записи отмечено, что это, возможно, первая монета Наны в этой базе."
+  },
+  "Different legend in compare with my #29609. On obverse: Pncy nnδβ’mpnh The difference in sense is incomprehensible. Smirnova #769.": {
+    "zh": "与记录29609相比铭文不同。正面为 Pncy nnδβ’mpnh；铭文差异的含义尚不明。Smirnova 769。",
+    "ru": "Легенда отличается от записи 29609. На лицевой стороне: Pncy nnδβ’mpnh. Смысл различия неясен. Smirnova 769."
+  },
+  "Two source photographs show the same rough-edged specimen with identical obverse crack and deposits. Gray and white background versions are duplicates.": {
+    "zh": "这枚钱币的外缘粗糙，正面可见裂口和附着物。灰底与白底照片呈现同一枚标本。",
+    "ru": "У монеты неровный край; на лицевой стороне видны трещина и отложения. Фотографии на сером и белом фоне показывают один экземпляр.",
+    "en": "This coin has a rough edge, a crack and deposits on the obverse. The grey- and white-background photographs show the same specimen."
+  },
+  "The non-square-looking hole on reverse corresponds to a worn/corroded hole; exact matching catalogue image verified.": {
+    "zh": "背面孔口呈不规则形状，与孔缘磨损或腐蚀相符。",
+    "ru": "Неправильная форма отверстия на обороте соответствует износу или коррозии его края.",
+    "en": "The irregular-looking aperture on the reverse corresponds to wear or corrosion of the hole edge."
+  },
+  "Distinct from Bactrianumis product coin: asymmetric hole projections and very different obverse/reverse deposits. Do not label this photo Zeno264408.": {
+    "zh": "孔口具有不对称突起，两面可见各自的附着物。",
+    "ru": "У отверстия асимметричные выступы; на обеих сторонах видны характерные отложения.",
+    "en": "The aperture has asymmetric projections, with distinctive deposits on both faces."
+  },
+  "300×150 source photo. Distinct within this set; low-resolution image limits precise duplicate checking against future imports.": {
+    "zh": "原照片为300×150像素，细部辨识受分辨率限制。",
+    "ru": "Исходная фотография имеет размер 300×150 пикселей; разрешение ограничивает различимость деталей.",
+    "en": "The source photograph is 300×150 pixels, which limits the visibility of fine detail."
+  },
+  "Central Asia -Semirechie, Turgesh Kaqanate, 8th century. Obverse: Sogdian legend xst' w'xswt'wy pny (coin of the King Vahshutava) around square hole. Reverse: Tamgha of Turgesh in the shape of a runic letter R in the left field, character YUAN to the right. 4.41 grams, 22.9 mm. A. Kamyshev's \"Early Medieval Monetary Complex of Semirechie\" listed as # 21. Good Very Fine and Extremely rare.": {
+    "zh": "中亚七河地区，突骑施汗国，8世纪。正面粟特文 xst' w'xswt'wy pny（“瓦赫舒塔瓦王之钱”）环绕方孔。背面左侧为如尼字母R形的突骑施徽记，右侧为汉字“元”。4.41克，22.9毫米。Kamyshev《七河地区早期中世纪货币综合研究》21号。原记录评为良好VF，极罕见。",
+    "ru": "Средняя Азия, Семиречье, Тюргешский каганат, VIII век. На лицевой стороне согдийская легенда xst' w'xswt'wy pny («монета царя Вахшутавы») вокруг квадратного отверстия. На обороте слева тюргешская тамга в форме рунической R, справа китайский знак 元. 4,41 г, 22,9 мм. № 21 в «Раннесредневековом монетном комплексе Семиречья» А. Камышева. В источнике: хорошая сохранность VF, крайне редкая."
+  },
+  "Arslanids - Late 9th to early 10 centuries. Kamyshev's \"Monetary Compleks of Semirechie\" #47": {
+    "zh": "阿尔斯兰系，9世纪末至10世纪初。Kamyshev《七河地区货币综合研究》47号。",
+    "ru": "Арсланиды, конец IX — начало X века. № 47 в монетном комплексе Семиречья Камышева."
+  },
+  "Obv.: Sogdian script βγy twrkyš γ'γ'n pny (by Smirnova) Rev.: Turgesh's tamgha Unearthed at the ancient site Kanka (near Tashkent, Uzbekistan)": {
+    "zh": "正面粟特文 βγy twrkyš γ'γ'n pny（据 Smirnova）；背面为突骑施徽记。出土于乌兹别克斯坦塔什干附近的康卡古城。",
+    "ru": "На лицевой стороне согдийская легенда βγy twrkyš γ'γ'n pny (по Smirnova); на обороте тюргешская тамга. Найдена на древнем городище Канка близ Ташкента, Узбекистан."
+  },
+  "Image property: A.Basok": {
+    "zh": "图片署名：A. Basok。",
+    "ru": "Изображение: A. Basok."
+  },
+  "Turhesh's kaqanate. 2nd half of the 8th - early 9th century. Obv. Sogdian legend around square hole. Rev. Turgesh's tamgha. Runic letter \"R\" in left field, Sogdian legend (one word \"prn\") below. Very rare!": {
+    "zh": "突骑施汗国，8世纪后半叶至9世纪初。正面粟特文铭文环绕方孔；背面为突骑施徽记，左侧如尼字母“R”，下方为单词“prn”的粟特文铭文。原记录称非常罕见。",
+    "ru": "Тюргешский каганат, вторая половина VIII — начало IX века. Согдийская легенда вокруг квадратного отверстия на лицевой стороне; на обороте тюргешская тамга, руническая «R» слева и согдийское слово «prn» внизу. В источнике названа очень редкой."
+  },
+  "This coin is the type of Kamyshev's #30 in his book \"Early Medieval Monetary Complex of Semirechie\" except the runic letter \"R\" is located directly below the square hole. At this point reference for this location is not readily apparent in my reference material. It may be unpublished!": {
+    "zh": "与 Kamyshev《七河地区早期中世纪货币综合研究》30号类型相同，但如尼字母“R”位于方孔正下方。原记录未能在所用参考资料中找到这一位置的对应，可能尚未发表。",
+    "ru": "Соответствует типу № 30 в «Раннесредневековом монетном комплексе Семиречья» Камышева, но руническая «R» расположена непосредственно под квадратным отверстием. В использованных автором записи материалах такой вариант не найден; возможно, он не опубликован."
+  },
+  "Rev.: Runic \"R\" to the left of the square hole": {
+    "zh": "背面：如尼字母“R”位于方孔左侧。",
+    "ru": "На обороте руническая «R» слева от квадратного отверстия."
+  },
+  "Turgesh Kaganate, first half of the 8th century. Obv.: Sogdian legend around Square hole. Rev.: Tamgha of Turgesh. Runic letter \"r\" in left field, Sogdian one word legend (prn) below square hole.": {
+    "zh": "突骑施汗国，8世纪前半叶。正面粟特文铭文环绕方孔。背面为突骑施徽记，左侧有如尼字母“r”，方孔下方为粟特文单词 prn。",
+    "ru": "Тюргешский каганат, первая половина VIII века. На лицевой стороне согдийская легенда вокруг квадратного отверстия. На обороте тюргешская тамга, руническая «r» слева и согдийское слово prn под отверстием."
+  },
+  "Obv. Sogdian legend around square hole Rev. four Incuse trident-like designs around square hole": {
+    "zh": "正面粟特文铭文环绕方孔；背面方孔周围有四个凹下的三叉形图案。",
+    "ru": "На лицевой стороне согдийская легенда вокруг квадратного отверстия; на обороте вокруг отверстия четыре углублённых трезубцеобразных знака."
+  },
+  "Obv. Sogdian legend around the square hole, \"Fen of King of Turgesh's Kagan\". Rev. Tamgha of Turgesh and Runic letter \"P\" with dot in center in lower field. Kamyshev #30": {
+    "zh": "正面粟特文铭文环绕方孔，释为“突骑施可汗王之钱”。背面为突骑施徽记，下方有中央带点的如尼字母“P”。Kamyshev 30号。",
+    "ru": "Согдийская легенда вокруг квадратного отверстия прочитана как «фэнь царя — кагана тюргешей». На обороте тюргешская тамга и в нижнем поле руническая «P» с точкой в центре. Kamyshev 30."
+  },
+  "Central Asia, bronze coin, Arslanid": {
+    "zh": "中亚，阿尔斯兰系青铜钱。",
+    "ru": "Средняя Азия, бронзовая монета Арсланидов."
+  },
+  "S1586 Central Asia, bronze coin, Turgesh": {
+    "zh": "S1586，中亚突骑施青铜钱。",
+    "ru": "S1586, Средняя Азия, тюргешская бронзовая монета."
+  },
+  "Reading by Dr. V. Nastich: Obverse: 'rsl'n kwyl ''rkyn - Sogdian inscription \"Arslan kül erkin\" Reverse: two Turkic runas characters \"{ä}r\" and \"{ä}t\" No less than 7 specimens known.": {
+    "zh": "V. Nastich 博士释读：正面粟特文 'rsl'n kwyl ''rkyn，读作“Arslan kül erkin”；背面有两个突厥如尼字符“{ä}r”和“{ä}t”。原记录称已知至少7枚。",
+    "ru": "Прочтение д-ра В. Настича: на лицевой стороне согдийская надпись 'rsl'n kwyl ''rkyn — «Arslan kül erkin»; на обороте два тюркских рунических знака «{ä}r» и «{ä}t». В источнике указано не менее семи известных экземпляров."
+  },
+  "very small specimen Obv.: Turgesh's tamgha at the top Turkic runas character R at left Sogdian (?) word at bottom": {
+    "zh": "标本很小。正面上方为突骑施徽记，左侧为突厥如尼字符R，下方为粟特文（？）词。",
+    "ru": "Очень небольшой экземпляр. На лицевой стороне сверху тюргешская тамга, слева тюркский рунический знак R, внизу согдийское (?) слово."
+  },
+  "Unearthed in Hotan": {
+    "zh": "出土于和田。",
+    "ru": "Найдена в Хотане."
+  },
+  "Ruler Wahshutawa (after A.Kamyshev)": {
+    "zh": "统治者瓦赫舒塔瓦（据 A. Kamyshev）。",
+    "ru": "Правитель Вахшутава (по А. Камышеву)."
+  },
+  "celestial turgesh khaqan money βγy twrkyš γ'γ'n pny see Smirnova no. 1589": {
+    "zh": "铭文释为“神圣突骑施可汗之钱”：βγy twrkyš γ'γ'n pny。参见 Smirnova 1589号。",
+    "ru": "Легенда прочитана как «монета божественного тюргешского кагана»: βγy twrkyš γ'γ'n pny. См. Smirnova 1589."
+  },
+  "Cf. \"Xinjiang numismatics\" page 25": {
+    "zh": "参见《新疆钱币》第25页。",
+    "ru": "Ср. «Нумизматика Синьцзяна», с. 25."
+  },
+  "Kam: 48 Minted by the Qarluks.": {
+    "zh": "Kam 48号。葛逻禄发行。",
+    "ru": "Kam 48. Выпуск карлуков."
+  },
+  "Nearly 6 specimens of this type known. Unearthed at Sokuluq ancient site (25 km to the West from Bishkek), Kyrgyzstan Image property: A.Kamyshev": {
+    "zh": "原记录称此型已知约6枚。出土于吉尔吉斯斯坦索库卢克古城，位于比什凯克以西25公里。图片署名：A. Kamyshev。",
+    "ru": "В источнике отмечено около шести известных экземпляров этого типа. Найдена на городище Сокулук, в 25 км к западу от Бишкека, Кыргызстан. Изображение: А. Камышев."
+  },
+  "This one is unearthed from a little Hoard": {
+    "zh": "出土于一处小型窖藏。",
+    "ru": "Найдена в небольшом кладе."
+  },
+  "Unearthed from a Hoard": {
+    "zh": "出土于窖藏。",
+    "ru": "Найдена в кладе."
+  },
+  "This one is also unearthed from the same hoard as the previous coins": {
+    "zh": "与原记录所述前几枚钱币出自同一窖藏。",
+    "ru": "Происходит из того же клада, что и предыдущие монеты в исходной записи."
+  },
+  "This one is unearthed from Qalashar(YanQi city), south of Xinjiang, Heavy.": {
+    "zh": "出土于新疆南部喀喇沙尔（焉耆），钱体较重。",
+    "ru": "Найдена в Карашаре (Яньци), южный Синьцзян; тяжёлый экземпляр."
+  },
+  "This coin is unearthed from QiTai, north of Xinjiang, 60 kilometres from Beiting ancient site.Heavy": {
+    "zh": "出土于新疆北部奇台，距北庭古城60公里。钱体较重。",
+    "ru": "Найдена в Цитае, северный Синьцзян, в 60 км от древнего Бэйтина; тяжёлый экземпляр."
+  },
+  "Turgesh cash": {
+    "zh": "突骑施方孔钱。",
+    "ru": "Тюргешская монета с квадратным отверстием."
+  },
+  "Turgesh AE coin, \"runic R\"-tamgha, character \"Yuan\"": {
+    "zh": "突骑施铜钱，带“如尼R”形徽记和汉字“元”。",
+    "ru": "Медная тюргешская монета с тамгой в форме рунической R и китайским знаком 元."
+  },
+  "Thick and heavy specimen. Compare with Z# 33694 , 189825 , 189826 and 189860 . Metal composition is : Cu 89.1810, Zn 0.3187, Sn 3.7445, As 0.7834, Sb 0.9928, Pb 2.7717, Fe 0.1788, Mn 1.7085, Ni 0.3105, Cd,Co,Bi all are under detection limits, Sum 99.9899 %, XRF data. So we see As-Sb bearing, low led and low tin bronze. Manganese content may be connected with attempts of previous owner to darken the coin with using of KMnO4+CuSO4 solution. Patination is sulphide type - in some points sulphur content reach up to 3 %.": {
+    "zh": "钱体厚重。可与 Zeno 33694、189825、189826、189860 比较。XRF测得元素百分比：Cu 89.1810、Zn 0.3187、Sn 3.7445、As 0.7834、Sb 0.9928、Pb 2.7717、Fe 0.1788、Mn 1.7085、Ni 0.3105；Cd、Co、Bi均低于检出限；总计99.9899%。这是含砷、锑而铅、锡较低的青铜。锰含量可能与前藏家使用 KMnO4+CuSO4 溶液加深钱色有关。包浆属硫化物型，部分位置硫含量可达3%。",
+    "ru": "Толстый тяжёлый экземпляр; ср. Zeno 33694, 189825, 189826 и 189860. Данные XRF, %: Cu 89.1810, Zn 0.3187, Sn 3.7445, As 0.7834, Sb 0.9928, Pb 2.7717, Fe 0.1788, Mn 1.7085, Ni 0.3105; Cd, Co и Bi ниже предела обнаружения; сумма 99.9899%. Бронза содержит мышьяк и сурьму, при низких содержаниях свинца и олова. Марганец может быть связан с попыткой прежнего владельца затемнить монету раствором KMnO4+CuSO4. Патина сульфидного типа, местами содержание серы достигает 3%."
+  },
+  "Compare with Z# 33693 , 189825 , 189826 and 189860 . Metal composition of the coin is: Cu 55.7065, Sn 4.1952, As 2.2783, Pb 36.7685, Fe 0.8302, Ni 0.1179, Zn,Sb,Cd,Bi,Co,Mn all are under detection and error limits, Sum 99.8966%, XRF data. Metal colour and composition are strong different from #33693. Zinc and stibium absent here, lead and tin contents elevated, copper content is lower more than 1/3. Apparently alloy is heterogeneous (liquated). Patination of the coin is phosphate type (up to 2.8 % P) and presumably represented by pyromorphite Pb5[PO4]3Cl. We can suppose, that this coin was made on another mint that Z# 33693 .": {
+    "zh": "可与 Zeno 33693、189825、189826、189860 比较。XRF测得元素百分比：Cu 55.7065、Sn 4.1952、As 2.2783、Pb 36.7685、Fe 0.8302、Ni 0.1179；Zn、Sb、Cd、Bi、Co、Mn均低于检出或误差限；总计99.8966%。金属色泽与组成明显不同于33693：未检出锌和锑，铅与锡较高，铜含量低了三分之一以上。合金看来存在不均匀（偏析）。包浆属磷酸盐型，磷最高约2.8%，推测为氯磷铅矿 Pb5[PO4]3Cl。原记录据此提出可能与33693出自不同铸地。",
+    "ru": "Ср. Zeno 33693, 189825, 189826 и 189860. Данные XRF, %: Cu 55.7065, Sn 4.1952, As 2.2783, Pb 36.7685, Fe 0.8302, Ni 0.1179; Zn, Sb, Cd, Bi, Co и Mn ниже пределов обнаружения и погрешности; сумма 99.8966%. Цвет и состав сильно отличаются от 33693: цинк и сурьма отсутствуют, свинца и олова больше, меди более чем на треть меньше. Сплав, вероятно, неоднороден (ликвация). Патина фосфатная, до 2,8% P, предположительно пироморфит Pb5[PO4]3Cl. Автор записи допускает иной монетный двор, чем у 33693."
+  },
+  "One of the most perfect Türgesh coins of that type I ever come across. Fine cast, perfect calligraphy and completely natural black patina.": {
+    "zh": "原记录称这是其见过的此型突骑施钱中品相极佳的一枚：铸造精细、书法优美，黑色包浆完全自然。",
+    "ru": "Автор записи считает её одним из лучших виденных им экземпляров этого тюргешского типа: тонкое литьё, прекрасная каллиграфия и полностью естественная чёрная патина."
+  },
+  "Kamyshev #36, type Tp-9. Obv.: xwt’w w’hswt’wy pny (the coin (or fan) of Lord Wahshutawa.) Rev.: Tyurgesh tamgha, runic \"R\" letter tamgha and Soghdian word, read as nkw or prn, depending on direction. This small variety is pretty rare. There are only two specimens in Kamyshev's book.": {
+    "zh": "Kamyshev 36号，类型Tp-9。正面 xwt’w w’hswt’wy pny，释为“瓦赫舒塔瓦领主之钱（或fan）”。背面为突骑施徽记、如尼字母“R”和一个粟特文词，依阅读方向可读为 nkw 或 prn。此小型版较罕见，Kamyshev书中仅有两枚。",
+    "ru": "Kamyshev 36, тип Tp-9. На лицевой стороне xwt’w w’hswt’wy pny — «монета (или fan) господина Вахшутавы». На обороте тюргешская тамга, руническая «R» и согдийское слово, читаемое как nkw или prn в зависимости от направления. Малый вариант довольно редок; в книге Камышева приведены два экземпляра."
+  },
+  "Kamyshev #21, Smirnova #1585.": {
+    "zh": "Kamyshev 21；Smirnova 1585。",
+    "ru": "Kamyshev 21; Smirnova 1585."
+  },
+  "Kamyshev #22. Obv.: Soghdian legend Βγy twrkys γ’γ’n pny (Fan of Turgesh's divine Khakan). Rev.: Turhesh tamgha shaped as Runic \"AT\" at top and center, Runic \"R\" at left and Soghdian inscription at bottom, read as nkw or prn depending on direction.": {
+    "zh": "Kamyshev 22号。正面粟特文 Βγy twrkys γ’γ’n pny，释为“神圣突骑施可汗之钱”。背面中央及上方为如尼“AT”形的突骑施徽记，左侧为如尼“R”，下方为粟特文，依阅读方向可读为 nkw 或 prn。",
+    "ru": "Kamyshev 22. На лицевой стороне согдийская легенда Βγy twrkys γ’γ’n pny — «fan божественного тюргешского кагана». На обороте в центре и сверху тюргешская тамга в форме рунической AT, слева руническая R, внизу согдийское слово, читаемое как nkw или prn в зависимости от направления."
+  },
+  "Unearthed in YianQi of Xinjiang.": {
+    "zh": "出土于新疆焉耆。",
+    "ru": "Найдена в Яньци, Синьцзян."
+  },
+  "Kamyshev #27": {
+    "zh": "Kamyshev 27",
+    "ru": "Kamyshev 27"
+  },
+  "AE Turgesh coin with \"R\"-tamgha": {
+    "zh": "带“R”形徽记的突骑施铜钱。",
+    "ru": "Медная тюргешская монета с тамгой R."
+  },
+  "Kam: 33.": {
+    "zh": "Kam 33。",
+    "ru": "Kam 33."
+  },
+  "Kamyshev 23.": {
+    "zh": "Kamyshev 23。",
+    "ru": "Kamyshev 23."
+  },
+  "Image property: sotnik05": {
+    "zh": "图片署名：sotnik05。",
+    "ru": "Изображение: sotnik05."
+  },
+  "Image property: alaytour Almost 'uncirculated' condition.": {
+    "zh": "图片署名：alaytour。保存状态近乎“未流通”。",
+    "ru": "Изображение: alaytour. Сохранность почти «не бывшая в обращении»."
+  },
+  "Semirech'e, Turgesh cash": {
+    "zh": "七河地区，突骑施方孔钱。",
+    "ru": "Семиречье, тюргешская монета с квадратным отверстием."
+  },
+  "Turgesh coin of ruler Wahshutawa, with \"Yuan\"": {
+    "zh": "统治者瓦赫舒塔瓦的突骑施钱，带汉字“元”。",
+    "ru": "Тюргешская монета правителя Вахшутавы с китайским знаком 元."
+  },
+  "Obv.: Sogdian script - bgy twrkys g'g'n pn Rev.: Turgesh's tamgha.The sign in the form of runic letters p, below Sogdian legend consisting of a single word prn. (# 54 A.M. Kamyshev, early medieval coin ... # 22). Extremely Rare. Coin found in the village Ulanka, Ulan district of East Kazakhstan region.": {
+    "zh": "正面粟特文 bgy twrkys g'g'n pn。背面为突骑施徽记及如尼字母p形符号，下方有粟特文单词 prn。（Kamyshev《早期中世纪钱币》54号；22号。）原记录称极罕见，发现于东哈萨克斯坦州乌兰区 Ulanka 村。",
+    "ru": "На лицевой стороне согдийская легенда bgy twrkys g'g'n pn. На обороте тюргешская тамга, знак в форме рунической p и согдийское слово prn внизу (Камышев, раннесредневековые монеты, № 54; № 22). В источнике названа крайне редкой; найдена в селе Уланка Уланского района Восточного Казахстана."
+  },
+  "Kamyshev 45": {
+    "zh": "Kamyshev 45",
+    "ru": "Kamyshev 45"
+  },
+  "Kam: 36.": {
+    "zh": "Kam: 36.",
+    "ru": "Kam: 36."
+  },
+  "Kam 47.": {
+    "zh": "Kam 47.",
+    "ru": "Kam 47."
+  },
+  "Kamyshev #43": {
+    "zh": "Kamyshev #43",
+    "ru": "Kamyshev #43"
+  },
+  "Smirnova #78": {
+    "zh": "Smirnova #78",
+    "ru": "Smirnova #78"
+  },
+  "Smirnova 43": {
+    "zh": "Smirnova 43",
+    "ru": "Smirnova 43"
+  },
+  "Kam: 40": {
+    "zh": "Kam: 40",
+    "ru": "Kam: 40"
+  },
+  "Smirnova #360.": {
+    "zh": "Smirnova #360.",
+    "ru": "Smirnova #360."
+  },
+  "Smirnova #657.": {
+    "zh": "Smirnova #657.",
+    "ru": "Smirnova #657."
+  },
+  "Smir: 657": {
+    "zh": "Smir: 657",
+    "ru": "Smir: 657"
+  },
+  "Smir. 48.": {
+    "zh": "Smir. 48.",
+    "ru": "Smir. 48."
+  },
+  "Smir 215.": {
+    "zh": "Smir 215.",
+    "ru": "Smir 215."
+  },
+  "Smir 359": {
+    "zh": "Smir 359",
+    "ru": "Smir 359"
+  },
+  "Smirnova 110": {
+    "zh": "Smirnova 110",
+    "ru": "Smirnova 110"
+  },
+  "Smirnova 727": {
+    "zh": "Smirnova 727",
+    "ru": "Smirnova 727"
+  },
+  "Smirnova 197": {
+    "zh": "Smirnova 197",
+    "ru": "Smirnova 197"
+  },
+  "Smirnova 359": {
+    "zh": "Smirnova 359",
+    "ru": "Smirnova 359"
+  },
+  "Smirnova 486": {
+    "zh": "Smirnova 486",
+    "ru": "Smirnova 486"
+  },
+  "Smir 1376": {
+    "zh": "Smir 1376",
+    "ru": "Smir 1376"
+  },
+  "Smirnova 181": {
+    "zh": "Smirnova 181",
+    "ru": "Smirnova 181"
+  },
+  "Smir: 191-214": {
+    "zh": "Smir: 191-214",
+    "ru": "Smir: 191-214"
+  },
+  "Smirnova 1392": {
+    "zh": "Smirnova 1392",
+    "ru": "Smirnova 1392"
+  },
+  "Kamyshev 40": {
+    "zh": "Kamyshev 40",
+    "ru": "Kamyshev 40"
+  },
+  "Smirnova-657": {
+    "zh": "Smirnova-657",
+    "ru": "Smirnova-657"
+  },
+  "Smir: 168-190": {
+    "zh": "Smir: 168-190",
+    "ru": "Smir: 168-190"
+  },
+  "Kamyshev 43": {
+    "zh": "Kamyshev 43",
+    "ru": "Kamyshev 43"
+  },
+  "Kamyshev-49": {
+    "zh": "Kamyshev-49",
+    "ru": "Kamyshev-49"
+  },
+  "Kamyshev 34": {
+    "zh": "Kamyshev 34",
+    "ru": "Kamyshev 34"
+  },
+  "Smir # 1435-39.": {
+    "zh": "Smir # 1435-39.",
+    "ru": "Smir # 1435-39."
+  },
+  "Obv.: Sogdian script βγy twrkyš γ'γ'n pny Rev.: Turgesh's tamgha": {
+    "zh": "正面粟特文 βγy twrkyš γ'γ'n pny；背面为突骑施徽记。",
+    "ru": "На лицевой стороне согдийская легенда βγy twrkyš γ'γ'n pny; на обороте тюргешская тамга."
+  },
+  "Kamyshev's \"Early-Mediaeval Monetary Complex of Semirech'e\" #45. Obverse (counterclockwise): 'rsl'n kwyl 'yrkyn - Sogdian inscription ' Arslan kul-yirkin '. Reverse: two Turkic tamghas, resembling runic letter ‘R’ (similar to Latin letter ‘M’) at left side and runic letter ‘AT’ at right side.": {
+    "zh": "Kamyshev《七河地区早期中世纪货币综合研究》45号。正面逆时针排列粟特文 'rsl'n kwyl 'yrkyn，读作“Arslan kul-yirkin”。背面有两个突厥徽记：左侧似如尼字母R（形似拉丁M），右侧似如尼AT。",
+    "ru": "№ 45 в «Раннесредневековом монетном комплексе Семиречья» Камышева. На лицевой стороне против часовой стрелки идёт согдийская надпись 'rsl'n kwyl 'yrkyn — «Arslan kul-yirkin». На обороте две тюркские тамги: слева подобная рунической R (похожа на латинскую M), справа подобная рунической AT."
+  },
+  "eBay # 140918387327. N. Soghd, Turgesh Qaghante, with add. tamga, not in KAM. Diam. 24.4 mm, Weight 5.49 g": {
+    "zh": "eBay 140918387327。北粟特，突骑施汗国，带附加徽记，Kamyshev未收录。直径24.4毫米，重5.49克。",
+    "ru": "eBay 140918387327. Северный Согд, Тюргешский каганат; дополнительная тамга, отсутствует у Камышева. Диаметр 24,4 мм, вес 5,49 г."
+  },
+  "Runic letter \"p\" with dot in left space Kamyshev-30": {
+    "zh": "左侧有带点的如尼字母“p”。Kamyshev 30号。",
+    "ru": "Слева руническая «p» с точкой. Kamyshev 30."
+  },
+  "eBay # 390547604669. Semirech'e AE cash-like coin, Arslands King Arslan Kul-Yirkin. Kam # 45.": {
+    "zh": "eBay 390547604669。七河地区铜质方孔钱，阿尔斯兰系统治者 Arslan Kul-Yirkin。Kam 45号。",
+    "ru": "eBay 390547604669. Семиречье, медная монета с квадратным отверстием; арсланидский правитель Arslan Kul-Yirkin. Kam 45."
+  },
+  "eBay # 390547605388. Semirech'e Arslanid AE coin. Kam # 48.": {
+    "zh": "eBay 390547605388。七河地区阿尔斯兰系铜钱。Kam 48号。",
+    "ru": "eBay 390547605388. Семиречье, медная монета Арсланидов. Kam 48."
+  },
+  "Sogdian legend “ βγy twrkys γ´γ´n pny”. Kam # 31?": {
+    "zh": "粟特文铭文“βγy twrkys γ´γ´n pny”。Kam 31号（？）。",
+    "ru": "Согдийская легенда «βγy twrkys γ´γ´n pny». Kam 31 (?)."
+  },
+  "Obv.: Legend in Sogdian script (blurred), probably reads as ‘Βγy twrkys γ’γ’n pny’ and translates as ‘Fan of Turgesh's divine Khakan’. Rev.: Turgesh's tamgha & Turkic runic letter ‘ρ’ with dot in the left space. Kamyshev ‘Early Medieval Monetary Complex of Semirechie’ # 30. Not listed in Smirnova. Unearthed in Kyrgyzstan.": {
+    "zh": "正面模糊的粟特文铭文可能为“Βγy twrkys γ’γ’n pny”，释为“神圣突骑施可汗之钱”。背面为突骑施徽记，左侧有带点的突厥如尼字母“ρ”。Kamyshev《七河地区早期中世纪货币综合研究》30号；Smirnova未收录。出土于吉尔吉斯斯坦。",
+    "ru": "Размытая согдийская легенда на лицевой стороне, вероятно, читается «Βγy twrkys γ’γ’n pny» — «fan божественного тюргешского кагана». На обороте тюргешская тамга и тюркская руническая «ρ» с точкой слева. № 30 в «Раннесредневековом монетном комплексе Семиречья» Камышева; у Smirnova отсутствует. Найдена в Кыргызстане."
+  },
+  "eBay # 390678277835. Semirech'e AE cash-like coin, Arslands King Arslan Kul-Yirkin. Kam: 45.": {
+    "zh": "eBay 390678277835。七河地区铜质方孔钱，阿尔斯兰系统治者 Arslan Kul-Yirkin。Kam 45号。",
+    "ru": "eBay 390678277835. Семиречье, медная монета с квадратным отверстием; арсланидский правитель Arslan Kul-Yirkin. Kam 45."
+  },
+  "Rev. Chinese character yuan – “beginning”, “great”. No metric data provided. Image source: http://bbs.chcoin.com/read-htm-tid-5497249-fpage-26.html%3E Kam 21. Smir 1585. Ruler Vahshutava (in Taraz?). Sogd legend: \"xwt´w w´xswt´wy pny\" / runic letter \"r\" + chinese 元 - yuan.": {
+    "zh": "背面汉字“元”，意为“开始”“大”。未提供尺寸、重量。图源：http://bbs.chcoin.com/read-htm-tid-5497249-fpage-26.html%3E 。Kam 21，Smirnova 1585。统治者瓦赫舒塔瓦（塔拉兹？）；粟特文“xwt´w w´xswt´wy pny”，另一面为如尼“r”和汉字“元”。",
+    "ru": "На обороте китайский знак 元 — «начало», «великий». Размер и вес не приведены. Источник изображения: http://bbs.chcoin.com/read-htm-tid-5497249-fpage-26.html%3E . Kam 21, Smirnova 1585. Правитель Вахшутава (Тараз?); согдийская легенда «xwt´w w´xswt´wy pny», на другой стороне руническая «r» и китайский 元."
+  },
+  "Obv: Sogdian legend xst' w'xswt'wy pny (coin of the King Vahshutava) around square hole. Rev: Tamgha of Turgesh in the shape of a latin runic letter R in the left field, character YUAN to the right.": {
+    "zh": "正面粟特文 xst' w'xswt'wy pny（“瓦赫舒塔瓦王之钱”）环绕方孔。背面左侧为R形如尼符号式的突骑施徽记，右侧为汉字“元”。",
+    "ru": "На лицевой стороне согдийская легенда xst' w'xswt'wy pny («монета царя Вахшутавы») вокруг квадратного отверстия. На обороте слева тюргешская тамга в форме рунической R, справа китайский знак 元."
+  },
+  "Unearthed in Almaty. Smir 1588, Kam 23. Anonymous \"βγy twrkys γ´γ´n pny” / runic letter \"R\" + \"m'γ\" ?": {
+    "zh": "出土于阿拉木图。Smirnova 1588，Kam 23。无名发行，“βγy twrkys γ´γ´n pny”／如尼“R”和“m'γ”（？）。",
+    "ru": "Найдена в Алматы. Smirnova 1588, Kam 23. Анонимный выпуск: «βγy twrkys γ´γ´n pny» / руническая R и «m'γ» (?)."
+  },
+  "Semireché, Vahshutava": {
+    "zh": "七河地区，瓦赫舒塔瓦。",
+    "ru": "Семиречье, Вахшутава."
+  },
+  "AE Turgesh coin, degraded cast": {
+    "zh": "突骑施铜钱，铸造较粗劣。",
+    "ru": "Медная тюргешская монета, ухудшенное качество литья."
+  },
+  "Pls help to ID Image source: http://bbs.chcoin.com/show-8465912.html Kam: 21": {
+    "zh": "原记录征求鉴定。图源：http://bbs.chcoin.com/show-8465912.html 。Kam 21号。",
+    "ru": "В исходной записи запрошена атрибуция. Источник изображения: http://bbs.chcoin.com/show-8465912.html . Kam 21."
+  },
+  "The coin was found in southern Kazakhstan.": {
+    "zh": "发现于哈萨克斯坦南部。",
+    "ru": "Найдена в Южном Казахстане."
+  },
+  "The coin was found in Southern Kazakhstan.": {
+    "zh": "发现于哈萨克斯坦南部。",
+    "ru": "Найдена в Южном Казахстане."
+  },
+  "Seller's attribution was simply Turgesh. Should be Smirnova's type 4, it is fairly light so maybe number 1600?": {
+    "zh": "卖家仅归为突骑施钱。原记录提出可能是 Smirnova 类型4，因钱体较轻，或为1600号（？）。",
+    "ru": "Продавец отнёс её лишь к тюргешским монетам. Автор записи предполагает тип 4 по Smirnova; из-за небольшого веса, возможно, № 1600 (?)."
+  },
+  "Semirech'e, unknown khakan of Turgeshs, 1st half of 8th cent. AD., AE Cash-like Coin": {
+    "zh": "七河地区，突骑施不详可汗，公元8世纪前半叶，铜质方孔钱。",
+    "ru": "Семиречье, неизвестный тюргешский каган, первая половина VIII века н. э.; медная монета с квадратным отверстием."
+  },
+  "Semirech'e, unknown khakan of Turgeshs, 1st half of 8th cent. AD., AE Cash-like Coin, filed edges": {
+    "zh": "七河地区，突骑施不详可汗，公元8世纪前半叶，铜质方孔钱，外缘经锉修。",
+    "ru": "Семиречье, неизвестный тюргешский каган, первая половина VIII века н. э.; медная монета с квадратным отверстием и опиленными краями."
+  },
+  "Semirech'e, unknown khakan of Turgeshs, 1st half of 8th cent. AD., small cast uniface AE Cash-like Coin": {
+    "zh": "七河地区，突骑施不详可汗，公元8世纪前半叶，小型铸造单面铜质方孔钱。",
+    "ru": "Семиречье, неизвестный тюргешский каган, первая половина VIII века н. э.; малая литая односторонняя медная монета с квадратным отверстием."
+  },
+  "A coin with Sogdian legends, issued by people of Turkish descent. Obv: Currency of the mighty Turgis Khagan Rev: tamgha of the Black Clan Smirnova 405 Jen 920 Fedorov ONS 187 (2004) p 12-4": {
+    "zh": "突厥族群发行的粟特文钱币。正面释为“强大突骑施可汗之钱”，背面为黑姓徽记。Smirnova 405，Jen 920；Fedorov，ONS 187（2004），第12–14页。",
+    "ru": "Монета с согдийскими легендами, выпущенная населением тюркского происхождения. Лицевая легенда прочитана как «деньги могучего тюргешского кагана»; на обороте тамга чёрного рода. Smirnova 405, Jen 920; Fedorov, ONS 187 (2004), с. 12–14."
+  },
+  "Compare with Z# 33693 , 133694 , 189826 and 189860 . Metal composition of the coin is: Cu 71.56, Sn 7.12, As 0.67, Pb 20.10, Ni 0.18, Zn,Sb,Cd,Bi,Fe,Co all are under detection and error limits, Sum 99.63%, microprobe data in scanning mode on surface 1900x60 mkm.": {
+    "zh": "可与 Zeno 33693、133694、189826、189860 比较。表面1900×60微米扫描区的电子探针数据（%）：Cu 71.56、Sn 7.12、As 0.67、Pb 20.10、Ni 0.18；Zn、Sb、Cd、Bi、Fe、Co低于检出或误差限；总计99.63%。",
+    "ru": "Ср. Zeno 33693, 133694, 189826 и 189860. Электронно-зондовые данные при сканировании поверхности 1900×60 мкм, %: Cu 71.56, Sn 7.12, As 0.67, Pb 20.10, Ni 0.18; Zn, Sb, Cd, Bi, Fe и Co ниже пределов обнаружения и погрешности; сумма 99.63%."
+  },
+  "Compare with Z# 33693 , 33694 , 189825 and 189860 . Metal composition of the coin is: Cu 55.24, Sn 8.35, As 0.93, Pb 35.20, Fe 0.11, Ni 0.12, Zn,Sb,Cd,Bi,Fe,Co all are under detection and error limits, Sum 99.95%, microprobe data in scanning mode on surface 1200x150 mkm.": {
+    "zh": "可与 Zeno 33693、33694、189825、189860 比较。表面1200×150微米扫描区的电子探针数据（%）：Cu 55.24、Sn 8.35、As 0.93、Pb 35.20、Fe 0.11、Ni 0.12；原文列 Zn、Sb、Cd、Bi、Fe、Co 低于检出或误差限；总计99.95%。原文在Fe的列示上存在重复。",
+    "ru": "Ср. Zeno 33693, 33694, 189825 и 189860. Электронно-зондовые данные при сканировании поверхности 1200×150 мкм, %: Cu 55.24, Sn 8.35, As 0.93, Pb 35.20, Fe 0.11, Ni 0.12; в оригинале Zn, Sb, Cd, Bi, Fe и Co указаны ниже пределов обнаружения и погрешности; сумма 99.95%. Fe в оригинале указан повторно."
+  },
+  "Smirnova#1588, Kamyshev#23. Anonymous \"βγy twrkys γ´γ´n pny” / runic letter \"R\" + \"m'γ\" ? Compare with Z#138294. Large and heavy specimen. Compare with Z# 189828 , 265922 and with small type Z# 189830 . Metal composition of the coin is: Cu 87.45/86.59, Zn 0.25/0.00, Sn 7.41/7.83, Pb 4.09/4.84, Fe 0.24/0.30, Ni 0.14/0.19, As,Sb,Cd,Bi,Co all are under detection and error limits, Sum 99.58/99.75%, microprobe data in scanning mode on surface 2000x450 and 3000x500 mkm.": {
+    "zh": "Smirnova 1588，Kamyshev 23。无名发行，“βγy twrkys γ´γ´n pny”／如尼“R”和“m'γ”（？）；可与 Zeno 138294 比较。标本大而重，可与189828、265922及小型189830比较。表面2000×450和3000×500微米扫描区的电子探针数据（%）：Cu 87.45/86.59、Zn 0.25/0.00、Sn 7.41/7.83、Pb 4.09/4.84、Fe 0.24/0.30、Ni 0.14/0.19；As、Sb、Cd、Bi、Co低于检出或误差限；总计99.58/99.75%。",
+    "ru": "Smirnova 1588, Kamyshev 23. Анонимный выпуск: «βγy twrkys γ´γ´n pny» / руническая R и «m'γ» (?); ср. Zeno 138294. Крупный тяжёлый экземпляр; ср. 189828, 265922 и малый вариант 189830. Электронно-зондовые данные для поверхностей 2000×450 и 3000×500 мкм, %: Cu 87.45/86.59, Zn 0.25/0.00, Sn 7.41/7.83, Pb 4.09/4.84, Fe 0.24/0.30, Ni 0.14/0.19; As, Sb, Cd, Bi и Co ниже пределов обнаружения и погрешности; суммы 99.58/99.75%."
+  },
+  "Large and heavy specimen. Compare it with Z# 189827 and with small type Z# 189830 . Metal composition of the coin is: Cu 81.52, Sn 10.63, As 1.18, Pb 6.18, Fe 0.30, Ni 0.20, Zn,Sb,Cd,Bi,Co all are under detection and error limits, Sum 100.01%, microprobe data in scanning mode on surface 1200x750.": {
+    "zh": "标本大而重，可与 Zeno 189827 及小型189830比较。表面1200×750扫描区的电子探针数据（%）：Cu 81.52、Sn 10.63、As 1.18、Pb 6.18、Fe 0.30、Ni 0.20；Zn、Sb、Cd、Bi、Co低于检出或误差限；总计100.01%。",
+    "ru": "Крупный тяжёлый экземпляр; ср. Zeno 189827 и малый вариант 189830. Электронно-зондовые данные для сканируемой поверхности 1200×750, %: Cu 81.52, Sn 10.63, As 1.18, Pb 6.18, Fe 0.30, Ni 0.20; Zn, Sb, Cd, Bi и Co ниже пределов обнаружения и погрешности; сумма 100.01%."
+  },
+  "Small and light specimen. Compare with very light sample Z# 193070 and with large and heavy samples Z# 189827 , 189828 and 193071 . Metal composition of the coin (reverse outer rim at 7 o'clock) is: Cu 76.34, As 0.78, Sb 1.42, Pb 21.33, Sn,Zn,Cd,Bi,Fe,Co,Ni all are under detection and error limits, Sum 99.87%, microprobe data in scanning mode on surface 1700x350.": {
+    "zh": "标本小而轻，可与极轻的 Zeno 193070 及大而重的189827、189828、193071比较。背面外缘7点钟位置、1700×350扫描区的电子探针数据（%）：Cu 76.34、As 0.78、Sb 1.42、Pb 21.33；Sn、Zn、Cd、Bi、Fe、Co、Ni低于检出或误差限；总计99.87%。",
+    "ru": "Малый лёгкий экземпляр; ср. очень лёгкий Zeno 193070 и крупные тяжёлые 189827, 189828, 193071. Электронно-зондовые данные внешнего края оборота у 7 часов, поверхность 1700×350, %: Cu 76.34, As 0.78, Sb 1.42, Pb 21.33; Sn, Zn, Cd, Bi, Fe, Co и Ni ниже пределов обнаружения и погрешности; сумма 99.87%."
+  },
+  "Compare with Z# 256607 which is almost twice lighter. Compare also with Z# 33693 , 33694 , 189825 , 189826 , 192869 , 192870 , 219191 , 219192 , 219559 and 219560 with usual tamga. Metal composition of the coin (obverse inner rim at 2:30 o'clock) is: Cu 63.98/64.11, Sn 8.03/8.30, As 0.84/0.96, Sb 0.45/0.37, Pb 26.53/25.70, Ni 0.12/0.33, Zn,Cd,Bi,Fe,Co all are under detection and error limits, Sum 99.95/99.77 %, microprobe data in scanning mode on surface 900x70 and 500x150 mkm.": {
+    "zh": "可与重量近乎减半的 Zeno 256607 比较，也可与带通常徽记的33693、33694、189825、189826、192869、192870、219191、219192、219559、219560比较。正面内缘2点半位置、900×70和500×150微米扫描区的电子探针数据（%）：Cu 63.98/64.11、Sn 8.03/8.30、As 0.84/0.96、Sb 0.45/0.37、Pb 26.53/25.70、Ni 0.12/0.33；Zn、Cd、Bi、Fe、Co低于检出或误差限；总计99.95/99.77%。",
+    "ru": "Ср. Zeno 256607, почти вдвое легче, а также 33693, 33694, 189825, 189826, 192869, 192870, 219191, 219192, 219559 и 219560 с обычной тамгой. Электронно-зондовые данные внутреннего края лицевой стороны у 2:30, поверхности 900×70 и 500×150 мкм, %: Cu 63.98/64.11, Sn 8.03/8.30, As 0.84/0.96, Sb 0.45/0.37, Pb 26.53/25.70, Ni 0.12/0.33; Zn, Cd, Bi, Fe и Co ниже пределов обнаружения и погрешности; суммы 99.95/99.77%."
+  },
+  "Kamyshev#30 Obv.: Sogdian legend around the square hole, \"Fen of King of Turgesh's Kagan\". Rev.: Tamgha of Turgesh and Runic letter \"R\" with dot in center in lower field. Compare with Z#3506. Metal composition of the coin is: Ag 1.65, Cu 89.39, Sn 5.64, As 1.01, Sb 0.85, Pb 1.11, Zn,Cd,Bi,Fe,Co,Ni all are under detection and error limits, Sum 99.65%, microprobe data in scanning mode on surface 500x300 mkm. So we have here Ag-, As- and Sb-bearing, low-tin and extremely low-lead bronze.": {
+    "zh": "Kamyshev 30号。正面粟特文铭文围绕方孔，释为“突骑施可汗王之钱”；背面为突骑施徽记，下方有中央带点的如尼“R”。可与 Zeno 3506 比较。表面500×300微米扫描区的电子探针数据（%）：Ag 1.65、Cu 89.39、Sn 5.64、As 1.01、Sb 0.85、Pb 1.11；Zn、Cd、Bi、Fe、Co、Ni低于检出或误差限；总计99.65%。属含银、砷、锑而锡较低、铅极低的青铜。",
+    "ru": "Kamyshev 30. Согдийская легенда вокруг квадратного отверстия прочитана как «фэнь царя — кагана тюргешей». На обороте тюргешская тамга и внизу руническая R с точкой в центре; ср. Zeno 3506. Электронно-зондовые данные поверхности 500×300 мкм, %: Ag 1.65, Cu 89.39, Sn 5.64, As 1.01, Sb 0.85, Pb 1.11; Zn, Cd, Bi, Fe, Co и Ni ниже пределов обнаружения и погрешности; сумма 99.65%. Бронза с серебром, мышьяком и сурьмой, низким оловом и крайне низким свинцом."
+  },
+  "Sogdiana, Semirech'e, unknown small bronze cash": {
+    "zh": "粟特／七河地区，不详的小型青铜方孔钱。",
+    "ru": "Согдиана / Семиречье, неизвестная малая бронзовая монета с квадратным отверстием."
+  },
+  "Compare with Z# 33693 , 33694 , 189825 , 189826 , 189860 and 192870 . Metal composition of the coin is: Cu 68.71, Sn 10.17, As 1.26, Pb 18.83, Fe 0.39, Ni 0.30, Zn,Cd,Sb,Bi,Co all are under detection and error limits, Sum 99.66 %, microprobe data in scanning mode on surface 900x1300 mkm. So we have here yellowish nonmagnetic As-bearing tin-lead bronze.": {
+    "zh": "可与 Zeno 33693、33694、189825、189826、189860、192870比较。表面900×1300微米扫描区的电子探针数据（%）：Cu 68.71、Sn 10.17、As 1.26、Pb 18.83、Fe 0.39、Ni 0.30；Zn、Cd、Sb、Bi、Co低于检出或误差限；总计99.66%。属偏黄色、无磁性的含砷锡铅青铜。",
+    "ru": "Ср. Zeno 33693, 33694, 189825, 189826, 189860 и 192870. Электронно-зондовые данные поверхности 900×1300 мкм, %: Cu 68.71, Sn 10.17, As 1.26, Pb 18.83, Fe 0.39, Ni 0.30; Zn, Cd, Sb, Bi и Co ниже пределов обнаружения и погрешности; сумма 99.66%. Желтоватая немагнитная оловянно-свинцовая бронза с мышьяком."
+  },
+  "Compare with Z# 33693 , 33694 , 189825 , 189826 , 189860 , 192869 , 219191 and 219192 . Metal composition of the coin is: Cu 72.52, Sn 7.94, As 0.84, Pb 18.24, Fe 0.22, Zn,Cd,Sb,Bi,Co,Ni all are under detection and error limits, Sum 99.76 %, microprobe data in scanning mode on surface 1100x1300 mkm. So we have here pinkish nonmagnetic As-bearing tin-lead bronze.": {
+    "zh": "可与 Zeno 33693、33694、189825、189826、189860、192869、219191、219192比较。表面1100×1300微米扫描区的电子探针数据（%）：Cu 72.52、Sn 7.94、As 0.84、Pb 18.24、Fe 0.22；Zn、Cd、Sb、Bi、Co、Ni低于检出或误差限；总计99.76%。属偏粉色、无磁性的含砷锡铅青铜。",
+    "ru": "Ср. Zeno 33693, 33694, 189825, 189826, 189860, 192869, 219191 и 219192. Электронно-зондовые данные поверхности 1100×1300 мкм, %: Cu 72.52, Sn 7.94, As 0.84, Pb 18.24, Fe 0.22; Zn, Cd, Sb, Bi, Co и Ni ниже пределов обнаружения и погрешности; сумма 99.76%. Розоватая немагнитная оловянно-свинцовая бронза с мышьяком."
+  },
+  "Very small and light specimen. Compare with Z# 189830 and with large and heavy samples Z# 189827 and Z# 189828 .": {
+    "zh": "标本很小且轻。可与 Zeno 189830 及大而重的189827、189828比较。",
+    "ru": "Очень малый лёгкий экземпляр; ср. Zeno 189830 и крупные тяжёлые 189827, 189828."
+  },
+  "Compare with Z# 339159 . Compare also with Z# 209434 . Compare also with very light sample Z# 193070 and with large and heavy samples Z# 189827 , 189828 and Z# 189830 , which are of S#1588 type. Compare also with light and very light samples Z# 189830 and Z# 193070 .": {
+    "zh": "可与 Zeno 339159、209434比较，也可与极轻的193070及大而重的189827、189828、189830比较，后者属 S1588 类型。另可比较轻型及极轻型189830、193070。",
+    "ru": "Ср. Zeno 339159 и 209434, а также очень лёгкий 193070 и крупные тяжёлые 189827, 189828, 189830 типа S1588. Также сопоставлены лёгкий и очень лёгкий 189830, 193070."
+  },
+  "Turgesh, cash-like coin": {
+    "zh": "突骑施方孔钱。",
+    "ru": "Тюргешская монета с квадратным отверстием."
+  },
+  "ex. \"Inal Tegin\"": {
+    "zh": "旧称“Inal Tegin”。",
+    "ru": "Прежнее название «Inal Tegin»."
+  },
+  "S1588, Turgesh AE cash, Additional \"runic R\"-tamgha, mnγ": {
+    "zh": "S1588，突骑施铜质方孔钱，带附加“如尼R”形徽记，铭文 mnγ。",
+    "ru": "S1588, медная тюргешская монета с квадратным отверстием, дополнительная тамга в форме рунической R, надпись mnγ."
+  },
+  "eBay # 391978651744 Semirech'e Turgesh AE cash-like coin. Metal: AE Kam 27.": {
+    "zh": "eBay 391978651744。七河地区突骑施铜质方孔钱，材质AE，Kam 27号。",
+    "ru": "eBay 391978651744. Семиречье, медная тюргешская монета с квадратным отверстием, AE, Kam 27."
+  },
+  "eBay # 253430648582 Semirech'e Arslanids AE cash-like coin. Weight: 2.69 g. Diameter: 21.36 mm. Metal: AE": {
+    "zh": "eBay 253430648582。七河地区阿尔斯兰系铜质方孔钱，2.69克，21.36毫米，材质AE。",
+    "ru": "eBay 253430648582. Семиречье, медная монета Арсланидов с квадратным отверстием, 2,69 г, 21,36 мм, AE."
+  },
+  "eBay # 172578524586 CENTRAL ASIA Semirech'e: Arslanid's AE cash coin Arslands King Arslan Kul-Yirkin Kam #45 Very rare condition. Diameter: 25.0 mm. Weight: 5.57 grms. All coins are genuine. Kamyshev # 45.": {
+    "zh": "eBay 172578524586。中亚七河地区阿尔斯兰系铜质方孔钱，统治者 Arslan Kul-Yirkin。Kamyshev 45号，25.0毫米，5.57克。卖家称钱币为真品，且保存状态罕见。",
+    "ru": "eBay 172578524586. Средняя Азия, Семиречье, медная монета Арсланидов с квадратным отверстием; правитель Arslan Kul-Yirkin. Kamyshev 45, 25,0 мм, 5,57 г. Продавец заявляет подлинность и редкую сохранность."
+  },
+  "Obverse : Bagha Türgesh qaghan pny. Reverse : Bow tamgha. Undetermined Qaghan of the Türgesh of Yedisu/Semerechiye region (mid. 8th C.).": {
+    "zh": "正面：“Bagha Türgesh qaghan pny”；背面为弓形徽记。七河地区突骑施不详可汗，8世纪中叶。",
+    "ru": "На лицевой стороне «Bagha Türgesh qaghan pny», на обороте тамга в форме лука. Неопределённый тюргешский каган Семиречья, середина VIII века."
+  },
+  "S 1589. (Sulu 蘇祿) Türgesh qaghan, 712?-737/8": {
+    "zh": "S1589，突骑施可汗苏禄，712（？）—737／738年。",
+    "ru": "S1589, тюргешский каган Сулук, 712 (?) — 737/738."
+  },
+  "Unearthed at the Krasnaya Rechka site, Kyrgyzstan. Legend twrkyš x’γ’n pny (reading by Pavel Lurje). For the standard Turgesh's legend the word βγy is missed.": {
+    "zh": "出土于吉尔吉斯斯坦 Krasnaya Rechka 遗址。Pavel Lurje释读铭文为 twrkyš x’γ’n pny，缺少通常突骑施铭文中的 βγy 一词。",
+    "ru": "Найдена на городище Красная Речка, Кыргызстан. Павел Лурье прочитал легенду как twrkyš x’γ’n pny; слово βγy из обычной тюргешской легенды отсутствует."
+  },
+  "Smirnova#1586 Kamyshev#33 Compare with Z# 193071 .": {
+    "zh": "Smirnova 1586，Kamyshev 33。可与 Zeno 193071 比较。",
+    "ru": "Smirnova 1586, Kamyshev 33. Ср. Zeno 193071."
+  },
+  "Turgesh's tamgha, runic character 'R'. Small": {
+    "zh": "突骑施徽记、如尼字符“R”；小型。",
+    "ru": "Тюргешская тамга и рунический знак R; малый экземпляр."
+  },
+  "Ex Stephen Album Auction 33, Jan 17, 2019: lot 111. Estimate: 150 USD SEMIRECH'E: Arslanid, Kul Erkin, 8th century, AE cash (5.59g), cf. Zeno-5956, Sogdian legend // Turkic runic symbols for R and T, lovely example, VF, RR.": {
+    "zh": "出自 Stephen Album 第33场拍卖，2019年1月17日，第111号拍品，估价150美元。七河地区阿尔斯兰系 Kul Erkin，8世纪铜质方孔钱，5.59克，参见 Zeno 5956。粟特文铭文／突厥如尼R与T符号；原记录评为优美、VF、RR。",
+    "ru": "Из аукциона Stephen Album 33, 17 января 2019, лот 111; оценка 150 USD. Семиречье, арсланид Kul Erkin, VIII век, медная монета с квадратным отверстием, 5,59 г; ср. Zeno 5956. Согдийская легенда / тюркские рунические знаки R и T; в источнике: красивый экземпляр, VF, RR."
+  },
+  "Central Asia, Semirech'e, Anonymous coin of the Türgesh kaghans in Semirech'e,. ca. 704-766 AD. Sogd legend: “ βγy twrkys γ´γ´n pny” (Lord Kaghan of Türgesh´s coin). Ref.: Smirnova 1589, Kamychev 24, ONS-NL 178, p.7-16": {
+    "zh": "中亚七河地区，突骑施可汗无名发行，约公元704–766年。粟特文“βγy twrkys γ´γ´n pny”，释为“突骑施可汗领主之钱”。参见 Smirnova 1589，Kamychev 24，ONS-NL 178，第7–16页。",
+    "ru": "Средняя Азия, Семиречье, анонимная монета тюргешских каганов, около 704–766 гг. Согдийская легенда «βγy twrkys γ´γ´n pny» — «монета господина кагана тюргешей». Smirnova 1589, Kamychev 24, ONS-NL 178, с. 7–16."
+  },
+  "Central Asia, Semirech'e (Jety Su), Eastern Turk Qaganate, Bilge Qaghan, AD 716-734, AE cash (1.59 g.), counter-clockwise Soghdian legend / rev. 4 trident-like symbols. Ref.: Smirnova 1659; Kamyshev's \"Monetary Compleks of Semirechie\" #47; ONS-NL 178, p.7-16.": {
+    "zh": "中亚七河地区（Jety Su），东突厥汗国，毗伽可汗，716–734年，铜质方孔钱，1.59克。逆时针粟特文铭文／背面四个三叉形符号。Smirnova 1659；Kamyshev《七河地区货币综合研究》47号；ONS-NL 178，第7–16页。",
+    "ru": "Средняя Азия, Семиречье (Жети-Су), Восточно-Тюркский каганат, Бильге-каган, 716–734, медная монета с квадратным отверстием, 1,59 г. Согдийская легенда против часовой стрелки / четыре трезубцеобразных знака на обороте. Smirnova 1659; Камышев, монетный комплекс Семиречья, № 47; ONS-NL 178, с. 7–16."
+  },
+  "Compare with Z# 33693 , 33694 , 189825 , 189826 , 189860 , 192869 , 192870 and 219192 .": {
+    "zh": "可与 Zeno 33693、33694、189825、189826、189860、192869、192870、219192比较。",
+    "ru": "Ср. Zeno 33693, 33694, 189825, 189826, 189860, 192869, 192870 и 219192."
+  },
+  "Compare with Z# 33693 , 33694 , 189825 , 189826 , 189860 , 192869 , 192870 , 219191 and 219559 . Compare also with smaller coin Z# 219560 .": {
+    "zh": "可与 Zeno 33693、33694、189825、189826、189860、192869、192870、219191、219559比较；另可与较小的219560比较。",
+    "ru": "Ср. Zeno 33693, 33694, 189825, 189826, 189860, 192869, 192870, 219191 и 219559; также меньший экземпляр 219560."
+  },
+  "Compare with Z# 33693 , 33694 , 189825 , 189826 , 189860 , 192869 , 192870 , 219191 and 219192 . Compare also with smaller coin Z# 219560 .": {
+    "zh": "可与 Zeno 33693、33694、189825、189826、189860、192869、192870、219191、219192比较；另可与较小的219560比较。",
+    "ru": "Ср. Zeno 33693, 33694, 189825, 189826, 189860, 192869, 192870, 219191 и 219192; также меньший экземпляр 219560."
+  },
+  "Smirnova#1585 Kamyshev#21 Obv.: Sogd legend: \"xwt´w w´xswt´wy pny\" Rev.: Turgesh tamga, runic letter \"r\" + Chinese 元 - yuan. Compare with Z# 231600 and 380830 .": {
+    "zh": "Smirnova 1585，Kamyshev 21。正面粟特文“xwt´w w´xswt´wy pny”；背面突骑施徽记、如尼“r”和汉字“元”。可与 Zeno 231600、380830比较。",
+    "ru": "Smirnova 1585, Kamyshev 21. На лицевой стороне согдийская легенда «xwt´w w´xswt´wy pny»; на обороте тюргешская тамга, руническая r и китайский 元. Ср. Zeno 231600 и 380830."
+  },
+  "Smirnova#? Kamyshev #22 Obv.: Soghdian legend Βγy twrkys γ’γ’n pny (Fan of Turgesh's divine Khakan). Rev.: Turhesh tamgha, Runic \"R\" at top and Soghdian inscription at left, read as nkw or prn depending on direction. Compare with Z#39562. Compare also with Z# 209434 and 259925 .": {
+    "zh": "Smirnova编号不详，Kamyshev 22。正面粟特文 Βγy twrkys γ’γ’n pny，释为“神圣突骑施可汗之钱”。背面突骑施徽记，上方如尼“R”，左侧粟特文依阅读方向可读为 nkw 或 prn。可与 Zeno 39562、209434、259925比较。",
+    "ru": "Номер Smirnova неизвестен, Kamyshev 22. На лицевой стороне согдийская легенда Βγy twrkys γ’γ’n pny — «fan божественного тюргешского кагана». На обороте тюргешская тамга, руническая R сверху и согдийское слово слева, читаемое как nkw или prn в зависимости от направления. Ср. Zeno 39562, 209434 и 259925."
+  },
+  "Ex Stephen Album Rare Coins Auc 34, 23-26 May 2019, lot 178. Estimate: 150-200 USD SEMIRECH'E: Arlsan Bilge Qaghan, ca. 8th century, AE cash (2.78g), Kam-46/47, cf. Zeno-1742, issued by the Arslanid branch of the Qarluq tribe: Sogdian legend // Runic symbols, rare in this quality, VF, RR.": {
+    "zh": "出自 Stephen Album Rare Coins 第34场拍卖，2019年5月23–26日，第178号拍品，估价150–200美元。七河地区 Arslan Bilge Qaghan，约8世纪，铜质方孔钱，2.78克，Kam 46／47，参见 Zeno 1742。原记录归于葛逻禄部阿尔斯兰支系：粟特文铭文／如尼符号；此保存状态罕见，VF、RR。",
+    "ru": "Из аукциона Stephen Album Rare Coins 34, 23–26 мая 2019, лот 178; оценка 150–200 USD. Семиречье, Arslan Bilge Qaghan, около VIII века, медная монета с квадратным отверстием, 2,78 г, Kam 46/47; ср. Zeno 1742. В источнике отнесена к арсланидской ветви карлуков: согдийская легенда / рунические знаки; редка в такой сохранности, VF, RR."
+  },
+  "Ex Stephen Album Rare Coins Auc 34, 23-26 May 2019, lot 179. Estimate: 110-150 USD SEMIRECH'E: Arslan Kul Erkin, 8th century, AE cash (5.64g), cf. Zeno-5956, two Runic characters, said to be R and M, VF, R.": {
+    "zh": "出自 Stephen Album Rare Coins 第34场拍卖，2019年5月23–26日，第179号拍品，估价110–150美元。七河地区 Arslan Kul Erkin，8世纪铜质方孔钱，5.64克，参见 Zeno 5956；两个如尼字符，据称为R与M；VF、R。",
+    "ru": "Из аукциона Stephen Album Rare Coins 34, 23–26 мая 2019, лот 179; оценка 110–150 USD. Семиречье, Arslan Kul Erkin, VIII век, медная монета с квадратным отверстием, 5,64 г; ср. Zeno 5956. Два рунических знака, названные R и M; VF, R."
+  },
+  "Reading by Dr. V. Nastich: Obv.: 'rsl'n kwyl ''rkyn - Sogdian inscription \"Arslan Kül Erkin\" Rev.: two Turkic runas characters \"{ä}r\" and \"{ä}t\" Compare with Z# 245065 .": {
+    "zh": "V. Nastich博士释读：正面粟特文 'rsl'n kwyl ''rkyn，“Arslan Kül Erkin”；背面两个突厥如尼字符“{ä}r”和“{ä}t”。可与 Zeno 245065比较。",
+    "ru": "Прочтение д-ра В. Настича: на лицевой стороне согдийская надпись 'rsl'n kwyl ''rkyn — «Arslan Kül Erkin»; на обороте тюркские рунические знаки «{ä}r» и «{ä}t». Ср. Zeno 245065."
+  },
+  "Kamyshev#48 Compare with Z# 225720 . weight 3.3929 g diameter 21.4x21.7 mm Late IX to early X centuries 1 cash Lead bronze (nonmagnetic)": {
+    "zh": "Kamyshev 48，可与 Zeno 225720比较。重3.3929克，直径21.4×21.7毫米；9世纪末至10世纪初，1cash；含铅青铜，无磁性。",
+    "ru": "Kamyshev 48; ср. Zeno 225720. Вес 3,3929 г, диаметр 21,4×21,7 мм; конец IX — начало X века, 1 cash; свинцовая бронза, немагнитная."
+  },
+  "eBay # 202689435911 Semirechie, Unknown Kaqan, AE cash, Sm. #1589 Sold: $ 17,50": {
+    "zh": "eBay 202689435911。七河地区不详可汗铜质方孔钱，Smirnova 1589，售得17.50美元。",
+    "ru": "eBay 202689435911. Семиречье, неизвестный каган, медная монета с квадратным отверстием, Smirnova 1589; продана за 17,50 USD."
+  },
+  "Kamyshev#48 Compare with Z# 224044 . weight 2.2255 g diameter 21.7x22.4 mm Late IX to early X centuries 1 cash Lead bronze (nonmagnetic)": {
+    "zh": "Kamyshev 48，可与 Zeno 224044比较。重2.2255克，直径21.7×22.4毫米；9世纪末至10世纪初，1cash；含铅青铜，无磁性。",
+    "ru": "Kamyshev 48; ср. Zeno 224044. Вес 2,2255 г, диаметр 21,7×22,4 мм; конец IX — начало X века, 1 cash; свинцовая бронза, немагнитная."
+  },
+  "Central Asia. (Sulu 蘇祿) Türgesh qaghan, 712?-737/8": {
+    "zh": "中亚，突骑施可汗苏禄，712（？）—737／738年。",
+    "ru": "Средняя Азия, тюргешский каган Сулук, 712 (?) — 737/738."
+  },
+  "Smirnova#1585 Kamyshev#21 Obv.: Sogd legend: \"xwt´w w´xswt´wy pny\" Rev.: Turgesh tamga, runic letter \"r\" + Chinese 元 - yuan. Compare with Z# 219750 and 380830 .": {
+    "zh": "Smirnova 1585，Kamyshev 21。正面粟特文“xwt´w w´xswt´wy pny”；背面突骑施徽记、如尼“r”和汉字“元”。可与 Zeno 219750、380830比较。",
+    "ru": "Smirnova 1585, Kamyshev 21. На лицевой стороне согдийская легенда «xwt´w w´xswt´wy pny»; на обороте тюргешская тамга, руническая r и китайский 元. Ср. Zeno 219750 и 380830."
+  },
+  "Türgesh kaghans in Semirech'e": {
+    "zh": "七河地区突骑施可汗钱币。",
+    "ru": "Монета тюргешских каганов Семиречья."
+  },
+  "Turgesh Kaganate, 8th century OBV: Sogdian legend": {
+    "zh": "突骑施汗国，8世纪；正面粟特文铭文。",
+    "ru": "Тюргешский каганат, VIII век; на лицевой стороне согдийская легенда."
+  },
+  "eBay # 202854332456 Semirechie, AE big Cash, Kam. #23 Weight 17.7 gr! Sold: US $416.00": {
+    "zh": "eBay 202854332456。七河地区大型铜质方孔钱，Kam 23号，重17.7克，成交416美元。",
+    "ru": "eBay 202854332456. Семиречье, крупная медная монета с квадратным отверстием, Kam 23, вес 17,7 г; продана за 416 USD."
+  },
+  "The coin was found in Kyrgyzstan. Obverse: Sogdian legend βγy twrkyš γ'γ'n pny . Reverse: Tamgha of turgeshes. Smirnova #1594": {
+    "zh": "发现于吉尔吉斯斯坦。正面粟特文 βγy twrkyš γ'γ'n pny；背面突骑施徽记。Smirnova 1594号。",
+    "ru": "Найдена в Кыргызстане. На лицевой стороне согдийская легенда βγy twrkyš γ'γ'n pny; на обороте тюргешская тамга. Smirnova 1594."
+  },
+  "The coin was found in Kyrgyzstan. Obverse: Non-legible legend or anepigraphic side with inner and outer rims; Reverse: Flat and empty.": {
+    "zh": "发现于吉尔吉斯斯坦。正面有内外轮缘，铭文不清或无铭；背面平坦、素面。",
+    "ru": "Найдена в Кыргызстане. На лицевой стороне внутренний и наружный ободки, неразборчивая легенда либо отсутствие надписи; оборот плоский и пустой."
+  },
+  "Reading by Dr. V. Nastich: Obv.: 'rsl'n kwyl ''rkyn - Sogdian inscription \"Arslan Kül Erkin\" Rev.: two Turkic runas characters \"{ä}r\" and \"{ä}t\" Compare with Z# 223313 and 256580 .": {
+    "zh": "V. Nastich博士释读：正面粟特文 'rsl'n kwyl ''rkyn，“Arslan Kül Erkin”；背面为突厥如尼字符“{ä}r”与“{ä}t”。可与 Zeno 223313、256580比较。",
+    "ru": "Прочтение д-ра В. Настича: согдийская легенда 'rsl'n kwyl ''rkyn — «Arslan Kül Erkin»; на обороте тюркские рунические знаки «{ä}r» и «{ä}t». Ср. Zeno 223313 и 256580."
+  },
+  "SEMIRECH'E: Arslanid, Kul Erkin, 8th century, AE cash Sogdian legend / Turkic runic symbols for R and T, RR.": {
+    "zh": "七河地区，阿尔斯兰系 Kul Erkin，8世纪铜质方孔钱。粟特文铭文／突厥如尼R与T符号；RR。",
+    "ru": "Семиречье, арсланид Kul Erkin, VIII век, медная монета с квадратным отверстием. Согдийская легенда / тюркские рунические знаки R и T; RR."
+  },
+  "SEMIRECH'E: Arslanid, Kul Erkin, 8th century, AE cash Turkic runic symbols for R and T,VF, RR.": {
+    "zh": "七河地区，阿尔斯兰系 Kul Erkin，8世纪铜质方孔钱。突厥如尼R与T符号；VF、RR。",
+    "ru": "Семиречье, арсланид Kul Erkin, VIII век, медная монета с квадратным отверстием. Тюркские рунические знаки R и T; VF, RR."
+  },
+  "according to previous owner its from nearby Bukhara": {
+    "zh": "据前藏家称，来自布哈拉附近。",
+    "ru": "По словам прежнего владельца, происходит из окрестностей Бухары."
+  },
+  "Unearthed in the vicinity of Krasnaya Rechka site, Kyrgyzstan.": {
+    "zh": "出土于吉尔吉斯斯坦 Krasnaya Rechka 遗址附近。",
+    "ru": "Найдена близ городища Красная Речка, Кыргызстан."
+  },
+  "Semirech'e Turgesh (Sulu 蘇祿) Türgesh qaghan, 712?-737/8": {
+    "zh": "七河地区突骑施可汗苏禄，712（？）—737／738年。",
+    "ru": "Семиречье, тюргешский каган Сулук, 712 (?) — 737/738."
+  },
+  "Reading by Dr. V. Nastich: Obv.: 'rsl'n kwyl ''rkyn - Sogdian inscription \"Arslan Kül Erkin\" Rev.: two Turkic runas characters \"{ä}r\" and \"{ä}t\" Compare with Z# 223313 and 245065 .": {
+    "zh": "V. Nastich博士释读：正面粟特文 'rsl'n kwyl ''rkyn，“Arslan Kül Erkin”；背面为突厥如尼字符“{ä}r”与“{ä}t”。可与 Zeno 223313、245065比较。",
+    "ru": "Прочтение д-ра В. Настича: согдийская легенда 'rsl'n kwyl ''rkyn — «Arslan Kül Erkin»; на обороте тюркские рунические знаки «{ä}r» и «{ä}t». Ср. Zeno 223313 и 245065."
+  },
+  "Inscription is more similar to ones at reverses of Tukhus coins of 3rd type than to usual Turgesh coins.": {
+    "zh": "铭文更接近 Tukhus 类型3钱币的背面铭文，而非通常突骑施钱。",
+    "ru": "Легенда ближе к надписям на обороте монет Тухусов типа 3, чем к обычным тюргешским монетам."
+  },
+  "Full size but thin and lightweight specimen with special shape of tamga. Note very weak inner rim at reverse. Compare with Z# 189860 , 280415 and 388667 . Compare also with Z# 33693 , 33694 , 189825 , 189826 , 192869 , 192870 , 219191 , 219192 , 219559 and 219560 with usual tamga.": {
+    "zh": "直径为通常大小，但钱体薄而轻，徽记形状特殊，背面内轮缘很弱。可与 Zeno 189860、280415、388667比较；另与带通常徽记的33693、33694、189825、189826、192869、192870、219191、219192、219559、219560比较。",
+    "ru": "Обычного диаметра, но тонкий лёгкий экземпляр с особой формой тамги; внутренний ободок на обороте очень слабый. Ср. Zeno 189860, 280415 и 388667; также 33693, 33694, 189825, 189826, 192869, 192870, 219191, 219192, 219559 и 219560 с обычной тамгой."
+  },
+  "Smirnova#? Kamyshev #22 Obv.: Soghdian legend Βγy twrkys γ’γ’n pny (Fan of Turgesh's divine Khakan). Rev.: Turhesh tamgha, Runic \"R\" at top and Soghdian inscription at left, read as nkw or prn depending on direction. Compare with Z#39562. Compare also with Z# 209434 and 221032 .": {
+    "zh": "Smirnova编号不详，Kamyshev 22。正面粟特文 Βγy twrkys γ’γ’n pny，释为“神圣突骑施可汗之钱”。背面突骑施徽记，上方如尼“R”，左侧粟特文依阅读方向可读为 nkw 或 prn。可与 Zeno 39562、209434、221032比较。",
+    "ru": "Номер Smirnova неизвестен, Kamyshev 22. Согдийская легенда Βγy twrkys γ’γ’n pny — «fan божественного тюргешского кагана». На обороте тюргешская тамга, руническая R сверху, слева согдийское слово, читаемое как nkw или prn в зависимости от направления. Ср. Zeno 39562, 209434 и 221032."
+  },
+  "Unusual boat-like tamga.": {
+    "zh": "不常见的舟形徽记。",
+    "ru": "Необычная тамга в форме лодки."
+  },
+  "Turgesh, later type": {
+    "zh": "突骑施钱，较晚类型。",
+    "ru": "Тюргешская монета позднего типа."
+  },
+  "Smirnova#1588, Kamyshev#23. Anonymous \"βγy twrkys γ´γ´n pny” / runic letter \"R\" + \"m'γ\" ? Compare with Z#138294. Large and heavy specimen. Compare with Z# 189827 , 189828 and with small type Z# 189830 .": {
+    "zh": "Smirnova 1588，Kamyshev 23。无名发行，“βγy twrkys γ´γ´n pny”／如尼“R”和“m'γ”（？）；可与 Zeno 138294 比较。标本大而重，另可与189827、189828及小型189830比较。",
+    "ru": "Smirnova 1588, Kamyshev 23. Анонимный выпуск: «βγy twrkys γ´γ´n pny» / руническая R и «m'γ» (?); ср. Zeno 138294. Крупный тяжёлый экземпляр; также ср. 189827, 189828 и малый вариант 189830."
+  },
+  "Unearthed in Kyrgyzstan, vicinity of Bishkek.": {
+    "zh": "出土于吉尔吉斯斯坦比什凯克附近。",
+    "ru": "Найдена в окрестностях Бишкека, Кыргызстан."
+  },
+  "Weight, g: 1.29 Size, mm: 17.0x17.1 Mint: ? Date: ? Denomination: heavy cash Metal: bronze (nonmagnetic)": {
+    "zh": "重1.29克，尺寸17.0×17.1毫米；铸地、年代不详。原记录面值为“heavy cash”，材质青铜，无磁性。",
+    "ru": "Вес 1,29 г, размер 17,0×17,1 мм; место выпуска и дата неизвестны. Номинал в источнике: «heavy cash»; бронза, немагнитная."
+  },
+  "I don't have the size and weight on this coin. But the size is approximately 17-19 mm.": {
+    "zh": "原记录未提供准确尺寸与重量，估计直径约17–19毫米。",
+    "ru": "Точные размер и вес в исходной записи не приведены; диаметр оценён примерно в 17–19 мм."
+  },
+  "Full size specimen with special shape of tamga. Compare with Z# 189860 and 256607 . Compare also with Z# 33693 , 33694 , 189825 , 189826 , 192869 , 192870 , 219191 , 219192 , 219559 and 219560 with usual tamga.": {
+    "zh": "通常大小的标本，徽记形状特殊。可与 Zeno 189860、256607比较；另与带通常徽记的33693、33694、189825、189826、192869、192870、219191、219192、219559、219560比较。",
+    "ru": "Экземпляр обычного размера с особой формой тамги. Ср. Zeno 189860 и 256607; также 33693, 33694, 189825, 189826, 192869, 192870, 219191, 219192, 219559 и 219560 с обычной тамгой."
+  },
+  "Big Turgesh": {
+    "zh": "大型突骑施钱。",
+    "ru": "Крупная тюргешская монета."
+  },
+  "turgesh": {
+    "zh": "突骑施钱。",
+    "ru": "Тюргешская монета."
+  },
+  "Central Asia, bronze cash, Turgesh's tamgha, runic character 'R' and prn": {
+    "zh": "中亚青铜方孔钱，带突骑施徽记、如尼字符“R”与 prn。",
+    "ru": "Средняя Азия, бронзовая монета с квадратным отверстием, тюргешской тамгой, рунической R и prn."
+  },
+  "Compare with Z# 224044 and 225720 with normal obverse inscription.": {
+    "zh": "可与正面铭文通常的 Zeno 224044、225720比较。",
+    "ru": "Ср. Zeno 224044 и 225720 с обычной лицевой легендой."
+  },
+  "eBay # 394358025952 Semirech'e AE cash-like coin, Small size Turgesh's tamgha, runic character 'R' and prn.-RR Kamyshev # 37. Weight: 1.65 gr. Diameter: 16.71-18.00 mm. Metal: AE Winning bid: US $149.99 (Obv legend with base outwards)": {
+    "zh": "eBay 394358025952。七河地区小型铜质方孔钱，带突骑施徽记、如尼“R”与 prn，RR。Kamyshev 37，重1.65克，直径16.71–18.00毫米，材质AE；成交149.99美元。正面铭文的字底朝外。",
+    "ru": "eBay 394358025952. Семиречье, малая медная монета с квадратным отверстием, тюргешской тамгой, рунической R и prn; RR. Kamyshev 37, вес 1,65 г, диаметр 16,71–18,00 мм, AE; выигравшая ставка 149,99 USD. Основания букв лицевой легенды обращены наружу."
+  },
+  "eBay # 255856180906 Unusual Semirech’e Turgesh AE cash-like coin. Weight: 4.72 gr. Diameter: 24.29 mm. Metal: AE Winning bid: US $53.03": {
+    "zh": "eBay 255856180906。不常见的七河突骑施铜质方孔钱，4.72克，24.29毫米，材质AE；成交53.03美元。",
+    "ru": "eBay 255856180906. Необычная медная тюргешская монета Семиречья с квадратным отверстием, 4,72 г, 24,29 мм, AE; выигравшая ставка 53,03 USD."
+  },
+  "Semirech'e AE cash-like coin, Small size Turgesh's tamgha, runic character 'R' and prn": {
+    "zh": "七河地区小型铜质方孔钱，带突骑施徽记、如尼字符“R”和 prn。",
+    "ru": "Семиречье, малая медная монета с квадратным отверстием, тюргешской тамгой, рунической R и prn."
+  },
+  "Semireche Turgesh cash-like coin Obverse: Lord Kaghan of Türgesh´s coin βγy twrkyš γ'γ'n pny (Sogdian script) Reverse: turgesh's tamgha": {
+    "zh": "七河地区突骑施方孔钱。正面粟特文 βγy twrkyš γ'γ'n pny，释为“突骑施可汗领主之钱”；背面突骑施徽记。",
+    "ru": "Тюргешская монета Семиречья с квадратным отверстием. Согдийская легенда βγy twrkyš γ'γ'n pny — «монета господина кагана тюргешей»; на обороте тюргешская тамга."
+  },
+  "Ex Leu Numismatik AG : Web Auction 26 8-13 Jul 2023, lot 2037. Starting price: 25 CHF LOCAL ISSUES. Türgesh Kaghans of Semirech'e, Arslanids. Arslan Bilge, 8th century. Cash (Bronze, 21 mm, 2.77 g). Around a central square hole, 'βγy ʾrslʾn pylkʾ xʾγʾn pny', i.e. 'βaγ-ē Arslan Bilga xāγān pan-i' ('Coin of Lord Arslan Bilge Kaghan' in Sogdian). Rev. runic symbols. Kamyshev 46. Lurje 133. Very rare. Areas of weakness and minor earthen deposits, otherwise, good fine. From the collection of Dr. D. Löer, ex Album 34, 23 May 2019, 178. Price realized: 150 CHF": {
+    "zh": "出自 Leu Numismatik AG 网络拍卖26，2023年7月8–13日，第2037号拍品，起价25瑞郎。七河地区突骑施可汗的地方发行，阿尔斯兰系 Arslan Bilge，8世纪。青铜方孔钱，21毫米，2.77克。方孔周围铭文“βγy ʾrslʾn pylkʾ xʾγʾn pny”，读作“βaγ-ē Arslan Bilga xāγān pan-i”，即粟特文“Arslan Bilge可汗领主之钱”。背面如尼符号。Kamyshev 46，Lurje 133。原记录称很罕见；局部铸造较弱及少量泥土附着，其余为良好F。来自D. Löer博士收藏，前为 Album 34，2019年5月23日，第178号拍品；成交150瑞郎。",
+    "ru": "Из Leu Numismatik AG, веб-аукцион 26, 8–13 июля 2023, лот 2037, старт 25 CHF. Местный выпуск тюргешских каганов Семиречья, арсланид Arslan Bilge, VIII век. Бронзовая монета с квадратным отверстием, 21 мм, 2,77 г. Вокруг отверстия «βγy ʾrslʾn pylkʾ xʾγʾn pny», то есть «βaγ-ē Arslan Bilga xāγān pan-i» — «монета господина кагана Арслан Бильге» по-согдийски. На обороте рунические знаки. Kamyshev 46, Lurje 133. Очень редкая; слабые участки и небольшие земляные отложения, в остальном хорошая F. Из собрания д-ра D. Löer, ранее Album 34, 23 мая 2019, лот 178; продана за 150 CHF."
+  },
+  "Semirech’e Turgesh AE cash-like coin. Stolen": {
+    "zh": "七河地区突骑施铜质方孔钱。原记录标注为失窃。",
+    "ru": "Медная тюргешская монета Семиречья с квадратным отверстием. В исходной записи отмечена как украденная."
+  },
+  "Thickness 2.02 mm": {
+    "zh": "厚度2.02毫米。",
+    "ru": "Толщина 2,02 мм."
+  },
+  "Semirech’e Turgesh AE cash-like coin": {
+    "zh": "七河地区突骑施铜质方孔钱。",
+    "ru": "Медная тюргешская монета Семиречья с квадратным отверстием."
+  },
+  "eBay # 256290298177 Semirech'e Arslanids AE cash-like coin. Weight: 3.1 gr. Diameter: 20.34 mm. Metal: AE Winning bid: US $47.00": {
+    "zh": "eBay 256290298177。七河地区阿尔斯兰系铜质方孔钱，3.1克，20.34毫米，材质AE；成交47美元。",
+    "ru": "eBay 256290298177. Семиречье, медная монета Арсланидов с квадратным отверстием, 3,1 г, 20,34 мм, AE; выигравшая ставка 47 USD."
+  },
+  "Arslan Irkin, Turgesh's tamgha, runic character 'R'": {
+    "zh": "Arslan Irkin，带突骑施徽记与如尼字符“R”。",
+    "ru": "Arslan Irkin, тюргешская тамга и руническая R."
+  },
+  "Circled part of legend seems different from the letters on usual Turgesh legend. There is also a possibility of this coin being a fake - both affirmative and doubtful observations are made, this coin will be sent for grading for verification. Personal collection item.": {
+    "zh": "圈出的铭文部分似乎不同于通常突骑施铭文。原记录同时记有支持与质疑真伪的观察，称将送鉴核验；属个人收藏。",
+    "ru": "Обведённая часть легенды, по-видимому, отличается от обычной тюргешской. В записи есть как положительные, так и сомнительные наблюдения о подлинности; автор намерен отправить монету на проверку. Предмет личного собрания."
+  },
+  "Türgesh": {
+    "zh": "突骑施钱。",
+    "ru": "Тюргешская монета."
+  },
+  "Coin with defect": {
+    "zh": "有缺陷的钱币。",
+    "ru": "Монета с дефектом."
+  },
+  "eBay # 256413662299 Semirech'e Turgesh AE cash-like coin. Big size. Weight: 6.3 gr. Diameter: 24.15 mm. Metal: AE Unsold": {
+    "zh": "eBay 256413662299。七河地区大型突骑施铜质方孔钱，6.3克，24.15毫米，材质AE；未售出。",
+    "ru": "eBay 256413662299. Семиречье, крупная медная тюргешская монета с квадратным отверстием, 6,3 г, 24,15 мм, AE; не продана."
+  },
+  "Türgesh qaghan, 712?-737/8": {
+    "zh": "突骑施可汗，712（？）—737／738年。",
+    "ru": "Тюргешский каган, 712 (?) — 737/738."
+  },
+  "eBay # 395206230720 Semirech'e Turgesh heavy (6.81 gr.) AE cash-like coin. Big size. Weight: 6.81 gr. Diameter : 24.69 mm. Metal: AE Unsold": {
+    "zh": "eBay 395206230720。七河地区大型、厚重的突骑施铜质方孔钱，6.81克，24.69毫米，材质AE；未售出。",
+    "ru": "eBay 395206230720. Семиречье, крупная тяжёлая медная тюргешская монета с квадратным отверстием, 6,81 г, 24,69 мм, AE; не продана."
+  },
+  "eBay # 395205590698 Semirech'e Turgesh AE cash-like coin with additional tamghas. Weight: 5.11 gr. Diameter : 24.96 mm. Metal: AE Sold: US $76.00": {
+    "zh": "eBay 395205590698。七河地区突骑施铜质方孔钱，带附加徽记，5.11克，24.96毫米，材质AE；成交76美元。",
+    "ru": "eBay 395205590698. Семиречье, медная тюргешская монета с квадратным отверстием и дополнительными тамгами, 5,11 г, 24,96 мм, AE; продана за 76 USD."
+  },
+  "Turgesh cash with \"M\" or \"V\" shape small symbol. Maybe it should be posted in another section.": {
+    "zh": "突骑施方孔钱，带“M”或“V”形小符号。原记录提出可能应归入另一个栏目。",
+    "ru": "Тюргешская монета с малым знаком в форме M или V. Автор записи допускает иной раздел каталога."
+  },
+  "Compare with Z# 193071 . Compare also with Z# 209434 . Compare also with very light sample Z# 193070 and with large and heavy samples Z# 189827 , 189828 and Z# 189830 , which are of S#1588 type. Compare also with light and very light samples Z# 189830 and Z# 193070 .": {
+    "zh": "可与 Zeno 193071、209434比较，也可与极轻的193070及大而重的189827、189828、189830比较，后者属 S1588 类型。另可比较轻型及极轻型189830、193070。",
+    "ru": "Ср. Zeno 193071 и 209434, а также очень лёгкий 193070 и крупные тяжёлые 189827, 189828, 189830 типа S1588. Также сопоставлены лёгкий и очень лёгкий 189830, 193070."
+  },
+  "Smirnova 1589 Kamishev 24": {
+    "zh": "Smirnova 1589；Kamishev 24。",
+    "ru": "Smirnova 1589; Kamishev 24."
+  },
+  "cf. Z- 185373 From the auction listing: https://www.ebay.com/itm/257461513576?_trkparms=amclksrc%3DI... (257461513576)": {
+    "zh": "参见 Zeno 185373。拍卖条目：https://www.ebay.com/itm/257461513576?_trkparms=amclksrc%3DI... （257461513576）。",
+    "ru": "Ср. Zeno 185373. Аукционное предложение: https://www.ebay.com/itm/257461513576?_trkparms=amclksrc%3DI... (257461513576)."
+  },
+  "Smirnova#1585 Kamyshev#21 Obv.: Sogd legend: \"xwt´w w´xswt´wy pny\" Rev.: Turgesh tamga, runic letter \"r\" + Chinese 元 - yuan. Compare with Z# 219750 and 231600 .": {
+    "zh": "Smirnova 1585，Kamyshev 21。正面粟特文“xwt´w w´xswt´wy pny”；背面突骑施徽记、如尼“r”与汉字“元”。可与 Zeno 219750、231600比较。",
+    "ru": "Smirnova 1585, Kamyshev 21. На лицевой стороне согдийская легенда «xwt´w w´xswt´wy pny»; на обороте тюргешская тамга, руническая r и китайский 元. Ср. Zeno 219750 и 231600."
+  },
+  "Smaller and lightweight specimen with special shape of tamga. Compare with Z# 189860 , 256607 and 280415 . Compare also with Z# 33693 , 33694 , 189825 , 189826 , 192869 , 192870 , 219191 , 219192 , 219559 and 219560 with usual tamga.": {
+    "zh": "较小且轻的标本，徽记形状特殊。可与 Zeno 189860、256607、280415比较；另与带通常徽记的33693、33694、189825、189826、192869、192870、219191、219192、219559、219560比较。",
+    "ru": "Меньший лёгкий экземпляр с особой формой тамги. Ср. Zeno 189860, 256607 и 280415; также 33693, 33694, 189825, 189826, 192869, 192870, 219191, 219192, 219559 и 219560 с обычной тамгой."
+  },
+  "Chach, City of Benakan, unknown ruler": {
+    "zh": "赭时，别那汗城，不详统治者。",
+    "ru": "Чач, город Бенакан, неизвестный правитель."
+  },
+  "Publication: ONS Newsletters #175 , Supplement by M.Fedorov \"Monay circulation in early-mediaeval Sogd (6th - first half of 8th century AD)\" See quote: http://www.charm.ru/images/misc/khanabadcoin.jpg": {
+    "zh": "见 M. Fedorov《早期中世纪粟特货币流通（公元6世纪至8世纪前半叶）》，ONS Newsletter 175增刊。相关图：http://www.charm.ru/images/misc/khanabadcoin.jpg 。",
+    "ru": "Публикация: M. Fedorov, «Денежное обращение в раннесредневековом Согде (VI — первая половина VIII века н. э.)», приложение к ONS Newsletter 175. См. изображение: http://www.charm.ru/images/misc/khanabadcoin.jpg ."
+  },
+  "Circa 640-708 AD obv. 4 characters around square hole: Kai Yuan Tong Bao - coin legend of the Chinese Tang dynasty rev. Tamgha Smirnova #1380": {
+    "zh": "约公元640–708年。正面四字“开元通宝”围绕方孔，为唐朝钱文；背面为徽记。Smirnova 1380号。",
+    "ru": "Около 640–708 гг. На лицевой стороне вокруг квадратного отверстия четыре знака 開元通寶, монетная легенда китайской династии Тан; на обороте тамга. Smirnova 1380."
+  },
+  "King Ghurak 710-737 AD, coin ca. 710-712 AD. obv: Sogdian legend MLK' 'WR 'LEK (King Ghurak). rev: Dynastic tamgha to the left of the square hole, tamgha of Samarqand to the right. Smirnova #359": {
+    "zh": "古拉克王，710–737年；此钱约710–712年。正面粟特文 MLK' 'WR 'LEK（“古拉克王”）；背面方孔左侧为王朝徽记，右侧为撒马尔罕徽记。Smirnova 359号。",
+    "ru": "Царь Гурак, 710–737; монета около 710–712. На лицевой стороне согдийская легенда MLK' 'WR 'LEK («царь Гурак»); на обороте слева от отверстия династическая тамга, справа тамга Самарканда. Smirnova 359."
+  },
+  "Zeimal', E. V. \"The Circulation of Coins in Central Asia during the Early Medieval Period (Fifth-Eight Centuries A.D.)\", Bulletin of the Asia Institute, New Series, Volume 8, Bloomfield Hills, pp. 245-267, 1994. Coin #15 Extremely rare From Varakhsha site - one of the most ancient cities of the Bukhara oasis, located in 40 kms to the west from Bukhara - Bukharhudat's capital (VI-VII C.) - governors of the low part of a valley of the river Zaravshan.": {
+    "zh": "Zeimal, E. V.，“The Circulation of Coins in Central Asia during the Early Medieval Period (Fifth-Eight Centuries A.D.)”，Bulletin of the Asia Institute，新系列8，Bloomfield Hills，第245–267页，1994年，15号钱币。原记录称极罕见，来自瓦拉赫沙遗址；该城是布哈拉绿洲最古老的城市之一，位于布哈拉以西40公里，6–7世纪为布哈拉胡达特的都城，其统治泽拉夫善河谷下游。",
+    "ru": "Zeimal, E. V., «The Circulation of Coins in Central Asia during the Early Medieval Period (Fifth-Eight Centuries A.D.)», Bulletin of the Asia Institute, New Series 8, Bloomfield Hills, с. 245–267, 1994, монета № 15. В источнике названа крайне редкой, из Варахши — одного из древнейших городов Бухарского оазиса, в 40 км к западу от Бухары, столицы бухархудатов VI–VII веков, правителей нижней долины Зеравшана."
+  },
+  "Sogdian - King Shishpir obv: Sogdian legend above and below square hole rev: Symbols and tamghas, one on each side of square hole. Smirnova # 52": {
+    "zh": "粟特，施什皮尔王。正面方孔上下为粟特文铭文；背面方孔两侧各有符号及徽记。Smirnova 52号。",
+    "ru": "Согд, царь Шишпир. На лицевой стороне согдийская легенда над и под квадратным отверстием; на обороте по знаку и тамге с каждой стороны отверстия. Smirnova 52."
+  },
+  "S0359 Central Asia AE coin, Gurek": {
+    "zh": "S0359，中亚古拉克铜钱。",
+    "ru": "S0359, Средняя Азия, медная монета Гурака."
+  },
+  "Original description: Eastern Sogdiana, King Bidyan ruler of Panch. Obv. Tamgha frames the square hold. Rev. Master Afshin Bidyan of Panch": {
+    "zh": "原描述：东粟特，潘治统治者 Bidyan 王。正面徽记围绕方孔；背面铭文为“潘治领主 Afshin Bidyan”。",
+    "ru": "Исходное описание: Восточный Согд, царь Бидьян, правитель Панча. На лицевой стороне тамга обрамляет квадратное отверстие; на обороте «господин афшин Бидьян Панча»."
+  },
+  "Western Sogdiana, Paikend. Cash type coin. Obv. Bukharan tamghas on each side of the square hole, cross below (10?), Sogdian legend above. Rev. Blank": {
+    "zh": "西粟特，沛肯德，方孔钱。正面方孔两侧为布哈拉徽记，下方为十字（10？），上方粟特文铭文；背面素面。",
+    "ru": "Западный Согд, Пайкенд, монета с квадратным отверстием. На лицевой стороне бухарские тамги по бокам отверстия, крест внизу (10?) и согдийская легенда сверху; оборот пустой."
+  },
+  "ikhshid Turkhun Smirnova 215": {
+    "zh": "伊赫希德 Turkhun；Smirnova 215。",
+    "ru": "Ихшид Тархун; Smirnova 215."
+  },
+  "Gurak AD710-738. Smirnova359": {
+    "zh": "古拉克，710–738年；Smirnova 359。",
+    "ru": "Гурак, 710–738; Smirnova 359."
+  },
+  "Tutuks, 7-8th century Smirnova 1445": {
+    "zh": "都督钱，7–8世纪；Smirnova 1445。",
+    "ru": "Монета тутуков, VII–VIII века; Smirnova 1445."
+  },
+  "King Turghar 738-750 Smirnova 519": {
+    "zh": "图尔伽尔王，738–750年；Smirnova 519。",
+    "ru": "Царь Тургар, 738–750; Smirnova 519."
+  },
+  "Smirnova #43-47 Unearthed in Xinjiang, Jimsar Beiting ancient site": {
+    "zh": "Smirnova 43–47号。出土于新疆吉木萨尔北庭古城。",
+    "ru": "Smirnova 43–47. Найдена на древнем городище Бэйтин в Джимсаре, Синьцзян."
+  },
+  "Smirnova 43-47, but with additional dot. Probably unique Found in Northern Xinjiang": {
+    "zh": "Smirnova 43–47类型，但有附加圆点，可能是孤品。发现于新疆北部。",
+    "ru": "Тип Smirnova 43–47, но с дополнительной точкой; возможно, уникальный экземпляр. Найдена в Северном Синьцзяне."
+  },
+  "Type: Smirnova 48-77": {
+    "zh": "类型：Smirnova 48–77。",
+    "ru": "Тип: Smirnova 48–77."
+  },
+  "Type: Smirnova 359-399": {
+    "zh": "类型：Smirnova 359–399。",
+    "ru": "Тип: Smirnova 359–399."
+  },
+  "Found at the ancient Varaksha site, 2001": {
+    "zh": "2001年发现于瓦拉赫沙古城。",
+    "ru": "Найдена на древнем городище Варахша в 2001 году."
+  },
+  "Found at the ancient Varakhsha site, 2001": {
+    "zh": "2001年发现于瓦拉赫沙古城。",
+    "ru": "Найдена на древнем городище Варахша в 2001 году."
+  },
+  "S0106 Sogdian AE coin, Warhuman, 7th C.": {
+    "zh": "S0106，粟特 Warhuman 铜钱，7世纪。",
+    "ru": "S0106, медная согдийская монета Вархумана, VII век."
+  },
+  "Smir 657. Obv: Tamgha of Samarkand and the triskele tamgha of the kings dynasty. Rev: Sogdian legend: \"wrk wrtrmwk` MLK`.": {
+    "zh": "Smirnova 657。正面为撒马尔罕徽记及王朝的三旋臂徽记；背面粟特文“wrk wrtrmwk` MLK`”。",
+    "ru": "Smirnova 657. На лицевой стороне тамга Самарканда и династическая тамга-трискель; на обороте согдийская легенда «wrk wrtrmwk` MLK`»."
+  },
+  "Smir 657. Ikshid Urk Wartramuka. Rev: sogdian legend: \"wrk wrtrmwk´ MLK`\".": {
+    "zh": "Smirnova 657。伊赫希德 Urk Wartramuka；背面粟特文“wrk wrtrmwk´ MLK`”。",
+    "ru": "Smirnova 657. Ихшид Урк Вартрамука; на обороте согдийская легенда «wrk wrtrmwk´ MLK`»."
+  },
+  "S0657 Sogdian AE coin, Ikhshid Urk Wartramuka ca.675-696AD, Samarqand": {
+    "zh": "S0657，撒马尔罕伊赫希德 Urk Wartramuka 的粟特铜钱，约675–696年。",
+    "ru": "S0657, согдийская медная монета ихшида Урк Вартрамуки из Самарканда, около 675–696."
+  },
+  "S0168 Sogdian AE coin, Mastan (?), Samarqand 7th C.": {
+    "zh": "S0168，撒马尔罕 Mastan（？）的粟特铜钱，7世纪。",
+    "ru": "S0168, согдийская медная монета Mastan (?) из Самарканда, VII век."
+  },
+  "Farankat. Portrait - tamgha of Bukharan type, with sogdian legend.": {
+    "zh": "Farankat。肖像、布哈拉式徽记与粟特文铭文。",
+    "ru": "Фаранкат: портрет, тамга бухарского типа и согдийская легенда."
+  },
+  "SOGDIANA, WESTERN SOGD, Bukhara, Ramchitak (2nd half of the 7th century), AE cash, Ref.: Smirnova, 1392-1418; Fedorov, ONS 175 (2003), Suppl., p.17, 32. Very Rare. Very weak casting of the obverse. This image is published with the kind permission of Jean Elsen & ses Fils s.a.": {
+    "zh": "粟特西部布哈拉，Ramchitak，7世纪后半叶，铜质方孔钱。Smirnova 1392–1418；Fedorov，ONS 175（2003）增刊，第17页、32号。原记录称很罕见，正面铸造很弱。图片经 Jean Elsen & ses Fils s.a. 许可刊载。",
+    "ru": "Западный Согд, Бухара, Рамчитак, вторая половина VII века, медная монета с квадратным отверстием. Smirnova 1392–1418; Fedorov, приложение к ONS 175 (2003), с. 17, № 32. Очень редкая; очень слабое литьё лицевой стороны. Изображение опубликовано с разрешения Jean Elsen & ses Fils s.a."
+  },
+  "SOGDIANA, IKHSHID SOGD OF SAMARQAND, Wuzurg or Tonyukuk ? (end of the 7th century), AE cash, Ref.: Smirnova, 78-100; Fedorov, ONS 175 (2003), Suppl., p.7, 9. Very Rare. This image is published with the kind permission of Jean Elsen & ses Fils s.a. I have not seen the name Tonyukuk in connection with these coins before???/hfrans": {
+    "zh": "粟特撒马尔罕伊赫希德，Wuzurg 或 Tonyukuk（？），7世纪末铜质方孔钱。Smirnova 78–100；Fedorov，ONS 175（2003）增刊，第7页、9号。原记录称很罕见，图片经 Jean Elsen & ses Fils s.a. 许可刊载。署名hfrans的评论称此前未见将这些钱与Tonyukuk联系起来。",
+    "ru": "Ихшидский Согд Самарканда, Wuzurg или Tonyukuk (?), конец VII века, медная монета с квадратным отверстием. Smirnova 78–100; Fedorov, приложение к ONS 175 (2003), с. 7, № 9. Очень редкая; изображение с разрешения Jean Elsen & ses Fils s.a. В комментарии hfrans отмечено, что связь этих монет с Tonyukuk ему ранее не встречалась."
+  },
+  "SOGDIANA, IKHSHID SOGD OF SAMARQAND, Urk Wartramuka (c. 675-696 ?), AE cash, Ref.: Smirnova, 657ff; Fedorov, ONS 175 (2003), Suppl., p.9, 12. Very Rare. A nice large and heavy specimen. This image is published with the kind permission of Jean Elsen & ses Fils s.a.": {
+    "zh": "粟特撒马尔罕伊赫希德 Urk Wartramuka，约675–696年（？），铜质方孔钱。Smirnova 657及后续；Fedorov，ONS 175（2003）增刊，第9页、12号。原记录称很罕见，是良好的大而重标本。图片经 Jean Elsen & ses Fils s.a. 许可刊载。",
+    "ru": "Ихшидский Согд Самарканда, Урк Вартрамука, около 675–696 (?), медная монета с квадратным отверстием. Smirnova 657 и далее; Fedorov, приложение к ONS 175 (2003), с. 9, № 12. Очень редкая, хороший крупный тяжёлый экземпляр. Изображение с разрешения Jean Elsen & ses Fils s.a."
+  },
+  "double strike on averse, 2 big gems necklace type": {
+    "zh": "正面复打，项链带两颗大珠的类型。",
+    "ru": "Двойной удар на лицевой стороне; тип ожерелья с двумя крупными бусинами."
+  },
+  "Auc 84-1105. SEMIRECH'E (JETY-SU), TURGESH KHAQANATE, Tukhus, AE cash, from the 730s, Droit : Sogdian legend naming the khaqan of Turgesh. Revers : Sogdian legend reading lord of the Tukhus, divided by a specific tamgha. Ref.: Smirnova, 1625ff; Fedorov, ONS 178 (2004), p.13, 5; Kamichev, 40. 1,56g. Very Rare. This image is published with kind permission from Jean ELSEN & ses Fils.": {
+    "zh": "拍卖84–1105。七河地区突骑施汗国，Tukhus，730年代起的铜质方孔钱。正面粟特文提及突骑施可汗；背面粟特文释为“Tukhus领主”，由特殊徽记分隔。Smirnova 1625及后续；Fedorov，ONS 178（2004），第13页、5号；Kamichev 40。重1.56克，原记录称很罕见。图片经 Jean Elsen & ses Fils 许可刊载。",
+    "ru": "Аукцион 84–1105. Семиречье, Тюргешский каганат, Тухус, медная монета с квадратным отверстием с 730-х годов. Согдийская лицевая легенда называет тюргешского кагана; оборотная читается «господин Тухусов» и разделена особой тамгой. Smirnova 1625 и далее; Fedorov, ONS 178 (2004), с. 13, № 5; Kamichev 40. 1,56 г, очень редкая. Изображение с разрешения Jean Elsen & ses Fils."
+  },
+  "Gurak AD710-738 Smirnova359": {
+    "zh": "古拉克，710–738年；Smirnova 359。",
+    "ru": "Гурак, 710–738; Smirnova 359."
+  },
+  "Those coins were NEVER unearthed in Bukhara oasis, but always in Eastern Sogdiana. Exact mint and territory of circulation are unknown.": {
+    "zh": "原记录指出，这类钱从未出土于布哈拉绿洲，而总是发现于东粟特；确切铸地和流通区域不详。",
+    "ru": "В исходной записи подчёркнуто, что эти монеты не находили в Бухарском оазисе, а всегда в Восточном Согде; точное место выпуска и территория обращения неизвестны."
+  },
+  "“Av.: The sogdian legend counterclockwise: “βγy γ’γ’n pny” (sovereign khakan’s coin) in the field around square hole. Rev.: Plain? These new type was first time discovered by E.V.Rtveladze and V.A.Livshitz. Only five specimens are known, all from sites in Chach oasis. Preliminary dating is first half of 8th cent. AD.” By L.S. Baratova. Smir 1376": {
+    "zh": "据 L. S. Baratova：正面方孔周围逆时针粟特文“βγy γ’γ’n pny”，释为“君主可汗之钱”；背面素面（？）。此新类型由 E. V. Rtveladze 和 V. A. Livshitz 首次发现，已知仅5枚，均出自赭时绿洲遗址，初步定为公元8世纪前半叶。Smirnova 1376。",
+    "ru": "По Л. С. Баратовой: на лицевой стороне против часовой стрелки вокруг квадратного отверстия согдийская легенда «βγy γ’γ’n pny» — «монета государя-кагана»; оборот гладкий (?). Тип впервые обнаружен Э. В. Ртвеладзе и В. А. Лившицем; известно пять экземпляров, все с городищ Чачского оазиса. Предварительная дата — первая половина VIII века. Smirnova 1376."
+  },
+  "“Obv: Square hole enclosed in narrow frame. To the right a H-formed tamgha. To the left an inscription – one Sogdian word γ'γ'n. Narrow rim on border. Rev: Below enclosed in frame square hole one word 'lγ' (reading by O. I. Smirnova) The word alga as Smirnova considered meant the name of one of the oguz clan yagma which live in the Naryn valley in 10th century.” By L.S. Baratova.": {
+    "zh": "据 L. S. Baratova：正面方孔围有窄框，右侧H形徽记，左侧粟特文单词 γ'γ'n，外缘为窄轮。背面有框的方孔下方为 'lγ'（O. I. Smirnova释读）；Smirnova认为 alga 是10世纪居于纳伦河谷的乌古斯部族 yagma 的名称。",
+    "ru": "По Л. С. Баратовой: квадратное отверстие на лицевой стороне в узкой рамке, справа H-образная тамга, слева согдийское слово γ'γ'n; узкий наружный ободок. На обороте под обрамлённым отверстием слово 'lγ' (чтение О. И. Смирновой). Смирнова считала alga названием огузского рода yagma, жившего в долине Нарына в X веке."
+  },
+  "Related link: http://www.charm.ru/images/misc/khanabadcoin.jpg": {
+    "zh": "相关图：http://www.charm.ru/images/misc/khanabadcoin.jpg 。",
+    "ru": "Связанное изображение: http://www.charm.ru/images/misc/khanabadcoin.jpg ."
+  },
+  "Chach, Benakan domain": {
+    "zh": "赭时，别那汗领地。",
+    "ru": "Чач, владение Бенакан."
+  },
+  "Sogdian legend (according to Smirnova): MLK'/w/tz/nw/tr/k": {
+    "zh": "据 Smirnova，粟特文铭文为 MLK'/w/tz/nw/tr/k。",
+    "ru": "Согдийская легенда по Smirnova: MLK'/w/tz/nw/tr/k."
   }
 }

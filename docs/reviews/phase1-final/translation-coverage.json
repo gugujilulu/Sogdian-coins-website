@@ -1,37 +1,145 @@
 {
   "uniqueSourceTexts": 809,
-  "localizedTexts": 68,
+  "localizedTexts": 314,
   "recordsWithSources": 1007,
-  "fullyMappedRecords": 238,
+  "fullyMappedRecords": 484,
   "fullRecordIds": [
+    "sr3",
+    "sr6",
+    "sr9",
+    "sr14",
+    "sr20",
+    "sr21",
+    "un16",
+    "un22",
+    "un24",
+    "es19",
+    "es18a",
+    "dali",
     "zeno-388312",
+    "zeno-334987",
+    "zeno-264408",
     "zeno-264184",
+    "zeno-227845",
     "zeno-182898",
+    "zeno-130578",
+    "zeno-81165",
+    "zeno-77712",
+    "zeno-57887",
+    "zeno-54032",
+    "zeno-54031",
+    "zeno-29609",
+    "zeno-30750",
+    "cng611-576",
     "sarc28-145",
     "sarc28-146",
+    "sarc22-55",
+    "sarc52-1614",
+    "sogdcoins-es28",
+    "zeno-14",
+    "zeno-1033",
+    "zeno-1359",
+    "zeno-1470",
+    "zeno-1740",
     "zeno-1741",
     "zeno-1742",
+    "zeno-1766",
+    "zeno-1767",
+    "zeno-1768",
+    "zeno-3502",
+    "zeno-3506",
+    "zeno-5196",
+    "zeno-5955",
+    "zeno-5956",
+    "zeno-5957",
     "zeno-6315",
     "zeno-6316",
     "zeno-6317",
     "zeno-9305",
+    "zeno-9955",
     "zeno-12058",
+    "zeno-14279",
+    "zeno-19519",
+    "zeno-21528",
+    "zeno-22477",
+    "zeno-25614",
+    "zeno-29463",
+    "zeno-29464",
+    "zeno-29465",
     "zeno-29466",
     "zeno-29467",
     "zeno-29468",
+    "zeno-29469",
+    "zeno-29470",
+    "zeno-29494",
+    "zeno-29519",
+    "zeno-33693",
+    "zeno-33694",
+    "zeno-36039",
+    "zeno-37818",
+    "zeno-37836",
+    "zeno-39562",
+    "zeno-42008",
+    "zeno-43587",
     "zeno-48339",
     "zeno-48340",
     "zeno-48341",
     "zeno-48342",
     "zeno-48343",
+    "zeno-48344",
     "zeno-48459",
     "zeno-52720",
+    "zeno-52721",
     "zeno-52722",
+    "zeno-64323",
+    "zeno-68771",
+    "zeno-71774",
+    "zeno-75664",
+    "zeno-76172",
+    "zeno-101716",
+    "zeno-112920",
+    "zeno-121305",
+    "zeno-121668",
+    "zeno-122116",
+    "zeno-122146",
+    "zeno-122190",
+    "zeno-122191",
+    "zeno-122194",
+    "zeno-124650",
+    "zeno-130128",
+    "zeno-131703",
+    "zeno-134041",
+    "zeno-138294",
     "zeno-138822",
     "zeno-138823",
     "zeno-139994",
+    "zeno-141054",
+    "zeno-144100",
+    "zeno-146049",
+    "zeno-146051",
+    "zeno-152380",
+    "zeno-163465",
+    "zeno-164374",
+    "zeno-167967",
     "zeno-183993",
+    "zeno-185372",
+    "zeno-185373",
+    "zeno-185374",
+    "zeno-186447",
+    "zeno-189825",
+    "zeno-189826",
+    "zeno-189827",
+    "zeno-189828",
+    "zeno-189830",
+    "zeno-189860",
+    "zeno-189862",
+    "zeno-190504",
     "zeno-192213",
+    "zeno-192869",
+    "zeno-192870",
+    "zeno-193070",
+    "zeno-193071",
+    "zeno-194357",
     "zeno-195908",
     "zeno-195911",
     "zeno-195912",
@@ -40,45 +148,109 @@
     "zeno-195915",
     "zeno-195916",
     "zeno-195917",
+    "zeno-197475",
+    "zeno-197707",
+    "zeno-198732",
+    "zeno-198733",
+    "zeno-198734",
+    "zeno-205150",
+    "zeno-208002",
+    "zeno-209188",
+    "zeno-209434",
     "zeno-209687",
+    "zeno-209778",
+    "zeno-216063",
+    "zeno-218164",
     "zeno-218174",
+    "zeno-218184",
+    "zeno-219191",
+    "zeno-219192",
+    "zeno-219559",
     "zeno-219560",
+    "zeno-219750",
+    "zeno-221032",
+    "zeno-223139",
+    "zeno-223140",
+    "zeno-223313",
+    "zeno-224044",
+    "zeno-224990",
+    "zeno-225720",
+    "zeno-229758",
+    "zeno-231600",
     "zeno-236364",
+    "zeno-239010",
+    "zeno-239181",
+    "zeno-240151",
+    "zeno-243599",
+    "zeno-244241",
+    "zeno-245065",
+    "zeno-245253",
+    "zeno-245254",
     "zeno-245255",
     "zeno-245256",
     "zeno-245258",
     "zeno-246692",
+    "zeno-250621",
+    "zeno-253430",
+    "zeno-256250",
+    "zeno-256580",
+    "zeno-256606",
+    "zeno-256607",
     "zeno-258296",
     "zeno-258297",
+    "zeno-259925",
+    "zeno-260161",
     "zeno-265648",
+    "zeno-265650",
     "zeno-265652",
     "zeno-265653",
+    "zeno-265922",
     "zeno-268477",
     "zeno-268478",
     "zeno-268479",
+    "zeno-268891",
+    "zeno-270341",
+    "zeno-270411",
     "zeno-273093",
     "zeno-273094",
     "zeno-273095",
     "zeno-273096",
     "zeno-280361",
+    "zeno-280415",
+    "zeno-281908",
+    "zeno-281909",
     "zeno-281913",
     "zeno-287761",
     "zeno-287779",
+    "zeno-287783",
     "zeno-292688",
     "zeno-293230",
+    "zeno-294294",
     "zeno-298439",
     "zeno-298678",
     "zeno-301207",
+    "zeno-306589",
+    "zeno-306590",
     "zeno-307662",
     "zeno-308246",
+    "zeno-310413",
     "zeno-315546",
     "zeno-315547",
+    "zeno-316983",
+    "zeno-319237",
     "zeno-321852",
     "zeno-321853",
     "zeno-321947",
     "zeno-321948",
+    "zeno-322573",
+    "zeno-322580",
+    "zeno-322582",
+    "zeno-323048",
+    "zeno-324401",
+    "zeno-326121",
     "zeno-327146",
     "zeno-327147",
+    "zeno-327150",
     "zeno-327152",
     "zeno-327153",
     "zeno-327154",
@@ -89,14 +261,30 @@
     "zeno-327162",
     "zeno-327179",
     "zeno-327287",
+    "zeno-328293",
+    "zeno-328571",
+    "zeno-329093",
+    "zeno-329314",
+    "zeno-329515",
+    "zeno-333336",
+    "zeno-339159",
+    "zeno-353451",
     "zeno-354092",
     "zeno-354093",
+    "zeno-377880",
+    "zeno-380830",
+    "zeno-388667",
+    "zeno-901",
+    "zeno-980",
+    "zeno-1031",
+    "zeno-1032",
     "zeno-1062",
     "zeno-1063",
     "zeno-1064",
     "zeno-1065",
     "zeno-1066",
     "zeno-1067",
+    "zeno-1068",
     "zeno-1074",
     "zeno-1075",
     "zeno-1076",
@@ -106,11 +294,49 @@
     "zeno-1080",
     "zeno-1081",
     "zeno-1082",
+    "zeno-1092",
+    "zeno-1144",
+    "zeno-2665",
+    "zeno-3392",
+    "zeno-3396",
     "zeno-3505",
+    "zeno-5198",
+    "zeno-5245",
+    "zeno-5463",
+    "zeno-5464",
+    "zeno-6283",
+    "zeno-6284",
     "zeno-6291",
     "zeno-6292",
+    "zeno-6875",
+    "zeno-6876",
+    "zeno-12663",
+    "zeno-12667",
+    "zeno-12680",
+    "zeno-12681",
+    "zeno-12682",
+    "zeno-12683",
+    "zeno-12684",
+    "zeno-12685",
+    "zeno-12965",
+    "zeno-13750",
+    "zeno-13753",
+    "zeno-13754",
     "zeno-15831",
+    "zeno-16095",
+    "zeno-16171",
+    "zeno-16327",
+    "zeno-16482",
+    "zeno-16575",
+    "zeno-16987",
+    "zeno-16989",
+    "zeno-17200",
+    "zeno-17931",
     "zeno-18957",
+    "zeno-20046",
+    "zeno-22476",
+    "zeno-29348",
+    "zeno-29349",
     "zeno-29486",
     "zeno-29487",
     "zeno-29488",
@@ -120,21 +346,37 @@
     "zeno-29492",
     "zeno-29493",
     "zeno-29608",
+    "zeno-35622",
     "zeno-37840",
     "zeno-41898",
     "zeno-43897",
     "zeno-45586",
     "zeno-46641",
     "zeno-46642",
+    "zeno-46922",
+    "zeno-46923",
+    "zeno-46924",
     "zeno-48345",
     "zeno-48346",
     "zeno-48457",
     "zeno-48458",
+    "zeno-53729",
     "zeno-53731",
     "zeno-53732",
+    "zeno-53733",
+    "zeno-54082",
+    "zeno-54083",
+    "zeno-61612",
+    "zeno-76181",
     "zeno-76219",
     "zeno-76220",
+    "zeno-110491",
     "zeno-112056",
+    "zeno-121456",
+    "zeno-121664",
+    "zeno-121667",
+    "zeno-123062",
+    "zeno-128867",
     "zeno-144549",
     "zeno-152385",
     "zeno-152386",
@@ -177,6 +419,7 @@
     "zeno-306497",
     "zeno-309870",
     "zeno-318865",
+    "zeno-322581",
     "zeno-326892",
     "zeno-327964",
     "zeno-331591",
@@ -216,6 +459,7 @@
     "zeno-388560",
     "zeno-971",
     "zeno-21303",
+    "zeno-121669",
     "zeno-146048",
     "zeno-156700",
     "zeno-156701",
@@ -228,6 +472,8 @@
     "zeno-327165",
     "zeno-327850",
     "zeno-327896",
+    "zeno-123063",
+    "zeno-127887",
     "zeno-321956",
     "zeno-321966",
     "zeno-214532",
@@ -246,84 +492,84 @@
   "entries": [
     {
       "text": "Square-hole bronze; Türgesh tamgha, runic sign and Chinese yuan character.",
-      "localized": false,
+      "localized": true,
       "records": [
         "sr3"
       ]
     },
     {
       "text": "Sogdian royal legend; a large stylized Türgesh tamgha on reverse.",
-      "localized": false,
+      "localized": true,
       "records": [
         "sr6"
       ]
     },
     {
       "text": "Obv: Sogdian legend: yn´l tkyn xwbw pny , \"Fen of king Inal-Tegin\". Rev: Turgesh-tamgha, runic letter \"p\" and sogdian word \"prn\". Kam 33. This image is published with kind permission from “COINS OF CENTRAL ASIA”.",
-      "localized": false,
+      "localized": true,
       "records": [
         "sr9"
       ]
     },
     {
       "text": "Legends on both sides link the Tukhus ruler and Türgesh kagan.",
-      "localized": false,
+      "localized": true,
       "records": [
         "sr14"
       ]
     },
     {
       "text": "Sogdian legend; four depressed trident-like signs on reverse.",
-      "localized": false,
+      "localized": true,
       "records": [
         "sr20"
       ]
     },
     {
       "text": "Four Arabic words around the aperture; plain reverse. Historical attribution requires review.",
-      "localized": false,
+      "localized": true,
       "records": [
         "sr21"
       ]
     },
     {
       "text": "Sogdian legend around square hole; plain reverse. Regional attribution is tentative.",
-      "localized": false,
+      "localized": true,
       "records": [
         "un16"
       ]
     },
     {
       "text": "Sogdian legend on obverse; reverse has tamgha left and inscription right. Unpublished in this catalogue.",
-      "localized": false,
+      "localized": true,
       "records": [
         "un22"
       ]
     },
     {
       "text": "Matching tamghas flank the hole; reverse inscription repeats one word three times. Unpublished in this catalogue.",
-      "localized": false,
+      "localized": true,
       "records": [
         "un24"
       ]
     },
     {
       "text": "Paired tamghas and Sogdian royal inscription around a square hole.",
-      "localized": false,
+      "localized": true,
       "records": [
         "es19"
       ]
     },
     {
       "text": "Paired tamghas; reverse inscription in two concentric lines.",
-      "localized": false,
+      "localized": true,
       "records": [
         "es18a"
       ]
     },
     {
       "text": "Cast copper-alloy coin from Kucha with four Chinese characters around its square hole.",
-      "localized": false,
+      "localized": true,
       "records": [
         "dali"
       ]
@@ -337,14 +583,14 @@
     },
     {
       "text": "Pendjikent AE, Nana, lady of Panch",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-334987"
       ]
     },
     {
       "text": "Pendjikend, AE unit, Lady Nana",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-264408"
       ]
@@ -361,7 +607,7 @@
     },
     {
       "text": "Samarqand Soghd, domain Panch, lady Nana",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-227845"
       ]
@@ -375,63 +621,63 @@
     },
     {
       "text": "Penjikent, Nana, lady of Panch. Smir type 3: # 834-996",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-130578"
       ]
     },
     {
       "text": "Domain Panch / Penjikent, lady Nana. Obv. Tamgha frames square hole. Rev.- The sogdian legend reads: \"pncy nn δβnpnwh\" (Nana, lady of Panch ( or Nana, city goddess of Penjikent?)) Mint: Penjikent Date: 8th cent. AD Metal: AE, cast.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-81165"
       ]
     },
     {
       "text": "Ex Stephen Album rare coins: Auction 7: Lot 97 SOGDIANA: Queen Nana, 709-722, AE cash (1.60g), Panchekanth. Smirnova-769. Circular semi-italic Sogdian legend / Tamgha of Panchekanth type around square hole.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-77712"
       ]
     },
     {
       "text": "rather similar to Smirnova 834-36",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-57887"
       ]
     },
     {
       "text": "Smirnova 894",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-54032"
       ]
     },
     {
       "text": "Smirnova 890",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-54031"
       ]
     },
     {
       "text": "Smirnova #834. Seems to be first Nana's coin in the database...",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-29609"
       ]
     },
     {
       "text": "Different legend in compare with my #29609. On obverse: Pncy nnδβ’mpnh The difference in sense is incomprehensible. Smirnova #769.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-30750"
       ]
     },
     {
       "text": "Two source photographs show the same rough-edged specimen with identical obverse crack and deposits. Gray and white background versions are duplicates.",
-      "localized": false,
+      "localized": true,
       "records": [
         "cng611-576"
       ]
@@ -446,56 +692,56 @@
     },
     {
       "text": "The non-square-looking hole on reverse corresponds to a worn/corroded hole; exact matching catalogue image verified.",
-      "localized": false,
+      "localized": true,
       "records": [
         "sarc22-55"
       ]
     },
     {
       "text": "Distinct from Bactrianumis product coin: asymmetric hole projections and very different obverse/reverse deposits. Do not label this photo Zeno264408.",
-      "localized": false,
+      "localized": true,
       "records": [
         "sarc52-1614"
       ]
     },
     {
       "text": "300×150 source photo. Distinct within this set; low-resolution image limits precise duplicate checking against future imports.",
-      "localized": false,
+      "localized": true,
       "records": [
         "sogdcoins-es28"
       ]
     },
     {
       "text": "Central Asia -Semirechie, Turgesh Kaqanate, 8th century. Obverse: Sogdian legend xst' w'xswt'wy pny (coin of the King Vahshutava) around square hole. Reverse: Tamgha of Turgesh in the shape of a runic letter R in the left field, character YUAN to the right. 4.41 grams, 22.9 mm. A. Kamyshev's \"Early Medieval Monetary Complex of Semirechie\" listed as # 21. Good Very Fine and Extremely rare.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-14"
       ]
     },
     {
       "text": "Arslanids - Late 9th to early 10 centuries. Kamyshev's \"Monetary Compleks of Semirechie\" #47",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-1033"
       ]
     },
     {
       "text": "Obv.: Sogdian script βγy twrkyš γ'γ'n pny (by Smirnova) Rev.: Turgesh's tamgha Unearthed at the ancient site Kanka (near Tashkent, Uzbekistan)",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-1359"
       ]
     },
     {
       "text": "Image property: A.Basok",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-1470"
       ]
     },
     {
       "text": "Turhesh's kaqanate. 2nd half of the 8th - early 9th century. Obv. Sogdian legend around square hole. Rev. Turgesh's tamgha. Runic letter \"R\" in left field, Sogdian legend (one word \"prn\") below. Very rare!",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-1740"
       ]
@@ -510,63 +756,63 @@
     },
     {
       "text": "This coin is the type of Kamyshev's #30 in his book \"Early Medieval Monetary Complex of Semirechie\" except the runic letter \"R\" is located directly below the square hole. At this point reference for this location is not readily apparent in my reference material. It may be unpublished!",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-1766"
       ]
     },
     {
       "text": "Rev.: Runic \"R\" to the left of the square hole",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-1767"
       ]
     },
     {
       "text": "Turgesh Kaganate, first half of the 8th century. Obv.: Sogdian legend around Square hole. Rev.: Tamgha of Turgesh. Runic letter \"r\" in left field, Sogdian one word legend (prn) below square hole.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-1768"
       ]
     },
     {
       "text": "Obv. Sogdian legend around square hole Rev. four Incuse trident-like designs around square hole",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-3502"
       ]
     },
     {
       "text": "Obv. Sogdian legend around the square hole, \"Fen of King of Turgesh's Kagan\". Rev. Tamgha of Turgesh and Runic letter \"P\" with dot in center in lower field. Kamyshev #30",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-3506"
       ]
     },
     {
       "text": "Central Asia, bronze coin, Arslanid",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-5196"
       ]
     },
     {
       "text": "S1586 Central Asia, bronze coin, Turgesh",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-5955"
       ]
     },
     {
       "text": "Reading by Dr. V. Nastich: Obverse: 'rsl'n kwyl ''rkyn - Sogdian inscription \"Arslan kül erkin\" Reverse: two Turkic runas characters \"{ä}r\" and \"{ä}t\" No less than 7 specimens known.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-5956"
       ]
     },
     {
       "text": "very small specimen Obv.: Turgesh's tamgha at the top Turkic runas character R at left Sogdian (?) word at bottom",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-5957"
       ]
@@ -590,63 +836,63 @@
     },
     {
       "text": "Unearthed in Hotan",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-9955"
       ]
     },
     {
       "text": "Ruler Wahshutawa (after A.Kamyshev)",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-14279"
       ]
     },
     {
       "text": "celestial turgesh khaqan money βγy twrkyš γ'γ'n pny see Smirnova no. 1589",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-19519"
       ]
     },
     {
       "text": "Cf. \"Xinjiang numismatics\" page 25",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-21528"
       ]
     },
     {
       "text": "Kam: 48 Minted by the Qarluks.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-22477"
       ]
     },
     {
       "text": "Nearly 6 specimens of this type known. Unearthed at Sokuluq ancient site (25 km to the West from Bishkek), Kyrgyzstan Image property: A.Kamyshev",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-25614"
       ]
     },
     {
       "text": "This one is unearthed from a little Hoard",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-29463"
       ]
     },
     {
       "text": "Unearthed from a Hoard",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-29464"
       ]
     },
     {
       "text": "This one is also unearthed from the same hoard as the previous coins",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-29465"
       ]
@@ -662,84 +908,84 @@
     },
     {
       "text": "This one is unearthed from Qalashar(YanQi city), south of Xinjiang, Heavy.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-29469"
       ]
     },
     {
       "text": "This coin is unearthed from QiTai, north of Xinjiang, 60 kilometres from Beiting ancient site.Heavy",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-29470"
       ]
     },
     {
       "text": "Turgesh cash",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-29494"
       ]
     },
     {
       "text": "Turgesh AE coin, \"runic R\"-tamgha, character \"Yuan\"",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-29519"
       ]
     },
     {
       "text": "Thick and heavy specimen. Compare with Z# 33694 , 189825 , 189826 and 189860 . Metal composition is : Cu 89.1810, Zn 0.3187, Sn 3.7445, As 0.7834, Sb 0.9928, Pb 2.7717, Fe 0.1788, Mn 1.7085, Ni 0.3105, Cd,Co,Bi all are under detection limits, Sum 99.9899 %, XRF data. So we see As-Sb bearing, low led and low tin bronze. Manganese content may be connected with attempts of previous owner to darken the coin with using of KMnO4+CuSO4 solution. Patination is sulphide type - in some points sulphur content reach up to 3 %.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-33693"
       ]
     },
     {
       "text": "Compare with Z# 33693 , 189825 , 189826 and 189860 . Metal composition of the coin is: Cu 55.7065, Sn 4.1952, As 2.2783, Pb 36.7685, Fe 0.8302, Ni 0.1179, Zn,Sb,Cd,Bi,Co,Mn all are under detection and error limits, Sum 99.8966%, XRF data. Metal colour and composition are strong different from #33693. Zinc and stibium absent here, lead and tin contents elevated, copper content is lower more than 1/3. Apparently alloy is heterogeneous (liquated). Patination of the coin is phosphate type (up to 2.8 % P) and presumably represented by pyromorphite Pb5[PO4]3Cl. We can suppose, that this coin was made on another mint that Z# 33693 .",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-33694"
       ]
     },
     {
       "text": "One of the most perfect Türgesh coins of that type I ever come across. Fine cast, perfect calligraphy and completely natural black patina.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-36039"
       ]
     },
     {
       "text": "Kamyshev #36, type Tp-9. Obv.: xwt’w w’hswt’wy pny (the coin (or fan) of Lord Wahshutawa.) Rev.: Tyurgesh tamgha, runic \"R\" letter tamgha and Soghdian word, read as nkw or prn, depending on direction. This small variety is pretty rare. There are only two specimens in Kamyshev's book.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-37818"
       ]
     },
     {
       "text": "Kamyshev #21, Smirnova #1585.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-37836"
       ]
     },
     {
       "text": "Kamyshev #22. Obv.: Soghdian legend Βγy twrkys γ’γ’n pny (Fan of Turgesh's divine Khakan). Rev.: Turhesh tamgha shaped as Runic \"AT\" at top and center, Runic \"R\" at left and Soghdian inscription at bottom, read as nkw or prn depending on direction.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-39562"
       ]
     },
     {
       "text": "Unearthed in YianQi of Xinjiang.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-42008"
       ]
     },
     {
       "text": "Kamyshev #27",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-43587"
       ]
@@ -766,7 +1012,7 @@
     },
     {
       "text": "AE Turgesh coin with \"R\"-tamgha",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-48344"
       ]
@@ -789,140 +1035,140 @@
     },
     {
       "text": "Kam: 33.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-52721"
       ]
     },
     {
       "text": "Kamyshev 23.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-64323"
       ]
     },
     {
       "text": "Image property: sotnik05",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-68771"
       ]
     },
     {
       "text": "Image property: alaytour Almost 'uncirculated' condition.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-71774"
       ]
     },
     {
       "text": "Semirech'e, Turgesh cash",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-75664"
       ]
     },
     {
       "text": "Turgesh coin of ruler Wahshutawa, with \"Yuan\"",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-76172"
       ]
     },
     {
       "text": "Obv.: Sogdian script - bgy twrkys g'g'n pn Rev.: Turgesh's tamgha.The sign in the form of runic letters p, below Sogdian legend consisting of a single word prn. (# 54 A.M. Kamyshev, early medieval coin ... # 22). Extremely Rare. Coin found in the village Ulanka, Ulan district of East Kazakhstan region.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-101716"
       ]
     },
     {
       "text": "Obv.: Sogdian script βγy twrkyš γ'γ'n pny Rev.: Turgesh's tamgha",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-112920"
       ]
     },
     {
       "text": "Kamyshev's \"Early-Mediaeval Monetary Complex of Semirech'e\" #45. Obverse (counterclockwise): 'rsl'n kwyl 'yrkyn - Sogdian inscription ' Arslan kul-yirkin '. Reverse: two Turkic tamghas, resembling runic letter ‘R’ (similar to Latin letter ‘M’) at left side and runic letter ‘AT’ at right side.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-121305"
       ]
     },
     {
       "text": "Kamyshev 45",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-121668"
       ]
     },
     {
       "text": "eBay # 140918387327. N. Soghd, Turgesh Qaghante, with add. tamga, not in KAM. Diam. 24.4 mm, Weight 5.49 g",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-122116"
       ]
     },
     {
       "text": "Runic letter \"p\" with dot in left space Kamyshev-30",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-122146"
       ]
     },
     {
       "text": "eBay # 390547604669. Semirech'e AE cash-like coin, Arslands King Arslan Kul-Yirkin. Kam # 45.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-122190"
       ]
     },
     {
       "text": "eBay # 390547605388. Semirech'e Arslanid AE coin. Kam # 48.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-122191"
       ]
     },
     {
       "text": "Sogdian legend “ βγy twrkys γ´γ´n pny”. Kam # 31?",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-122194"
       ]
     },
     {
       "text": "Obv.: Legend in Sogdian script (blurred), probably reads as ‘Βγy twrkys γ’γ’n pny’ and translates as ‘Fan of Turgesh's divine Khakan’. Rev.: Turgesh's tamgha & Turkic runic letter ‘ρ’ with dot in the left space. Kamyshev ‘Early Medieval Monetary Complex of Semirechie’ # 30. Not listed in Smirnova. Unearthed in Kyrgyzstan.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-124650"
       ]
     },
     {
       "text": "eBay # 390678277835. Semirech'e AE cash-like coin, Arslands King Arslan Kul-Yirkin. Kam: 45.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-130128"
       ]
     },
     {
       "text": "Rev. Chinese character yuan – “beginning”, “great”. No metric data provided. Image source: http://bbs.chcoin.com/read-htm-tid-5497249-fpage-26.html%3E Kam 21. Smir 1585. Ruler Vahshutava (in Taraz?). Sogd legend: \"xwt´w w´xswt´wy pny\" / runic letter \"r\" + chinese 元 - yuan.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-131703"
       ]
     },
     {
       "text": "Obv: Sogdian legend xst' w'xswt'wy pny (coin of the King Vahshutava) around square hole. Rev: Tamgha of Turgesh in the shape of a latin runic letter R in the left field, character YUAN to the right.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-134041"
       ]
     },
     {
       "text": "Unearthed in Almaty. Smir 1588, Kam 23. Anonymous \"βγy twrkys γ´γ´n pny” / runic letter \"R\" + \"m'γ\" ?",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-138294"
       ]
@@ -947,56 +1193,56 @@
     },
     {
       "text": "Kam: 36.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-141054"
       ]
     },
     {
       "text": "Kam 47.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-144100"
       ]
     },
     {
       "text": "Semireché, Vahshutava",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-146049"
       ]
     },
     {
       "text": "AE Turgesh coin, degraded cast",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-146051"
       ]
     },
     {
       "text": "Pls help to ID Image source: http://bbs.chcoin.com/show-8465912.html Kam: 21",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-152380"
       ]
     },
     {
       "text": "The coin was found in southern Kazakhstan.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-163465"
       ]
     },
     {
       "text": "The coin was found in Southern Kazakhstan.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-164374"
       ]
     },
     {
       "text": "Seller's attribution was simply Turgesh. Should be Smirnova's type 4, it is fairly light so maybe number 1600?",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-167967"
       ]
@@ -1013,84 +1259,84 @@
     },
     {
       "text": "Semirech'e, unknown khakan of Turgeshs, 1st half of 8th cent. AD., AE Cash-like Coin",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-185372"
       ]
     },
     {
       "text": "Semirech'e, unknown khakan of Turgeshs, 1st half of 8th cent. AD., AE Cash-like Coin, filed edges",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-185373"
       ]
     },
     {
       "text": "Semirech'e, unknown khakan of Turgeshs, 1st half of 8th cent. AD., small cast uniface AE Cash-like Coin",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-185374"
       ]
     },
     {
       "text": "A coin with Sogdian legends, issued by people of Turkish descent. Obv: Currency of the mighty Turgis Khagan Rev: tamgha of the Black Clan Smirnova 405 Jen 920 Fedorov ONS 187 (2004) p 12-4",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-186447"
       ]
     },
     {
       "text": "Compare with Z# 33693 , 133694 , 189826 and 189860 . Metal composition of the coin is: Cu 71.56, Sn 7.12, As 0.67, Pb 20.10, Ni 0.18, Zn,Sb,Cd,Bi,Fe,Co all are under detection and error limits, Sum 99.63%, microprobe data in scanning mode on surface 1900x60 mkm.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-189825"
       ]
     },
     {
       "text": "Compare with Z# 33693 , 33694 , 189825 and 189860 . Metal composition of the coin is: Cu 55.24, Sn 8.35, As 0.93, Pb 35.20, Fe 0.11, Ni 0.12, Zn,Sb,Cd,Bi,Fe,Co all are under detection and error limits, Sum 99.95%, microprobe data in scanning mode on surface 1200x150 mkm.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-189826"
       ]
     },
     {
       "text": "Smirnova#1588, Kamyshev#23. Anonymous \"βγy twrkys γ´γ´n pny” / runic letter \"R\" + \"m'γ\" ? Compare with Z#138294. Large and heavy specimen. Compare with Z# 189828 , 265922 and with small type Z# 189830 . Metal composition of the coin is: Cu 87.45/86.59, Zn 0.25/0.00, Sn 7.41/7.83, Pb 4.09/4.84, Fe 0.24/0.30, Ni 0.14/0.19, As,Sb,Cd,Bi,Co all are under detection and error limits, Sum 99.58/99.75%, microprobe data in scanning mode on surface 2000x450 and 3000x500 mkm.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-189827"
       ]
     },
     {
       "text": "Large and heavy specimen. Compare it with Z# 189827 and with small type Z# 189830 . Metal composition of the coin is: Cu 81.52, Sn 10.63, As 1.18, Pb 6.18, Fe 0.30, Ni 0.20, Zn,Sb,Cd,Bi,Co all are under detection and error limits, Sum 100.01%, microprobe data in scanning mode on surface 1200x750.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-189828"
       ]
     },
     {
       "text": "Small and light specimen. Compare with very light sample Z# 193070 and with large and heavy samples Z# 189827 , 189828 and 193071 . Metal composition of the coin (reverse outer rim at 7 o'clock) is: Cu 76.34, As 0.78, Sb 1.42, Pb 21.33, Sn,Zn,Cd,Bi,Fe,Co,Ni all are under detection and error limits, Sum 99.87%, microprobe data in scanning mode on surface 1700x350.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-189830"
       ]
     },
     {
       "text": "Compare with Z# 256607 which is almost twice lighter. Compare also with Z# 33693 , 33694 , 189825 , 189826 , 192869 , 192870 , 219191 , 219192 , 219559 and 219560 with usual tamga. Metal composition of the coin (obverse inner rim at 2:30 o'clock) is: Cu 63.98/64.11, Sn 8.03/8.30, As 0.84/0.96, Sb 0.45/0.37, Pb 26.53/25.70, Ni 0.12/0.33, Zn,Cd,Bi,Fe,Co all are under detection and error limits, Sum 99.95/99.77 %, microprobe data in scanning mode on surface 900x70 and 500x150 mkm.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-189860"
       ]
     },
     {
       "text": "Kamyshev#30 Obv.: Sogdian legend around the square hole, \"Fen of King of Turgesh's Kagan\". Rev.: Tamgha of Turgesh and Runic letter \"R\" with dot in center in lower field. Compare with Z#3506. Metal composition of the coin is: Ag 1.65, Cu 89.39, Sn 5.64, As 1.01, Sb 0.85, Pb 1.11, Zn,Cd,Bi,Fe,Co,Ni all are under detection and error limits, Sum 99.65%, microprobe data in scanning mode on surface 500x300 mkm. So we have here Ag-, As- and Sb-bearing, low-tin and extremely low-lead bronze.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-189862"
       ]
     },
     {
       "text": "Sogdiana, Semirech'e, unknown small bronze cash",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-190504"
       ]
@@ -1106,35 +1352,35 @@
     },
     {
       "text": "Compare with Z# 33693 , 33694 , 189825 , 189826 , 189860 and 192870 . Metal composition of the coin is: Cu 68.71, Sn 10.17, As 1.26, Pb 18.83, Fe 0.39, Ni 0.30, Zn,Cd,Sb,Bi,Co all are under detection and error limits, Sum 99.66 %, microprobe data in scanning mode on surface 900x1300 mkm. So we have here yellowish nonmagnetic As-bearing tin-lead bronze.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-192869"
       ]
     },
     {
       "text": "Compare with Z# 33693 , 33694 , 189825 , 189826 , 189860 , 192869 , 219191 and 219192 . Metal composition of the coin is: Cu 72.52, Sn 7.94, As 0.84, Pb 18.24, Fe 0.22, Zn,Cd,Sb,Bi,Co,Ni all are under detection and error limits, Sum 99.76 %, microprobe data in scanning mode on surface 1100x1300 mkm. So we have here pinkish nonmagnetic As-bearing tin-lead bronze.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-192870"
       ]
     },
     {
       "text": "Very small and light specimen. Compare with Z# 189830 and with large and heavy samples Z# 189827 and Z# 189828 .",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-193070"
       ]
     },
     {
       "text": "Compare with Z# 339159 . Compare also with Z# 209434 . Compare also with very light sample Z# 193070 and with large and heavy samples Z# 189827 , 189828 and Z# 189830 , which are of S#1588 type. Compare also with light and very light samples Z# 189830 and Z# 193070 .",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-193071"
       ]
     },
     {
       "text": "Turgesh, cash-like coin",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-194357"
       ]
@@ -1155,63 +1401,63 @@
     },
     {
       "text": "ex. \"Inal Tegin\"",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-197475"
       ]
     },
     {
       "text": "S1588, Turgesh AE cash, Additional \"runic R\"-tamgha, mnγ",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-197707"
       ]
     },
     {
       "text": "eBay # 391978651744 Semirech'e Turgesh AE cash-like coin. Metal: AE Kam 27.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-198732"
       ]
     },
     {
       "text": "eBay # 253430648582 Semirech'e Arslanids AE cash-like coin. Weight: 2.69 g. Diameter: 21.36 mm. Metal: AE",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-198733"
       ]
     },
     {
       "text": "eBay # 172578524586 CENTRAL ASIA Semirech'e: Arslanid's AE cash coin Arslands King Arslan Kul-Yirkin Kam #45 Very rare condition. Diameter: 25.0 mm. Weight: 5.57 grms. All coins are genuine. Kamyshev # 45.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-198734"
       ]
     },
     {
       "text": "Obverse : Bagha Türgesh qaghan pny. Reverse : Bow tamgha. Undetermined Qaghan of the Türgesh of Yedisu/Semerechiye region (mid. 8th C.).",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-205150"
       ]
     },
     {
       "text": "S 1589. (Sulu 蘇祿) Türgesh qaghan, 712?-737/8",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-208002"
       ]
     },
     {
       "text": "Unearthed at the Krasnaya Rechka site, Kyrgyzstan. Legend twrkyš x’γ’n pny (reading by Pavel Lurje). For the standard Turgesh's legend the word βγy is missed.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-209188"
       ]
     },
     {
       "text": "Smirnova#1586 Kamyshev#33 Compare with Z# 193071 .",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-209434"
       ]
@@ -1225,21 +1471,21 @@
     },
     {
       "text": "Turgesh's tamgha, runic character 'R'. Small",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-209778"
       ]
     },
     {
       "text": "Ex Stephen Album Auction 33, Jan 17, 2019: lot 111. Estimate: 150 USD SEMIRECH'E: Arslanid, Kul Erkin, 8th century, AE cash (5.59g), cf. Zeno-5956, Sogdian legend // Turkic runic symbols for R and T, lovely example, VF, RR.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-216063"
       ]
     },
     {
       "text": "Central Asia, Semirech'e, Anonymous coin of the Türgesh kaghans in Semirech'e,. ca. 704-766 AD. Sogd legend: “ βγy twrkys γ´γ´n pny” (Lord Kaghan of Türgesh´s coin). Ref.: Smirnova 1589, Kamychev 24, ONS-NL 178, p.7-16",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-218164"
       ]
@@ -1254,28 +1500,28 @@
     },
     {
       "text": "Central Asia, Semirech'e (Jety Su), Eastern Turk Qaganate, Bilge Qaghan, AD 716-734, AE cash (1.59 g.), counter-clockwise Soghdian legend / rev. 4 trident-like symbols. Ref.: Smirnova 1659; Kamyshev's \"Monetary Compleks of Semirechie\" #47; ONS-NL 178, p.7-16.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-218184"
       ]
     },
     {
       "text": "Compare with Z# 33693 , 33694 , 189825 , 189826 , 189860 , 192869 , 192870 and 219192 .",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-219191"
       ]
     },
     {
       "text": "Compare with Z# 33693 , 33694 , 189825 , 189826 , 189860 , 192869 , 192870 , 219191 and 219559 . Compare also with smaller coin Z# 219560 .",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-219192"
       ]
     },
     {
       "text": "Compare with Z# 33693 , 33694 , 189825 , 189826 , 189860 , 192869 , 192870 , 219191 and 219192 . Compare also with smaller coin Z# 219560 .",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-219559"
       ]
@@ -1290,70 +1536,70 @@
     },
     {
       "text": "Smirnova#1585 Kamyshev#21 Obv.: Sogd legend: \"xwt´w w´xswt´wy pny\" Rev.: Turgesh tamga, runic letter \"r\" + Chinese 元 - yuan. Compare with Z# 231600 and 380830 .",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-219750"
       ]
     },
     {
       "text": "Smirnova#? Kamyshev #22 Obv.: Soghdian legend Βγy twrkys γ’γ’n pny (Fan of Turgesh's divine Khakan). Rev.: Turhesh tamgha, Runic \"R\" at top and Soghdian inscription at left, read as nkw or prn depending on direction. Compare with Z#39562. Compare also with Z# 209434 and 259925 .",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-221032"
       ]
     },
     {
       "text": "Ex Stephen Album Rare Coins Auc 34, 23-26 May 2019, lot 178. Estimate: 150-200 USD SEMIRECH'E: Arlsan Bilge Qaghan, ca. 8th century, AE cash (2.78g), Kam-46/47, cf. Zeno-1742, issued by the Arslanid branch of the Qarluq tribe: Sogdian legend // Runic symbols, rare in this quality, VF, RR.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-223139"
       ]
     },
     {
       "text": "Ex Stephen Album Rare Coins Auc 34, 23-26 May 2019, lot 179. Estimate: 110-150 USD SEMIRECH'E: Arslan Kul Erkin, 8th century, AE cash (5.64g), cf. Zeno-5956, two Runic characters, said to be R and M, VF, R.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-223140"
       ]
     },
     {
       "text": "Reading by Dr. V. Nastich: Obv.: 'rsl'n kwyl ''rkyn - Sogdian inscription \"Arslan Kül Erkin\" Rev.: two Turkic runas characters \"{ä}r\" and \"{ä}t\" Compare with Z# 245065 .",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-223313"
       ]
     },
     {
       "text": "Kamyshev#48 Compare with Z# 225720 . weight 3.3929 g diameter 21.4x21.7 mm Late IX to early X centuries 1 cash Lead bronze (nonmagnetic)",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-224044"
       ]
     },
     {
       "text": "eBay # 202689435911 Semirechie, Unknown Kaqan, AE cash, Sm. #1589 Sold: $ 17,50",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-224990"
       ]
     },
     {
       "text": "Kamyshev#48 Compare with Z# 224044 . weight 2.2255 g diameter 21.7x22.4 mm Late IX to early X centuries 1 cash Lead bronze (nonmagnetic)",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-225720"
       ]
     },
     {
       "text": "Central Asia. (Sulu 蘇祿) Türgesh qaghan, 712?-737/8",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-229758"
       ]
     },
     {
       "text": "Smirnova#1585 Kamyshev#21 Obv.: Sogd legend: \"xwt´w w´xswt´wy pny\" Rev.: Turgesh tamga, runic letter \"r\" + Chinese 元 - yuan. Compare with Z# 219750 and 380830 .",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-231600"
       ]
@@ -1368,56 +1614,56 @@
     },
     {
       "text": "Türgesh kaghans in Semirech'e",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-239010"
       ]
     },
     {
       "text": "Turgesh Kaganate, 8th century OBV: Sogdian legend",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-239181"
       ]
     },
     {
       "text": "eBay # 202854332456 Semirechie, AE big Cash, Kam. #23 Weight 17.7 gr! Sold: US $416.00",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-240151"
       ]
     },
     {
       "text": "The coin was found in Kyrgyzstan. Obverse: Sogdian legend βγy twrkyš γ'γ'n pny . Reverse: Tamgha of turgeshes. Smirnova #1594",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-243599"
       ]
     },
     {
       "text": "The coin was found in Kyrgyzstan. Obverse: Non-legible legend or anepigraphic side with inner and outer rims; Reverse: Flat and empty.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-244241"
       ]
     },
     {
       "text": "Reading by Dr. V. Nastich: Obv.: 'rsl'n kwyl ''rkyn - Sogdian inscription \"Arslan Kül Erkin\" Rev.: two Turkic runas characters \"{ä}r\" and \"{ä}t\" Compare with Z# 223313 and 256580 .",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-245065"
       ]
     },
     {
       "text": "SEMIRECH'E: Arslanid, Kul Erkin, 8th century, AE cash Sogdian legend / Turkic runic symbols for R and T, RR.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-245253"
       ]
     },
     {
       "text": "SEMIRECH'E: Arslanid, Kul Erkin, 8th century, AE cash Turkic runic symbols for R and T,VF, RR.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-245254"
       ]
@@ -1433,42 +1679,42 @@
     },
     {
       "text": "according to previous owner its from nearby Bukhara",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-250621"
       ]
     },
     {
       "text": "Unearthed in the vicinity of Krasnaya Rechka site, Kyrgyzstan.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-253430"
       ]
     },
     {
       "text": "Semirech'e Turgesh (Sulu 蘇祿) Türgesh qaghan, 712?-737/8",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-256250"
       ]
     },
     {
       "text": "Reading by Dr. V. Nastich: Obv.: 'rsl'n kwyl ''rkyn - Sogdian inscription \"Arslan Kül Erkin\" Rev.: two Turkic runas characters \"{ä}r\" and \"{ä}t\" Compare with Z# 223313 and 245065 .",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-256580"
       ]
     },
     {
       "text": "Inscription is more similar to ones at reverses of Tukhus coins of 3rd type than to usual Turgesh coins.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-256606"
       ]
     },
     {
       "text": "Full size but thin and lightweight specimen with special shape of tamga. Note very weak inner rim at reverse. Compare with Z# 189860 , 280415 and 388667 . Compare also with Z# 33693 , 33694 , 189825 , 189826 , 192869 , 192870 , 219191 , 219192 , 219559 and 219560 with usual tamga.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-256607"
       ]
@@ -1483,70 +1729,70 @@
     },
     {
       "text": "Smirnova#? Kamyshev #22 Obv.: Soghdian legend Βγy twrkys γ’γ’n pny (Fan of Turgesh's divine Khakan). Rev.: Turhesh tamgha, Runic \"R\" at top and Soghdian inscription at left, read as nkw or prn depending on direction. Compare with Z#39562. Compare also with Z# 209434 and 221032 .",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-259925"
       ]
     },
     {
       "text": "Unusual boat-like tamga.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-260161"
       ]
     },
     {
       "text": "Turgesh, later type",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-265650"
       ]
     },
     {
       "text": "Smirnova#1588, Kamyshev#23. Anonymous \"βγy twrkys γ´γ´n pny” / runic letter \"R\" + \"m'γ\" ? Compare with Z#138294. Large and heavy specimen. Compare with Z# 189827 , 189828 and with small type Z# 189830 .",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-265922"
       ]
     },
     {
       "text": "Unearthed in Kyrgyzstan, vicinity of Bishkek.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-268891"
       ]
     },
     {
       "text": "Weight, g: 1.29 Size, mm: 17.0x17.1 Mint: ? Date: ? Denomination: heavy cash Metal: bronze (nonmagnetic)",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-270341"
       ]
     },
     {
       "text": "I don't have the size and weight on this coin. But the size is approximately 17-19 mm.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-270411"
       ]
     },
     {
       "text": "Full size specimen with special shape of tamga. Compare with Z# 189860 and 256607 . Compare also with Z# 33693 , 33694 , 189825 , 189826 , 192869 , 192870 , 219191 , 219192 , 219559 and 219560 with usual tamga.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-280415"
       ]
     },
     {
       "text": "Big Turgesh",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-281908"
       ]
     },
     {
       "text": "turgesh",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-281909"
       ]
@@ -1570,7 +1816,7 @@
     },
     {
       "text": "Central Asia, bronze cash, Turgesh's tamgha, runic character 'R' and prn",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-287783"
       ]
@@ -1585,7 +1831,7 @@
     },
     {
       "text": "Compare with Z# 224044 and 225720 with normal obverse inscription.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-294294"
       ]
@@ -1600,35 +1846,35 @@
     },
     {
       "text": "eBay # 394358025952 Semirech'e AE cash-like coin, Small size Turgesh's tamgha, runic character 'R' and prn.-RR Kamyshev # 37. Weight: 1.65 gr. Diameter: 16.71-18.00 mm. Metal: AE Winning bid: US $149.99 (Obv legend with base outwards)",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-306589"
       ]
     },
     {
       "text": "eBay # 255856180906 Unusual Semirech’e Turgesh AE cash-like coin. Weight: 4.72 gr. Diameter: 24.29 mm. Metal: AE Winning bid: US $53.03",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-306590"
       ]
     },
     {
       "text": "Semirech'e AE cash-like coin, Small size Turgesh's tamgha, runic character 'R' and prn",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-310413"
       ]
     },
     {
       "text": "Semireche Turgesh cash-like coin Obverse: Lord Kaghan of Türgesh´s coin βγy twrkyš γ'γ'n pny (Sogdian script) Reverse: turgesh's tamgha",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-316983"
       ]
     },
     {
       "text": "Ex Leu Numismatik AG : Web Auction 26 8-13 Jul 2023, lot 2037. Starting price: 25 CHF LOCAL ISSUES. Türgesh Kaghans of Semirech'e, Arslanids. Arslan Bilge, 8th century. Cash (Bronze, 21 mm, 2.77 g). Around a central square hole, 'βγy ʾrslʾn pylkʾ xʾγʾn pny', i.e. 'βaγ-ē Arslan Bilga xāγān pan-i' ('Coin of Lord Arslan Bilge Kaghan' in Sogdian). Rev. runic symbols. Kamyshev 46. Lurje 133. Very rare. Areas of weakness and minor earthen deposits, otherwise, good fine. From the collection of Dr. D. Löer, ex Album 34, 23 May 2019, 178. Price realized: 150 CHF",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-319237"
       ]
@@ -1652,42 +1898,42 @@
     },
     {
       "text": "Semirech’e Turgesh AE cash-like coin. Stolen",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-322573"
       ]
     },
     {
       "text": "Thickness 2.02 mm",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-322580"
       ]
     },
     {
       "text": "Semirech’e Turgesh AE cash-like coin",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-322582"
       ]
     },
     {
       "text": "eBay # 256290298177 Semirech'e Arslanids AE cash-like coin. Weight: 3.1 gr. Diameter: 20.34 mm. Metal: AE Winning bid: US $47.00",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-323048"
       ]
     },
     {
       "text": "Arslan Irkin, Turgesh's tamgha, runic character 'R'",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-324401"
       ]
     },
     {
       "text": "Circled part of legend seems different from the letters on usual Turgesh legend. There is also a possibility of this coin being a fake - both affirmative and doubtful observations are made, this coin will be sent for grading for verification. Personal collection item.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-326121"
       ]
@@ -1702,7 +1948,7 @@
     },
     {
       "text": "Türgesh",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-327150"
       ]
@@ -1731,105 +1977,105 @@
     },
     {
       "text": "Coin with defect",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-328293"
       ]
     },
     {
       "text": "eBay # 256413662299 Semirech'e Turgesh AE cash-like coin. Big size. Weight: 6.3 gr. Diameter: 24.15 mm. Metal: AE Unsold",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-328571"
       ]
     },
     {
       "text": "Türgesh qaghan, 712?-737/8",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-329093"
       ]
     },
     {
       "text": "eBay # 395206230720 Semirech'e Turgesh heavy (6.81 gr.) AE cash-like coin. Big size. Weight: 6.81 gr. Diameter : 24.69 mm. Metal: AE Unsold",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-329314"
       ]
     },
     {
       "text": "eBay # 395205590698 Semirech'e Turgesh AE cash-like coin with additional tamghas. Weight: 5.11 gr. Diameter : 24.96 mm. Metal: AE Sold: US $76.00",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-329515"
       ]
     },
     {
       "text": "Turgesh cash with \"M\" or \"V\" shape small symbol. Maybe it should be posted in another section.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-333336"
       ]
     },
     {
       "text": "Compare with Z# 193071 . Compare also with Z# 209434 . Compare also with very light sample Z# 193070 and with large and heavy samples Z# 189827 , 189828 and Z# 189830 , which are of S#1588 type. Compare also with light and very light samples Z# 189830 and Z# 193070 .",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-339159"
       ]
     },
     {
       "text": "Smirnova 1589 Kamishev 24",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-353451"
       ]
     },
     {
       "text": "cf. Z- 185373 From the auction listing: https://www.ebay.com/itm/257461513576?_trkparms=amclksrc%3DI... (257461513576)",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-377880"
       ]
     },
     {
       "text": "Smirnova#1585 Kamyshev#21 Obv.: Sogd legend: \"xwt´w w´xswt´wy pny\" Rev.: Turgesh tamga, runic letter \"r\" + Chinese 元 - yuan. Compare with Z# 219750 and 231600 .",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-380830"
       ]
     },
     {
       "text": "Smaller and lightweight specimen with special shape of tamga. Compare with Z# 189860 , 256607 and 280415 . Compare also with Z# 33693 , 33694 , 189825 , 189826 , 192869 , 192870 , 219191 , 219192 , 219559 and 219560 with usual tamga.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-388667"
       ]
     },
     {
       "text": "Chach, City of Benakan, unknown ruler",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-901"
       ]
     },
     {
       "text": "Publication: ONS Newsletters #175 , Supplement by M.Fedorov \"Monay circulation in early-mediaeval Sogd (6th - first half of 8th century AD)\" See quote: http://www.charm.ru/images/misc/khanabadcoin.jpg",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-980"
       ]
     },
     {
       "text": "Circa 640-708 AD obv. 4 characters around square hole: Kai Yuan Tong Bao - coin legend of the Chinese Tang dynasty rev. Tamgha Smirnova #1380",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-1031"
       ]
     },
     {
       "text": "King Ghurak 710-737 AD, coin ca. 710-712 AD. obv: Sogdian legend MLK' 'WR 'LEK (King Ghurak). rev: Dynastic tamgha to the left of the square hole, tamgha of Samarqand to the right. Smirnova #359",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-1032"
       ]
@@ -1848,7 +2094,7 @@
     },
     {
       "text": "Zeimal', E. V. \"The Circulation of Coins in Central Asia during the Early Medieval Period (Fifth-Eight Centuries A.D.)\", Bulletin of the Asia Institute, New Series, Volume 8, Bloomfield Hills, pp. 245-267, 1994. Coin #15 Extremely rare From Varakhsha site - one of the most ancient cities of the Bukhara oasis, located in 40 kms to the west from Bukhara - Bukharhudat's capital (VI-VII C.) - governors of the low part of a valley of the river Zaravshan.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-1068"
       ]
@@ -1870,35 +2116,35 @@
     },
     {
       "text": "Sogdian - King Shishpir obv: Sogdian legend above and below square hole rev: Symbols and tamghas, one on each side of square hole. Smirnova # 52",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-1092"
       ]
     },
     {
       "text": "S0359 Central Asia AE coin, Gurek",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-1144"
       ]
     },
     {
       "text": "Kamyshev #43",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-2665"
       ]
     },
     {
       "text": "Original description: Eastern Sogdiana, King Bidyan ruler of Panch. Obv. Tamgha frames the square hold. Rev. Master Afshin Bidyan of Panch",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-3392"
       ]
     },
     {
       "text": "Western Sogdiana, Paikend. Cash type coin. Obv. Bukharan tamghas on each side of the square hole, cross below (10?), Sogdian legend above. Rev. Blank",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-3396"
       ]
@@ -1913,42 +2159,42 @@
     },
     {
       "text": "ikhshid Turkhun Smirnova 215",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-5198"
       ]
     },
     {
       "text": "Gurak AD710-738. Smirnova359",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-5245"
       ]
     },
     {
       "text": "Tutuks, 7-8th century Smirnova 1445",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-5463"
       ]
     },
     {
       "text": "King Turghar 738-750 Smirnova 519",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-5464"
       ]
     },
     {
       "text": "Smirnova #43-47 Unearthed in Xinjiang, Jimsar Beiting ancient site",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-6283"
       ]
     },
     {
       "text": "Smirnova 43-47, but with additional dot. Probably unique Found in Northern Xinjiang",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-6284"
       ]
@@ -1963,161 +2209,161 @@
     },
     {
       "text": "Type: Smirnova 48-77",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-6875"
       ]
     },
     {
       "text": "Type: Smirnova 359-399",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-6876"
       ]
     },
     {
       "text": "Found at the ancient Varaksha site, 2001",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-12663"
       ]
     },
     {
       "text": "Found at the ancient Varakhsha site, 2001",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-12667"
       ]
     },
     {
       "text": "Smirnova #78",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-12680"
       ]
     },
     {
       "text": "S0106 Sogdian AE coin, Warhuman, 7th C.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-12681"
       ]
     },
     {
       "text": "Smir 657. Obv: Tamgha of Samarkand and the triskele tamgha of the kings dynasty. Rev: Sogdian legend: \"wrk wrtrmwk` MLK`.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-12682"
       ]
     },
     {
       "text": "Smir 657. Ikshid Urk Wartramuka. Rev: sogdian legend: \"wrk wrtrmwk´ MLK`\".",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-12683"
       ]
     },
     {
       "text": "S0657 Sogdian AE coin, Ikhshid Urk Wartramuka ca.675-696AD, Samarqand",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-12684"
       ]
     },
     {
       "text": "S0168 Sogdian AE coin, Mastan (?), Samarqand 7th C.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-12685"
       ]
     },
     {
       "text": "Farankat. Portrait - tamgha of Bukharan type, with sogdian legend.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-12965"
       ]
     },
     {
       "text": "SOGDIANA, WESTERN SOGD, Bukhara, Ramchitak (2nd half of the 7th century), AE cash, Ref.: Smirnova, 1392-1418; Fedorov, ONS 175 (2003), Suppl., p.17, 32. Very Rare. Very weak casting of the obverse. This image is published with the kind permission of Jean Elsen & ses Fils s.a.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-13750"
       ]
     },
     {
       "text": "SOGDIANA, IKHSHID SOGD OF SAMARQAND, Wuzurg or Tonyukuk ? (end of the 7th century), AE cash, Ref.: Smirnova, 78-100; Fedorov, ONS 175 (2003), Suppl., p.7, 9. Very Rare. This image is published with the kind permission of Jean Elsen & ses Fils s.a. I have not seen the name Tonyukuk in connection with these coins before???/hfrans",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-13753"
       ]
     },
     {
       "text": "SOGDIANA, IKHSHID SOGD OF SAMARQAND, Urk Wartramuka (c. 675-696 ?), AE cash, Ref.: Smirnova, 657ff; Fedorov, ONS 175 (2003), Suppl., p.9, 12. Very Rare. A nice large and heavy specimen. This image is published with the kind permission of Jean Elsen & ses Fils s.a.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-13754"
       ]
     },
     {
       "text": "double strike on averse, 2 big gems necklace type",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-16095"
       ]
     },
     {
       "text": "Auc 84-1105. SEMIRECH'E (JETY-SU), TURGESH KHAQANATE, Tukhus, AE cash, from the 730s, Droit : Sogdian legend naming the khaqan of Turgesh. Revers : Sogdian legend reading lord of the Tukhus, divided by a specific tamgha. Ref.: Smirnova, 1625ff; Fedorov, ONS 178 (2004), p.13, 5; Kamichev, 40. 1,56g. Very Rare. This image is published with kind permission from Jean ELSEN & ses Fils.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-16171"
       ]
     },
     {
       "text": "Gurak AD710-738 Smirnova359",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-16327"
       ]
     },
     {
       "text": "Those coins were NEVER unearthed in Bukhara oasis, but always in Eastern Sogdiana. Exact mint and territory of circulation are unknown.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-16482"
       ]
     },
     {
       "text": "“Av.: The sogdian legend counterclockwise: “βγy γ’γ’n pny” (sovereign khakan’s coin) in the field around square hole. Rev.: Plain? These new type was first time discovered by E.V.Rtveladze and V.A.Livshitz. Only five specimens are known, all from sites in Chach oasis. Preliminary dating is first half of 8th cent. AD.” By L.S. Baratova. Smir 1376",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-16575"
       ]
     },
     {
       "text": "“Obv: Square hole enclosed in narrow frame. To the right a H-formed tamgha. To the left an inscription – one Sogdian word γ'γ'n. Narrow rim on border. Rev: Below enclosed in frame square hole one word 'lγ' (reading by O. I. Smirnova) The word alga as Smirnova considered meant the name of one of the oguz clan yagma which live in the Naryn valley in 10th century.” By L.S. Baratova.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-16987"
       ]
     },
     {
       "text": "Related link: http://www.charm.ru/images/misc/khanabadcoin.jpg",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-16989"
       ]
     },
     {
       "text": "Chach, Benakan domain",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-17200"
       ]
     },
     {
       "text": "Sogdian legend (according to Smirnova): MLK'/w/tz/nw/tr/k",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-17931"
       ]
@@ -2146,7 +2392,7 @@
     },
     {
       "text": "Smirnova 43",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-20046"
       ]
@@ -2209,7 +2455,7 @@
     },
     {
       "text": "Kam: 40",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-22476"
       ]
@@ -2244,14 +2490,14 @@
     },
     {
       "text": "Smirnova #360.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-29348"
       ]
     },
     {
       "text": "Smirnova #657.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-29349"
       ]
@@ -2314,7 +2560,7 @@
     },
     {
       "text": "Smir: 657",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-35622"
       ]
@@ -2549,21 +2795,21 @@
     },
     {
       "text": "Smir. 48.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-46922"
       ]
     },
     {
       "text": "Smir 215.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-46923"
       ]
     },
     {
       "text": "Smir 359",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-46924"
       ]
@@ -2636,7 +2882,7 @@
     },
     {
       "text": "Smirnova 110",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-53729"
       ]
@@ -2652,21 +2898,21 @@
     },
     {
       "text": "Smirnova 727",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-53733"
       ]
     },
     {
       "text": "Smirnova 197",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-54082"
       ]
     },
     {
       "text": "Smirnova 359",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-54083"
       ]
@@ -2736,7 +2982,7 @@
     },
     {
       "text": "Smirnova 486",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-61612"
       ]
@@ -2806,7 +3052,7 @@
     },
     {
       "text": "Smir 1376",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-76181"
       ]
@@ -2996,7 +3242,7 @@
     },
     {
       "text": "Smirnova 181",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-110491"
       ]
@@ -3020,21 +3266,21 @@
     },
     {
       "text": "Smir: 191-214",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-121456"
       ]
     },
     {
       "text": "Smirnova 1392",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-121664"
       ]
     },
     {
       "text": "Kamyshev 40",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-121667"
       ]
@@ -3048,7 +3294,7 @@
     },
     {
       "text": "Smirnova-657",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-123062"
       ]
@@ -3083,7 +3329,7 @@
     },
     {
       "text": "Smir: 168-190",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-128867"
       ]
@@ -4334,7 +4580,7 @@
     },
     {
       "text": "Kamyshev 43",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-322581"
       ]
@@ -5003,7 +5249,7 @@
     },
     {
       "text": "Kamyshev-49",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-121669"
       ]
@@ -5195,7 +5441,7 @@
     },
     {
       "text": "Kamyshev 34",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-123063"
       ]
@@ -5209,7 +5455,7 @@
     },
     {
       "text": "Smir # 1435-39.",
-      "localized": false,
+      "localized": true,
       "records": [
         "zeno-127887"
       ]
