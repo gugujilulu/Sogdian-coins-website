@@ -41,6 +41,7 @@ export const dictionary={
  "清除搜索":{"en":"Clear search","zh":"清除搜索","ru":"Очистить поиск"},
  "提交搜索并定位":{"en":"Search and locate on map","zh":"搜索并定位地图","ru":"Найти и показать на карте"},
  "搜索无匹配结果":{"en":"No matching results.","zh":"没有匹配结果。","ru":"Совпадений нет."},
+ "选中对象暂无地图位置":{"en":"This item has no map location.","zh":"此对象暂无地图位置。","ru":"У этого объекта нет местоположения на карте."},
  "搜索结果暂无地图位置":{"en":"These results have no map location.","zh":"当前结果暂无地图位置。","ru":"У этих результатов нет местоположения на карте."},
  "搜索另有未定位记录":{"en":"No map location: {records}.","zh":"另有{records}暂无地图位置。","ru":"Без местоположения на карте: {records}."},
  "搜索地图空间不足":{"en":"Collapse a panel, then search again to locate results.","zh":"请收起面板后再次搜索定位。","ru":"Сверните панель и повторите поиск, чтобы увидеть результаты."},
