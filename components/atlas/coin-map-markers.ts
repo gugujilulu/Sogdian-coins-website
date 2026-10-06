@@ -69,7 +69,7 @@ export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPla
   opened.getElement()?.querySelector('.maplibregl-popup-close-button')?.setAttribute('aria-label',tr('Close popup'));opened.on('close',popupLife.opened(opened,node));
   node.scrollTop=restore?.scrollTop||0;if(!reduce&&atlasActive&&!document.hidden)movement.fade(node);
   requestAnimationFrame(()=>{
-   if(disposed||popupLife.current!==opened||!opened.isOpen())return;
+   if(disposed||popupLife.current!==opened||!opened.isOpen()||!node.isConnected)return;
    if(restore){node.scrollTop=restore.scrollTop;if(!passive)([...node.querySelectorAll<HTMLButtonElement>('.coin-popup-row')].find(b=>b.dataset.familyId===lastMember)||node.querySelector<HTMLButtonElement>('button')||opened.getElement()?.querySelector<HTMLButtonElement>('button'))?.focus({preventScroll:true});return}
    const element=opened.getElement();if(!element||!node.isConnected)return;
    const box=element.getBoundingClientRect(),bounds=map.getContainer().getBoundingClientRect();
