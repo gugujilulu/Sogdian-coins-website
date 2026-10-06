@@ -67,7 +67,7 @@ export function layoutCoinEntries(entries:MapCoinEntry[],labels:Box[],width:numb
   const photo=markerGeometry(e.point,true,width<600,members.length,coinDisplayRules.photoOffset,cover?.image);
   if(hasImage&&inside(photo.box)&&!labels.some(b=>intersects(photo.box,b)))return {large:true,offset:photo.offset,bounds:photo.box};
   // Vertical screen offsets preserve the geographic anchor while avoiding label rectangles.
-  const candidates=[-12,-40,-64,24,48].map(offset=>markerGeometry(e.point,false,width<600,members.length,offset,cover?.image));
+  const candidates=[-12,-40,-64,24,48,-96,96,-128,128,-176,176,-224,224,-288,288].map(offset=>markerGeometry(e.point,false,width<600,members.length,offset,cover?.image));
   const compact=candidates.find(g=>inside(g.box)&&!labels.some(b=>intersects(g.box,b)))||candidates.find(g=>inside(g.box))||candidates[0];
   return {large:false,offset:compact.offset,bounds:compact.box};
  }

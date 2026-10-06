@@ -62,7 +62,7 @@ export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPla
    }catch{return null}
   }));
   if(disposed||token!==generation)return;
-  const occupied:Box[]=Array.from(map.getContainer().querySelectorAll<HTMLElement>('.historical-label,.history-place span')).filter(el=>getComputedStyle(el).visibility!=='hidden').map(el=>{const r=el.getBoundingClientRect(),c=map.getContainer().getBoundingClientRect();return{x:r.x-c.x+r.width/2,y:r.y-c.y+r.height/2,w:r.width,h:r.height}});
+  const occupied:Box[]=Array.from(map.getContainer().querySelectorAll<HTMLElement>('.historical-label,.history-place span')).filter(el=>el.classList.contains('history-place')||getComputedStyle(el).visibility!=='hidden').map(el=>{const r=el.getBoundingClientRect(),c=map.getContainer().getBoundingClientRect();return{x:r.x-c.x+r.width/2,y:r.y-c.y+r.height/2,w:r.width,h:r.height}});
   const bounds=map.getContainer().getBoundingClientRect(),screen=map.getContainer().closest('.atlas-screen');
   const expansionObstacles:Box[]=Array.from(screen?.querySelectorAll<HTMLElement>('.atlas-search-panel,.map-toolbar,.timeline-floating,.history-controls,.maplibregl-ctrl,.background-notice,.map-error,.historical-map-popup')||[]).filter(el=>getComputedStyle(el).visibility!=='hidden'&&getComputedStyle(el).display!=='none'&&el.getBoundingClientRect().width>0).map(el=>{const r=el.getBoundingClientRect();return{x:r.x-bounds.x+r.width/2,y:r.y-bounds.y+r.height/2,w:r.width,h:r.height}});
   for(const el of screen?.querySelectorAll('.family-drawer,.atlas-search-panel,.history-controls,.timeline-floating,.map-toolbar,.maplibregl-ctrl-attrib')||[]){if(!observed.has(el)){observed.add(el);obstaclesObserver.observe(el)}}

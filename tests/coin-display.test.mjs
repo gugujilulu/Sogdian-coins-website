@@ -65,3 +65,12 @@ test('Bukhara presentation preference uses inspected existing photo, with filter
  const only=d.specimens.filter(r=>r.id==='zeno-1031');const filtered=coinPlaces(d.families,only,d.places).flatMap(g=>g.members)[0];
  assert.equal(filtered.image.id,'z1031');assert.equal(filtered.recordCount,1);
 });
+
+test('far and middle photographs avoid city icon and caption when old offsets are all blocked',()=>{
+ const labels=[{x:200,y:168,w:130,h:98},{x:200,y:250,w:130,h:40}];
+ for(const zoom of [4,6]){
+  const item=run([panch],zoom,{labels})[0],a=item.bounds;
+  for(const b of labels)assert.ok(Math.abs(a.x-b.x)>=(a.w+b.w)/2||Math.abs(a.y-b.y)>=(a.h+b.h)/2);
+  assert.equal(item.members.length,panch.members.length);
+ }
+});
