@@ -47,3 +47,9 @@ export function searchNavigationQueue(run:(request:SearchMapRequest)=>void){
  const flush=()=>{if(!disposed&&ready&&pending){const request=pending;pending=null;run(request)}};
  return {offer(request:SearchMapRequest){if(disposed||request.serial<=latest)return;latest=request.serial;pending=request;flush()},setReady(value:boolean){ready=value;flush()},cancel(){pending=null},dispose(){disposed=true;pending=null}};
 }
+
+/** Arrival must match the fitted zoom as well as visible bounds, including multi-city searches. */
+export function searchCameraReady(input:{points:{x:number;y:number}[];width:number;height:number;padding:{left:number;right:number;top:number;bottom:number};zoom:number;targetZoom:number}){
+ const {points,width,height,padding,zoom,targetZoom}=input;
+ return points.length>0&&zoom>=targetZoom-.05&&points.every(p=>p.x>=padding.left-2&&p.x<=width-padding.right+2&&p.y>=padding.top-2&&p.y<=height-padding.bottom+2);
+}

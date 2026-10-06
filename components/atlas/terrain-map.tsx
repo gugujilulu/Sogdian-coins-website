@@ -1,6 +1,7 @@
 import {initialMapCamera} from '@/lib/coin-cover-cycle';
 import {fitHistoricalRange,rangeInitialMinZoom} from '@/lib/range-fit';
 'use client';
+import PaperSelect,{PaperOption} from './paper-select';
 import {useLanguage,useCopy} from './language';
 import {copyKnown} from '@/lib/i18n';
 import {installGestureZoomGain} from '@/lib/map-gesture-zoom';
@@ -21,7 +22,7 @@ import MapLayerPanel from './map-layer-panel';
 import {recordSourceProvider} from '@/lib/record-filters';
 import {coinFeatures,coinPlaces,coinDisplayRules,collectionCityTarget,collectionViewReady} from '@/lib/coin-map';
 import {installCoinMarkers} from './coin-map-markers';
-import {searchNavigationQueue,searchBounds,searchMapPadding,type SearchMapRequest,type MapCameraView} from '@/lib/search-map-navigation';
+import {searchNavigationQueue,searchBounds,searchMapPadding,searchCameraReady,type SearchMapRequest,type MapCameraView} from '@/lib/search-map-navigation';
 import 'maplibre-gl/dist/maplibre-gl.css';
 
 type Props={rangeObjectName?:(id:string)=>string;layers?:LayerSettings;onLayers?:(layers:LayerSettings)=>void;onBackgroundObject?:(id:string)=>void;onCameraChange?:(camera:MapCameraView)=>void;searchRequest?:SearchMapRequest|null;rangeControl?:RangeControl;initialBase?:'terrain'|'historical'|'topo';basemap?:string;onBasemap?:(base:string)=>void;initialView?:{center:[number,number];zoom:number};background?:MapBackground;initialLayers?:LayerSettings;backgroundObject?:string;rangeFocus?:number;dateMode?:'all'|'year'|'unknown';active:boolean;sourceFilter:string;data:Atlas;records:Specimen[];families:Family[];selected:Family|null;onSelect:(id:string,context?:CollectionContext)=>void;returnCollection?:{context:CollectionContext;serial:number}|null;onCollectionEmpty?:()=>void;year:number|null;focus:number};
@@ -74,14 +75,18 @@ export default function TerrainMap({rangeObjectName,layers:providedLayers,onLaye
      const rect=m.getContainer().getBoundingClientRect(),screen=m.getContainer().closest('.atlas-screen');
      const obstacles=Array.from(screen?.querySelectorAll<HTMLElement>('.atlas-search-panel,.family-drawer,.map-toolbar,.history-controls,.timeline-floating,.maplibregl-ctrl,.map-error')||[]).filter(el=>{const style=getComputedStyle(el),r=el.getBoundingClientRect();return style.visibility!=='hidden'&&style.display!=='none'&&r.width>0&&r.height>0}).map(el=>{const r=el.getBoundingClientRect();return{left:r.left-rect.left,right:r.right-rect.left,top:r.top-rect.top,bottom:r.bottom-rect.top}});
      const padding=searchMapPadding(rect.width,rect.height,obstacles);if(!padding){setSearchNotice(true);return}
-     if(request.intent==='selection'){
-      const camera=m.cameraForBounds(target,{padding,maxZoom:Math.min(9,m.getMaxZoom())});if(!camera)return;
-      const points=request.target.coordinates.map(c=>m.project(c));
-      if(collectionViewReady({points,width:rect.width,height:rect.height,padding,zoom:m.getZoom(),targetZoom:camera.zoom??9}))return;
-      const far=points.some(p=>Math.hypot(p.x-rect.width/2,p.y-rect.height/2)>Math.max(rect.width,rect.height)*.65)||Math.abs((camera.zoom??9)-m.getZoom())>1;
-      const options={...camera,duration:motionDuration(far?850:450),bearing:0,pitch:0};
-      if(far)m.flyTo(options);else m.easeTo(options);
-     }else m.fitBounds(target,{padding,maxZoom:Math.min(9,m.getMaxZoom()),duration:request.intent==='restore'?0:motionDuration(550),linear:true,bearing:0,pitch:0});
+     // Every explicit entrance uses the same real target, fitted camera and arrival test.
+     // Previously Enter/magnifier always fit again, while suggestions alone checked arrival.
+     const camera=m.cameraForBounds(target,{padding,maxZoom:Math.min(9,m.getMaxZoom())});if(!camera)return;
+     const points=request.target.coordinates.map(c=>m.project(c));
+     if(request.intent!=='restore'&&searchCameraReady({points,width:rect.width,height:rect.height,padding,zoom:m.getZoom(),targetZoom:camera.zoom??9}))return;
+     const far=points.some(p=>Math.hypot(p.x-rect.width/2,p.y-rect.height/2)>Math.max(rect.width,rect.height)*.65)||Math.abs((camera.zoom??9)-m.getZoom())>1;
+     const duration=request.intent==='restore'?0:motionDuration(request.intent==='selection'?(far?850:450):550);
+     const options={...camera,duration,bearing:0,pitch:0};
+     if(request.intent==='restore')m.jumpTo(options);
+     else if(far&&(request.intent==='selection'||request.target.kind==='single'))m.flyTo(options);
+     else m.easeTo(options);
+
     });
     m.on('movestart',event=>{if(event.originalEvent)searchQueue.current?.cancel()});
     m.on('zoomend',()=>setSymbolZoom(m.getZoom()));
@@ -140,5 +145,5 @@ export default function TerrainMap({rangeObjectName,layers:providedLayers,onLaye
  useEffect(()=>{if(!ready||!map.current||lastRangeFocus.current===rangeFocus)return;lastRangeFocus.current=rangeFocus;const bounds=rangeBounds(frameRef.current.ranges.filter(r=>r.objectId===chosenObject));setRangeNotice(bounds?'':'当前时期没有可显示的相关范围；请选定背景体系和范围时期。');if(bounds){searchQueue.current?.cancel();map.current.stop();const padding=measuredRangePadding();if(padding)fitHistoricalRange(map.current,bounds,padding,motionDuration(400))}},[rangeFocus,ready]);
  function measuredRangePadding(){const rect=container.current?.getBoundingClientRect();if(!rect)return null;const screen=container.current?.closest('.atlas-screen');const obstacles=Array.from(screen?.querySelectorAll<HTMLElement>('.atlas-search-panel,.family-drawer,.map-toolbar,.history-controls,.timeline-floating,.maplibregl-ctrl')||[]).filter(el=>{const r=el.getBoundingClientRect(),s=getComputedStyle(el);return r.width&&r.height&&s.display!=='none'&&s.visibility!=='hidden'}).map(el=>{const r=el.getBoundingClientRect();return{left:r.left-rect.left,right:r.right-rect.left,top:r.top-rect.top,bottom:r.bottom-rect.top}});return searchMapPadding(rect.width,rect.height,obstacles)}
  function measuredPadding(){const rect=container.current?.getBoundingClientRect()||{width:300,height:300,bottom:300},drawer=document.querySelector('.atlas-screen .family-drawer')?.getBoundingClientRect();return mapPadding(rect.width,rect.height,mobileViewport(window.innerWidth,window.innerHeight)&&drawer?Math.max(0,rect.bottom-drawer.top):0,mobileViewport(window.innerWidth,window.innerHeight))}
- return <div className="terrain-wrap"><div className="terrain-map" ref={container} aria-label={tr("Interactive terrain map of Central Asia; drag to pan, scroll or pinch to zoom")}/><div className="map-toolbar"><span className="basemap-icon"><ArtIcon name="range" size={21}/></span><select title={tr("底图")} aria-label={tr("Basemap")} value={base} onChange={e=>{setBase(e.target.value);setError('')}}><option value="historical">{tr("Historical · 历史地图")}</option><option value="terrain">{tr("Terrain · 地形")}</option><option value="topo">{tr("Topographic · 现代地形")}</option></select><button onClick={()=>map.current?.fitBounds([[59,34],[88,46]],{padding:measuredPadding(),duration:motionDuration(500)})} aria-label={tr("全域")}><ArtIcon name="fit" className="mobile-control-icon" size={21}/><span className="desktop-control-label">{tr("全域")}</span></button></div><MapLayerPanel zoom={symbolZoom} objectName={rangeObjectName} object={backgroundObject||''} onObject={onBackgroundObject} base={layers} effective={effective} setBase={setLayers} background={background} ranges={ranges} renderedRoles={Array.from(new Set(frameRef.current.places.flatMap(p=>p.claims.map(c=>c.role))))} time={time} control={rangeControl}/>{rangeNotice&&<div className="map-error" role="status">{copyKnown(rangeNotice)}<button onClick={()=>setRangeNotice('')}>{tr("关闭")}</button></div>}{searchNotice&&<div className="map-error" role="status">{tr("搜索地图空间不足")}</div>}{(error||layerError)&&<div className="map-error" role="status">{copyKnown(error||layerError)}{!retried&&<button onClick={()=>{setRetried(true);setLayerError('');history.current?.retry();map.current?.triggerRepaint()}}>{tr("重试图层一次")}</button>}</div>}</div>;
+ return <div className="terrain-wrap"><div className="terrain-map" ref={container} aria-label={tr("Interactive terrain map of Central Asia; drag to pan, scroll or pinch to zoom")}/><div className="map-toolbar"><span className="basemap-icon"><ArtIcon name="range" size={21}/></span><PaperSelect label={tr("Basemap")} value={base} className="basemap-select" onChange={value=>{setBase(value);setError('')}}><PaperOption value="historical">{tr("Historical · 历史地图")}</PaperOption><PaperOption value="terrain">{tr("Terrain · 地形")}</PaperOption><PaperOption value="topo">{tr("Topographic · 现代地形")}</PaperOption></PaperSelect><button onClick={()=>map.current?.fitBounds([[59,34],[88,46]],{padding:measuredPadding(),duration:motionDuration(500)})} aria-label={tr("全域")}><ArtIcon name="fit" className="mobile-control-icon" size={21}/><span className="desktop-control-label">{tr("全域")}</span></button></div><MapLayerPanel zoom={symbolZoom} objectName={rangeObjectName} object={backgroundObject||''} onObject={onBackgroundObject} base={layers} effective={effective} setBase={setLayers} background={background} ranges={ranges} renderedRoles={Array.from(new Set(frameRef.current.places.flatMap(p=>p.claims.map(c=>c.role))))} time={time} control={rangeControl}/>{rangeNotice&&<div className="map-error" role="status">{copyKnown(rangeNotice)}<button onClick={()=>setRangeNotice('')}>{tr("关闭")}</button></div>}{searchNotice&&<div className="map-error" role="status">{tr("搜索地图空间不足")}</div>}{(error||layerError)&&<div className="map-error" role="status">{copyKnown(error||layerError)}{!retried&&<button onClick={()=>{setRetried(true);setLayerError('');history.current?.retry();map.current?.triggerRepaint()}}>{tr("重试图层一次")}</button>}</div>}</div>;
 }

@@ -1,4 +1,5 @@
 'use client';
+import PaperSelect,{PaperOption} from './paper-select';
 import {motion,useIsPresent} from './ui-motion';
 import {motionTiming,motionEase} from '@/lib/motion';
 import {familyIntroduction} from '@/lib/detail-content';
@@ -52,7 +53,7 @@ export default function FamilyDrawer(p:Props){
    <div className="gallery-scope"><strong>{caption}</strong>
    {p.onRestore?<button onClick={p.onRestore}>{tr("返回筛选结果")}</button>:specimens.length<fullSpecimens.length&&<button onClick={p.onFullFamily}>{tr('查看全部记录',{records:countLabel(fullSpecimens.length,'records',locale)})}</button>}
    </div>
-   <div className="drawer-filters"><FamilyFilter label={tr("家族来源／目录组")} value={variant} onChange={p.setVariant} caption={variant==='all'?tr(mobile?"全部来源":"全部来源／目录组"):activeGroup?.title||tr("分组待定")}><option value="all">{tr("全部来源／目录组")}</option>{variants.map(v=><option key={v.id} value={v.id}>{v.title} ({allSpecimens.filter(s=>s.variantId===v.id).length})</option>)}{fullSpecimens.some(s=>s.variantId===null)&&<option value="unassigned">{tr("分组待定")}</option>}</FamilyFilter>{p.facets.length>0&&<FamilyFilter label={tr("家族铭文／徽记／特征")} value={facet} onChange={p.setFacet} caption={facet==='all'?tr(mobile?"全部特征":"全部铭文 / 徽记 / 特征"):copyKnown(facet,locale)}><option value="all">{tr("全部铭文 / 徽记 / 特征")}</option>{p.facets.map(f=><option key={f} value={f}>{copyKnown(f,locale)}</option>)}</FamilyFilter>}</div>
+   <div className="drawer-filters"><FamilyFilter label={tr("家族来源／目录组")} value={variant} onChange={p.setVariant} caption={variant==='all'?tr(mobile?"全部来源":"全部来源／目录组"):activeGroup?.title||tr("分组待定")}><PaperOption value="all">{tr("全部来源／目录组")}</PaperOption>{variants.map(v=><PaperOption key={v.id} value={v.id}>{v.title} ({allSpecimens.filter(s=>s.variantId===v.id).length})</PaperOption>)}{fullSpecimens.some(s=>s.variantId===null)&&<PaperOption value="unassigned">{tr("分组待定")}</PaperOption>}</FamilyFilter>{p.facets.length>0&&<FamilyFilter label={tr("家族铭文／徽记／特征")} value={facet} onChange={p.setFacet} caption={facet==='all'?tr(mobile?"全部特征":"全部铭文 / 徽记 / 特征"):copyKnown(facet,locale)}><PaperOption value="all">{tr("全部铭文 / 徽记 / 特征")}</PaperOption>{p.facets.map(f=><PaperOption key={f} value={f}>{copyKnown(f,locale)}</PaperOption>)}</FamilyFilter>}</div>
    <div className="drawer-gallery">{specimens.map(s=><article key={s.id} className="specimen-tile"><button className="specimen-image" onClick={()=>p.onOpen(s)} aria-label={`${tr('打开图片')} ${s.title}`}>
     {s.images[0]?<img src={s.images[0].path} alt={s.title} loading="lazy" onError={e=>{e.currentTarget.hidden=true}}/>:<small>{tr("图片未记录，仍可查看详情")}</small>}<span><ArtIcon name="expand" size={12}/><span className="photo-action-label">{tr("图片详情")}</span></span>
    </button><div className="specimen-copy"><strong>{s.title}</strong><small>{[s.weightG!=null?`${s.weightG} g`:null,s.diameterMm!=null?`${s.diameterMm} mm`:null].filter(Boolean).join(' · ')}</small>
@@ -77,8 +78,6 @@ export default function FamilyDrawer(p:Props){
  </motion.aside>
 }
 
-// The native select retains its full options and keyboard behavior. Its visible
-// caption wraps instead of clipping long catalogue or feature names on phones.
 function FamilyFilter(p:{label:string;value:string;caption:string;onChange:(value:string)=>void;children:ReactNode}){
- return <div className="drawer-filter"><span aria-hidden="true"><span>{p.caption}</span><ArtIcon name="chevron" size={14}/></span><select aria-label={p.label} value={p.value} onChange={e=>p.onChange(e.target.value)}>{p.children}</select></div>
+ return <PaperSelect className="drawer-filter" {...p}/>;
 }
