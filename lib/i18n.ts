@@ -138,6 +138,11 @@ export const dictionary={
   "zh": "清除筛选",
   "ru": "Сбросить фильтры"
  },
+ "全部时期展示各政权的默认范围，不表示它们同时存在。": {
+  "en": "All periods shows each polity’s default range; they did not necessarily coexist.",
+  "zh": "全部时期展示各政权的默认范围，不表示它们同时存在。",
+  "ru": "Все периоды показывают границы по умолчанию для каждого государства; они не обязательно существовали одновременно."
+ },
  "全部时期": {
   "en": "All periods",
   "zh": "全部时期",

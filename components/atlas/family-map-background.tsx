@@ -2,14 +2,14 @@
 import {useCopy,useLanguage} from './language';
 import {type MapBackground,type MapTime} from '@/lib/map-layers';
 import {rangeName} from '@/lib/range-copy';
-import {rangeViews} from '@/lib/range-time';
+import {historicalRangeViews} from '@/lib/range-time';
 import RangeControls,{type RangeControl} from './range-controls';
 export default function FamilyMapBackground({time,control,background,familyId,enabled,onEnabled,onRange,object,onObject,objectName}:{time:MapTime;control:RangeControl;background:MapBackground;familyId:string;enabled:boolean;onEnabled:()=>void;onRange:()=>void;object:string;onObject:(id:string)=>void;objectName:(id:string)=>string}){
  const tr=useCopy(),{locale}=useLanguage();
  const associated=background.ranges.filter(r=>r.familyIds.includes(familyId));
- const objects=rangeViews(associated,time,control.selection.versions);
+ const objects=historicalRangeViews(associated,time,control.selection.versions);
  const ranges=background.ranges.filter(r=>r.objectId===object);
- const view=rangeViews(ranges,time,control.selection.versions,control.selection.backgrounds)[0];
+ const view=historicalRangeViews(ranges,time,control.selection.versions,control.selection.backgrounds)[0];
  const global=!!object&&!objects.some(v=>v.objectId===object);
  return <section className="map-background family-range"><strong>{tr('相关范围')}{global&&<small> · {tr('全局范围')}</small>}</strong>
  {objects.length>1||global?<select aria-label={tr('相关范围')} value={object} onChange={e=>onObject(e.target.value)}>

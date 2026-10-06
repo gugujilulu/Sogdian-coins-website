@@ -85,3 +85,7 @@
  .art-detail .image-pagination button {padding-top:5px;padding-bottom:3px}
  .art-detail .image-toolbar button {padding-top:5px;padding-bottom:3px}
 }
+
+/* Selected family emphasizes its visible polity without changing its colour. */
+.atlas-screen .history-range-label.polity-highlighted strong{font-weight:700}
+.atlas-screen .history-range-label.polity-highlighted{text-shadow:0 1px 1px #fff4dc}

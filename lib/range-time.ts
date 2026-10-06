@@ -43,6 +43,18 @@ export function rangeViews(ranges:MapRange[],time:MapTime,versions:Record<string
   return{objectId,choices,selected,assessment,message:message+alternatives+(background?'；历史背景':''),visible:!!selected.geometry&&(allowed||background),background};
  });
 }
+/** Global polity overview picks one drawable, applicable version per existing object. */
+export function historicalRangeViews(ranges:MapRange[],time:MapTime,versions:Record<string,string>={},backgrounds:string[]=[]):RangeView[]{
+ const selectedVersions={...versions};
+ for(const objectId of new Set(ranges.filter(r=>r.kind==='polity').map(r=>r.objectId))){
+  const choices=orderedVersions(ranges.filter(r=>r.objectId===objectId&&r.kind==='polity'&&r.geometry));
+  const preferred=choices.find(r=>r.id===versions[objectId]);
+  const applicable=choices.filter(r=>time.mode==='all'||(time.mode==='year'?assessRangeYear(r,time.year)==='match':['lower','upper','unknown'].includes(rangeTimeState(r))));
+  const selected=applicable.find(r=>r.id===preferred?.id)||applicable[0]||preferred||choices[0];
+  if(selected)selectedVersions[objectId]=selected.id;
+ }
+ return rangeViews(ranges,time,selectedVersions,backgrounds);
+}
 export type RangeSelection={context:string;versions:Record<string,string>;backgrounds:string[]};
 export type RangeAction={type:'version';objectId:string;id:string}|{type:'background';objectId:string;enabled:boolean}|{type:'context'};
 export function updateRangeSelection(state:RangeSelection,context:string,action:RangeAction):RangeSelection{
