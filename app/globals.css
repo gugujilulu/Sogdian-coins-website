@@ -402,9 +402,6 @@
  .atlas-app details::details-content{transition:none!important}
 }
 @starting-style{.image-detail-dialog[open]::backdrop{background:transparent}}
-.coin-city-connections line{animation:coin-link-entry var(--motion-line,240ms) ease-out}
-@keyframes coin-link-entry{from{opacity:0}to{opacity:1}}
-@media(prefers-reduced-motion:reduce){.coin-city-connections line{animation:none}}
 
 .app-header nav button::after{content:"";position:absolute;left:0;right:-10px;bottom:0;height:2px;background:#d1b474;opacity:0;transition:opacity var(--motion-menu,190ms)}
 .app-header nav button.active::after{opacity:1}
