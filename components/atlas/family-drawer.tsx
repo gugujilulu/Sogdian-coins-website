@@ -55,7 +55,7 @@ export default function FamilyDrawer(p:Props){
    </div>
    {(family.description||family.legend||family.question)&&<section className="family-introduction">
     {family.description&&<><h2>{tr("类型介绍")}</h2><p>{familyIntroduction(family.id,locale)}</p></>}
-    {family.legend&&<><h3>{tr("铭文 / Inscription")}</h3><p className="inscription">{family.legend}</p>{family.legendNote&&<p>{copyKnown(family.legendNote,locale)}</p>}</>}
+
    </section>}
    {location}
    {navigation}
@@ -65,6 +65,7 @@ export default function FamilyDrawer(p:Props){
    </button><div className="specimen-copy"><strong>{s.title}</strong><small>{[s.weightG!=null?`${s.weightG} g`:null,s.diameterMm!=null?`${s.diameterMm} mm`:null].filter(Boolean).join(' · ')}</small>
    <details className="tile-sources"><summary>{tr("来源")}</summary><div className="tile-source-list">{p.sources.get(s.id)?.map(e=><a key={e.source.id} href={e.source.urls[0]} target="_blank" rel="noreferrer" aria-label={`${e.source.provider} ${e.source.recordKey}`}>{e.source.provider}{e.source.identityStatus!=='resolved'?tr('（待解析）'):''}</a>)||<small>{p.sourceIndexError?tr("来源索引加载失败；原始来源见详情"):tr("来源索引加载中")}</small>}{s.images[0]?.credit&&<small>{tr("图片署名")} · {s.images[0].credit}</small>}</div></details></div></article>)}</div>
    {!specimens.length&&<p role="status">{tr("没有符合条件的记录。")}<button onClick={()=>{p.setVariant('all');p.setFacet('all')}}>{tr("清除家族内筛选")}</button></p>}
+   {family.legend&&<details className="research-block"><summary>{tr("铭文 / Inscription")}</summary><p className="inscription">{family.legend}</p>{family.legendNote&&<p>{copyKnown(family.legendNote,locale)}</p>}</details>}
    {family.question&&<details className="research-block"><summary>{tr("研究问题")}</summary><p>{copyKnown(family.question,locale)}</p></details>}
    {p.mapBackground}
    {(family.publications.length>0||family.anchor?.note||activeGroup?.description)&&<details className="research-block"><summary>{tr("资料与方法")}</summary>

@@ -1,3 +1,4 @@
+import {hiddenCityCollections} from '@/lib/hidden-city-collections';
 import {placeName} from '@/lib/place-display';
 import {familyTitle} from '@/lib/browse-copy';
 import {CollectionPopupLifecycle} from '../../lib/collection-popup-lifecycle';
@@ -146,9 +147,10 @@ export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPla
    };
    entry.marker.setLngLat(e.coords).setOffset([e.offsetX,e.offset]);
   }
-  const hidden=layout.filter(e=>e.occluded&&e.kind==='collection'&&!e.overflow&&e.members.length);
+  const hidden=hiddenCityCollections(layout);
   const focusPlace=(document.activeElement as HTMLElement)?.dataset.hiddenPlace;hiddenList.replaceChildren();hiddenCollections.hidden=!hidden.length;hiddenSummary.textContent=`${tr('未显示合集')} (${hidden.length})`;
-  for(const e of hidden){const row=document.createElement('button');row.type='button';row.dataset.hiddenPlace=e.groups[0].place.id;row.textContent=`${e.groups.map(g=>placeName(g.place)).join(' / ')} · ${countLabel(e.members.length,'families')}`;row.onclick=ev=>{ev.stopPropagation();hiddenCollections.open=false;openerFamilies=e.members.map(m=>m.family.id);show(e.collectionGroups,e.coords,displayCollectionContext(e))};hiddenList.appendChild(row);if(focusPlace===row.dataset.hiddenPlace)row.focus({preventScroll:true})}
+  for(const group of hidden){const row=document.createElement('button');row.type='button';row.dataset.hiddenPlace=group.place.id;row.textContent=`${placeName(group.place)} · ${countLabel(group.members.length,'families')}`;row.onclick=ev=>{ev.stopPropagation();hiddenCollections.open=false;openerFamilies=group.members.map(m=>m.family.id);show([group],group.place.coordinates,{placeIds:[group.place.id],familyIds:openerFamilies,scrollTop:0})};hiddenList.appendChild(row);if(focusPlace===row.dataset.hiddenPlace)row.focus({preventScroll:true})}
+
   const previousLayout=currentLayout;currentLayout=layout;
   if(!map.isMoving()&&suppressPan){motionState.restore();suppressPan=false}
   const settled=!map.isMoving()?motionState.settle(layout.filter(e=>e.stage==='near'&&!e.overflow&&!e.occluded).map(e=>e.key)):null;

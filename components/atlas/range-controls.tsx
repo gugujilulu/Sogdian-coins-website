@@ -1,6 +1,6 @@
 'use client';
 import {useCopy,useLanguage} from './language';
-import {timeCopy,spaceCopy,rangeMessage,rangeName,rangePeriodCopy} from '@/lib/range-copy';
+import {timeCopy,spaceCopy,rangeMessage,rangeName,rangePeriodCopy,rangeDisplayText} from '@/lib/range-copy';
 import {historicalRangeViews} from '@/lib/range-time';
 import type {MapRange,MapTime} from '@/lib/map-layers';
 import type {useRangeSelection} from './use-range-selection';
@@ -14,7 +14,7 @@ export default function RangeControls({ranges,time,control,enabled=true,allowBac
   {v.selected&&<>{(!compact||v.selected.geometry)&&<p>{rangePeriodCopy(v.selected,locale)} · {v.selected.precision==='approximate'?tr("大致范围"):tr("范围资料")}</p>}
    {allowBackground&&v.selected.geometry&&!v.visible&&(!compact||(typeof enabled==='function'?enabled(v.selected):enabled))&&<button onClick={()=>control.setBackground(v.objectId,true)}>{tr("作为历史背景查看")}</button>}
    {v.background&&<button onClick={()=>control.setBackground(v.objectId,false)}>{tr("停止背景查看")}</button>}
-   <details><summary>{tr("资料与方法")}</summary>{time.mode==='all'&&v.selected.kind==='polity'&&<p>{tr('全部时期展示各政权的默认范围，不表示它们同时存在。')}</p>}<p>{timeCopy(v.selected,locale)}</p><p>{spaceCopy(v.selected,locale)}</p>{!v.selected.source.split('\n').some(source=>source&&!/^(public|research|docs|lib)\//.test(source))&&<p>{tr("范围出处待补")}</p>}<p>{v.selected.note||tr("说明未记录")}</p>{v.selected.source.split('\n').filter(source=>source&&!/^(public|research|docs|lib)\//.test(source)).map((source,i)=>/^https?:\/\//.test(source)?<a key={i} href={source} target="_blank" rel="noreferrer">{tr("范围资料来源 ↗")}</a>:<p key={i}>{source}</p>)}</details>
+   <details><summary>{tr("资料与方法")}</summary>{time.mode==='all'&&v.selected.kind==='polity'&&<p>{tr('全部时期展示各政权的默认范围，不表示它们同时存在。')}</p>}<p>{timeCopy(v.selected,locale)}</p><p>{spaceCopy(v.selected,locale)}</p>{!v.selected.source.split('\n').some(source=>source&&!/^(public|research|docs|lib)\//.test(source))&&<p>{tr("范围出处待补")}</p>}<p>{rangeDisplayText(v.selected,'note',locale)||tr('说明未记录')}</p>{v.selected.source.split('\n').filter(source=>source&&!/^(public|research|docs|lib)\//.test(source)).map((source,i)=>/^https?:\/\//.test(source)?<a key={i} href={source} target="_blank" rel="noreferrer">{tr("范围资料来源 ↗")}</a>:<p key={i}>{source}</p>)}</details>
   </>}
  </section>)}</div>;
 }

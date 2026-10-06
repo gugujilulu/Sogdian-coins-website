@@ -1,3 +1,4 @@
+import names from './content/family-names.json' with {type:'json'};
 import {displayName,tr,formatCopy,copyKnown,countLabel,type Locale} from './i18n.ts';
 import type {CatalogueGroup} from './catalogue-tree';
 import type {SourceTreeNode} from './source-tree';
@@ -11,7 +12,7 @@ export function sourceNodeTitle(node:SourceTreeNode,locale:Locale){
  }
  return node.title;
 }
-export function familyTitle(family:{title:string;zh?:string;ru?:string},locale:Locale){return displayName({name:family.title,zh:familySubtitle(family),ru:family.ru},locale)}
+export function familyTitle(family:{id?:string;title:string;zh?:string;ru?:string},locale:Locale){return (names as Record<string,Record<Locale,string>>)[family.id||'']?.[locale]||displayName({name:family.title,zh:familySubtitle(family),ru:family.ru},locale)}
 /** Search reveals ancestors, without resetting unrelated expansion on display-copy rerenders. */
 export function catalogueExpansion(expanded:Set<string>,previous:string,next:string,query:string,ancestors:readonly string[]){return previous!==next&&query.trim()?new Set([...expanded,...ancestors]):expanded}
 export function relatedProgress(visible:number,total:number,locale:Locale){return formatCopy('已显示 {visible} / {total} 条相关资料',{visible,total},locale)}

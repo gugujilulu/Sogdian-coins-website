@@ -1,0 +1,13 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {hiddenCityCollections} from '../lib/hidden-city-collections.ts';
+import {layerAvailability} from '../lib/layer-availability.ts';
+import {descriptionCopy,recordContent} from '../lib/detail-content.ts';
+import {placeName,placeNote} from '../lib/place-display.ts';
+import {rangeDisplayText} from '../lib/range-copy.ts';
+import {panchCore} from '../lib/panch-ranges.ts';
+const group=(id,count=2)=>({place:{id,coordinates:[1,2]},members:[{family:{id:id+'-family'},recordCount:count}]});
+const entry=(group,changes={})=>({groups:[group],collectionGroups:[group],occluded:true,stage:'far',overflow:false,...changes});
+test('hidden city fallback preserves cities and members, excludes visible/near/empty entries and deduplicates',()=>{const p=group('panch'),s=group('suyab');const result=hiddenCityCollections([entry(p),entry(p),entry(s),entry(group('visible'),{occluded:false}),entry(group('near'),{stage:'near'}),entry(group('zero',0))]);assert.deepEqual(result.map(g=>g.place.id),['panch','suyab']);assert.equal(result[0],p);assert.deepEqual(hiddenCityCollections([]),[])});
+test('no-data layers differ from supported layers with no date matches',()=>{const background={places:[{claims:[{role:'city',start:null,end:null}]}],ranges:[{kind:'polity',objectId:'panch',geometry:{}}]};assert.deepEqual(layerAvailability('mints',background,[],{mode:'all',year:750}),{available:0,active:0});assert.deepEqual(layerAvailability('polities',background,[],{mode:'year',year:750}),{available:1,active:0});assert.equal(layerAvailability('cities',background,[],{mode:'all',year:750}).active,1)});
+test('individual translated descriptions retain dates and distinct reported find context',()=>{for(const locale of ['zh','ru']){assert.match(descriptionCopy(recordContent('zeno-388312')[0].text,locale),/709/);assert.notEqual(descriptionCopy(recordContent('zeno-264184')[0].text,locale),recordContent('zeno-264184')[0].text);assert.notEqual(descriptionCopy(recordContent('zeno-209687')[0].text,locale),recordContent('zeno-209687')[0].text)}assert.equal(descriptionCopy('Unreviewed original text','zh'),'Unreviewed original text')});
+test('place names and notes are localized without altering anchors; range methods do not fall back to Chinese',()=>{assert.equal(placeName({id:'panjakent',name:'Panch'},'ru'),'Пенджикент / Панч');assert.match(placeNote('panjakent','original','zh'),/39°/);const range=panchCore([]);assert.doesNotMatch(rangeDisplayText(range,'note','en'),/[\u3400-\u9fff]/);assert.match(rangeDisplayText(range,'note','ru'),/Диваштича/)});

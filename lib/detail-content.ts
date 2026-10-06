@@ -1,3 +1,5 @@
+import display from './content/record-display.json' with {type:'json'};
+import {copyKnown} from './i18n.ts';
 import content from './content/detail-content.json' with {type:'json'};
 import type {Locale} from './i18n';
 export type DescriptionSource={text:string;url:string;provider:string;rawHtml?:string|null;metal?:string|null};
@@ -26,3 +28,6 @@ export function sourceReading(text:string,locale:Locale){
  if(!found.length)return '';
  return locale==='zh'?`来源描述提及${found.join('、')}。`:locale==='ru'?`В описании источника упоминаются: ${found.join(', ')}.`:`The source description mentions ${found.join(', ')}.`;
 }
+
+/** Exact, reviewed source-text mappings; never modify raw records or infer individual facts. */
+export function descriptionCopy(text:string,locale:Locale){return locale==='en'?text:(display as Record<string,Record<string,string>>)[text]?.[locale]||copyKnown(text,locale)}

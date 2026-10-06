@@ -1,0 +1,282 @@
+{
+  "lady-nana": {
+    "en": "Lady Nana of Panch",
+    "zh": "潘治的娜娜夫人 · 方孔铜钱",
+    "ru": "Госпожа Нана из Панча"
+  },
+  "sr3": {
+    "en": "Vahshutava series",
+    "zh": "瓦赫什图瓦系列 · 元／prn",
+    "ru": "Серия Вахшутавы"
+  },
+  "sr6": {
+    "en": "Türgesh kagan: tamgha reverse",
+    "zh": "突骑施可汗：背面徽记型",
+    "ru": "Каган Тюргешей: тамга на обороте"
+  },
+  "sr9": {
+    "en": "Arslan Irkin / legacy Inal-Tegin",
+    "zh": "阿尔斯兰·伊尔金／旧称 Inal-Tegin",
+    "ru": "Арслан Иркин / прежнее название Инал-Тегин"
+  },
+  "sr14": {
+    "en": "Ex. “Tukhus” complex / legacy Master of Tukhuses",
+    "zh": "“Tukhus” 系列／旧目录 Master of Tukhuses",
+    "ru": "Комплекс «Tukhus» / прежнее «Владыка тухусов»"
+  },
+  "sr20": {
+    "en": "Arslan Bilge-kagan",
+    "zh": "Arslan Bilge-kagan",
+    "ru": "Арслан Бильге-каган"
+  },
+  "sr21": {
+    "en": "Malik Aram Yinal Qaraj / legacy proto-Qarakhanid cash",
+    "zh": "Malik Aram Yinal Qaraj／旧称 proto-Qarakhanid 方孔钱",
+    "ru": "Малик Арам Йинал Карадж / прежние протокараханидские монеты"
+  },
+  "un16": {
+    "en": "Unattributed Sogdian-legend cash",
+    "zh": "未定归属粟特铭文钱",
+    "ru": "Монеты с согдийской надписью без атрибуции"
+  },
+  "un22": {
+    "en": "Unattributed tamgha and legend cash",
+    "zh": "未定归属徽记与铭文钱",
+    "ru": "Монеты с тамгой и надписью без атрибуции"
+  },
+  "un24": {
+    "en": "Unattributed paired-tamgha cash",
+    "zh": "未定归属双徽记钱",
+    "ru": "Монеты с парными тамгами без атрибуции"
+  },
+  "es19": {
+    "en": "Gurek (Urak)",
+    "zh": "Gurek（Urak）",
+    "ru": "Гурек (Урак)"
+  },
+  "es18a": {
+    "en": "Tarhun: two-line inscription",
+    "zh": "Tarhun：双行铭文型",
+    "ru": "Тархун: двухстрочная надпись"
+  },
+  "dali": {
+    "en": "Dali yuanbao",
+    "zh": "大历元宝",
+    "ru": "Дали юаньбао"
+  },
+  "alp-tagh": {
+    "en": "Alp Tagh",
+    "zh": "Alp Tagh · 七河方孔钱",
+    "ru": "Алп Таг"
+  },
+  "arslan-kul-irkin": {
+    "en": "Arslan Kul Irkin",
+    "zh": "Arslan Kul Irkin · 七河方孔钱",
+    "ru": "Арслан Кюль Иркин"
+  },
+  "samarkand-shishpir": {
+    "en": "Shishpir square-hole cash",
+    "zh": "石什毕尔方孔钱",
+    "ru": "Монеты Шишпира"
+  },
+  "samarkand-wuzurg": {
+    "en": "Wuzurg square-hole cash",
+    "zh": "Wuzurg 方孔钱",
+    "ru": "Монеты Вузурга"
+  },
+  "samarkand-warkhuman": {
+    "en": "Warkhuman square-hole cash",
+    "zh": "瓦尔胡曼方孔钱",
+    "ru": "Монеты Вархумана"
+  },
+  "samarkand-mastich-unash": {
+    "en": "Mastich-Unash square-hole cash",
+    "zh": "Mastich-Unash 方孔钱",
+    "ru": "Монеты Мастич-Унаша"
+  },
+  "samarkand-tukaspadak": {
+    "en": "Tukaspadak square-hole cash",
+    "zh": "Tukaspadak 方孔钱",
+    "ru": "Монеты Тукаспадака"
+  },
+  "samarkand-turgar": {
+    "en": "Turgar square-hole cash",
+    "zh": "Turgar 方孔钱",
+    "ru": "Монеты Тургара"
+  },
+  "samarkand-urk-wartramuka": {
+    "en": "Urk Wartramuka square-hole cash",
+    "zh": "Urk Wartramuka 方孔钱",
+    "ru": "Монеты Урк Вартамуки"
+  },
+  "samarkand-chinese-type": {
+    "en": "Samarkand Chinese-type cash",
+    "zh": "撒马尔罕中国式方孔钱",
+    "ru": "Монеты китайского типа из Самарканда"
+  },
+  "panch-amukian": {
+    "en": "Amukian of Panch square-hole cash",
+    "zh": "潘治 Amukian 方孔钱",
+    "ru": "Монеты Амукиана из Панча"
+  },
+  "panch-chekin-chur-bilge": {
+    "en": "Chekin Chur Bilgä of Panch",
+    "zh": "潘治 Chekin Chur Bilgä 方孔钱",
+    "ru": "Чекин Чур Бильге из Панча"
+  },
+  "panch-pycwtt": {
+    "en": "Pycwtt of Panch",
+    "zh": "潘治 Pycwtt 方孔钱",
+    "ru": "Pycwtt из Панча"
+  },
+  "kabudan-cash": {
+    "en": "Kabudan local square-hole cash",
+    "zh": "Kabudan 地方方孔钱",
+    "ru": "Местные монеты Кабудана"
+  },
+  "barkat-ramchitak": {
+    "en": "Ramchitak of Barkat square-hole cash",
+    "zh": "Barkat · Ramchitak 方孔钱",
+    "ru": "Монеты Рамчитака из Барката"
+  },
+  "barkat-zatak": {
+    "en": "Zatak / Natak of Barkat square-hole cash",
+    "zh": "Barkat · Zatak / Natak 方孔钱",
+    "ru": "Монеты Затака / Натака из Барката"
+  },
+  "bukhara-kaiyuan-tamgha": {
+    "en": "Bukharian Kaiyuan-style cash with tamgha",
+    "zh": "布哈拉开元式徽记方孔钱",
+    "ru": "Бухарские монеты типа кайюань с тамгой"
+  },
+  "paykand-square-hole": {
+    "en": "Paykand Chinese-type square-hole cash",
+    "zh": "佩坎德中国式方孔钱",
+    "ru": "Монеты китайского типа из Пайкенда"
+  },
+  "kesh-akhurpat": {
+    "en": "Akhurpat of Kesh square-hole cash",
+    "zh": "渴石 Akhurpat 方孔钱",
+    "ru": "Монеты Ахурпата из Кеша"
+  },
+  "chach-farankat": {
+    "en": "Farankat / Benakan square-hole cash",
+    "zh": "石国 Farankat / Benakan 方孔钱",
+    "ru": "Монеты Фаранката / Бенакана"
+  },
+  "chach-khagan-square-hole": {
+    "en": "Chach khagan-title square-hole cash",
+    "zh": "石国可汗号方孔钱",
+    "ru": "Монеты Чача с титулом кагана"
+  },
+  "sayram-anonymous-tutuk": {
+    "en": "Anonymous tutuk cash of Sayram",
+    "zh": "塞兰无名都督方孔钱",
+    "ru": "Анонимные монеты тутука из Сайрама"
+  },
+  "keder-cash": {
+    "en": "Keder square-frame cash",
+    "zh": "Keder 方孔传统钱",
+    "ru": "Монеты Кедера с квадратной рамкой"
+  },
+  "ferghana-anon-khagan": {
+    "en": "Ferghana anonymous khaqan cash",
+    "zh": "费尔干纳无名可汗方孔钱",
+    "ru": "Анонимные монеты кагана Ферганы"
+  },
+  "qarluq-kobek": {
+    "en": "Qarluq Köbäk(?) square-hole cash",
+    "zh": "葛逻禄 Köbäk(?) 方孔钱",
+    "ru": "Карлукские монеты Кёбяка(?)"
+  },
+  "yaghlaqar": {
+    "en": "Yaghlaqar clan square-hole cash",
+    "zh": "药罗葛氏族方孔钱",
+    "ru": "Монеты рода Яглакар"
+  },
+  "western-liao-zhouyuan": {
+    "en": "Western Liao-attributed Zhouyuan Tongbao",
+    "zh": "西辽归属周元通宝系列",
+    "ru": "Чжоу-юань тунбао, приписываемые Западному Ляо"
+  },
+  "tokharistan-square-hole": {
+    "en": "Northern Tokharistan square-hole cash",
+    "zh": "北吐火罗方孔钱",
+    "ru": "Монеты северного Тохаристана"
+  },
+  "yarug-kadin": {
+    "en": "Yarug-kadin(?) square-hole cash",
+    "zh": "Yarug-kadin(?) 方孔钱",
+    "ru": "Монеты Яруг-кадын(?)"
+  },
+  "general-ir-chor-irti": {
+    "en": "General Ir Chor Irti(?) cash",
+    "zh": "Ir Chor Irti(?) 将军方孔钱",
+    "ru": "Монеты полководца Ир Чор Ирти(?)"
+  },
+  "semirechye-chinese-imitation": {
+    "en": "Semirechye Chinese-cash imitations",
+    "zh": "七河地区中国式方孔钱仿铸系列",
+    "ru": "Подражания китайским монетам в Семиречье"
+  },
+  "regional-east-asian-imports": {
+    "en": "East Asian cash in Central Asian contexts",
+    "zh": "中亚考古／流通环境中的东亚方孔钱",
+    "ru": "Восточноазиатские монеты в контекстах Центральной Азии"
+  },
+  "semirechye-runic-sh-gamma": {
+    "en": "Semirechye two-runic-sign square-hole cash",
+    "zh": "七河双突厥符号方孔钱",
+    "ru": "Монеты Семиречья с двумя руническими знаками"
+  },
+  "vakhsh-cross-tamgha-cash": {
+    "en": "Vakhsh cross-and-tamgha cash",
+    "zh": "瓦赫什十字与徽记方孔钱",
+    "ru": "Монеты Вахша с крестом и тамгой"
+  },
+  "ferghana-two-tamgha-cash": {
+    "en": "Ferghana two-tamgha square-hole cash",
+    "zh": "费尔干纳双徽记方孔钱",
+    "ru": "Монеты Ферганы с двумя тамгами"
+  },
+  "fansar-pargar-square-hole": {
+    "en": "Fansar and Pargar square-hole cash",
+    "zh": "凡萨尔／帕尔加尔方孔钱",
+    "ru": "Монеты Фансара и Паргара"
+  },
+  "samarkand-unlisted-square-hole": {
+    "en": "Unlisted Samarkand/Sogdian square-hole cash",
+    "zh": "撒马尔罕／粟特未列名方孔钱",
+    "ru": "Неименованные монеты Самарканда / Согда"
+  },
+  "termez-cash-like": {
+    "en": "Termez/Tirmidh cash-like square-hole AE",
+    "zh": "铁尔梅兹／忒尔密兹方孔式铜钱",
+    "ru": "Медные монеты китайского типа из Термеза / Тирмиза"
+  },
+  "badakhshan-kaiyuan-arabic": {
+    "en": "Badakhshan Kaiyuan–Arabic hybrid cash",
+    "zh": "巴达赫尚开元—阿拉伯文混合方孔钱",
+    "ru": "Монеты Бадахшана с кайюань и арабской надписью"
+  },
+  "uncertain-central-asian-square-hole": {
+    "en": "Uncertain Central Asian square-hole cash",
+    "zh": "中亚未定归属方孔钱",
+    "ru": "Монеты Центральной Азии с неопределённой атрибуцией"
+  },
+  "nwr-pry-square-hole": {
+    "en": "“Nwr-pry” square-hole cash",
+    "zh": "“Nwr-pry” 方孔钱",
+    "ru": "Монеты «Nwr-pry»"
+  },
+  "semirechye-unattributed-cash": {
+    "en": "Unattributed Semirechye square-hole cash",
+    "zh": "七河未定归属方孔钱",
+    "ru": "Монеты Семиречья без атрибуции"
+  },
+  "ferghana-chach-anepigraphic-cash": {
+    "en": "Ferghana/Chach anepigraphic square-hole cash",
+    "zh": "费尔干纳／石国未署名方孔钱",
+    "ru": "Монеты Ферганы / Чача без надписей"
+  }
+}

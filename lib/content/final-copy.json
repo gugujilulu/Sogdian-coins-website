@@ -178,5 +178,10 @@
     "zh": "个体钱币描述与铭文释读。",
     "en": "Individual coin description and inscription reading.",
     "ru": "Описание отдельной монеты и чтение надписи."
+  },
+  "适用时期未记录": {
+    "zh": "适用时期未记录",
+    "en": "Applicable period not recorded",
+    "ru": "Применимый период не указан"
   }
 }

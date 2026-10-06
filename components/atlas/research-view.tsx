@@ -1,3 +1,4 @@
+import ResearchCoverage from './research-coverage';
 import {copyKnown} from '@/lib/i18n';
 'use client';
 import {useEffect,useRef} from 'react';
@@ -19,7 +20,7 @@ const roadmap=[
  ['语言学研究','整理铭文、语言材料与研究入口。','三期']
 ] as const;
 const rosette=()=> <img className="research-rosette" src="/visual/t67-14/row-rosette.webp" alt="" aria-hidden="true"/>;
-export default function ResearchView({data,ranges=[]}:{data:Atlas;imageCount:number;sources:string[];ranges?:MapRange[]}){
+export default function ResearchView({data,ranges=[],sourceCount}:{data:Atlas;imageCount:number;sources:string[];ranges?:MapRange[];sourceCount?:number}){
  const tr=useCopy(),{locale}=useLanguage();
  const panel=useRef<HTMLDivElement>(null),viewport=useRef<HTMLDivElement>(null),footer=useRef<HTMLImageElement>(null),content=useRef<HTMLDivElement>(null);
  // The mask affects only text. Links outside its clear area cannot be invisible mouse targets.
@@ -50,7 +51,7 @@ export default function ResearchView({data,ranges=[]}:{data:Atlas;imageCount:num
     <div className="research-references">{[
      ['钱币目录与研究','参考目录用途',publications],['原始来源','参考来源用途',original],['历史地图与地域','参考地理用途',mapLinks]
     ].map(([title,purpose,items])=><details key={title as string}><summary>{tr(title as '钱币目录与研究')}</summary><p>{tr(purpose as '参考目录用途')}</p><ul>{(items as {url:string;title:string;role?:string}[]).map(referenceLink)}</ul></details>)}
-    <details id="sources-methods"><summary>{tr('来源与方法')}</summary>{sections.map(([heading,body])=><details key={body}><summary>{tr(heading)}</summary><p>{tr(body)}</p></details>)}<details><summary>{tr('范围来源记录')}</summary>{rangeSources.map(source=><p key={source}>{source.split(/(https?:\/\/[^\s]+)/).map((part,i)=>/^https?:/.test(part)?<a key={i} href={part} target="_blank" rel="noreferrer">{tr('来源')} ↗</a>:<span key={i}>{part}</span>)}</p>)}</details></details>
+    <details id="sources-methods"><summary>{tr('来源与方法')}</summary><ResearchCoverage data={data} ranges={ranges} sourceCount={sourceCount}/>{sections.map(([heading,body])=><details key={body}><summary>{tr(heading)}</summary><p>{tr(body)}</p></details>)}<details><summary>{tr('范围来源记录')}</summary>{rangeSources.map(source=><p key={source}>{source.split(/(https?:\/\/[^\s]+)/).map((part,i)=>/^https?:/.test(part)?<a key={i} href={part} target="_blank" rel="noreferrer">{tr('来源')} ↗</a>:<span key={i}>{part}</span>)}</p>)}</details></details>
     </div>
     <div className="research-access"><a href={serializeLink({view:'catalogue',panel:'sources'})}>{tr('来源索引')}<ArtIcon name="external" collection="r3" size={16}/></a><a href={serializeLink({view:'catalogue',panel:'related'})}>{tr('相关资料图库')}<ArtIcon name="external" collection="r3" size={16}/></a></div>
     <div className="research-contact"><h2>{rosette()}{tr('联系邮箱')}</h2><p>{tr("纠错与资料补充")}</p><a href="mailto:zhaoyifu88@gmail.com">zhaoyifu88@gmail.com</a></div>

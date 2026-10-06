@@ -77,3 +77,10 @@ After the first successful complete market update, run an incremental update eve
 ## Historical GIS
 
 Political territory, documented circulation, find distribution, inferred range, mint, findspot, hoard and display anchor are separate layers. Political polygons are time-bounded and source-attributed. Missing polygons are displayed as a research gap, never invented for visual completeness.
+
+### Phase-two historical map and evidence expansion (2026-10-06)
+
+- Expand polity geometries, historical periodization, dated source evidence and version selection. Existing overview versions do not constitute year-by-year territory coverage.
+- Add political centres, mints and mint candidates, individual findspots and hoards with explicit place/date/coin/source links.
+- Build circulation ranges from find records and research; extend existing regional backgrounds independently of political territory.
+- These are planned data/features; this phase-one polish does not create new geometry or infer missing dates.
