@@ -44,13 +44,14 @@ export type DisplayCoinEntry=MapCoinEntry&{large:boolean;offset:number;offsetX?:
 export const coinMarkerSizes={desktop:{normal:72,compact:60,maxHeight:60},mobile:{normal:64,compact:56,maxHeight:56},placeholder:48} as const;
 /** Scale map photographs from the T67.9 slots, not placeholders, badges or city symbols. */
 export const coinImageScale=1.5;
-export function markerGeometry(point:{x:number;y:number},large:boolean,small:boolean,count:number,offset=large?-36:-12,image?:ImageRecord|null){
+export function markerGeometry(point:{x:number;y:number},large:boolean,small:boolean,count:number,offset=large?-36:-12,image?:ImageRecord|null,candidates:CoinMember[]=[]){
  const size=small?coinMarkerSizes.mobile:coinMarkerSizes.desktop;
  const displayImage=image?.path?mapCoinImage(image):image;
  const ratio=displayImage?.width&&displayImage?.height&&displayImage.width>0&&displayImage.height>0?displayImage.width/displayImage.height:1.5;
  const scale=displayImage?coinImageScale:1;
  const base=(displayImage?(large?size.normal:size.compact):coinMarkerSizes.placeholder)*scale;
- const height=Math.min(base/ratio,size.maxHeight*scale),width=Math.min(base,height*ratio);
+ let height=Math.min(base/ratio,size.maxHeight*scale),width=Math.min(base,height*ratio);
+ for(const candidate of candidates){if(!mapCoinImage(candidate.image))continue;const g=markerGeometry(point,large,small,count,offset,candidate.image);width=Math.max(width,g.width);height=Math.max(height,g.height)}
  const hitWidth=Math.max(44,width),hitHeight=Math.max(32,height);
  const badgeWidth=count>1?Math.max(20,String(count).length*7+10):0;
  const left=Math.min(-hitWidth/2,badgeWidth?hitWidth/2+6-badgeWidth:-hitWidth/2);
@@ -68,7 +69,7 @@ export function layoutCoinEntries(entries:MapCoinEntry[],labels:Box[],width:numb
   const members=uniqueMembers(e.groups),cover=representativeMember(members,selectedId);
   const phase=(hash(e.key)%360)*Math.PI/180;
   const candidates=[82,100,118,136,158,184,214,250,288,340,400,480,580].flatMap(radius=>Array.from({length:16},(_,i)=>({x:Math.cos(phase+i*Math.PI/8)*radius,y:Math.sin(phase+i*Math.PI/8)*radius})));
-  const shapes=candidates.map(pos=>{const g=markerGeometry({x:e.point.x+pos.x,y:e.point.y},true,width<600,members.length,pos.y,cover?.image);return {large:true,offset:pos.y,offsetX:pos.x,bounds:g.box}});
+  const shapes=candidates.map(pos=>{const g=markerGeometry({x:e.point.x+pos.x,y:e.point.y},true,width<600,members.length,pos.y,cover?.image,members.length>1?members:[]);return {large:true,offset:pos.y,offsetX:pos.x,bounds:g.box}});
   const shape=shapes.find(g=>inside(g.bounds)&&!labels.some(b=>intersects(g.bounds,b))&&!placed.some(p=>!p.occluded&&(intersects(g.bounds,p.bounds)||cityLinkHitsBox(cityLinkSegment(g.bounds,e.point),p.bounds)||cityLinkHitsBox(cityLinkSegment(p.bounds,p.linkPoint||p.point),g.bounds)))) ;
   // Screen collisions must never turn two real cities into a shared coin cover.
   placed.push({...e,...(shape||shapes[0]),occluded:!shape,displayCollection:false,entryKeys:[e.key]});
