@@ -102,3 +102,4 @@ if __name__=='__main__':
  review=ROOT/'docs/reviews/T67-9';review.mkdir(parents=True,exist_ok=True)
  (review/'processing-audit.json').write_text(json.dumps({'defaults':meta['defaults'],'candidateCount':len(index)+len(errors),'processed':len(index),'exceptions':errors,'images':audit},indent=2)+'\n')
  print(f'Finished: {len(index)} cutouts; {len(errors)} exceptions',flush=True)
+ sys.exit(1 if errors else 0)
