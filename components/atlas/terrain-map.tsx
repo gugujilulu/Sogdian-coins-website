@@ -18,7 +18,7 @@ import type {RangeControl} from './range-controls';
 import {mapPadding,mobileViewport} from '@/lib/mobile-sheet';
 import MapLayerPanel from './map-layer-panel';
 import {recordSourceProvider} from '@/lib/record-filters';
-import {coinFeatures,coinPlaces,coinDisplayRules} from '@/lib/coin-map';
+import {coinFeatures,coinPlaces,coinDisplayRules,collectionCityTarget} from '@/lib/coin-map';
 import {installCoinMarkers} from './coin-map-markers';
 import {searchNavigationQueue,searchBounds,searchMapPadding,type SearchMapRequest,type MapCameraView} from '@/lib/search-map-navigation';
 import 'maplibre-gl/dist/maplibre-gl.css';
@@ -76,11 +76,20 @@ export default function TerrainMap({rangeObjectName,layers:providedLayers,onLaye
      history.current?.destroy();coinMarkers.current?.destroy();
      if(!m.getSource('coins'))m.addSource('coins',{type:'geojson',cluster:true,clusterRadius:coinDisplayRules.clusterRadius,clusterMaxZoom:coinDisplayRules.clusterMaxZoom,clusterProperties:{family_total:['+',['get','familyCount']],specimen_total:['+',['get','specimenCount']]},data:{type:'FeatureCollection',features:makeCoinFeatures()}});
      if(!m.getLayer('coin-source-layout'))m.addLayer({id:'coin-source-layout',type:'circle',source:'coins',paint:{'circle-radius':1,'circle-opacity':0}});
-     coinMarkers.current=installCoinMarkers(gl,m,()=>effectiveRef.current.coins?groupsRef.current:[],()=>selectedRef.current,(id,context)=>select.current(id,context));
+     coinMarkers.current=installCoinMarkers(gl,m,()=>effectiveRef.current.coins?groupsRef.current:[],()=>selectedRef.current,(id,context)=>select.current(id,context),groups=>{
+      searchQueue.current?.cancel();m.stop();const target=collectionCityTarget(groups);if(!target)return;
+      const rect=m.getContainer().getBoundingClientRect(),screen=m.getContainer().closest('.atlas-screen');
+      const obstacles=Array.from(screen?.querySelectorAll<HTMLElement>('.atlas-search-panel,.family-drawer,.map-toolbar,.history-controls,.timeline-floating,.maplibregl-ctrl,.map-error')||[]).filter(el=>{const s=getComputedStyle(el),r=el.getBoundingClientRect();return s.visibility!=='hidden'&&s.display!=='none'&&r.width>0&&r.height>0}).map(el=>{const r=el.getBoundingClientRect();return{left:r.left-rect.left,right:r.right-rect.left,top:r.top-rect.top,bottom:r.bottom-rect.top}});
+      const padding=searchMapPadding(rect.width,rect.height,obstacles);if(!padding)return;
+      const camera=m.cameraForBounds(target.bounds,{padding,maxZoom:Math.min(9,m.getMaxZoom())});if(!camera)return;
+      const visible=target.coordinates.every(c=>{const p=m.project(c);return p.x>=padding.left+24&&p.x<=rect.width-padding.right-24&&p.y>=padding.top+24&&p.y<=rect.height-padding.bottom-24});
+      if(visible&&m.getZoom()>=Math.min(coinDisplayRules.nearZoom,camera.zoom??coinDisplayRules.nearZoom)-.01)return;
+      m.fitBounds(target.bounds,{padding,maxZoom:Math.min(9,m.getMaxZoom()),duration:motionDuration(450),linear:true,bearing:0,pitch:0});
+     });
      if(!m.getSource('selected-coin'))m.addSource('selected-coin',{type:'geojson',data:{type:'FeatureCollection',features:[]}});
      if(!m.getLayer('selected-halo'))m.addLayer({id:'selected-halo',type:'circle',source:'selected-coin',paint:{'circle-radius':13,'circle-color':'#f4d692','circle-opacity':.16,'circle-stroke-color':'#f4d692','circle-stroke-width':2}});
 
-     history.current=installHistoricalMap(gl,m,setLayerError);history.current.update(frameRef.current);
+     history.current=installHistoricalMap(gl,m,setLayerError,()=>effectiveRef.current.coins?groupsRef.current.map(g=>g.place.id):[]);history.current.update(frameRef.current);
      setReady(true);const c=m.getCenter();cameraChange.current?.({center:[c.lng,c.lat],zoom:m.getZoom()});
     });
     let failures=0;m.on('error',()=>{if(++failures>=4)setError('部分地图瓦片未能加载，可切换底图或稍后重试。')});

@@ -5,6 +5,7 @@ export function validLocale(value:unknown):Locale{return value==='zh'||value==='
 export function readLocale(storage:Pick<Storage,'getItem'>|null):Locale{try{return validLocale(storage?.getItem(storageKey))}catch{return 'en'}}
 export function saveLocale(storage:Pick<Storage,'setItem'>|null,locale:Locale){try{storage?.setItem(storageKey,locale);return true}catch{return false}}
 export const dictionary={
+ "多个城市":{"en":"Multiple cities","zh":"多个城市","ru":"Несколько городов"},
  "Gold":{"en":"Gold","zh":"金","ru":"Золото"},
  "Silver":{"en":"Silver","zh":"银","ru":"Серебро"},
  "Bronze":{"en":"Bronze","zh":"青铜","ru":"Бронза"},

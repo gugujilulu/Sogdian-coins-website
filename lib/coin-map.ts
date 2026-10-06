@@ -173,3 +173,17 @@ export function displayCoins(input:{zoom:number;width:number;height:number;entri
    anchors:entry.groups.map(g=>({placeId:g.place.id,coordinates:g.place.coordinates}))};
  });
 }
+
+/** Collection navigation uses every real place, never its representative marker center. */
+export function collectionCityTarget(groups:CoinPlace[]){
+ const places=[...new Map(groups.map(g=>[g.place.id,g.place])).values()].sort(stable);
+ const coordinates=[...new Map(places.map(p=>[p.coordinates.join(','),p.coordinates])).values()];
+ if(!coordinates.length)return null;
+ return {kind:places.length===1?'single' as const:'multiple' as const,placeIds:places.map(p=>p.id),coordinates,
+  bounds:[[Math.min(...coordinates.map(c=>c[0])),Math.min(...coordinates.map(c=>c[1]))],[Math.max(...coordinates.map(c=>c[0])),Math.max(...coordinates.map(c=>c[1]))]] as [[number,number],[number,number]]};
+}
+export function coinEntryAction(entry:Pick<CoinDisplay,'kind'|'overflow'|'members'|'collectionGroups'>){
+ if(entry.overflow)return {kind:'remaining' as const};
+ if(entry.kind==='family')return {kind:'family' as const,familyId:entry.members[0].family.id};
+ return {kind:'navigate' as const,target:collectionCityTarget(entry.collectionGroups)};
+}

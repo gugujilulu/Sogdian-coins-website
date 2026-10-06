@@ -3,10 +3,10 @@ import {focusReturn,stableFocusIndex} from '@/lib/keyboard';
 import {motionDuration} from '@/lib/motion';
 import {collectionReturn,collectionMembers,type CollectionContext} from '@/lib/map-selection';
 import type * as GL from 'maplibre-gl';
-import {canExpand,displayCoins,displayCollectionContext,coinMarkerVisual,markerGeometry,uniqueMembers,type CoinPlace,type CoinScatterPosition,type Box} from '@/lib/coin-map';
+import {coinEntryAction,collectionCityTarget,displayCoins,displayCollectionContext,coinMarkerVisual,markerGeometry,uniqueMembers,type CoinPlace,type CoinScatterPosition,type Box} from '@/lib/coin-map';
 
 /** A small visible-marker projection of the existing MapLibre clustered source. */
-export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPlace[],getSelected:()=>string|undefined,onSelect:(id:string,context?:CollectionContext)=>void){
+export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPlace[],getSelected:()=>string|undefined,onSelect:(id:string,context?:CollectionContext)=>void,onNavigate:(groups:CoinPlace[])=>void){
  let disposed=false,generation=0,revision=0,popup:GL.Popup|null=null,queued=false;
  let preview:GL.Popup|null=null;
  let popupContext:CollectionContext|null=null;
@@ -88,8 +88,10 @@ export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPla
    let entry=markers.get(e.key);
    if(entry?.signature!==signature){entry?.marker.remove();const button=document.createElement('button');button.type='button';button.className=`coin-map-marker ${large?'photo':'compact'}${selected?' selected':getSelected()?' muted':''}`;
     button.style.width=`${geometry.width}px`;button.style.height=`${geometry.height}px`;button.style.minWidth="44px";button.style.minHeight="32px";
-    const location=e.groups.map(g=>g.place.name).join(' / ');
-    const label=e.kind==='family'?`${members[0].family.title} · ${location} · ${countLabel(members[0].recordCount,'records')}`:`${e.overflow?tr('更多家族'):e.displayCollection?tr('显示集合'):e.cluster?tr('空间集合'):location} · ${countLabel(members.length,'families')} · ${countLabel(members.reduce((n,m)=>n+m.recordCount,0),'records')}`;
+    const location=(e.kind==='family'?e.groups.filter(g=>g.place.id===members[0].family.anchor?.placeId):e.groups).map(g=>g.place.name).join(' / ');
+    const cityKind=collectionCityTarget(e.collectionGroups)?.kind;
+    button.dataset.collectionKind=cityKind||'';
+    const label=e.kind==='family'?`${members[0].family.title} · ${location} · ${countLabel(members[0].recordCount,'records')}`:`${e.overflow?tr('更多家族'):cityKind==='multiple'?tr('多个城市'):location} · ${countLabel(members.length,'families')} · ${countLabel(members.reduce((n,m)=>n+m.recordCount,0),'records')}`;
     button.dataset.familyIds=JSON.stringify(members.map(m=>m.family.id));button.setAttribute('aria-label',label);button.title=label+(cover?`\n${cover.family.title}`:'');
     button.dataset.occluded=String(!!e.occluded);if(e.occluded){button.style.visibility='hidden';button.tabIndex=-1}button.dataset.stage=e.stage;button.dataset.sameCityExpansion=String(e.sameCityExpansion);
     button.dataset.placeIds=JSON.stringify(e.anchors.map(a=>a.placeId));button.dataset.offsetX=String(e.offsetX);button.dataset.offsetY=String(e.offset);button.dataset.overflow=String(e.overflow);
@@ -102,7 +104,12 @@ export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPla
    // Refresh handler on every projection; async work is invalidated on filter changes.
    entry.button.onmouseenter=entry.button.onfocus=()=>{preview?.remove();if(members.length!==1)return;const member=members[0],node=document.createElement('div');node.className='coin-preview';node.textContent=`${member.family.title} · ${member.family.dateLabel||tr('年代未记录')} · ${countLabel(member.recordCount,'records')}`;preview=new gl.Popup({closeButton:false,closeOnClick:false,focusAfterOpen:false,anchor:'bottom',offset:[e.offsetX,e.offset-geometry.height/2-12],className:'coin-preview-popup'}).setLngLat(e.coords).setDOMContent(node).addTo(map)};
    entry.button.onmouseleave=entry.button.onblur=()=>preview?.remove();
-   entry.button.onclick=async ev=>{preview?.remove();openerFamilies=members.map(m=>m.family.id);ev.stopPropagation();if(e.stage==='near'&&e.kind==='family'){lastMember=members[0].family.id;removePopup();onSelect(lastMember,displayCollectionContext(e));return}if(e.cluster&&!e.displayCollection){try{const zoom=await src.getClusterExpansionZoom(e.id);if(disposed||currentRevision!==revision)return;if(canExpand(e.groups,map.getZoom(),map.getMaxZoom(),zoom)){map.easeTo({center:e.coords,zoom,duration:duration()});return}}catch{}}if(!disposed&&currentRevision===revision)show(e.collectionGroups,e.coords,e.overflow?displayCollectionContext(e):undefined)};
+   entry.button.onclick=ev=>{preview?.remove();openerFamilies=members.map(m=>m.family.id);ev.stopPropagation();
+    const action=coinEntryAction(e);
+    if(action.kind==='family'){lastMember=action.familyId;removePopup();onSelect(lastMember,displayCollectionContext(e));return}
+    if(action.kind==='remaining'){show(e.collectionGroups,e.coords,displayCollectionContext(e));return}
+    removePopup();onNavigate(e.collectionGroups);
+   };
    entry.marker.setLngLat(e.coords).setOffset([e.offsetX,e.offset]);
   }
   // Only the hovered, focused or selected coin gets a quiet belonging cue.
