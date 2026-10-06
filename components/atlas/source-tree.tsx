@@ -1,4 +1,5 @@
 'use client';
+import {PaperReveal} from './ui-motion';
 import {useCopy,useLanguage} from './language';
 import {countLabel,copyKnown} from '@/lib/i18n';
 import {useEffect,useRef} from 'react';
@@ -8,11 +9,11 @@ import type {SourceTreeNode,SourceCoverage} from '@/lib/source-tree';
 import {coverageFor} from '@/lib/source-tree';
 export function SourceTree({roots,expanded,onToggle,onSelect,selected}:{roots:SourceTreeNode[];expanded:Set<string>;onToggle:(id:string)=>void;onSelect:(id:string)=>void;selected:string|null}){
  const tr=useCopy();const {locale}=useLanguage();
- const container=useRef<HTMLDivElement>(null);
+ const container=useRef<HTMLDivElement>(null),lastToggle=useRef<string|null>(null);
  useEffect(()=>{if(selected)Array.from(container.current?.querySelectorAll<HTMLElement>('[data-source-node]')||[]).find(el=>el.dataset.sourceNode===selected)?.scrollIntoView({block:'nearest'})},[selected,expanded]);
  const render=(node:SourceTreeNode)=><div key={node.id} className="source-tree-node">
-  <button data-source-node={node.id} aria-expanded={node.children.length?expanded.has(node.id):undefined} aria-label={`${node.kind==='source'?tr("来源记录"):tr("来源分类")} ${sourceNodeTitle(node,locale)}`} className={selected===node.id?'active':''} onClick={()=>{if(node.children.length)onToggle(node.id);onSelect(node.id)}}><span>{node.children.length>0&&<ArtIcon name="chevron" collection="r3" size={13} className={expanded.has(node.id)?'node-chevron expanded':'node-chevron'}/>}{sourceNodeTitle(node,locale)}{node.categoryId?` [${node.categoryId}]`:''}</span><small>{countLabel(node.sourceCount,'sources',locale)} / {countLabel(node.recordCount,'records',locale)}</small></button>
-  {expanded.has(node.id)&&node.children.map(render)}
+  <button data-source-node={node.id} aria-expanded={node.children.length?expanded.has(node.id):undefined} aria-label={`${node.kind==='source'?tr("来源记录"):tr("来源分类")} ${sourceNodeTitle(node,locale)}`} className={selected===node.id?'active':''} onClick={()=>{if(node.children.length){lastToggle.current=node.id;onToggle(node.id)}onSelect(node.id)}}><span>{node.children.length>0&&<ArtIcon name="chevron" collection="r3" size={13} className={expanded.has(node.id)?'node-chevron expanded':'node-chevron'}/>}{sourceNodeTitle(node,locale)}{node.categoryId?` [${node.categoryId}]`:''}</span><small>{countLabel(node.sourceCount,'sources',locale)} / {countLabel(node.recordCount,'records',locale)}</small></button>
+  <PaperReveal open={expanded.has(node.id)} animated={lastToggle.current===node.id}>{node.children.map(render)}</PaperReveal>
  </div>;
  return <div ref={container} className="source-classification-tree">{roots.length?roots.map(render):<p role="status">{tr("没有匹配的实际来源。请清空搜索或调整筛选。")}</p>}</div>;
 }

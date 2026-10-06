@@ -1,4 +1,6 @@
 'use client';
+import {motion,useIsPresent} from './ui-motion';
+import {motionTiming,motionEase} from '@/lib/motion';
 import {familyIntroduction} from '@/lib/detail-content';
 import {copyKnown,countLabel} from '@/lib/i18n';
 import {familyTitle,familyCount,referenceTitle} from '@/lib/browse-copy';
@@ -14,6 +16,7 @@ import type {SourceEntry} from '@/lib/source-index';
 
 type Props={sheetState?:SheetState;onSheetState?:(s:SheetState)=>void;onTools?:()=>void;mapBackground?:ReactNode;family:Family;placeName:string|null;specimens:Specimen[];allSpecimens:Specimen[];fullSpecimens:Specimen[];variants:Variant[];facets:string[];variant:string;facet:string;setVariant:(x:string)=>void;setFacet:(x:string)=>void;onClose:()=>void;onCatalogue:()=>void;onOpen:(s:Specimen)=>void;onCompare:(id:string)=>void;compareIds:string[];onFullFamily:()=>void;onRestore?:()=>void;onReturnCollection?:()=>void;onLocate?:()=>void;sources:Map<string,SourceEntry[]>;sourceIndexError:boolean};
 export default function FamilyDrawer(p:Props){
+ const present=useIsPresent();
  const tr=useCopy();const {locale}=useLanguage();
  const {family,specimens,allSpecimens,fullSpecimens,variants,variant,facet}=p;
  const caption=familyCount(specimens.length,fullSpecimens.length,specimens.reduce((n,s)=>n+s.images.length,0),locale);
@@ -28,12 +31,12 @@ export default function FamilyDrawer(p:Props){
  useEffect(()=>{scroll.current?.scrollTo({top:0});if(!document.querySelector('dialog[open]'))sheet.current?.querySelector<HTMLButtonElement>('.detail-actions>button')?.focus({preventScroll:true})},[family.id]);
  useEffect(()=>{if(state==='summary'&&scroll.current?.contains(document.activeElement))sheet.current?.querySelector<HTMLElement>('.sheet-handle')?.focus({preventScroll:true})},[state]);
  // The reading sheet covers the map canvas; keep its markers out of keyboard navigation.
- useEffect(()=>{const map=sheet.current?.closest('.atlas-screen')?.querySelector<HTMLElement>('.terrain-map');if(!map)return;if(mobile&&state==='reading'&&map.contains(document.activeElement))sheet.current?.querySelector<HTMLElement>('.sheet-handle')?.focus({preventScroll:true});map.inert=mobile&&state==='reading';return()=>{map.inert=false}},[mobile,state]);
+ useEffect(()=>{const map=sheet.current?.closest('.atlas-screen')?.querySelector<HTMLElement>('.terrain-map');if(!map)return;if(present&&mobile&&state==='reading'&&map.contains(document.activeElement))sheet.current?.querySelector<HTMLElement>('.sheet-handle')?.focus({preventScroll:true});map.inert=present&&mobile&&state==='reading';return()=>{map.inert=false}},[mobile,state,present]);
  const activeGroup=variants.find(v=>v.id===variant);
  const metadata=<div className="family-meta">{family.dateLabel&&<span>{copyKnown(family.dateLabel,locale)}</span>}{family.region&&<span>{family.region}</span>}{family.polity&&family.polity!==family.region&&<span>{family.polity}</span>}</div>;
  const navigation=<div className="drawer-secondary"><button onClick={p.onCatalogue}><ArtIcon name="book" size={14}/>{tr("目录")}</button>{!mobile&&p.onReturnCollection&&<button onClick={p.onReturnCollection}>{tr("返回此集合")}</button>}</div>;
  const location=p.placeName&&<div className="family-location"><ArtIcon name="pin" size={14}/><span>{p.placeName}</span>{p.onLocate&&<button onClick={p.onLocate}><ArtIcon name="locate" size={17}/>{tr("定位")}</button>}</div>;
- return <aside ref={sheet} data-sheet-state={state} style={{height:dragHeight??undefined,transition:reduceMotion?'none':undefined}} className="family-drawer"
+ return <motion.aside initial={{opacity:0,x:mobile?0:16,y:mobile?8:0}} animate={{opacity:1,x:0,y:0}} exit={{opacity:0,x:mobile?0:12,y:mobile?8:0,transition:{duration:motionTiming.close/1000}}} transition={{duration:motionTiming.panel/1000,ease:motionEase.enter}} inert={!present} data-exiting={!present||undefined} ref={sheet} data-sheet-state={state} style={{height:dragHeight??undefined,transition:reduceMotion||dragHeight!==null?'none':undefined,pointerEvents:present?undefined:'none'}} className="family-drawer"
  aria-label={`${tr('家族详情')} ${familyTitle(family,locale)}`}>
   {p.onSheetState&&<div className="sheet-handle" role="slider" tabIndex={0} aria-label={tr("详情面板高度")} aria-orientation="vertical" aria-valuemin={0} aria-valuemax={2} aria-valuenow={state==='summary'?0:state==='half'?1:2} aria-valuetext={state==='summary'?tr("收起摘要"):state==='half'?tr("半展开浏览"):tr("展开阅读")}
    onKeyDown={e=>{const next=sheetKey(state,e.key);if(next){e.preventDefault();p.onSheetState?.(next)}}}
@@ -71,7 +74,7 @@ export default function FamilyDrawer(p:Props){
    </details>}
 
   </div>
- </aside>
+ </motion.aside>
 }
 
 // The native select retains its full options and keyboard behavior. Its visible

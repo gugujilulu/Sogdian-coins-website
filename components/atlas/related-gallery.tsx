@@ -1,4 +1,5 @@
 'use client';
+import {motion,AnimatePresence,useReducedMotion} from './ui-motion';
 import {useCopy,useLanguage} from './language';
 import {countLabel,copyKnown} from '@/lib/i18n';
 import {useEffect,useMemo,useState} from 'react';
@@ -9,14 +10,14 @@ import type {RelatedRecord} from '@/lib/atlas';
 import {parseRelatedImageIndex,relatedPage,resetRelatedPaging,type RelatedThumbnail} from '@/lib/related-gallery';
 
 function Thumbnail({image}:{image:RelatedThumbnail|undefined}) {
- const tr=useCopy();
+ const reduce=useReducedMotion(),tr=useCopy();
  const [failed,setFailed]=useState(false);
  return <div className="related-thumbnail">{image&&!failed?<img src={image.path} width={image.width??undefined} height={image.height??undefined} loading="lazy" decoding="async" alt={tr("相关资料来源图片")} onError={()=>setFailed(true)}/>:<span>{failed?tr("图片加载失败；文字与来源仍可访问"):tr("暂无可用图片")}</span>}</div>;
 }
 
 export default function RelatedGallery({records,allRecords=records,filterKey='',query,mainRecordCount,selectedId,onSelect}:{allRecords?:RelatedRecord[];filterKey?:string;selectedId:string|null;onSelect:(id:string|null)=>void;records:RelatedRecord[];query:string;mainRecordCount:number}) {
 
- const tr=useCopy();const {locale}=useLanguage();
+ const reduce=useReducedMotion(),tr=useCopy();const {locale}=useLanguage();
  const [index,setIndex]=useState<Map<string,RelatedThumbnail[]>|null>(null);
  const [failed,setFailed]=useState(false),[attempt,setAttempt]=useState(0);
  const [paging,setPaging]=useState({query,batches:1});
@@ -42,15 +43,15 @@ export default function RelatedGallery({records,allRecords=records,filterKey='',
   {matches.length===0&&<p role="status">{tr("没有匹配的相关资料。请调整搜索词。")}</p>}
   </div><div className="related-list">{visible.map(r=>{
    const image=index?.get(r.id)?.[0];
-   return <article className="browse-card" key={r.id} data-related-id={r.id}>
+   return <motion.article initial={{opacity:0}} animate={{opacity:1}} transition={{duration:reduce?0:.19}} className="browse-card" key={r.id} data-related-id={r.id}>
     <button className="related-open" onClick={()=>onSelect(r.id)} aria-label={tr("查看详情：{title}",{title:r.title})}>{index?<Thumbnail key={image?.id||r.id} image={image}/>:<div className="related-thumbnail"><span>{failed?tr("图片索引不可用"):tr("图片索引加载中")}</span></div>}<span className="browse-expand" aria-hidden="true"><ArtIcon name="expand" collection="r3" size={17}/></span></button><div className="browse-card-copy">
 
     <h2>{r.title.replace(/^#\d+ - /,'')}</h2>
     <details className="browse-notes"><summary>{tr("资料说明")}</summary><span>{copyKnown(r.reviewStatus,locale)}</span>{r.sourcePath.length>0&&<small>{r.sourcePath.map(x=>`${x.title} [${x.categoryId}]`).join(' › ')}</small>}
     <p>{r.reason}</p></details><a className="out-link" href={r.sourceUrl} target="_blank" rel="noreferrer">{r.sourceRecordId.startsWith(r.sourceName+' ')?r.sourceRecordId:`${r.sourceName} · ${r.sourceRecordId}`}<ArtIcon name="external" collection="r3" size={15}/></a></div>
-   </article>;
+   </motion.article>;
   })}</div>
-  {selectedRecord&&<RelatedDetails matches={matches.some(r=>r.id===selectedRecord.id)} key={selectedRecord.id} record={selectedRecord} index={index} onClose={()=>onSelect(null)}/>}
+  <AnimatePresence>{selectedRecord&&<RelatedDetails matches={matches.some(r=>r.id===selectedRecord.id)} key={selectedRecord.id} record={selectedRecord} index={index} onClose={()=>onSelect(null)}/>}</AnimatePresence>
   <div className="related-pagination"><p aria-live="polite">{relatedProgress(visible.length,matches.length,locale)}</p>{visible.length<matches.length&&<button onClick={()=>setPaging({query:query+filterKey,batches:batches+1})}><ArtIcon name="chevron" collection="r3" size={15}/>{tr("加载更多（40条）")}</button>}</div>
  </>;
 }

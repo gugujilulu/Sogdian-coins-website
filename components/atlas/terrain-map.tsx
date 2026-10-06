@@ -69,7 +69,7 @@ export default function TerrainMap({rangeObjectName,layers:providedLayers,onLaye
     const restoreGestureZoom=installGestureZoomGain(m);
     searchQueue.current=searchNavigationQueue(request=>{
      if(request.serial<=lastSearch.current)return;lastSearch.current=request.serial;
-     m.stop();setSearchNotice(false);if(request.intent==='cancel')return;if(request.camera){m.jumpTo({...request.camera,bearing:0,pitch:0});return}const target=searchBounds(request.target);if(!target)return;
+     m.stop();if(request.intent==='restore')coinMarkers.current?.suppressMotion();setSearchNotice(false);if(request.intent==='cancel')return;if(request.camera){m.jumpTo({...request.camera,bearing:0,pitch:0});return}const target=searchBounds(request.target);if(!target)return;
      const rect=m.getContainer().getBoundingClientRect(),screen=m.getContainer().closest('.atlas-screen');
      const obstacles=Array.from(screen?.querySelectorAll<HTMLElement>('.atlas-search-panel,.family-drawer,.map-toolbar,.history-controls,.timeline-floating,.maplibregl-ctrl,.map-error')||[]).filter(el=>{const style=getComputedStyle(el),r=el.getBoundingClientRect();return style.visibility!=='hidden'&&style.display!=='none'&&r.width>0&&r.height>0}).map(el=>{const r=el.getBoundingClientRect();return{left:r.left-rect.left,right:r.right-rect.left,top:r.top-rect.top,bottom:r.bottom-rect.top}});
      const padding=searchMapPadding(rect.width,rect.height,obstacles);if(!padding){setSearchNotice(true);return}

@@ -1,4 +1,5 @@
 'use client';
+import {PaperReveal} from './ui-motion';
 import {useCopy,useLanguage} from './language';
 import {countLabel,copyKnown} from '@/lib/i18n';
 import {useEffect,useRef,useState} from 'react';
@@ -11,7 +12,7 @@ import type {CatalogueTree,CatalogueFamily} from '@/lib/catalogue-tree';
 
 export function CatalogueTreeSidebar({tree,query,onFamily,onGroup,onOpen,selectedId,reveal,selectedFamily,selectedGroup}:{selectedFamily:string|null;selectedGroup:string|null;reveal:{family:string;group?:string;serial:number}|null;onGroup:(family:string,group:string)=>void;tree:CatalogueTree;query:string;onFamily:(id:string)=>void;onOpen:(record:Specimen)=>void;selectedId:string|null}) {
  const tr=useCopy();const {locale}=useLanguage();
- const container=useRef<HTMLDivElement>(null);
+ const container=useRef<HTMLDivElement>(null),lastToggle=useRef<string|null>(null);
  useEffect(()=>{if(!reveal)return;setExpanded(old=>new Set([...old,'taxonomy:family:'+reveal.family,...(reveal.group?[reveal.group]:[])]));},[reveal]);
  useEffect(()=>{if(!reveal)return;const target=reveal.group||'taxonomy:family:'+reveal.family;const frame=requestAnimationFrame(()=>{Array.from(container.current?.querySelectorAll<HTMLElement>('[data-tree-id]')||[]).find(el=>el.dataset.treeId===target)?.scrollIntoView({block:'nearest'})});return()=>cancelAnimationFrame(frame)},[reveal]);
  const ancestors=tree.families.flatMap(f=>[f.id,...f.groups.map(g=>g.id)]);
@@ -23,16 +24,16 @@ export function CatalogueTreeSidebar({tree,query,onFamily,onGroup,onOpen,selecte
   setPreviousQuery(searchReveal);
   setExpanded(old=>catalogueExpansion(old,previousQuery,searchReveal,query,ancestors));
  }
- const toggle=(id:string)=>setExpanded(old=>{const next=new Set(old);if(next.has(id))next.delete(id);else next.add(id);return next});
+ const toggle=(id:string)=>{lastToggle.current=id;setExpanded(old=>{const next=new Set(old);if(next.has(id))next.delete(id);else next.add(id);return next})};
  return <div ref={container} className="tree-scroll atlas-record-tree">
   <div className="tree-overview"><p>{countLabel(tree.families.length,'families',locale)} · {countLabel(tree.recordCount,'records',locale)}</p><details><summary aria-label={tr("目录说明")} title={tr("目录说明")}><ArtIcon name="info" collection="r3" size={17}/></summary><p>{tr("来源/目录组不是已审定 variant；major type / variant 尚未审定。")}</p></details></div>
   {!tree.recordCount&&<p role="status">{tr("没有匹配的主库记录。请清空目录搜索或调整筛选。")}</p>}
   {tree.families.map(f=><div key={f.id}>
    <button className={selectedFamily===f.family.id?'active':''} data-tree-id={f.id} aria-expanded={expanded.has(f.id)} aria-label={tr("家族 {name}",{name:familyTitle(f.family,locale)})} onClick={()=>{toggle(f.id);onFamily(f.family.id)}}><span><ArtIcon name="chevron" collection="r3" size={14} className={expanded.has(f.id)?'node-chevron expanded':'node-chevron'}/>{familyTitle(f.family,locale)}</span><small>{countLabel(f.recordCount,'records',locale)}</small></button>
-   {expanded.has(f.id)&&<div className="atlas-tree-groups">{f.groups.map(g=><div key={g.id}>
+   <PaperReveal open={expanded.has(f.id)} animated={lastToggle.current===f.id} className="atlas-tree-groups">{f.groups.map(g=><div key={g.id}>
     <button className={selectedGroup===g.id?'active':''} data-tree-id={g.id} aria-expanded={expanded.has(g.id)} aria-label={tr("目录组 {name}",{name:catalogueGroupTitle(g,locale)})} onClick={()=>{toggle(g.id);onGroup(f.family.id,g.id)}}><span><ArtIcon name="chevron" collection="r3" size={12} className={expanded.has(g.id)?'node-chevron expanded':'node-chevron'}/>{catalogueGroupTitle(g,locale)}</span><small>{countLabel(g.recordCount,'records',locale)}</small></button>
-    {expanded.has(g.id)&&<div className="atlas-tree-records">{g.records.map(item=><button key={item.id} className={selectedId===item.id?'active':''} aria-label={tr("记录 {id}",{id:item.id})} onClick={()=>{onFamily(f.family.id);onOpen(item.record)}}><span>{item.record.title}</span></button>)}</div>}
-   </div>)}</div>}
+    <PaperReveal open={expanded.has(g.id)} animated={lastToggle.current===g.id} className="atlas-tree-records">{g.records.map(item=><button key={item.id} className={selectedId===item.id?'active':''} aria-label={tr("记录 {id}",{id:item.id})} onClick={()=>{onFamily(f.family.id);onOpen(item.record)}}><span>{item.record.title}</span></button>)}</PaperReveal>
+   </div>)}</PaperReveal>
   </div>)}
  </div>;
 }
