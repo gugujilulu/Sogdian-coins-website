@@ -6,6 +6,7 @@ import "./details-visual.css";
 import "./controls-visual.css";
 import "./detail-frames.css";
 import "./catalogue-frames.css";
+import "./research-visual.css";
 
 export const metadata: Metadata = {
   title: "Central Asian Square-Hole Coinage Atlas",
