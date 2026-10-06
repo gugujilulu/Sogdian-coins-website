@@ -4,7 +4,7 @@ import {readFileSync} from 'node:fs';
 import {automaticLinkWrite,serializeLink,parseLink,cameraHistoryState,historyCamera} from '../lib/deep-links.ts';
 import {emptyFilters,collectionMembers} from '../lib/map-selection.ts';
 import {contextRecordFilters,filterAtlasRecords,recordSourceProvider} from '../lib/record-filters.ts';
-import {searchMapTarget,searchNavigationQueue} from '../lib/search-map-navigation.ts';
+import {searchMapTarget,searchSelection,searchNavigationQueue} from '../lib/search-map-navigation.ts';
 import {coinPlaces} from '../lib/coin-map.ts';
 const data=JSON.parse(readFileSync(new URL('../public/data/atlas.json',import.meta.url)));
 const link=filters=>serializeLink({view:'atlas',filters,region:filters.region,polity:filters.polity,city:filters.city});
@@ -45,4 +45,18 @@ test('clear cancels a not-yet-ready target; a repeated valid submission gets a f
  queue.offer(request(1));queue.cancel();queue.setReady(true);assert.deepEqual(seen,[]);
  queue.offer(request(2));queue.offer(request(3));assert.deepEqual(seen,[2,3]);queue.setReady(false);queue.offer(request(4));queue.cancel();queue.offer(request(5));queue.setReady(true);assert.deepEqual(seen,[2,3,5]);
  queue.setReady(false);queue.offer(request(6));queue.cancel();queue.setReady(true);assert.deepEqual(seen,[2,3,5]);queue.dispose();
+});
+
+test('family and record suggestions share the real city and retain only current matching collection members',()=>{
+ const matches=filterAtlasRecords(data,{query:'Samarkand'}).records,before=matches.map(r=>r.id);
+ const family=searchSelection(data,'lady-nana',matches),record=data.specimens.find(r=>r.familyId==='lady-nana');
+ assert.deepEqual(searchSelection(data,record.familyId,matches),family);assert.deepEqual(family.target.placeIds,['panjakent']);assert.equal(family.target.kind,'single');
+ assert.equal(family.context.familyIds.length,4);assert.ok(family.context.familyIds.includes('lady-nana'));assert.deepEqual(matches.map(r=>r.id),before);
+ const source=filterAtlasRecords(data,{query:'Lady Nana',sources:['Bactrianumis']}).records,restricted=searchSelection(data,'lady-nana',source);
+ assert.deepEqual(restricted.context.familyIds,['lady-nana']);assert.deepEqual(restricted.target.coordinates,family.target.coordinates);
+ const absent=searchSelection(data,'lady-nana',[]);assert.equal(absent.context,undefined);assert.deepEqual(absent.target.coordinates,family.target.coordinates);
+});
+test('unlocated suggestion keeps its selected identity and has no invented camera coordinates',()=>{
+ const unlocated=data.families.find(f=>!f.anchor),selection=searchSelection(data,unlocated.id,data.specimens);
+ assert.equal(selection.familyId,unlocated.id);assert.equal(selection.target.kind,'unlocated');assert.deepEqual(selection.target.coordinates,[]);assert.equal(selection.context,undefined);
 });

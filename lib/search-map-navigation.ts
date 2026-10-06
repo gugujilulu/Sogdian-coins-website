@@ -1,3 +1,4 @@
+import {coinPlaces} from './coin-map.ts';
 import type {Atlas,Specimen} from './atlas';
 export type SearchMapTarget={kind:'none'|'unlocated'|'single'|'multiple';coordinates:[number,number][];placeIds:string[];recordCount:number;unlocatedRecords:number};
 export type MapCameraView={center:[number,number];zoom:number};
@@ -13,6 +14,12 @@ export function searchMapTarget(data:Atlas,records:readonly Specimen[]):SearchMa
  }
  const coordinates=[...points.values()].sort((a,b)=>a[0]-b[0]||a[1]-b[1]);
  return {kind:!unique.length?'none':!coordinates.length?'unlocated':coordinates.length===1?'single':'multiple',coordinates,placeIds:[...ids].sort(),recordCount:unique.length,unlocatedRecords};
+}
+/** A suggestion selects a family without changing the matching result or inventing record coordinates. */
+export function searchSelection(data:Atlas,familyId:string,matched:readonly Specimen[]){
+ const target=searchMapTarget(data,data.specimens.filter(r=>r.familyId===familyId));
+ const group=coinPlaces(data.families,[...matched],data.places).find(g=>target.placeIds.includes(g.place.id));
+ return {familyId,target,context:group?{placeIds:[group.place.id],familyIds:group.members.map(m=>m.family.id),scrollTop:0}:undefined};
 }
 export function searchBounds(target:SearchMapTarget):[[number,number],[number,number]]|null{
  if(!target.coordinates.length)return null;

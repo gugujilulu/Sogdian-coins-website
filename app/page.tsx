@@ -12,7 +12,7 @@ import FamilyMapBackground from '@/components/atlas/family-map-background';
 import {mobileViewport,type SheetState} from '@/lib/mobile-sheet';
 import FamilyDrawer from '@/components/atlas/family-drawer';
 import ArtIcon from '@/components/visual/ArtIcon';
-import {searchMapTarget,searchEnter,type SearchMapRequest} from '@/lib/search-map-navigation';
+import {searchMapTarget,searchSelection,searchEnter,type SearchMapRequest} from '@/lib/search-map-navigation';
 import DetailDialog from '@/components/atlas/detail-dialog';
 import ImageViewer from '@/components/atlas/image-viewer';
 import ImageProvenance from '@/components/atlas/image-provenance';
@@ -132,9 +132,15 @@ function AtlasHome(){
  function submitSearch(){if(!data||!query.trim())return;navigation.commitSearch(currentLink);const request={serial:++searchSerial.current,query,filterKey:JSON.stringify(filters),target:searchMapTarget(data,matchedRecords)};setSearchRequest(request);setCameraRequest(request)}
  function cancelSearch(clearNotice=true){if(clearNotice)setSearchRequest(null);setCameraRequest({serial:++searchSerial.current,query,filterKey:JSON.stringify(filters),intent:'cancel',target:{kind:'none',coordinates:[],placeIds:[],recordCount:0,unlocatedRecords:0}})}
  useEffect(()=>{if(cameraRequest&&cameraRequest.intent!=='cancel'&&cameraRequest.filterKey!==JSON.stringify(filters))cancelSearch()},[filters]);
- function chooseSearchFamily(id:string){chooseFamily(id)}
- function chooseSearchRecord(record:Specimen){openSpecimen(record);locateSearchSelection([record])}
- function locateSearchSelection(records:Specimen[]){if(!data)return;const request:SearchMapRequest={serial:++searchSerial.current,query,filterKey:JSON.stringify(filters),intent:'selection',target:searchMapTarget(data,records)};setCameraRequest(request);setSearchRequest({...request,target:searchMapTarget(data,matchedRecords)})}
+ function chooseSearchFamily(id:string){chooseSearchSuggestion(id)}
+ function chooseSearchRecord(record:Specimen){chooseSearchSuggestion(record.familyId,record)}
+ function chooseSearchSuggestion(id:string,record?:Specimen){
+  if(!data)return;const selection=searchSelection(data,id,matchedRecords);
+  chooseFamily(id,id===selectedId&&collectionContext?collectionContext:selection.context);
+  if(record)openSpecimen(record);
+  const request:SearchMapRequest={serial:++searchSerial.current,query,filterKey:JSON.stringify(filters),intent:'selection',target:selection.target};
+  setCameraRequest(request);setSearchRequest(request);
+ }
 
  const specimensByFamily=result?.recordsByFamily||new Map<string,Specimen[]>();
  const catalogueTree=useMemo(()=>data?buildCatalogueTree(data,matchedRecords,projectSourceIndex(sourceIndex||{version:1,sources:[],links:[]},matchedRecords).byRecord,catalogueQuery):{families:[],recordCount:0,groupCount:0,unassignedCount:0},[data,result,sourceIndex,catalogueQuery]);

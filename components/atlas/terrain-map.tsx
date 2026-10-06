@@ -68,8 +68,16 @@ export default function TerrainMap({rangeObjectName,layers:providedLayers,onLaye
      const rect=m.getContainer().getBoundingClientRect(),screen=m.getContainer().closest('.atlas-screen');
      const obstacles=Array.from(screen?.querySelectorAll<HTMLElement>('.atlas-search-panel,.family-drawer,.map-toolbar,.history-controls,.timeline-floating,.maplibregl-ctrl,.map-error')||[]).filter(el=>{const style=getComputedStyle(el),r=el.getBoundingClientRect();return style.visibility!=='hidden'&&style.display!=='none'&&r.width>0&&r.height>0}).map(el=>{const r=el.getBoundingClientRect();return{left:r.left-rect.left,right:r.right-rect.left,top:r.top-rect.top,bottom:r.bottom-rect.top}});
      const padding=searchMapPadding(rect.width,rect.height,obstacles);if(!padding){setSearchNotice(true);return}
-     m.fitBounds(target,{padding,maxZoom:Math.min(9,m.getMaxZoom()),duration:request.intent==='restore'?0:motionDuration(550),linear:true,bearing:0,pitch:0});
+     if(request.intent==='selection'){
+      const camera=m.cameraForBounds(target,{padding,maxZoom:Math.min(9,m.getMaxZoom())});if(!camera)return;
+      const points=request.target.coordinates.map(c=>m.project(c));
+      if(collectionViewReady({points,width:rect.width,height:rect.height,padding,zoom:m.getZoom(),targetZoom:camera.zoom??9}))return;
+      const far=points.some(p=>Math.hypot(p.x-rect.width/2,p.y-rect.height/2)>Math.max(rect.width,rect.height)*.65)||Math.abs((camera.zoom??9)-m.getZoom())>1;
+      const options={...camera,duration:motionDuration(far?850:450),bearing:0,pitch:0};
+      if(far)m.flyTo(options);else m.easeTo(options);
+     }else m.fitBounds(target,{padding,maxZoom:Math.min(9,m.getMaxZoom()),duration:request.intent==='restore'?0:motionDuration(550),linear:true,bearing:0,pitch:0});
     });
+    m.on('movestart',event=>{if(event.originalEvent)searchQueue.current?.cancel()});
     m.on('zoomend',()=>setSymbolZoom(m.getZoom()));
     m.on('moveend',()=>{const c=m.getCenter();cameraChange.current?.({center:[c.lng,c.lat],zoom:m.getZoom()})});
     m.touchZoomRotate.disableRotation();m.addControl(new gl.NavigationControl({showCompass:false}),'bottom-right');m.addControl(new gl.ScaleControl({unit:'metric'}),'bottom-left');
@@ -104,7 +112,7 @@ export default function TerrainMap({rangeObjectName,layers:providedLayers,onLaye
  useEffect(()=>{if(!ready)return;coinMarkers.current?.refresh();history.current?.update(frameRef.current,true);const root=map.current?.getContainer();for(const [selector,key]of [['.maplibregl-ctrl-zoom-in','Zoom in'],['.maplibregl-ctrl-zoom-out','Zoom out'],['.maplibregl-ctrl-attrib-button','Toggle attribution']] as const){const button=root?.querySelector(selector);button?.setAttribute('aria-label',tr(key));button?.setAttribute('title',tr(key))}},[locale,ready]);
  useEffect(()=>{const closed=previousSelection.current&&!selected?.id&&!returnCollection?previousSelection.current:undefined;previousSelection.current=selected?.id;coinMarkers.current?.selectionChanged(closed)},[selected?.id]);
  useEffect(()=>{if(active&&ready)map.current?.resize()},[active,ready]);
- useEffect(()=>{const queue=searchQueue.current;queue?.setReady(false);if(searchRequest?.intent==='cancel'){queue?.cancel();lastSearch.current=Math.max(lastSearch.current,searchRequest.serial);map.current?.stop();setSearchNotice(false);return}if(searchRequest)queue?.offer(searchRequest);queue?.setReady(active&&ready)},[searchRequest?.serial,active,ready]);
+ useEffect(()=>{const queue=searchQueue.current;queue?.setReady(false);if(searchRequest?.intent==='cancel'){queue?.cancel();lastSearch.current=Math.max(lastSearch.current,searchRequest.serial);map.current?.stop();setSearchNotice(false);return}if(searchRequest)queue?.offer(searchRequest);const frame=requestAnimationFrame(()=>queue?.setReady(active&&ready));return()=>cancelAnimationFrame(frame)},[searchRequest?.serial,active,ready]);
  useEffect(()=>{
   if(!active||!ready||!map.current)return;
   if(lastFocus.current===focus)return;lastFocus.current=focus;
