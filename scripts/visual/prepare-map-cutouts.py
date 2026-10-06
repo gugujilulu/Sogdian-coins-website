@@ -83,7 +83,7 @@ if __name__=='__main__':
  meta=json.loads(Path(sys.argv[1]).read_text());index={};errors=[];audit=[]
  if '--overrides' in sys.argv:
   prior=json.loads((ROOT/'docs/reviews/T67-9/processing-audit.json').read_text());index=json.loads((ROOT/'public/data/map-coin-cutouts.json').read_text())
-  selected=set(OVERRIDES);errors=[e for e in prior['exceptions'] if e['path'] not in selected];audit=[i for i in prior['images'] if i['originalPath'] not in selected]
+  selected=set(OVERRIDES)&{i['path'] for i in meta['candidates']};errors=[e for e in prior['exceptions'] if e['path'] not in selected];audit=[i for i in prior['images'] if i['originalPath'] not in selected]
   meta['candidates']=[i for i in meta['candidates'] if i['path'] in selected]
 
  for j,i in enumerate(meta['candidates']):

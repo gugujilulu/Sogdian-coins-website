@@ -17238,66 +17238,6 @@
       "override": true
     },
     {
-      "originalPath": "/coins/zeno/189827.jpg",
-      "sha256": "39af3e88694aac3467d1de23101a9e0c3c42dfd7187ecb3be383b656fdf47d53",
-      "transparentFraction": 0.3139,
-      "crop": [
-        0,
-        0,
-        800,
-        818
-      ],
-      "threshold": 22,
-      "workingScale": 0.4889975550122249,
-      "background": [
-        246.0,
-        246.0,
-        245.0
-      ],
-      "holeRemoved": true,
-      "override": true
-    },
-    {
-      "originalPath": "/coins/zeno/189828.jpg",
-      "sha256": "9ad06681bf8d3417230778145fb2a12d16c7064acf20b78b0f0ae924ad4c1e42",
-      "transparentFraction": 0.311,
-      "crop": [
-        0,
-        0,
-        850,
-        853
-      ],
-      "threshold": 22,
-      "workingScale": 0.46893317702227433,
-      "background": [
-        252.0,
-        252.0,
-        251.0
-      ],
-      "holeRemoved": true,
-      "override": true
-    },
-    {
-      "originalPath": "/coins/zeno/189830.jpg",
-      "sha256": "474007b00844f12111e77f49280169afafe00bd2a5539accace8e06380bfb371",
-      "transparentFraction": 0.3219,
-      "crop": [
-        0,
-        0,
-        640,
-        661
-      ],
-      "threshold": 22,
-      "workingScale": 0.6051437216338881,
-      "background": [
-        246.0,
-        245.0,
-        244.0
-      ],
-      "holeRemoved": true,
-      "override": true
-    },
-    {
       "originalPath": "/coins/zeno/224044.jpg",
       "sha256": "bcfb7c2c5482757d810239ff3fd4d040c582628b6b82b93137eb18cc632d7d3e",
       "transparentFraction": 0.3145,
@@ -17898,26 +17838,6 @@
       "override": true
     },
     {
-      "originalPath": "/coins/zeno/197326.jpg",
-      "sha256": "88e7e1e6fd59f84dde8a109b6d42c77a281ee5f53c73d7a900faf12d3f335d6a",
-      "transparentFraction": 0.322,
-      "crop": [
-        0,
-        0,
-        436,
-        452
-      ],
-      "threshold": 22,
-      "workingScale": 0.8849557522123894,
-      "background": [
-        255.0,
-        255.0,
-        254.0
-      ],
-      "holeRemoved": true,
-      "override": true
-    },
-    {
       "originalPath": "/coins/zeno/199599.jpg",
       "sha256": "66e17dfe3a85b2d3a362653536a2b6de1c0b2b0d7314c51664940581e0bbcacd",
       "transparentFraction": 0.3729,
@@ -18473,6 +18393,86 @@
         249.0,
         249.0,
         252.0
+      ],
+      "holeRemoved": true,
+      "override": true
+    },
+    {
+      "originalPath": "/coins/zeno/189827.jpg",
+      "sha256": "39af3e88694aac3467d1de23101a9e0c3c42dfd7187ecb3be383b656fdf47d53",
+      "transparentFraction": 0.3448,
+      "crop": [
+        0,
+        0,
+        1601,
+        818
+      ],
+      "threshold": 22,
+      "workingScale": 0.4889975550122249,
+      "background": [
+        246.0,
+        246.0,
+        245.0
+      ],
+      "holeRemoved": true,
+      "override": true
+    },
+    {
+      "originalPath": "/coins/zeno/189828.jpg",
+      "sha256": "9ad06681bf8d3417230778145fb2a12d16c7064acf20b78b0f0ae924ad4c1e42",
+      "transparentFraction": 0.3268,
+      "crop": [
+        0,
+        0,
+        1701,
+        853
+      ],
+      "threshold": 22,
+      "workingScale": 0.46893317702227433,
+      "background": [
+        252.0,
+        252.0,
+        251.0
+      ],
+      "holeRemoved": true,
+      "override": true
+    },
+    {
+      "originalPath": "/coins/zeno/189830.jpg",
+      "sha256": "474007b00844f12111e77f49280169afafe00bd2a5539accace8e06380bfb371",
+      "transparentFraction": 0.3354,
+      "crop": [
+        0,
+        0,
+        1281,
+        661
+      ],
+      "threshold": 22,
+      "workingScale": 0.6051437216338881,
+      "background": [
+        246.0,
+        245.0,
+        244.0
+      ],
+      "holeRemoved": true,
+      "override": true
+    },
+    {
+      "originalPath": "/coins/zeno/197326.jpg",
+      "sha256": "88e7e1e6fd59f84dde8a109b6d42c77a281ee5f53c73d7a900faf12d3f335d6a",
+      "transparentFraction": 0.3386,
+      "crop": [
+        0,
+        0,
+        873,
+        452
+      ],
+      "threshold": 22,
+      "workingScale": 0.8849557522123894,
+      "background": [
+        255.0,
+        255.0,
+        254.0
       ],
       "holeRemoved": true,
       "override": true
