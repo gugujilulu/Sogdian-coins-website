@@ -20,3 +20,8 @@ test('other place roles keep their own symbols, never inherit a city gate',()=>{
  assert.equal(new Set(urls).size,roles.length);
  for(const url of urls){assert.notEqual(url,citySymbolUrl);assert.ok(decodeURIComponent(url).includes('<svg'));}
 });
+
+test('city symbols switch at the shared near threshold; other roles do not change',()=>{
+ assert.equal(symbolUrl('city',8.49),citySymbolUrl);assert.notEqual(symbolUrl('city',8.5),citySymbolUrl);assert.equal(symbolUrl('city',5.5),citySymbolUrl);
+ for(const role of ['center','site','mint','findspot','hoard'])assert.equal(symbolUrl(role,4),symbolUrl(role,9));
+});
