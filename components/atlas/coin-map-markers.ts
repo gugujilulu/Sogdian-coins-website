@@ -1,3 +1,4 @@
+import {CollectionPopupLifecycle} from '../../lib/collection-popup-lifecycle';
 import {CoinMarkerMotion} from './coin-marker-motion';
 import {CoinMotionState} from '@/lib/coin-motion-state';
 import {CoverCycle,coverCandidates} from '@/lib/coin-cover-cycle';
@@ -19,17 +20,18 @@ export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPla
  const visibility=()=>{if(document.hidden)movement.cancelAll()};document.addEventListener("visibilitychange",visibility);
  let lastTick=performance.now();
  const tick=setInterval(()=>{const now=performance.now(),elapsed=Math.min(1000,now-lastTick);lastTick=now;if(disposed||reduce||!atlasActive||document.hidden)return;for(const [key,entry]of markers){const b=entry.button;if(b.dataset.cycling!=='true')continue;const next=cycles.advance(key,elapsed,b.matches(':hover')||b.contains(document.activeElement)||b.dataset.occluded==='true'||!!b.closest('[hidden]'));if(!next)continue;const img=new Image();img.alt='';img.draggable=false;img.onload=()=>{const current=markers.get(key)?.button;if(disposed||reduce||!atlasActive||document.hidden||!current||current.dataset.cycling!=='true'||current.matches(':hover')||current.contains(document.activeElement)){cycles.cancelLoad(key);return}if(!cycles.loaded(key,next,true))return;current.querySelector('.coin-cover-previous')?.remove();const old=current.querySelector('img');if(old){old.className='coin-cover-previous'};img.className='coin-cover-next';const visual=current.querySelector(".coin-motion")||current;visual.insertBefore(img,visual.firstChild);void img.offsetWidth;requestAnimationFrame(()=>{if(img.isConnected)img.classList.add('coin-cover-visible')})};img.onerror=()=>cycles.loaded(key,next,false);img.src=next}},500);
- let disposed=false,generation=0,revision=0,popup:GL.Popup|null=null,queued=false;
+ let disposed=false,generation=0,revision=0,queued=false;
  let preview:GL.Popup|null=null;
  let popupContext:CollectionContext|null=null;
- let lastMember:string|null=null,openerFamilies:string[]=[],restoreOnClose=true,pendingFocus:string[]|null=null;
+ let lastMember:string|null=null,openerFamilies:string[]=[],pendingFocus:string[]|null=null;
  let closingFamily:string|undefined;
  let scatterPositions=new Map<string,CoinScatterPosition>();
  const scatterFrames=new Map<string,Map<string,CoinScatterPosition>>();
  const observed=new Set<Element>();const obstaclesObserver=new ResizeObserver(()=>schedule());
  const rememberFocus=()=>{const active=document.activeElement;for(const entry of markers.values())if(entry.button===active)pendingFocus=JSON.parse(entry.button.dataset.familyIds||'[]')};
  const restoreMarker=()=>{const ids=closingFamily?[closingFamily]:pendingFocus||openerFamilies;const entries=[...markers.values()].filter(e=>e.button.dataset.occluded!=='true');const entry=entries[stableFocusIndex(ids,entries.map(e=>JSON.parse(e.button.dataset.familyIds||'[]')))];if(entry)entry.button.focus({preventScroll:true});else focusReturn(map.getCanvas());pendingFocus=null;closingFamily=undefined};
- function removePopup(){const node=popup?.getElement().querySelector<HTMLElement>(".coin-collection");if(node)movement.cancel(node);restoreOnClose=false;popup?.remove();restoreOnClose=true}
+ const popupLife=new CollectionPopupLifecycle<GL.Popup>(node=>movement.cancel(node),()=>{if(!disposed)restoreMarker()});
+ const removePopup=()=>popupLife.remove();
  const markers=new Map<string,{marker:GL.Marker;button:HTMLButtonElement;signature:string}>();
  const connections=document.createElementNS('http://www.w3.org/2000/svg','svg');connections.classList.add('coin-city-connections');connections.setAttribute('aria-hidden','true');const maskId=`coin-link-mask-${++connectionSequence}`;map.getContainer().appendChild(connections);
  let currentLayout:ReturnType<typeof displayCoins>=[];let previewKey:string|undefined;let gestureNear:boolean|null=null,suppressPan=false;
@@ -63,13 +65,14 @@ export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPla
    source.textContent=member.image?`${member.image.sourceName||tr('来源待解析')} · ${member.image.sourceRecordId||tr('编号待解析')}`:tr('无可用图片；仍可打开家族');
    for(const child of [name,count,role,source])text.appendChild(child);row.appendChild(text);row.onclick=()=>{const context={...popupContext!,scrollTop:node.scrollTop};lastMember=member.family.id;removePopup();onSelect(member.family.id,context)};node.appendChild(row);
   }
-  popup=new gl.Popup({closeButton:true,maxWidth:'340px',className:'coin-collection-popup',anchor:'center',focusAfterOpen:!passive}).setLngLat(coords).setDOMContent(node).addTo(map);
-  popup.getElement().querySelector('.maplibregl-popup-close-button')?.setAttribute('aria-label',tr('Close popup'));const opened=popup;opened.on('close',()=>{if(restoreOnClose&&!disposed)restoreMarker()});
+  const opened=new gl.Popup({closeButton:true,maxWidth:'340px',className:'coin-collection-popup',anchor:'center',focusAfterOpen:!passive}).setLngLat(coords).setDOMContent(node).addTo(map);
+  opened.getElement()?.querySelector('.maplibregl-popup-close-button')?.setAttribute('aria-label',tr('Close popup'));opened.on('close',popupLife.opened(opened,node));
   node.scrollTop=restore?.scrollTop||0;if(!reduce&&atlasActive&&!document.hidden)movement.fade(node);
   requestAnimationFrame(()=>{
-   if(disposed||popup!==opened||!opened.isOpen())return;
-   if(restore){node.scrollTop=restore.scrollTop;if(!passive)([...node.querySelectorAll<HTMLButtonElement>('.coin-popup-row')].find(b=>b.dataset.familyId===lastMember)||node.querySelector<HTMLButtonElement>('button')||opened.getElement().querySelector<HTMLButtonElement>('button'))?.focus({preventScroll:true});return}
-   const box=opened.getElement().getBoundingClientRect(),bounds=map.getContainer().getBoundingClientRect();
+   if(disposed||popupLife.current!==opened||!opened.isOpen())return;
+   if(restore){node.scrollTop=restore.scrollTop;if(!passive)([...node.querySelectorAll<HTMLButtonElement>('.coin-popup-row')].find(b=>b.dataset.familyId===lastMember)||node.querySelector<HTMLButtonElement>('button')||opened.getElement()?.querySelector<HTMLButtonElement>('button'))?.focus({preventScroll:true});return}
+   const element=opened.getElement();if(!element||!node.isConnected)return;
+   const box=element.getBoundingClientRect(),bounds=map.getContainer().getBoundingClientRect();
    const dx=box.left<bounds.left+12?box.left-bounds.left-12:box.right>bounds.right-12?box.right-bounds.right+12:0;
    const dy=box.top<bounds.top+12?box.top-bounds.top-12:box.bottom>bounds.bottom-12?box.bottom-bounds.bottom+12:0;
    if(dx||dy)map.panBy([dx,dy],{duration:duration()});
@@ -154,10 +157,10 @@ export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPla
   cycles.retain(live);drawConnections();if(pendingFocus||closingFamily)restoreMarker();
  }
  function schedule(){if(!queued&&!disposed){queued=true;requestAnimationFrame(()=>{if(!disposed)void render()})}}
- function escape(ev:KeyboardEvent){if(ev.defaultPrevented||ev.key!=='Escape'||document.querySelector('dialog[open]')||(ev.target instanceof Element&&ev.target.closest('input,textarea,select,[contenteditable]')))return;if(popup?.isOpen()){ev.preventDefault();ev.stopImmediatePropagation();popup.remove()}else preview?.remove()}
+ function escape(ev:KeyboardEvent){if(ev.defaultPrevented||ev.key!=='Escape'||document.querySelector('dialog[open]')||(ev.target instanceof Element&&ev.target.closest('input,textarea,select,[contenteditable]')))return;if(popupLife.current?.isOpen()){ev.preventDefault();ev.stopImmediatePropagation();popupLife.current.remove()}else preview?.remove()}
  document.addEventListener('keydown',escape);
  const motionStart=(event:GL.MapLibreEvent)=>{suppressPan=false;gestureNear=event.originalEvent?map.getZoom()>=coinDisplayRules.nearZoom:null;movement.cancelAll()};
  const motionEnd=()=>{suppressPan=gestureNear!==null&&gestureNear===(map.getZoom()>=coinDisplayRules.nearZoom);gestureNear=null;schedule()};
  const moving=()=>{movement.cancelAll();drawConnections()};map.on('movestart',motionStart);map.on('move',moving);map.on('moveend',motionEnd);map.on('idle',schedule);map.on('resize',schedule);
- return {cancelMotion(){movement.cancelAll()},suppressMotion(){departing.clear();movement.cancelAll();motionState.restore()},setActive(value:boolean){atlasActive=value;if(!value)movement.cancelAll();lastTick=performance.now()},returnToCollection(context:CollectionContext){const {groups}=collectionReturn(getGroups(),context);const center=map.unproject([map.getContainer().clientWidth/2,map.getContainer().clientHeight/2]);show(groups,[center.lng,center.lat],context);return true},refresh(){currentLayout=[];connections.replaceChildren();rememberFocus();generation++;revision++;preview?.remove();const context=popup?.isOpen()&&popupContext?{...popupContext,scrollTop:popup.getElement().querySelector('.coin-collection')?.scrollTop||0}:null;const popupAt=popup?.isOpen()?popup.getLngLat():null;const activeMember=popup?.getElement()?.querySelector<HTMLButtonElement>('.coin-popup-row:focus')?.dataset.familyId;if(activeMember)lastMember=activeMember;const hadPopupFocus=!!popup?.getElement()?.contains(document.activeElement);removePopup();if(context){const center=popupAt||map.getCenter();show(collectionMembers(getGroups(),context),[center.lng,center.lat],context,!hadPopupFocus)}movement.cancelAll();schedule()},selectionChanged(closed?:string){movement.cancelAll();closingFamily=closed;preview?.remove();removePopup();schedule()},destroy(){movement.cancelAll();document.removeEventListener("visibilitychange",visibility);clearInterval(tick);stopMotion();cycles.clear();obstaclesObserver.disconnect();document.removeEventListener('keydown',escape);preview?.remove();disposed=true;generation++;popup?.remove();connections.remove();map.off('movestart',motionStart);map.off('move',moving);map.off('moveend',motionEnd);map.off('idle',schedule);map.off('resize',schedule);for(const e of markers.values())e.marker.remove();markers.clear()}};
+ return {cancelMotion(){movement.cancelAll()},suppressMotion(){departing.clear();movement.cancelAll();motionState.restore()},setActive(value:boolean){atlasActive=value;if(!value)movement.cancelAll();lastTick=performance.now()},returnToCollection(context:CollectionContext){const {groups}=collectionReturn(getGroups(),context);const center=map.unproject([map.getContainer().clientWidth/2,map.getContainer().clientHeight/2]);show(groups,[center.lng,center.lat],context);return true},refresh(){currentLayout=[];connections.replaceChildren();rememberFocus();generation++;revision++;preview?.remove();const popup=popupLife.current;const context=popup?.isOpen()&&popupContext?{...popupContext,scrollTop:popup.getElement()?.querySelector('.coin-collection')?.scrollTop||0}:null;const popupAt=popup?.isOpen()?popup.getLngLat():null;const activeMember=popup?.getElement()?.querySelector<HTMLButtonElement>('.coin-popup-row:focus')?.dataset.familyId;if(activeMember)lastMember=activeMember;const hadPopupFocus=!!popup?.getElement()?.contains(document.activeElement);removePopup();if(context){const center=popupAt||map.getCenter();show(collectionMembers(getGroups(),context),[center.lng,center.lat],context,!hadPopupFocus)}movement.cancelAll();schedule()},selectionChanged(closed?:string){movement.cancelAll();closingFamily=closed;preview?.remove();removePopup();schedule()},destroy(){movement.cancelAll();document.removeEventListener("visibilitychange",visibility);clearInterval(tick);stopMotion();cycles.clear();obstaclesObserver.disconnect();document.removeEventListener('keydown',escape);preview?.remove();disposed=true;generation++;removePopup();connections.remove();map.off('movestart',motionStart);map.off('move',moving);map.off('moveend',motionEnd);map.off('idle',schedule);map.off('resize',schedule);for(const e of markers.values())e.marker.remove();markers.clear()}};
 }
