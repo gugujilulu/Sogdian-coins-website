@@ -1,5 +1,5 @@
 import {rangeName,rangePeriodCopy,rangeLabelColor} from '@/lib/range-copy';
-import {rangeLabelOffset} from '@/lib/range-labels';
+import {rangeLabelOffset,cityLabelOffset} from '@/lib/range-labels';
 import {tr,copyKnown} from '@/lib/i18n';
 import {focusable,focusReturn} from '@/lib/keyboard';
 import {rangeSpaceDescription} from '@/lib/range-time';
@@ -47,29 +47,33 @@ export function installHistoricalMap(gl:GL,map:GLMap,onError:(message:string)=>v
    markers.push(new gl.Marker({element:el,anchor:'top',offset:[0,-14]}).setLngLat(p.coordinates).addTo(map));nodes.push({el,position:p.coordinates,minZoom:p.minZoom,priority:0,placeId:p.id});
   }
   for(const r of frame.ranges){const bounds=rangeBounds([r]);if(!bounds)continue;const at=r.label||[(bounds[0][0]+bounds[1][0])/2,(bounds[0][1]+bounds[1][1])/2] as [number,number];const el=document.createElement('button');el.className='history-range-label';el.setAttribute('aria-label',rangeName(r)+' · '+rangePeriodCopy(r));el.style.color=rangeLabelColor(r.objectId);const title=document.createElement('strong');title.textContent=rangeName(r);const date=document.createElement('small');date.textContent=rangePeriodCopy(r)+(r.presentation?.background?' · '+tr('历史背景'):'');const block=document.createElement('span');block.className='range-name-block';block.style.transform=`rotate(${r.labelAngle||0}deg)`;block.appendChild(title);block.appendChild(date);el.appendChild(block);el.dataset.historyKey='range:'+r.id;el.onclick=e=>{e.stopPropagation();show(at,rangeName(r),[{label:r.kind==='polity'?'政权范围':r.kind==='context'?'地域背景':'钱币流通范围',text:`${rangePeriodCopy(r)} · ${r.precision==='approximate'?tr('大致范围'):tr('资料所绘范围')}${r.presentation?.background?' · '+tr('历史背景'):''}`,method:`${rangeSpaceDescription(r)}；${r.note}`,source:r.source}]);};markers.push(new gl.Marker({element:el}).setLngLat(at).addTo(map));nodes.push({el,position:at,minZoom:2,priority:1,angle:r.labelAngle});}
-  layout=()=>{const used:DOMRect[]=[];const obstacles=Array.from((map.getContainer().closest('.atlas-screen,.preview-stage')||map.getContainer().parentElement)?.querySelectorAll('.coin-map-marker,.map-toolbar,.history-controls,.preview-badge,.atlas-search-panel,.family-drawer,.timeline-floating,.maplibregl-ctrl')||[]).filter(e=>{const s=getComputedStyle(e),r=e.getBoundingClientRect();return s.visibility!=='hidden'&&s.display!=='none'&&r.width&&r.height}).map(e=>e.getBoundingClientRect());
+  layout=()=>{const used:DOMRect[]=[],labelAnchors:DOMRect[]=[];const obstacles=Array.from((map.getContainer().closest('.atlas-screen,.preview-stage')||map.getContainer().parentElement)?.querySelectorAll('.coin-map-marker,.map-toolbar,.history-controls,.preview-badge,.atlas-search-panel,.family-drawer,.timeline-floating,.maplibregl-ctrl')||[]).filter(e=>{const s=getComputedStyle(e),r=e.getBoundingClientRect();return s.visibility!=='hidden'&&s.display!=='none'&&r.width&&r.height}).map(e=>e.getBoundingClientRect());
    const overlaps=(a:DOMRect,b:DOMRect)=>a.left<b.right+5&&a.right>b.left-5&&a.top<b.bottom+5&&a.bottom>b.top-5;
    const coinPlaces=new Set(getCoinPlaceIds());
    for(const n of nodes.sort((a,b)=>a.priority-b.priority||Number(coinPlaces.has(b.placeId||''))-Number(coinPlaces.has(a.placeId||''))||(a.placeId||'').localeCompare(b.placeId||''))){if(n.priority===0){const icon=n.el.querySelector('img'),url=symbolUrl(n.el.dataset.placeRole as import('@/lib/map-layers').SymbolRole,map.getZoom());if(icon&&icon.getAttribute('src')!==url)icon.src=url}if(n.priority){const z=map.getZoom();n.el.style.fontSize=`${Math.max(14,Math.min(23,15+(z-4)*2.5))}px`;}
     const caption=n.priority===0?n.el.querySelector<HTMLElement>('span'):null;
-    if(caption){caption.style.translate='';if(window.matchMedia('(max-width:760px),(max-width:1000px) and (max-height:500px)').matches&&attribution?.classList.contains('maplibregl-compact-show')){
+    if(caption){caption.style.translate='';caption.style.visibility='';if(window.matchMedia('(max-width:760px),(max-width:1000px) and (max-height:500px)').matches&&attribution?.classList.contains('maplibregl-compact-show')){
      const label=caption.getBoundingClientRect(),cover=attribution.getBoundingClientRect(),viewport=map.getContainer().getBoundingClientRect();
      if(overlaps(label,cover)){const dx=cover.left-label.right-8;caption.style.translate=label.left+dx>=viewport.left+8?`${dx}px 0px`:`0px ${cover.top-label.bottom-8}px`;}
     }}
     n.el.style.translate='';if(n.priority===1){const offset=rangeLabelOffset(n.el.getBoundingClientRect(),map.getContainer().getBoundingClientRect(),[...used,...obstacles]);if(offset)n.el.style.translate=`${offset[0]}px ${offset[1]}px`;else{n.el.style.visibility='hidden';continue}}
     const matchedCity=n.priority===0&&coinPlaces.has(n.placeId||'');n.el.classList.toggle('coin-matched-city',matchedCity);n.el.dataset.panelAdjusted='false';
     if(matchedCity){const sheet=map.getContainer().closest('.atlas-screen')?.querySelector('.family-drawer');if(sheet){const cover=sheet.getBoundingClientRect(),viewport=map.getContainer().getBoundingClientRect(),box=n.el.getBoundingClientRect();if(cover.width>viewport.width*.6&&box.bottom>cover.top&&box.left<cover.right&&box.right>cover.left){n.el.style.translate=`0px ${cover.top-box.bottom-12}px`;n.el.dataset.panelAdjusted='true';if(caption)caption.style.translate='';}}}
-    if(matchedCity&&caption){
+    if(n.priority===0&&caption){
+     const original=caption.getBoundingClientRect();
+     if(labelAnchors.some(box=>overlaps(original,box)))caption.style.visibility='hidden';
+     else labelAnchors.push(original);
+    }
+    if(n.priority===0&&caption&&caption.style.visibility!=='hidden'){
      const label=caption.getBoundingClientRect(),viewport=map.getContainer().getBoundingClientRect();
      const covers=[...used,...obstacles];
      if(covers.some(b=>overlaps(label,b))){
-      const offsets=[[0,-32],[0,32],[-90,0],[90,0],[0,-58],[0,58],[-90,-32],[90,-32]];
-      const offset=offsets.find(([x,y])=>{const candidate=new DOMRect(label.x+x,label.y+y,label.width,label.height);return candidate.left>=viewport.left+8&&candidate.right<=viewport.right-8&&candidate.top>=viewport.top+8&&candidate.bottom<=viewport.bottom-8&&!covers.some(b=>overlaps(candidate,b))});
+      const offset=cityLabelOffset(label,viewport,covers);
       if(offset){const [x,y]=offset;caption.style.translate=`${x}px ${y}px`}
      }
     }
     const box=n.el.getBoundingClientRect();const hit=used.some(b=>overlaps(box,b))||(n.priority===1&&obstacles.some(b=>overlaps(box,b)));
-    const show=matchedCity||(map.getZoom()>=n.minZoom&&!hit);n.el.style.visibility=show?'visible':'hidden';if(show){used.push(box);if(matchedCity&&caption)used.push(caption.getBoundingClientRect())}
+    const show=matchedCity||(map.getZoom()>=n.minZoom&&!hit);n.el.style.visibility=show?'visible':'hidden';if(show){used.push(box);if(caption&&caption.style.visibility!=='hidden')used.push(caption.getBoundingClientRect())}
    }
   };layout();if(focusKey){const target=nodes.find(n=>n.el.dataset.historyKey===focusKey)?.el;focusReturn(target&&focusable(target)?target:map.getCanvas())};
  }

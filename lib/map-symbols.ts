@@ -1,7 +1,7 @@
 import {coinDisplayStage} from './coin-map.ts';
 import type {SymbolRole} from './map-layers';
 // One resource resolver for map markers, layer choices and legend.
-// The supplied red gate represents cities; all other roles keep their distinct drawings.
+// Core city/site markers share one symbol per zoom stage; claims keep their historical roles.
 export const citySymbolUrl = "/visual/t47/r3/city.webp";
 const paths:Record<SymbolRole,string>={
  city:'M5 25V12h4V8h4v4h6V8h4v4h4v13H5Zm8 0v-7a3 3 0 0 1 6 0v7M7 16h3m12 0h3M3 27h26',
@@ -13,4 +13,4 @@ const paths:Record<SymbolRole,string>={
  hoard:'M10 8h12l-2 4c8 4 7 14-4 14S4 16 12 12l-2-4ZM10 12h12M12 18a4 4 0 1 0 8 0 4 4 0 0 0-8 0Zm3-1h2v2h-2zM12 4h8'
 };
 export function symbolSvg(role:SymbolRole){return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none"><path d="${paths[role]}" stroke="#fff8e7" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><path d="${paths[role]}" stroke="${role==='hoard'||role==='findspot'?'#8d533e':'#403e31'}" stroke-width="1.25" stroke-linejoin="round" stroke-linecap="round"/></svg>`}
-export function symbolUrl(role:SymbolRole,zoom=0){return role==='city'&&coinDisplayStage(zoom)!=='near'?citySymbolUrl:`data:image/svg+xml,${encodeURIComponent(symbolSvg(role))}`}
+export function symbolUrl(role:SymbolRole,zoom=0){const city=role==='city'||role==='site';return city&&coinDisplayStage(zoom)!=='near'?citySymbolUrl:`data:image/svg+xml,${encodeURIComponent(symbolSvg(city?'site':role))}`}
