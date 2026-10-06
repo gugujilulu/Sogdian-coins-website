@@ -119,7 +119,7 @@ function AtlasHome(){
  function chooseBackgroundObject(id:string,family=false){setBackgroundObject(id);if(family&&selectedId)familyObjects.current[selectedId]=id;const range=mapBackground?.ranges.find(r=>r.objectId===id&&r.geometry);setMapLayers(old=>family&&range?.kind==='polity'?old:linkRangeLayers(old,range,!family))}
  const activeRange=mapBackground?.ranges.find(r=>r.objectId===backgroundObject&&r.geometry);
  const rangeEnabled=!!activeRange&&(activeRange.kind!=='polity'||mapBase==='historical')&&mapLayers[rangeLayer(activeRange)];
- function showRelatedRange(){setMapBase('historical');if(activeRange)setMapLayers(old=>linkRangeLayers(old,activeRange,true))}
+ function showRelatedRange(){setMapBase('historical');if(activeRange)setMapLayers(old=>{const next=linkRangeLayers(old,activeRange,true);return mapBackground?.ranges.some(r=>r.kind==='polity'&&r.geometry&&r.familyIds.includes(selectedId||''))?{...next,polities:true}:next})}
  const geoSelection=useMemo(()=>({region,polity,place:city}),[region,polity,city]);
  const recordFilters=useMemo(()=>contextRecordFilters(filters),[filters]);
  const baseResult=useMemo(()=>data?filterAtlasRecords(data,recordFilters):null,[data,recordFilters]);
