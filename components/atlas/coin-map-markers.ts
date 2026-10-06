@@ -137,7 +137,7 @@ export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPla
    }
    entry.button.classList.toggle("selected",selected);entry.button.classList.toggle("muted",!selected&&!!getSelected());
    // Refresh handler on every projection; async work is invalidated on filter changes.
-   entry.button.onmouseenter=entry.button.onfocus=()=>{preview?.remove();if(members.length!==1)return;const member=members[0],node=document.createElement('div');node.className='coin-preview';node.textContent=`${familyTitle(member.family,getCopyLocale())} · ${member.family.dateLabel||tr('年代未记录')} · ${countLabel(member.recordCount,'records')}`;preview=new gl.Popup({closeButton:false,closeOnClick:false,focusAfterOpen:false,anchor:'bottom',offset:[e.offsetX,e.offset-geometry.height/2-12],className:'coin-preview-popup'}).setLngLat(e.coords).setDOMContent(node).addTo(map)};
+   entry.button.onmouseenter=entry.button.onfocus=()=>{preview?.remove();if(members.length!==1)return;const member=members[0],node=document.createElement('div');node.className='coin-preview';node.textContent=`${familyTitle(member.family,getCopyLocale())} · ${copyKnown(member.family.dateLabel||'年代未记录',getCopyLocale())} · ${countLabel(member.recordCount,'records')}`;preview=new gl.Popup({closeButton:false,closeOnClick:false,focusAfterOpen:false,anchor:'bottom',offset:[e.offsetX,e.offset-geometry.height/2-12],className:'coin-preview-popup'}).setLngLat(e.coords).setDOMContent(node).addTo(map)};
    entry.button.onmouseleave=entry.button.onblur=()=>preview?.remove();
    entry.button.onclick=ev=>{preview?.remove();openerFamilies=members.map(m=>m.family.id);ev.stopPropagation();
     const action=coinEntryAction(e);

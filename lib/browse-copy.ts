@@ -2,7 +2,7 @@ import names from './content/family-names.json' with {type:'json'};
 import {displayName,tr,formatCopy,copyKnown,countLabel,type Locale} from './i18n.ts';
 import type {CatalogueGroup} from './catalogue-tree';
 import type {SourceTreeNode} from './source-tree';
-/** Display only: raw titles, tree occurrence IDs and search text remain unchanged. */
+/** Display names preserve raw titles and tree occurrence IDs; known name aliases are also indexed by search. */
 export function catalogueGroupTitle(group:CatalogueGroup,locale:Locale){return group.group?group.title:tr('未分组（目录归属未明确）',locale)}
 export function sourceNodeTitle(node:SourceTreeNode,locale:Locale){
  if(node.kind==='missing')return tr('分类路径未记录',locale);
