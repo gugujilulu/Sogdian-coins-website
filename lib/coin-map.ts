@@ -41,15 +41,19 @@ export type MapCoinEntry={key:string;coords:[number,number];point:{x:number;y:nu
 export type DisplayCoinEntry=MapCoinEntry&{large:boolean;offset:number;bounds:Box;displayCollection:boolean;entryKeys:string[]};
 /** Shared with the DOM renderer: border-box dimensions, including the protruding badge. */
 export const coinMarkerSizes={desktop:{normal:72,compact:60,maxHeight:60},mobile:{normal:64,compact:56,maxHeight:56},placeholder:48} as const;
+/** Scale map photographs from the T67.9 slots, not placeholders, badges or city symbols. */
+export const coinImageScale=1.5;
 export function markerGeometry(point:{x:number;y:number},large:boolean,small:boolean,count:number,offset=large?-36:-12,image?:ImageRecord|null){
  const size=small?coinMarkerSizes.mobile:coinMarkerSizes.desktop;
  const displayImage=image?.path?mapCoinImage(image):image;
  const ratio=displayImage?.width&&displayImage?.height&&displayImage.width>0&&displayImage.height>0?displayImage.width/displayImage.height:1.5;
- const base=displayImage?(large?size.normal:size.compact):coinMarkerSizes.placeholder;
- const height=Math.min(base/ratio,size.maxHeight),width=Math.min(base,height*ratio);
+ const scale=displayImage?coinImageScale:1;
+ const base=(displayImage?(large?size.normal:size.compact):coinMarkerSizes.placeholder)*scale;
+ const height=Math.min(base/ratio,size.maxHeight*scale),width=Math.min(base,height*ratio);
+ const hitWidth=Math.max(44,width),hitHeight=Math.max(32,height);
  const badgeWidth=count>1?Math.max(20,String(count).length*7+10):0;
- const left=Math.min(-width/2,badgeWidth?width/2+6-badgeWidth:-width/2);
- const right=width/2+(badgeWidth?6:0),top=offset-height/2-(badgeWidth?8:0),bottom=offset+height/2;
+ const left=Math.min(-hitWidth/2,badgeWidth?hitWidth/2+6-badgeWidth:-hitWidth/2);
+ const right=hitWidth/2+(badgeWidth?6:0),top=offset-hitHeight/2-(badgeWidth?8:0),bottom=offset+hitHeight/2;
  return {width,height,badgeWidth,offset,box:{x:point.x+(left+right)/2,y:point.y+(top+bottom)/2,w:right-left,h:bottom-top}};
 }
 function representativeMember(members:CoinMember[],selectedId?:string){const preferred=coverMember(members,selectedId);return preferred?.image?preferred:members.find(m=>m.image)||preferred}
@@ -122,6 +126,10 @@ function scatterCoins(entries:MapCoinEntry[],input:{width:number;height:number;l
  const free=(e:CoinDisplay)=>inside(e.bounds)&&!obstacles.some(b=>intersects(e.bounds,b))&&!occupied.some(b=>intersects(e.bounds,b));
  function candidates(city:typeof cities[number],id:string):CoinScatterPosition[]{
   const seed=hash(city.cityKey+':'+id),angle=(seed%360)*Math.PI/180;
+  const member=city.members.find(m=>m.family.id===id);
+  const footprint=markerGeometry({x:0,y:0},true,small,member?1:city.members.length,0,member?.image).box;
+  const padX=Math.max(small?38:42,Math.abs(footprint.x)+Math.max(44,footprint.w)/2+2);
+  const padY=Math.max(36,Math.abs(footprint.y)+Math.max(32,footprint.h)/2+2);
   const radius=small?coinDisplayRules.scatterMobileRadius:coinDisplayRules.scatterRadius;
   const initial=65+(seed>>>9)%50;
   return Array.from({length:coinDisplayRules.scatterCandidates},(_,i)=>{
@@ -130,7 +138,6 @@ function scatterCoins(entries:MapCoinEntry[],input:{width:number;height:number;l
    const r=initial+Math.floor(i/10)*26+(hash(city.cityKey+':'+i)%31);
    const distance=Math.min(radius,r);
    const x=city.entry.point.x+Math.cos(a)*distance,y=city.entry.point.y+Math.sin(a)*distance*.86;
-   const padX=small?38:42,padY=36;
    return {offsetX:Math.round(Math.max(margin+padX,Math.min(input.width-margin-padX,x))-city.entry.point.x),offset:Math.round(Math.max(top+margin+padY,Math.min(bottom-margin-padY,y))-city.entry.point.y)};
   });
  }
