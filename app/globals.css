@@ -372,6 +372,6 @@
 /* T67.9: map-only alpha imagery; no rectangular photo frame. */
 .coin-map-marker.cutout{border-color:transparent!important;box-shadow:none;background:transparent}
 .coin-map-marker.cutout img{border-radius:0;filter:drop-shadow(0 1px 1px #0003)}
-.coin-map-marker.cutout:is(:hover,:focus-visible,.selected){border-color:transparent!important;box-shadow:none}
+.coin-map-marker.cutout:is(:hover,:focus-visible,.selected){border-color:transparent!important;box-shadow:none;background:transparent!important}
 .coin-map-marker.cutout:is(:hover,:focus-visible,.selected) img{filter:drop-shadow(1px 0 0 #e7c88588) drop-shadow(-1px 0 0 #e7c88588) drop-shadow(0 1px 0 #e7c88588) drop-shadow(0 -1px 0 #e7c88588)}
 .coin-map-marker.cutout:focus-visible{outline:2px solid #fff1b9;outline-offset:3px}
