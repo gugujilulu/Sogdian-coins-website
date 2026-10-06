@@ -347,7 +347,7 @@
 
 /* T42: screen-space city expansion; no geographic data offsets. */
 .coin-city-connections{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
-.coin-city-connections line{stroke:#425b62;stroke-width:1.35;stroke-opacity:.65}
+.coin-city-connections line{stroke:#92724b;stroke-width:1.35;stroke-opacity:.65;stroke-dasharray:3 4}
 .coin-city-connections line.preview{stroke:#9a7742;stroke-width:2;stroke-opacity:.85}
 .coin-city-connections line.selected{stroke:#aa792d;stroke-width:2.8;stroke-opacity:1}
 .history-place{z-index:2}
@@ -361,6 +361,7 @@
 /* T43: keep the anchor label readable above a phone sheet; attribution stays operable. */
 @media(max-width:760px),(max-width:1000px) and (max-height:500px){
  .atlas-screen.has-family .history-place span{transform:translateY(-44px)}
+ .atlas-screen.has-family .history-place.coin-matched-city span{transform:none}
  .atlas-screen.has-family .maplibregl-ctrl-attrib.maplibregl-compact-show{max-width:130px}
  .atlas-screen.has-family .maplibregl-ctrl-attrib-inner{overflow-wrap:anywhere}
 }

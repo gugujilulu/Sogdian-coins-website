@@ -57,7 +57,8 @@ export function installHistoricalMap(gl:GL,map:GLMap,onError:(message:string)=>v
      if(overlaps(label,cover)){const dx=cover.left-label.right-8;caption.style.translate=label.left+dx>=viewport.left+8?`${dx}px 0px`:`0px ${cover.top-label.bottom-8}px`;}
     }}
     n.el.style.translate='';if(n.priority===1){const offset=rangeLabelOffset(n.el.getBoundingClientRect(),map.getContainer().getBoundingClientRect(),[...used,...obstacles]);if(offset)n.el.style.translate=`${offset[0]}px ${offset[1]}px`;else{n.el.style.visibility='hidden';continue}}
-    const matchedCity=n.priority===0&&coinPlaces.has(n.placeId||'');
+    const matchedCity=n.priority===0&&coinPlaces.has(n.placeId||'');n.el.classList.toggle('coin-matched-city',matchedCity);n.el.dataset.panelAdjusted='false';
+    if(matchedCity){const sheet=map.getContainer().closest('.atlas-screen')?.querySelector('.family-drawer');if(sheet){const cover=sheet.getBoundingClientRect(),viewport=map.getContainer().getBoundingClientRect(),box=n.el.getBoundingClientRect();if(cover.width>viewport.width*.6&&box.bottom>cover.top&&box.left<cover.right&&box.right>cover.left){n.el.style.translate=`0px ${cover.top-box.bottom-12}px`;n.el.dataset.panelAdjusted='true';if(caption)caption.style.translate='';}}}
     if(matchedCity&&caption){
      const label=caption.getBoundingClientRect(),viewport=map.getContainer().getBoundingClientRect();
      const covers=[...used,...obstacles];
