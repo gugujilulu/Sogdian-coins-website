@@ -188,5 +188,210 @@
     "en": "Stage",
     "zh": "阶段",
     "ru": "Этап"
+  },
+  "12th century modern attribution; source groups retained separately": {
+    "en": "12th century modern attribution; source groups retained separately",
+    "zh": "现代研究归于12世纪；各来源分组保留",
+    "ru": "Современная атрибуция: XII век; группы источников сохранены отдельно"
+  },
+  "221–1643 project window; each imported coin retains its own issue/context dates": {
+    "en": "221–1643 project window; each imported coin retains its own issue/context dates",
+    "zh": "收录时段221—1643年；各币采用自身发行或背景年代",
+    "ru": "Период коллекции 221–1643; у каждой монеты собственная дата выпуска или контекста"
+  },
+  "640–709 secondary catalogue attribution; primary literature crosswalk pending": {
+    "en": "640–709 secondary catalogue attribution; primary literature crosswalk pending",
+    "zh": "二级目录归于640—709年，尚待原始文献核对",
+    "ru": "640–709 по вторичному каталогу; сверка с первичной литературой ещё требуется"
+  },
+  "700(?)–710 CE": {
+    "en": "700(?)–710 CE",
+    "zh": "公元700（？）—710年",
+    "ru": "700(?)–710 гг."
+  },
+  "710(?)–738 CE": {
+    "en": "710(?)–738 CE",
+    "zh": "公元710（？）—738年",
+    "ru": "710(?)–738 гг."
+  },
+  "720s–737 CE in Zeno source taxonomy": {
+    "en": "720s–737 CE in Zeno source taxonomy",
+    "zh": "Zeno分类年代：720年代—737年",
+    "ru": "720-е–737 гг. по классификации Zeno"
+  },
+  "766–801 in secondary catalogue; attribution retained as candidate": {
+    "en": "766–801 in secondary catalogue; attribution retained as candidate",
+    "zh": "二级目录年代766—801年，归属为候选",
+    "ru": "766–801 по вторичному каталогу; атрибуция предварительная"
+  },
+  "769 CE (museum record)": {
+    "en": "769 CE (museum record)",
+    "zh": "公元769年（博物馆记录）",
+    "ru": "769 г. (музейная запись)"
+  },
+  "7th century broad source-linked range; exact chronology pending": {
+    "en": "7th century broad source-linked range; exact chronology pending",
+    "zh": "来源大致归于7世纪，确切年代未定",
+    "ru": "В целом VII век по источникам; точная дата не установлена"
+  },
+  "7th–12th century source groups; individual records retain their own source dates": {
+    "en": "7th–12th century source groups; individual records retain their own source dates",
+    "zh": "来源分组跨7—12世纪，各记录采用自身来源年代",
+    "ru": "Группы источников охватывают VII–XII века; у каждой записи собственная дата"
+  },
+  "7th–8th centuries broad research window": {
+    "en": "7th–8th centuries broad research window",
+    "zh": "研究背景大致为7—8世纪",
+    "ru": "Общий исследовательский контекст VII–VIII веков"
+  },
+  "7th–8th century; often attributed c.709–722 / 728": {
+    "en": "7th–8th century; often attributed c.709–722 / 728",
+    "zh": "7—8世纪，常归于约709—722／728年",
+    "ru": "VII–VIII века; часто относят примерно к 709–722/728 гг."
+  },
+  "8th century": {
+    "en": "8th century",
+    "zh": "8世纪",
+    "ru": "VIII век"
+  },
+  "8th century; some imported source records specify early / first half of the 8th century": {
+    "en": "8th century; some imported source records specify early / first half of the 8th century",
+    "zh": "8世纪；部分来源具体归于8世纪初或上半叶",
+    "ru": "VIII век; часть источников указывает начало или первую половину века"
+  },
+  "AD 658–691 in Zeno source taxonomy": {
+    "en": "AD 658–691 in Zeno source taxonomy",
+    "zh": "Zeno分类年代：公元658—691年",
+    "ru": "658–691 гг. по классификации Zeno"
+  },
+  "AD 690–709 in Zeno source taxonomy": {
+    "en": "AD 690–709 in Zeno source taxonomy",
+    "zh": "Zeno分类年代：公元690—709年",
+    "ru": "690–709 гг. по классификации Zeno"
+  },
+  "Broad 8th–9th century context; exact chronology pending": {
+    "en": "Broad 8th–9th century context; exact chronology pending",
+    "zh": "大致为8—9世纪，确切年代未定",
+    "ru": "Общий контекст VIII–IX веков; точная дата не установлена"
+  },
+  "Broad Semirechye context; exact chronology varies by record": {
+    "en": "Broad Semirechye context; exact chronology varies by record",
+    "zh": "七河地区背景，各记录具体年代不同",
+    "ru": "Общий контекст Семиречья; точная дата зависит от записи"
+  },
+  "Broad pre-Islamic / early Islamic context; exact dates unresolved": {
+    "en": "Broad pre-Islamic / early Islamic context; exact dates unresolved",
+    "zh": "前伊斯兰／伊斯兰早期背景，确切年代未定",
+    "ru": "Доисламский / раннеисламский контекст; точные даты не установлены"
+  },
+  "Chronology and regional attribution pending": {
+    "en": "Chronology and regional attribution pending",
+    "zh": "年代及地域归属未定",
+    "ru": "Дата и региональная атрибуция не установлены"
+  },
+  "Chronology pending": {
+    "en": "Chronology pending",
+    "zh": "年代未定",
+    "ru": "Дата не установлена"
+  },
+  "Chronology pending academic crosswalk": {
+    "en": "Chronology pending academic crosswalk",
+    "zh": "年代尚待文献核对",
+    "ru": "Дата требует сверки с литературой"
+  },
+  "Chronology pending catalogue crosswalk": {
+    "en": "Chronology pending catalogue crosswalk",
+    "zh": "年代尚待目录核对",
+    "ru": "Дата требует сверки с каталогами"
+  },
+  "Chronology pending source crosswalk": {
+    "en": "Chronology pending source crosswalk",
+    "zh": "年代尚待来源核对",
+    "ru": "Дата требует сверки с источниками"
+  },
+  "Chronology pending; Zeno taxonomy notes “ex. Samitan”": {
+    "en": "Chronology pending; Zeno taxonomy notes “ex. Samitan”",
+    "zh": "年代未定；Zeno分类注明“ex. Samitan”",
+    "ru": "Дата не установлена; в классификации Zeno отмечено «ex. Samitan»"
+  },
+  "Date unresolved in current source crosswalk": {
+    "en": "Date unresolved in current source crosswalk",
+    "zh": "现有来源尚未确定年代",
+    "ru": "Дата по имеющимся источникам не установлена"
+  },
+  "Date unresolved; source-taxonomy family": {
+    "en": "Date unresolved; source-taxonomy family",
+    "zh": "年代未定；按来源分类归组",
+    "ru": "Дата не установлена; группа по классификации источника"
+  },
+  "Disputed: legacy 9th–10th c.; Western Liao/Yelü Dashi reattribution c.1124–1144": {
+    "en": "Disputed: legacy 9th–10th c.; Western Liao/Yelü Dashi reattribution c.1124–1144",
+    "zh": "年代有争议：旧归9—10世纪，后改归西辽／耶律大石约1124—1144年",
+    "ru": "Датировка спорная: ранее IX–X века; переатрибуция к Западному Ляо / Елюй Даши, около 1124–1144 гг."
+  },
+  "First half of 8th–mid-9th century": {
+    "en": "First half of 8th–mid-9th century",
+    "zh": "8世纪上半叶—9世纪中叶",
+    "ru": "Первая половина VIII–середина IX века"
+  },
+  "Late 9th–early 10th century (catalogue dating)": {
+    "en": "Late 9th–early 10th century (catalogue dating)",
+    "zh": "9世纪末—10世纪初（目录年代）",
+    "ru": "Конец IX–начало X века (датировка каталога)"
+  },
+  "Mid-8th century": {
+    "en": "Mid-8th century",
+    "zh": "8世纪中叶",
+    "ru": "Середина VIII века"
+  },
+  "Second half of 8th century": {
+    "en": "Second half of 8th century",
+    "zh": "8世纪下半叶",
+    "ru": "Вторая половина VIII века"
+  },
+  "Source attribution pending; broadly 8th–9th century context": {
+    "en": "Source attribution pending; broadly 8th–9th century context",
+    "zh": "来源归属尚待核对，大致为8—9世纪背景",
+    "ru": "Атрибуция источника требует проверки; общий контекст VIII–IX веков"
+  },
+  "Source taxonomy and specimen legends; exact chronology pending": {
+    "en": "Source taxonomy and specimen legends; exact chronology pending",
+    "zh": "依据来源分类及标本铭文，确切年代未定",
+    "ru": "По классификации источника и легендам экземпляров; точная дата не установлена"
+  },
+  "Source-taxonomy context; exact chronology pending": {
+    "en": "Source-taxonomy context; exact chronology pending",
+    "zh": "依据来源分类，确切年代未定",
+    "ru": "Контекст классификации источника; точная дата не установлена"
+  },
+  "Undated in imported Zeno source; Türgesh/Semirechye source classification": {
+    "en": "Undated in imported Zeno source; Türgesh/Semirechye source classification",
+    "zh": "Zeno来源未定年；分类为突骑施／七河地区",
+    "ru": "В источнике Zeno не датирована; классификация: тюргеши / Семиречье"
+  },
+  "Undated in source": {
+    "en": "Undated in source",
+    "zh": "来源未定年",
+    "ru": "В источнике не датирована"
+  },
+  "ca. 640–700 AD in Zeno source taxonomy": {
+    "en": "ca. 640–700 AD in Zeno source taxonomy",
+    "zh": "Zeno分类年代：约公元640—700年",
+    "ru": "Около 640–700 гг. по классификации Zeno"
+  },
+  "ca. 675–696 in Zeno specimen descriptions; academic crosswalk pending": {
+    "en": "ca. 675–696 in Zeno specimen descriptions; academic crosswalk pending",
+    "zh": "Zeno标本描述约675—696年，尚待文献核对",
+    "ru": "Около 675–696 гг. в описаниях Zeno; требуется сверка с литературой"
+  },
+  "ca. AD 700 in Zeno source taxonomy": {
+    "en": "ca. AD 700 in Zeno source taxonomy",
+    "zh": "Zeno分类年代：约公元700年",
+    "ru": "Около 700 г. по классификации Zeno"
+  },
+  "not later than 642–not later than 655 CE (candidate catalogue chronology)": {
+    "en": "not later than 642–not later than 655 CE (candidate catalogue chronology)",
+    "zh": "不晚于642年至不晚于655年（候选目录年代）",
+    "ru": "Не позднее 642–не позднее 655 гг. (предварительная датировка каталога)"
   }
 }
