@@ -1,54 +1,71 @@
 # Central Asian Square-Hole Coinage Atlas
 
+A map and catalogue for exploring the square-hole coin traditions of Central Asia.
 
-An interactive spatial–temporal research atlas of the Chinese-style square-hole cash tradition across Central Asia and related eastern inland regions. The historical focus runs broadly from the post-Han world through the pre-Qing period; exact date cutoffs remain provisional and disputed/boundary records are retained rather than bulk-hidden. The repository retains the historical `sogdian-cash-atlas` project slug for continuity.
+This project grew out of collecting coins and trying to compare records scattered across specialist databases and catalogues. A photograph is useful; its source, attribution and geographical context make it possible to ask better questions. The atlas brings those pieces together while keeping the original records within reach.
 
+![Atlas on desktop](docs/reviews/phase1-final/prod-desktop-place.png)
 
-## Scope v1 and research provenance
+## Explore
 
-The project scope is now formalized in `research/central-asia-square-hole-scope.json`. Main-corpus inclusion follows the **Chinese-style square-hole cash tradition**, not a mechanical through-hole test: pierced square-hole cash, intentionally unpierced issues and pseudo-aperture issues such as Gurek imitations can all qualify when the cash-form derivation is clear. Post-cast drilled/suspension holes do not qualify by themselves. Core, southern/southeastern, eastern/Tarim and extended contact zones are recorded separately.
+Start with the map, select a city collection, then open a coin family and its photographs. Catalogue provides another route through the material, including records without a mapped location. Research collects the bibliography, coverage notes and plans for the next edition.
 
-Source handling is formalized in `research/source-provenance-policy.json` and `research/source-authorities.json`. Evidence reliability is claim-dependent rather than represented by one global source score. Academic catalogues, archaeological reports, museum records, auctions, specialist/community databases and collection/dealer records retain separate strengths, verification states and evidence lineages. Repetition of one upstream catalogue claim across several websites is not counted as independent corroboration.
+- Browse 56 editorial families, 120 source/catalogue groups and 1,010 records with 1,013 images.
+- Search by family, source record and historical place; combine dates, regions and source filters.
+- Compare original photographs and follow their source links.
+- Switch between English, Chinese and Russian.
+- Use the mobile detail panel in summary, half-height or reading mode.
 
-`research/current-corpus-scope-map.json` preserves the earlier scope mapping baseline without changing stable legacy display IDs; the current display corpus has since expanded and its live counts are reported below. Stage-1 #503 additions are explicitly source-linked editorial families, not final cross-catalogue resolutions. `research/candidate-type-inventory.json` is the working cross-regional candidate inventory; it is intentionally broader than the current Atlas export and preserves unsettled attributions rather than promoting them to canonical facts.
+The separate research-material gallery contains 701 related, held or excluded records. Record totals describe the imported material; several source pages can refer to the same physical coin.
 
-## Current edition
+## How the material is organised
 
-A real draggable MapLibre terrain map; historical city/site anchors; family → catalogue grouping → specimen galleries; date and region filtering; original-resolution images; source and bibliography links; exploration vault; explicit source-coverage accounting.
+The project covers Central Asian and related Inner Asian traditions derived from Chinese-style square-hole cash. Sogdiana, Chach, Ferghana, Semirechye, the Tarim region and neighbouring contact zones form the main working scope.
 
-The Lady Nana collection remains independently scoped at all 14 Zeno category 3106 records plus other-source records: 20 specimen records and 22 images after confirmed repeat-source merges. Zeno category #795 (Turgesh / Runic tamgha) has now been recursively captured at 254/254 source records across 27 category nodes, with 254 detail pages and 254 source images retained. All 254 records received a first-pass scope review; 239 source records are linked into the Atlas, producing 238 net new specimen rows because Zeno #20696 is the same physical specimen/source photograph as the existing `sr9` Coins of Central Asia record. After completion of the downloaded-target #503 review, the whole display export has **56 editorial families, 120 source/catalogue groups, 1,010 specimen records and 1,013 images**. These are collection/import totals, not a census of unique physical coins, surviving populations, or rarity. A separate product index exposes reviewed related / held / excluded source records without adding them to the main count.
+Families are editorial groupings. Catalogue groups retain their source identities. Historical locations keep their stated roles, and uncertain dates and competing attributions remain visible. A city anchor does not automatically establish a mint or findspot.
 
-Circulation polygons and hoard points have supported model/layers but no verified type-specific data yet. Do not claim the distribution map is complete. Detailed results and limitations: `docs/implementation-2026-09-16.md`.
+The current map has 14 registered places, with 38 families mapped and 18 accessible through the catalogue. Verified hoard and findspot layers are still awaiting evidence. The fuller acquisition history and source policies are in [Corpus notes](docs/corpus-notes.md).
 
-## Data and reproducibility
+## Run locally
 
-- `public/data/atlas.json`: normalized display export.
-- `research/`: image provenance, primary-page metadata, category snapshots and coverage baselines.
-- `db/schema.sql`: relational model, hierarchy, attributions, specimen identity, geography, manufacture links and evidence.
-- `scripts/build-atlas.py`: source-register → display export.
-- `scripts/export-atlas-db.py OUTPUT`: reproducible SQLite research database.
-- `scripts/validate-atlas.py`: coverage and evidence/identity invariants; Lady Nana coverage stays independently scoped as new Zeno categories are added.
-- `scripts/collect-zeno.py --category ID [--details | --download]`: recursive public-source retrieval. Default mode snapshots the category tree/gallery HTML; `--details` also caches/parses record pages without images; `--download` adds original-image acquisition. Successful caches are resumable and observed-link totals alone are not completeness claims.
-- `python -m unittest tests/test_collect_zeno.py -v`: offline regression checks against cached Lady Nana and #795 source pages, including repeated-pagination failure detection and recursive subtree accounting.
+Requires Node.js 22.13 or later, pnpm 11.25 and Python 3. Install Pillow for the data scripts.
 
-Python data scripts require Pillow. Website uses TypeScript, React/Vinext, MapLibre GL and the existing Shadcn primitives. Use the configured Sites build helper; pnpm lockfile is committed.
+```sh
+git clone https://github.com/gugujilulu/Sogdian-coins-website.git
+cd Sogdian-coins-website
+pnpm install --frozen-lockfile
+pnpm dev
+```
 
-Photographs retain their credits and original source links. Map data credits remain visible. Source-specific dates, uncertain mint assignments, disputed attributions and unresolved specimen identities must remain distinguishable.
+The development server prints its address. For a production build, run `pnpm build`; `pnpm start` serves the generated worker locally. The hosting configuration remains in `.openai/hosting.json`.
 
-For Zeno records, the raw manifest retains the full uploader object (name, member ID and profile URL), the raw source-rights marker, source fields and detail-page path. The display export carries the uploader name as image credit plus a normalized `rightsStatus`; the Zeno terms page is stored separately as `rightsSourceUrl`, not asserted as an open license. SQLite mirrors those display fields as `image.credit`, `image.rights_status` and `image.rights_source_url`; `license_uri` remains null unless a verified license is actually known.
+## Check the data and application
 
-Collector refreshes are resumable. A failed detail/image refresh preserves the last successful record and image and records the current attempt in `fetchFailures`. Category source count, observed unique IDs, detailed records, downloaded images, scope-review status and Atlas import count remain separate measures.
+```sh
+python -m pip install Pillow
+python scripts/validate-atlas.py
+pnpm exec tsc --noEmit
+node --test tests/phase1-final.test.mjs
+pnpm build
+```
 
-Current Semirechye acquisition status: category #795 (Turgesh / Runic tamgha) is complete at the source-capture level for the saved 2026-09-16 snapshot. The root has 5 direct records; its four direct branches declare 169, 23, 1 and 56 records, while recursive traversal resolves 254 unique records across 27 nodes with no repeated pagination pages or fetch failures. `research/zeno/manifest-795.json` preserves the acquisition evidence and `research/zeno/review-795.json` preserves the first-pass scope/crosswalk decisions.
+[The release review](docs/reviews/phase1-final/README.md) records the checks performed and their limits. [The mobile follow-up](docs/reviews/phase1-final/R1/README.md) includes the corrected reading order and production screenshots.
 
-Of those 254 records, 239 are linked into the Atlas. The 15 held/excluded records are: four non-coin objects, one hoard/context image, one closed-aperture scope case, three related non-square-aperture records, five multi-specimen source images awaiting specimen-level splitting, and one Kai Yuan-style Arslanid imitation awaiting the later Chinese-imitation crosswalk. Source-category groupings remain source groupings rather than automatically becoming academic variants. Existing families were reused where evidence supported it (`sr3`, `sr6`, `sr9`, `sr20`), with two new editorial families added for Alp Tagh and Arslan Kul Irkin.
+## Project structure
 
-Physical identity remains conservative. Zeno #20696 is merged into existing specimen `sr9` because it is the same physical coin and the same Coins of Central Asia source photograph at another resolution. Similar-looking records are otherwise kept separate unless the source or image evidence establishes identity; for example Zeno #1766 and #1767 share an obverse photograph but have different reverse photographs and are explicitly not merged.
+| Path | Purpose |
+| --- | --- |
+| `app/`, `components/atlas/` | Map, catalogue, research pages and detail panels |
+| `lib/` | Search, filtering, display text and map layout |
+| `public/data/atlas.json` | Normalised display export |
+| `research/` | Source snapshots, provenance and review decisions |
+| `db/schema.sql` | Research database model |
+| `scripts/` | Collection, validation and reproducible exports |
 
-## Acquisition queue after Scope v1
+The application uses React, TypeScript, MapLibre GL and Vinext. Python scripts build the display export and SQLite research database. [Development notes](docs/project-notes.md) explain the decisions behind the data model and interactions.
 
-`research/acquisition-queue.json` is the current source-work queue. The metadata-first census of Zeno root category **#503 Central Asia** visited **393 category nodes** and originally observed **3,891 unique source IDs**. A bounded `perpage=90` recovery of seven scope-relevant pagination gaps added **93 non-overlapping records**, producing **3,984 observed/recovered metadata records**. The root census is still not declared complete because repeated-page gaps remain in non-target categories.
+## Sources and image credits
 
-Selective acquisition downloaded **1,439 target images**. A visual audit found 776 downloads had initially captured Zeno decorative `/data/glyph/` assets; 774 were repaired to genuine record images, leaving **1,437 valid target images** and two held image failures. The downloaded-target review was subsequently completed through stages 1–6: **740 target source records entered the main square-hole corpus and 699 were retained as related / held / excluded research material**. The pending downloaded-image queue is therefore closed. Zeno #796 (Malik Aram Yinal Qaraj / Yelü Dashi attribution) remains under the existing disputed `sr21` family while competing attributions stay explicit. Stage-reviewed circular/special-aperture/background records remain outside the main coin count. The current display export exposes **701 reviewed related / held / excluded Zeno source records** as a separate research-material index, while their source HTML, manifests, images and review decisions remain preserved in the research layer.
+Photographs retain their original credits and source links. Map attribution remains visible in the application. A public repository does not change the rights attached to third-party photographs or source records; rights are recorded with the material.
 
-The source backbone now explicitly registers Smirnova 1981, Kamyshev 2002, Zeimal 1994, the 2012–2024 Western Liao studies, Babayarov's Isfijab/Sayram lead and the 2026 Taraz archaeological coin publication. Candidate inventory v0.2 adds source-backed Paykand, Isfijab/Sayram and Keder cash candidates while keeping Ustrushana, Khwarazm and Northern Tokharistan in screening status where checked sources have not yet established Chinese-style cash forms.
+Source policies are documented in `research/source-provenance-policy.json` and `research/source-authorities.json`. Questions and corrections can be raised through [GitHub issues](https://github.com/gugujilulu/Sogdian-coins-website/issues). Please include the record ID and the source behind a proposed correction.
