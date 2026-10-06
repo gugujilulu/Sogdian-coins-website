@@ -1,5 +1,5 @@
 'use client';
-import {motion,AnimatePresence,useReducedMotion} from './ui-motion';
+import {motion,AnimatePresence,useReducedMotion,motionTiming} from './ui-motion';
 import {useCopy,useLanguage} from './language';
 import {countLabel,copyKnown} from '@/lib/i18n';
 import {useEffect,useMemo,useState} from 'react';
@@ -12,7 +12,7 @@ import {parseRelatedImageIndex,relatedPage,resetRelatedPaging,type RelatedThumbn
 function Thumbnail({image}:{image:RelatedThumbnail|undefined}) {
  const reduce=useReducedMotion(),tr=useCopy();
  const [failed,setFailed]=useState(false),[loaded,setLoaded]=useState(false);
- return <div className="related-thumbnail">{image&&!failed?<motion.img initial={{opacity:0}} animate={{opacity:loaded?1:0}} transition={{duration:reduce?0:.19}} onLoad={()=>setLoaded(true)} src={image.path} width={image.width??undefined} height={image.height??undefined} loading="lazy" decoding="async" alt={tr("相关资料来源图片")} onError={()=>setFailed(true)}/>:<span>{failed?tr("图片加载失败；文字与来源仍可访问"):tr("暂无可用图片")}</span>}</div>;
+ return <div className="related-thumbnail">{image&&!failed?<motion.img initial={{opacity:0}} animate={{opacity:loaded?1:0}} transition={{duration:reduce?0:motionTiming.menu/1000}} onLoad={()=>setLoaded(true)} src={image.path} width={image.width??undefined} height={image.height??undefined} loading="lazy" decoding="async" alt={tr("相关资料来源图片")} onError={()=>setFailed(true)}/>:<span>{failed?tr("图片加载失败；文字与来源仍可访问"):tr("暂无可用图片")}</span>}</div>;
 }
 
 export default function RelatedGallery({records,allRecords=records,filterKey='',query,mainRecordCount,selectedId,onSelect}:{allRecords?:RelatedRecord[];filterKey?:string;selectedId:string|null;onSelect:(id:string|null)=>void;records:RelatedRecord[];query:string;mainRecordCount:number}) {
@@ -43,7 +43,7 @@ export default function RelatedGallery({records,allRecords=records,filterKey='',
   {matches.length===0&&<p role="status">{tr("没有匹配的相关资料。请调整搜索词。")}</p>}
   </div><div className="related-list">{visible.map(r=>{
    const image=index?.get(r.id)?.[0];
-   return <motion.article initial={{opacity:0}} animate={{opacity:1}} transition={{duration:reduce?0:.19}} className="browse-card" key={r.id} data-related-id={r.id}>
+   return <motion.article initial={{opacity:0}} animate={{opacity:1}} transition={{duration:reduce?0:motionTiming.menu/1000}} className="browse-card" key={r.id} data-related-id={r.id}>
     <button className="related-open" onClick={()=>onSelect(r.id)} aria-label={tr("查看详情：{title}",{title:r.title})}>{index?<Thumbnail key={image?.id||r.id} image={image}/>:<div className="related-thumbnail"><span>{failed?tr("图片索引不可用"):tr("图片索引加载中")}</span></div>}<span className="browse-expand" aria-hidden="true"><ArtIcon name="expand" collection="r3" size={17}/></span></button><div className="browse-card-copy">
 
     <h2>{r.title.replace(/^#\d+ - /,'')}</h2>

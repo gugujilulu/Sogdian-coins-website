@@ -3,7 +3,7 @@ import {animate} from 'motion';
 import {AnimatePresence,MotionConfig,motion,useIsPresent,useReducedMotion} from 'motion/react';
 import {useEffect,useRef,type ReactNode} from 'react';
 import {motionTiming,motionEase} from '@/lib/motion';
-export {AnimatePresence,motion,useIsPresent,useReducedMotion};
+export {AnimatePresence,motion,useIsPresent,useReducedMotion,motionTiming};
 export function InterfaceMotion({children}:{children:ReactNode}){
  useEffect(()=>{
   // Native details remains the sole open state; closing contents cannot retain Tab targets.
