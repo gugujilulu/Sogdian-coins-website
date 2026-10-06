@@ -1,3 +1,4 @@
+import {coinCityLinks} from '@/lib/coin-city-links';
 import {tr,countLabel,copyKnown} from '@/lib/i18n';
 import {focusReturn,stableFocusIndex} from '@/lib/keyboard';
 import {motionDuration} from '@/lib/motion';
@@ -5,6 +6,7 @@ import {collectionReturn,collectionMembers,type CollectionContext} from '@/lib/m
 import type * as GL from 'maplibre-gl';
 import {coinEntryAction,collectionCityTarget,displayCoins,displayCollectionContext,coinMarkerVisual,mapCoinImage,markerGeometry,uniqueMembers,type CoinPlace,type CoinScatterPosition,type Box} from '@/lib/coin-map';
 
+let connectionSequence=0;
 /** A small visible-marker projection of the existing MapLibre clustered source. */
 export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPlace[],getSelected:()=>string|undefined,onSelect:(id:string,context?:CollectionContext)=>void,onNavigate:(groups:CoinPlace[])=>void){
  let disposed=false,generation=0,revision=0,popup:GL.Popup|null=null,queued=false;
@@ -19,7 +21,19 @@ export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPla
  const restoreMarker=()=>{const ids=closingFamily?[closingFamily]:pendingFocus||openerFamilies;const entries=[...markers.values()].filter(e=>e.button.dataset.occluded!=='true');const entry=entries[stableFocusIndex(ids,entries.map(e=>JSON.parse(e.button.dataset.familyIds||'[]')))];if(entry)entry.button.focus({preventScroll:true});else focusReturn(map.getCanvas());pendingFocus=null;closingFamily=undefined};
  function removePopup(){restoreOnClose=false;popup?.remove();restoreOnClose=true}
  const markers=new Map<string,{marker:GL.Marker;button:HTMLButtonElement;signature:string}>();
- const connections=document.createElementNS('http://www.w3.org/2000/svg','svg');connections.classList.add('coin-city-connections');connections.setAttribute('aria-hidden','true');map.getContainer().appendChild(connections);
+ const connections=document.createElementNS('http://www.w3.org/2000/svg','svg');connections.classList.add('coin-city-connections');connections.setAttribute('aria-hidden','true');const maskId=`coin-link-mask-${++connectionSequence}`;map.getContainer().appendChild(connections);
+ let currentLayout:ReturnType<typeof displayCoins>=[];let previewKey:string|undefined;
+ function drawConnections(){
+  connections.replaceChildren();const container=map.getContainer(),frame=container.getBoundingClientRect();connections.setAttribute('width',String(container.clientWidth));connections.setAttribute('height',String(container.clientHeight));
+  const defs=document.createElementNS(connections.namespaceURI,'defs'),mask=document.createElementNS(connections.namespaceURI,'mask');mask.id=maskId;mask.setAttribute('maskUnits','userSpaceOnUse');const wash=document.createElementNS(connections.namespaceURI,'rect');wash.setAttribute('width',String(container.clientWidth));wash.setAttribute('height',String(container.clientHeight));wash.setAttribute('fill','white');mask.appendChild(wash);
+  container.querySelectorAll<HTMLElement>('.coin-map-marker,.history-place img,.history-place span').forEach(el=>{if(getComputedStyle(el).visibility==='hidden')return;const r=el.getBoundingClientRect(),cut=document.createElementNS(connections.namespaceURI,'rect');for(const [k,v]of Object.entries({x:r.x-frame.x-3,y:r.y-frame.y-3,width:r.width+6,height:r.height+6}))cut.setAttribute(k,String(v));cut.setAttribute('fill','black');mask.appendChild(cut)});defs.appendChild(mask);connections.appendChild(defs);
+  const selectedPlaces=new Set(getGroups().filter(g=>g.members.some(m=>m.family.id===getSelected())).map(g=>g.place.id));
+  container.querySelectorAll<HTMLElement>('.history-place').forEach(el=>el.classList.toggle('coin-city-selected',selectedPlaces.has((el.dataset.historyKey||'').slice(6))));
+  for(const e of currentLayout){const button=markers.get(e.key)?.button;if(!button||e.occluded||getComputedStyle(button).visibility==='hidden')continue;const r=button.getBoundingClientRect();
+   const coin={x:r.x-frame.x+r.width/2,y:r.y-frame.y+r.height/2,w:r.width+4,h:r.height+4};
+   for(const link of coinCityLinks(e,coin,coords=>map.project(coords),getSelected())){const line=document.createElementNS(connections.namespaceURI,'line');line.setAttribute('mask',`url(#${maskId})`);line.dataset.placeId=link.placeId;line.dataset.coinKey=e.key;line.classList.toggle('selected',link.selected);line.classList.toggle('preview',!link.selected&&previewKey===e.key);for(const [k,v]of Object.entries({x1:link.from.x,y1:link.from.y,x2:link.to.x,y2:link.to.y}))line.setAttribute(k,String(v));connections.appendChild(line)}
+  }
+ }
  const duration=()=>motionDuration(450);
  const image=(src:string)=>{const img=document.createElement('img');img.src=src;img.alt='';img.draggable=false;img.onerror=()=>{img.hidden=true;img.closest('.coin-map-marker')?.classList.add('image-failed')};return img};
  function show(groups:CoinPlace[],coords:[number,number],restore?:CollectionContext,passive=false){
@@ -112,17 +126,14 @@ export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPla
    };
    entry.marker.setLngLat(e.coords).setOffset([e.offsetX,e.offset]);
   }
-  // Only the hovered, focused or selected coin gets a quiet belonging cue.
-  connections.replaceChildren();connections.dataset.zoom=String(map.getZoom());connections.setAttribute('width',String(map.getContainer().clientWidth));connections.setAttribute('height',String(map.getContainer().clientHeight));
-  const connect=(e:typeof layout[number])=>{connections.replaceChildren();if(e.stage!=='near'||e.overflow)return;const line=document.createElementNS(connections.namespaceURI,'line');line.setAttribute('x1',String(e.point.x));line.setAttribute('y1',String(e.point.y));line.setAttribute('x2',String(e.point.x+e.offsetX));line.setAttribute('y2',String(e.point.y+e.offset));connections.appendChild(line)};
-  const selectedEntry=layout.find(e=>!e.overflow&&e.members[0]?.family.id===getSelected());if(selectedEntry)connect(selectedEntry);
-  for(const e of layout){const button=markers.get(e.key)!.button,enter=button.onfocus,leave=button.onblur;button.onfocus=button.onmouseenter=(event:Event)=>{enter?.call(button,event as FocusEvent);connect(e)};button.onblur=button.onmouseleave=(event:Event)=>{leave?.call(button,event as FocusEvent);connections.replaceChildren();if(selectedEntry)connect(selectedEntry)}}
+  currentLayout=layout;
+  for(const e of layout){const button=markers.get(e.key)!.button,enter=button.onfocus,leave=button.onblur;button.onfocus=button.onmouseenter=(event:Event)=>{enter?.call(button,event as FocusEvent);previewKey=e.key;drawConnections()};button.onblur=button.onmouseleave=(event:Event)=>{leave?.call(button,event as FocusEvent);previewKey=undefined;drawConnections()}}
   for(const [key,entry]of markers)if(!live.has(key)){entry.marker.remove();markers.delete(key)}
-  if(pendingFocus||closingFamily)restoreMarker();
+  drawConnections();if(pendingFocus||closingFamily)restoreMarker();
  }
  function schedule(){if(!queued&&!disposed){queued=true;requestAnimationFrame(()=>{if(!disposed)void render()})}}
  function escape(ev:KeyboardEvent){if(ev.defaultPrevented||ev.key!=='Escape'||document.querySelector('dialog[open]')||(ev.target instanceof Element&&ev.target.closest('input,textarea,select,[contenteditable]')))return;if(popup?.isOpen()){ev.preventDefault();ev.stopImmediatePropagation();popup.remove()}else preview?.remove()}
  document.addEventListener('keydown',escape);
- const clearConnections=()=>connections.replaceChildren();map.on('movestart',clearConnections);map.on('moveend',schedule);map.on('idle',schedule);map.on('resize',schedule);
- return {returnToCollection(context:CollectionContext){const {groups}=collectionReturn(getGroups(),context);const center=map.unproject([map.getContainer().clientWidth/2,map.getContainer().clientHeight/2]);show(groups,[center.lng,center.lat],context);return true},refresh(){rememberFocus();generation++;revision++;preview?.remove();const context=popup?.isOpen()&&popupContext?{...popupContext,scrollTop:popup.getElement().querySelector('.coin-collection')?.scrollTop||0}:null;const popupAt=popup?.isOpen()?popup.getLngLat():null;const activeMember=popup?.getElement()?.querySelector<HTMLButtonElement>('.coin-popup-row:focus')?.dataset.familyId;if(activeMember)lastMember=activeMember;const hadPopupFocus=!!popup?.getElement()?.contains(document.activeElement);removePopup();if(context){const center=popupAt||map.getCenter();show(collectionMembers(getGroups(),context),[center.lng,center.lat],context,!hadPopupFocus)}for(const e of markers.values())e.marker.remove();markers.clear();schedule()},selectionChanged(closed?:string){closingFamily=closed;preview?.remove();removePopup();schedule()},destroy(){obstaclesObserver.disconnect();document.removeEventListener('keydown',escape);preview?.remove();disposed=true;generation++;popup?.remove();connections.remove();map.off('movestart',clearConnections);map.off('moveend',schedule);map.off('idle',schedule);map.off('resize',schedule);for(const e of markers.values())e.marker.remove();markers.clear()}};
+ const moving=()=>{drawConnections()};map.on('move',moving);map.on('moveend',schedule);map.on('idle',schedule);map.on('resize',schedule);
+ return {returnToCollection(context:CollectionContext){const {groups}=collectionReturn(getGroups(),context);const center=map.unproject([map.getContainer().clientWidth/2,map.getContainer().clientHeight/2]);show(groups,[center.lng,center.lat],context);return true},refresh(){currentLayout=[];connections.replaceChildren();rememberFocus();generation++;revision++;preview?.remove();const context=popup?.isOpen()&&popupContext?{...popupContext,scrollTop:popup.getElement().querySelector('.coin-collection')?.scrollTop||0}:null;const popupAt=popup?.isOpen()?popup.getLngLat():null;const activeMember=popup?.getElement()?.querySelector<HTMLButtonElement>('.coin-popup-row:focus')?.dataset.familyId;if(activeMember)lastMember=activeMember;const hadPopupFocus=!!popup?.getElement()?.contains(document.activeElement);removePopup();if(context){const center=popupAt||map.getCenter();show(collectionMembers(getGroups(),context),[center.lng,center.lat],context,!hadPopupFocus)}for(const e of markers.values())e.marker.remove();markers.clear();schedule()},selectionChanged(closed?:string){closingFamily=closed;preview?.remove();removePopup();schedule()},destroy(){obstaclesObserver.disconnect();document.removeEventListener('keydown',escape);preview?.remove();disposed=true;generation++;popup?.remove();connections.remove();map.off('move',moving);map.off('moveend',schedule);map.off('idle',schedule);map.off('resize',schedule);for(const e of markers.values())e.marker.remove();markers.clear()}};
 }

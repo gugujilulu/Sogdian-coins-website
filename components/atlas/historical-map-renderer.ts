@@ -57,7 +57,7 @@ export function installHistoricalMap(gl:GL,map:GLMap,onError:(message:string)=>v
      if(overlaps(label,cover)){const dx=cover.left-label.right-8;caption.style.translate=label.left+dx>=viewport.left+8?`${dx}px 0px`:`0px ${cover.top-label.bottom-8}px`;}
     }}
     n.el.style.translate='';if(n.priority===1){const offset=rangeLabelOffset(n.el.getBoundingClientRect(),map.getContainer().getBoundingClientRect(),[...used,...obstacles]);if(offset)n.el.style.translate=`${offset[0]}px ${offset[1]}px`;else{n.el.style.visibility='hidden';continue}}
-    const matchedCity=n.priority===0&&coinPlaces.has(n.placeId||'')&&map.getZoom()>=8.5;
+    const matchedCity=n.priority===0&&coinPlaces.has(n.placeId||'');
     if(matchedCity&&caption){
      const label=caption.getBoundingClientRect(),viewport=map.getContainer().getBoundingClientRect();
      const covers=[...used,...obstacles];

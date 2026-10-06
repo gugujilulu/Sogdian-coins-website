@@ -346,8 +346,15 @@
 .research-page .metrics-row span{font-size:.78rem;line-height:1.4}
 
 /* T42: screen-space city expansion; no geographic data offsets. */
-.coin-city-connections{position:absolute;inset:0;pointer-events:none;overflow:hidden}
-.coin-city-connections line{stroke:#92724b;stroke-width:1;stroke-opacity:.45;stroke-dasharray:3 4}
+.coin-city-connections{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.coin-city-connections line{stroke:#425b62;stroke-width:1.35;stroke-opacity:.65}
+.coin-city-connections line.preview{stroke:#9a7742;stroke-width:2;stroke-opacity:.85}
+.coin-city-connections line.selected{stroke:#aa792d;stroke-width:2.8;stroke-opacity:1}
+.history-place{z-index:2}
+.coin-map-marker{z-index:3}
+.history-place.coin-city-selected img{filter:drop-shadow(1px 0 0 #fff0b1) drop-shadow(-1px 0 0 #fff0b1) drop-shadow(0 1px 0 #fff0b1) drop-shadow(0 -1px 0 #fff0b1)}
+.history-place.coin-city-selected span{font-weight:800;color:#68450f;background:#fff1becc;border-radius:3px;padding:1px 3px}
+.coin-map-marker.cutout.selected img{filter:drop-shadow(2px 0 0 #ffe7a5) drop-shadow(-2px 0 0 #ffe7a5) drop-shadow(0 2px 0 #ffe7a5) drop-shadow(0 -2px 0 #ffe7a5)!important}
 .coin-city-remaining{background:var(--atlas-paper)!important;color:var(--atlas-ink)!important;min-width:44px;min-height:32px}
 .coin-city-remaining .coin-marker-fallback{font:700 16px var(--atlas-serif)}
 
