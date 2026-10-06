@@ -1,3 +1,5 @@
+import {filterAtlasRecords} from '../lib/record-filters.ts';
+import {buildCatalogueTree} from '../lib/catalogue-tree.ts';
 import {readFileSync} from 'node:fs';
 import test from 'node:test';import assert from 'node:assert/strict';
 import {hiddenCityCollections} from '../lib/hidden-city-collections.ts';
@@ -14,3 +16,5 @@ test('individual translated descriptions retain dates and distinct reported find
 test('place names and notes are localized without altering anchors; range methods do not fall back to Chinese',()=>{assert.equal(placeName({id:'panjakent',name:'Panch'},'ru'),'Пенджикент / Панч');assert.match(placeNote('panjakent','original','zh'),/39°/);const range=panchCore([]);assert.doesNotMatch(rangeDisplayText(range,'note','en'),/[\u3400-\u9fff]/);assert.match(rangeDisplayText(range,'note','ru'),/Диваштича/)});
 
 test('every existing default source description has explicit en/zh/ru display text; detailed chemistry and uncertainty remain',()=>{const content=JSON.parse(readFileSync(new URL('../lib/content/detail-content.json',import.meta.url)));const display=JSON.parse(readFileSync(new URL('../lib/content/record-display.json',import.meta.url)));for(const sources of Object.values(content.records)){for(const source of sources){for(const locale of ['en','zh','ru'])assert.ok(display[source.text]?.[locale]?.trim(),source.text)}}for(const locale of ['zh','ru']){assert.match(descriptionCopy(recordContent('zeno-268475')[0].text,locale),/78.41/);assert.match(descriptionCopy(recordContent('zeno-268475')[0].text,locale),/99.90/);assert.match(descriptionCopy(recordContent('zeno-162024')[0].text,locale),/162023/);assert.equal(Object.keys(content.families).length,56)}});
+
+test('localized family names are searchable aliases; original English and source filters remain',()=>{const atlas=JSON.parse(readFileSync(new URL('../public/data/atlas.json',import.meta.url)));for(const query of ['突骑施可汗','Каган Тюргешей']){const result=filterAtlasRecords(atlas,{query});assert.equal(result.records.filter(r=>r.familyId==='sr6').length,165);assert.ok(buildCatalogueTree(atlas,atlas.specimens,new Map(),query).families.some(f=>f.family.id==='sr6'))}assert.ok(filterAtlasRecords(atlas,{query:'Turgesh'}).records.some(r=>r.familyId==='sr6'));assert.equal(filterAtlasRecords(atlas,{query:'突骑施可汗',sources:['CNG']}).records.length,0)});

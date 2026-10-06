@@ -1,3 +1,4 @@
+import familyNames from './content/family-names.json' with {type:'json'};
 import type { Specimen, SourceLink } from './atlas';
 
 export type RecordFilters = {
@@ -121,7 +122,7 @@ export function filterAtlasRecords(data: import('./atlas').Atlas, filters: Atlas
     if (filters.facet && !s.facets.includes(filters.facet)) return false;
     if (!q) return true;
     const g = s.variantId ? groups.get(s.variantId) : undefined;
-    return [f.title, f.zh, f.region, f.dateLabel, f.description, f.legend ?? '',
+    return [f.title, f.zh, ...Object.values((familyNames as Record<string,Record<string,string>>)[f.id]||{}), f.region, f.dateLabel, f.description, f.legend ?? '',
       ...(g ? [g.title, g.reference, g.description, ...g.facets] : []),
       s.title, s.catalogue, s.description, s.sourceRecordId ?? '',
       ...(s.sourcePath ?? []).map(p => p.title), ...s.sources.map(src => src.label), ...s.facets]

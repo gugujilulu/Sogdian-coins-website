@@ -1,3 +1,4 @@
+import familyNames from './content/family-names.json' with {type:'json'};
 import type {Atlas,Family,Specimen,Variant} from './atlas';
 import type {SourceEntry} from './source-index';
 
@@ -24,7 +25,7 @@ export function buildCatalogueTree(data:Atlas,records:readonly Specimen[],source
     if(group?record.variantId!==group.id:record.variantId!==null&&ids.has(record.variantId))continue;
     const actual=(sources.get(record.id)||[]).filter(entry=>entry.relation==='same_specimen');
     const title=group?.title||'未分组（目录归属未明确）';
-    const text=[family.title,family.zh,family.region||'未明确',family.polity||'未明确',title,group?.reference||'',record.id,record.title,...actual.flatMap(entry=>[entry.source.provider,entry.source.recordKey,...entry.source.labels])].join(' ').toLowerCase();
+    const text=[family.title,family.zh,...Object.values((familyNames as Record<string,Record<string,string>>)[family.id]||{}),family.region||'未明确',family.polity||'未明确',title,group?.reference||'',record.id,record.title,...actual.flatMap(entry=>[entry.source.provider,entry.source.recordKey,...entry.source.labels])].join(' ').toLowerCase();
     if(q&&!text.includes(q))continue;
     entries.push({id:record.id,record,sources:actual});
    }
