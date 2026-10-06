@@ -377,7 +377,7 @@
 .coin-map-marker.cutout:focus-visible{outline:2px solid #fff1b9;outline-offset:3px}
 
 /* Two transparent covers share the existing fixed marker slot. */
-.coin-map-marker.cutout img.coin-cover-previous,.coin-map-marker.cutout img.coin-cover-next{position:absolute;inset:0;transition:opacity .85s;pointer-events:none}
+.coin-map-marker.cutout img.coin-cover-previous,.coin-map-marker.cutout img.coin-cover-next{position:absolute;inset:0;transition:opacity 2.55s;pointer-events:none}
 .coin-map-marker.cutout img.coin-cover-previous,.coin-map-marker.cutout img.coin-cover-next{opacity:0}
 .coin-map-marker.cutout img.coin-cover-next.coin-cover-visible{opacity:1}
 @media(prefers-reduced-motion:reduce){.coin-map-marker.cutout img.coin-cover-next{transition:none}}
