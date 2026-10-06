@@ -126,7 +126,7 @@ html[lang=zh] .app-header nav button{font-family:'Atlas CJK',sans-serif}
  .header-flower-right-lower{right:-8px;width:115px}
  .app-header nav,.view-atlas .app-header nav{left:78px;right:70px;top:14px;bottom:auto;margin:0;min-width:0;height:44px;gap:10px;justify-content:space-between;align-items:center}
  .app-header nav button,.view-atlas .app-header nav button{height:44px;min-height:44px;min-width:44px;padding:0 0 4px;font-size:18px;flex:none;white-space:nowrap}
- 
+
  html[lang=zh] .app-header nav button{font-size:17px}
  html[lang=ru] .app-header nav button{font-size:15px}
  .app-header .language-control{left:auto;right:10px;top:15px;margin:0}

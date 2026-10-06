@@ -22,6 +22,7 @@
 :where(.atlas-search-panel,.map-toolbar,.history-controls,.timeline-floating,.family-drawer,.art-detail,.catalogue-page,.research-page) :is(button,a,summary):focus-visible,.paper-select-trigger:focus-visible{outline:2px solid #306681;outline-offset:3px}
 @media(hover:hover) and (pointer:fine){
  .app-header :is(nav button,.language-control button):hover{color:#f3d795}
+ .atlas-screen :is(.history-controls,.timeline-floating):not([open])>summary:hover{color:#f3d795}
  :where(.atlas-search-panel,.map-toolbar,.history-controls,.timeline-floating,.family-drawer,.art-detail,.catalogue-page,.research-page) button:not(:disabled):not(.active):not(.history-place):not(.history-range-label):not(.coin-map-marker):not(.specimen-image):not(.browse-image):hover{color:#805a3e;border-color:#aa8962;background-color:#e9ddc7}
  :where(.family-drawer,.art-detail,.catalogue-page,.research-page,.history-controls) a:hover{color:#805a3e;text-decoration:underline;text-underline-offset:3px}
  :where(.family-drawer,.catalogue-page,.research-page,.timeline-floating) summary:hover{color:#805a3e}
