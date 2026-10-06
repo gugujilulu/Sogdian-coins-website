@@ -406,3 +406,7 @@
 .app-header nav button::after{content:"";position:absolute;left:0;right:-10px;bottom:0;height:2px;background:#d1b474;opacity:0;transition:opacity var(--motion-menu,190ms)}
 .app-header nav button.active::after{opacity:1}
 @media(prefers-reduced-motion:reduce){.app-header nav button::after{transition:none}}
+
+.coin-map-marker.cutout img{transition:filter var(--motion-feedback,120ms)}
+.coin-map-marker.cutout img:is(.coin-cover-previous,.coin-cover-next){transition:opacity 2.55s,filter var(--motion-feedback,120ms)}
+@media(prefers-reduced-motion:reduce){.coin-map-marker.cutout img{transition:none}}
