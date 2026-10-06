@@ -1,6 +1,6 @@
+'use client';
 import {initialMapCamera} from '@/lib/coin-cover-cycle';
 import {fitHistoricalRange,rangeInitialMinZoom} from '@/lib/range-fit';
-'use client';
 import PaperSelect,{PaperOption} from './paper-select';
 import {useLanguage,useCopy} from './language';
 import {copyKnown} from '@/lib/i18n';
