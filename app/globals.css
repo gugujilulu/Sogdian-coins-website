@@ -385,7 +385,7 @@
 /* T67.15: local feedback; map position, image pan and fixed artwork are never animated here. */
 .atlas-app button:not(.coin-map-marker),.atlas-app select,.atlas-app input:not([type=range]){transition:background-color var(--motion-feedback,120ms),border-color var(--motion-feedback,120ms),box-shadow var(--motion-feedback,120ms),color var(--motion-feedback,120ms)}
 .atlas-app button:not(.coin-map-marker):active{translate:0 1px}
-.node-chevron{transition:rotate var(--motion-expand,260ms) cubic-bezier(.22,1,.36,1)}
+.node-chevron{transition:transform var(--motion-expand,260ms) cubic-bezier(.22,1,.36,1)}
 .coin-motion{display:block;position:relative;width:100%;height:100%;transform-origin:center;pointer-events:inherit}
 .coin-motion-ghost{pointer-events:none!important}
 .coin-city-connections line{transition:stroke var(--motion-line,240ms),stroke-width var(--motion-line,240ms),stroke-opacity var(--motion-line,240ms)}
@@ -401,3 +401,11 @@
  .atlas-app button,.atlas-app select,.atlas-app input,.node-chevron,.coin-city-connections line,.image-detail-dialog::backdrop,.atlas-screen .family-drawer{transition:none!important}
  .atlas-app details::details-content{transition:none!important}
 }
+@starting-style{.image-detail-dialog[open]::backdrop{background:transparent}}
+.coin-city-connections line{animation:coin-link-entry var(--motion-line,240ms) ease-out}
+@keyframes coin-link-entry{from{opacity:0}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){.coin-city-connections line{animation:none}}
+
+.app-header nav button::after{content:"";position:absolute;left:0;right:-10px;bottom:0;height:2px;background:#d1b474;opacity:0;transition:opacity var(--motion-menu,190ms)}
+.app-header nav button.active::after{opacity:1}
+@media(prefers-reduced-motion:reduce){.app-header nav button::after{transition:none}}

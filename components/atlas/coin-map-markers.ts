@@ -110,7 +110,7 @@ export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPla
   for(const e of layout){
    const members=e.members,cover=e.representative,selected=members.some(m=>m.family.id===getSelected());
    const large=e.large,geometry=markerGeometry(e.point,large,map.getContainer().clientWidth<600,members.length,e.offset,cover?.image,members.length>1&&!e.overflow?members:[]);
-   const signature=JSON.stringify([members.map(m=>[m.family.id,m.recordCount,m.image?.id]),cover?.image?.path,large,geometry.width,geometry.height,e.offsetX,e.offset,e.displayCollection,selected,!!getSelected(),e.stage,e.sameCityExpansion,e.occluded]);live.add(e.key);
+   const signature=JSON.stringify([members.map(m=>[m.family.id,m.recordCount,m.image?.id]),cover?.image?.path,large,geometry.width,geometry.height,e.displayCollection,e.stage,e.sameCityExpansion,e.occluded,tr("更多家族")]);live.add(e.key);
    let entry=markers.get(e.key);
    if(entry?.signature!==signature){if(entry)movement.cancel(entry.button.querySelector<HTMLElement>(".coin-motion")!);entry?.marker.remove();const button=document.createElement('button');button.type='button';button.className=`coin-map-marker ${large?'photo':'compact'}${selected?' selected':getSelected()?' muted':''}`;
     button.style.width=`${geometry.width}px`;button.style.height=`${geometry.height}px`;button.style.minWidth="44px";button.style.minHeight="32px";
@@ -128,6 +128,7 @@ export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPla
     const visual=document.createElement("span");visual.className="coin-motion";while(button.firstChild)visual.appendChild(button.firstChild);button.appendChild(visual);
     entry={button,signature,marker:new gl.Marker({element:button,anchor:'center',offset:[e.offsetX,e.offset]}).setLngLat(e.coords).addTo(map)};markers.set(e.key,entry);
    }
+   entry.button.classList.toggle("selected",selected);entry.button.classList.toggle("muted",!selected&&!!getSelected());
    // Refresh handler on every projection; async work is invalidated on filter changes.
    entry.button.onmouseenter=entry.button.onfocus=()=>{preview?.remove();if(members.length!==1)return;const member=members[0],node=document.createElement('div');node.className='coin-preview';node.textContent=`${member.family.title} · ${member.family.dateLabel||tr('年代未记录')} · ${countLabel(member.recordCount,'records')}`;preview=new gl.Popup({closeButton:false,closeOnClick:false,focusAfterOpen:false,anchor:'bottom',offset:[e.offsetX,e.offset-geometry.height/2-12],className:'coin-preview-popup'}).setLngLat(e.coords).setDOMContent(node).addTo(map)};
    entry.button.onmouseleave=entry.button.onblur=()=>preview?.remove();

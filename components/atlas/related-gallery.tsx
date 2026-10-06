@@ -11,8 +11,8 @@ import {parseRelatedImageIndex,relatedPage,resetRelatedPaging,type RelatedThumbn
 
 function Thumbnail({image}:{image:RelatedThumbnail|undefined}) {
  const reduce=useReducedMotion(),tr=useCopy();
- const [failed,setFailed]=useState(false);
- return <div className="related-thumbnail">{image&&!failed?<img src={image.path} width={image.width??undefined} height={image.height??undefined} loading="lazy" decoding="async" alt={tr("相关资料来源图片")} onError={()=>setFailed(true)}/>:<span>{failed?tr("图片加载失败；文字与来源仍可访问"):tr("暂无可用图片")}</span>}</div>;
+ const [failed,setFailed]=useState(false),[loaded,setLoaded]=useState(false);
+ return <div className="related-thumbnail">{image&&!failed?<motion.img initial={{opacity:0}} animate={{opacity:loaded?1:0}} transition={{duration:reduce?0:.19}} onLoad={()=>setLoaded(true)} src={image.path} width={image.width??undefined} height={image.height??undefined} loading="lazy" decoding="async" alt={tr("相关资料来源图片")} onError={()=>setFailed(true)}/>:<span>{failed?tr("图片加载失败；文字与来源仍可访问"):tr("暂无可用图片")}</span>}</div>;
 }
 
 export default function RelatedGallery({records,allRecords=records,filterKey='',query,mainRecordCount,selectedId,onSelect}:{allRecords?:RelatedRecord[];filterKey?:string;selectedId:string|null;onSelect:(id:string|null)=>void;records:RelatedRecord[];query:string;mainRecordCount:number}) {

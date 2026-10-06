@@ -13,7 +13,7 @@ import type {CatalogueTree,CatalogueFamily} from '@/lib/catalogue-tree';
 export function CatalogueTreeSidebar({tree,query,onFamily,onGroup,onOpen,selectedId,reveal,selectedFamily,selectedGroup}:{selectedFamily:string|null;selectedGroup:string|null;reveal:{family:string;group?:string;serial:number}|null;onGroup:(family:string,group:string)=>void;tree:CatalogueTree;query:string;onFamily:(id:string)=>void;onOpen:(record:Specimen)=>void;selectedId:string|null}) {
  const tr=useCopy();const {locale}=useLanguage();
  const container=useRef<HTMLDivElement>(null),lastToggle=useRef<string|null>(null);
- useEffect(()=>{if(!reveal)return;setExpanded(old=>new Set([...old,'taxonomy:family:'+reveal.family,...(reveal.group?[reveal.group]:[])]));},[reveal]);
+ useEffect(()=>{if(!reveal)return;lastToggle.current=null;setExpanded(old=>new Set([...old,'taxonomy:family:'+reveal.family,...(reveal.group?[reveal.group]:[])]));},[reveal]);
  useEffect(()=>{if(!reveal)return;const target=reveal.group||'taxonomy:family:'+reveal.family;const frame=requestAnimationFrame(()=>{Array.from(container.current?.querySelectorAll<HTMLElement>('[data-tree-id]')||[]).find(el=>el.dataset.treeId===target)?.scrollIntoView({block:'nearest'})});return()=>cancelAnimationFrame(frame)},[reveal]);
  const ancestors=tree.families.flatMap(f=>[f.id,...f.groups.map(g=>g.id)]);
  const searchReveal=query+'|'+ancestors.join('|');
@@ -21,6 +21,7 @@ export function CatalogueTreeSidebar({tree,query,onFamily,onGroup,onOpen,selecte
  const [previousQuery,setPreviousQuery]=useState(searchReveal);
  // Reveal only necessary search ancestors without erasing unrelated expanded nodes.
  if(previousQuery!==searchReveal){
+  lastToggle.current=null;
   setPreviousQuery(searchReveal);
   setExpanded(old=>catalogueExpansion(old,previousQuery,searchReveal,query,ancestors));
  }

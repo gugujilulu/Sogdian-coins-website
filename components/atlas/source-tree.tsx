@@ -7,9 +7,10 @@ import ArtIcon from '@/components/visual/ArtIcon';
 import {sourceNodeTitle} from '@/lib/browse-copy';
 import type {SourceTreeNode,SourceCoverage} from '@/lib/source-tree';
 import {coverageFor} from '@/lib/source-tree';
-export function SourceTree({roots,expanded,onToggle,onSelect,selected}:{roots:SourceTreeNode[];expanded:Set<string>;onToggle:(id:string)=>void;onSelect:(id:string)=>void;selected:string|null}){
+export function SourceTree({query,roots,expanded,onToggle,onSelect,selected}:{query:string;roots:SourceTreeNode[];expanded:Set<string>;onToggle:(id:string)=>void;onSelect:(id:string)=>void;selected:string|null}){
  const tr=useCopy();const {locale}=useLanguage();
- const container=useRef<HTMLDivElement>(null),lastToggle=useRef<string|null>(null);
+ const container=useRef<HTMLDivElement>(null),lastToggle=useRef<string|null>(null),previousQuery=useRef(query);
+ if(previousQuery.current!==query){lastToggle.current=null;previousQuery.current=query}
  useEffect(()=>{if(selected)Array.from(container.current?.querySelectorAll<HTMLElement>('[data-source-node]')||[]).find(el=>el.dataset.sourceNode===selected)?.scrollIntoView({block:'nearest'})},[selected,expanded]);
  const render=(node:SourceTreeNode)=><div key={node.id} className="source-tree-node">
   <button data-source-node={node.id} aria-expanded={node.children.length?expanded.has(node.id):undefined} aria-label={`${node.kind==='source'?tr("来源记录"):tr("来源分类")} ${sourceNodeTitle(node,locale)}`} className={selected===node.id?'active':''} onClick={()=>{if(node.children.length){lastToggle.current=node.id;onToggle(node.id)}onSelect(node.id)}}><span>{node.children.length>0&&<ArtIcon name="chevron" collection="r3" size={13} className={expanded.has(node.id)?'node-chevron expanded':'node-chevron'}/>}{sourceNodeTitle(node,locale)}{node.categoryId?` [${node.categoryId}]`:''}</span><small>{countLabel(node.sourceCount,'sources',locale)} / {countLabel(node.recordCount,'records',locale)}</small></button>

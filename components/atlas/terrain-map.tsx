@@ -4,7 +4,7 @@ import {fitHistoricalRange,rangeInitialMinZoom} from '@/lib/range-fit';
 import {useLanguage,useCopy} from './language';
 import {copyKnown} from '@/lib/i18n';
 import {installGestureZoomGain} from '@/lib/map-gesture-zoom';
-import {motionDuration} from '@/lib/motion';
+import {motionDuration,motionQuery,watchMotion} from '@/lib/motion';
 import ArtIcon from '@/components/visual/ArtIcon';
 import {anchorPan,type CollectionContext} from '@/lib/map-selection';
 import {useEffect,useMemo,useRef,useState} from 'react';
@@ -67,6 +67,7 @@ export default function TerrainMap({rangeObjectName,layers:providedLayers,onLaye
     const m=new gl.Map({container:container.current,...initialMapCamera(initialView),minZoom:rangeInitialMinZoom(initialView?.zoom),maxZoom:13,maxBounds:initialView?undefined:[[43,24],[103,56]],attributionControl:{compact:true},dragRotate:false,pitchWithRotate:false,touchPitch:false,renderWorldCopies:false,style:{version:8,sources:{physical:{type:'raster',tiles:['https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}'],tileSize:256,maxzoom:8,attribution:'Physical: Esri / US National Park Service'},terrain:{type:'raster',tiles:['https://server.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}'],tileSize:256,maxzoom:13,attribution:'Shaded relief: © Esri'},topo:{type:'raster',tiles:['https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}'],tileSize:256,maxzoom:19,attribution:'Topography: Esri, HERE, Garmin, USGS, GEBCO, © OpenStreetMap contributors'}},layers:[{id:'terrain',type:'raster',source:'terrain'},{id:'physical',type:'raster',source:'physical',paint:{'raster-opacity':['interpolate',['linear'],['zoom'],7,1,9,0]}},{id:'topo',type:'raster',source:'topo',layout:{visibility:'none'}}]}});
     map.current=m;
     const restoreGestureZoom=installGestureZoomGain(m);
+    const stopMotionPreference=watchMotion(window.matchMedia(motionQuery),reduce=>{if(reduce)m.stop()});
     searchQueue.current=searchNavigationQueue(request=>{
      if(request.serial<=lastSearch.current)return;lastSearch.current=request.serial;
      m.stop();if(request.intent==='restore')coinMarkers.current?.suppressMotion();setSearchNotice(false);if(request.intent==='cancel')return;if(request.camera){m.jumpTo({...request.camera,bearing:0,pitch:0});return}const target=searchBounds(request.target);if(!target)return;
@@ -107,7 +108,7 @@ export default function TerrainMap({rangeObjectName,layers:providedLayers,onLaye
      setReady(true);const c=m.getCenter();cameraChange.current?.({center:[c.lng,c.lat],zoom:m.getZoom()});
     });
     let failures=0;m.on('error',()=>{if(++failures>=4)setError('部分地图瓦片未能加载，可切换底图或稍后重试。')});
-    const resize=new ResizeObserver(()=>{if(container.current?.clientWidth&&container.current?.clientHeight)m.resize()});resize.observe(container.current);cleanup=()=>{restoreGestureZoom();resize.disconnect();searchQueue.current?.dispose();searchQueue.current=null;history.current?.destroy();history.current=null;coinMarkers.current?.destroy();coinMarkers.current=null;m.remove()};
+    const resize=new ResizeObserver(()=>{if(container.current?.clientWidth&&container.current?.clientHeight)m.resize()});resize.observe(container.current);cleanup=()=>{stopMotionPreference();restoreGestureZoom();resize.disconnect();searchQueue.current?.dispose();searchQueue.current=null;history.current?.destroy();history.current=null;coinMarkers.current?.destroy();coinMarkers.current=null;m.remove()};
    }catch{setError('当前浏览器未能启动交互地图；Catalogue 仍可正常浏览。')}
   });return()=>{disposed=true;cleanup();map.current=null};
  },[data]);

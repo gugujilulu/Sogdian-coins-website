@@ -14,13 +14,13 @@ export function InterfaceMotion({children}:{children:ReactNode}){
  return <MotionConfig reducedMotion="user">{children}</MotionConfig>;
 }
 /** Only the requested branch animates; restored/search-opened branches render directly. */
-export function PaperReveal({open,animated=true,children,className}:{open:boolean;animated?:boolean;children:ReactNode;className?:string}){
+export function PaperReveal({open,animated=true,children,className,id}:{open:boolean;animated?:boolean;children:ReactNode;className?:string;id?:string}){
  const reduce=useReducedMotion();
- return <AnimatePresence initial={false}>{open&&<RevealBody key="body" reduce={!!reduce||!animated} className={className}>{children}</RevealBody>}</AnimatePresence>;
+ return <AnimatePresence initial={false}>{open&&<RevealBody key="body" reduce={!!reduce||!animated} className={className} id={id}>{children}</RevealBody>}</AnimatePresence>;
 }
-function RevealBody({children,reduce,className}:{children:ReactNode;reduce:boolean;className?:string}){
+function RevealBody({children,reduce,className,id}:{children:ReactNode;reduce:boolean;className?:string;id?:string}){
  const present=useIsPresent();
- return <motion.div className={className} inert={!present} aria-hidden={!present||undefined} style={{overflow:'clip',pointerEvents:present?undefined:'none'}} initial={reduce?false:{height:0,opacity:0,y:-6}} animate={{height:'auto',opacity:1,y:0}} exit={{height:0,opacity:0,y:reduce?0:-6}} transition={{duration:reduce?0:motionTiming.expand/1000,ease:motionEase.enter}}>{children}</motion.div>;
+ return <motion.div id={id} className={className} inert={!present} aria-hidden={!present||undefined} style={{overflow:'clip',pointerEvents:present?undefined:'none'}} initial={reduce?false:{height:0,opacity:0,y:-6}} animate={{height:'auto',opacity:1,y:0}} exit={{height:0,opacity:0,y:reduce?0:-6}} transition={{duration:reduce?0:motionTiming.expand/1000,ease:motionEase.enter}}>{children}</motion.div>;
 }
 export function PageEntrance({active,target}:{active:boolean;target:string}){
  const reduce=useReducedMotion(),seen=useRef(active);
