@@ -16,6 +16,8 @@ test('ordinary single-city and cross-city collections navigate on every click, n
   assert.deepEqual(action.target.coordinates,[...gs].sort((a,b)=>a.place.id.localeCompare(b.place.id)).map(g=>g.place.coordinates));
   assert.equal(JSON.stringify(gs),before);
  }
+ const collision=displayCoins({entries:[{...entry([suyab]),cluster:false,key:'suyab'},{...entry([balasagun]),cluster:false,key:'balasagun',point:{x:608,y:300}}],labels:[],width:1280,height:800,zoom:6})[0];
+ assert.equal(collision.displayCollection,true);assert.equal(coinEntryAction(collision).kind,'navigate');assert.deepEqual(coinEntryAction(collision).target.placeIds,['balasagun','suyab']);
  const atSameCoordinate={...balasagun,place:{...balasagun.place,coordinates:suyab.place.coordinates}};
  const target=collectionCityTarget([suyab,atSameCoordinate]);assert.equal(target.kind,'multiple');assert.equal(target.coordinates.length,1);assert.equal(target.placeIds.length,2);
 });
