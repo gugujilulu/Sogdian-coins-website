@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {coinPlaces,displayCoins,collectionCityTarget,coinEntryAction,displayCollectionContext} from '../lib/coin-map.ts';
+import {coinPlaces,displayCoins,collectionCityTarget,coinEntryAction,displayCollectionContext,collectionViewReady} from '../lib/coin-map.ts';
 const data=JSON.parse(readFileSync(new URL('../public/data/atlas.json',import.meta.url)));
 const groups=coinPlaces(data.families,data.specimens,data.places);
 const suyab=groups.find(g=>g.place.id==='suyab'),balasagun=groups.find(g=>g.place.id==='balasagun');
@@ -31,4 +31,19 @@ test('only remaining entry opens supplementary full members; single-filtered fam
  const short=displayCoins({entries:[{...entry([suyab]),point:{x:195,y:90}}],labels:[],width:390,height:180,zoom:9});
  const remaining=short.find(e=>e.overflow);assert.ok(remaining);assert.equal(coinEntryAction(remaining).kind,'remaining');assert.equal(displayCollectionContext(remaining).familyIds.length,15);
  const one={...suyab,members:suyab.members.slice(0,1)};assert.equal(coinEntryAction(run([one],9)[0]).familyId,one.members[0].family.id);
+});
+
+test('fit padding edges are already arrived; single/multi repeat skip, pan/zoom away repositions',()=>{
+ for(const viewport of [{width:1280,height:800,padding:{left:440,right:44,top:44,bottom:44}},{width:390,height:844,padding:{left:44,right:44,top:230,bottom:440}}]){
+  const {width,height,padding}=viewport;
+  for(const points of [[{x:(padding.left+width-padding.right)/2,y:(padding.top+height-padding.bottom)/2}],[{x:padding.left,y:padding.top},{x:width-padding.right,y:height-padding.bottom}]]){
+   const at={...viewport,points,zoom:9,targetZoom:9};
+   assert.equal(collectionViewReady(at),true);assert.equal(collectionViewReady(at),true);
+   assert.equal(collectionViewReady({...at,zoom:8}),false);
+   assert.equal(collectionViewReady({...at,points:[{x:padding.left-3,y:padding.top}]}),false);
+   assert.equal(collectionViewReady({...at,points:[{x:padding.left-1,y:padding.top-1}]}),true);
+  }
+  const broad={...viewport,points:[{x:padding.left,y:padding.top}],zoom:7.995,targetZoom:8};
+  assert.equal(collectionViewReady(broad),true);assert.equal(collectionViewReady({...broad,zoom:7.9}),false);
+ }
 });

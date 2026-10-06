@@ -18,7 +18,7 @@ import type {RangeControl} from './range-controls';
 import {mapPadding,mobileViewport} from '@/lib/mobile-sheet';
 import MapLayerPanel from './map-layer-panel';
 import {recordSourceProvider} from '@/lib/record-filters';
-import {coinFeatures,coinPlaces,coinDisplayRules,collectionCityTarget} from '@/lib/coin-map';
+import {coinFeatures,coinPlaces,coinDisplayRules,collectionCityTarget,collectionViewReady} from '@/lib/coin-map';
 import {installCoinMarkers} from './coin-map-markers';
 import {searchNavigationQueue,searchBounds,searchMapPadding,type SearchMapRequest,type MapCameraView} from '@/lib/search-map-navigation';
 import 'maplibre-gl/dist/maplibre-gl.css';
@@ -82,8 +82,7 @@ export default function TerrainMap({rangeObjectName,layers:providedLayers,onLaye
       const obstacles=Array.from(screen?.querySelectorAll<HTMLElement>('.atlas-search-panel,.family-drawer,.map-toolbar,.history-controls,.timeline-floating,.maplibregl-ctrl,.map-error')||[]).filter(el=>{const s=getComputedStyle(el),r=el.getBoundingClientRect();return s.visibility!=='hidden'&&s.display!=='none'&&r.width>0&&r.height>0}).map(el=>{const r=el.getBoundingClientRect();return{left:r.left-rect.left,right:r.right-rect.left,top:r.top-rect.top,bottom:r.bottom-rect.top}});
       const padding=searchMapPadding(rect.width,rect.height,obstacles);if(!padding)return;
       const camera=m.cameraForBounds(target.bounds,{padding,maxZoom:Math.min(9,m.getMaxZoom())});if(!camera)return;
-      const visible=target.coordinates.every(c=>{const p=m.project(c);return p.x>=padding.left+24&&p.x<=rect.width-padding.right-24&&p.y>=padding.top+24&&p.y<=rect.height-padding.bottom-24});
-      if(visible&&m.getZoom()>=Math.min(coinDisplayRules.nearZoom,camera.zoom??coinDisplayRules.nearZoom)-.01)return;
+      if(collectionViewReady({points:target.coordinates.map(c=>m.project(c)),width:rect.width,height:rect.height,padding,zoom:m.getZoom(),targetZoom:camera.zoom??coinDisplayRules.nearZoom}))return;
       m.fitBounds(target.bounds,{padding,maxZoom:Math.min(9,m.getMaxZoom()),duration:motionDuration(450),linear:true,bearing:0,pitch:0});
      });
      if(!m.getSource('selected-coin'))m.addSource('selected-coin',{type:'geojson',data:{type:'FeatureCollection',features:[]}});

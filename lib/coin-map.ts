@@ -187,3 +187,10 @@ export function coinEntryAction(entry:Pick<CoinDisplay,'kind'|'overflow'|'member
  if(entry.kind==='family')return {kind:'family' as const,familyId:entry.members[0].family.id};
  return {kind:'navigate' as const,target:collectionCityTarget(entry.collectionGroups)};
 }
+
+/** The same padding used by cameraForBounds/fitBounds; allow projection rounding. */
+export function collectionViewReady(input:{points:{x:number;y:number}[];width:number;height:number;padding:{left:number;right:number;top:number;bottom:number};zoom:number;targetZoom:number}){
+ const {points,width,height,padding,zoom,targetZoom}=input;
+ return points.length>0&&zoom>=Math.min(coinDisplayRules.nearZoom,targetZoom)-.01&&points.every(p=>
+  p.x>=padding.left-2&&p.x<=width-padding.right+2&&p.y>=padding.top-2&&p.y<=height-padding.bottom+2);
+}
