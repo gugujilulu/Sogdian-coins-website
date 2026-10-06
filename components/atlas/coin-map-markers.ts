@@ -3,7 +3,7 @@ import {focusReturn,stableFocusIndex} from '@/lib/keyboard';
 import {motionDuration} from '@/lib/motion';
 import {collectionReturn,collectionMembers,type CollectionContext} from '@/lib/map-selection';
 import type * as GL from 'maplibre-gl';
-import {coinEntryAction,collectionCityTarget,displayCoins,displayCollectionContext,coinMarkerVisual,markerGeometry,uniqueMembers,type CoinPlace,type CoinScatterPosition,type Box} from '@/lib/coin-map';
+import {coinEntryAction,collectionCityTarget,displayCoins,displayCollectionContext,coinMarkerVisual,mapCoinImage,markerGeometry,uniqueMembers,type CoinPlace,type CoinScatterPosition,type Box} from '@/lib/coin-map';
 
 /** A small visible-marker projection of the existing MapLibre clustered source. */
 export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPlace[],getSelected:()=>string|undefined,onSelect:(id:string,context?:CollectionContext)=>void,onNavigate:(groups:CoinPlace[])=>void){
@@ -95,7 +95,7 @@ export function installCoinMarkers(gl:typeof GL,map:GL.Map,getGroups:()=>CoinPla
     button.dataset.familyIds=JSON.stringify(members.map(m=>m.family.id));button.setAttribute('aria-label',label);button.title=label+(cover?`\n${cover.family.title}`:'');
     button.dataset.occluded=String(!!e.occluded);if(e.occluded){button.style.visibility='hidden';button.tabIndex=-1}button.dataset.stage=e.stage;button.dataset.sameCityExpansion=String(e.sameCityExpansion);
     button.dataset.placeIds=JSON.stringify(e.anchors.map(a=>a.placeId));button.dataset.offsetX=String(e.offsetX);button.dataset.offsetY=String(e.offset);button.dataset.overflow=String(e.overflow);
-    if(coinMarkerVisual(cover?.image)==='image')button.appendChild(image(cover!.image!.path));else button.classList.add('image-failed');
+    const cutout=mapCoinImage(cover?.image);if(coinMarkerVisual(cover?.image)==='image'&&cutout){button.classList.add('cutout');button.appendChild(image(cutout.path))}else button.classList.add('image-failed');
     if(members.length>1&&!e.overflow){const badge=document.createElement('b');badge.textContent=String(members.length);badge.style.width=`${geometry.badgeWidth}px`;button.appendChild(badge)}
     const fallback=document.createElement('span');fallback.className='coin-marker-fallback';fallback.textContent='—';fallback.setAttribute('aria-hidden','true');button.appendChild(fallback);
     if(e.overflow){button.classList.add('coin-city-remaining');fallback.textContent=`+${members.length}`}

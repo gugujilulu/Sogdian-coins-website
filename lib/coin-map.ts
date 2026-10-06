@@ -1,4 +1,9 @@
+import cutoutIndex from '../public/data/map-coin-cutouts.json' with {type:'json'};
 import type {Family, Place, Specimen, ImageRecord} from './atlas';
+type MapCoinCutout={originalId:string;originalPath:string;path:string;width:number;height:number};
+const cutouts:Readonly<Record<string,MapCoinCutout>>=cutoutIndex;
+/** Map-only resource lookup; the selected original image and its provenance stay intact. */
+export function mapCoinImage(image:Pick<ImageRecord,'path'>|null|undefined):MapCoinCutout|null{return image?cutouts[image.path]||null:null}
 export type CoinMember={family:Family;recordCount:number;record:Specimen|null;image:ImageRecord|null};
 export type CoinPlace={place:Place;members:CoinMember[]};
 // Presentation preference only: inspected existing double-face photo, without title block.
@@ -38,8 +43,9 @@ export type DisplayCoinEntry=MapCoinEntry&{large:boolean;offset:number;bounds:Bo
 export const coinMarkerSizes={desktop:{normal:72,compact:60,maxHeight:60},mobile:{normal:64,compact:56,maxHeight:56},placeholder:48} as const;
 export function markerGeometry(point:{x:number;y:number},large:boolean,small:boolean,count:number,offset=large?-36:-12,image?:ImageRecord|null){
  const size=small?coinMarkerSizes.mobile:coinMarkerSizes.desktop;
- const ratio=image?.width&&image?.height&&image.width>0&&image.height>0?image.width/image.height:1.5;
- const base=image?(large?size.normal:size.compact):coinMarkerSizes.placeholder;
+ const displayImage=image?.path?mapCoinImage(image):image;
+ const ratio=displayImage?.width&&displayImage?.height&&displayImage.width>0&&displayImage.height>0?displayImage.width/displayImage.height:1.5;
+ const base=displayImage?(large?size.normal:size.compact):coinMarkerSizes.placeholder;
  const height=Math.min(base/ratio,size.maxHeight),width=Math.min(base,height*ratio);
  const badgeWidth=count>1?Math.max(20,String(count).length*7+10):0;
  const left=Math.min(-width/2,badgeWidth?width/2+6-badgeWidth:-width/2);
