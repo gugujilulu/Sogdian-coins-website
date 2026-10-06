@@ -1,5 +1,5 @@
-import {placeName} from '@/lib/place-display';
 'use client';
+import {placeName} from '@/lib/place-display';
 import HeaderNavigation from '@/components/atlas/header-navigation';
 import {AnimatePresence,PageEntrance,PaperReveal} from '@/components/atlas/ui-motion';
 import LanguageMenu,{LanguageProvider,useCopy,useLanguage} from '@/components/atlas/language';

@@ -1,5 +1,5 @@
-import {layerAvailability} from '@/lib/layer-availability';
 'use client';
+import {layerAvailability} from '@/lib/layer-availability';
 import {useCopy,useLanguage} from './language';
 import type {CopyKey} from '@/lib/i18n';
 import {focusReturn} from '@/lib/keyboard';
