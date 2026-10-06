@@ -38,7 +38,7 @@ export function coinFeatures(groups:CoinPlace[]){
  return [...positions.values()].map(at=>{const members=uniqueMembers(at);return {type:'Feature' as const,geometry:{type:'Point' as const,coordinates:at[0].place.coordinates},properties:{placeId:at[0].place.id,placeIds:JSON.stringify(at.map(g=>g.place.id).sort()),familyCount:members.length,specimenCount:members.reduce((n,m)=>n+m.recordCount,0)}}});
 }
 
-export type MapCoinEntry={key:string;coords:[number,number];point:{x:number;y:number};groups:CoinPlace[];cluster:boolean;id:number};
+export type MapCoinEntry={key:string;coords:[number,number];point:{x:number;y:number};linkPoint?:{x:number;y:number};groups:CoinPlace[];cluster:boolean;id:number};
 export type DisplayCoinEntry=MapCoinEntry&{large:boolean;offset:number;offsetX?:number;occluded?:boolean;bounds:Box;displayCollection:boolean;entryKeys:string[]};
 /** Shared with the DOM renderer: border-box dimensions, including the protruding badge. */
 export const coinMarkerSizes={desktop:{normal:72,compact:60,maxHeight:60},mobile:{normal:64,compact:56,maxHeight:56},placeholder:48} as const;
@@ -69,7 +69,7 @@ export function layoutCoinEntries(entries:MapCoinEntry[],labels:Box[],width:numb
   const phase=(hash(e.key)%360)*Math.PI/180;
   const candidates=[82,100,118,136,158,184,214,250,288,340,400,480,580].flatMap(radius=>Array.from({length:16},(_,i)=>({x:Math.cos(phase+i*Math.PI/8)*radius,y:Math.sin(phase+i*Math.PI/8)*radius})));
   const shapes=candidates.map(pos=>{const g=markerGeometry({x:e.point.x+pos.x,y:e.point.y},true,width<600,members.length,pos.y,cover?.image);return {large:true,offset:pos.y,offsetX:pos.x,bounds:g.box}});
-  const shape=shapes.find(g=>inside(g.bounds)&&!labels.some(b=>intersects(g.bounds,b))&&!placed.some(p=>!p.occluded&&(intersects(g.bounds,p.bounds)||cityLinkHitsBox(cityLinkSegment(g.bounds,e.point),p.bounds)||cityLinkHitsBox(cityLinkSegment(p.bounds,p.point),g.bounds)))) ;
+  const shape=shapes.find(g=>inside(g.bounds)&&!labels.some(b=>intersects(g.bounds,b))&&!placed.some(p=>!p.occluded&&(intersects(g.bounds,p.bounds)||cityLinkHitsBox(cityLinkSegment(g.bounds,e.point),p.bounds)||cityLinkHitsBox(cityLinkSegment(p.bounds,p.linkPoint||p.point),g.bounds)))) ;
   // Screen collisions must never turn two real cities into a shared coin cover.
   placed.push({...e,...(shape||shapes[0]),occluded:!shape,displayCollection:false,entryKeys:[e.key]});
  }
@@ -110,7 +110,7 @@ function scatterCoins(entries:MapCoinEntry[],input:{width:number;height:number;l
    members:member?[member]:remaining,representative:member,kind:member?'family':'collection',overflow:!member,...pos,bounds};
  }
  const inside=(b:Box)=>b.x-b.w/2>=margin&&b.x+b.w/2<=input.width-margin&&b.y-b.h/2>=top+margin&&b.y+b.h/2<=bottom-margin;
- const free=(e:CoinDisplay)=>inside(e.bounds)&&!obstacles.some(b=>intersects(e.bounds,b))&&!result.some(p=>!p.occluded&&(intersects(e.bounds,p.bounds)||cityLinkHitsBox(cityLinkSegment(e.bounds,e.point),p.bounds)||cityLinkHitsBox(cityLinkSegment(p.bounds,p.point),e.bounds)));
+ const free=(e:CoinDisplay)=>inside(e.bounds)&&!obstacles.some(b=>intersects(e.bounds,b))&&!result.some(p=>!p.occluded&&(intersects(e.bounds,p.bounds)||cityLinkHitsBox(cityLinkSegment(e.bounds,e.linkPoint||e.point),p.bounds)||cityLinkHitsBox(cityLinkSegment(p.bounds,p.linkPoint||p.point),e.bounds)));
  function candidates(city:typeof cities[number],id:string):CoinScatterPosition[]{
   const seed=hash(city.cityKey+':'+id),angle=(seed%360)*Math.PI/180;
   const member=city.members.find(m=>m.family.id===id);
@@ -151,7 +151,7 @@ function scatterCoins(entries:MapCoinEntry[],input:{width:number;height:number;l
 }
 export function displayCollectionContext(entry:CoinDisplay){return {placeIds:entry.collectionGroups.map(g=>g.place.id),familyIds:entry.fullMembers.map(m=>m.family.id),scrollTop:0}}
 /** The renderer consumes one decision for images, collection counts and T42 expansion. */
-export function displayCoins(input:{zoom:number;width:number;height:number;entries:MapCoinEntry[];labels:Box[];selectedId?:string;project?:(coordinates:[number,number])=>{x:number;y:number};expansionObstacles?:Box[];expansionHeight?:number;expansionTop?:number;previous?:ReadonlyMap<string,CoinScatterPosition>}):CoinDisplay[]{
+export function displayCoins(input:{zoom:number;width:number;height:number;entries:MapCoinEntry[];labels:Box[];selectedId?:string;project?:(coordinates:[number,number])=>{x:number;y:number};linkProject?:(placeId:string,coordinates:[number,number])=>{x:number;y:number};expansionObstacles?:Box[];expansionHeight?:number;expansionTop?:number;previous?:ReadonlyMap<string,CoinScatterPosition>}):CoinDisplay[]{
  const stage=coinDisplayStage(input.zoom);
  // Resolve source clusters by real place identity at every zoom. Even equal
  // coordinates are separate cities; collision layout only moves their covers.
@@ -159,7 +159,7 @@ export function displayCoins(input:{zoom:number;width:number;height:number;entri
  for(const entry of input.entries)for(const group of entry.groups)if(!at.has(group.place.id))at.set(group.place.id,{entry,group});
  const entries=[...at.values()].map(({entry,group})=>{
   const coords=group.place.coordinates;
-  return {...entry,key:`p:${group.place.id}`,coords,point:input.project?.(coords)||entry.point,groups:[group],cluster:false};
+  return {...entry,key:`p:${group.place.id}`,coords,point:input.project?.(coords)||entry.point,linkPoint:input.linkProject?.(group.place.id,coords),groups:[group],cluster:false};
  }).filter(e=>e.point.x>=0&&e.point.x<=input.width&&e.point.y>=0&&e.point.y<=input.height);
  // Near-stage families keep the existing natural city scatter.
  if(stage==='near')return scatterCoins(entries,input);
