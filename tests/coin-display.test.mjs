@@ -27,7 +27,7 @@ test('single and multi-family entries share photo policy and complete family cou
  assert.equal(run([one])[0].kind,'family');assert.equal(coinMarkerVisual(run([one])[0].representative.image),'image');
  const collection=run([panch])[0];assert.equal(collection.kind,'collection');assert.equal(collection.members.length,panch.members.length);assert.ok(collection.representative.image);
  // Label pressure changes size, never the photo policy.
- const compact=run([one],4,{labels:[{x:200,y:164,w:90,h:50}]})[0];assert.equal(compact.large,false);assert.equal(coinMarkerVisual(compact.representative.image),'image');
+ const compact=run([one],4,{labels:[{x:200,y:164,w:90,h:50}]})[0];assert.equal(compact.large,true);assert.equal(coinMarkerVisual(compact.representative.image),'image');
 });
 test('stages and same-city expansion retain all members and real anchors',()=>{
  for(const [zoom,stage,expand]of [[4,'far',false],[6,'middle',false],[9,'near',true]]){
@@ -72,5 +72,14 @@ test('far and middle photographs avoid city icon and caption when old offsets ar
   const item=run([panch],zoom,{labels})[0],a=item.bounds;
   for(const b of labels)assert.ok(Math.abs(a.x-b.x)>=(a.w+b.w)/2||Math.abs(a.y-b.y)>=(a.h+b.h)/2);
   assert.equal(item.members.length,panch.members.length);
+ }
+});
+
+test('source clusters split by city at every zoom, including equal coordinates; collisions never remerge them',()=>{
+ const other=places.find(g=>g.place.id!==panch.place.id),second={...other,place:{...other.place,coordinates:panch.place.coordinates}};
+ for(const zoom of [4,6,9]){const result=displayCoins({entries:[{...entry(panch),groups:[panch,second],cluster:true}],zoom,width:1280,height:800,labels:[]});
+  assert.ok(result.every(e=>e.anchors.length===1&&e.groups.length===1));assert.equal(new Set(result.flatMap(e=>e.groups.map(g=>g.place.id))).size,2);
+  assert.deepEqual([...new Set(result.flatMap(e=>e.members.map(m=>m.family.id)))].sort(),[...new Set([...panch.members,...second.members].map(m=>m.family.id))].sort());
+  if(zoom<8.5){assert.equal(result.length,2);const [a,b]=result.map(e=>e.bounds);assert.ok(Math.abs(a.x-b.x)>=(a.w+b.w)/2||Math.abs(a.y-b.y)>=(a.h+b.h)/2);}
  }
 });
