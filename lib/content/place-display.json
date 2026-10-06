@@ -1,0 +1,170 @@
+{
+  "panjakent": {
+    "note": {
+      "en": "Ancient Penjikent. UNESCO coordinates: 39°29′13″N, 67°37′10″E. Historical context; not a type-specific findspot.",
+      "zh": "古片治肯特遗址。联合国教科文组织坐标为39°29′13″N、67°37′10″E。用于历史背景展示，不代表某一钱币类型的出土点。",
+      "ru": "Древний Пенджикент. Координаты ЮНЕСКО: 39°29′13″N, 67°37′10″E. Исторический ориентир, а не место находки отдельного типа монет."
+    },
+    "name": {
+      "en": "Panjakent / Panch",
+      "zh": "片治肯特／潘治",
+      "ru": "Пенджикент / Панч"
+    }
+  },
+  "samarkand": {
+    "note": {
+      "en": "Ancient Samarkand. Coordinates are an editorial site anchor, not a mint or excavated coin context.",
+      "zh": "古撒马尔罕遗址。坐标是编辑设定的遗址锚点，不代表铸币地或钱币发掘地点。",
+      "ru": "Древний Самарканд. Координаты служат ориентиром памятника, а не монетным двором или местом раскопок монет."
+    },
+    "name": {
+      "en": "Samarkand / Afrasiab",
+      "zh": "撒马尔罕／阿弗拉西阿卜",
+      "ru": "Самарканд / Афрасиаб"
+    }
+  },
+  "suyab": {
+    "note": {
+      "en": "Ak-Beshim archaeological site, identified with Suyab. City anchor for exploration of Semirechye; no individual mint attribution asserted.",
+      "zh": "阿克别希姆考古遗址，通常认作碎叶。用于七河浏览的城市锚点，不据此认定单枚钱币的铸地。",
+      "ru": "Археологический памятник Ак-Бешим, отождествляемый с Суябом. Городской ориентир для Семиречья; монетный двор отдельной монеты не утверждается."
+    },
+    "name": {
+      "en": "Suyab / Ak-Beshim",
+      "zh": "碎叶／阿克别希姆",
+      "ru": "Суяб / Ак-Бешим"
+    }
+  },
+  "navekat": {
+    "note": {
+      "en": "Krasnaya Rechka archaeological site, associated with Navekat. Cultural context; coin-specific find context remains to be entered.",
+      "zh": "红河古城考古遗址，与新城（Navekat）相关。展示文化背景，尚未接入个体钱币的出土资料。",
+      "ru": "Памятник Красная Речка, связанный с Навекатом. Культурный контекст; сведения о находках отдельных монет ещё не добавлены."
+    },
+    "name": {
+      "en": "Navekat / Krasnaya Rechka",
+      "zh": "新城／红河古城",
+      "ru": "Навекат / Красная Речка"
+    }
+  },
+  "balasagun": {
+    "note": {
+      "en": "Burana archaeological site. Later medieval context; not assumed to be an issuing city in every timeline year.",
+      "zh": "布拉纳考古遗址。提供中世纪较晚时期背景，不假定它在每个年份都是发行城市。",
+      "ru": "Археологический памятник Бурана. Контекст позднего Средневековья; город не считается эмитентом для каждого года."
+    },
+    "name": {
+      "en": "Balasagun / Burana",
+      "zh": "八剌沙衮／布拉纳",
+      "ru": "Баласагун / Бурана"
+    }
+  },
+  "taraz": {
+    "note": {
+      "en": "Historic city in the Talas valley. Orientation point; no type-specific findspot asserted.",
+      "zh": "怛罗斯河谷的历史城市。用于方位识别，不代表某一钱币类型的出土点。",
+      "ru": "Исторический город Таласской долины. Географический ориентир, а не место находки отдельного типа монет."
+    },
+    "name": {
+      "en": "Taraz",
+      "zh": "怛逻斯",
+      "ru": "Тараз"
+    }
+  },
+  "bukhara": {
+    "note": {
+      "en": "Historic Bukhara. Orientation point, separate from an issuing or findspot claim.",
+      "zh": "历史布哈拉。用于方位识别，与具体发行地或出土归属分别处理。",
+      "ru": "Историческая Бухара. Географический ориентир; утверждения об эмиссии и находках рассматриваются отдельно."
+    },
+    "name": {
+      "en": "Bukhara",
+      "zh": "布哈拉",
+      "ru": "Бухара"
+    }
+  },
+  "paikend": {
+    "note": {
+      "en": "Paikend archaeological site in the Bukhara oasis. Exact site geometry and coin assemblages await entry.",
+      "zh": "布哈拉绿洲的佩肯特考古遗址。精确遗址范围及钱币组合资料尚待接入。",
+      "ru": "Памятник Пайкенд в Бухарском оазисе. Точная геометрия и монетные комплексы ещё не добавлены."
+    },
+    "name": {
+      "en": "Paikend",
+      "zh": "佩肯特",
+      "ru": "Пайкенд"
+    }
+  },
+  "bunjikat": {
+    "note": {
+      "en": "Ancient Bunjikat, Shahristan. Coordinates transcribed from the UNESCO tentative-list entry.",
+      "zh": "古本治肯特，位于沙赫里斯坦。坐标转录自联合国教科文组织预备名单。",
+      "ru": "Древний Бунджикат, Шахристан. Координаты взяты из предварительного списка ЮНЕСКО."
+    },
+    "name": {
+      "en": "Bunjikat",
+      "zh": "本治肯特",
+      "ru": "Бунджикат"
+    }
+  },
+  "chach": {
+    "note": {
+      "en": "Chach regional orientation. This modern-city anchor does not locate a particular ancient mint.",
+      "zh": "赭时地区方位锚点。使用现代城市坐标，不对应某一特定古代铸币地。",
+      "ru": "Ориентир региона Чач. Координаты современного города не обозначают конкретный древний монетный двор."
+    },
+    "name": {
+      "en": "Chach / Tashkent",
+      "zh": "赭时／石国",
+      "ru": "Чач / Ташкент"
+    }
+  },
+  "balkh": {
+    "note": {
+      "en": "Ancient Balkh. Orientation for northern Afghanistan; a regional find report is not assigned to this city.",
+      "zh": "古巴尔赫。用于阿富汗北部方位识别；区域出土报告不直接归属于此城。",
+      "ru": "Древний Балх. Ориентир северного Афганистана; региональное сообщение о находке не приписывается этому городу."
+    },
+    "name": {
+      "en": "Balkh",
+      "zh": "缚喝／巴尔赫",
+      "ru": "Балх"
+    }
+  },
+  "kucha": {
+    "note": {
+      "en": "Kucha attribution in British Museum coin record. Coordinates mark the modern city for orientation, not a documented mint or findspot.",
+      "zh": "大英博物馆钱币记录中的龟兹归属。坐标标示现代库车，仅用于方位识别，不代表有文献依据的铸币地或出土点。",
+      "ru": "Атрибуция к Куче в записи Британского музея. Координаты современного города служат ориентиром, а не документированным двором или местом находки."
+    },
+    "name": {
+      "en": "Kucha / Qiuci",
+      "zh": "龟兹／库车",
+      "ru": "Куча"
+    }
+  },
+  "kashgar": {
+    "note": {
+      "en": "Silk Road city for orientation. Historical settlement extent is not reconstructed.",
+      "zh": "丝绸之路城市方位锚点。未重建历史聚落范围。",
+      "ru": "Городской ориентир Шёлкового пути. Границы исторического поселения не реконструированы."
+    },
+    "name": {
+      "en": "Kashgar",
+      "zh": "疏勒／喀什",
+      "ru": "Кашгар"
+    }
+  },
+  "khotan": {
+    "note": {
+      "en": "Khotan oasis orientation point. The exact ancient settlement and mint are separate research questions.",
+      "zh": "于阗绿洲方位锚点。古代聚落的精确位置与铸地是独立研究问题。",
+      "ru": "Ориентир Хотанского оазиса. Точное древнее поселение и монетный двор — отдельные вопросы исследования."
+    },
+    "name": {
+      "en": "Khotan",
+      "zh": "于阗／和田",
+      "ru": "Хотан"
+    }
+  }
+}

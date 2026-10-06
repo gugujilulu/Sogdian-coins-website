@@ -1,3 +1,4 @@
+import finalCopy from './content/final-copy.json' with {type:'json'};
 export type Locale='en'|'zh'|'ru';
 export const languageNames={en:'English',zh:'中文',ru:'Русский'} as const;
 export const storageKey='atlas-language';
@@ -1892,10 +1893,12 @@ export const dictionary={
 "open_license":{"en": "Open licence", "zh": "开放许可", "ru": "Открытая лицензия"},
 "permission":{"en": "Permission recorded", "zh": "已有许可记录", "ru": "Разрешение указано"},
 "public_domain":{"en": "Public domain", "zh": "公有领域", "ru": "Общественное достояние"},
-"家族年代":{"en": "Family date", "zh": "家族年代", "ru": "Даты семейства"}
+"家族年代":{"en": "Family date", "zh": "家族年代", "ru": "Даты семейства"},
+...finalCopy
 } as const satisfies Record<string,Record<Locale,string>>;
 export type CopyKey=keyof typeof dictionary;
 let current:Locale='en';
+export function getCopyLocale(){return current}
 export function setCopyLocale(locale:Locale){current=locale}
 export function tr(key:CopyKey,locale:Locale=current):string{return dictionary[key][locale]}
 export function countLabel(n:number,kind:'records'|'families'|'images'|'sources'|'associations'|'groups',locale:Locale=current){

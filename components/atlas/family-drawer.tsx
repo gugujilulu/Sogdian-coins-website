@@ -53,24 +53,24 @@ export default function FamilyDrawer(p:Props){
    <div className="gallery-scope"><strong>{caption}</strong>
    {p.onRestore?<button onClick={p.onRestore}>{tr("返回筛选结果")}</button>:specimens.length<fullSpecimens.length&&<button onClick={p.onFullFamily}>{tr('查看全部记录',{records:countLabel(fullSpecimens.length,'records',locale)})}</button>}
    </div>
+   {(family.description||family.legend||family.question)&&<section className="family-introduction">
+    {family.description&&<><h2>{tr("类型介绍")}</h2><p>{familyIntroduction(family.id,locale)}</p></>}
+    {family.legend&&<><h3>{tr("铭文 / Inscription")}</h3><p className="inscription">{family.legend}</p>{family.legendNote&&<p>{copyKnown(family.legendNote,locale)}</p>}</>}
+   </section>}
+   {location}
+   {navigation}
    <div className="drawer-filters"><FamilyFilter label={tr("家族来源／目录组")} value={variant} onChange={p.setVariant} caption={variant==='all'?tr(mobile?"全部来源":"全部来源／目录组"):activeGroup?.title||tr("分组待定")}><PaperOption value="all">{tr("全部来源／目录组")}</PaperOption>{variants.map(v=><PaperOption key={v.id} value={v.id}>{v.title} ({allSpecimens.filter(s=>s.variantId===v.id).length})</PaperOption>)}{fullSpecimens.some(s=>s.variantId===null)&&<PaperOption value="unassigned">{tr("分组待定")}</PaperOption>}</FamilyFilter>{p.facets.length>0&&<FamilyFilter label={tr("家族铭文／徽记／特征")} value={facet} onChange={p.setFacet} caption={facet==='all'?tr(mobile?"全部特征":"全部铭文 / 徽记 / 特征"):copyKnown(facet,locale)}><PaperOption value="all">{tr("全部铭文 / 徽记 / 特征")}</PaperOption>{p.facets.map(f=><PaperOption key={f} value={f}>{copyKnown(f,locale)}</PaperOption>)}</FamilyFilter>}</div>
    <div className="drawer-gallery">{specimens.map(s=><article key={s.id} className="specimen-tile"><button className="specimen-image" onClick={()=>p.onOpen(s)} aria-label={`${tr('打开图片')} ${s.title}`}>
     {s.images[0]?<img src={s.images[0].path} alt={s.title} loading="lazy" onError={e=>{e.currentTarget.hidden=true}}/>:<small>{tr("图片未记录，仍可查看详情")}</small>}<span><ArtIcon name="expand" size={12}/><span className="photo-action-label">{tr("图片详情")}</span></span>
    </button><div className="specimen-copy"><strong>{s.title}</strong><small>{[s.weightG!=null?`${s.weightG} g`:null,s.diameterMm!=null?`${s.diameterMm} mm`:null].filter(Boolean).join(' · ')}</small>
    <details className="tile-sources"><summary>{tr("来源")}</summary><div className="tile-source-list">{p.sources.get(s.id)?.map(e=><a key={e.source.id} href={e.source.urls[0]} target="_blank" rel="noreferrer" aria-label={`${e.source.provider} ${e.source.recordKey}`}>{e.source.provider}{e.source.identityStatus!=='resolved'?tr('（待解析）'):''}</a>)||<small>{p.sourceIndexError?tr("来源索引加载失败；原始来源见详情"):tr("来源索引加载中")}</small>}{s.images[0]?.credit&&<small>{tr("图片署名")} · {s.images[0].credit}</small>}</div></details></div></article>)}</div>
    {!specimens.length&&<p role="status">{tr("没有符合条件的记录。")}<button onClick={()=>{p.setVariant('all');p.setFacet('all')}}>{tr("清除家族内筛选")}</button></p>}
-   {(family.description||family.legend||family.question)&&<section className="family-introduction">
-    {family.description&&<><h2>{tr("类型介绍")}</h2><p>{familyIntroduction(family.id,locale)}</p></>}
-    {family.legend&&<><h3>{tr("铭文 / Inscription")}</h3><p className="inscription">{family.legend}</p>{family.legendNote&&<p>{copyKnown(family.legendNote,locale)}</p>}</>}
-    {family.question&&<details className="research-block"><summary>{tr("研究问题")}</summary><p>{family.question}</p></details>}
-   </section>}
-   {location}
+   {family.question&&<details className="research-block"><summary>{tr("研究问题")}</summary><p>{copyKnown(family.question,locale)}</p></details>}
    {p.mapBackground}
-   {navigation}
    {(family.publications.length>0||family.anchor?.note||activeGroup?.description)&&<details className="research-block"><summary>{tr("资料与方法")}</summary>
     {activeGroup?.description&&<p>{activeGroup.description}</p>}
     {family.description&&familyIntroduction(family.id,locale)!==family.description&&<details><summary>{tr("类型介绍原文")}</summary><p>{family.description}</p></details>}
-    {family.publications.map(pub=><div className="publication" key={pub.url}><a href={pub.url} target="_blank" rel="noreferrer">{referenceTitle(pub.title,locale)}</a><small>{pub.role}</small></div>)}
+    {family.publications.map(pub=><div className="publication" key={pub.url}><a href={pub.url} target="_blank" rel="noreferrer">{referenceTitle(pub.title,locale)}</a><small>{copyKnown(pub.role,locale)}</small></div>)}
     {family.anchor?.note&&<p>{family.anchor.note}</p>}
    </details>}
 

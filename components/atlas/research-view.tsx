@@ -1,3 +1,4 @@
+import {copyKnown} from '@/lib/i18n';
 'use client';
 import {useEffect,useRef} from 'react';
 import type {Atlas} from '@/lib/atlas';
@@ -10,6 +11,9 @@ const roadmap=[
  ['更多粟特钱币家族','扩充家族、类型与对应钱币资料。','二期'],
  ['拍卖记录','整理钱币拍卖条目与成交记录。','二期'],
  ['比价与销售入口','汇集价格参照与销售平台链接。','二期'],
+ ['历史时期政权地图','完善不同历史时期的政权范围与版本，补充年代和来源依据，逐步呈现疆域变化及其与钱币家族的关联。','二期'],
+ ['历史地点与考古发现','补充政治中心、铸币地及候选、单枚出土与窖藏资料，关联地点、年代、钱币与来源。','二期'],
+ ['钱币流通与地域背景','根据发现记录和研究资料建立钱币流通范围，并扩充相关历史地域背景。','二期'],
  ['学术资源','整理研究文献、数据库与访问链接。','三期'],
  ['徽记研究','汇集徽记图像、释读与关联研究。','三期'],
  ['语言学研究','整理铭文、语言材料与研究入口。','三期']
@@ -35,7 +39,7 @@ export default function ResearchView({data,ranges=[]}:{data:Atlas;imageCount:num
  const rangeSources=Array.from(new Set(ranges.filter(r=>r.geometry).map(r=>r.source)));
  const mapLinks=Array.from(new Map(rangeSources.flatMap(source=>Array.from(source.matchAll(/https?:\/\/[^\s;]+/g),m=>({url:m[0],title:source.slice(0,m.index).trim().split('\n').at(-1)||tr('来源')}))).filter(p=>!references.some(r=>r.url===p.url)).map(p=>[p.url,p])).values());
  const sections=[['记录分类','资料分类说明'],['图片署名','图片方法说明'],['年代','年代方法说明'],['地点','地点方法说明'],['历史范围','范围方法说明'],['来源快照','资料覆盖说明']] as const;
- const referenceLink=(p:{url:string;title:string;role?:string})=><li key={p.url}><a href={p.url} target="_blank" rel="noreferrer">{referenceTitle(p.title,locale)}<ArtIcon name="external" collection="r3" size={16}/></a>{p.role&&<p>{p.role}</p>}</li>;
+ const referenceLink=(p:{url:string;title:string;role?:string})=><li key={p.url}><a href={p.url} target="_blank" rel="noreferrer">{referenceTitle(p.title,locale)}<ArtIcon name="external" collection="r3" size={16}/></a>{p.role&&<p>{copyKnown(p.role,locale)}</p>}</li>;
  return <section className="research-page"><div ref={panel} className="catalogue-frame research-frame">
   <img ref={footer} className="research-footer-art" src="/visual/t67-14/footer.webp" alt="" aria-hidden="true"/>
   <div ref={viewport} className="research-scroll" tabIndex={0} aria-label={tr('Research')} onFocusCapture={event=>{const scroll=viewport.current,node=(event.target as HTMLElement).closest<HTMLElement>('a,summary');if(!scroll||!node)return;const box=node.getBoundingClientRect(),bounds=scroll.getBoundingClientRect(),fade=parseFloat(getComputedStyle(panel.current!).getPropertyValue('--research-fade'))||40;if(box.bottom>bounds.bottom-fade||box.top<bounds.top)scroll.scrollTop+=box.top-bounds.top-(scroll.clientHeight-fade-box.height)/2;node.style.pointerEvents=''}}>
@@ -49,7 +53,7 @@ export default function ResearchView({data,ranges=[]}:{data:Atlas;imageCount:num
     <details id="sources-methods"><summary>{tr('来源与方法')}</summary>{sections.map(([heading,body])=><details key={body}><summary>{tr(heading)}</summary><p>{tr(body)}</p></details>)}<details><summary>{tr('范围来源记录')}</summary>{rangeSources.map(source=><p key={source}>{source.split(/(https?:\/\/[^\s]+)/).map((part,i)=>/^https?:/.test(part)?<a key={i} href={part} target="_blank" rel="noreferrer">{tr('来源')} ↗</a>:<span key={i}>{part}</span>)}</p>)}</details></details>
     </div>
     <div className="research-access"><a href={serializeLink({view:'catalogue',panel:'sources'})}>{tr('来源索引')}<ArtIcon name="external" collection="r3" size={16}/></a><a href={serializeLink({view:'catalogue',panel:'related'})}>{tr('相关资料图库')}<ArtIcon name="external" collection="r3" size={16}/></a></div>
-    <div className="research-contact"><h2>{rosette()}{tr('联系邮箱')}</h2><a href="mailto:zhaoyifu88@gmail.com">zhaoyifu88@gmail.com</a></div>
+    <div className="research-contact"><h2>{rosette()}{tr('联系邮箱')}</h2><p>{tr("纠错与资料补充")}</p><a href="mailto:zhaoyifu88@gmail.com">zhaoyifu88@gmail.com</a></div>
    </div>
   </div>
  </div></section>;

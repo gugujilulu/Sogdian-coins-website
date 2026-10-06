@@ -1,0 +1,182 @@
+{
+  "未显示合集": {
+    "zh": "未显示合集",
+    "en": "Hidden collections",
+    "ru": "Скрытые подборки"
+  },
+  "资料待补": {
+    "zh": "资料待补",
+    "en": "Data pending",
+    "ru": "Данные ожидаются"
+  },
+  "当前条件无匹配": {
+    "zh": "当前条件无匹配",
+    "en": "No matches under current conditions",
+    "ru": "Нет совпадений при текущих условиях"
+  },
+  "需历史地图": {
+    "zh": "需历史地图",
+    "en": "Historical map required",
+    "ru": "Нужна историческая карта"
+  },
+  "切换到历史地图": {
+    "zh": "切换到历史地图",
+    "en": "Switch to Historical",
+    "ru": "Перейти на историческую карту"
+  },
+  "范围资料目录": {
+    "zh": "范围资料目录",
+    "en": "Range reference catalogue",
+    "ru": "Каталог сведений о территориях"
+  },
+  "核心地点包含方向识别用的遗址；考古遗址可单独显示。": {
+    "zh": "核心地点包含方向识别用的遗址；考古遗址可单独显示。",
+    "en": "Core places include archaeological sites used as landmarks; sites can also be shown separately.",
+    "ru": "Основные места включают археологические ориентиры; памятники можно показать отдельно."
+  },
+  "该年份的政权范围资料待补；可主动查看历史背景。": {
+    "zh": "该年份的政权范围资料待补；可主动查看历史背景。",
+    "en": "Polity range evidence for this year is pending; historical backgrounds remain available.",
+    "ru": "Сведения о территориях государств для этого года ожидаются; исторический фон можно открыть отдельно."
+  },
+  "从左侧选择一个来源条目。": {
+    "zh": "从左侧选择一个来源条目。",
+    "en": "Select a source entry on the left.",
+    "ru": "Выберите запись источника слева."
+  },
+  "原选择不符合当前筛选，请重新选择或调整筛选。": {
+    "zh": "原选择不符合当前筛选，请重新选择或调整筛选。",
+    "en": "The previous selection no longer matches. Select another entry or adjust filters.",
+    "ru": "Предыдущий выбор не соответствует фильтрам. Выберите другую запись или измените фильтры."
+  },
+  "没有匹配的目录记录，请调整搜索或筛选。": {
+    "zh": "没有匹配的目录记录，请调整搜索或筛选。",
+    "en": "No catalogue records match. Adjust the search or filters.",
+    "ru": "Нет подходящих записей каталога. Измените поиск или фильтры."
+  },
+  "按币系年代区间筛选": {
+    "zh": "按币系年代区间筛选",
+    "en": "Filters by the date interval of each coin family",
+    "ru": "Фильтр по интервалу дат монетного семейства"
+  },
+  "输入筛选记录；确认建议或点击放大镜定位地图。": {
+    "zh": "输入筛选记录；确认建议或点击放大镜定位地图。",
+    "en": "Typing filters records; confirm a suggestion or use the magnifier to move the map.",
+    "ru": "Ввод фильтрует записи; выберите подсказку или нажмите лупу для перехода на карте."
+  },
+  "纠错与资料补充": {
+    "zh": "纠错与资料补充",
+    "en": "Corrections and additional source material",
+    "ru": "Исправления и дополнительные материалы"
+  },
+  "历史时期政权地图": {
+    "zh": "历史时期政权地图",
+    "en": "Historical polity maps",
+    "ru": "Карты государств по периодам"
+  },
+  "完善不同历史时期的政权范围与版本，补充年代和来源依据，逐步呈现疆域变化及其与钱币家族的关联。": {
+    "zh": "完善不同历史时期的政权范围与版本，补充年代和来源依据，逐步呈现疆域变化及其与钱币家族的关联。",
+    "en": "Expand polity ranges and period versions with date and source evidence, gradually showing territorial changes and their links to coin families.",
+    "ru": "Расширить территории государств и версии по периодам, дополнив даты и источники; постепенно показать изменения границ и связи с монетными семействами."
+  },
+  "历史地点与考古发现": {
+    "zh": "历史地点与考古发现",
+    "en": "Historical places and archaeological finds",
+    "ru": "Исторические места и археологические находки"
+  },
+  "补充政治中心、铸币地及候选、单枚出土与窖藏资料，关联地点、年代、钱币与来源。": {
+    "zh": "补充政治中心、铸币地及候选、单枚出土与窖藏资料，关联地点、年代、钱币与来源。",
+    "en": "Add political centres, mints and candidates, single finds and hoards, linking places, dates, coins and sources.",
+    "ru": "Дополнить сведения о политических центрах, монетных дворах и кандидатах, отдельных находках и кладах, связав места, даты, монеты и источники."
+  },
+  "钱币流通与地域背景": {
+    "zh": "钱币流通与地域背景",
+    "en": "Coin circulation and regional backgrounds",
+    "ru": "Обращение монет и региональный фон"
+  },
+  "根据发现记录和研究资料建立钱币流通范围，并扩充相关历史地域背景。": {
+    "zh": "根据发现记录和研究资料建立钱币流通范围，并扩充相关历史地域背景。",
+    "en": "Build circulation ranges from find records and research, and expand the related historical regional backgrounds.",
+    "ru": "Создать ареалы обращения по записям находок и исследованиям; расширить связанный исторический региональный фон."
+  },
+  "操作说明": {
+    "zh": "操作说明",
+    "en": "How to use",
+    "ru": "Как пользоваться"
+  },
+  "全部范围资料": {
+    "zh": "全部范围资料",
+    "en": "All range references",
+    "ru": "Все сведения о территориях"
+  },
+  "Background; exact type correspondence not yet verified": {
+    "zh": "提供背景参照，具体类型对应尚未核实。",
+    "en": "Background reference; the exact type correspondence is unverified.",
+    "ru": "Контекст; точное соответствие типа не проверено."
+  },
+  "Historical / archaeological background; discusses Nana interpretation": {
+    "zh": "历史与考古背景，讨论娜娜的释读。",
+    "en": "Historical and archaeological context, including interpretations of Nana.",
+    "ru": "Исторический и археологический контекст; обсуждение трактовки Наны."
+  },
+  "Legacy online entry cites Smirnova 769; original volume not fully digitised here": {
+    "zh": "在线记录引用Smirnova 769，可沿原始引文核对目录。",
+    "en": "Online record citing Smirnova 769; consult the original citation for the catalogue entry.",
+    "ru": "Онлайн-запись со ссылкой на Smirnova 769; каталог можно сверить по оригинальной цитате."
+  },
+  "Modern academic framework; detailed crosswalk pending": {
+    "zh": "现代研究框架；具体目录对应尚待核对。",
+    "en": "Modern research framework; detailed catalogue correspondences remain to be checked.",
+    "ru": "Современная исследовательская основа; соответствия каталога требуют сверки."
+  },
+  "Modern academic framework; exact attribution remains under review": {
+    "zh": "现代研究框架；具体归属仍在核对。",
+    "en": "Modern research framework; the precise attribution remains under review.",
+    "ru": "Современная исследовательская основа; точная атрибуция ещё проверяется."
+  },
+  "Modern academic framework; exact crosswalk pending": {
+    "zh": "现代研究框架；具体目录对应尚待核对。",
+    "en": "Modern research framework; exact catalogue correspondences remain to be checked.",
+    "ru": "Современная исследовательская основа; точные соответствия каталога требуют сверки."
+  },
+  "Modern academic framework; exact family-level correspondence remains under review": {
+    "zh": "现代研究框架；与本币系的具体对应仍在核对。",
+    "en": "Modern research framework; the exact correspondence to this coin family remains under review.",
+    "ru": "Современная исследовательская основа; соответствие этому монетному семейству ещё проверяется."
+  },
+  "Source classification / specimen branch": {
+    "zh": "来源分类及相应钱币记录。",
+    "en": "Source classification and corresponding coin records.",
+    "ru": "Классификация источника и соответствующие записи монет."
+  },
+  "Source taxonomy / reviewed specimen records": {
+    "zh": "来源分类与已审阅钱币记录。",
+    "en": "Source classification and reviewed coin records.",
+    "ru": "Классификация источника и просмотренные записи монет."
+  },
+  "Source taxonomy / specimen discovery; canonical attribution pending": {
+    "zh": "来源分类与钱币线索，正式归属尚待核实。",
+    "en": "Source classification and coin leads; the definitive attribution is unverified.",
+    "ru": "Классификация источника и сведения о монетах; окончательная атрибуция не проверена."
+  },
+  "Source taxonomy / specimen records": {
+    "zh": "来源分类及钱币记录。",
+    "en": "Source classification and coin records.",
+    "ru": "Классификация источника и записи монет."
+  },
+  "Source-reported regional find context; archaeological verification pending": {
+    "zh": "来源报告的区域出土背景，尚待考古核实。",
+    "en": "Regional find context reported by the source; archaeological verification is pending.",
+    "ru": "Региональный контекст находки по источнику; археологическая проверка ещё требуется."
+  },
+  "Specimen description / legacy classification": {
+    "zh": "个体钱币描述与既有分类。",
+    "en": "Individual coin description and legacy classification.",
+    "ru": "Описание отдельной монеты и прежняя классификация."
+  },
+  "Specimen description and legend reading": {
+    "zh": "个体钱币描述与铭文释读。",
+    "en": "Individual coin description and inscription reading.",
+    "ru": "Описание отдельной монеты и чтение надписи."
+  }
+}

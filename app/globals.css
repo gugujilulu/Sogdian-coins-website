@@ -410,3 +410,13 @@
 .coin-map-marker.cutout img{transition:filter var(--motion-feedback,120ms)}
 .coin-map-marker.cutout img:is(.coin-cover-previous,.coin-cover-next){transition:opacity 2.55s,filter var(--motion-feedback,120ms)}
 @media(prefers-reduced-motion:reduce){.coin-map-marker.cutout img{transition:none}}
+
+/* Hit testing follows visible place artwork, never the transparent caption slot. */
+.history-place{pointer-events:none}
+.history-place img,.history-place span{pointer-events:auto}
+.history-place span{position:relative}
+.hidden-city-collections{position:absolute;z-index:8;right:12px;bottom:110px;max-width:240px;background:#f6eedc;color:#183d50;border:1px solid #b99b64;border-radius:5px;font-size:13px;box-shadow:0 2px 6px #0002}
+.hidden-city-collections summary{padding:8px;cursor:pointer}
+.hidden-city-collections>div{max-height:200px;overflow:auto;padding:4px}
+.hidden-city-collections button{display:block;width:100%;text-align:left;padding:9px 5px;background:transparent;border:0;min-height:44px}
+.hidden-city-collections button:hover{background:#e8dcc4}

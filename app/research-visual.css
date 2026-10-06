@@ -47,3 +47,11 @@
  .research-references summary{font-size:20px}.research-references :is(p,li){font-size:17px}.research-references li p{font-size:16px}.research-references details details{margin-left:12px}
  .research-access{gap:12px;font-size:17px}.research-contact>a{font-size:19px}
 }
+
+@media(max-width:760px){
+ .research-plan .plan-goal{width:35%}.research-plan .plan-description{width:49%}.research-plan .plan-phase{width:16%}
+ .research-plan tbody th>span{display:block}.research-plan tbody th .research-rosette{display:none}
+ .research-plan tbody th>span>span{overflow-wrap:normal;hyphens:auto}
+ .research-plan :is(th,td){padding:10px 5px}
+ .research-stage{font-size:11px;line-height:1.3;white-space:normal}
+}
