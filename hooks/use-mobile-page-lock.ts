@@ -1,7 +1,7 @@
 'use client';
 import {useEffect} from 'react';
 
-// Keep browse-page scrolling inside its content viewport, including on browsers
+// Keep page scrolling inside its content viewport, including on browsers
 // that do not implement overscroll-behavior.
 export function useMobilePageLock(enabled:boolean){
  useEffect(()=>{
@@ -12,7 +12,10 @@ export function useMobilePageLock(enabled:boolean){
   let x=0,y=0;
   const start=(event:TouchEvent)=>{if(event.touches.length===1){x=event.touches[0].clientX;y=event.touches[0].clientY}};
   const move=(event:TouchEvent)=>{
-   if(!media.matches||event.touches.length!==1||!(event.target instanceof Element)||!event.target.closest('.atlas-app'))return;
+   if(!media.matches||!(event.target instanceof Element))return;
+   // These viewports implement their own pan/pinch handlers.
+   if(event.target.closest('.maplibregl-canvas,.image-viewport,.sheet-handle'))return;
+   if(event.touches.length!==1){if(event.cancelable)event.preventDefault();return}
    if(event.target.closest('input,select,textarea'))return;
    const touch=event.touches[0],dx=touch.clientX-x,dy=touch.clientY-y;
    x=touch.clientX;y=touch.clientY;

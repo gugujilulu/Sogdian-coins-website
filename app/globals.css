@@ -422,11 +422,11 @@
 .search-help{font-size:12px}.search-help summary{cursor:pointer}.search-help p{padding:4px 10px;margin:0;line-height:1.5}
 .time-filter-help{display:block;padding:6px 14px;font-size:12px}
 
-/* Mobile browse pages: the document stays fixed; only content panes scroll. */
+/* Mobile pages: the document stays fixed; only content panes scroll. */
 @media(max-width:760px){
  html.mobile-page-locked,html.mobile-page-locked body{height:100%;min-height:0;overflow:hidden;overscroll-behavior:none}
  html.mobile-page-locked body{position:fixed;inset:0;width:100%}
- html.mobile-page-locked .atlas-app{height:100dvh;min-height:0;overflow:hidden;overscroll-behavior:none;touch-action:pan-y pinch-zoom}
- html.mobile-page-locked .view-catalogue .catalogue-page{height:calc(100dvh - var(--atlas-header));min-height:0;overflow-x:hidden;overflow-y:auto;overscroll-behavior:none;-webkit-overflow-scrolling:touch}
- html.mobile-page-locked .research-scroll{overscroll-behavior:none;touch-action:pan-y pinch-zoom}
+ html.mobile-page-locked .atlas-app{height:100dvh;min-height:0;overflow:hidden;overscroll-behavior:none}
+ html.mobile-page-locked .view-catalogue .catalogue-page{touch-action:pan-y;height:calc(100dvh - var(--atlas-header));min-height:0;overflow-x:hidden;overflow-y:auto;overscroll-behavior:none;-webkit-overflow-scrolling:touch}
+ html.mobile-page-locked .research-scroll{overscroll-behavior:none;touch-action:pan-y}
 }

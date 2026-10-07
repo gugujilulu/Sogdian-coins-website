@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import "./atlas-visual.css";
 import "./catalogue-visual.css";
@@ -8,6 +8,8 @@ import "./detail-frames.css";
 import "./catalogue-frames.css";
 import "./research-visual.css";
 import "./interaction-feedback.css";
+
+export const viewport: Viewport = {width:"device-width",initialScale:1,maximumScale:1,userScalable:false};
 
 export const metadata: Metadata = {
   title: "Central Asian Square-Hole Coinage Atlas",
