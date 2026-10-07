@@ -7,7 +7,7 @@ import type {Atlas,Specimen} from '@/lib/atlas';
 import type {SourceGroup} from '@/lib/source-index';
 export default function SourceCatalogue({group,data,onOpen,onFamily}:{group:SourceGroup;data:Atlas;onOpen:(record:Specimen)=>void;onFamily:(id:string)=>void}){
  const tr=useCopy();const {locale}=useLanguage();
- return <div className="source-browse-content"><header className="source-browse-heading"><h1><ArtIcon name="archive" collection="r3" size={30}/>{group.source}</h1><p className="browse-count">{countLabel(group.sourceCount,'sources',locale)} · {countLabel(group.recordCount,'records',locale)}</p><p>{tr("浏览原始来源与关联钱币")}</p></header>
+ return <div className="source-browse-content"><header className="source-browse-heading"><h1><ArtIcon name="archive" collection="r3" size={30}/>{copyKnown(group.source,locale)}</h1><p className="browse-count">{countLabel(group.sourceCount,'sources',locale)} · {countLabel(group.recordCount,'records',locale)}</p><p>{tr("浏览原始来源与关联钱币")}</p></header>
  <div className="source-record-list">{group.entries.map(({source,specimen:s,relation})=><article className="browse-card" key={source.id+'|'+s.id}>
   <button className="browse-image" onClick={()=>onOpen(s)} aria-label={tr("打开记录 {id}",{id:s.id})}><BrowseCoinImage key={s.images[0]?.id||s.id} path={s.images[0]?.path} title={s.title}/></button>
   <div className="browse-card-copy"><strong>{source.provider} · {source.identityStatus==='resolved'?source.recordKey:tr("编号待解析")}</strong><p className="browse-measure">{[s.weightG!=null?`${s.weightG} g`:null,s.diameterMm!=null?`${s.diameterMm} mm`:null].filter(Boolean).join(" · ")}</p>
