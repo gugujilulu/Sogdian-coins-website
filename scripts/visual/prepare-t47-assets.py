@@ -18,7 +18,7 @@ for group in ['r1','r2']:
   im=im.crop(crop);limit=192 if name in ['search','filters','layers','fit','locate','clock','globe','plus','minus','close','chevron','back','info','book','pin','range','share','expand','layers-light','clock-light'] else 1600 if name=='header-background' else 900 if name in ['detail-frame','detail-frame-fitted'] else 600
   im.thumbnail((limit,limit),Image.Resampling.LANCZOS);im.save(target/f'{name}.webp',quality=94,method=6)
   entries.append({'namespace':group,'asset':name,'source':str(p.relative_to(inputs)),'sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'alphaCrop':crop,'output':f'/visual/t47/{group}/{name}.webp','size':im.size})
- for name in ['ASSET-MAP.md','CODEX-START-HERE.md']:
+ for name in ['ASSET-MAP.md']:
   shutil.copyfile(src/name,root/'design/T47-1'/f'{group}-{name}')
 font=out/'fonts';font.mkdir(exist_ok=True)
 for name in ['NimbusRoman-Regular.otf','NimbusRoman-Bold.otf','atlas-cjk.woff2','URW-LICENSE.txt','WQY-LICENSE.txt']:

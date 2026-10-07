@@ -78,7 +78,7 @@ At the pre-#795 checkpoint, Lady Nana display coverage remained 14/14 imported Z
 
 The existing Semirechye records `sr3` (Kamyshev 21; Vahshutava / yuan reverse) and `sr6` (Kamyshev 24; Türgesh kagan / tamgha reverse) were explicit pre-ingest crosswalk candidates for category #795. The later reviewed import tested those existing families before creating new family rows; the resolved crosswalk is recorded below.
 
-No formal Git remote is recorded in `.git/config`, README or the implementation notes. `.openai/hosting.json` retains the existing Site project binding `appgprj_6aaa004e58c481918488e7ebec45333a`; no new Site is created and no deployment is attempted in this blocked environment.
+No formal Git remote is recorded in `.git/config`, README or the implementation notes. The local hosting configuration retains the existing Site project binding; no new Site is created and no deployment is attempted in this blocked environment.
 
 
 ## Zeno #795 recursive acquisition and reviewed import
