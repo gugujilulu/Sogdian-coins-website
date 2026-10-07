@@ -52,3 +52,12 @@
 .catalogue-family-content[data-cultural-portrait]{position:relative;isolation:isolate}
 .catalogue-cultural-portrait{position:absolute;right:0;top:0;width:250px;height:auto;max-width:38%;opacity:.22;mix-blend-mode:multiply;pointer-events:none;z-index:-1}
 @media(max-width:760px){.catalogue-cultural-portrait{width:155px;max-width:45%;opacity:.18}}
+
+/* Mobile catalogue controls scroll with their own list, not the detail pane. */
+@media(max-width:760px){
+ .catalogue-page .catalogue-frame>.catalogue-tree{max-height:455px;overflow-y:auto;overscroll-behavior:contain;flex-shrink:0}
+ .catalogue-page .catalogue-tree>.tree-scroll{max-height:none;overflow:visible}
+ .catalogue-page[data-mode=atlas] .catalogue-tree{max-height:380px}
+ .catalogue-page[data-mode=atlas] .catalogue-tree>.tree-scroll,
+ .catalogue-page[data-content=related] .catalogue-tree>.tree-scroll{max-height:none}
+}

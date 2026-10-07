@@ -14,7 +14,7 @@ export function useMobilePageLock(enabled:boolean){
   const move=(event:TouchEvent)=>{
    if(!media.matches||!(event.target instanceof Element))return;
    // These viewports implement their own pan/pinch handlers.
-   if(event.target.closest('.maplibregl-canvas,.image-viewport,.sheet-handle'))return;
+   if(event.target.closest('.maplibregl-canvas,.image-viewport,.sheet-control-region'))return;
    if(event.touches.length!==1){if(event.cancelable)event.preventDefault();return}
    if(event.target.closest('input,select,textarea'))return;
    const touch=event.touches[0],dx=touch.clientX-x,dy=touch.clientY-y;

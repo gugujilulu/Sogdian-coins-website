@@ -39,14 +39,18 @@ export default function FamilyDrawer(p:Props){
  const location=p.placeName&&<div className="family-location"><ArtIcon name="pin" size={14}/><span>{p.placeName}</span>{p.onLocate&&<button onClick={p.onLocate}><ArtIcon name="locate" size={17}/>{tr("定位")}</button>}</div>;
  return <motion.aside initial={reduceMotion?false:{opacity:0,x:mobile?0:16,y:mobile?8:0}} animate={{opacity:1,x:0,y:0}} exit={{opacity:0,x:mobile?0:12,y:mobile?8:0,transition:{duration:reduceMotion?0:motionTiming.close/1000}}} transition={{duration:reduceMotion?0:motionTiming.panel/1000,ease:motionEase.enter}} inert={!present} aria-hidden={!present||undefined} data-exiting={!present||undefined} ref={sheet} data-sheet-state={state} style={{height:dragHeight??undefined,transition:reduceMotion||dragHeight!==null?'none':undefined,pointerEvents:present?undefined:'none'}} className="family-drawer"
  aria-label={`${tr('家族详情')} ${familyTitle(family,locale)}`}>
+  <div className="sheet-control-region"
+   onPointerDown={e=>{if(!mobile||!p.onSheetState||!e.isPrimary||(e.target instanceof Element&&e.target.closest('button,a,input,select,textarea')))return;e.stopPropagation();e.currentTarget.setPointerCapture(e.pointerId);drag.current={id:e.pointerId,y:e.clientY,height:sheet.current?.clientHeight||0,available:sheet.current?.parentElement?.clientHeight||0}}}
+   onPointerMove={e=>{const d=drag.current;if(!d||d.id!==e.pointerId)return;e.stopPropagation();setDragHeight(Math.max(sheetHeight('summary',d.available),Math.min(sheetHeight('reading',d.available),d.height+d.y-e.clientY)))}}
+   onPointerUp={e=>{const d=drag.current;if(!d||d.id!==e.pointerId)return;if(Math.abs(e.clientY-d.y)>4)p.onSheetState?.(snapSheet(d.height+d.y-e.clientY,d.available));drag.current=null;setDragHeight(null)}}
+   onPointerCancel={()=>{drag.current=null;setDragHeight(null)}}>
   {p.onSheetState&&<div className="sheet-handle" role="slider" tabIndex={0} aria-label={tr("详情面板高度")} aria-orientation="vertical" aria-valuemin={0} aria-valuemax={2} aria-valuenow={state==='summary'?0:state==='half'?1:2} aria-valuetext={state==='summary'?tr("收起摘要"):state==='half'?tr("半展开浏览"):tr("展开阅读")}
    onKeyDown={e=>{const next=sheetKey(state,e.key);if(next){e.preventDefault();p.onSheetState?.(next)}}}
-   onPointerDown={e=>{if(!e.isPrimary)return;e.stopPropagation();e.currentTarget.setPointerCapture(e.pointerId);drag.current={id:e.pointerId,y:e.clientY,height:sheet.current?.clientHeight||0,available:sheet.current?.parentElement?.clientHeight||0}}}
-   onPointerMove={e=>{const d=drag.current;if(!d||d.id!==e.pointerId)return;e.stopPropagation();setDragHeight(Math.max(sheetHeight('summary',d.available),Math.min(sheetHeight('reading',d.available),d.height+d.y-e.clientY)))}}
-   onPointerUp={e=>{const d=drag.current;if(!d)return;p.onSheetState?.(snapSheet(d.height+d.y-e.clientY,d.available));drag.current=null;setDragHeight(null)}}
-   onPointerCancel={()=>{drag.current=null;setDragHeight(null)}}><span/></div>}
+><span/></div>}
   <header className="drawer-head family-title"><div><h1>{familyTitle(family,locale)}</h1></div><div className="detail-actions"><CopyLink label="分享家族" link={{view:'atlas',family:family.id}}/><button onClick={p.onClose} aria-label={tr("Close details")}><ArtIcon name="close" size={20}/></button></div></header>
   {p.onSheetState&&<div className="sheet-actions"><small className="sheet-summary-count">{caption}</small><div>{state!=='reading'&&<button className="sheet-expand" aria-label={tr("展开家族详情")} onClick={()=>p.onSheetState?.(state==='summary'?'half':'reading')}><ArtIcon name="chevron" size={16}/>{tr("展开")}</button>}{state!=='summary'&&<button aria-label={tr("收起家族详情")} onClick={()=>p.onSheetState?.(state==='reading'?'half':'summary')}><ArtIcon name="chevron" size={16}/>{tr("收起")}</button>}<button onClick={p.onTools}><ArtIcon name="clock" size={15}/>{tr("时间 / 地图")}</button>{p.onReturnCollection&&<button onClick={p.onReturnCollection}>{tr("返回集合")}</button>}</div></div>}
+
+  </div>
 
   <div ref={scroll} className="drawer-scroll">
    {metadata}
