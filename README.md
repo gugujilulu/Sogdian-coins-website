@@ -6,13 +6,13 @@
 
 ![Atlas on desktop](docs/screenshots/atlas-desktop.png)
 
-## Why this project exists
+## Project Background
 
-How can the cultural value of Sogdian and Central Asian coinage become more accessible in the digital age?
+I was invited by a coin club in Vancouver to give a talk on Sogdian numismatics. The invitation provided an opportunity to bring the subject to a wider audience and explore how digital tools could support cultural education beyond a single presentation.
 
 These coins offer a material route into the history of exchange between China, Central Asia and neighbouring societies. Their inscriptions, symbols and monetary forms connect questions of language, identity, trade and political authority. Making this material easier to explore can bring a specialised field into wider conversations about cultural heritage and historical connections.
 
-The Central Asian Square-Hole Coinage Atlas grew out of that question. Relevant material is distributed across specialist databases, catalogues and individual records. The project brings photographs, source references, historical geography and editorial classifications into a shared map and catalogue, helping visitors move from an individual object to its wider context.
+The Central Asian Square-Hole Coinage Atlas explores how that cultural value can become more accessible in the digital age. Relevant material is distributed across specialist databases, catalogues and individual records. The project brings photographs, source references, historical geography and editorial classifications into a shared map and catalogue, helping visitors move from an individual object to its wider context.
 
 Its purpose is to build a public-facing digital resource that supports cultural education, comparative research and dialogue between collectors, researchers and cultural institutions.
 
