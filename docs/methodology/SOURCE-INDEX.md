@@ -1,4 +1,4 @@
-# T11 · 主库多来源浏览索引
+# 主库多来源浏览索引
 
 `public/data/source-index.json` 是独立派生文件，不改 atlas、manifest 或研究数据库。只覆盖现有主库 `specimens[].sources` 关系，不表示3999来源实体或Zeno快照的完整浏览。
 

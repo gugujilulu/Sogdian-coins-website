@@ -1,4 +1,4 @@
-# T22-8 七河地域背景接入登记
+# 七河地域背景接入登记
 
 起始SHA `9ed92e20a68acdfee30d9f589c7a524ef5cba7f1`，分支task/T22-8-semirechye-background；最新main与已知一致，初始工作树干净。只执行本资料定义版本，不执行其他范围。
 

@@ -1,6 +1,5 @@
-# T05：实物钱币身份协调（非破坏式overlay）
+# 实物钱币身份协调（非破坏式overlay）
 
-起点：`15b7c5cb88c9b8c0e24ce4e0b7fc1b016e5e051f`；分支：`task/T05-physical-specimen-reconciliation`。
 本轮用户指定Physical Specimen Reconciliation，覆盖旧MILESTONES的T05筛选引擎安排；后续编号/依赖由协调窗口确认，本轮不做前端。
 
 ## 判定规则（包含用户补充）

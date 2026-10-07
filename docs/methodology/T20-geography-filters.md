@@ -1,4 +1,4 @@
-# T20 地区、政权、城市／地点筛选
+# 地区、政权、城市／地点筛选
 
 基线 `031018dafb4ff439a66b59de708a046cdc1c8d36`；分支 `task/T20-geography-polity-city-filters`。不部署，不做 T21 图例或 T22 范围。
 

@@ -1,6 +1,5 @@
-# T04：逐图来源引用
+# 逐图来源引用
 
-指定起点：`644c61b62732cbbf479583aaf97c50bfb2b71bf9`。正式派生结果为 `scripts/export-atlas-db.py` 生成的SQLite；不改显示JSON或前端。T03的来源实体、provider/key及内部specimen/image ID沿用，不创建新来源实体。
 
 ## 模型与状态
 

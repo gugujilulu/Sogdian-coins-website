@@ -1,4 +1,4 @@
-# T06 · Taxonomy Foundation
+# Taxonomy Foundation
 
 起始提交：`de9ac217f3c40ffa402b508c4fbe5861ec31dcb5`。任务分支：`task/T06-taxonomy-foundation`。
 本轮按用户指定任务替代旧里程碑同编号的地图/筛选接线任务；不修改 UI、年代、地理、实物身份或来源身份。

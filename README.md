@@ -2,9 +2,11 @@
 
 A map and catalogue for exploring the square-hole coin traditions of Central Asia.
 
-This project grew out of collecting coins and trying to compare records scattered across specialist databases and catalogues. A photograph is useful; its source, attribution and geographical context make it possible to ask better questions. The atlas brings those pieces together while keeping the original records within reach.
+![Atlas on desktop](docs/screenshots/atlas-desktop.png)
 
-![Atlas on desktop](docs/reviews/phase1-final/prod-desktop-place.png)
+[Demo](https://sogdian-cash-atlas.gugu4-5.chatgpt.site) — the existing hosted edition; deployment is being updated to this checkout.
+
+This project grew out of collecting coins and trying to compare records scattered across specialist databases and catalogues. A photograph is useful; its source, attribution and geographical context make it possible to ask better questions. The atlas brings those pieces together while keeping the original records within reach.
 
 ## Explore
 
@@ -49,7 +51,7 @@ node --test tests/phase1-final.test.mjs
 pnpm build
 ```
 
-[The release review](docs/reviews/phase1-final/README.md) records the checks performed and their limits. [The mobile follow-up](docs/reviews/phase1-final/R1/README.md) includes the corrected reading order and production screenshots.
+The current edition includes the corrected mobile reading order and reviewed map interactions. Historical polity versions, findspots, hoards and circulation evidence remain incomplete; see the corpus and development notes for their scope.
 
 ## Project structure
 
@@ -69,3 +71,11 @@ The application uses React, TypeScript, MapLibre GL and Vinext. Python scripts b
 Photographs retain their original credits and source links. Map attribution remains visible in the application. A public repository does not change the rights attached to third-party photographs or source records; rights are recorded with the material.
 
 Source policies are documented in `research/source-provenance-policy.json` and `research/source-authorities.json`. Questions and corrections can be raised through [GitHub issues](https://github.com/gugujilulu/Sogdian-coins-website/issues). Please include the record ID and the source behind a proposed correction.
+
+## Status and next work
+
+The first edition is available for exploration. Planned work includes additional coin families and auction records, dated historical-map versions, academic resources, tamgha and language research. These are research and development plans, not available services.
+
+## Licensing
+
+No general reuse licence has been granted for this repository. Third-party photographs, source texts, map services and fonts retain their own rights and terms. Font licences are included with their files in `public/visual/t47/fonts/`; bundled build and style dependencies retain their licence notices in `build/` and `vendor/`. Consult the per-record provenance before reusing source material.

@@ -1,6 +1,5 @@
-# T08 · Related image index
+# Related image index
 
-起点：`8e6fa2f3e2b4b71e7830a31fca7a362ea279c8bf`；分支：`task/T08-related-image-index`。
 
 ## 导出与 T09 接口
 

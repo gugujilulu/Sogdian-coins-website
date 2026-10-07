@@ -28,4 +28,4 @@ The current description mapping covers 1,007 of 1,010 records. Three records wit
 
 The next research work concerns dated polity-map versions, archaeological centres and mints, findspots and hoards, and regional circulation evidence. Each layer needs explicit sources and coverage notes before it can support historical interpretation.
 
-The repository keeps its real development history, including fixes and review corrections. Current maintenance status is recorded in [STATUS](workflow/STATUS.md).
+The repository retains the development history of its data model, map interactions and review corrections.
