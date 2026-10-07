@@ -55,3 +55,6 @@ __pycache__/
 
 # T08 static copies are reproducible from tracked research originals.
 /public/coins/related/
+
+# Local hosting project binding
+/.openai/
