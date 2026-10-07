@@ -4,7 +4,7 @@ A map and catalogue for exploring the square-hole coin traditions of Central Asi
 
 ![Atlas on desktop](docs/screenshots/atlas-desktop.png)
 
-[Demo](https://sogdian-cash-atlas.gugu4-5.chatgpt.site) — the existing hosted edition; deployment is being updated to this checkout.
+[Live Demo](https://sogdian-cash-atlas.gugu4-5.chatgpt.site)
 
 This project grew out of collecting coins and trying to compare records scattered across specialist databases and catalogues. A photograph is useful; its source, attribution and geographical context make it possible to ask better questions. The atlas brings those pieces together while keeping the original records within reach.
 
