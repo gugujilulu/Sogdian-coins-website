@@ -1,4 +1,5 @@
 'use client';
+import {useMobilePageLock} from '@/hooks/use-mobile-page-lock';
 import {placeName} from '@/lib/place-display';
 import HeaderNavigation from '@/components/atlas/header-navigation';
 import {AnimatePresence,PageEntrance,PaperReveal} from '@/components/atlas/ui-motion';
@@ -73,6 +74,7 @@ function AtlasHome(){
  useEffect(()=>{const controller=new AbortController();fetch('/data/source-index.json',{signal:controller.signal}).then(r=>{if(!r.ok)throw Error();return r.json()}).then(d=>{if(!controller.signal.aborted){setSourceIndex(d as SourceIndex);setSourceIndexError(false)}}).catch(()=>{if(!controller.signal.aborted)setSourceIndexError(true)});return()=>controller.abort()},[sourceAttempt]);
  const [data,setData]=useState<Atlas|null>(null),[loadError,setLoadError]=useState(false);
  const [view,setView]=useState<View>('atlas'),[selectedId,setSelectedId]=useState<string|null>(null),[focus,setFocus]=useState(0);
+ useMobilePageLock(view==='catalogue'||view==='research');
  const [filters,setFilters]=useState<FilterContext>(emptyFilters);
  const [searchRequest,setSearchRequest]=useState<SearchMapRequest|null>(null),[cameraRequest,setCameraRequest]=useState<SearchMapRequest|null>(null);const searchSerial=useRef(0);
  const {query,region,polity,city,familyFilter,sourceFilter,inscriptionFilter,tamghaFilter,featureFilter,statusFilter,year,dateMode}=filters;
